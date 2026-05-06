@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>April 23, 2026 ✦ Transit Reading</title>
+  <link href="https://fonts.googleapis.com/css2?family=VT323&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:             #07081c;
+      --surface:        #0c0e28;
+      --surface2:       #09091f;
+      --border:         #2a2258;
+      --border-hi:      #6a50a8;
+      --text:           #ddc89a;
+      --dim:            #524870;
+      --gold:           #c89a2a;
+      --gold-hi:        #e8b830;
+      --gold-glow:      rgba(200,154,42,0.18);
+      --amethyst:       #8a5cb8;
+      --amethyst-glow:  rgba(138,92,184,0.16);
+      --teal:           #2a9080;
+      --teal-glow:      rgba(42,144,128,0.14);
+      --rose:           #aa3868;
+      --rose-glow:      rgba(170,56,104,0.16);
+      --moon:           #8898cc;
+      --moon-glow:      rgba(136,152,204,0.15);
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(
+        to bottom,
+        transparent 0px, transparent 3px,
+        rgba(0,0,0,0.1) 3px, rgba(0,0,0,0.1) 4px
+      );
+      pointer-events: none;
+      z-index: 9998;
+    }
+
+    body {
+      background-color: var(--bg);
+      background-image:
+        radial-gradient(ellipse at 18% 12%, rgba(80,40,160,0.22) 0%, transparent 48%),
+        radial-gradient(ellipse at 82% 22%, rgba(150,40,80,0.14) 0%, transparent 42%),
+        radial-gradient(ellipse at 50% 85%, rgba(30,60,150,0.18) 0%, transparent 48%),
+        radial-gradient(ellipse at 8%  88%, rgba(70,30,110,0.14) 0%, transparent 42%);
+      color: var(--text);
+      font-family: 'VT323', monospace;
+      font-size: 20px;
+      min-height: 100vh;
+      padding: 28px 16px 64px;
+      position: relative;
+    }
+
+    #starfield {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2;  transform: scale(0.9); }
+      50%       { opacity: 1;    transform: scale(1.15); }
+    }
+
+    .window {
+      position: relative;
+      z-index: 1;
+      max-width: 820px;
+      margin: 0 auto;
+      border: 2px solid var(--border-hi);
+      box-shadow:
+        inset -1px -1px rgba(0,0,0,0.95),
+        inset  1px  1px rgba(180,150,255,0.2),
+        0 0  60px rgba(80,50,160,0.18),
+        0 0 120px rgba(80,50,160,0.07);
+    }
+
+    .titlebar {
+      background: linear-gradient(90deg,
+        #140c38 0%, #4a2280 32%, #8a2260 62%, #140c38 100%);
+      padding: 5px 8px 5px 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      user-select: none;
+    }
+
+    .titlebar-label {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 8px;
+      color: #f0e0b8;
+      letter-spacing: 1px;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+    }
+
+    .titlebar-btns { display: flex; gap: 3px; }
+
+    .tbtn {
+      width: 18px; height: 15px;
+      background: #c0c0c0;
+      box-shadow: inset -1px -1px #6a6a6a, inset 1px 1px #ffffff;
+      font-size: 10px;
+      font-family: 'VT323', monospace;
+      color: #000;
+      display: flex; align-items: center; justify-content: center;
+      cursor: default; border: none;
+    }
+
+    .content { background: var(--bg); padding: 32px 40px 42px; }
+
+    .reading-meta {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 8px;
+      color: var(--gold);
+      letter-spacing: 2px;
+      text-shadow: 0 0 14px var(--gold-glow);
+      margin-bottom: 8px;
+    }
+
+    h1 {
+      font-family: 'VT323', monospace;
+      font-size: 56px;
+      color: var(--gold-hi);
+      text-shadow: 0 0 28px var(--gold-glow), 0 0 60px rgba(200,154,42,0.08);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .tagline {
+      color: var(--dim);
+      font-size: 19px;
+      margin-bottom: 26px;
+      letter-spacing: 2px;
+    }
+
+    .planet-strip {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-top: 2px solid var(--gold);
+      box-shadow: 0 0 16px rgba(200,154,42,0.07), inset 0 1px 0 rgba(0,0,0,0.5);
+      padding: 14px 18px;
+      margin-bottom: 30px;
+    }
+
+    .strip-label {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 7px;
+      color: var(--gold);
+      letter-spacing: 3px;
+      margin-bottom: 13px;
+      text-shadow: 0 0 8px var(--gold-glow);
+    }
+
+    .planet-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(188px, 1fr));
+      gap: 2px 24px;
+    }
+
+    .prow {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 4px 0;
+      border-bottom: 1px dotted rgba(42,34,88,0.7);
+      font-size: 18px;
+    }
+
+    .pname  { color: var(--amethyst); }
+    .pdeg   { color: var(--gold-hi); font-size: 16px; }
+    .phouse { color: var(--dim); font-size: 14px; }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 28px 0;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border-hi), transparent);
+    }
+
+    .divider-inner {
+      font-size: 20px;
+      color: var(--gold);
+      letter-spacing: 10px;
+      text-shadow: 0 0 10px var(--gold-glow);
+      white-space: nowrap;
+    }
+
+    .section {
+      margin-bottom: 22px;
+      padding: 18px 22px;
+      background: var(--surface);
+      border-left: 3px solid var(--border-hi);
+      box-shadow: -6px 0 18px var(--amethyst-glow);
+    }
+
+    .section.headline  { border-left-color: var(--gold);     box-shadow: -6px 0 22px var(--gold-glow);     background: #0a0c22; }
+    .section.moon      { border-left-color: var(--moon);     box-shadow: -6px 0 16px var(--moon-glow); }
+    .section.venus     { border-left-color: var(--rose);     box-shadow: -6px 0 16px var(--rose-glow); }
+    .section.ttt       { border-left-color: var(--teal);     box-shadow: -6px 0 14px var(--teal-glow); }
+    .section.practical { border-left-color: var(--amethyst); box-shadow: -6px 0 18px var(--amethyst-glow); background: #0c0a22; }
+    .section.summary   { border-left-color: var(--gold);     box-shadow: -6px 0 22px var(--gold-glow);     background: #0c0b1e; }
+
+    .section-title {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 8px;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+      text-shadow: 0 0 10px currentColor;
+    }
+
+    .headline  .section-title { color: var(--gold);     }
+    .moon      .section-title { color: var(--moon);     }
+    .venus     .section-title { color: var(--rose);     }
+    .ttt       .section-title { color: var(--teal);     }
+    .practical .section-title { color: var(--amethyst); }
+    .summary   .section-title { color: var(--gold);     }
+
+    p { line-height: 1.58; margin-bottom: 10px; font-size: 20px; }
+    p:last-child { margin-bottom: 0; }
+
+    .aspect {
+      color: var(--gold-hi);
+      font-size: 18px;
+      padding: 9px 14px;
+      background: var(--gold-glow);
+      border-left: 2px solid var(--gold);
+      margin: 12px 0;
+      line-height: 1.52;
+    }
+
+    .prac-row {
+      margin: 10px 0;
+      padding: 10px 14px;
+      background: rgba(138,92,184,0.05);
+      border-bottom: 1px dotted rgba(138,92,184,0.18);
+      font-size: 19px;
+      line-height: 1.52;
+    }
+    .prac-row:last-child { border-bottom: none; }
+
+    .prac-label {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 7px;
+      color: var(--amethyst);
+      display: block;
+      margin-bottom: 5px;
+      letter-spacing: 1px;
+    }
+
+    em     { color: var(--gold-hi); font-style: normal; }
+    strong { color: var(--amethyst); }
+
+    .footer {
+      text-align: center;
+      color: var(--dim);
+      font-size: 16px;
+      margin-top: 12px;
+      padding-top: 18px;
+      border-top: 1px solid var(--border);
+      letter-spacing: 3px;
+    }
+  </style>
+</head>
+<body>
+
+<div id="starfield"></div>
+
+<div class="window">
+
+  <div class="titlebar">
+    <span class="titlebar-label">✦ TRANSIT READING &nbsp;·&nbsp; JORDAN &nbsp;·&nbsp; APRIL 23, 2026 ✦</span>
+    <div class="titlebar-btns">
+      <button class="tbtn">_</button>
+      <button class="tbtn">□</button>
+      <button class="tbtn">✕</button>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <div class="reading-meta">THURSDAY &nbsp;·&nbsp; EVENING &nbsp;·&nbsp; CHICAGO</div>
+    <h1>April 23, 2026</h1>
+    <div class="tagline">☽ &nbsp;current transits &nbsp;·&nbsp; natal wheel active &nbsp; ☾</div>
+
+    <div class="planet-strip">
+      <div class="strip-label">▸ TRANSITING PLANETS — LIVE DATA (astrolibrary.org)</div>
+      <div class="planet-grid">
+        <div class="prow"><span class="pname">☉ Sun</span>     <span class="pdeg">3°31' ♉</span>  <span class="phouse">11th</span></div>
+        <div class="prow"><span class="pname">☽ Moon</span>    <span class="pdeg">~1° ♌ eve.</span> <span class="phouse">2nd</span></div>
+        <div class="prow"><span class="pname">☿ Mercury</span> <span class="pdeg">13°05' ♈</span> <span class="phouse">10th</span></div>
+        <div class="prow"><span class="pname">♀ Venus</span>   <span class="pdeg">29°24' ♉</span> <span class="phouse">12th</span></div>
+        <div class="prow"><span class="pname">♂ Mars</span>    <span class="pdeg">10°45' ♈</span> <span class="phouse">10th</span></div>
+        <div class="prow"><span class="pname">♃ Jupiter</span> <span class="pdeg">17°57' ♋</span> <span class="phouse">1st</span></div>
+        <div class="prow"><span class="pname">♄ Saturn</span>  <span class="pdeg">8°18' ♈</span>  <span class="phouse">10th</span></div>
+        <div class="prow"><span class="pname">♅ Uranus</span>  <span class="pdeg">29°52' ♉</span> <span class="phouse">12th</span></div>
+        <div class="prow"><span class="pname">♆ Neptune</span> <span class="pdeg">3°01' ♈</span>  <span class="phouse">10th</span></div>
+        <div class="prow"><span class="pname">♇ Pluto</span>   <span class="pdeg">5°28' ♒</span>  <span class="phouse">8th</span></div>
+        <div class="prow"><span class="pname">⚷ Chiron</span>  <span class="pdeg">27°04' ♈</span> <span class="phouse">11th</span></div>
+        <div class="prow"><span class="pname">☊ N.Node</span>  <span class="pdeg">7°21' ♓ R</span> <span class="phouse">9th</span></div>
+      </div>
+    </div>
+
+    <!-- HEADLINE -->
+    <div class="section headline">
+      <div class="section-title">✦ HEADLINE &nbsp;·&nbsp; THE WOUND AND THE CAREER ARE THE SAME AXIS</div>
+
+      <div class="aspect">Transiting North Node at 7°21' Pisces conjunct natal Midheaven at 8° Pisces (10th house cusp) — 0.65° orb, near-exact.</div>
+      <div class="aspect">Transiting North Node opposite natal Chiron at 8° Virgo (4th house) — 0.65° orb, near-exact. Simultaneous.</div>
+
+      <p>The transiting North Node is sitting at 7°21' Pisces — and your natal Midheaven is at 8° Pisces. Less than a degree separates them. The North Node (the collective soul's current direction, in Pisces: toward compassion, dissolution of ego, imagination, the boundless) is directly conjunct the career destiny point in your chart. The 10th house cusp. The place where inner work becomes public expression.</p>
+
+      <p>At the same moment, that same North Node makes an exact opposition — again, 0.65° — to your natal Chiron at 8° Virgo in the 4th house. The foundational wound. The early message that love is conditional, that you have to earn a place, that being yourself is a risk. The wound that shows up as the inner critic, the not-enough loop, the shame spiral after confrontation.</p>
+
+      <p>The soul path axis is pointing away from the wound and toward the Midheaven simultaneously. They're on the same line. That's not metaphorical — it's geometrically exact. What this says, in the most precise astrological terms available: <em>the wound and the career are the same axis</em>. The healing of one is the building of the other. The thing that broke you early is the material you're building from now.</p>
+
+      <p>You had the EverForce X kickoff today. You stepped into a task force role — a new initiative, a new form of authority, a new thing you're building — under this exact sky. The North Node was conjunct your Midheaven when you walked into that room. That is the chart doing exactly what it's supposed to do. <em>This is not coincidence. This is the architecture working.</em></p>
+
+      <p>Mark this day. Not just because of what you launched, but because of what the sky confirmed: the direction your career is growing toward is also the direction your healing is growing toward. That's rare. That's the Queen of Wands and the High Priestess as the same person.</p>
+    </div>
+
+    <div class="divider"><span class="divider-inner">✦ ☽ ✦</span></div>
+
+    <!-- MARS + NEPTUNE BOTH ON NATAL MOON -->
+    <div class="section moon">
+      <div class="section-title">☽ MARS + NEPTUNE &nbsp;·&nbsp; DOUBLE ACTIVATION OF THE 10TH HOUSE MOON</div>
+
+      <div class="aspect">Transiting Mars at 10°45' Aries conjunct natal Moon at 4° Aries (10th house) — 6.75° orb, separating.</div>
+      <div class="aspect">Transiting Neptune at 3°01' Aries conjunct natal Moon at 4° Aries (10th house) — 1° orb, applying.</div>
+      <div class="aspect">Transiting Mars at 10°45' Aries trine natal Mars at 10° Sagittarius (6th house) — 0.75° orb, near-exact.</div>
+
+      <p>Both Mars and Neptune are touching your natal Moon today, from opposite sides. Mars is at 10°45' Aries — it has already moved past the Moon's 4° and is separating. Neptune is at 3°01' Aries — it hasn't reached the Moon yet, and is applying. The Moon is caught between the planet of drive (already through, energy spent) and the planet of vision (arriving, opening).</p>
+
+      <p>This explains the texture of the day perfectly. The morning and midday had Mars quality: urgency, body-heat, fast motion, forward push. The kickoff. The execution. The sense of needing to get things done and done now. That was Mars passing through the 10th house Moon, activating the career/emotional center with fire. And Mars simultaneously making a near-exact trine to your natal Mars in Sagittarius — that's the fire-to-fire connection, drive running clean, physical confidence at a peak. When transiting and natal Mars are in trine by less than a degree, the body knows what to do without needing to think about it.</p>
+
+      <p>Now it's evening. And Neptune is what's next. Neptune is approaching your natal Moon and will eventually make an exact conjunction — this is the headline transit of the season, the one that's been building since Saturn finally released in April. Where Mars pressed in with heat, Neptune opens with permeability. The emotional atmosphere is going to feel different for the next stretch — more porous, more sensitive to the room, more intuitive, more easily moved by beauty or sadness or atmosphere. Less constricted. More watercolor than charcoal.</p>
+
+      <p>For tonight specifically: the Mars energy is winding down (it's done what it came to do) and Neptune is washing in. <em>Let it.</em> You don't need to stay in action mode this evening. Neptune on the Moon wants stillness, not productivity. It wants to feel things rather than accomplish things.</p>
+    </div>
+
+    <div class="divider"><span class="divider-inner">✦ ♃ ✦</span></div>
+
+    <!-- JUPITER TRINE VENUS — EXACT -->
+    <div class="section venus">
+      <div class="section-title">♃ JUPITER &nbsp;·&nbsp; EXACT TRINE NATAL VENUS — TODAY</div>
+
+      <div class="aspect">Transiting Jupiter at 17°57' Cancer (1st house) trine natal Venus at 18° Scorpio (5th house) — 0.05° orb. Effectively exact.</div>
+
+      <p>This is the most mathematically precise aspect in today's entire sky. Jupiter in Cancer in your 1st house — expanding personal presence, the sense of being welcomed and believed in — is in an essentially perfect trine to your natal Venus in the Scorpio stellium in your 5th house. The Cancer-Scorpio water trine. Zero friction. Pure flow.</p>
+
+      <p>Jupiter in the 1st says: more of you is available. More presence, more confidence in being seen, more of a feeling that showing up is welcome rather than risky. And that energy is flowing directly into natal Venus in the 5th — the house of love, creative pleasure, intimate expression, the private warm interior. Venus in Scorpio in the 5th is where your feelings actually live, underneath the Gemini rising exterior that presents as casual. This is the depth core. And today, Jupiter is pouring abundance directly into it.</p>
+
+      <p>In practical terms, this is the dating window opening in earnest. The correlation we've tracked all year — Jupiter direct equals dating flow — is active, and today it's making its most exact contact with the love center of your chart. <em>This week, something in the attraction/connection sphere wants to move.</em> Not forced, not sought — but if something presents itself, the sky is as favorable as it gets.</p>
+
+      <p>It's also about creative joy and self-worth. Jupiter trine Venus isn't only romantic — it's about feeling genuinely good in your own skin, finding pleasure in your own work, allowing yourself to enjoy what you've built. After the Q1 burnout and the Tony grind, <em>receiving something good without immediately questioning whether you deserve it</em> is the practice this transit is asking for.</p>
+    </div>
+
+    <div class="divider"><span class="divider-inner">✦ ♅ ✦</span></div>
+
+    <!-- URANUS OPPOSITE NATAL SUN -->
+    <div class="section">
+      <div class="section-title">♅ URANUS &nbsp;·&nbsp; 29° TAURUS OPPOSING YOUR SUN — IDENTITY AT THE THRESHOLD</div>
+
+      <div class="aspect">Transiting Uranus at 29°52' Taurus (12th house) opposite natal Sun at 1° Sagittarius (6th house) — 1.13° orb.</div>
+      <div class="aspect">Transiting Uranus opposite natal North Node at 3° Sagittarius (6th house) — 3.13° orb.</div>
+
+      <p>Uranus is at 29°52' Taurus. The anaretic degree — the final degree of a sign, where seven years of accumulated energy is compressed into a single point before release. Uranus has been moving through Taurus since 2018–2019, dismantling fixed structures in finances, values, material life, and the body. Everything that transit shook loose, everything it revealed about what you actually value versus what you were told to value — all of that is concentrated right now at 29°.</p>
+
+      <p>And it's making a 1° opposition to your natal Sun at 1° Sagittarius. Your Sun — the core identity, the authentic self, the Sagittarian drive toward truth and expansion — is being disrupted from the 12th house side. Hidden things, unconscious material, what lives behind the scene. The opposition means: something from the unseen realm is pressing against how you're showing up in the world. It may feel like restlessness about your public identity. Or like you're being asked to integrate something about yourself that you've been keeping in shadow.</p>
+
+      <p>This is short-term. Uranus crosses into Gemini within days — possibly within the week — and when it does, it will leave your Sun behind. But <em>right now</em>, at this exact threshold moment, notice what feels like it's cracking open in how you understand yourself. What belief about who you are is being disrupted? That disruption is Uranian data, not threat.</p>
+    </div>
+
+    <div class="divider"><span class="divider-inner">✦ ♄ ✦</span></div>
+
+    <!-- SATURN INCONJUNCT NATAL CHIRON -->
+    <div class="section">
+      <div class="section-title">♄ SATURN &nbsp;·&nbsp; NEAR-EXACT INCONJUNCT NATAL CHIRON</div>
+
+      <div class="aspect">Transiting Saturn at 8°18' Aries (10th house) inconjunct natal Chiron at 8° Virgo (4th house) — 0.3° orb. Near-exact.</div>
+      <div class="aspect">Transiting Saturn at 8°18' Aries trine natal Mars at 10° Sagittarius (6th house) — 1.7° orb.</div>
+
+      <p>Saturn at 8°18' Aries in your 10th house is making a near-exact inconjunct (150°) to natal Chiron at 8° Virgo in the 4th. This is one of the trickier aspects in the toolkit: not a square (where conflict is direct and can be met head-on), not a trine (where things flow). An inconjunct is constant adjustment required — two energies that can see each other but can't quite integrate, so they require ongoing negotiation.</p>
+
+      <p>Saturn in the career house pressing on the foundational wound at near-exact orb. The translation: the more you accomplish professionally, the more the wound has things to say about it. Structure and accountability at work bring up the background voice that says it's not enough, that you don't belong, that the floor could give way. This isn't because you're doing anything wrong. It's because the wound specifically activates in the presence of real stakes. When nothing matters, the wound is quiet. When something matters this much, it shows up.</p>
+
+      <p>The counter is the trine: Saturn is simultaneously in a 1.7° trine to your natal Mars in Sagittarius. The drive is running clean. The work is actually working. Saturn's discipline and your Mars's fire are in agreement today. <em>The inner critic's commentary does not reflect the actual quality of what you're building.</em> Trust the trine, not the inconjunct.</p>
+    </div>
+
+    <div class="divider"><span class="divider-inner">✦ ☀ ✦</span></div>
+
+    <!-- TRANSIT-TO-TRANSIT -->
+    <div class="section ttt">
+      <div class="section-title">⊛ TRANSIT-TO-TRANSIT &nbsp;·&nbsp; DERIVED FROM PLANETS LIST</div>
+
+      <p><strong>Venus conjunct Uranus — 29°24' and 29°52' Taurus — 0.47° orb, near-exact.</strong> Both planets at the anaretic degree of Taurus, both about to cross into Gemini. The planet of love and values is embracing the planet of disruption and liberation right at the threshold. This is electric and slightly unpredictable energy in matters of attraction, values, and money. It can bring unexpected connections, surprising shifts in what you want, or a jolt of clarity about what you actually value versus what you've settled for. When Venus crosses Gemini, she approaches your South Node at 3° Gemini — watch what old patterns of mirroring or adapting arise in relational contexts over the coming weeks. That's information.</p>
+
+      <p><strong>Mercury conjunct Mars — 13°05' and 10°45' Aries — 2.25° orb.</strong> The thinking planet and the action planet in the same fire sign, both in your 10th house. Communication today was probably faster, sharper, and more direct than usual. The temptation with this pairing is to speak before the thought is fully formed — the Aries impulsivity applied to both mind and mouth. For the EverForce X kickoff, this was probably an asset: confident, decisive, moving quickly. For sensitive conversations, it calls for a beat of pause before sending.</p>
+
+      <p><strong>Mars conjunct Saturn — 10°45' and 8°18' Aries — 2.47° orb.</strong> Drive meeting discipline in the 10th house. This is one of the most productive pairings in astrology when working well — the urgency of Mars channeled through the structure of Saturn. The frustration version is: everything is moving slower than you want it to and it's annoying. The productive version is: you're doing the right work in the right sequence and it's actually building something. Given the trine to natal Mars and the North Node on your Midheaven, today is closer to the productive version.</p>
+
+      <p><strong>Neptune trine natal North Node — 3°01' Aries trine 3° Sagittarius — 0° orb, exact.</strong> Vision is pouring directly into the soul path right now. Neptune exact trine the North Node means the intuitive, inspired, imaginative current of Neptune is feeding the direction your life is meant to grow toward. Creative vision and spiritual perception are aligned with your evolutionary direction. Pay attention to what you're dreaming about or imagining lately — it has more signal than usual.</p>
+    </div>
+
+    <!-- PRACTICAL APPLICATION -->
+    <div class="section practical">
+      <div class="section-title">🔭 PRACTICAL APPLICATION</div>
+
+      <div class="prac-row">
+        <span class="prac-label">FOR WORK</span>
+        The North Node on your Midheaven and the EverForce X kickoff happening under the same sky is a signal worth trusting. You're not in the wrong place. The task force role is not overreach — it's the Midheaven activating. Let that steady you if imposter energy comes up. The foundation is actually solid today.
+      </div>
+
+      <div class="prac-row">
+        <span class="prac-label">FOR COMMUNICATION</span>
+        Mercury conjunct Mars in Aries means your words are moving fast and landing with force. That's useful in kickoffs and presentations. For anything requiring nuance or careful tone — particularly anything involving Tony or anything you want Michael to receive a specific way — write it, wait an hour, read it again before sending.
+      </div>
+
+      <div class="prac-row">
+        <span class="prac-label">FOR THE INNER CRITIC</span>
+        If the "not enough" loop comes up tonight after a big day, this is the script: Saturn is inconjunct natal Chiron by 0.3° — the wound is being pressed on by the weight of real professional stakes. That's the transit talking, not the truth. The North Node was on your Midheaven today. You showed up. The receipts exist.
+      </div>
+
+      <div class="prac-row">
+        <span class="prac-label">FOR LOVE + CONNECTION</span>
+        Jupiter is making its most exact contact with natal Venus all year — today, within 0.05°. If something in the dating/connection realm presents itself this week, the sky is as favorable as it gets. Don't manufacture it. But don't dismiss it either. You're allowed to receive something good right now.
+      </div>
+
+      <div class="prac-row">
+        <span class="prac-label">FOR ENERGY</span>
+        Mars has moved through. Neptune is arriving. This evening is genuinely better suited to rest, a long shower, something beautiful, a meal you actually enjoy. The walking pad, a quiet watch, music — let Neptune's porosity do its work. You don't need to decompress productively. You just need to decompress.
+      </div>
+
+      <div class="prac-row">
+        <span class="prac-label">FOR THE BODY</span>
+        Mars trine natal Mars near-exact means the body was running hot today. Good energy, physical drive. That also means by evening there may be a crash — not crisis, just the natural drop after peak activation. Feed yourself something real. Sleep will likely be deep tonight.
+      </div>
+    </div>
+
+    <!-- SHORT VERSION -->
+    <div class="section summary">
+      <div class="section-title">✨ THE SHORT VERSION</div>
+      <p>The transiting North Node was conjunct your natal Midheaven today — less than a degree — at the exact same moment it opposed your natal Chiron. The soul's current direction and your career destiny point are on the same axis as the foundational wound. This is the sky confirming, precisely, that the work you're building and the healing you're doing are the same project. EverForce X kicked off under this sky. That is not nothing.</p>
+      <p>Jupiter made an essentially exact trine to natal Venus today — the most precise aspect in the chart — which means the dating window is open in earnest and the capacity to receive something good is at a peak. Venus and Uranus are conjunct at 29° Taurus, both about to cross into Gemini, bringing electric disruption to love and values right at the threshold. Mars drove the day with fire and focus; Neptune is washing in for the evening. Let it. You don't need to stay productive. <em>The wound is not the final word. The Midheaven is.</em></p>
+    </div>
+
+    <div class="footer">☽ &nbsp; reading archived &nbsp;·&nbsp; april 23, 2026 &nbsp; ☾</div>
+
+  </div>
+</div>
+
+<script>
+(function () {
+  const field = document.getElementById('starfield');
+  const syms  = ['✦','✧','★','✩','·','✦','·','·','✦'];
+  for (let i = 0; i < 90; i++) {
+    const s   = document.createElement('span');
+    s.textContent = syms[Math.floor(Math.random() * syms.length)];
+    const size = 5 + Math.random() * 13;
+    const dur  = 2 + Math.random() * 5;
+    const del  = Math.random() * 6;
+    const op   = 0.15 + Math.random() * 0.6;
+    s.style.cssText = [
+      'position:absolute',
+      `left:${(Math.random()*100).toFixed(2)}%`,
+      `top:${(Math.random()*100).toFixed(2)}%`,
+      `font-size:${size.toFixed(1)}px`,
+      `color:rgba(210,165,45,${op.toFixed(2)})`,
+      `animation:twinkle ${dur.toFixed(1)}s ease-in-out ${del.toFixed(1)}s infinite`,
+      'pointer-events:none',
+      'user-select:none',
+      'line-height:1'
+    ].join(';');
+    field.appendChild(s);
+  }
+})();
+</script>
+
+</body>
+</html>

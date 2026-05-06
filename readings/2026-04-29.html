@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>April 29, 2026 ✦ Transit Reading</title>
+  <link href="https://fonts.googleapis.com/css2?family=VT323&family=Press+Start+2P&family=IBM+Plex+Mono:ital,wght@0,400;1,400&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:             #090b1f;
+      --surface:        #111535;
+      --surface2:       #0d1029;
+      --border:         #312868;
+      --border-hi:      #7c62c0;
+      --text:           #ede8d8;
+      --dim:            #9282b0;
+      --gold:           #c89a2a;
+      --gold-hi:        #e8b830;
+      --gold-glow:      rgba(200,154,42,0.2);
+      --amethyst:       #8a5cb8;
+      --amethyst-glow:  rgba(138,92,184,0.18);
+      --teal:           #2a9080;
+      --teal-glow:      rgba(42,144,128,0.16);
+      --rose:           #aa3868;
+      --rose-glow:      rgba(170,56,104,0.18);
+      --moon:           #8898cc;
+      --moon-glow:      rgba(136,152,204,0.17);
+      --orange:         #c87840;
+      --orange-glow:    rgba(200,120,60,0.16);
+      --sextile:        #4a88cc;
+      --sextile-glow:   rgba(74,136,204,0.15);
+    }
+
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background: repeating-linear-gradient(
+        to bottom,
+        transparent 0px, transparent 3px,
+        rgba(0,0,0,0.04) 3px, rgba(0,0,0,0.04) 4px
+      );
+      pointer-events: none; z-index: 9998;
+    }
+
+    body {
+      background-color: var(--bg);
+      background-image:
+        radial-gradient(ellipse at 18% 12%, rgba(80,50,180,0.28) 0%, transparent 52%),
+        radial-gradient(ellipse at 82% 22%, rgba(160,50,100,0.18) 0%, transparent 45%),
+        radial-gradient(ellipse at 50% 85%, rgba(40,70,170,0.22) 0%, transparent 52%),
+        radial-gradient(ellipse at 8%  88%, rgba(80,40,130,0.18) 0%, transparent 45%);
+      color: var(--text);
+      font-family: 'VT323', monospace;
+      font-size: 20px;
+      min-height: 100vh;
+      padding: 28px 16px 64px;
+      position: relative;
+    }
+
+    #starfield { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; transform: scale(0.9); }
+      50%       { opacity: 1;   transform: scale(1.15); }
+    }
+    @keyframes shimmer {
+      0%   { background-position: -200% center; }
+      100% { background-position: 200% center; }
+    }
+
+    /* ─── WINDOW ─────────────────────────────── */
+    .window {
+      position: relative; z-index: 1;
+      max-width: 840px; margin: 0 auto;
+      border: 2px solid var(--border-hi);
+      box-shadow:
+        inset -1px -1px rgba(0,0,0,0.9),
+        inset  1px  1px rgba(180,150,255,0.22),
+        0 0 70px rgba(90,55,180,0.2),
+        0 0 140px rgba(90,55,180,0.08);
+    }
+
+    .titlebar {
+      background: linear-gradient(90deg, #1a1048 0%, #5a2898 32%, #a02878 62%, #1a1048 100%);
+      padding: 5px 8px 5px 10px;
+      display: flex; align-items: center; justify-content: space-between;
+      user-select: none;
+    }
+    .titlebar-label {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 8px; color: #f0e0b8;
+      letter-spacing: 1px; text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+    }
+    .titlebar-btns { display: flex; gap: 3px; }
+    .tbtn {
+      width: 18px; height: 15px; background: #c0c0c0;
+      box-shadow: inset -1px -1px #6a6a6a, inset 1px 1px #ffffff;
+      font-size: 10px; font-family: 'VT323', monospace;
+      color: #000; display: flex; align-items: center; justify-content: center;
+      cursor: default; border: none;
+    }
+
+    .content { background: var(--bg); padding: 36px 44px 48px; }
+
+    /* ─── HEADER ─────────────────────────────── */
+    .reading-meta {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 8px; color: var(--gold);
+      letter-spacing: 2px; text-shadow: 0 0 14px var(--gold-glow);
+      margin-bottom: 8px;
+    }
+    h1 {
+      font-family: 'VT323', monospace;
+      font-size: 60px; line-height: 1;
+      background: linear-gradient(90deg, var(--gold) 0%, var(--gold-hi) 40%, #f8d060 60%, var(--gold) 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: shimmer 4s linear infinite;
+      margin-bottom: 6px;
+    }
+    .tagline {
+      font-family: 'IBM Plex Sans', sans-serif;
+      color: var(--dim); font-size: 13px;
+      margin-bottom: 24px; letter-spacing: 3px; text-transform: uppercase;
+    }
+
+    /* ─── MORNING PULSE ──────────────────────── */
+    .pulse-card {
+      background: rgba(200,154,42,0.06);
+      border: 1px solid rgba(200,154,42,0.22);
+      border-top: 3px solid var(--gold);
+      padding: 22px 28px;
+      margin-bottom: 22px;
+      text-align: center;
+      box-shadow: 0 0 40px rgba(200,154,42,0.08), inset 0 1px 0 rgba(255,255,255,0.03);
+    }
+    .pulse-label {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 7px; color: var(--gold);
+      letter-spacing: 3px; margin-bottom: 13px;
+      text-shadow: 0 0 10px var(--gold-glow);
+    }
+    .pulse-text {
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-style: italic;
+      font-size: 16px; line-height: 1.95;
+      color: var(--text);
+    }
+
+    /* ─── PLANET STRIP ───────────────────────── */
+    .planet-strip {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-top: 2px solid var(--gold);
+      box-shadow: 0 0 18px rgba(200,154,42,0.08);
+      padding: 14px 18px;
+      margin-bottom: 18px;
+    }
+    .strip-label {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 7px; color: var(--gold);
+      letter-spacing: 3px; margin-bottom: 13px;
+      text-shadow: 0 0 8px var(--gold-glow);
+    }
+    .planet-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 2px 24px;
+    }
+    .prow {
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding: 4px 0; border-bottom: 1px dotted rgba(50,40,100,0.7);
+      font-size: 18px;
+    }
+    .pname  { color: var(--amethyst); }
+    .pdeg   { color: var(--gold-hi); font-size: 16px; }
+    .phouse { color: var(--dim); font-size: 13px; }
+
+    /* ─── AT A GLANCE ────────────────────────── */
+    .glance-panel {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-top: 2px solid var(--amethyst);
+      box-shadow: 0 0 22px var(--amethyst-glow);
+      padding: 16px 18px;
+      margin-bottom: 26px;
+    }
+    .glance-grid { display: flex; flex-direction: column; gap: 8px; }
+    .glance-row {
+      display: flex; align-items: center;
+      gap: 12px; padding: 7px 10px;
+      background: rgba(12,12,36,0.6);
+      border: 1px solid rgba(50,40,100,0.5);
+    }
+    .glance-aspect-text {
+      font-family: 'IBM Plex Sans', sans-serif;
+      flex: 1; color: var(--text); line-height: 1.5;
+      font-size: 14px;
+    }
+    .glance-aspect-text em { color: var(--gold-hi); font-style: normal; }
+    .glance-right { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+    .orb-wrap { display: flex; align-items: center; gap: 6px; }
+    .orb-label { font-size: 14px; color: var(--dim); white-space: nowrap; }
+    .orb-track {
+      width: 56px; height: 4px;
+      background: rgba(50,40,100,0.8);
+      border: 1px solid rgba(50,40,100,1);
+      border-radius: 2px; overflow: hidden;
+    }
+    .orb-fill { height: 100%; border-radius: 2px; }
+    .orb-fill.conjunction { background: var(--gold-hi); box-shadow: 0 0 6px var(--gold); }
+    .orb-fill.trine       { background: var(--teal);    box-shadow: 0 0 6px var(--teal-glow); }
+    .orb-fill.opposition  { background: var(--amethyst);box-shadow: 0 0 6px var(--amethyst); }
+    .orb-fill.inconjunct  { background: var(--orange);  box-shadow: 0 0 6px var(--orange); }
+    .orb-fill.square      { background: var(--rose);    box-shadow: 0 0 6px var(--rose); }
+    .orb-fill.sextile     { background: var(--sextile); box-shadow: 0 0 6px var(--sextile); }
+
+    .badge {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 6px; padding: 3px 6px; white-space: nowrap;
+      letter-spacing: 0.5px; border-radius: 2px;
+    }
+    .badge.conjunction { background: rgba(200,154,42,0.15);  color: var(--gold-hi);  border: 1px solid var(--gold);     }
+    .badge.trine       { background: rgba(42,144,128,0.15);  color: var(--teal);     border: 1px solid var(--teal);     }
+    .badge.opposition  { background: rgba(138,92,184,0.15);  color: var(--amethyst); border: 1px solid var(--amethyst); }
+    .badge.inconjunct  { background: rgba(200,120,60,0.15);  color: var(--orange);   border: 1px solid var(--orange);   }
+    .badge.square      { background: rgba(170,56,104,0.15);  color: var(--rose);     border: 1px solid var(--rose);     }
+    .badge.sextile     { background: rgba(74,136,204,0.15);  color: var(--sextile);  border: 1px solid var(--sextile);  }
+
+    /* ─── DIVIDER ─────────────────────────────── */
+    .divider { display: flex; align-items: center; gap: 12px; margin: 22px 0; }
+    .divider::before, .divider::after {
+      content: ''; flex: 1; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border-hi), transparent);
+    }
+    .divider-inner {
+      font-size: 20px; color: var(--gold);
+      letter-spacing: 10px; text-shadow: 0 0 10px var(--gold-glow);
+      white-space: nowrap;
+    }
+
+    /* ─── COLLAPSIBLE SECTIONS ───────────────── */
+    .section {
+      margin-bottom: 14px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      opacity: 0; transform: translateY(14px);
+      transition: opacity 0.45s ease, transform 0.45s ease, border-color 0.2s;
+    }
+    .section.visible { opacity: 1; transform: translateY(0); }
+    .section:hover { border-color: var(--border-hi); }
+    .section { position: relative; }
+    .section::before {
+      content: ''; display: block;
+      position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+    }
+    .section.headline::before  { background: var(--gold);     box-shadow: 2px 0 14px var(--gold-glow); }
+    .section.sky::before       { background: var(--teal);     box-shadow: 2px 0 10px var(--teal-glow); }
+    .section.practical::before { background: var(--amethyst); box-shadow: 2px 0 12px var(--amethyst-glow); }
+    .section.headline  { border-color: rgba(200,154,42,0.4); }
+
+    .section-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 18px 14px 22px;
+      cursor: pointer; user-select: none;
+      transition: background 0.2s;
+    }
+    .section-header:hover { background: rgba(106,80,168,0.09); }
+    .section-header-left { display: flex; align-items: flex-start; gap: 12px; flex: 1; }
+    .section-icon { font-size: 22px; line-height: 1; margin-top: 2px; flex-shrink: 0; }
+    .headline  .section-icon { color: var(--gold-hi);  text-shadow: 0 0 10px var(--gold-glow); }
+    .sky       .section-icon { color: var(--teal);     }
+    .practical .section-icon { color: var(--amethyst); }
+    .section-header-text { flex: 1; }
+    .section-title {
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 11px; font-weight: 600;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      margin-bottom: 7px; line-height: 1.5;
+    }
+    .headline  .section-title { color: var(--gold-hi);  text-shadow: 0 0 8px var(--gold-glow); }
+    .sky       .section-title { color: var(--teal);     }
+    .practical .section-title { color: var(--amethyst); }
+    .section-teaser {
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 14px; color: var(--dim); line-height: 1.6;
+    }
+    .toggle-btn {
+      font-size: 16px; color: var(--dim);
+      transition: transform 0.3s ease, color 0.2s;
+      flex-shrink: 0; padding: 4px 6px;
+      font-family: 'IBM Plex Sans', sans-serif;
+    }
+    .section.open .toggle-btn { transform: rotate(180deg); color: var(--gold); }
+
+    .section-body {
+      overflow: hidden; max-height: 0; opacity: 0;
+      transition: max-height 0.45s ease, opacity 0.35s ease, padding 0.35s ease;
+      padding: 0 22px 0 22px;
+    }
+    .section.open .section-body { max-height: 3000px; opacity: 1; padding: 0 22px 24px 22px; }
+    .section.open .section-header { border-bottom: 1px solid var(--border); }
+
+    /* ─── ASPECTS ────────────────────────────── */
+    .aspect {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 13.5px; padding: 10px 14px;
+      margin: 14px 0; line-height: 1.62;
+      border-left: 3px solid;
+      display: flex; align-items: flex-start; gap: 10px;
+    }
+    .aspect-text { flex: 1; }
+    .aspect.conjunction { border-color: var(--gold);     background: rgba(200,154,42,0.09);  color: #f5d060; }
+    .aspect.trine       { border-color: var(--teal);     background: rgba(42,144,128,0.09);  color: #50d4bc; }
+    .aspect.opposition  { border-color: var(--amethyst); background: rgba(138,92,184,0.09);  color: #c09ee8; }
+    .aspect.square      { border-color: var(--rose);     background: rgba(170,56,104,0.09);  color: #e07098; }
+    .aspect.sextile     { border-color: var(--sextile);  background: rgba(74,136,204,0.09);  color: #88c0f8; }
+    .aspect-orb {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 6px; white-space: nowrap;
+      padding: 2px 5px; border-radius: 2px;
+      margin-top: 2px; flex-shrink: 0;
+      background: rgba(0,0,0,0.3); color: var(--dim);
+    }
+    .aspect-orb.exact { color: var(--gold-hi); border: 1px solid var(--gold); background: rgba(200,154,42,0.1); }
+
+    /* ─── PARAGRAPHS ─────────────────────────── */
+    p {
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 16px; line-height: 1.88;
+      margin-bottom: 16px; color: var(--text);
+    }
+    p:last-child { margin-bottom: 0; }
+    em     { color: var(--gold-hi); font-style: italic; }
+    strong { color: var(--amethyst); font-style: normal; }
+
+    /* ─── PULL QUOTE ─────────────────────────── */
+    .pull-quote {
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-style: italic; text-align: center;
+      font-size: 17px; line-height: 1.82;
+      color: var(--gold-hi);
+      padding: 20px 28px; margin: 18px 0;
+      border-top: 1px solid rgba(200,154,42,0.3);
+      border-bottom: 1px solid rgba(200,154,42,0.3);
+      text-shadow: 0 0 20px rgba(200,154,42,0.15);
+      position: relative;
+    }
+    .pull-quote::before {
+      content: '"'; font-family: 'VT323', monospace; font-style: normal;
+      position: absolute; top: -8px; left: 18px;
+      font-size: 52px; color: var(--gold); opacity: 0.35; line-height: 1;
+    }
+
+    /* ─── SECONDARY SKY GRID ─────────────────── */
+    .sky-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-top: 6px;
+    }
+    .sky-card {
+      font-family: 'IBM Plex Sans', sans-serif;
+      background: rgba(10,10,32,0.7);
+      border: 1px solid var(--border);
+      border-left: 3px solid;
+      padding: 14px 16px;
+      font-size: 14px; line-height: 1.78;
+      color: var(--text);
+    }
+    .sky-card.c-conj    { border-left-color: var(--gold);     }
+    .sky-card.c-trine   { border-left-color: var(--teal);     }
+    .sky-card.c-opp     { border-left-color: var(--amethyst); }
+    .sky-card.c-square  { border-left-color: var(--rose);     }
+    .sky-card.c-incon   { border-left-color: var(--orange);   }
+    .sky-card.c-mixed   { border-left-color: var(--moon);     }
+    .sky-card-title {
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 10px; font-weight: 600;
+      letter-spacing: 1px; text-transform: uppercase;
+      margin-bottom: 8px; line-height: 1.6;
+      display: flex; align-items: center; gap: 6px; flex-wrap: wrap;
+    }
+    .sky-card.c-conj   .sky-card-title { color: var(--gold-hi); }
+    .sky-card.c-trine  .sky-card-title { color: var(--teal);    }
+    .sky-card.c-opp    .sky-card-title { color: var(--amethyst);}
+    .sky-card.c-square .sky-card-title { color: var(--rose);    }
+    .sky-card.c-incon  .sky-card-title { color: var(--orange);  }
+    .sky-card.c-mixed  .sky-card-title { color: var(--moon);    }
+
+    /* ─── PRACTICAL GRID ─────────────────────── */
+    .prac-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 6px; }
+    .prac-card {
+      font-family: 'IBM Plex Sans', sans-serif;
+      background: rgba(138,92,184,0.07);
+      border: 1px solid rgba(138,92,184,0.17);
+      padding: 16px 18px;
+      font-size: 14px; line-height: 1.82; color: var(--text);
+    }
+    .prac-label {
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 10px; font-weight: 600;
+      color: var(--amethyst); text-transform: uppercase;
+      display: block; margin-bottom: 9px; letter-spacing: 1.5px;
+    }
+
+    /* ─── FOOTER ─────────────────────────────── */
+    .footer {
+      font-family: 'IBM Plex Sans', sans-serif;
+      text-align: center; color: var(--dim);
+      font-size: 13px; margin-top: 18px;
+      padding-top: 18px;
+      border-top: 1px solid var(--border);
+      letter-spacing: 3px; text-transform: uppercase;
+    }
+
+    /* ─── MOBILE ─────────────────────────────── */
+    @media (max-width: 640px) {
+      body      { padding: 10px 6px 48px; }
+      .content  { padding: 20px 16px 32px; }
+      h1        { font-size: 38px; }
+      .titlebar-label  { font-size: 6px; letter-spacing: 0; }
+      .planet-grid     { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
+      .section-title   { font-size: 7.5px; }
+      .section-header  { padding: 12px 14px 12px 20px; border-bottom: 1px solid var(--border); cursor: default; }
+      .glance-row      { flex-wrap: wrap; row-gap: 6px; }
+      .glance-right    { margin-left: auto; }
+      .pull-quote      { padding: 16px 16px; font-size: 14px; }
+      .sky-grid        { grid-template-columns: 1fr; }
+      .prac-grid       { grid-template-columns: 1fr; }
+      .pulse-card      { padding: 16px 16px; }
+
+      .section { opacity: 1 !important; transform: none !important; }
+      .section-body {
+        max-height: none !important;
+        opacity: 1 !important;
+        padding: 0 14px 18px 14px !important;
+        overflow: visible !important;
+      }
+      .toggle-btn { display: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="starfield"></div>
+
+<div class="window">
+
+  <div class="titlebar">
+    <span class="titlebar-label">✦ TRANSIT READING &nbsp;·&nbsp; JORDAN &nbsp;·&nbsp; APRIL 29, 2026 ✦</span>
+    <div class="titlebar-btns">
+      <button class="tbtn">_</button>
+      <button class="tbtn">□</button>
+      <button class="tbtn">✕</button>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <div class="reading-meta">WEDNESDAY &nbsp;·&nbsp; MORNING &nbsp;·&nbsp; CHICAGO</div>
+    <h1>April 29, 2026</h1>
+    <div class="tagline">☽ &nbsp;current transits &nbsp;·&nbsp; natal wheel active &nbsp; ☾</div>
+
+    <!-- MORNING PULSE -->
+    <div class="pulse-card">
+      <div class="pulse-label">✦ MORNING PULSE</div>
+      <div class="pulse-text">
+        Uranus is at 0°48' from exact opposition to your natal Sun — the identity disruption you've been sensing isn't coming, it's here.<br>
+        Jupiter is simultaneously at exact opposition to both natal Uranus and Neptune in your 7th house (0°17'), illuminating what you actually want in partnership.<br>
+        The restlessness today is signal.
+      </div>
+    </div>
+
+    <!-- PLANET STRIP -->
+    <div class="planet-strip">
+      <div class="strip-label">▸ TRANSITING PLANETS — LIVE (astrolibrary.org, ~8:50am CDT)</div>
+      <div class="planet-grid">
+        <div class="prow"><span class="pname">☉ Sun</span>      <span class="pdeg">9°16' ♉</span>  <span class="phouse">11th</span></div>
+        <div class="prow"><span class="pname">☽ Moon</span>     <span class="pdeg">15°00' ♎</span> <span class="phouse">4th-5th</span></div>
+        <div class="prow"><span class="pname">☿ Mercury</span>  <span class="pdeg">23°21' ♈</span> <span class="phouse">10th</span></div>
+        <div class="prow"><span class="pname">♀ Venus</span>    <span class="pdeg">6°34' ♊</span>  <span class="phouse">12th</span></div>
+        <div class="prow"><span class="pname">♂ Mars</span>     <span class="pdeg">15°17' ♈</span> <span class="phouse">10th</span></div>
+        <div class="prow"><span class="pname">♃ Jupiter</span>  <span class="pdeg">18°43' ♋</span> <span class="phouse">1st</span></div>
+        <div class="prow"><span class="pname">♄ Saturn</span>   <span class="pdeg">8°59' ♈</span>  <span class="phouse">10th</span></div>
+        <div class="prow"><span class="pname">♅ Uranus</span>   <span class="pdeg">0°12' ♊</span>  <span class="phouse">12th</span></div>
+        <div class="prow"><span class="pname">♆ Neptune</span>  <span class="pdeg">3°13' ♈</span>  <span class="phouse">10th</span></div>
+        <div class="prow"><span class="pname">♇ Pluto</span>    <span class="pdeg">5°30' ♒</span>  <span class="phouse">8th</span></div>
+        <div class="prow"><span class="pname">⚷ Chiron</span>   <span class="pdeg">27°25' ♈</span> <span class="phouse">11th</span></div>
+        <div class="prow"><span class="pname">☊ N.Node</span>   <span class="pdeg">7°13' ♓ R</span><span class="phouse">9th</span></div>
+      </div>
+    </div>
+
+    <!-- AT A GLANCE -->
+    <div class="glance-panel">
+      <div class="strip-label">▸ KEY ASPECTS — SORTED BY EXACTNESS</div>
+      <div class="glance-grid">
+
+        <div class="glance-row">
+          <div class="glance-aspect-text">♆ Neptune <em>△ trine</em> natal North Node 3° ♐ — backdrop, essentially exact</div>
+          <div class="glance-right">
+            <div class="orb-wrap"><span class="orb-label">0°13'</span>
+              <div class="orb-track"><div class="orb-fill trine" style="width:99%"></div></div>
+            </div>
+            <span class="badge trine">TRINE</span>
+          </div>
+        </div>
+
+        <div class="glance-row">
+          <div class="glance-aspect-text">♃ Jupiter <em>☍ opposite</em> natal Uranus + Neptune 19° ♑ — EXACT TODAY</div>
+          <div class="glance-right">
+            <div class="orb-wrap"><span class="orb-label">0°17'</span>
+              <div class="orb-track"><div class="orb-fill opposition" style="width:98%"></div></div>
+            </div>
+            <span class="badge opposition">OPP</span>
+          </div>
+        </div>
+
+        <div class="glance-row">
+          <div class="glance-aspect-text">☿ Mercury <em>✶ sextile</em> natal Saturn 24° ♒ — applying</div>
+          <div class="glance-right">
+            <div class="orb-wrap"><span class="orb-label">0°39'</span>
+              <div class="orb-track"><div class="orb-fill sextile" style="width:94%"></div></div>
+            </div>
+            <span class="badge sextile">SEXT</span>
+          </div>
+        </div>
+
+        <div class="glance-row">
+          <div class="glance-aspect-text">♆ Neptune <em>☌ conjunct</em> natal Moon 4° ♈ — tightening</div>
+          <div class="glance-right">
+            <div class="orb-wrap"><span class="orb-label">0°47'</span>
+              <div class="orb-track"><div class="orb-fill conjunction" style="width:94%"></div></div>
+            </div>
+            <span class="badge conjunction">CONJ</span>
+          </div>
+        </div>
+
+        <div class="glance-row">
+          <div class="glance-aspect-text">☊ N.Node <em>☌ conjunct</em> natal Midheaven 8° ♓ — very tight</div>
+          <div class="glance-right">
+            <div class="orb-wrap"><span class="orb-label">0°47'</span>
+              <div class="orb-track"><div class="orb-fill conjunction" style="width:94%"></div></div>
+            </div>
+            <span class="badge conjunction">CONJ</span>
+          </div>
+        </div>
+
+        <div class="glance-row">
+          <div class="glance-aspect-text">♅ Uranus <em>☍ opposite</em> natal Sun 1° ♐ — applying · HEADLINE</div>
+          <div class="glance-right">
+            <div class="orb-wrap"><span class="orb-label">0°48'</span>
+              <div class="orb-track"><div class="orb-fill opposition" style="width:94%"></div></div>
+            </div>
+            <span class="badge opposition">OPP</span>
+          </div>
+        </div>
+
+        <div class="glance-row">
+          <div class="glance-aspect-text">♄ Saturn <em>△ trine</em> natal Mars 10° ♐ — applying</div>
+          <div class="glance-right">
+            <div class="orb-wrap"><span class="orb-label">1°01'</span>
+              <div class="orb-track"><div class="orb-fill trine" style="width:87%"></div></div>
+            </div>
+            <span class="badge trine">TRINE</span>
+          </div>
+        </div>
+
+        <div class="glance-row">
+          <div class="glance-aspect-text">☉ Sun <em>△ trine</em> natal Chiron 8° ♍ — separating</div>
+          <div class="glance-right">
+            <div class="orb-wrap"><span class="orb-label">1°16'</span>
+              <div class="orb-track"><div class="orb-fill trine" style="width:84%"></div></div>
+            </div>
+            <span class="badge trine">TRINE</span>
+          </div>
+        </div>
+
+        <div class="glance-row">
+          <div class="glance-aspect-text">♀ Venus <em>□ square</em> natal Chiron 8° ♍ + MC 8° ♓ — applying</div>
+          <div class="glance-right">
+            <div class="orb-wrap"><span class="orb-label">1°26'</span>
+              <div class="orb-track"><div class="orb-fill square" style="width:80%"></div></div>
+            </div>
+            <span class="badge square">SQ</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="divider"><span class="divider-inner">✦ ♅ ✦</span></div>
+
+    <!-- ═══ HEADLINE ═══════════════════════════════════════════════════ -->
+    <div class="section headline open visible">
+      <div class="section-header" onclick="toggleSection(this)">
+        <div class="section-header-left">
+          <span class="section-icon">♅</span>
+          <div class="section-header-text">
+            <div class="section-title">HEADLINE · URANUS OPPOSING NATAL SUN — THE IDENTITY DISRUPTION IS EXACT</div>
+            <div class="section-teaser">0°48' applying · Gemini 12th house opposing Sagittarius 6th house soul-path axis</div>
+          </div>
+        </div>
+        <span class="toggle-btn">▼</span>
+      </div>
+      <div class="section-body">
+
+        <div class="aspect opposition">
+          <div class="aspect-text">Transiting Uranus at 0°12' Gemini (12th house) opposite natal Sun at 1°00' Sagittarius (6th house)</div>
+          <span class="aspect-orb exact">0°48' APPLYING</span>
+        </div>
+
+        <p>Uranus moved into Gemini and is now within 0°48' of exact opposition to your natal Sun — and it's still applying. We've been watching this approach for weeks. This is the transit where the gap between <em>who you actually are</em> and <em>how you've been operating</em> becomes undeniable. The 12th house is the unconscious, the hidden, the patterns that run without permission. Gemini in the 12th is the mirroring reflex, the South Node adaptation, the expert shapeshifter who became fluent in everyone else's frequency before her own. Uranus there is the lightning bolt that makes the gap visible. Sagittarius in the 6th is where your soul path lives, where your daily labor meets your North Node — the place that requires your most honest, unperformed self to function well. The opposition says: the hidden self is disrupting the real self, and neither can pretend much longer.</p>
+
+        <p>This doesn't necessarily arrive as an event. More likely it comes as a realization — something you've been carrying about your work identity, your daily shape, the version of yourself you've been performing in professional spaces, suddenly crystallized into a clear knowing. <em>This doesn't fit anymore.</em> Or: <em>I've been adapting to this and I don't want to.</em> When that lands today or in the next few days, don't rush to act on it. Let the lightning bolt illuminate before you start moving furniture.</p>
+
+        <div class="pull-quote">The disruption isn't punishment. It's Uranus handing you a mirror and saying: this is what's actually true about you. You can work with this now.</div>
+
+      </div>
+    </div>
+
+    <!-- ═══ REST OF THE SKY ══════════════════════════════════════════════ -->
+    <div class="section sky open visible">
+      <div class="section-header" onclick="toggleSection(this)">
+        <div class="section-header-left">
+          <span class="section-icon">✦</span>
+          <div class="section-header-text">
+            <div class="section-title">REST OF THE SKY</div>
+            <div class="section-teaser">Jupiter exact · Neptune/Moon · Venus building · Saturn/Mars · Mercury integrating</div>
+          </div>
+        </div>
+        <span class="toggle-btn">▼</span>
+      </div>
+      <div class="section-body">
+        <div class="sky-grid">
+
+          <div class="sky-card c-opp">
+            <div class="sky-card-title">♃ JUPITER ☍ NATAL URANUS + NEPTUNE &nbsp;·&nbsp; 0°17' EXACT</div>
+            Jupiter at 18°43' Cancer is in exact opposition to both natal Uranus and natal Neptune at 19° Capricorn (7th house) today — both simultaneously, within 17 arcminutes. Jupiter in your 1st house (self, presence) is illuminating the Capricorn 7th house archetypes: the unconventional/electric pull (Uranus) and the fog/idealization in partnership (Neptune). What you actually want in relationship — not what you think you should want — is surfacing with unusual clarity today. Not as action, as inner knowing.
+          </div>
+
+          <div class="sky-card c-conj">
+            <div class="sky-card-title">♆ NEPTUNE ☌ NATAL MOON &nbsp;·&nbsp; 0°47' — TIGHTENING</div>
+            Tightened from 0°49' yesterday. The boundary between your feelings and the room's feelings is thin. Emotional intuition is running hot — trust what you sense without immediately building a story around it. The Libra Moon from yesterday has moved on; today's Libra Moon at 15° is squaring natal Uranus/Neptune in the 7th. Expect some interpersonal fog mid-day. It's transit weather.
+          </div>
+
+          <div class="sky-card c-square">
+            <div class="sky-card-title">♀ VENUS □ NATAL CHIRON + MC &nbsp;·&nbsp; 1°26' APPLYING</div>
+            Venus in Gemini is approaching exact square to both natal Chiron (8° Virgo, 4th house) and natal Midheaven (8° Pisces) simultaneously. Peak arrives in 2-3 days. Worth wound noise will increase in love and career contexts — the "am I enough / do I deserve this" loop is not a signal, it's weather. <em>Jupiter just passed its closest trine to natal Venus.</em> That's the more accurate fact.
+          </div>
+
+          <div class="sky-card c-trine">
+            <div class="sky-card-title">♄ SATURN △ NATAL MARS &nbsp;·&nbsp; 1°01' APPLYING</div>
+            Saturn at 9° Aries is building toward trine to natal Mars at 10° Sagittarius — the discipline-drive axis running clean. Effort you put in today has structural support. This is not a day to push through or force; it's a day to move with intention when called and rest without guilt when not.
+          </div>
+
+          <div class="sky-card c-mixed">
+            <div class="sky-card-title">☿ MERCURY — WOUND + CAREER AXIS &nbsp;·&nbsp; INTEGRATING</div>
+            Mercury at 23° Aries just peaked through 0°21' sesquiquadrate to natal Chiron AND 0°21' semi-square to natal Midheaven — both simultaneously, both at exactly 0°21'. That peak was yesterday/this morning. Whatever was said or heard in recent conversations that felt pointed or activating — that's the crest of this aspect. Mercury sextile natal Saturn (0°39') is now applying, moving communication toward structured, organized thinking.
+          </div>
+
+          <div class="sky-card c-trine">
+            <div class="sky-card-title">☉ SUN △ NATAL CHIRON &nbsp;·&nbsp; 1°16' — STILL ACTIVE</div>
+            Separating from yesterday's exact trine, but still within a degree and a half. The healing and the work are still pointing at the same project. North Node remains at 0°47' from natal Midheaven. The solar and nodal support for the career-soul path axis doesn't vanish overnight — it's just quietly doing its thing in the background.
+          </div>
+
+        </div>
+
+        <div class="aspect trine" style="margin-top: 14px;">
+          <div class="aspect-text">Transit-to-transit note: Venus at 6°34' Gemini and Uranus at 0°12' Gemini are 6°22' apart, separating — their exact conjunction passed ~April 24-25. The Venus-Uranus charge has been active all week and is still in the room even as it separates. (Derived from Planets list.)</div>
+          <span class="aspect-orb">T-T OBS</span>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ═══ PRACTICAL ════════════════════════════════════════════════════ -->
+    <div class="section practical open visible">
+      <div class="section-header" onclick="toggleSection(this)">
+        <div class="section-header-left">
+          <span class="section-icon">🔭</span>
+          <div class="section-header-text">
+            <div class="section-title">PRACTICAL APPLICATION</div>
+            <div class="section-teaser">Identity · Work · Communication · Inner critic · Love · Energy</div>
+          </div>
+        </div>
+        <span class="toggle-btn">▼</span>
+      </div>
+      <div class="section-body">
+        <div class="prac-grid">
+          <div class="prac-card">
+            <span class="prac-label">FOR IDENTITY</span>
+            If a realization arrives today about what doesn't fit anymore — in your work self, your daily presentation, the shape you've been inhabiting — don't dismiss it and don't immediately act on it. Name it. Write it down. Uranus is handing you a mirror, not a to-do list.
+          </div>
+          <div class="prac-card">
+            <span class="prac-label">FOR WORK</span>
+            Saturn-Mars trine applying means disciplined effort lands well today. Node still on Midheaven. But with Uranus exactly opposing the Sun from the 12th, don't be surprised if something about a work dynamic surfaces that you've been quietly aware of and not named. Let it be visible.
+          </div>
+          <div class="prac-card">
+            <span class="prac-label">FOR COMMUNICATION</span>
+            Mercury's wound/career activation has crested and is integrating. Anything pointed that landed in conversation recently — sit with it before responding. Mercury sextile natal Saturn means organized, structured communication works well today. Lead with structure over feeling.
+          </div>
+          <div class="prac-card">
+            <span class="prac-label">FOR THE INNER CRITIC</span>
+            Venus is building toward square natal Chiron — the worth wound will get louder over the next few days, especially in love contexts. Counter now before it peaks: <em>"Jupiter was exact trine my natal Venus this week. That's the more accurate data point."</em>
+          </div>
+          <div class="prac-card">
+            <span class="prac-label">FOR LOVE</span>
+            Jupiter exact opposing your 7th house outer planets is illuminating what you actually want — not the performance of it. If you notice a clear, honest knowing about what you're looking for surfacing today, receive it without editing. That's Jupiter doing its job.
+          </div>
+          <div class="prac-card">
+            <span class="prac-label">FOR ENERGY</span>
+            Neptune on the Moon means the pace should be honest. The Libra Moon squaring natal Uranus/Neptune mid-day might bring a foggy interpersonal moment — let it pass without treating it as fact. Saturn-Mars trine means your drive is reliable when you actually need it; you don't have to pre-generate it.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">☽ &nbsp; reading archived &nbsp;·&nbsp; april 29, 2026 &nbsp; ☾</div>
+
+  </div>
+</div>
+
+<script>
+(function () {
+  const field = document.getElementById('starfield');
+  const syms  = ['✦','✧','★','✩','·','✦','·','·','✦'];
+  for (let i = 0; i < 90; i++) {
+    const s = document.createElement('span');
+    s.textContent = syms[Math.floor(Math.random() * syms.length)];
+    const size = 5 + Math.random() * 13;
+    const dur  = 2 + Math.random() * 5;
+    const del  = Math.random() * 6;
+    const op   = 0.15 + Math.random() * 0.6;
+    s.style.cssText = [
+      'position:absolute',
+      `left:${(Math.random()*100).toFixed(2)}%`,
+      `top:${(Math.random()*100).toFixed(2)}%`,
+      `font-size:${size.toFixed(1)}px`,
+      `color:rgba(210,165,45,${op.toFixed(2)})`,
+      `animation:twinkle ${dur.toFixed(1)}s ease-in-out ${del.toFixed(1)}s infinite`,
+      'pointer-events:none','user-select:none','line-height:1'
+    ].join(';');
+    field.appendChild(s);
+  }
+})();
+
+function toggleSection(header) {
+  header.closest('.section').classList.toggle('open');
+}
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.05 });
+
+document.querySelectorAll('.section:not(.visible)').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
