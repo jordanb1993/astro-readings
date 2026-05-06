@@ -158,6 +158,25 @@ When building a friend's natal chart: use `natal/jordan.html` as the structural 
 
 ---
 
+## GitHub Backup + Automated Daily Routine
+
+Workspace is mirrored to **`https://github.com/jordanb1993/astro-readings`** (private repo).
+
+**Daily routine** (`trig_01Rtm1xSST2GbdCZh896F2vP`) runs at **4am CDT / 9am UTC** every day:
+- Clones repo, installs `pyswisseph`, calculates planet positions via Swiss Ephemeris
+- Writes `readings/YYYY-MM-DD.md`, commits, and pushes to GitHub
+- Obsidian Git plugin auto-pulls into vault within 30 minutes
+
+Manage the routine at `claude.ai/code/routines`. If the routine fails, check the routine log there first before debugging here.
+
+After any significant update to CLAUDE.md, INSTRUCTIONS.md, or KNOWLEDGE.md — push to GitHub so the routine picks up the latest context:
+```
+cd "/Users/jordanashleybarney/Library/Mobile Documents/iCloud~md~obsidian/Documents/the stars"
+git add CLAUDE.md INSTRUCTIONS.md KNOWLEDGE.md && git commit -m "update workspace files" && git push origin main
+```
+
+---
+
 ## Planet Data Workflow — Live Web Pull (No Screenshots Needed)
 
 Claude pulls live planetary positions directly from the web at the start of every reading. No Time Passages screenshots required.
