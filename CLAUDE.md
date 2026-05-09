@@ -194,15 +194,17 @@ Claude pulls live planetary positions directly from the web at the start of ever
 
 ---
 
-## Current Situation Snapshot — May 2026
+## Current Situation Snapshot — May 9, 2026
 
-**Career:** Associate Director of Content Operations at Everflow (title effective April 1, 2026). The Tony Cohn dynamic continues — documented in incident log. Jordan has built strong collaborative relationships with Dasha (technical collaborator) and Kristen Bell. Major active projects: EverForce X website audit task force (May 15 milestone), AI Use Case Repository (10 use cases, email to Michael Cole sent May 1), Masterclasses series. Jordan is building sophisticated AI systems and workflows — Claude Code is central to how she works.
+**Career:** Associate Director of Content Operations at Everflow (title effective April 1, 2026). Tony dynamic navigated and documented. Active projects: EverForce X website audit (May 15 milestone — Tony's role = copy only, design owned by Frank + Karine), AI Use Case Repository (co-owned equally with Dasha), Masterclasses series. Jordan is building sophisticated AI systems — Claude Code is central to how she works. LinkedIn headline still shows Sr. Content Manager — update pending.
 
-**Finances:** Taxes filed April 2026. Student loan rehabilitation call made May 1 — form emailed, needs to be printed and mailed to Greenville TX. Credit score moved to Fair range (confirmed Apr 30). CC utilization at 92.7% ($140/mo in interest). Wage garnishment ended April — full paycheck returns ~May 8. Psychiatrist (Dr. Ashley George at Stella Center) has scheduled June appt — Jordan needs to find a PCP and buy an arm BP monitor before then.
+**Finances:** Major momentum in May. First full paycheck post-garnishment ($3,214, May 8). Savings: $2,384. CC balance: ~$6,177 (falling — $810 paid this cycle). Student loan rehab: initiated May 1, form downloaded, fill guide prepared, needs printing + mailing (PO Box 5609, Greenville TX). Loan balance: $113,665.81. Account TOP-certified — tax refund may be seized. Credit score: Fair range. The freeze response is cracking — Jordan is facing the numbers directly.
 
-**Personal:** Single. Actively wants to date this summer — goal is to be regularly dating, physically intimate, ideally finding one consistent connection. The early talking phase and first date are where it stalls. Two situationships in the past year (fall 2025, winter 2026) — now looking for something more real. Social energy rebuilding after a long isolation period (2020–2025). Romantic longing present and acknowledged. Has a life dream of moving to rural southwest coast of Ireland around age 45 — every financial milestone connects back to this.
+**Health:** Anthem / Sydney Health app resolved May 9 ✅. Arm BP monitor purchased May 9 ✅. PCP assignment: Anthem Member Services (855-383-7248) calling back Monday May 11 at 11am. June psychiatrist appointment (Dr. Ashley George, Stella Center) approaching — PCP before then. Walking pad: 4+ week streak, energy and back pain both improved.
 
-**Active transits as of May 2026:** Check live via astrolibrary.org at session start — do not rely on this snapshot for current sky data. Note Venus square Chiron was building late April.
+**Personal / Dating:** Back on Hinge as of May 2026, actively swiping. Texting Eleanor — discussing planning a first date. Considering Bumble for Pride month in June. Goal: 3+ real first dates this summer, ideally one consistent connection. Early talking phase is where it stalls — drafting openers and planning the ask trigger the same communication spiral as other texting contexts. Summer plans active: Portland with Carina (August), Michigan lake Airbnb, Dad visit July 19–27, Pride events + lesbian singles mixers in June. Ireland dream financially close ($0–116 savings gap at current levels).
+
+**Active transits as of May 9, 2026:** Uranus 0°15' from exact opposition natal Sun — arrived now. Neptune 0°29' from exact conjunction natal Moon — still applying. Jupiter 0°09' past opposition natal 7th house pair — separating but live. Check live via astrolibrary.org at session start for current positions.
 
 ---
 

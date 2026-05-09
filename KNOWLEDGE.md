@@ -144,8 +144,37 @@ What it actually felt like:
 **Key guidance for this transit:** Trust the inner knowing without letting it override the documented record. Neptune's gift is vision; Neptune's trap is fog. Stay grounded in facts and receipts while letting intuition inform. This transit will make multiple passes (direct, retrograde, direct) before completing.
 
 **First close orb noted:** April 22, 2026 at 1° applying.
-**Exact conjunction approaching:** Within weeks of April 22, 2026.
+**As of May 9, 2026:** Neptune at 3°31' Aries — 0°29' from exact conjunction. Applying. Still building toward exact.
 **Transit duration:** Through late 2026 / into 2027 (multiple passes with retrograde).
+
+---
+
+### Uranus Opposition Natal Sun (1° Sagittarius) — May 2026 onward
+
+**A new headline transit opening as of late April/May 2026.** Uranus entered Gemini in late April and reached 0°45' Gemini by May 9 — 0°15' from exact opposition to natal Sun at 1° Sagittarius. Exact within approximately 5–6 days of May 9.
+
+**Why this matters:** The Gemini-Sagittarius axis is the most personally loaded in the chart. South Node at 3° Gemini and anaretic Ascendant at 29° Gemini hold the mirroring-and-adapting survival pattern. Natal Sun, Mars, and North Node stack in Sagittarius on the other side. Uranus is pressing into the Sun from exactly the angle of the oldest pattern Jordan is working to dismantle.
+
+**What Uranus opposition Sun feels like:** Not dramatic crisis — a low-frequency static around automatic self-presentation. The way expertise is framed, the container defaulted to in professional rooms, the register used for "performing" a familiar role may start feeling slightly off-fit from the inside. The casing is being renovated; the signal inside is fine. Moments where the usual mode doesn't quite fit the current room = useful data, not evidence of something gone wrong.
+
+**Three-pass sequence to track:**
+- First exact opposition: ~May 14–15, 2026
+- Uranus will retrograde and make a second pass
+- Will eventually reach South Node at 3° Gemini (~2027) — disrupting the mirroring pattern at the root
+
+**Key guidance:** Observe what shifts in identity expression around the exact dates. Don't interpret the off-register feeling as malfunction. Document any moments where old self-presentation suddenly doesn't fit — these are Uranus doing exactly what it does.
+
+---
+
+### Jupiter Opposition Natal Uranus/Neptune (19° Capricorn, 7th house) — April–May 2026
+
+**The relational window transit, April–May 2026.** Transiting Jupiter at ~20° Cancer opposite natal Uranus and Neptune at 19° Capricorn (7th house). Peak was approximately late April; as of May 9, 0°09' past exact — still live but peak pressure separating.
+
+**What this activated:** The relational field opened. Partners who feel unconventional, unexpected, or atmospheric in quality are more likely to appear. Dating energy is genuinely available. Jupiter expanding the house of partnership while opposing the natal Uranus/Neptune pair = the "unusual or fated feeling" connections become available but also more charged with idealization risk.
+
+**Correlation with dating:** Jordan re-entered Hinge in May 2026 and began texting Eleanor (planning a first date). This is directly on the Jupiter opposition — the same transit timing. The window doesn't require urgency; what's developing can continue at its own pace without pressure. But the window is live.
+
+**As of May 9:** 0°09' past exact. Slowly separating but still meaningful orb. The relational energy remains foregrounded through May.
 
 ---
 
@@ -301,9 +330,17 @@ From Jordan's April 10th message (jointly crafted):
 - Sun exactly squaring natal Uranus AND Neptune April 9-10th = peak inner critic spiral and fog
 - Michael going on PTO = classic pattern trigger (Tony escalates when Michael isn't watching)
 
-### Current Status (April 13, 2026)
+### Status Update — May 9, 2026
 
-Michael Cole returns from PTO week of April 14. Documentation is ready. Jordan's conduct has been exemplary. The pattern is clear and documented. No proactive action needed — let the larger structure do its work. Show up professionally and let Michael handle it.
+Michael returned from PTO week of April 14. Jordan has continued showing up professionally. The larger dynamic has not been resolved at the root — the pattern is documented and known to Michael, but Tony remains Jordan's direct manager.
+
+**EverForce X (EFX) audit task force** launched April 23. Jordan is a lead on the audit — Tony's role in this project is **copy only**. Design is owned by Frank and Karine Martel. This creates a structural context where Tony's interference with Jordan's judgment is more limited. May 15 milestone active.
+
+**AI Use Case Repository** — Jordan is equal co-owner with Dasha (5/5 split, confirmed April 21). Jordan owns: stuck payouts, migration, A-B testing, exec reporting + 1 TBD. This represents a genuinely collaborative project outside Tony's direct management loop.
+
+**Key insight:** Jordan is building internal influence through project work and collaborative partnerships (Dasha, Kristen, Michael's direct attention) that structurally reduces the surface area of Tony's interference. The pattern hasn't disappeared — but Jordan's professional footprint is growing faster than the damage.
+
+**Conduct remains exemplary.** No action needed. Keep documenting if incidents occur; otherwise let the larger structure continue doing its work.
 
 ---
 
@@ -496,24 +533,28 @@ After the Tony escalation week (April 7-10), Jordan experienced a textbook Chiro
 
 ## PART TEN: WHAT JORDAN IS BUILDING TOWARD
 
-*Updated April 2026*
+*Updated May 9, 2026*
 
-**Professionally:** Associate Director of Content Operations at Everflow with genuine AI capability. Q2 underway. Navigating Tony dynamic. Building toward vision of combining astrology, healing, and AI in a new product form. Claude Code is the primary development environment. Multiple active projects. The Incident Log represents growing capability to document, track, and advocate.
+**Professionally:** Associate Director of Content Operations at Everflow — title effective April 1, 2026. Q2 active. Leading EverForce X website audit (May 15 milestone) and co-owning AI Use Case Repository with Dasha. Tony dynamic navigated and documented; Jordan's footprint growing through project leadership and direct relationships with Michael and Kristen. Building toward a vision of combining astrology, healing, and AI in a new product form. Claude Code is the primary development environment. LinkedIn headline still shows Sr. Content Manager — 6 weeks overdue, update needed.
 
-**Financially:** Taxes filed April 2026. Student loans are the next frontier — delinquent ~$110K federal, credit score ~530, SAVE plan likely best fit. Financial Assistant Project in Claude Code. The shame-free approach to facing numbers is the key.
+**Financially:** Major progress made in May 2026. Credit score now in Fair range (confirmed Apr 30). Garnishment fully cleared — first full paycheck May 8 ($3,214). Savings: $2,384. CC balance: ~$6,177 after May payments; utilization falling from 92.7%. Student loan rehabilitation initiated May 1 (called Default Resolution Group), form downloaded from studentaid.gov, fill guide prepared — needs printing and mailing to Greenville TX. Loan balance: $113,665.81 (as of May 8). Daily interest: $15.47. Account TOP-certified — tax refund may be intercepted. The shame-free approach is working: Jordan is facing the numbers directly for the first time.
 
-**Personally:** Post-Megan chapter complete. Dating window opening late April/May 2026 — Jupiter direct in 1st, Saturn separating from Moon, Mars in Aries, Venus in Taurus. The work of holding worth under silence and releasing with grace is the foundation for what comes next.
+**Personally:** Post-Megan chapter fully closed. Dating window is open and Jordan is in it — back on Hinge as of May 2026, actively swiping, texting Eleanor (planning a first date). This is exactly on the Jupiter opposition to the 7th house. Considering adding Bumble for Pride month in June. Goal: at least 3 real first dates this summer, ideally one consistent connection. Summer 2026 plans forming: Portland trip with Carina (August), Michigan lake Airbnb with friends, Pride month events including lesbian singles mixers. Dad visiting July 19–27. Summer feel of momentum and intention.
 
-**Spiritually:** Active practice. Ostara celebrated. Release ritual completed. The New Moon at her Midheaven/North Node degree seeded something real. The Queen of Wands and the High Priestess as twin archetypes of who she is becoming — outer fire and inner knowing, fully integrated.
+**Health:** Anthem login resolved — signed into Sydney Health app May 9. Arm BP monitor purchased. PCP assignment in progress (Anthem Member Services calling back Monday May 11 at 11am). June psychiatrist appointment with Dr. Ashley George (Stella Center) approaching — PCP sorted before then. Walking pad streak: 4+ weeks consistent. Arms Tue/Thu, squats Wed/Sat. Back pain reduced, energy improved. Body in better shape than it's been in years.
 
-**Identity:** The ongoing assignment — North Node in Sagittarius. Becoming more fully herself with each cycle. Uranus approaching the Ascendant suggests an identity threshold is arriving. Something about how she presents herself to the world is in final transformation.
+**Ireland:** The dream is financially closer than it has ever been — savings gap of $0–116 at current levels. At ~$1,000/paycheck saved, it becomes fundable within 1–2 more paychecks. The deeper question is choosing to go, not funding. Long-term dream of moving to rural southwest coast Ireland at ~45 remains the organizing horizon for every financial stability milestone.
 
-**The App Vision:** An AI-powered astrology tool that offers genuinely personalized readings to people who don't have Jordan's astrological literacy. The wound (Chiron) becoming the gift — making meaning-making through astrology accessible. Mercury stationing on the Chiron opposition pointed directly at this: *the wound becomes the most powerful gift.*
+**Spiritually:** Active practice. Ostara 2026 celebrated with Kate, Cat, and Marina. Release ritual completed April 11. New Moon at Midheaven/North Node degree seeded something real. The Queen of Wands and the High Priestess remain the twin archetypes — outer fire and inner knowing.
+
+**Identity:** Uranus is now opposition the natal Sun — the identity transit is no longer approaching, it has arrived. The casing built for older rooms is being renovated. The question Uranus brings to the Sun: which parts of "how Jordan shows up" were designed for environments she no longer lives in? The North Node assignment continues — becoming more fully herself with each cycle.
+
+**The App Vision:** An AI-powered astrology tool offering genuinely personalized readings to people who don't have Jordan's astrological literacy. Neptune conjunct Moon in the 10th supports visionary creative direction in career. The wound becoming the gift — Mercury chose Jordan's Chiron as its retrograde pivot. Keep writing down what arrives sideways about this, especially under the Neptune Moon conjunction.
 
 ---
 
 *End of Knowledge Document*
-*Last updated: April 2026*
+*Last updated: May 9, 2026*
 *Update Part Four (Tony situation) as developments occur*
 *Update Part Two (current transits) with new major correlations*
 *Update Part Ten (building toward) quarterly or at major life transitions*
