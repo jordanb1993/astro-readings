@@ -194,7 +194,7 @@ Claude pulls live planetary positions directly from the web at the start of ever
 
 ---
 
-## Current Situation Snapshot — May 9, 2026
+## Current Situation Snapshot — May 15, 2026
 
 **Career:** Associate Director of Content Operations at Everflow (title effective April 1, 2026). Tony dynamic navigated and documented. Active projects: EverForce X website audit (May 15 milestone — Tony's role = copy only, design owned by Frank + Karine), AI Use Case Repository (co-owned equally with Dasha), Masterclasses series. Jordan is building sophisticated AI systems — Claude Code is central to how she works. LinkedIn headline still shows Sr. Content Manager — update pending.
 
@@ -202,9 +202,9 @@ Claude pulls live planetary positions directly from the web at the start of ever
 
 **Health:** Anthem / Sydney Health app resolved May 9 ✅. Arm BP monitor purchased May 9 ✅. PCP assignment: Anthem Member Services (855-383-7248) calling back Monday May 11 at 11am. June psychiatrist appointment (Dr. Ashley George, Stella Center) approaching — PCP before then. Walking pad: 4+ week streak, energy and back pain both improved.
 
-**Personal / Dating:** Back on Hinge as of May 2026. First date with Eleanor May 10 — great time, slept together, continuing casually. Eleanor is autistic (late diagnosis), a heavy texter; Jordan managing volume by responding to what lands rather than matching her. Wednesday May 13 hangout confirmed (a couple hours, early bedtime flagged). Long-term compatibility an open question Jordan is holding comfortably. Key pattern: evangelical shame no longer shows up as direct guilt but as anxiety that casual enjoyment needs to be "justified" by seriousness — naming it dissolves it. Considering Bumble for Pride month in June. Summer plans active: Portland with Carina (August), Michigan lake Airbnb, Dad visit July 19–27, Pride events + lesbian singles mixers in June. Ireland dream financially close ($0–116 savings gap at current levels).
+**Personal / Dating:** Decision made May 15 to end things with Eleanor after two dates (May 10 + May 13). Eleanor's Mercury in Aquarius on Jordan's Saturn (conversational suppression) mirrors Jordan's enmeshed mother's frequency — recognized as South Node pull. Plan: natal chart reading sent as gift (synastry removed, natal sections deepened), casual call invite framed as "catching up" with no signal, then honest kind phone call. Tarot pull May 14 night named The Devil (South Node entanglement), Queen of Swords (action), Ten of Cups + Two of Cups as bookend destinations. Two of Cups held as tuning fork for genuine mutuality going forward. North Node Sagittarius work: recognized the pattern at 2 dates rather than much further in. Taurus New Moon ritual planned for tomorrow May 16 (exact 3:01 PM). Bumble for Pride month June on radar. Summer plans: Portland with Carina (August), Michigan lake Airbnb, Dad visit July 19–27, Pride events + lesbian singles mixers. Ireland dream financially close ($0–116 savings gap).
 
-**Active transits as of May 9, 2026:** Uranus 0°15' from exact opposition natal Sun — arrived now. Neptune 0°29' from exact conjunction natal Moon — still applying. Jupiter 0°09' past opposition natal 7th house pair — separating but live. Check live via astrolibrary.org at session start for current positions.
+**Active transits as of May 14, 2026:** Uranus 1°03' Gemini — exact opposition natal Sun (1° Sag), 2° from opposition North Node / conjunction South Node. Neptune 3°39' Aries — 0°21' from exact conjunction natal Moon (4° Aries), extremely tight. Saturn 10°38' Aries — exact trine natal Mars (10° Sag). Jupiter 21° Cancer in 1st house, separating. Check live via astrolibrary.org at session start for current positions.
 
 ---
 
