@@ -285,6 +285,71 @@ def active_transits_summary(positions, today_aspects):
     return " | ".join(lines)
 
 
+# ─── Life Snapshot (from Personal Life HQ → for reading context) ─────────────
+
+PERSONAL_HQ_PATH = os.path.expanduser(
+    "~/Library/Mobile Documents/iCloud~md~obsidian/Documents/Personal Life HQ"
+)
+
+def read_life_snapshot(date_str):
+    """
+    Read spoke-digest.md from Personal Life HQ and distill into a compact
+    life-snapshot.txt that the reading routine loads before generating the reading.
+    Extracts: active flags, one status line per spoke, and cleared-this-month wins.
+    """
+    digest_path = os.path.join(PERSONAL_HQ_PATH, "spoke-digest.md")
+    if not os.path.exists(digest_path):
+        return f"# Life Snapshot | {date_str}\n\n*spoke-digest.md not found — reading continues without life context*\n"
+
+    with open(digest_path, "r") as f:
+        content = f.read()
+
+    lines = content.split("\n")
+    snapshot_lines = [f"# Jordan's Life Snapshot for Today's Reading | {date_str}", ""]
+
+    # Pull the Active Flags section — most important for reading relevance
+    in_flags = False
+    flags_found = []
+    for line in lines:
+        if "## Active Flags" in line:
+            in_flags = True
+            continue
+        if in_flags:
+            if line.startswith("## "):
+                break
+            if line.strip() and not line.startswith("_"):
+                flags_found.append(line)
+
+    if flags_found:
+        snapshot_lines.append("## Active Flags")
+        snapshot_lines.extend(flags_found[:12])  # cap at 12 lines
+        snapshot_lines.append("")
+
+    # Pull first status line from each of the 7 spoke sections
+    spoke_headers = ["## 💰 Money", "## 🌿 Body", "## 🏠 Home", "## 👥 People",
+                     "## 💼 Work", "## ✨ Growth & Craft", "## 🗺️ Culture & Adventure"]
+    snapshot_lines.append("## Spoke Status")
+    for header in spoke_headers:
+        in_spoke = False
+        for line in lines:
+            if line.strip() == header.strip():
+                in_spoke = True
+                continue
+            if in_spoke:
+                if line.startswith("## "):
+                    break
+                # Look for the **Status:** line specifically
+                if line.strip().startswith("**Status:**"):
+                    spoke_name = header.split(" ", 2)[-1]
+                    status_text = line.strip().replace("**Status:**", "").strip()
+                    snapshot_lines.append(f"**{spoke_name}:** {status_text}")
+                    break
+
+    snapshot_lines.append("")
+    snapshot_lines.append("*Source: Personal Life HQ/spoke-digest.md — loaded automatically*")
+    return "\n".join(snapshot_lines)
+
+
 # ─── Cross-Workspace Digest (for Personal Life HQ) ───────────────────────────
 
 def workspace_digest(positions, today_aspects, date_str):
@@ -359,6 +424,9 @@ def main():
     # 5. Cross-workspace digest
     digest = workspace_digest(today_positions, t2n_aspects, date_str)
 
+    # 6. Life snapshot (Personal Life HQ → Stars)
+    life_snapshot = read_life_snapshot(date_str)
+
     # ── Output files ─────────────────────────────────────────────────────────
 
     out_dir = os.path.dirname(__file__)
@@ -384,9 +452,22 @@ def main():
     with open(os.path.join(out_dir, "active-transits.txt"), "w") as f:
         f.write(f"Active transits as of {date_str}: {active_summary}\n")
 
-    # workspace-digest.txt
+    # workspace-digest.txt → Personal Life HQ
     with open(os.path.join(out_dir, "workspace-digest.txt"), "w") as f:
         f.write(digest)
+
+    personal_hq_digest_path = os.path.join(PERSONAL_HQ_PATH, "the-stars-daily.md")
+    try:
+        with open(personal_hq_digest_path, "w") as f:
+            f.write(digest)
+        print(f"Cross-workspace digest written to Personal Life HQ")
+    except Exception as e:
+        print(f"Could not write to Personal Life HQ: {e}")
+
+    # life-snapshot.txt → Stars (Personal Life HQ → Stars direction)
+    with open(os.path.join(out_dir, "life-snapshot.txt"), "w") as f:
+        f.write(life_snapshot)
+    print(f"Life snapshot pulled from Personal Life HQ spoke-digest")
 
     print("Done. Output files written to routine/")
     print(f"Active transits: {active_summary}")

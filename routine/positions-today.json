@@ -2,55 +2,55 @@
   "date": "2026-05-19",
   "positions": {
     "Sun": {
-      "deg": 58.9515,
+      "deg": 58.9582,
       "speed": 0.9631,
       "retrograde": false,
-      "formatted": "28.95\u00b0 Taurus"
+      "formatted": "28.96\u00b0 Taurus"
     },
     "Moon": {
-      "deg": 102.8614,
-      "speed": 14.7598,
+      "deg": 102.9634,
+      "speed": 14.7573,
       "retrograde": false,
-      "formatted": "12.86\u00b0 Cancer"
+      "formatted": "12.96\u00b0 Cancer"
     },
     "Mercury": {
-      "deg": 65.4329,
-      "speed": 2.1553,
+      "deg": 65.4478,
+      "speed": 2.1551,
       "retrograde": false,
-      "formatted": "5.43\u00b0 Gemini"
+      "formatted": "5.45\u00b0 Gemini"
     },
     "Venus": {
-      "deg": 91.065,
+      "deg": 91.0732,
       "speed": 1.1945,
       "retrograde": false,
-      "formatted": "1.06\u00b0 Cancer"
+      "formatted": "1.07\u00b0 Cancer"
     },
     "Mars": {
-      "deg": 30.7541,
+      "deg": 30.7593,
       "speed": 0.752,
       "retrograde": false,
-      "formatted": "0.75\u00b0 Taurus"
+      "formatted": "0.76\u00b0 Taurus"
     },
     "Jupiter": {
-      "deg": 111.884,
+      "deg": 111.8852,
       "speed": 0.1727,
       "retrograde": false,
-      "formatted": "21.88\u00b0 Cancer"
+      "formatted": "21.89\u00b0 Cancer"
     },
     "Saturn": {
-      "deg": 11.146,
+      "deg": 11.1466,
       "speed": 0.0974,
       "retrograde": false,
       "formatted": "11.15\u00b0 Aries"
     },
     "Uranus": {
-      "deg": 61.3608,
+      "deg": 61.3612,
       "speed": 0.0585,
       "retrograde": false,
       "formatted": "1.36\u00b0 Gemini"
     },
     "Neptune": {
-      "deg": 3.7955,
+      "deg": 3.7956,
       "speed": 0.0247,
       "retrograde": false,
       "formatted": "3.80\u00b0 Aries"
@@ -62,14 +62,14 @@
       "formatted": "5.47\u00b0 Aquarius"
     },
     "Chiron": {
-      "deg": 28.5725,
+      "deg": 28.5728,
       "speed": 0.0538,
       "retrograde": false,
       "formatted": "28.57\u00b0 Aries"
     },
     "NNode": {
-      "deg": 334.8389,
-      "speed": -0.1131,
+      "deg": 334.8381,
+      "speed": -0.1128,
       "retrograde": true,
       "formatted": "4.84\u00b0 Pisces"
     }
@@ -82,7 +82,7 @@
       "natal_house": "1st",
       "aspect": "semi-sextile",
       "symbol": "\u26ba",
-      "orb": 0.05,
+      "orb": 0.04,
       "applying": true,
       "retrograde": false
     },
@@ -93,7 +93,7 @@
       "natal_house": "6th",
       "aspect": "inconjunct",
       "symbol": "\u26bb",
-      "orb": 0.06,
+      "orb": 0.07,
       "applying": true,
       "retrograde": false
     },
@@ -115,7 +115,7 @@
       "natal_house": "6th",
       "aspect": "inconjunct",
       "symbol": "\u26bb",
-      "orb": 0.25,
+      "orb": 0.24,
       "applying": false,
       "retrograde": false
     },
@@ -230,24 +230,24 @@
       "retrograde": false
     },
     {
-      "transit": "Moon",
-      "natal": "Mercury",
-      "natal_sign": "Scorpio",
-      "natal_house": "5th",
-      "aspect": "trine",
-      "symbol": "\u25b3",
-      "orb": 0.86,
-      "applying": true,
-      "retrograde": false
-    },
-    {
       "transit": "Venus",
       "natal": "Jupiter",
       "natal_sign": "Scorpio",
       "natal_house": "5th",
       "aspect": "trine",
       "symbol": "\u25b3",
-      "orb": 0.94,
+      "orb": 0.93,
+      "applying": true,
+      "retrograde": false
+    },
+    {
+      "transit": "Moon",
+      "natal": "Mercury",
+      "natal_sign": "Scorpio",
+      "natal_house": "5th",
+      "aspect": "trine",
+      "symbol": "\u25b3",
+      "orb": 0.96,
       "applying": true,
       "retrograde": false
     },
@@ -258,7 +258,7 @@
       "natal_house": "4th",
       "aspect": "semi-square",
       "symbol": "\u2220",
-      "orb": 1.12,
+      "orb": 1.11,
       "applying": true,
       "retrograde": false
     },
@@ -269,7 +269,7 @@
       "natal_house": "10th",
       "aspect": "sesquiquadrate",
       "symbol": "\u25a1/",
-      "orb": 1.12,
+      "orb": 1.11,
       "applying": false,
       "retrograde": false
     },
@@ -302,7 +302,7 @@
       "natal_house": "5th",
       "aspect": "opposition",
       "symbol": "\u260d",
-      "orb": 1.25,
+      "orb": 1.24,
       "applying": false,
       "retrograde": false
     },
@@ -313,7 +313,7 @@
       "natal_house": "10th",
       "aspect": "sextile",
       "symbol": "\u2736",
-      "orb": 1.43,
+      "orb": 1.45,
       "applying": false,
       "retrograde": false
     },
@@ -324,7 +324,7 @@
       "natal_house": "7th",
       "aspect": "sesquiquadrate",
       "symbol": "\u25a1/",
-      "orb": 1.43,
+      "orb": 1.45,
       "applying": false,
       "retrograde": false
     },
@@ -335,7 +335,7 @@
       "natal_house": "7th",
       "aspect": "sesquiquadrate",
       "symbol": "\u25a1/",
-      "orb": 1.43,
+      "orb": 1.45,
       "applying": false,
       "retrograde": false
     },
@@ -379,7 +379,7 @@
       "natal_house": "1st",
       "aspect": "sextile",
       "symbol": "\u2736",
-      "orb": 1.75,
+      "orb": 1.76,
       "applying": true,
       "retrograde": false
     },
@@ -423,7 +423,7 @@
       "natal_house": "5th",
       "aspect": "sesquiquadrate",
       "symbol": "\u25a1/",
-      "orb": 1.94,
+      "orb": 1.93,
       "applying": true,
       "retrograde": false
     },
@@ -434,7 +434,7 @@
       "natal_house": "6th",
       "aspect": "inconjunct",
       "symbol": "\u26bb",
-      "orb": 1.94,
+      "orb": 1.93,
       "applying": true,
       "retrograde": false
     },
@@ -445,7 +445,7 @@
       "natal_house": "12th",
       "aspect": "semi-sextile",
       "symbol": "\u26ba",
-      "orb": 1.94,
+      "orb": 1.93,
       "applying": false,
       "retrograde": false
     },
@@ -456,7 +456,7 @@
       "natal_house": "6th",
       "aspect": "opposition",
       "symbol": "\u260d",
-      "orb": 2.05,
+      "orb": 2.04,
       "applying": false,
       "retrograde": false
     },
@@ -467,7 +467,7 @@
       "natal_house": "1st",
       "aspect": "conjunction",
       "symbol": "\u260c",
-      "orb": 2.06,
+      "orb": 2.07,
       "applying": false,
       "retrograde": false
     },
@@ -478,7 +478,7 @@
       "natal_house": "9th",
       "aspect": "inconjunct",
       "symbol": "\u26bb",
-      "orb": 2.12,
+      "orb": 2.11,
       "applying": false,
       "retrograde": false
     },
@@ -500,29 +500,7 @@
       "natal_house": "6th",
       "aspect": "inconjunct",
       "symbol": "\u26bb",
-      "orb": 2.25,
-      "applying": false,
-      "retrograde": false
-    },
-    {
-      "transit": "Mercury",
-      "natal": "NorthNode",
-      "natal_sign": "Sagittarius",
-      "natal_house": "6th",
-      "aspect": "opposition",
-      "symbol": "\u260d",
-      "orb": 2.43,
-      "applying": true,
-      "retrograde": false
-    },
-    {
-      "transit": "Mercury",
-      "natal": "SouthNode",
-      "natal_sign": "Gemini",
-      "natal_house": "12th",
-      "aspect": "conjunction",
-      "symbol": "\u260c",
-      "orb": 2.43,
+      "orb": 2.24,
       "applying": false,
       "retrograde": false
     },
@@ -534,6 +512,28 @@
       "aspect": "inconjunct",
       "symbol": "\u26bb",
       "orb": 2.43,
+      "applying": false,
+      "retrograde": false
+    },
+    {
+      "transit": "Mercury",
+      "natal": "NorthNode",
+      "natal_sign": "Sagittarius",
+      "natal_house": "6th",
+      "aspect": "opposition",
+      "symbol": "\u260d",
+      "orb": 2.45,
+      "applying": true,
+      "retrograde": false
+    },
+    {
+      "transit": "Mercury",
+      "natal": "SouthNode",
+      "natal_sign": "Gemini",
+      "natal_house": "12th",
+      "aspect": "conjunction",
+      "symbol": "\u260c",
+      "orb": 2.45,
       "applying": false,
       "retrograde": false
     },
@@ -577,7 +577,7 @@
       "natal_house": "4th",
       "aspect": "square",
       "symbol": "\u25a1",
-      "orb": 2.57,
+      "orb": 2.55,
       "applying": true,
       "retrograde": false
     },
@@ -588,7 +588,7 @@
       "natal_house": "10th",
       "aspect": "square",
       "symbol": "\u25a1",
-      "orb": 2.57,
+      "orb": 2.55,
       "applying": false,
       "retrograde": false
     },
@@ -648,35 +648,13 @@
       "retrograde": true
     },
     {
-      "transit": "Moon",
-      "natal": "Mars",
-      "natal_sign": "Sagittarius",
-      "natal_house": "6th",
-      "aspect": "inconjunct",
-      "symbol": "\u26bb",
-      "orb": 2.86,
-      "applying": true,
-      "retrograde": false
-    },
-    {
-      "transit": "Moon",
-      "natal": "Pluto",
-      "natal_sign": "Scorpio",
-      "natal_house": "6th",
-      "aspect": "sesquiquadrate",
-      "symbol": "\u25a1/",
-      "orb": 2.86,
-      "applying": true,
-      "retrograde": false
-    },
-    {
       "transit": "Jupiter",
       "natal": "Uranus",
       "natal_sign": "Capricorn",
       "natal_house": "7th",
       "aspect": "opposition",
       "symbol": "\u260d",
-      "orb": 2.88,
+      "orb": 2.89,
       "applying": true,
       "retrograde": false
     },
@@ -687,7 +665,7 @@
       "natal_house": "7th",
       "aspect": "opposition",
       "symbol": "\u260d",
-      "orb": 2.88,
+      "orb": 2.89,
       "applying": true,
       "retrograde": false
     },
@@ -698,8 +676,30 @@
       "natal_house": "10th",
       "aspect": "square",
       "symbol": "\u25a1",
-      "orb": 2.94,
+      "orb": 2.93,
       "applying": false,
+      "retrograde": false
+    },
+    {
+      "transit": "Moon",
+      "natal": "Mars",
+      "natal_sign": "Sagittarius",
+      "natal_house": "6th",
+      "aspect": "inconjunct",
+      "symbol": "\u26bb",
+      "orb": 2.96,
+      "applying": true,
+      "retrograde": false
+    },
+    {
+      "transit": "Moon",
+      "natal": "Pluto",
+      "natal_sign": "Scorpio",
+      "natal_house": "6th",
+      "aspect": "sesquiquadrate",
+      "symbol": "\u25a1/",
+      "orb": 2.96,
+      "applying": true,
       "retrograde": false
     },
     {
@@ -709,7 +709,7 @@
       "natal_house": "6th",
       "aspect": "trine",
       "symbol": "\u25b3",
-      "orb": 3.12,
+      "orb": 3.11,
       "applying": true,
       "retrograde": false
     },
@@ -775,7 +775,7 @@
       "natal_house": "5th",
       "aspect": "trine",
       "symbol": "\u25b3",
-      "orb": 3.88,
+      "orb": 3.89,
       "applying": true,
       "retrograde": false
     },
@@ -786,7 +786,7 @@
       "natal_house": "6th",
       "aspect": "opposition",
       "symbol": "\u260d",
-      "orb": 3.95,
+      "orb": 3.96,
       "applying": true,
       "retrograde": false
     },
@@ -797,7 +797,7 @@
       "natal_house": "6th",
       "aspect": "opposition",
       "symbol": "\u260d",
-      "orb": 4.05,
+      "orb": 4.04,
       "applying": false,
       "retrograde": false
     },
@@ -808,7 +808,7 @@
       "natal_house": "12th",
       "aspect": "conjunction",
       "symbol": "\u260c",
-      "orb": 4.05,
+      "orb": 4.04,
       "applying": true,
       "retrograde": false
     },
@@ -819,7 +819,7 @@
       "natal_house": "6th",
       "aspect": "opposition",
       "symbol": "\u260d",
-      "orb": 4.43,
+      "orb": 4.45,
       "applying": true,
       "retrograde": false
     },
@@ -852,7 +852,7 @@
       "natal_house": "6th",
       "aspect": "opposition",
       "symbol": "\u260d",
-      "orb": 4.57,
+      "orb": 4.55,
       "applying": false,
       "retrograde": false
     },
@@ -879,13 +879,24 @@
       "retrograde": false
     },
     {
+      "transit": "Sun",
+      "natal": "Saturn",
+      "natal_sign": "Aquarius",
+      "natal_house": "9th",
+      "aspect": "square",
+      "symbol": "\u25a1",
+      "orb": 4.96,
+      "applying": false,
+      "retrograde": false
+    },
+    {
       "transit": "Moon",
       "natal": "Chiron",
       "natal_sign": "Virgo",
       "natal_house": "4th",
       "aspect": "sextile",
       "symbol": "\u2736",
-      "orb": 4.86,
+      "orb": 4.96,
       "applying": true,
       "retrograde": false
     },
@@ -896,18 +907,7 @@
       "natal_house": "10th",
       "aspect": "trine",
       "symbol": "\u25b3",
-      "orb": 4.86,
-      "applying": false,
-      "retrograde": false
-    },
-    {
-      "transit": "Sun",
-      "natal": "Saturn",
-      "natal_sign": "Aquarius",
-      "natal_house": "9th",
-      "aspect": "square",
-      "symbol": "\u25a1",
-      "orb": 4.95,
+      "orb": 4.96,
       "applying": false,
       "retrograde": false
     },
@@ -918,7 +918,7 @@
       "natal_house": "10th",
       "aspect": "sextile",
       "symbol": "\u2736",
-      "orb": 5.05,
+      "orb": 5.04,
       "applying": false,
       "retrograde": false
     },
@@ -929,7 +929,7 @@
       "natal_house": "5th",
       "aspect": "trine",
       "symbol": "\u25b3",
-      "orb": 5.14,
+      "orb": 5.04,
       "applying": true,
       "retrograde": false
     },
@@ -962,7 +962,7 @@
       "natal_house": "7th",
       "aspect": "opposition",
       "symbol": "\u260d",
-      "orb": 6.14,
+      "orb": 6.04,
       "applying": false,
       "retrograde": false
     },
@@ -973,7 +973,7 @@
       "natal_house": "7th",
       "aspect": "opposition",
       "symbol": "\u260d",
-      "orb": 6.14,
+      "orb": 6.04,
       "applying": false,
       "retrograde": false
     },
@@ -1039,7 +1039,7 @@
       "natal_house": "10th",
       "aspect": "trine",
       "symbol": "\u25b3",
-      "orb": 6.94,
+      "orb": 6.93,
       "applying": false,
       "retrograde": false
     },
@@ -1050,7 +1050,7 @@
       "natal_house": "9th",
       "aspect": "trine",
       "symbol": "\u25b3",
-      "orb": 7.06,
+      "orb": 7.07,
       "applying": false,
       "retrograde": false
     },
@@ -1083,7 +1083,7 @@
       "natal_house": "4th",
       "aspect": "trine",
       "symbol": "\u25b3",
-      "orb": 7.25,
+      "orb": 7.24,
       "applying": true,
       "retrograde": false
     }
@@ -1094,8 +1094,8 @@
       "planet2": "Pluto",
       "aspect": "trine",
       "symbol": "\u25b3",
-      "orb": 0.04,
-      "p1_sign": "5.43\u00b0 Gemini",
+      "orb": 0.02,
+      "p1_sign": "5.45\u00b0 Gemini",
       "p2_sign": "5.47\u00b0 Aquarius",
       "p1_retro": false,
       "p2_retro": true
@@ -1105,8 +1105,8 @@
       "planet2": "Uranus",
       "aspect": "semi-sextile",
       "symbol": "\u26ba",
-      "orb": 0.3,
-      "p1_sign": "1.06\u00b0 Cancer",
+      "orb": 0.29,
+      "p1_sign": "1.07\u00b0 Cancer",
       "p2_sign": "1.36\u00b0 Gemini",
       "p1_retro": false,
       "p2_retro": false
@@ -1117,8 +1117,8 @@
       "aspect": "sextile",
       "symbol": "\u2736",
       "orb": 0.31,
-      "p1_sign": "1.06\u00b0 Cancer",
-      "p2_sign": "0.75\u00b0 Taurus",
+      "p1_sign": "1.07\u00b0 Cancer",
+      "p2_sign": "0.76\u00b0 Taurus",
       "p1_retro": false,
       "p2_retro": false
     },
@@ -1127,9 +1127,20 @@
       "planet2": "Chiron",
       "aspect": "semi-sextile",
       "symbol": "\u26ba",
-      "orb": 0.38,
-      "p1_sign": "28.95\u00b0 Taurus",
+      "orb": 0.39,
+      "p1_sign": "28.96\u00b0 Taurus",
       "p2_sign": "28.57\u00b0 Aries",
+      "p1_retro": false,
+      "p2_retro": false
+    },
+    {
+      "planet1": "Mars",
+      "planet2": "Uranus",
+      "aspect": "semi-sextile",
+      "symbol": "\u26ba",
+      "orb": 0.6,
+      "p1_sign": "0.76\u00b0 Taurus",
+      "p2_sign": "1.36\u00b0 Gemini",
       "p1_retro": false,
       "p2_retro": false
     },
@@ -1138,22 +1149,11 @@
       "planet2": "NNode",
       "aspect": "square",
       "symbol": "\u25a1",
-      "orb": 0.59,
-      "p1_sign": "5.43\u00b0 Gemini",
+      "orb": 0.61,
+      "p1_sign": "5.45\u00b0 Gemini",
       "p2_sign": "4.84\u00b0 Pisces",
       "p1_retro": false,
       "p2_retro": true
-    },
-    {
-      "planet1": "Mars",
-      "planet2": "Uranus",
-      "aspect": "semi-sextile",
-      "symbol": "\u26ba",
-      "orb": 0.61,
-      "p1_sign": "0.75\u00b0 Taurus",
-      "p2_sign": "1.36\u00b0 Gemini",
-      "p1_retro": false,
-      "p2_retro": false
     },
     {
       "planet1": "Pluto",
@@ -1167,6 +1167,17 @@
       "p2_retro": true
     },
     {
+      "planet1": "Sun",
+      "planet2": "Moon",
+      "aspect": "semi-square",
+      "symbol": "\u2220",
+      "orb": 0.99,
+      "p1_sign": "28.96\u00b0 Taurus",
+      "p2_sign": "12.96\u00b0 Cancer",
+      "p1_retro": false,
+      "p2_retro": false
+    },
+    {
       "planet1": "Neptune",
       "planet2": "NNode",
       "aspect": "semi-sextile",
@@ -1178,24 +1189,13 @@
       "p2_retro": true
     },
     {
-      "planet1": "Sun",
-      "planet2": "Moon",
-      "aspect": "semi-square",
-      "symbol": "\u2220",
-      "orb": 1.09,
-      "p1_sign": "28.95\u00b0 Taurus",
-      "p2_sign": "12.86\u00b0 Cancer",
-      "p1_retro": false,
-      "p2_retro": false
-    },
-    {
       "planet1": "Mercury",
       "planet2": "Jupiter",
       "aspect": "semi-square",
       "symbol": "\u2220",
-      "orb": 1.45,
-      "p1_sign": "5.43\u00b0 Gemini",
-      "p2_sign": "21.88\u00b0 Cancer",
+      "orb": 1.44,
+      "p1_sign": "5.45\u00b0 Gemini",
+      "p2_sign": "21.89\u00b0 Cancer",
       "p1_retro": false,
       "p2_retro": false
     },
@@ -1204,8 +1204,8 @@
       "planet2": "Neptune",
       "aspect": "sextile",
       "symbol": "\u2736",
-      "orb": 1.64,
-      "p1_sign": "5.43\u00b0 Gemini",
+      "orb": 1.65,
+      "p1_sign": "5.45\u00b0 Gemini",
       "p2_sign": "3.80\u00b0 Aries",
       "p1_retro": false,
       "p2_retro": false
@@ -1222,24 +1222,24 @@
       "p2_retro": true
     },
     {
-      "planet1": "Moon",
-      "planet2": "Saturn",
-      "aspect": "square",
-      "symbol": "\u25a1",
-      "orb": 1.72,
-      "p1_sign": "12.86\u00b0 Cancer",
-      "p2_sign": "11.15\u00b0 Aries",
-      "p1_retro": false,
-      "p2_retro": false
-    },
-    {
       "planet1": "Sun",
       "planet2": "Mars",
       "aspect": "semi-sextile",
       "symbol": "\u26ba",
       "orb": 1.8,
-      "p1_sign": "28.95\u00b0 Taurus",
-      "p2_sign": "0.75\u00b0 Taurus",
+      "p1_sign": "28.96\u00b0 Taurus",
+      "p2_sign": "0.76\u00b0 Taurus",
+      "p1_retro": false,
+      "p2_retro": false
+    },
+    {
+      "planet1": "Moon",
+      "planet2": "Saturn",
+      "aspect": "square",
+      "symbol": "\u25a1",
+      "orb": 1.82,
+      "p1_sign": "12.96\u00b0 Cancer",
+      "p2_sign": "11.15\u00b0 Aries",
       "p1_retro": false,
       "p2_retro": false
     },
@@ -1249,7 +1249,7 @@
       "aspect": "sesquiquadrate",
       "symbol": "\u25a1/",
       "orb": 2.05,
-      "p1_sign": "21.88\u00b0 Cancer",
+      "p1_sign": "21.89\u00b0 Cancer",
       "p2_sign": "4.84\u00b0 Pisces",
       "p1_retro": false,
       "p2_retro": true
@@ -1259,8 +1259,8 @@
       "planet2": "Chiron",
       "aspect": "conjunction",
       "symbol": "\u260c",
-      "orb": 2.18,
-      "p1_sign": "0.75\u00b0 Taurus",
+      "orb": 2.19,
+      "p1_sign": "0.76\u00b0 Taurus",
       "p2_sign": "28.57\u00b0 Aries",
       "p1_retro": false,
       "p2_retro": false
@@ -1270,8 +1270,8 @@
       "planet2": "Uranus",
       "aspect": "conjunction",
       "symbol": "\u260c",
-      "orb": 2.41,
-      "p1_sign": "28.95\u00b0 Taurus",
+      "orb": 2.4,
+      "p1_sign": "28.96\u00b0 Taurus",
       "p2_sign": "1.36\u00b0 Gemini",
       "p1_retro": false,
       "p2_retro": false
@@ -1292,8 +1292,8 @@
       "planet2": "Chiron",
       "aspect": "sextile",
       "symbol": "\u2736",
-      "orb": 2.49,
-      "p1_sign": "1.06\u00b0 Cancer",
+      "orb": 2.5,
+      "p1_sign": "1.07\u00b0 Cancer",
       "p2_sign": "28.57\u00b0 Aries",
       "p1_retro": false,
       "p2_retro": false
@@ -1303,8 +1303,8 @@
       "planet2": "Neptune",
       "aspect": "square",
       "symbol": "\u25a1",
-      "orb": 2.73,
-      "p1_sign": "1.06\u00b0 Cancer",
+      "orb": 2.72,
+      "p1_sign": "1.07\u00b0 Cancer",
       "p2_sign": "3.80\u00b0 Aries",
       "p1_retro": false,
       "p2_retro": false
@@ -1315,7 +1315,7 @@
       "aspect": "semi-square",
       "symbol": "\u2220",
       "orb": 2.81,
-      "p1_sign": "28.95\u00b0 Taurus",
+      "p1_sign": "28.96\u00b0 Taurus",
       "p2_sign": "11.15\u00b0 Aries",
       "p1_retro": false,
       "p2_retro": false
@@ -1336,8 +1336,19 @@
       "planet2": "NNode",
       "aspect": "trine",
       "symbol": "\u25b3",
-      "orb": 3.77,
-      "p1_sign": "1.06\u00b0 Cancer",
+      "orb": 3.76,
+      "p1_sign": "1.07\u00b0 Cancer",
+      "p2_sign": "4.84\u00b0 Pisces",
+      "p1_retro": false,
+      "p2_retro": true
+    },
+    {
+      "planet1": "Mars",
+      "planet2": "NNode",
+      "aspect": "sextile",
+      "symbol": "\u2736",
+      "orb": 4.08,
+      "p1_sign": "0.76\u00b0 Taurus",
       "p2_sign": "4.84\u00b0 Pisces",
       "p1_retro": false,
       "p2_retro": true
@@ -1347,22 +1358,11 @@
       "planet2": "Uranus",
       "aspect": "conjunction",
       "symbol": "\u260c",
-      "orb": 4.07,
-      "p1_sign": "5.43\u00b0 Gemini",
+      "orb": 4.09,
+      "p1_sign": "5.45\u00b0 Gemini",
       "p2_sign": "1.36\u00b0 Gemini",
       "p1_retro": false,
       "p2_retro": false
-    },
-    {
-      "planet1": "Mars",
-      "planet2": "NNode",
-      "aspect": "sextile",
-      "symbol": "\u2736",
-      "orb": 4.08,
-      "p1_sign": "0.75\u00b0 Taurus",
-      "p2_sign": "4.84\u00b0 Pisces",
-      "p1_retro": false,
-      "p2_retro": true
     },
     {
       "planet1": "Uranus",
@@ -1381,7 +1381,7 @@
       "aspect": "square",
       "symbol": "\u25a1",
       "orb": 4.71,
-      "p1_sign": "0.75\u00b0 Taurus",
+      "p1_sign": "0.76\u00b0 Taurus",
       "p2_sign": "5.47\u00b0 Aquarius",
       "p1_retro": false,
       "p2_retro": true
@@ -1392,7 +1392,7 @@
       "aspect": "sextile",
       "symbol": "\u2736",
       "orb": 4.84,
-      "p1_sign": "28.95\u00b0 Taurus",
+      "p1_sign": "28.96\u00b0 Taurus",
       "p2_sign": "3.80\u00b0 Aries",
       "p1_retro": false,
       "p2_retro": false
@@ -1413,8 +1413,8 @@
       "planet2": "Saturn",
       "aspect": "sextile",
       "symbol": "\u2736",
-      "orb": 5.71,
-      "p1_sign": "5.43\u00b0 Gemini",
+      "orb": 5.7,
+      "p1_sign": "5.45\u00b0 Gemini",
       "p2_sign": "11.15\u00b0 Aries",
       "p1_retro": false,
       "p2_retro": false
@@ -1424,8 +1424,8 @@
       "planet2": "NNode",
       "aspect": "square",
       "symbol": "\u25a1",
-      "orb": 5.89,
-      "p1_sign": "28.95\u00b0 Taurus",
+      "orb": 5.88,
+      "p1_sign": "28.96\u00b0 Taurus",
       "p2_sign": "4.84\u00b0 Pisces",
       "p1_retro": false,
       "p2_retro": true
@@ -1435,9 +1435,9 @@
       "planet2": "Mercury",
       "aspect": "conjunction",
       "symbol": "\u260c",
-      "orb": 6.48,
-      "p1_sign": "28.95\u00b0 Taurus",
-      "p2_sign": "5.43\u00b0 Gemini",
+      "orb": 6.49,
+      "p1_sign": "28.96\u00b0 Taurus",
+      "p2_sign": "5.45\u00b0 Gemini",
       "p1_retro": false,
       "p2_retro": false
     },
@@ -1446,8 +1446,8 @@
       "planet2": "Pluto",
       "aspect": "trine",
       "symbol": "\u25b3",
-      "orb": 6.52,
-      "p1_sign": "28.95\u00b0 Taurus",
+      "orb": 6.51,
+      "p1_sign": "28.96\u00b0 Taurus",
       "p2_sign": "5.47\u00b0 Aquarius",
       "p1_retro": false,
       "p2_retro": true
@@ -1458,7 +1458,7 @@
       "aspect": "square",
       "symbol": "\u25a1",
       "orb": 6.69,
-      "p1_sign": "21.88\u00b0 Cancer",
+      "p1_sign": "21.89\u00b0 Cancer",
       "p2_sign": "28.57\u00b0 Aries",
       "p1_retro": false,
       "p2_retro": false
