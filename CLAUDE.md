@@ -194,17 +194,38 @@ Claude pulls live planetary positions directly from the web at the start of ever
 
 ---
 
-## Current Situation Snapshot — May 15, 2026
+## Current Situation Snapshot — May 19, 2026
 
-**Career:** Associate Director of Content Operations at Everflow (title effective April 1, 2026). Tony dynamic navigated and documented. Active projects: EverForce X website audit (May 15 milestone — Tony's role = copy only, design owned by Frank + Karine), AI Use Case Repository (co-owned equally with Dasha), Masterclasses series. Jordan is building sophisticated AI systems — Claude Code is central to how she works. LinkedIn headline still shows Sr. Content Manager — update pending.
+**Career:** Associate Director of Content Operations at Everflow (title effective April 1, 2026). Tony dynamic navigated and documented. Active projects: EverForce X website audit, AI Use Case Repository (co-owned equally with Dasha), Masterclasses series. Jordan is building sophisticated AI systems — Claude Code is central to how she works. LinkedIn headline ✅ updated May 19.
 
-**Finances:** Major momentum in May. First full paycheck post-garnishment ($3,214, May 8). Savings: $2,384. CC balance: ~$6,177 (falling — $810 paid this cycle). Student loan rehab: initiated May 1, form downloaded, fill guide prepared, needs printing + mailing (PO Box 5609, Greenville TX). Loan balance: $113,665.81. Account TOP-certified — tax refund may be seized. Credit score: Fair range. The freeze response is cracking — Jordan is facing the numbers directly.
+**Finances:** Major momentum in May. Savings: $2,384. CC balance: ~$6,177 (falling). Student loan rehab: initiated May 1, form downloaded + fill guide prepared, needs printing + mailing (PO Box 5609, Greenville TX). Loan balance: $113,665.81. The freeze response is cracking — Jordan is facing the numbers directly.
 
-**Health:** Anthem / Sydney Health app resolved May 9 ✅. Arm BP monitor purchased May 9 ✅. PCP assignment: Anthem Member Services (855-383-7248) calling back Monday May 11 at 11am. June psychiatrist appointment (Dr. Ashley George, Stella Center) approaching — PCP before then. Walking pad: 4+ week streak, energy and back pain both improved.
+**Astrology business:** Phase 1 scoped May 18. Manual natal chart reading service — Etsy primary platform, $35–55/reading, one weekend to build. The reading pipeline in this workspace IS the production pipeline for customer readings. Full plan: `Personal Life HQ/Money/astrology-business-scope.md` + `astrology-business-plan.md`.
 
-**Personal / Dating:** Decision made May 15 to end things with Eleanor after two dates (May 10 + May 13). Eleanor's Mercury in Aquarius on Jordan's Saturn (conversational suppression) mirrors Jordan's enmeshed mother's frequency — recognized as South Node pull. Plan: natal chart reading sent as gift (synastry removed, natal sections deepened), casual call invite framed as "catching up" with no signal, then honest kind phone call. Tarot pull May 14 night named The Devil (South Node entanglement), Queen of Swords (action), Ten of Cups + Two of Cups as bookend destinations. Two of Cups held as tuning fork for genuine mutuality going forward. North Node Sagittarius work: recognized the pattern at 2 dates rather than much further in. Taurus New Moon ritual planned for tomorrow May 16 (exact 3:01 PM). Bumble for Pride month June on radar. Summer plans: Portland with Carina (August), Michigan lake Airbnb, Dad visit July 19–27, Pride events + lesbian singles mixers. Ireland dream financially close ($0–116 savings gap).
+**Body:** Walking pad: 5+ week streak ✅, energy and back pain both improved. Arm BP monitor purchased ✅. PCP call pending (855-383-7248). June psychiatrist appointment (Dr. Ashley George, Stella Center) approaching.
 
-**Active transits as of May 14, 2026:** Uranus 1°03' Gemini — exact opposition natal Sun (1° Sag), 2° from opposition North Node / conjunction South Node. Neptune 3°39' Aries — 0°21' from exact conjunction natal Moon (4° Aries), extremely tight. Saturn 10°38' Aries — exact trine natal Mars (10° Sag). Jupiter 21° Cancer in 1st house, separating. Check live via astrolibrary.org at session start for current positions.
+**Personal / Dating:** Eleanor chapter closed with intention May 18 — kind, clean phone call. South Node mirroring pattern recognized at 2 dates, not years in. Two of Cups held as the tuning fork going forward. Bumble for Pride month June on radar. Summer: Portland with Carina (August, exact dates TBD), Dad visit (Jul 23 + Jul 27 + Aug 1 — shorter visits), Pride events. Ireland solo trip a live longing.
+
+**Active transits as of May 19, 2026:** Uranus ~1° Gemini — opposition natal Sun (1° Sag), conjunction South Node. Neptune ~3–4° Aries — very tight conjunction natal Moon (4° Aries). Saturn ~10–11° Aries — trine natal Mars (10° Sag). Check live via astrolibrary.org at session start for current degrees.
+
+---
+
+## Cross-Workspace Awareness
+
+This workspace and **Personal Life HQ** are in active dialogue. Key connections:
+
+| Topic | Where it lives |
+|-------|---------------|
+| Astrology business plan (Etsy, reviews, 90-day plan) | `Personal Life HQ/Money/astrology-business-plan.md` |
+| Astrology business scope (phases, pricing, name shortlist) | `Personal Life HQ/Money/astrology-business-scope.md` |
+| App vision (expanded, with Phase 1 details) | `app-vision.md` ← this workspace |
+| Psychological patterns (Chiron wound, South Node, etc.) | `Personal Life HQ/Growth & Craft/patterns-reference.md` |
+| Financial state (savings, CC balance, loan status) | `Personal Life HQ/Money/state.md` |
+| Dating / summer plans | `Personal Life HQ/Culture & Adventure/Summer 2026.md` |
+
+**When Jordan asks about the business in this workspace:** The reading pipeline here (CLAUDE.md + INSTRUCTIONS.md + natal chart data) IS the production system. For pricing, platform, or marketing questions, reference the Money spoke files. For how to run a reading for a paying customer, use this workspace exactly as for any other natal chart.
+
+**When Jordan asks about her own transits + the business:** These are connected. The Uranus opposition Sun transit (late April–May 2026) is the astrological weather under which this entire phase is launching. Uranus rules innovation, disruption, and sudden new paths — it's pressing into her Sun from the South Node side, loosening the old professional identity container and making space for something new to emerge. The business launch IS the transit lived out.
 
 ---
 

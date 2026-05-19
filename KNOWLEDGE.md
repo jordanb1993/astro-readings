@@ -533,23 +533,41 @@ After the Tony escalation week (April 7-10), Jordan experienced a textbook Chiro
 
 ## PART TEN: WHAT JORDAN IS BUILDING TOWARD
 
-*Updated May 9, 2026*
+*Updated May 19, 2026*
 
-**Professionally:** Associate Director of Content Operations at Everflow — title effective April 1, 2026. Q2 active. Leading EverForce X website audit (May 15 milestone) and co-owning AI Use Case Repository with Dasha. Tony dynamic navigated and documented; Jordan's footprint growing through project leadership and direct relationships with Michael and Kristen. Building toward a vision of combining astrology, healing, and AI in a new product form. Claude Code is the primary development environment. LinkedIn headline still shows Sr. Content Manager — 6 weeks overdue, update needed.
+**Professionally:** Associate Director of Content Operations at Everflow — title effective April 1, 2026. Q2 active. EverForce X website audit, AI Use Case Repository (co-owned equally with Dasha), Masterclasses series. LinkedIn headline ✅ updated May 19. Tony dynamic documented and navigated. Jordan's footprint growing through project leadership and direct relationships with Michael and Kristen.
 
-**Financially:** Major progress made in May 2026. Credit score now in Fair range (confirmed Apr 30). Garnishment fully cleared — first full paycheck May 8 ($3,214). Savings: $2,384. CC balance: ~$6,177 after May payments; utilization falling from 92.7%. Student loan rehabilitation initiated May 1 (called Default Resolution Group), form downloaded from studentaid.gov, fill guide prepared — needs printing and mailing to Greenville TX. Loan balance: $113,665.81 (as of May 8). Daily interest: $15.47. Account TOP-certified — tax refund may be intercepted. The shame-free approach is working: Jordan is facing the numbers directly for the first time.
+**The Astrology Business:** Phase 1 scoped and ready to build as of May 18. Manual natal chart reading service on Etsy — $35–55/reading, one weekend to build, 5 free readings to friends to seed reviews first. This reading pipeline IS the production tool. Full plan in Personal Life HQ/Money. Name top three: Thin Place · The 29th · Solas.
 
-**Personally:** Post-Megan chapter fully closed. Dating window produced Eleanor — two dates (May 10 + May 13). Decision made May 15 to end it cleanly. Plan: natal chart reading sent as a gift today (revised — synastry removed, natal sections deepened), then casual call invite framed as "catching up" so Eleanor doesn't sit in anticipatory anxiety before the conversation, then kind honest phone call. Eleanor's Mercury in Aquarius sits on Jordan's Saturn (conversational suppression) and mirrors Jordan's enmeshed mother's frequency — The Devil card in the May 14 tarot pull named this exactly as the South Node pull. Jordan recognized the maternal echo pattern at two dates rather than much further in — measurable North Node Sagittarius growth. Tarot bookends: Ten of Pentacles (top of deck) + Two of Cups (bottom) — the deck named lasting stability and genuine mutual connection as what the clearing is making room for. Two of Cups held as tuning fork going forward. Considering Bumble for Pride month in June. Summer 2026 plans active: Portland with Carina (August), Michigan lake Airbnb with friends, Pride month events including lesbian singles mixers. Dad visiting July 19–27.
+**Financially:** Major progress in May 2026. Savings: $2,384. CC balance: ~$6,177 (falling). Student loan rehab initiated May 1 — form needs printing + mailing (PO Box 5609, Greenville TX). Loan balance: $113,665.81. The freeze response is cracking. The shame-free approach is working.
 
-**Health:** Anthem login resolved — signed into Sydney Health app May 9. Arm BP monitor purchased. PCP assignment in progress (Anthem Member Services calling back Monday May 11 at 11am). June psychiatrist appointment with Dr. Ashley George (Stella Center) approaching — PCP sorted before then. Walking pad streak: 4+ weeks consistent. Arms Tue/Thu, squats Wed/Sat. Back pain reduced, energy improved. Body in better shape than it's been in years.
+**Personally:** Eleanor chapter closed with intention May 18 — kind, clean phone call. South Node mirroring pattern recognized at 2 dates. Two of Cups held as tuning fork going forward. Bumble for Pride month June on radar. Summer: Portland with Carina (August, dates TBD), Dad visit (Jul 23 / Jul 27 / Aug 1 — overlapping visits), Pride events.
 
-**Ireland:** The dream is financially closer than it has ever been — savings gap of $0–116 at current levels. At ~$1,000/paycheck saved, it becomes fundable within 1–2 more paychecks. The deeper question is choosing to go, not funding. Long-term dream of moving to rural southwest coast Ireland at ~45 remains the organizing horizon for every financial stability milestone.
+**Body:** Walking pad: 5+ weeks consistent ✅. Back pain reduced, energy improved. PCP call pending (855-383-7248). June psychiatrist appointment approaching.
 
-**Spiritually:** Active practice. Ostara 2026 celebrated with Kate, Cat, and Marina. Release ritual completed April 11. New Moon at Midheaven/North Node degree seeded something real. The Queen of Wands and the High Priestess remain the twin archetypes — outer fire and inner knowing.
+**Ireland:** Solo trip a live longing. Financially closer than ever. Long-term dream: rural southwest coast at ~45 — the organizing horizon for every stability milestone.
 
-**Identity:** Uranus is now opposition the natal Sun — the identity transit is no longer approaching, it has arrived. The casing built for older rooms is being renovated. The question Uranus brings to the Sun: which parts of "how Jordan shows up" were designed for environments she no longer lives in? The North Node assignment continues — becoming more fully herself with each cycle.
+**Spiritually:** Active practice. The Queen of Wands and the High Priestess remain the twin archetypes. Taurus New Moon ritual completed May 2026. Cord cutting with Eleanor closed a real chapter.
 
-**The App Vision:** An AI-powered astrology tool offering genuinely personalized readings to people who don't have Jordan's astrological literacy. Neptune conjunct Moon in the 10th supports visionary creative direction in career. The wound becoming the gift — Mercury chose Jordan's Chiron as its retrograde pivot. Keep writing down what arrives sideways about this, especially under the Neptune Moon conjunction.
+**Identity:** Uranus is opposition the natal Sun — the identity transit has arrived. The casing built for older rooms is being renovated. The business launch, the Eleanor pattern recognition, the LinkedIn update — all Uranus opposition Sun lived out. The North Node assignment continues.
+
+**The Astrology Business (Phase 1 — May 2026):** The app vision landed as a concrete business plan May 18, 2026. Phase 1 is a manual natal chart reading service — Etsy platform, $35–55/reading, one weekend to build. The reading pipeline in this workspace IS the production tool for customer readings. Full operational plan lives in Personal Life HQ/Money. Name shortlist: Thin Place · The 29th · Solas. Critical path: 5 free readings to Marina, Miriam, Kate, Cat → 5 Etsy reviews → first paying customer. This workspace runs the natal chart pipeline for every reading. The app is not a separate dream — it's what Phase 2 becomes when the last human step is automated.
+
+**LinkedIn:** ✅ Updated May 19, 2026 — headline corrected.
+
+**Dad visit dates (corrected May 19):** Jul 23 / Jul 27 / Aug 1 — shorter overlapping visits, not a single Jul 19–27 block.
+
+---
+
+## PART ELEVEN: CORRELATIONS — MAY 2026
+
+*Updated May 19, 2026*
+
+13. **Eleanor chapter / Eleanor's chart pattern:** Eleanor's Mercury in Aquarius sits on Jordan's natal Saturn — the exact contact that suppresses Jordan's conversational signal and mirrors the frequency of Jordan's enmeshed mother. Jordan recognized this at 2 dates (May 10 + 13), not years in. Measurable North Node growth. Chapter closed May 18 with a kind, clean phone call. The Devil card (May 14 tarot pull) named the South Node entanglement exactly. Two of Cups held as the tuning fork for genuine mutuality going forward.
+
+14. **Astrology business scoped under Uranus opposition Sun:** The entire Phase 1 business plan landed May 18 — exactly while Uranus (now ~1° Gemini) is in tight opposition to natal Sun (1° Sagittarius). Uranus opposition Sun = disruption of the old professional container, making space for something genuinely new. Jordan is not just observing this transit — she is living it by launching a new identity pathway while the old casing is being renovated.
+
+15. **Walking pad consistency (5+ weeks) under Neptune conjunct Moon:** Neptune (3–4° Aries) conjunct natal Moon (4° Aries, 10th house) is the most emotionally sensitive transit in the chart right now. The walking pad practice = regulated nervous system = Jordan moving through the Neptune fog rather than dissolving into it. Physical rhythm is the anchor.
 
 ---
 
