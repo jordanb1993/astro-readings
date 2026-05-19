@@ -293,9 +293,11 @@ PERSONAL_HQ_PATH = os.path.expanduser(
 
 def read_life_snapshot(date_str):
     """
-    Read spoke-digest.md from Personal Life HQ and distill into a compact
-    life-snapshot.txt that the reading routine loads before generating the reading.
-    Extracts: active flags, one status line per spoke, and cleared-this-month wins.
+    Read spoke-digest.md from Personal Life HQ and distill into life context
+    that meaningfully informs an astrology reading.
+
+    Pulls: recent events (Cleared This Month), identity/emotional spoke status.
+    Omits: admin to-dos, logistical flags — these carry low astrological charge.
     """
     digest_path = os.path.join(PERSONAL_HQ_PATH, "spoke-digest.md")
     if not os.path.exists(digest_path):
@@ -305,32 +307,58 @@ def read_life_snapshot(date_str):
         content = f.read()
 
     lines = content.split("\n")
-    snapshot_lines = [f"# Jordan's Life Snapshot for Today's Reading | {date_str}", ""]
+    snapshot_lines = [
+        f"# Jordan's Life Snapshot for Today's Reading | {date_str}",
+        "",
+        "> Use this to ground the reading in Jordan's actual life — what's alive, in motion,",
+        "> recently completed, or emotionally charged. Admin tasks are excluded intentionally.",
+        "",
+    ]
 
-    # Pull the Active Flags section — most important for reading relevance
-    in_flags = False
-    flags_found = []
+    # ── 1. Recent events: Cleared This Month ─────────────────────────────────
+    # These are completed actions/decisions/events — the most astrologically
+    # resonant content because they show what's actually manifesting.
+    in_cleared = False
+    cleared_items = []
     for line in lines:
-        if "## Active Flags" in line:
-            in_flags = True
+        if "## ✅ Cleared This Month" in line:
+            in_cleared = True
             continue
-        if in_flags:
+        if in_cleared:
             if line.startswith("## "):
                 break
-            if line.strip() and not line.startswith("_"):
-                flags_found.append(line)
+            # Table rows: | Item | Date |
+            if line.startswith("|") and not line.startswith("| Item") and not line.startswith("|---"):
+                parts = [p.strip() for p in line.split("|") if p.strip()]
+                if len(parts) >= 2:
+                    cleared_items.append((parts[0], parts[1]))  # (item, date)
 
-    if flags_found:
-        snapshot_lines.append("## Active Flags")
-        snapshot_lines.extend(flags_found[:12])  # cap at 12 lines
+    if cleared_items:
+        snapshot_lines.append("## What's happened recently (last 30 days)")
+        snapshot_lines.append("*These are completed events — what's manifesting in Jordan's life right now.*")
+        snapshot_lines.append("")
+        for item, date in cleared_items:
+            snapshot_lines.append(f"- {item} ({date})")
         snapshot_lines.append("")
 
-    # Pull first status line from each of the 7 spoke sections
-    spoke_headers = ["## 💰 Money", "## 🌿 Body", "## 🏠 Home", "## 👥 People",
-                     "## 💼 Work", "## ✨ Growth & Craft", "## 🗺️ Culture & Adventure"]
-    snapshot_lines.append("## Spoke Status")
-    for header in spoke_headers:
+    # ── 2. Spoke status — identity/emotional/relational spokes only ───────────
+    # Growth & Craft, People, Work, Body carry the most astrological meaning.
+    # Money and Home status lines included only if they carry emotional weight.
+    high_resonance_spokes = [
+        "## 🌱 Growth & Craft",
+        "## 💛 People",
+        "## 💼 Work",
+        "## 🌿 Body",
+        "## 🧭 Culture & Adventure",
+    ]
+
+    snapshot_lines.append("## What's alive in Jordan's life right now")
+    snapshot_lines.append("*Narrative status per spoke — the emotional and identity context.*")
+    snapshot_lines.append("")
+
+    for header in high_resonance_spokes:
         in_spoke = False
+        spoke_name = header.split(" ", 2)[-1]
         for line in lines:
             if line.strip() == header.strip():
                 in_spoke = True
@@ -338,15 +366,20 @@ def read_life_snapshot(date_str):
             if in_spoke:
                 if line.startswith("## "):
                     break
-                # Look for the **Status:** line specifically
-                if line.strip().startswith("**Status:**"):
-                    spoke_name = header.split(" ", 2)[-1]
-                    status_text = line.strip().replace("**Status:**", "").strip()
+                # Accept **Status:** or **Travel:** as the summary line
+                if line.strip().startswith("**Status:**") or line.strip().startswith("**Travel:**"):
+                    status_text = line.strip().replace("**Status:**", "").replace("**Travel:**", "Travel —").strip()
                     snapshot_lines.append(f"**{spoke_name}:** {status_text}")
                     break
 
-    snapshot_lines.append("")
-    snapshot_lines.append("*Source: Personal Life HQ/spoke-digest.md — loaded automatically*")
+    snapshot_lines += [
+        "",
+        "---",
+        "",
+        "*Admin flags (forms, calls, logistics) omitted — low astrological charge.*",
+        "*Full spoke detail: Personal Life HQ/spoke-digest.md*",
+    ]
+
     return "\n".join(snapshot_lines)
 
 
