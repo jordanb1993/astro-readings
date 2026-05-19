@@ -210,6 +210,26 @@ Claude pulls live planetary positions directly from the web at the start of ever
 
 ---
 
+## Life Context — What Informs a Reading
+
+When incorporating life context into a reading (via `routine/life-snapshot.txt` or any session conversation), apply this filter:
+
+**High astrological charge — lead with these:**
+- Identity moves: title earned, chapter closed, decision made, pattern recognized
+- Creative or spiritual work: business scoped, writing started, ritual done, brainstorming session
+- Relationship events: connection opened or closed, something named and acted on
+- Healing moments: nervous system wins, consistency streaks, a fear faced
+- Financial breakthroughs: first real budget month, freeze cracking, savings milestone
+
+**Low astrological charge — omit from reading framing:**
+- Logistical to-dos: forms to mail, calls to make, appointments not yet scheduled
+- Admin completions: inbox cleared, car registration renewed, subscriptions cancelled
+- Pending tasks: things that haven't happened yet and have no emotional weight
+
+The distinction: *does this item connect to a transit, a pattern, a wound, or an activation?* If yes — use it. If it's just a task — skip it. A reading that opens with "Eleanor's chapter was closed with intention" lands completely differently than one that opens with "there's a rehab form to mail."
+
+---
+
 ## Cross-Workspace Awareness
 
 This workspace and **Personal Life HQ** are in active dialogue. Key connections:
