@@ -278,19 +278,25 @@ the stars/
 ├── wheel-of-the-year.md             ← Seasonal calendar, ritual notes, moon tracking
 ├── app-vision.md                    ← AI astrology app — running ideas scratchpad
 ├── charts/                          ← Friends' natal chart data for synastry
-│   ├── README.md                    ← What's needed, status of each chart
-│   ├── kate.md
-│   ├── marina.md
-│   ├── cat.md
-│   ├── miriam-mimi.md
-│   └── carina.md
-├── natal/                           ← Birth chart reading HTMLs (built April 23, 2026)
-│   ├── README.md                    ← How to build a natal reading, what birth data needed
-│   └── jordan.html                  ← Jordan's natal chart — canonical template for friends
+│   ├── README.md
+│   ├── kate.md / marina.md / cat.md / miriam-mimi.md / carina.md / dasha.md
+├── natal/                           ← Birth chart reading HTMLs
+│   ├── README.md
+│   └── jordan.html                  ← Canonical template for friends' natal builds
+├── ritual/                          ← Moon rituals, ceremonial tarot pulls
+│   ├── README.md
+│   └── YYYY-MM-DD-[descriptor].md
+├── routine/                         ← Daily 4am reading automation
+│   ├── generate-positions.py        ← Swiss Ephemeris position calculator
+│   ├── ROUTINE-UPDATE-INSTRUCTIONS.md
+│   └── ephe/                        ← Cached ephemeris files (seas_18.se1 = Chiron)
 └── readings/                        ← Dated transit reading archive
-    ├── README.md                    ← Format guide
-    ├── 2026-04-23-v2.html           ← Reference: locked v2 UI standard
-    └── YYYY-MM-DD.md / .html        ← Each session: data archive + HTML reading
+    ├── README.md
+    ├── YYYY-MM-DD.md                ← Current month's daily readings
+    ├── 2026-04/                     ← Completed months archived here
+    ├── synastry/                    ← Jordan's chart vs. another person
+    ├── workplace/                   ← Weekly workplace transit digests
+    └── _template.html               ← Legacy HTML template (reference only)
 ```
 
 ---

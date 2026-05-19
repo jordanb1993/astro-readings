@@ -1,0 +1,20 @@
+# ── WRITE-ONLY HTML OUTPUTS ──
+# Reading UIs and natal charts are generated fresh from .md data + V3 spec.
+# Never read these — they are visual outputs, not source data.
+readings/*.html
+natal/*.html
+
+# ── TEMPLATE ──
+# Only read when explicitly rebuilding the template itself.
+readings/_template.html
+
+# ── ROOT IMAGES ──
+# Reference images not needed for readings or calculations.
+*.jpg
+*.jpeg
+*.JPG
+*.png
+*.PNG
+
+# ── macOS noise ──
+.DS_Store

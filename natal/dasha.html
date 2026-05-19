@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dasha ✦ Natal Chart Reading</title>
+  <link href="https://fonts.googleapis.com/css2?family=VT323&family=Press+Start+2P&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:             #07081c;
+      --surface:        #0c0e28;
+      --surface2:       #09091f;
+      --border:         #2a2258;
+      --border-hi:      #6a50a8;
+      --text:           #ede8d8;
+      --dim:            #7a6e96;
+      --gold:           #c89a2a;
+      --gold-hi:        #e8b830;
+      --gold-glow:      rgba(200,154,42,0.18);
+      --amethyst:       #8a5cb8;
+      --amethyst-glow:  rgba(138,92,184,0.16);
+      --teal:           #2a9080;
+      --teal-glow:      rgba(42,144,128,0.14);
+      --rose:           #aa3868;
+      --rose-glow:      rgba(170,56,104,0.16);
+      --moon:           #8898cc;
+      --moon-glow:      rgba(136,152,204,0.15);
+      --orange:         #c87840;
+      --orange-glow:    rgba(200,120,60,0.14);
+      --sextile:        #4a88cc;
+      --sextile-glow:   rgba(74,136,204,0.13);
+      --sage:           #5a9070;
+      --sage-glow:      rgba(90,144,112,0.14);
+      --mars:           #c84840;
+      --mars-glow:      rgba(200,72,64,0.15);
+      --slate:          #5068a8;
+      --slate-glow:     rgba(80,104,168,0.15);
+      --pisces:         #7080c0;
+      --pisces-glow:    rgba(112,128,192,0.15);
+    }
+
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background: repeating-linear-gradient(
+        to bottom,
+        transparent 0px, transparent 3px,
+        rgba(0,0,0,0.08) 3px, rgba(0,0,0,0.08) 4px
+      );
+      pointer-events: none; z-index: 9998;
+    }
+
+    body {
+      background-color: var(--bg);
+      background-image:
+        radial-gradient(ellipse at 18% 12%, rgba(80,40,160,0.22) 0%, transparent 48%),
+        radial-gradient(ellipse at 82% 22%, rgba(150,40,80,0.14) 0%, transparent 42%),
+        radial-gradient(ellipse at 50% 85%, rgba(30,60,150,0.18) 0%, transparent 48%),
+        radial-gradient(ellipse at 8%  88%, rgba(70,30,110,0.14) 0%, transparent 42%);
+      color: var(--text);
+      font-family: 'VT323', monospace;
+      font-size: 20px;
+      min-height: 100vh;
+      padding: 28px 16px 64px;
+    }
+
+    #starfield { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; transform: scale(0.9); }
+      50%       { opacity: 1;   transform: scale(1.15); }
+    }
+    @keyframes shimmer {
+      0%   { background-position: -200% center; }
+      100% { background-position:  200% center; }
+    }
+
+    /* ─── WINDOW ─────────────────────────────── */
+    .window {
+      position: relative; z-index: 1;
+      max-width: 860px; margin: 0 auto;
+      border: 2px solid var(--border-hi);
+      box-shadow:
+        inset -1px -1px rgba(0,0,0,0.95),
+        inset  1px  1px rgba(180,150,255,0.2),
+        0 0 60px rgba(80,50,160,0.18),
+        0 0 120px rgba(80,50,160,0.07);
+    }
+
+    .titlebar {
+      background: linear-gradient(90deg, #140c38 0%, #4a2280 32%, #8a2260 62%, #140c38 100%);
+      padding: 5px 8px 5px 10px;
+      display: flex; align-items: center; justify-content: space-between;
+      user-select: none;
+    }
+    .titlebar-label {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 8px; color: #f0e0b8; letter-spacing: 1px;
+    }
+    .titlebar-btns { display: flex; gap: 3px; }
+    .tbtn {
+      width: 18px; height: 15px; background: #c0c0c0;
+      box-shadow: inset -1px -1px #6a6a6a, inset 1px 1px #fff;
+      font-size: 10px; font-family: 'VT323', monospace;
+      color: #000; display: flex; align-items: center; justify-content: center;
+      cursor: default; border: none;
+    }
+
+    .content { background: var(--bg); padding: 32px 40px 48px; }
+
+    /* ─── HEADER ─────────────────────────────── */
+    .reading-meta {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 8px; color: var(--gold);
+      letter-spacing: 2px; margin-bottom: 8px;
+      text-shadow: 0 0 14px var(--gold-glow);
+    }
+
+    h1 {
+      font-family: 'VT323', monospace;
+      font-size: 64px; line-height: 1;
+      background: linear-gradient(90deg, var(--gold) 0%, var(--gold-hi) 40%, #f8d060 60%, var(--gold) 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: shimmer 5s linear infinite;
+      margin-bottom: 4px;
+    }
+
+    .birth-data {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; color: var(--dim);
+      letter-spacing: 1px; margin-bottom: 28px;
+      line-height: 1.7;
+    }
+    .birth-data span { color: var(--text); }
+
+    /* ─── IDENTITY TRIO ──────────────────────── */
+    .identity-trio {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .id-card {
+      padding: 16px 14px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .id-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 2px;
+    }
+    .id-card.sun::before   { background: var(--gold);     box-shadow: 0 0 10px var(--gold-glow); }
+    .id-card.moon::before  { background: var(--moon);     box-shadow: 0 0 10px var(--moon-glow); }
+    .id-card.rising::before{ background: var(--amethyst); box-shadow: 0 0 10px var(--amethyst-glow); }
+
+    .id-symbol {
+      font-size: 32px; line-height: 1; display: block; margin-bottom: 6px;
+    }
+    .id-card.sun   .id-symbol { color: var(--gold-hi);  text-shadow: 0 0 12px var(--gold-glow); }
+    .id-card.moon  .id-symbol { color: var(--moon);     text-shadow: 0 0 12px var(--moon-glow); }
+    .id-card.rising .id-symbol{ color: var(--amethyst); text-shadow: 0 0 12px var(--amethyst-glow); }
+
+    .id-label {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 6px; letter-spacing: 2px;
+      color: var(--dim); display: block; margin-bottom: 8px;
+    }
+
+    .id-sign {
+      font-family: 'VT323', monospace;
+      font-size: 28px; line-height: 1; display: block; margin-bottom: 2px;
+    }
+    .id-card.sun   .id-sign { color: var(--gold-hi); }
+    .id-card.moon  .id-sign { color: var(--moon); }
+    .id-card.rising .id-sign{ color: var(--amethyst); }
+
+    .id-deg {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12px; color: var(--dim);
+    }
+
+    /* ─── CHART SIGNATURE ────────────────────── */
+    .signature-panel {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-top: 2px solid var(--amethyst);
+      box-shadow: 0 0 20px var(--amethyst-glow);
+      padding: 16px 18px;
+      margin-bottom: 20px;
+    }
+
+    .sig-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 28px;
+    }
+
+    .sig-row {
+      display: flex; align-items: baseline; gap: 10px;
+      font-size: 15px; padding: 4px 0;
+      border-bottom: 1px dotted rgba(42,34,88,0.5);
+    }
+    .sig-row:last-child { border-bottom: none; }
+
+    .sig-label {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 6px; color: var(--amethyst);
+      letter-spacing: 1px; white-space: nowrap; flex-shrink: 0;
+    }
+    .sig-value {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12.5px; color: var(--text);
+    }
+
+    /* ─── PLANET STRIP ───────────────────────── */
+    .planet-strip {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-top: 2px solid var(--gold);
+      box-shadow: 0 0 16px rgba(200,154,42,0.07);
+      padding: 14px 18px;
+      margin-bottom: 20px;
+    }
+    .strip-label {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 7px; color: var(--gold);
+      letter-spacing: 3px; margin-bottom: 13px;
+      text-shadow: 0 0 8px var(--gold-glow);
+    }
+    .planet-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 2px 24px;
+    }
+    .prow {
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding: 4px 0; border-bottom: 1px dotted rgba(42,34,88,0.7);
+      font-size: 18px;
+    }
+    .pname  { color: var(--amethyst); }
+    .pdeg   { color: var(--gold-hi); font-size: 16px; }
+    .phouse { color: var(--dim); font-size: 13px; }
+
+    /* ─── KEY NATAL ASPECTS ──────────────────── */
+    .aspects-panel {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-top: 2px solid var(--teal);
+      box-shadow: 0 0 20px var(--teal-glow);
+      padding: 16px 18px;
+      margin-bottom: 28px;
+    }
+
+    .aspects-grid { display: flex; flex-direction: column; gap: 10px; }
+
+    .aspect-row {
+      display: flex; align-items: center;
+      gap: 12px; padding: 8px 10px;
+      background: rgba(10,10,30,0.5);
+      border: 1px solid rgba(42,34,88,0.5);
+    }
+    .aspect-row-text {
+      font-family: 'IBM Plex Mono', monospace;
+      flex: 1; color: var(--text); font-size: 13px; line-height: 1.4;
+    }
+    .aspect-row-text em { color: var(--gold-hi); font-style: normal; }
+
+    .aspect-row-right { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+
+    .orb-wrap { display: flex; align-items: center; gap: 6px; }
+    .orb-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 11px; color: var(--dim); white-space: nowrap;
+    }
+    .orb-track {
+      width: 56px; height: 4px;
+      background: rgba(42,34,88,0.8);
+      border: 1px solid rgba(42,34,88,1);
+      border-radius: 2px; overflow: hidden;
+    }
+    .orb-fill { height: 100%; border-radius: 2px; }
+    .orb-fill.conjunction  { background: var(--gold-hi); box-shadow: 0 0 6px var(--gold); }
+    .orb-fill.trine        { background: var(--teal);    box-shadow: 0 0 6px var(--teal); }
+    .orb-fill.opposition   { background: var(--amethyst);}
+    .orb-fill.square       { background: var(--rose);    box-shadow: 0 0 6px var(--rose); }
+    .orb-fill.inconjunct   { background: var(--orange);  }
+    .orb-fill.sextile      { background: var(--sextile); }
+
+    .badge {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 6px; padding: 3px 6px;
+      letter-spacing: 0.5px; border-radius: 2px; white-space: nowrap;
+    }
+    .badge.conjunction  { background: rgba(200,154,42,0.15); color: var(--gold-hi);  border: 1px solid var(--gold);     }
+    .badge.trine        { background: rgba(42,144,128,0.15); color: var(--teal);     border: 1px solid var(--teal);     }
+    .badge.opposition   { background: rgba(138,92,184,0.15); color: var(--amethyst); border: 1px solid var(--amethyst); }
+    .badge.square       { background: rgba(170,56,104,0.15); color: var(--rose);     border: 1px solid var(--rose);     }
+    .badge.inconjunct   { background: rgba(200,120,60,0.15); color: var(--orange);   border: 1px solid var(--orange);   }
+
+    /* ─── DIVIDER ─────────────────────────────── */
+    .divider {
+      display: flex; align-items: center; gap: 12px; margin: 24px 0;
+    }
+    .divider::before, .divider::after {
+      content: ''; flex: 1; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border-hi), transparent);
+    }
+    .divider-inner {
+      font-size: 20px; color: var(--gold);
+      letter-spacing: 10px; text-shadow: 0 0 10px var(--gold-glow);
+      white-space: nowrap;
+    }
+
+    /* ─── COLLAPSIBLE SECTIONS ───────────────── */
+    .section {
+      margin-bottom: 12px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      position: relative;
+      opacity: 0; transform: translateY(14px);
+      transition: opacity 0.45s ease, transform 0.45s ease, border-color 0.2s;
+    }
+    .section.visible  { opacity: 1; transform: translateY(0); }
+    .section:hover    { border-color: var(--border-hi); }
+
+    .section::before {
+      content: ''; display: block;
+      position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+    }
+    .section.s-sun::before     { background: var(--gold);     box-shadow: 2px 0 12px var(--gold-glow); }
+    .section.s-moon::before    { background: var(--moon);     box-shadow: 2px 0 10px var(--moon-glow); }
+    .section.s-rising::before  { background: var(--amethyst); box-shadow: 2px 0 12px var(--amethyst-glow); }
+    .section.s-scorpio::before { background: var(--rose);     box-shadow: 2px 0 10px var(--rose-glow); }
+    .section.s-node::before    { background: var(--teal);     box-shadow: 2px 0 10px var(--teal-glow); }
+    .section.s-chiron::before  { background: var(--sage);     box-shadow: 2px 0 10px var(--sage-glow); }
+    .section.s-forge::before    { background: var(--orange);  box-shadow: 2px 0 10px var(--orange-glow); }
+    .section.s-mars::before     { background: var(--mars);    box-shadow: 2px 0 10px var(--mars-glow); }
+    .section.s-saturn::before   { background: var(--slate);   box-shadow: 2px 0 10px var(--slate-glow); }
+    .section.s-mc::before       { background: var(--pisces);  box-shadow: 2px 0 10px var(--pisces-glow); }
+    .section.s-summary::before  { background: var(--gold);    box-shadow: 2px 0 12px var(--gold-glow); }
+
+    .section-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 18px 14px 22px;
+      cursor: pointer; user-select: none;
+      transition: background 0.2s;
+    }
+    .section-header:hover { background: rgba(106,80,168,0.08); }
+    .section.open .section-header { border-bottom: 1px solid var(--border); }
+
+    .section-header-left { display: flex; align-items: flex-start; gap: 12px; flex: 1; }
+
+    .section-icon { font-size: 22px; line-height: 1; margin-top: 2px; flex-shrink: 0; }
+    .s-sun     .section-icon { color: var(--gold-hi);  text-shadow: 0 0 10px var(--gold-glow); }
+    .s-moon    .section-icon { color: var(--moon); }
+    .s-rising  .section-icon { color: var(--amethyst); }
+    .s-scorpio .section-icon { color: var(--rose); }
+    .s-node    .section-icon { color: var(--teal); }
+    .s-chiron  .section-icon { color: var(--sage); }
+    .s-forge   .section-icon { color: var(--orange);  }
+    .s-mars    .section-icon { color: var(--mars);    }
+    .s-saturn  .section-icon { color: var(--slate);   }
+    .s-mc      .section-icon { color: var(--pisces);  }
+    .s-summary .section-icon { color: var(--gold-hi); }
+
+    .section-header-text { flex: 1; }
+
+    .section-title {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 9px; letter-spacing: 1px;
+      margin-bottom: 7px; line-height: 1.6;
+    }
+    .s-sun     .section-title { color: var(--gold-hi);  }
+    .s-moon    .section-title { color: var(--moon);     }
+    .s-rising  .section-title { color: var(--amethyst); }
+    .s-scorpio .section-title { color: var(--rose);     }
+    .s-node    .section-title { color: var(--teal);     }
+    .s-chiron  .section-title { color: var(--sage);     }
+    .s-forge   .section-title { color: var(--orange);   }
+    .s-mars    .section-title { color: var(--mars);     }
+    .s-saturn  .section-title { color: var(--slate);    }
+    .s-mc      .section-title { color: var(--pisces);   }
+    .s-summary .section-title { color: var(--gold-hi);  }
+
+    .section-teaser {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12.5px; color: var(--dim); line-height: 1.6;
+    }
+
+    .toggle-btn {
+      font-size: 16px; color: var(--dim);
+      transition: transform 0.3s ease, color 0.2s;
+      flex-shrink: 0; padding: 4px 6px;
+      font-family: 'Press Start 2P', monospace;
+    }
+    .section.open .toggle-btn { transform: rotate(180deg); color: var(--gold); }
+
+    .section-body {
+      overflow: hidden; max-height: 0; opacity: 0;
+      transition: max-height 0.45s ease, opacity 0.35s ease, padding 0.35s ease;
+      padding: 0 22px 0 22px;
+    }
+    .section.open .section-body {
+      max-height: 3000px; opacity: 1;
+      padding: 0 22px 24px 22px;
+    }
+
+    /* ─── INLINE ASPECTS ─────────────────────── */
+    .aspect {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 13px; padding: 10px 14px;
+      margin: 14px 0; line-height: 1.62;
+      border-left: 3px solid;
+      display: flex; align-items: flex-start; gap: 10px;
+    }
+    .aspect-text { flex: 1; }
+    .aspect-orb {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 6px; white-space: nowrap;
+      padding: 2px 5px; border-radius: 2px;
+      margin-top: 2px; flex-shrink: 0;
+      background: rgba(0,0,0,0.3); color: var(--dim);
+    }
+    .aspect-orb.exact { color: var(--gold-hi); border: 1px solid var(--gold); background: rgba(200,154,42,0.1); }
+
+    .aspect.conjunction   { border-color: var(--gold);     background: rgba(200,154,42,0.08);  color: #f5d060; }
+    .aspect.trine         { border-color: var(--teal);     background: rgba(42,144,128,0.08);  color: #50d4bc; }
+    .aspect.opposition    { border-color: var(--amethyst); background: rgba(138,92,184,0.08);  color: #c09ee8; }
+    .aspect.square        { border-color: var(--rose);     background: rgba(170,56,104,0.08);  color: #e07098; }
+    .aspect.inconjunct    { border-color: var(--orange);   background: rgba(200,120,60,0.08);  color: #f0a868; }
+
+    /* ─── BODY TEXT ──────────────────────────── */
+    p {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 15px; line-height: 1.82;
+      margin-bottom: 14px; color: var(--text);
+    }
+    p:last-child { margin-bottom: 0; }
+    em     { color: var(--gold-hi); font-style: italic; }
+    strong { color: var(--amethyst); font-weight: 600; }
+
+    /* ─── PULL QUOTE ─────────────────────────── */
+    .pull-quote {
+      font-family: 'IBM Plex Mono', monospace;
+      font-style: italic; text-align: center;
+      font-size: 16px; line-height: 1.75;
+      color: var(--gold-hi);
+      padding: 20px 28px; margin: 20px 0;
+      border-top: 1px solid rgba(200,154,42,0.3);
+      border-bottom: 1px solid rgba(200,154,42,0.3);
+      text-shadow: 0 0 20px rgba(200,154,42,0.15);
+      position: relative;
+    }
+    .pull-quote::before {
+      content: '"'; font-family: 'VT323', monospace; font-style: normal;
+      position: absolute; top: -8px; left: 18px;
+      font-size: 52px; color: var(--gold); opacity: 0.35; line-height: 1;
+    }
+
+    /* ─── THEME TAG ──────────────────────────── */
+    .theme-tag {
+      display: inline-block;
+      font-family: 'Press Start 2P', monospace;
+      font-size: 6.5px; padding: 4px 8px; margin: 3px 3px 3px 0;
+      border-radius: 2px; letter-spacing: 0.5px;
+      background: rgba(138,92,184,0.12);
+      color: var(--amethyst); border: 1px solid rgba(138,92,184,0.3);
+    }
+    .themes-row { margin: 12px 0 4px; }
+
+    /* ─── MOBILE ────────────────────────────────*/
+    @media (max-width: 640px) {
+      body             { padding: 10px 6px 48px; }
+      .content         { padding: 20px 16px 32px; }
+      h1               { font-size: 42px; }
+      .titlebar-label  { font-size: 6px; letter-spacing: 0; }
+      .identity-trio   { grid-template-columns: 1fr; }
+      .sig-grid        { grid-template-columns: 1fr; }
+      .planet-grid     { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
+      .section-title   { font-size: 7.5px; }
+      .section-header  { padding: 12px 14px 12px 20px; border-bottom: 1px solid var(--border); cursor: default; }
+      .aspect-row      { flex-wrap: wrap; row-gap: 6px; }
+      .aspect-row-right{ margin-left: auto; }
+      .pull-quote      { padding: 16px 16px; font-size: 14px; }
+
+      /* Remove scroll-reveal blank-space on mobile */
+      .section { opacity: 1 !important; transform: none !important; }
+      /* Auto-expand all sections on mobile */
+      .section-body {
+        max-height: none !important;
+        opacity: 1 !important;
+        padding: 0 14px 18px 14px !important;
+        overflow: visible !important;
+      }
+      .toggle-btn { display: none !important; }
+    }
+
+    /* ─── FOOTER ─────────────────────────────── */
+    .footer {
+      text-align: center; color: var(--dim);
+      font-size: 16px; margin-top: 16px;
+      padding-top: 18px; border-top: 1px solid var(--border);
+      letter-spacing: 3px;
+    }
+  </style>
+</head>
+<body>
+
+<div id="starfield"></div>
+
+<div class="window">
+
+  <div class="titlebar">
+    <span class="titlebar-label">✦ NATAL CHART &nbsp;·&nbsp; DASHA &nbsp;·&nbsp; DEC 20, 2000 ✦</span>
+    <div class="titlebar-btns">
+      <button class="tbtn">_</button>
+      <button class="tbtn">□</button>
+      <button class="tbtn">✕</button>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <div class="reading-meta">NATAL CHART &nbsp;·&nbsp; PLACIDUS &nbsp;·&nbsp; TROPICAL ZODIAC</div>
+    <h1>Dasha</h1>
+    <div class="birth-data">
+      <span>December 20, 2000</span> &nbsp;·&nbsp; <span>12:00 PM EST</span> &nbsp;·&nbsp; <span>Quito, Ecuador</span>
+    </div>
+
+    <!-- IDENTITY TRIO -->
+    <div class="identity-trio">
+      <div class="id-card sun">
+        <span class="id-symbol">☉</span>
+        <span class="id-label">SUN</span>
+        <span class="id-sign">Sagittarius</span>
+        <span class="id-deg">29° · 9th house · anaretic</span>
+      </div>
+      <div class="id-card moon">
+        <span class="id-symbol">☽</span>
+        <span class="id-label">MOON</span>
+        <span class="id-sign">Scorpio</span>
+        <span class="id-deg">2° · 8th house</span>
+      </div>
+      <div class="id-card rising">
+        <span class="id-symbol">↑</span>
+        <span class="id-label">RISING</span>
+        <span class="id-sign">Pisces</span>
+        <span class="id-deg">25° · Neptune-ruled</span>
+      </div>
+    </div>
+
+    <!-- CHART SIGNATURE -->
+    <div class="signature-panel">
+      <div class="strip-label">▸ CHART SIGNATURE</div>
+      <div class="sig-grid">
+        <div class="sig-row">
+          <span class="sig-label">CHART RULER</span>
+          <span class="sig-value">Neptune — in Aquarius, 11th house</span>
+        </div>
+        <div class="sig-row">
+          <span class="sig-label">DOMINANT</span>
+          <span class="sig-value">Mutable Fire + Fixed Air + Fixed Water</span>
+        </div>
+        <div class="sig-row">
+          <span class="sig-label">STELLIUM I</span>
+          <span class="sig-value">Sagittarius 9th — Sun, Mercury, Pluto, Chiron</span>
+        </div>
+        <div class="sig-row">
+          <span class="sig-label">STELLIUM II</span>
+          <span class="sig-value">Aquarius 11th — Venus, Uranus, Neptune</span>
+        </div>
+        <div class="sig-row">
+          <span class="sig-label">ANARETIC</span>
+          <span class="sig-value">Sun at 29° Sagittarius — threshold degree</span>
+        </div>
+        <div class="sig-row">
+          <span class="sig-label">EXACT</span>
+          <span class="sig-value">Mercury ☌ MC — 0°10' (mind IS career)</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- NATAL PLANETS STRIP -->
+    <div class="planet-strip">
+      <div class="strip-label">▸ NATAL PLANETS</div>
+      <div class="planet-grid">
+        <div class="prow"><span class="pname">☉ Sun</span>      <span class="pdeg">29° ♐</span>  <span class="phouse">9th</span></div>
+        <div class="prow"><span class="pname">☽ Moon</span>     <span class="pdeg">2° ♏</span>   <span class="phouse">8th</span></div>
+        <div class="prow"><span class="pname">↑ Ascendant</span><span class="pdeg">25° ♓</span>  <span class="phouse">—</span></div>
+        <div class="prow"><span class="pname">☿ Mercury</span>  <span class="pdeg">26° ♐</span>  <span class="phouse">9th</span></div>
+        <div class="prow"><span class="pname">♀ Venus</span>    <span class="pdeg">14° ♒</span>  <span class="phouse">11th</span></div>
+        <div class="prow"><span class="pname">♂ Mars</span>     <span class="pdeg">28° ♎</span>  <span class="phouse">7th</span></div>
+        <div class="prow"><span class="pname">♃ Jupiter</span>  <span class="pdeg">3° ♊ Rx</span> <span class="phouse">3rd</span></div>
+        <div class="prow"><span class="pname">♄ Saturn</span>   <span class="pdeg">25° ♉ Rx</span><span class="phouse">2nd</span></div>
+        <div class="prow"><span class="pname">♅ Uranus</span>   <span class="pdeg">18° ♒</span>  <span class="phouse">11th</span></div>
+        <div class="prow"><span class="pname">♆ Neptune</span>  <span class="pdeg">4° ♒</span>   <span class="phouse">11th</span></div>
+        <div class="prow"><span class="pname">♇ Pluto</span>    <span class="pdeg">13° ♐</span>  <span class="phouse">9th</span></div>
+        <div class="prow"><span class="pname">⚷ Chiron</span>   <span class="pdeg">21° ♐</span>  <span class="phouse">9th</span></div>
+        <div class="prow"><span class="pname">☊ N.Node</span>   <span class="pdeg">15° ♋ Rx</span><span class="phouse">4th</span></div>
+        <div class="prow"><span class="pname">MC</span>         <span class="pdeg">26° ♐</span>  <span class="phouse">10th cusp</span></div>
+      </div>
+    </div>
+
+    <!-- KEY NATAL ASPECTS -->
+    <div class="aspects-panel">
+      <div class="strip-label">▸ KEY NATAL ASPECTS — SORTED BY EXACTNESS</div>
+      <div class="aspects-grid">
+
+        <div class="aspect-row">
+          <div class="aspect-row-text">☿ Mercury <em>☌ conjunct</em> MC — mind and career destiny are the same frequency</div>
+          <div class="aspect-row-right">
+            <div class="orb-wrap">
+              <span class="orb-label">0°10'</span>
+              <div class="orb-track"><div class="orb-fill conjunction" style="width:98%"></div></div>
+            </div>
+            <span class="badge conjunction">EXACT</span>
+          </div>
+        </div>
+
+        <div class="aspect-row">
+          <div class="aspect-row-text">♆ Neptune <em>□ square</em> ☽ Moon — the porous boundary between self and others' feelings</div>
+          <div class="aspect-row-right">
+            <div class="orb-wrap">
+              <span class="orb-label">2°53'</span>
+              <div class="orb-track"><div class="orb-fill square" style="width:65%"></div></div>
+            </div>
+            <span class="badge square">SQUARE</span>
+          </div>
+        </div>
+
+        <div class="aspect-row">
+          <div class="aspect-row-text">☉ Sun <em>☌ conjunct</em> MC — identity and public calling aligned at the career axis</div>
+          <div class="aspect-row-right">
+            <div class="orb-wrap">
+              <span class="orb-label">2°43'</span>
+              <div class="orb-track"><div class="orb-fill conjunction" style="width:66%"></div></div>
+            </div>
+            <span class="badge conjunction">CONJ</span>
+          </div>
+        </div>
+
+        <div class="aspect-row">
+          <div class="aspect-row-text">☉ Sun <em>☌ conjunct</em> ☿ Mercury — the seeker and the communicator are one mind</div>
+          <div class="aspect-row-right">
+            <div class="orb-wrap">
+              <span class="orb-label">2°53'</span>
+              <div class="orb-track"><div class="orb-fill conjunction" style="width:64%"></div></div>
+            </div>
+            <span class="badge conjunction">CONJ</span>
+          </div>
+        </div>
+
+        <div class="aspect-row">
+          <div class="aspect-row-text">☽ Moon <em>☌ conjunct</em> ♂ Mars (cross-sign Sco/Lib) — the fierce intelligence beneath the composed surface</div>
+          <div class="aspect-row-right">
+            <div class="orb-wrap">
+              <span class="orb-label">3°47'</span>
+              <div class="orb-track"><div class="orb-fill conjunction" style="width:53%"></div></div>
+            </div>
+            <span class="badge conjunction">CONJ</span>
+          </div>
+        </div>
+
+        <div class="aspect-row">
+          <div class="aspect-row-text">♀ Venus <em>☌ conjunct</em> ♅ Uranus — love that needs electricity, freedom, and the unexpected</div>
+          <div class="aspect-row-right">
+            <div class="orb-wrap">
+              <span class="orb-label">3°52'</span>
+              <div class="orb-track"><div class="orb-fill conjunction" style="width:52%"></div></div>
+            </div>
+            <span class="badge conjunction">CONJ</span>
+          </div>
+        </div>
+
+        <div class="aspect-row">
+          <div class="aspect-row-text">☿ Mercury <em>☌ conjunct</em> ⚷ Chiron — ideas that carry the wound; the wound that becomes teaching</div>
+          <div class="aspect-row-right">
+            <div class="orb-wrap">
+              <span class="orb-label">5°00'</span>
+              <div class="orb-track"><div class="orb-fill conjunction" style="width:38%"></div></div>
+            </div>
+            <span class="badge conjunction">CONJ</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="divider"><span class="divider-inner">✦ ☽ ✦</span></div>
+
+    <!-- ═══ SUN ══════════════════════════════════ -->
+    <div class="section s-sun open visible">
+      <div class="section-header" onclick="toggleSection(this)">
+        <div class="section-header-left">
+          <span class="section-icon">☉</span>
+          <div class="section-header-text">
+            <div class="section-title">SUN · 29° SAGITTARIUS · 9TH HOUSE</div>
+            <div class="section-teaser">Anaretic threshold · conjunct MC + Mercury · the seeker whose seeking IS the vocation</div>
+          </div>
+        </div>
+        <span class="toggle-btn">▼</span>
+      </div>
+      <div class="section-body">
+        <div class="aspect conjunction">
+          <div class="aspect-text">Sun at 29°07' Sagittarius conjunct MC at 26°24' Sagittarius — 2°43' orb</div>
+          <span class="aspect-orb exact">TIGHT</span>
+        </div>
+        <div class="aspect conjunction">
+          <div class="aspect-text">Sun at 29°07' Sagittarius conjunct Mercury at 26°14' Sagittarius — 2°53' orb</div>
+          <span class="aspect-orb">2°53'</span>
+        </div>
+        <div class="themes-row">
+          <span class="theme-tag">ANARETIC 29°</span>
+          <span class="theme-tag">SEEKER AT THE THRESHOLD</span>
+          <span class="theme-tag">IDENTITY = PHILOSOPHY</span>
+          <span class="theme-tag">CAREER IS CALLING</span>
+          <span class="theme-tag">TRUTH AS ORIENTATION</span>
+        </div>
+        <p>The Sun at 29° Sagittarius is what astrologers call an anaretic degree — the final degree of the sign, where energy is at its most concentrated, most urgent, most crystallized. You were born with your identity already in the last chapter of a Sagittarian story: the seeker who has traveled far, gathered much, and is standing at the threshold of a new way of being. There is an inherent urgency to the 29° Sun — a sense of <em>I have to get this right, I have to find what this means</em> — that has probably been with you since you were very young.</p>
+        <p>The 9th house amplifies this. Sagittarius is the natural ruler of the 9th — your Sun is in its home territory, which means the Sagittarian qualities (truth-seeking, expansion, philosophical orientation, hunger for meaning and understanding) are not aspirations. They are the fundamental architecture of who you are. You don't reach for philosophy — you live inside it. The question of <em>what does this mean?</em> runs underneath everything else, all the time.</p>
+        <p>What makes this chart configuration particularly striking is what the Sun is clustered with: Mercury and the Midheaven, both in Sagittarius, all within 3°. Your identity (Sun), your mind and communication (Mercury), and your career destiny axis (MC) are running in the same current. <em>What you believe, how you think, and what you're called to do publicly are not separate domains — they're the same domain, expressed in different registers.</em> When you're doing the work that aligns with your understanding of the world, all three fire at once. The vocation isn't separate from the worldview; it IS the worldview, expressed.</p>
+        <div class="pull-quote">The seeking is not a phase you'll grow out of. It is the thing itself. The question is what you build with it.</div>
+        <p>The 29° quality means there's rarely a resting place that feels entirely finished. There's always one more thing to understand, one more horizon to pursue, one more layer to the question. This is not restlessness for its own sake — it's the signature of a mind built for expansion rather than closure. The art form is learning to act from what you know, even while you're still finding out what you know. You don't have to arrive before you begin.</p>
+      </div>
+    </div>
+
+    <!-- ═══ MOON ══════════════════════════════════ -->
+    <div class="section s-moon">
+      <div class="section-header" onclick="toggleSection(this)">
+        <div class="section-header-left">
+          <span class="section-icon">☽</span>
+          <div class="section-header-text">
+            <div class="section-title">MOON · 2° SCORPIO · 8TH HOUSE</div>
+            <div class="section-teaser">Depth that rarely shows · the 8th house private world · the fierce intelligence underneath</div>
+          </div>
+        </div>
+        <span class="toggle-btn">▼</span>
+      </div>
+      <div class="section-body">
+        <div class="aspect conjunction">
+          <div class="aspect-text">Moon at 2°03' Scorpio conjunct Mars at 28°16' Libra (cross-sign) — 3°47' orb</div>
+          <span class="aspect-orb">3°47'</span>
+        </div>
+        <div class="aspect square">
+          <div class="aspect-text">Neptune at 4°56' Aquarius square Moon at 2°03' Scorpio — 2°53' orb</div>
+          <span class="aspect-orb">2°53'</span>
+        </div>
+        <div class="themes-row">
+          <span class="theme-tag">FULL VOLUME INWARD</span>
+          <span class="theme-tag">TRUST IS EARNED SLOWLY</span>
+          <span class="theme-tag">THE 8TH HOUSE CONTAINER</span>
+          <span class="theme-tag">FIERCE UNDERNEATH</span>
+          <span class="theme-tag">EMOTIONAL PERMEABLE FIELD</span>
+        </div>
+        <p>The Moon in Scorpio in the 8th house is one of the most intensely private emotional configurations in the zodiac. Everything is felt at full volume — and almost none of it shows. The 8th house is the domain of what's hidden, what's shared in the deepest trust, what happens in the underworld of a relationship rather than on the surface. Your emotional life runs in this private register by design: not because you're withholding, but because depth is how you naturally process. You don't skim feelings. You go all the way in and wait until you understand what you're actually feeling before it surfaces, if it ever does.</p>
+        <p>Scorpio Moon needs to merge — and fears it at the same time. Trust is not extended easily here; it has to be earned through consistency and the sense that someone is genuinely who they say they are. Once trust is given, the loyalty is absolute. But the bar for earning it is real, and the instinct for sensing when something is off (when someone is not telling the full truth, when a situation is more complicated than it appears) is extremely reliable. <em>You pick up on things people think they're hiding.</em> That's not paranoia — that's the 8th house Moon doing its primary job.</p>
+        <p>The Moon-Mars cross-sign conjunction (Moon just crossing into Scorpio, Mars at the final degree of Libra) adds a layer of fierce emotional intelligence. Mars is the drive, the will, the instinct to act — conjunct your Moon, it means your feelings have an edge to them, a decisiveness, a quality that can surprise people who've only seen the composed, reflective surface. When something genuinely offends your values, you move. The composed exterior doesn't always predict the internal velocity.</p>
+        <div class="pull-quote">Still water runs deep, and fast. People who've seen only the surface are not prepared for the current.</div>
+        <p>The Neptune square to the Moon at 2°53' is worth sitting with. Neptune dissolves boundaries — and squaring the Moon, it creates some permeability between your own emotional state and the emotional field around you. You are genuinely sensitive to the moods, needs, and energies of others, sometimes before they've put words to them. The gift is empathy and attunement. The shadow is that the line between what you're feeling and what someone else is feeling can get fuzzy, especially when you're close to someone or in a space with high emotional charge. Learning to locate the boundary — <em>is this mine or theirs?</em> — is ongoing and worth developing deliberately.</p>
+      </div>
+    </div>
+
+    <!-- ═══ RISING ════════════════════════════════ -->
+    <div class="section s-rising">
+      <div class="section-header" onclick="toggleSection(this)">
+        <div class="section-header-left">
+          <span class="section-icon">↑</span>
+          <div class="section-header-text">
+            <div class="section-title">RISING · 25° PISCES · NEPTUNE-RULED</div>
+            <div class="section-teaser">The permeable exterior · warmth that sees people · Scorpio depth hidden in plain sight</div>
+          </div>
+        </div>
+        <span class="toggle-btn">▼</span>
+      </div>
+      <div class="section-body">
+        <div class="themes-row">
+          <span class="theme-tag">POROUS EXTERIOR</span>
+          <span class="theme-tag">PEOPLE FEEL SEEN</span>
+          <span class="theme-tag">NEPTUNE IN AQUARIUS</span>
+          <span class="theme-tag">SOFT OUTSIDE / INTENSE INSIDE</span>
+          <span class="theme-tag">SPIRITUAL ATTUNEMENT</span>
+        </div>
+        <p>Pisces Rising is the most permeable of all the rising signs — the one where the boundary between self and world is thinnest at the surface. People with Pisces Ascending tend to meet others with a quality of openness, warmth, and intuitive attunement that makes people feel seen even in short encounters. You probably don't try to make people feel this way; it's simply how your energy moves outward. There's a quality of <em>I understand you without you having to explain everything</em> in how you present, and people are often drawn to this without fully knowing why.</p>
+        <p>Your chart ruler is Neptune — the planet of dreams, dissolution, spiritual attunement, and the space where the personal dissolves into something larger. Neptune sits in Aquarius in your 11th house, which shapes how the Pisces rising expresses: the warmth and permeability run through an Aquarian frequency — community-oriented, idealistic about what humanity could be, emotionally present but with a quality of intellectual altitude. The empathy is not just personal; it's structural. You think about people at the level of systems as well as individuals.</p>
+        <p>The striking contrast in this chart is what's underneath the Pisces surface. A Pisces rising tends to project softness, openness, emotional availability — and all of that is real. But your Moon is in Scorpio in the 8th house. The interior is nothing like the exterior. Where the exterior is permeable and warm, the interior is intense, private, and runs at full depth. <em>People who meet you at the surface and think they have the whole picture are missing most of it.</em></p>
+        <div class="pull-quote">What you offer outward is real. It is also not the whole story. The whole story is much more interesting.</div>
+        <p>The paradox of Pisces Rising with Scorpio Moon is that it creates a specific social dynamic: you're extremely good at being present for others, at making space for their needs and feelings — but you're not always giving them the equivalent access to yours. The Pisces rising opens a door. The Scorpio Moon decides who gets all the way inside. Most people experience the warmth and feel known; very few ever reach the depth. That's not a dysfunction — it's architecture. But it's worth knowing, because it means the people who have actually earned your full trust are rare and particularly significant.</p>
+      </div>
+    </div>
+
+    <!-- ═══ AQUARIUS STELLIUM ══════════════════════ -->
+    <div class="section s-node">
+      <div class="section-header" onclick="toggleSection(this)">
+        <div class="section-header-left">
+          <span class="section-icon">♒</span>
+          <div class="section-header-text">
+            <div class="section-title">AQUARIUS STELLIUM · 11TH HOUSE · VENUS, URANUS, NEPTUNE</div>
+            <div class="section-teaser">Electric unconventional love · the collective-tech-community domain · Venus-Uranus at full charge</div>
+          </div>
+        </div>
+        <span class="toggle-btn">▼</span>
+      </div>
+      <div class="section-body">
+        <div class="aspect conjunction">
+          <div class="aspect-text">Venus at 14°16' Aquarius conjunct Uranus at 18°08' Aquarius — 3°52' orb</div>
+          <span class="aspect-orb">3°52'</span>
+        </div>
+        <div class="themes-row">
+          <span class="theme-tag">UNCONVENTIONAL LOVE</span>
+          <span class="theme-tag">COMMUNITY AS HOME</span>
+          <span class="theme-tag">ELECTRIC ATTRACTION</span>
+          <span class="theme-tag">VISIONARY FRIENDSHIP</span>
+          <span class="theme-tag">TECHNOLOGY + HUMANITY</span>
+          <span class="theme-tag">INDEPENDENCE IN LOVE</span>
+        </div>
+        <p>Three planets in Aquarius in the 11th house — Venus, Uranus, and Neptune — cluster in the domain of friendship, community, collective belonging, and the social future. This is where much of your vitality lives. The 11th house is where we find our people, our tribe, the humans whose frequency matches ours in a way that transcends the usual social categories. For you, this domain is charged, visionary, and distinctly unconventional.</p>
+        <p><strong>Venus in Aquarius:</strong> Values independence even in close relationships. Attracted to people who are unusual, intellectually alive, who think differently about the world. The affection style is warm but not clingy — love has to breathe. Venus in Aquarius finds some traditional relationship structures stifling; it needs the room to be a person first and a partner second. What it offers in return is genuine friendship inside love — a quality of I see you as a whole person, not just in relation to me.</p>
+        <p><strong>Venus conjunct Uranus (3°52'):</strong> The Venus-Uranus conjunction is the signature of love that arrives suddenly and unconventionally, that has an electric, magnetic quality, and that needs freedom to stay alive. Attraction for you has a charge to it — something clicks into place suddenly rather than gradually. The same quality means that relationships which become too predictable, too constrained, too much about obligation and not enough about genuine connection, start to feel suffocating in ways that are hard to explain. <em>The love that works for you has air in it.</em></p>
+        <p><strong>Neptune in Aquarius (11th):</strong> The chart ruler in the house of community, adding a visionary, collective, idealistic layer to how you relate to friends and chosen family. You're drawn to people and projects that feel like they're building toward something — that are oriented toward what could be, not just what is. There's an idealism here about human connection, about what groups of people can do and create together, that infuses the entire 11th house domain.</p>
+        <div class="pull-quote">The people you choose are not random. They are part of the future you're trying to build.</div>
+        <p>This stellium is also where your affinity for technology, building, and teaching through unconventional means lives. Aquarius is the sign of the innovator, the one who sees how things could be reorganized, made more humane, made more connected. The 11th house carries this outward — into community, into collaboration, into the spaces where you share ideas with others and something larger gets built. Your instinct to share what you know and to make complex things accessible to others is deeply rooted here.</p>
+      </div>
+    </div>
+
+    <!-- ═══ CHIRON ════════════════════════════════ -->
+    <div class="section s-chiron">
+      <div class="section-header" onclick="toggleSection(this)">
+        <div class="section-header-left">
+          <span class="section-icon">⚷</span>
+          <div class="section-header-text">
+            <div class="section-title">CHIRON · 21° SAGITTARIUS · 9TH HOUSE</div>
+            <div class="section-teaser">The wound in the worldview · doubt inside the seeker · the precise teacher born from the question</div>
+          </div>
+        </div>
+        <span class="toggle-btn">▼</span>
+      </div>
+      <div class="section-body">
+        <div class="aspect conjunction">
+          <div class="aspect-text">Chiron at 21°14' Sagittarius conjunct Mercury at 26°14' Sagittarius — 5°00' orb</div>
+          <span class="aspect-orb">5°</span>
+        </div>
+        <div class="themes-row">
+          <span class="theme-tag">WOUND IN THE WORLDVIEW</span>
+          <span class="theme-tag">DOUBT INSIDE THE SEEKER</span>
+          <span class="theme-tag">MEANING AS WOUND AND GIFT</span>
+          <span class="theme-tag">THE WOUND THAT TEACHES</span>
+          <span class="theme-tag">PHILOSOPHY EARNED</span>
+        </div>
+        <p>Chiron in Sagittarius in the 9th house is the wound of the seeker: a deep, persistent sense of uncertainty about meaning, belief, and one's own philosophical ground. The 9th house is the natural home of Sagittarius — it's the house of worldview, higher truth, and the frameworks we use to understand our place in existence. Chiron here means something in that domain was injured. Not necessarily in a dramatic event, but in the slower, subtler way of growing up and finding that the framework available — whatever was offered as truth — didn't quite hold.</p>
+        <p>The Sagittarian wound is often an internal one: <em>I want to believe, but I don't fully trust my own beliefs. I seek meaning urgently, but sometimes doubt whether meaning is something I'll ever really land in.</em> There can be an overcompensation either toward dogmatic certainty (holding beliefs too tightly because the doubt underneath is uncomfortable) or toward a restless skepticism that questions everything and lands nowhere. The Chiron in Sagittarius path is learning to hold the genuine seeking without needing it to resolve into arrival — to trust the integrity of the question rather than only the satisfaction of the answer.</p>
+        <p>The conjunction with Mercury at 5° is particularly significant. Mercury rules ideas, communication, language — and it's conjunct both the Chiron wound AND the MC career axis. This means your intellectual life and your wound are intimately connected. The areas where you feel least certain of yourself are very close to the areas where you are, in fact, most skilled. The Chiron-Mercury conjunction is often the signature of the person who teaches best precisely what they have had to earn at the hardest cost. <em>Your most precise, resonant communication will come from the questions you've genuinely had to sit with, not the answers you received easily.</em></p>
+        <div class="pull-quote">Chiron could not heal his own wound. He became the greatest healer because of it, not despite it. The wound was the qualification.</div>
+        <p>Chiron is in the same sign cluster as your Sun (29°), Mercury (26°), and Pluto (13°) — all in Sagittarius, all in the 9th. This makes the Sagittarian stellium more complex than it might initially appear: the seeker quality is real and genuine, AND it carries this wound, this uncertainty, this earned rather than inherited relationship with meaning. That complexity is not a problem to solve. It's the source of the intellectual depth that makes your thinking trustworthy to others — because it came from somewhere real.</p>
+      </div>
+    </div>
+
+    <!-- ═══ MERCURY + MC ══════════════════════════ -->
+    <div class="section s-forge">
+      <div class="section-header" onclick="toggleSection(this)">
+        <div class="section-header-left">
+          <span class="section-icon">☿</span>
+          <div class="section-header-text">
+            <div class="section-title">MERCURY EXACT ON MC · JUPITER Rx · 3RD HOUSE</div>
+            <div class="section-teaser">Mind IS the vocation · the teacher-builder pattern · ideas that want to be shared</div>
+          </div>
+        </div>
+        <span class="toggle-btn">▼</span>
+      </div>
+      <div class="section-body">
+        <div class="aspect conjunction">
+          <div class="aspect-text">Mercury at 26°14' Sagittarius conjunct MC at 26°24' Sagittarius — 0°10' EXACT</div>
+          <span class="aspect-orb exact">0°10' EXACT</span>
+        </div>
+        <div class="themes-row">
+          <span class="theme-tag">MIND AS VOCATION</span>
+          <span class="theme-tag">IDEAS THAT WANT TO MOVE</span>
+          <span class="theme-tag">TEACHER-BUILDER PATTERN</span>
+          <span class="theme-tag">JUPITER Rx — INWARD BEFORE OUTWARD</span>
+          <span class="theme-tag">COMMUNICATION IS THE CAREER</span>
+        </div>
+        <p>The most precise contact in your chart — Mercury at 26°14' Sagittarius conjunct your Midheaven at 26°24' Sagittarius, separated by only 10 minutes of arc. In natal astrology, when a planet sits this close to the MC, it is the career. Not a career tool, not an asset the career draws on — the planet itself is the career axis, expressed through its nature. Mercury is the planet of mind, communication, ideas, transmission of information, making connections between things. <em>Your vocation is fundamentally about ideas moving between minds.</em></p>
+        <p>This doesn't mean a specific job title — it means that whatever you do professionally, the thing that makes it work, the thing that's recognizably you in the work, is the quality of your thinking and communication. The way you connect disparate ideas. The way you can take something complex and find the angle that makes it accessible. The way you build things by understanding how the pieces relate to each other and then transmitting that understanding to others. Mercury on the MC is the teacher, the builder, the systems thinker, the communicator who can work at the junction between knowing and transmitting.</p>
+        <p>Jupiter retrograde in Gemini in the 3rd house adds a complementary signature. Jupiter is expansion, abundance, the principle of growth — in Gemini (Mercury's own sign) in the 3rd house (Mercury's own house), it expands through ideas, information, communication, and the act of learning. The retrograde quality turns this inward before outward: the expansion happens internally first — you absorb, synthesize, integrate — and then moves outward when the understanding is genuinely solid. This is different from an extroverted, performative Jupiter: your intellectual authority comes from having genuinely processed something, not from speaking quickly.</p>
+        <div class="pull-quote">You don't just understand things. You understand how to pass them on in a way that actually lands. That is the rarest skill in the Mercury-on-MC pattern.</div>
+        <p>The combination of Mercury exact on MC and Jupiter Rx in the 3rd house is the signature of someone who is genuinely built for teaching — not necessarily in a classroom, but in the sense of being someone through whom knowledge moves in ways that are useful and transformative to others. You build things that teach. You share things that open doors. The specific domains will change, but the pattern will recur: <em>the person who figured something out and then found a way to make it available to someone else.</em></p>
+      </div>
+    </div>
+
+    <!-- ═══ SATURN + NODES ════════════════════════ -->
+    <div class="section s-saturn">
+      <div class="section-header" onclick="toggleSection(this)">
+        <div class="section-header-left">
+          <span class="section-icon">♄</span>
+          <div class="section-header-text">
+            <div class="section-title">SATURN Rx · 25° TAURUS · 2ND HOUSE · NORTH NODE CANCER 4TH</div>
+            <div class="section-teaser">Self-worth under construction · soul path toward belonging · releasing the achievement identity</div>
+          </div>
+        </div>
+        <span class="toggle-btn">▼</span>
+      </div>
+      <div class="section-body">
+        <div class="themes-row">
+          <span class="theme-tag">SELF-WORTH IS EARNED NOT GIVEN</span>
+          <span class="theme-tag">MATERIAL GROUND BUILT SLOWLY</span>
+          <span class="theme-tag">NORTH NODE CANCER</span>
+          <span class="theme-tag">SOUL PATH = EMOTIONAL HOME</span>
+          <span class="theme-tag">RELEASING CAPRICORN PERFORMANCE</span>
+        </div>
+        <p><strong>Saturn retrograde in Taurus in the 2nd house</strong> is a placement with a complex internal relationship to self-worth and material security. The 2nd house rules values, resources, what you have and what you're worth — not in an abstract sense but in the lived, concrete, embodied sense of I have enough, I am enough. Saturn here means the relationship with those questions is serious, effortful, and takes time to build. The retrograde quality turns the work inward: the development of genuine material stability and self-sufficiency is an internal project before it becomes an external one.</p>
+        <p>Taurus is the sign of slow, deliberate, grounded building — things that last. Saturn in Taurus builds durably when it builds at all, but the pace is its own and won't be hurried without cost. The relationship with financial resources, material possessions, and the felt sense of having solid ground under your feet may have required more internal work than it looks like from the outside. The lesson of Saturn retrograde in the 2nd is that the stability that holds is the kind you build from the inside out — your own relationship with what you value and why, before the material reality catches up to match it.</p>
+        <p><strong>North Node in Cancer in the 4th house</strong> is the soul path of this lifetime. The South Node is in Capricorn in the 10th — the old pattern, the default mode, is achievement, external structure, performance for recognition, building yourself upward in the world's eyes. That pattern is familiar and capable: you can be very competent in the Capricorn 10th mode. But it's not where the growth is.</p>
+        <div class="pull-quote">The old pattern is performing to belong. The new direction is belonging without performance.</div>
+        <p>The North Node in Cancer in the 4th calls toward something more tender and more fundamental: home, belonging, emotional rootedness, the ability to be held and to hold others in their full vulnerability. The 4th house is the innermost chamber of the chart — the place of origin, of private life, of where we go when we're not performing for anyone. The soul path is toward inhabiting that interior space more fully, toward building a life that feels genuinely safe rather than just accomplished.</p>
+        <p>The Cancer North Node axis also asks: <em>who nurtures you?</em> The Capricorn South Node is very good at being competent for others, at showing up reliably, at holding structure. The North Node work is learning to receive — to let yourself be cared for, to build belonging that doesn't depend on what you're producing, to find the people and places where you can just be without the weight of what you're supposed to be doing next.</p>
+      </div>
+    </div>
+
+    <div class="divider"><span class="divider-inner">✦ ☀ ✦</span></div>
+
+    <!-- ═══ SUMMARY ════════════════════════════════ -->
+    <div class="section s-summary open visible">
+      <div class="section-header" onclick="toggleSection(this)">
+        <div class="section-header-left">
+          <span class="section-icon">✨</span>
+          <div class="section-header-text">
+            <div class="section-title">WHAT THIS CHART IS DOING</div>
+            <div class="section-teaser">The seeker and the builder are not two people — they are one chart, pointing in the same direction</div>
+          </div>
+        </div>
+        <span class="toggle-btn">▼</span>
+      </div>
+      <div class="section-body">
+        <p>This is a chart built for transmission. The Sagittarius stellium (Sun, Mercury, Pluto, Chiron) in the 9th house is the seeking, the philosophical orientation, the hunger for meaning and truth. Mercury exact on the MC is the transmission axis — ideas moving from the interior to the world. The Aquarius stellium (Venus, Uranus, Neptune) in the 11th is the community domain through which that transmission flows. All three clusters are doing different parts of the same thing: <em>someone who understands deeply, and knows how to make that understanding available to others.</em></p>
+        <p>The Scorpio Moon in the 8th is the interior that makes the depth real — not performed depth, not philosophical depth that stays at the surface of ideas, but the kind that has been lived through the body and the emotional life. The Pisces Rising is the quality that makes people trust you enough to receive what you're transmitting. You appear open and warm (Pisces) precisely because you are, underneath, capable of enormous depth (Scorpio). The exterior is not a mask — it's just the first layer of something that goes much further than most people have access to.</p>
+        <div class="pull-quote">The chart doesn't ask you to be something you aren't. It asks you to be more fully what you already are — especially the parts you haven't entirely claimed yet.</div>
+        <p>The developmental arc of this chart runs through two poles. The Capricorn South Node has already produced real competence — you know how to achieve, how to show up reliably, how to build credibility in external terms. That's not nothing; it's a foundation. The work ahead is the Cancer North Node: building a life that feels emotionally safe and genuinely yours, rather than one that merely looks accomplished from the outside. Saturn Rx in the 2nd asks you to build self-worth from the inside out, on your own terms, at your own pace.</p>
+        <p>The Chiron in Sagittarius wound — the uncertainty at the center of the seeking — is not something to fix before you begin. It is the qualification. The most precise, useful, resonant things you will build and transmit will come directly from what you had to earn the hard way. The teacher-builder who figured it out through genuine struggle is more trustworthy than one for whom it came easily. <em>The doubt is the source of the rigor. The seeking is the source of the resonance.</em></p>
+        <p>What this chart is building toward: a life in which the seeking (Sagittarius), the depth (Scorpio Moon), the community-building (Aquarius 11th), and the soul path toward genuine belonging (Cancer North Node) are all running in the same direction — not as separate projects, but as different expressions of the same movement. You were built to understand things and to share them. You were built to go deep and to bring something back. That's not a mission statement. It's the chart.</p>
+      </div>
+    </div>
+
+    <div class="divider"><span class="divider-inner">✦ ♒ ✦</span></div>
+
+    <!-- ═══ SYNASTRY ══════════════════════════════ -->
+    <div class="section s-node open visible">
+      <div class="section-header" onclick="toggleSection(this)">
+        <div class="section-header-left">
+          <span class="section-icon">☍</span>
+          <div class="section-header-text">
+            <div class="section-title">A TASTE OF SYNASTRY · DASHA + JORDAN</div>
+            <div class="section-teaser">Four contacts that explain why this particular friendship makes sense</div>
+          </div>
+        </div>
+        <span class="toggle-btn">▼</span>
+      </div>
+      <div class="section-body">
+        <p style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--dim);margin-bottom:16px;">
+          Jordan · b. November 23, 1993 · 6:36 PM PST · Palo Alto, CA · Sagittarius Sun · Aries Moon · 29° Gemini Rising
+        </p>
+
+        <div class="aspect opposition">
+          <div class="aspect-text"><strong style="color:var(--amethyst)">Your Sun (29° Sag) ☍ Jordan's Ascendant (29° Gem) — EXACT, 0° orb.</strong> Your Sun falls directly opposite the axis of how Jordan presents herself to the world. In synastry this is a mirror contact: you illuminate who she is by standing on the other side of her identity axis. She sees herself more clearly in relation to you. This is why she says you get it when others don't — you literally complete the axis she's looking out from.</div>
+          <span class="aspect-orb exact">0° EXACT</span>
+        </div>
+
+        <div class="aspect conjunction">
+          <div class="aspect-text"><strong style="color:#f5d060">Your Moon (2° Sco) ☌ Jordan's Jupiter (2° Sco) — EXACT, 0° orb.</strong> Your emotional world lands directly on Jordan's Jupiter — the planet of expansion and joy, in her 5th house of pleasure and play. Your feelings don't land as a burden to her; they land as abundance. She feels bigger, warmer, and more hopeful when your emotional presence is in the room. Jupiter makes whatever it touches feel like more.</div>
+          <span class="aspect-orb exact">0° EXACT</span>
+        </div>
+
+        <div class="aspect trine">
+          <div class="aspect-text"><strong style="color:#50d4bc">Your Neptune (4° Aqu) ✶ Jordan's Moon (4° Ari) — EXACT sextile, 0° orb.</strong> Your Neptune makes an exact sextile to Jordan's natal Moon — the aspect of intuitive, almost non-verbal attunement. You pick up on her emotional state before she's named it. She softens in your frequency without entirely knowing why. This is the contact that makes certain conversations feel like they went somewhere without you having to navigate there deliberately.</div>
+          <span class="aspect-orb exact">0° EXACT</span>
+        </div>
+
+        <div class="aspect conjunction">
+          <div class="aspect-text"><strong style="color:#f5d060">Your Jupiter (3° Gem) ☌ Jordan's South Node (3° Gem) — EXACT, 0° orb.</strong> Your Jupiter sits exactly on Jordan's South Node — her most familiar, comfortable default pattern. Jupiter amplifies. This means your presence amplifies Jordan's ease and comfort, which is genuinely warm, and also occasionally makes it easier for her to stay in old patterns rather than moving toward her North Node. The connection feels fated. It is. That's the South Node quality: ancient, comfortable, significant in both directions.</div>
+          <span class="aspect-orb exact">0° EXACT</span>
+        </div>
+
+        <p>Four exact aspects — 0° orb each — out of the dozens of possible contacts between two charts. That doesn't happen by chance. There's a reason this particular friendship formed and held. The astrology is just the map of what you probably already know from the inside.</p>
+      </div>
+    </div>
+
+    <div class="footer">☽ &nbsp; natal chart reading &nbsp;·&nbsp; dasha &nbsp;·&nbsp; dec 20, 2000 &nbsp; ☾</div>
+
+  </div>
+</div>
+
+<script>
+(function () {
+  const field = document.getElementById('starfield');
+  const syms  = ['✦','✧','★','✩','·','✦','·','·','✦'];
+  for (let i = 0; i < 90; i++) {
+    const s = document.createElement('span');
+    s.textContent = syms[Math.floor(Math.random() * syms.length)];
+    const size = 5 + Math.random() * 13;
+    const dur  = 2 + Math.random() * 5;
+    const del  = Math.random() * 6;
+    const op   = 0.15 + Math.random() * 0.6;
+    s.style.cssText = [
+      'position:absolute',
+      `left:${(Math.random()*100).toFixed(2)}%`,
+      `top:${(Math.random()*100).toFixed(2)}%`,
+      `font-size:${size.toFixed(1)}px`,
+      `color:rgba(210,165,45,${op.toFixed(2)})`,
+      `animation:twinkle ${dur.toFixed(1)}s ease-in-out ${del.toFixed(1)}s infinite`,
+      'pointer-events:none','user-select:none','line-height:1'
+    ].join(';');
+    field.appendChild(s);
+  }
+})();
+
+function toggleSection(header) {
+  const section = header.closest('.section');
+  section.classList.toggle('open');
+}
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.05 });
+
+document.querySelectorAll('.section:not(.visible)').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

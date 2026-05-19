@@ -91,33 +91,31 @@ Aries 0-29, Taurus 30-59, Gemini 60-89, Cancer 90-119, Leo 120-149, Virgo 150-17
 
 ---
 
-## CURRENT TRANSITS — April 2026
+## CURRENT TRANSITS — May 2026
 
-*Update this section monthly. Last updated April 22, 2026.*
+*Update this section monthly. Last updated May 14, 2026.*
 
-**Transiting planets (April 22, 2026 — from Time Passages screenshot):**
-- Sun: 2°30' Taurus (11th house)
+**Transiting planets (May 14, 2026 — live from astrolibrary.org):**
+- Sun: 24°04' Taurus (12th house)
 - Moon: moves ~13°/day — check current position
-- Mercury: 11°22' Aries (10th house)
-- Venus: 28°08' Taurus (12th house)
-- Mars: 9°56' Aries (10th house)
-- Jupiter: 17°49' Cancer (1st house)
-- Saturn: 8°10' Aries (10th house)
-- Uranus: 29°49' Taurus (12th house) — anaretic degree, ingress into Gemini IMMINENT (days away)
-- Neptune: 2°59' Aries (10th house)
-- Pluto: 5°27' Aquarius (8th house)
-- Chiron: 27°00' Aries (11th house)
-- North Node: 7°22' Pisces R (9th house)
+- Mercury: 24°24' Taurus (12th house) — conjunct Sun
+- Venus: 25°00' Gemini (1st house)
+- Mars: 26°56' Aries (11th house)
+- Jupiter: 21°01' Cancer (1st house)
+- Saturn: 10°38' Aries (10th house)
+- Uranus: 1°03' Gemini (12th house) — ingressed from Taurus
+- Neptune: 3°39' Aries (10th house)
+- Pluto: 5°29' Aquarius Rx (8th house)
+- Chiron: 28°17' Aries (11th house)
+- North Node: 5°38' Pisces R (9th house)
 
 **Active long-term transits:**
-- **Neptune conjunct natal Moon (4° Aries) — 1° orb, applying as of April 22.** The developing headline transit of the season. Saturn released; Neptune is arriving. Emotional atmosphere shifting from constriction to porosity/vision. Will make multiple passes through 2026-2027. See KNOWLEDGE.md Part Two.
-- Saturn separating from natal Moon (4° Aries) — first pass complete April 12, 2026. Saturn at 8° Aries = 4° past Moon. Second pass (retrograde) coming later in 2026.
-- Neptune trine natal Sun (1° Sagittarius) — ongoing long-term backdrop, visionary quality
-- Neptune trine natal North Node (3° Sagittarius) — exact orb as of April 22
-- Pluto sextile natal Moon — 1° orb, newly formed, emotional depth becoming strength
-- **Uranus at 29°49' Taurus — ingress into Gemini within days.** Near-term: will conjunct South Node 3° Gemini (~2027). Long-term: will conjunct natal Ascendant 29° Gemini (~2033-2034). See KNOWLEDGE.md Part Two.
-- Jupiter direct in Cancer in 1st house — expanding personal presence and opportunity; trine natal Venus (1° orb)
-- Mars in Aries in 10th house — entered Aries April 9, 2026; trine natal Mars (exact orb April 22)
+- **Uranus 1°03' Gemini — exact opposition natal Sun (1° Sag).** The defining identity transit of this period. Uranus has ingressed Gemini and is sitting exactly on the opposition to Jordan's Sun. Also approaching conjunction with South Node (3° Gem) / opposition North Node (3° Sag) — 2° away, applying. Breaking up the South Node Gemini mirroring pattern at its root. Will make multiple passes through 2026. Near-term: conjunction South Node ~2026-2027. Long-term: conjunction natal Ascendant 29° Gemini ~2033-2034.
+- **Neptune 3°39' Aries — 0°21' from exact conjunction natal Moon (4° Aries).** Extremely tight. The headline emotional transit of 2026-2027. Porosity, dissolution of old emotional patterns, visionary feeling quality. Will make multiple passes. See KNOWLEDGE.md.
+- Saturn 10°38' Aries — exact trine natal Mars (10° Sag), 0°38' orb. Discipline supporting drive. Second Saturn pass over natal Moon (4° Aries) coming via retrograde later in 2026.
+- Neptune trine natal Sun (1° Sag) — ongoing long-term visionary backdrop
+- Pluto sextile natal Moon — ongoing, emotional depth becoming strength
+- Jupiter 21° Cancer in 1st house — expanding personal presence, separating from opposition natal 7th house pair
 
 ---
 
