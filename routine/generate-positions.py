@@ -37,7 +37,7 @@ def setup_swisseph():
     if not os.path.exists(chiron_file):
         print("Downloading Chiron ephemeris file (seas_18.se1)...")
         try:
-            url = "https://www.astro.com/ftp/swisseph/ephe/seas_18.se1"
+            url = "https://raw.githubusercontent.com/aloistr/swisseph/master/ephe/seas_18.se1"
             urllib.request.urlretrieve(url, chiron_file)
             print("Chiron ephemeris downloaded successfully.")
         except Exception as e:
