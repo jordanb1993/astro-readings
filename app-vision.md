@@ -103,11 +103,42 @@ The architecture of CLAUDE.md + INSTRUCTIONS.md + KNOWLEDGE.md creating genuine 
 
 ---
 
+## Emerging Product Line: Corporate Women's Career Astrology
+
+*Seeded May 19, 2026 — this is a distinct market with real demand and zero good competition*
+
+The workplace digest format (see `readings/workplace/`) is a proof of concept for a separate product:
+
+**The idea:** Transit forecasting through the career and leadership lens, designed specifically for corporate women who want to use astrology the way Jordan uses it — as a tool for timing, self-advocacy, and navigating complex professional dynamics. Not horoscopes. Strategic intelligence.
+
+**Why this market is underserved:**
+- Most astrology content is personal/romantic — career framing is almost nonexistent at depth
+- Corporate women are already making high-stakes decisions about *when* to ask for raises, *when* to push back, *when* to lay low — astrology gives that a framework
+- Jordan is the proof of concept: she has used transits to time her AD title ask, navigate the Tony situation, and understand workplace patterns as they unfolded
+- The Claude + automation stack means this scales in a way it couldn't as a purely manual practice
+
+**Product formats to explore:**
+| Format | What it is | Price point |
+|--------|-----------|-------------|
+| Weekly sky at work | Transit-to-transit digest for a team | $X/month per team |
+| Career transit reading | "Here's what the next 6 months look like for your professional decisions" — personalized | $85–125 |
+| Negotiation/timing consult | "When is the best window to ask for this?" — natal chart + current transits | $55 add-on |
+| Corporate team package | Monthly sky-at-work send for a whole team | $200–400/month |
+
+**The live test:** Dasha, Krista, Kristen, Darrion, Yvonne. Start with the weekly transit-to-transit digest — see if it's useful, if they share it, if they ask questions. That's the product validation.
+
+**Claude + agents angle:** This is heavily automatable. The calculation layer (Swiss Ephemeris), the workplace framing layer (Claude generating practical guidance from transit data), and the delivery layer (email/Slack) can all be chained. A small AI agent that runs every Monday, calculates the week's transit-to-transit aspects, generates the workplace digest in Jordan's voice, and sends it to a subscriber list is a Phase 2 product that exists within months of Phase 1 being built.
+
+**The differentiator in one sentence:** Jordan has actually used astrology to navigate a difficult manager, advocate for her title, and time her professional moves — and it worked. That's the proof of concept and the pitch.
+
+---
+
 ## Open Questions
 
 - Name decision (let one land — top three: Thin Place · The 29th · Solas)
 - Visual identity (colors, aesthetic — already have strong taste for this)
-- Target customer: beginners who want depth? intermediate practitioners? healing-focused seekers?
+- Target customer for natal readings: beginners who want depth? healing-focused seekers? (different from corporate product)
+- Corporate product: is this under the same brand or a separate vertical?
 - Content strategy: TikTok or Instagram Reels when ready for social
 
 ---
