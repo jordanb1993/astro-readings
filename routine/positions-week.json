@@ -1,136 +1,6 @@
 {
-  "generated": "2026-05-19",
+  "generated": "2026-05-20",
   "upcoming_exact_aspects": [
-    {
-      "date": "2026-05-20",
-      "day": "Wednesday",
-      "transit": "Neptune",
-      "natal": "Moon",
-      "natal_house": "10th",
-      "aspect": "conjunction",
-      "symbol": "\u260c",
-      "orb": 0.18
-    },
-    {
-      "date": "2026-05-20",
-      "day": "Wednesday",
-      "transit": "Venus",
-      "natal": "Jupiter",
-      "natal_house": "5th",
-      "aspect": "trine",
-      "symbol": "\u25b3",
-      "orb": 0.27
-    },
-    {
-      "date": "2026-05-20",
-      "day": "Wednesday",
-      "transit": "Chiron",
-      "natal": "Ascendant",
-      "natal_house": "1st",
-      "aspect": "sextile",
-      "symbol": "\u2736",
-      "orb": 0.37
-    },
-    {
-      "date": "2026-05-20",
-      "day": "Wednesday",
-      "transit": "Mercury",
-      "natal": "Chiron",
-      "natal_house": "4th",
-      "aspect": "square",
-      "symbol": "\u25a1",
-      "orb": 0.4
-    },
-    {
-      "date": "2026-05-20",
-      "day": "Wednesday",
-      "transit": "Mercury",
-      "natal": "Midheaven",
-      "natal_house": "10th",
-      "aspect": "square",
-      "symbol": "\u25a1",
-      "orb": 0.4
-    },
-    {
-      "date": "2026-05-20",
-      "day": "Wednesday",
-      "transit": "Uranus",
-      "natal": "Sun",
-      "natal_house": "6th",
-      "aspect": "opposition",
-      "symbol": "\u260d",
-      "orb": 0.42
-    },
-    {
-      "date": "2026-05-20",
-      "day": "Wednesday",
-      "transit": "Mars",
-      "natal": "Jupiter",
-      "natal_house": "5th",
-      "aspect": "opposition",
-      "symbol": "\u260d",
-      "orb": 0.49
-    },
-    {
-      "date": "2026-05-21",
-      "day": "Thursday",
-      "transit": "Sun",
-      "natal": "Sun",
-      "natal_house": "6th",
-      "aspect": "opposition",
-      "symbol": "\u260d",
-      "orb": 0.11
-    },
-    {
-      "date": "2026-05-21",
-      "day": "Thursday",
-      "transit": "Neptune",
-      "natal": "Moon",
-      "natal_house": "10th",
-      "aspect": "conjunction",
-      "symbol": "\u260c",
-      "orb": 0.16
-    },
-    {
-      "date": "2026-05-21",
-      "day": "Thursday",
-      "transit": "Mars",
-      "natal": "Jupiter",
-      "natal_house": "5th",
-      "aspect": "opposition",
-      "symbol": "\u260d",
-      "orb": 0.26
-    },
-    {
-      "date": "2026-05-21",
-      "day": "Thursday",
-      "transit": "Mercury",
-      "natal": "Mars",
-      "natal_house": "6th",
-      "aspect": "opposition",
-      "symbol": "\u260d",
-      "orb": 0.28
-    },
-    {
-      "date": "2026-05-21",
-      "day": "Thursday",
-      "transit": "Moon",
-      "natal": "Mercury",
-      "natal_house": "5th",
-      "aspect": "square",
-      "symbol": "\u25a1",
-      "orb": 0.3
-    },
-    {
-      "date": "2026-05-21",
-      "day": "Thursday",
-      "transit": "Chiron",
-      "natal": "Ascendant",
-      "natal_house": "1st",
-      "aspect": "sextile",
-      "symbol": "\u2736",
-      "orb": 0.32
-    },
     {
       "date": "2026-05-21",
       "day": "Thursday",
@@ -139,7 +9,7 @@
       "natal_house": "5th",
       "aspect": "sesquiquadrate",
       "symbol": "\u25a1/",
-      "orb": 0.46
+      "orb": 0.01
     },
     {
       "date": "2026-05-21",
@@ -149,7 +19,7 @@
       "natal_house": "6th",
       "aspect": "inconjunct",
       "symbol": "\u26bb",
-      "orb": 0.46
+      "orb": 0.01
     },
     {
       "date": "2026-05-21",
@@ -159,7 +29,37 @@
       "natal_house": "12th",
       "aspect": "semi-sextile",
       "symbol": "\u26ba",
-      "orb": 0.46
+      "orb": 0.01
+    },
+    {
+      "date": "2026-05-21",
+      "day": "Thursday",
+      "transit": "Mars",
+      "natal": "Jupiter",
+      "natal_house": "5th",
+      "aspect": "opposition",
+      "symbol": "\u260d",
+      "orb": 0.04
+    },
+    {
+      "date": "2026-05-21",
+      "day": "Thursday",
+      "transit": "Neptune",
+      "natal": "Moon",
+      "natal_house": "10th",
+      "aspect": "conjunction",
+      "symbol": "\u260c",
+      "orb": 0.17
+    },
+    {
+      "date": "2026-05-21",
+      "day": "Thursday",
+      "transit": "Chiron",
+      "natal": "Ascendant",
+      "natal_house": "1st",
+      "aspect": "sextile",
+      "symbol": "\u2736",
+      "orb": 0.34
     },
     {
       "date": "2026-05-21",
@@ -169,27 +69,17 @@
       "natal_house": "6th",
       "aspect": "opposition",
       "symbol": "\u260d",
-      "orb": 0.48
+      "orb": 0.46
     },
     {
-      "date": "2026-05-22",
-      "day": "Friday",
-      "transit": "Mars",
-      "natal": "NorthNode",
+      "date": "2026-05-21",
+      "day": "Thursday",
+      "transit": "Sun",
+      "natal": "Sun",
       "natal_house": "6th",
-      "aspect": "inconjunct",
-      "symbol": "\u26bb",
-      "orb": 0.01
-    },
-    {
-      "date": "2026-05-22",
-      "day": "Friday",
-      "transit": "Mars",
-      "natal": "SouthNode",
-      "natal_house": "12th",
-      "aspect": "semi-sextile",
-      "symbol": "\u26ba",
-      "orb": 0.01
+      "aspect": "opposition",
+      "symbol": "\u260d",
+      "orb": 0.5
     },
     {
       "date": "2026-05-22",
@@ -199,27 +89,37 @@
       "natal_house": "10th",
       "aspect": "conjunction",
       "symbol": "\u260c",
-      "orb": 0.13
+      "orb": 0.14
     },
     {
       "date": "2026-05-22",
       "day": "Friday",
-      "transit": "Sun",
-      "natal": "Jupiter",
-      "natal_house": "5th",
-      "aspect": "inconjunct",
-      "symbol": "\u26bb",
-      "orb": 0.15
-    },
-    {
-      "date": "2026-05-22",
-      "day": "Friday",
-      "transit": "Mercury",
-      "natal": "Mercury",
-      "natal_house": "5th",
-      "aspect": "inconjunct",
-      "symbol": "\u26bb",
+      "transit": "Venus",
+      "natal": "Moon",
+      "natal_house": "10th",
+      "aspect": "square",
+      "symbol": "\u25a1",
       "orb": 0.18
+    },
+    {
+      "date": "2026-05-22",
+      "day": "Friday",
+      "transit": "Mars",
+      "natal": "NorthNode",
+      "natal_house": "6th",
+      "aspect": "inconjunct",
+      "symbol": "\u26bb",
+      "orb": 0.29
+    },
+    {
+      "date": "2026-05-22",
+      "day": "Friday",
+      "transit": "Mars",
+      "natal": "SouthNode",
+      "natal_house": "12th",
+      "aspect": "semi-sextile",
+      "symbol": "\u26ba",
+      "orb": 0.29
     },
     {
       "date": "2026-05-22",
@@ -229,17 +129,17 @@
       "natal_house": "1st",
       "aspect": "sextile",
       "symbol": "\u2736",
-      "orb": 0.27
+      "orb": 0.29
     },
     {
       "date": "2026-05-22",
       "day": "Friday",
-      "transit": "Moon",
-      "natal": "Pluto",
+      "transit": "Sun",
+      "natal": "Sun",
       "natal_house": "6th",
-      "aspect": "square",
-      "symbol": "\u25a1",
-      "orb": 0.4
+      "aspect": "opposition",
+      "symbol": "\u260d",
+      "orb": 0.47
     },
     {
       "date": "2026-05-22",
@@ -249,7 +149,7 @@
       "natal_house": "5th",
       "aspect": "inconjunct",
       "symbol": "\u26bb",
-      "orb": 0.46
+      "orb": 0.49
     },
     {
       "date": "2026-05-23",
@@ -259,27 +159,7 @@
       "natal_house": "10th",
       "aspect": "conjunction",
       "symbol": "\u260c",
-      "orb": 0.11
-    },
-    {
-      "date": "2026-05-23",
-      "day": "Saturday",
-      "transit": "Sun",
-      "natal": "NorthNode",
-      "natal_house": "6th",
-      "aspect": "opposition",
-      "symbol": "\u260d",
-      "orb": 0.19
-    },
-    {
-      "date": "2026-05-23",
-      "day": "Saturday",
-      "transit": "Sun",
-      "natal": "SouthNode",
-      "natal_house": "12th",
-      "aspect": "conjunction",
-      "symbol": "\u260c",
-      "orb": 0.19
+      "orb": 0.12
     },
     {
       "date": "2026-05-23",
@@ -289,37 +169,17 @@
       "natal_house": "1st",
       "aspect": "sextile",
       "symbol": "\u2736",
-      "orb": 0.22
-    },
-    {
-      "date": "2026-05-23",
-      "day": "Saturday",
-      "transit": "Mars",
-      "natal": "Moon",
-      "natal_house": "10th",
-      "aspect": "semi-sextile",
-      "symbol": "\u26ba",
       "orb": 0.24
     },
     {
       "date": "2026-05-23",
       "day": "Saturday",
-      "transit": "Jupiter",
-      "natal": "Chiron",
-      "natal_house": "4th",
-      "aspect": "semi-square",
-      "symbol": "\u2220",
-      "orb": 0.41
-    },
-    {
-      "date": "2026-05-23",
-      "day": "Saturday",
-      "transit": "Jupiter",
-      "natal": "Midheaven",
-      "natal_house": "10th",
-      "aspect": "sesquiquadrate",
-      "symbol": "\u25a1/",
-      "orb": 0.41
+      "transit": "Sun",
+      "natal": "Jupiter",
+      "natal_house": "5th",
+      "aspect": "inconjunct",
+      "symbol": "\u26bb",
+      "orb": 0.43
     },
     {
       "date": "2026-05-23",
@@ -329,17 +189,67 @@
       "natal_house": "5th",
       "aspect": "inconjunct",
       "symbol": "\u26bb",
-      "orb": 0.41
+      "orb": 0.43
     },
     {
       "date": "2026-05-23",
       "day": "Saturday",
-      "transit": "Saturn",
-      "natal": "Mercury",
-      "natal_house": "5th",
+      "transit": "Moon",
+      "natal": "NorthNode",
+      "natal_house": "6th",
+      "aspect": "square",
+      "symbol": "\u25a1",
+      "orb": 0.44
+    },
+    {
+      "date": "2026-05-23",
+      "day": "Saturday",
+      "transit": "Moon",
+      "natal": "SouthNode",
+      "natal_house": "12th",
+      "aspect": "square",
+      "symbol": "\u25a1",
+      "orb": 0.44
+    },
+    {
+      "date": "2026-05-23",
+      "day": "Saturday",
+      "transit": "Mars",
+      "natal": "NorthNode",
+      "natal_house": "6th",
       "aspect": "inconjunct",
       "symbol": "\u26bb",
-      "orb": 0.47
+      "orb": 0.46
+    },
+    {
+      "date": "2026-05-23",
+      "day": "Saturday",
+      "transit": "Mars",
+      "natal": "SouthNode",
+      "natal_house": "12th",
+      "aspect": "semi-sextile",
+      "symbol": "\u26ba",
+      "orb": 0.46
+    },
+    {
+      "date": "2026-05-23",
+      "day": "Saturday",
+      "transit": "Jupiter",
+      "natal": "Chiron",
+      "natal_house": "4th",
+      "aspect": "semi-square",
+      "symbol": "\u2220",
+      "orb": 0.48
+    },
+    {
+      "date": "2026-05-23",
+      "day": "Saturday",
+      "transit": "Jupiter",
+      "natal": "Midheaven",
+      "natal_house": "10th",
+      "aspect": "sesquiquadrate",
+      "symbol": "\u25a1/",
+      "orb": 0.48
     },
     {
       "date": "2026-05-24",
@@ -349,7 +259,7 @@
       "natal_house": "10th",
       "aspect": "conjunction",
       "symbol": "\u260c",
-      "orb": 0.09
+      "orb": 0.1
     },
     {
       "date": "2026-05-24",
@@ -359,37 +269,17 @@
       "natal_house": "1st",
       "aspect": "sextile",
       "symbol": "\u2736",
-      "orb": 0.16
+      "orb": 0.18
     },
     {
       "date": "2026-05-24",
       "day": "Sunday",
-      "transit": "Sun",
+      "transit": "Mars",
       "natal": "Moon",
       "natal_house": "10th",
-      "aspect": "sextile",
-      "symbol": "\u2736",
-      "orb": 0.23
-    },
-    {
-      "date": "2026-05-24",
-      "day": "Sunday",
-      "transit": "Sun",
-      "natal": "Uranus",
-      "natal_house": "7th",
-      "aspect": "sesquiquadrate",
-      "symbol": "\u25a1/",
-      "orb": 0.23
-    },
-    {
-      "date": "2026-05-24",
-      "day": "Sunday",
-      "transit": "Sun",
-      "natal": "Neptune",
-      "natal_house": "7th",
-      "aspect": "sesquiquadrate",
-      "symbol": "\u25a1/",
-      "orb": 0.23
+      "aspect": "semi-sextile",
+      "symbol": "\u26ba",
+      "orb": 0.21
     },
     {
       "date": "2026-05-24",
@@ -399,7 +289,7 @@
       "natal_house": "4th",
       "aspect": "semi-square",
       "symbol": "\u2220",
-      "orb": 0.23
+      "orb": 0.3
     },
     {
       "date": "2026-05-24",
@@ -409,7 +299,7 @@
       "natal_house": "10th",
       "aspect": "sesquiquadrate",
       "symbol": "\u25a1/",
-      "orb": 0.23
+      "orb": 0.3
     },
     {
       "date": "2026-05-24",
@@ -419,7 +309,27 @@
       "natal_house": "5th",
       "aspect": "inconjunct",
       "symbol": "\u26bb",
-      "orb": 0.35
+      "orb": 0.37
+    },
+    {
+      "date": "2026-05-24",
+      "day": "Sunday",
+      "transit": "Sun",
+      "natal": "NorthNode",
+      "natal_house": "6th",
+      "aspect": "opposition",
+      "symbol": "\u260d",
+      "orb": 0.39
+    },
+    {
+      "date": "2026-05-24",
+      "day": "Sunday",
+      "transit": "Sun",
+      "natal": "SouthNode",
+      "natal_house": "12th",
+      "aspect": "conjunction",
+      "symbol": "\u260c",
+      "orb": 0.39
     },
     {
       "date": "2026-05-24",
@@ -429,27 +339,17 @@
       "natal_house": "5th",
       "aspect": "inconjunct",
       "symbol": "\u26bb",
-      "orb": 0.38
+      "orb": 0.42
     },
     {
-      "date": "2026-05-25",
-      "day": "Monday",
-      "transit": "Jupiter",
-      "natal": "Chiron",
-      "natal_house": "4th",
+      "date": "2026-05-24",
+      "day": "Sunday",
+      "transit": "Moon",
+      "natal": "Jupiter",
+      "natal_house": "5th",
       "aspect": "semi-square",
       "symbol": "\u2220",
-      "orb": 0.05
-    },
-    {
-      "date": "2026-05-25",
-      "day": "Monday",
-      "transit": "Jupiter",
-      "natal": "Midheaven",
-      "natal_house": "10th",
-      "aspect": "sesquiquadrate",
-      "symbol": "\u25a1/",
-      "orb": 0.05
+      "orb": 0.49
     },
     {
       "date": "2026-05-25",
@@ -459,27 +359,47 @@
       "natal_house": "10th",
       "aspect": "conjunction",
       "symbol": "\u260c",
-      "orb": 0.06
-    },
-    {
-      "date": "2026-05-25",
-      "day": "Monday",
-      "transit": "Mercury",
-      "natal": "Venus",
-      "natal_house": "5th",
-      "aspect": "inconjunct",
-      "symbol": "\u26bb",
       "orb": 0.07
     },
     {
       "date": "2026-05-25",
       "day": "Monday",
+      "transit": "Jupiter",
+      "natal": "Chiron",
+      "natal_house": "4th",
+      "aspect": "semi-square",
+      "symbol": "\u2220",
+      "orb": 0.12
+    },
+    {
+      "date": "2026-05-25",
+      "day": "Monday",
+      "transit": "Jupiter",
+      "natal": "Midheaven",
+      "natal_house": "10th",
+      "aspect": "sesquiquadrate",
+      "symbol": "\u25a1/",
+      "orb": 0.12
+    },
+    {
+      "date": "2026-05-25",
+      "day": "Monday",
       "transit": "Chiron",
       "natal": "Ascendant",
       "natal_house": "1st",
       "aspect": "sextile",
       "symbol": "\u2736",
-      "orb": 0.11
+      "orb": 0.13
+    },
+    {
+      "date": "2026-05-25",
+      "day": "Monday",
+      "transit": "Mercury",
+      "natal": "Jupiter",
+      "natal_house": "5th",
+      "aspect": "sesquiquadrate",
+      "symbol": "\u25a1/",
+      "orb": 0.14
     },
     {
       "date": "2026-05-25",
@@ -489,7 +409,7 @@
       "natal_house": "4th",
       "aspect": "sextile",
       "symbol": "\u2736",
-      "orb": 0.22
+      "orb": 0.25
     },
     {
       "date": "2026-05-25",
@@ -499,27 +419,17 @@
       "natal_house": "10th",
       "aspect": "trine",
       "symbol": "\u25b3",
-      "orb": 0.22
+      "orb": 0.25
     },
     {
       "date": "2026-05-25",
       "day": "Monday",
       "transit": "Moon",
-      "natal": "Moon",
-      "natal_house": "10th",
-      "aspect": "opposition",
-      "symbol": "\u260d",
+      "natal": "Ascendant",
+      "natal_house": "1st",
+      "aspect": "square",
+      "symbol": "\u25a1",
       "orb": 0.26
-    },
-    {
-      "date": "2026-05-25",
-      "day": "Monday",
-      "transit": "Saturn",
-      "natal": "Mercury",
-      "natal_house": "5th",
-      "aspect": "inconjunct",
-      "symbol": "\u26bb",
-      "orb": 0.29
     },
     {
       "date": "2026-05-25",
@@ -529,7 +439,47 @@
       "natal_house": "5th",
       "aspect": "inconjunct",
       "symbol": "\u26bb",
-      "orb": 0.29
+      "orb": 0.31
+    },
+    {
+      "date": "2026-05-25",
+      "day": "Monday",
+      "transit": "Saturn",
+      "natal": "Mercury",
+      "natal_house": "5th",
+      "aspect": "inconjunct",
+      "symbol": "\u26bb",
+      "orb": 0.32
+    },
+    {
+      "date": "2026-05-25",
+      "day": "Monday",
+      "transit": "Sun",
+      "natal": "Moon",
+      "natal_house": "10th",
+      "aspect": "sextile",
+      "symbol": "\u2736",
+      "orb": 0.35
+    },
+    {
+      "date": "2026-05-25",
+      "day": "Monday",
+      "transit": "Sun",
+      "natal": "Uranus",
+      "natal_house": "7th",
+      "aspect": "sesquiquadrate",
+      "symbol": "\u25a1/",
+      "orb": 0.35
+    },
+    {
+      "date": "2026-05-25",
+      "day": "Monday",
+      "transit": "Sun",
+      "natal": "Neptune",
+      "natal_house": "7th",
+      "aspect": "sesquiquadrate",
+      "symbol": "\u25a1/",
+      "orb": 0.35
     },
     {
       "date": "2026-05-26",
@@ -539,57 +489,7 @@
       "natal_house": "10th",
       "aspect": "conjunction",
       "symbol": "\u260c",
-      "orb": 0.04
-    },
-    {
-      "date": "2026-05-26",
-      "day": "Tuesday",
-      "transit": "Chiron",
-      "natal": "Ascendant",
-      "natal_house": "1st",
-      "aspect": "sextile",
-      "symbol": "\u2736",
-      "orb": 0.06
-    },
-    {
-      "date": "2026-05-26",
-      "day": "Tuesday",
-      "transit": "Jupiter",
-      "natal": "Chiron",
-      "natal_house": "4th",
-      "aspect": "semi-square",
-      "symbol": "\u2220",
-      "orb": 0.13
-    },
-    {
-      "date": "2026-05-26",
-      "day": "Tuesday",
-      "transit": "Jupiter",
-      "natal": "Midheaven",
-      "natal_house": "10th",
-      "aspect": "sesquiquadrate",
-      "symbol": "\u25a1/",
-      "orb": 0.13
-    },
-    {
-      "date": "2026-05-26",
-      "day": "Tuesday",
-      "transit": "Saturn",
-      "natal": "Mercury",
-      "natal_house": "5th",
-      "aspect": "inconjunct",
-      "symbol": "\u26bb",
-      "orb": 0.2
-    },
-    {
-      "date": "2026-05-26",
-      "day": "Tuesday",
-      "transit": "Uranus",
-      "natal": "Jupiter",
-      "natal_house": "5th",
-      "aspect": "inconjunct",
-      "symbol": "\u26bb",
-      "orb": 0.23
+      "orb": 0.05
     },
     {
       "date": "2026-05-26",
@@ -599,7 +499,207 @@
       "natal_house": "9th",
       "aspect": "sesquiquadrate",
       "symbol": "\u25a1/",
-      "orb": 0.41
+      "orb": 0.06
+    },
+    {
+      "date": "2026-05-26",
+      "day": "Tuesday",
+      "transit": "Jupiter",
+      "natal": "Chiron",
+      "natal_house": "4th",
+      "aspect": "semi-square",
+      "symbol": "\u2220",
+      "orb": 0.06
+    },
+    {
+      "date": "2026-05-26",
+      "day": "Tuesday",
+      "transit": "Jupiter",
+      "natal": "Midheaven",
+      "natal_house": "10th",
+      "aspect": "sesquiquadrate",
+      "symbol": "\u25a1/",
+      "orb": 0.06
+    },
+    {
+      "date": "2026-05-26",
+      "day": "Tuesday",
+      "transit": "Chiron",
+      "natal": "Ascendant",
+      "natal_house": "1st",
+      "aspect": "sextile",
+      "symbol": "\u2736",
+      "orb": 0.08
+    },
+    {
+      "date": "2026-05-26",
+      "day": "Tuesday",
+      "transit": "Mercury",
+      "natal": "Uranus",
+      "natal_house": "7th",
+      "aspect": "inconjunct",
+      "symbol": "\u26bb",
+      "orb": 0.11
+    },
+    {
+      "date": "2026-05-26",
+      "day": "Tuesday",
+      "transit": "Mercury",
+      "natal": "Neptune",
+      "natal_house": "7th",
+      "aspect": "inconjunct",
+      "symbol": "\u26bb",
+      "orb": 0.11
+    },
+    {
+      "date": "2026-05-26",
+      "day": "Tuesday",
+      "transit": "Saturn",
+      "natal": "Mercury",
+      "natal_house": "5th",
+      "aspect": "inconjunct",
+      "symbol": "\u26bb",
+      "orb": 0.23
+    },
+    {
+      "date": "2026-05-26",
+      "day": "Tuesday",
+      "transit": "Moon",
+      "natal": "Mercury",
+      "natal_house": "5th",
+      "aspect": "semi-sextile",
+      "symbol": "\u26ba",
+      "orb": 0.25
+    },
+    {
+      "date": "2026-05-26",
+      "day": "Tuesday",
+      "transit": "Uranus",
+      "natal": "Jupiter",
+      "natal_house": "5th",
+      "aspect": "inconjunct",
+      "symbol": "\u26bb",
+      "orb": 0.25
+    },
+    {
+      "date": "2026-05-27",
+      "day": "Wednesday",
+      "transit": "Neptune",
+      "natal": "Moon",
+      "natal_house": "10th",
+      "aspect": "conjunction",
+      "symbol": "\u260c",
+      "orb": 0.03
+    },
+    {
+      "date": "2026-05-27",
+      "day": "Wednesday",
+      "transit": "Chiron",
+      "natal": "Ascendant",
+      "natal_house": "1st",
+      "aspect": "sextile",
+      "symbol": "\u2736",
+      "orb": 0.03
+    },
+    {
+      "date": "2026-05-27",
+      "day": "Wednesday",
+      "transit": "Moon",
+      "natal": "Saturn",
+      "natal_house": "9th",
+      "aspect": "trine",
+      "symbol": "\u25b3",
+      "orb": 0.05
+    },
+    {
+      "date": "2026-05-27",
+      "day": "Wednesday",
+      "transit": "Venus",
+      "natal": "Mars",
+      "natal_house": "6th",
+      "aspect": "inconjunct",
+      "symbol": "\u26bb",
+      "orb": 0.13
+    },
+    {
+      "date": "2026-05-27",
+      "day": "Wednesday",
+      "transit": "Venus",
+      "natal": "Pluto",
+      "natal_house": "6th",
+      "aspect": "sesquiquadrate",
+      "symbol": "\u25a1/",
+      "orb": 0.13
+    },
+    {
+      "date": "2026-05-27",
+      "day": "Wednesday",
+      "transit": "Saturn",
+      "natal": "Mercury",
+      "natal_house": "5th",
+      "aspect": "inconjunct",
+      "symbol": "\u26bb",
+      "orb": 0.14
+    },
+    {
+      "date": "2026-05-27",
+      "day": "Wednesday",
+      "transit": "Uranus",
+      "natal": "Jupiter",
+      "natal_house": "5th",
+      "aspect": "inconjunct",
+      "symbol": "\u26bb",
+      "orb": 0.19
+    },
+    {
+      "date": "2026-05-27",
+      "day": "Wednesday",
+      "transit": "Jupiter",
+      "natal": "Chiron",
+      "natal_house": "4th",
+      "aspect": "semi-square",
+      "symbol": "\u2220",
+      "orb": 0.24
+    },
+    {
+      "date": "2026-05-27",
+      "day": "Wednesday",
+      "transit": "Jupiter",
+      "natal": "Midheaven",
+      "natal_house": "10th",
+      "aspect": "sesquiquadrate",
+      "symbol": "\u25a1/",
+      "orb": 0.24
+    },
+    {
+      "date": "2026-05-27",
+      "day": "Wednesday",
+      "transit": "NNode",
+      "natal": "Moon",
+      "natal_house": "10th",
+      "aspect": "semi-sextile",
+      "symbol": "\u26ba",
+      "orb": 0.5
+    },
+    {
+      "date": "2026-05-27",
+      "day": "Wednesday",
+      "transit": "NNode",
+      "natal": "Uranus",
+      "natal_house": "7th",
+      "aspect": "semi-square",
+      "symbol": "\u2220",
+      "orb": 0.5
+    },
+    {
+      "date": "2026-05-27",
+      "day": "Wednesday",
+      "transit": "NNode",
+      "natal": "Neptune",
+      "natal_house": "7th",
+      "aspect": "semi-square",
+      "symbol": "\u2220",
+      "orb": 0.5
     }
   ]
 }
