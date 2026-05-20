@@ -206,7 +206,7 @@ Claude pulls live planetary positions directly from the web at the start of ever
 
 **Personal / Dating:** Eleanor chapter closed with intention May 18 — kind, clean phone call. South Node mirroring pattern recognized at 2 dates, not years in. Two of Cups held as the tuning fork going forward. Bumble for Pride month June on radar. Summer: Portland with Carina (August, exact dates TBD), Dad visit (Jul 23 + Jul 27 + Aug 1 — shorter visits), Pride events. Ireland solo trip a live longing.
 
-**Active transits as of May 19, 2026:** Uranus ~1° Gemini — opposition natal Sun (1° Sag), conjunction South Node. Neptune ~3–4° Aries — very tight conjunction natal Moon (4° Aries). Saturn ~10–11° Aries — trine natal Mars (10° Sag). Check live via astrolibrary.org at session start for current degrees.
+**Active transits as of 2026-05-20:** Neptune 3.81° Aries — 0.19° applying conjunction natal Moon (10th) | Uranus 1.40° Gemini — 0.40° applying opposition natal Sun (6th) | Uranus 1.40° Gemini — 0.60° applying inconjunct natal Jupiter (5th) | Saturn 11.21° Aries — 0.79° separating inconjunct natal Mercury (5th)
 
 ---
 
