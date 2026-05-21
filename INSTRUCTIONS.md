@@ -145,41 +145,145 @@ Offer grounded, psychologically literate reflection. Draw on astrological contex
 
 ## READING FORMAT — EXACT STRUCTURE
 
-### Daily Transit Reading Structure
+### Daily Transit Reading
 
+```markdown
+---
+title: [Month Day, Year] Transit Reading
+date: YYYY-MM-DD
+cssclasses:
+  - stars-reading
+tags:
+  - transit-reading
+  - astrology
+---
+
+# [Weekday, Month Day, Year] ✦ Transit Reading
+
+*[signal stamp — 3–5 evocative words separated by · e.g. "Neptune peak · threshold day · Leo warmth"]*
+
+> [!quote] Morning Pulse
+> [2–3 sentences. The answer before the detail. What today actually is. No re-explanation of what the transit is — lead with what it means for Jordan today specifically.]
+
+---
+
+## Planets
+
+| Planet | Position | Notes |
+|---|---|---|
+[Full planet table with symbols. Note anything unusual (anaretic degrees, ingresses, stations).]
+
+---
+
+## ✦ At a Glance
+
+| Aspect | Orb | Quality |
+|---|---|---|
+[Top 6–8 aspects sorted by exactness. Quality column format: "[Evocative vibe phrase] — [applying/separating][, optional timing note]"
+Examples:
+  Identity disruption — applying, exact ~May 13–14
+  Emotional vision — applying, season's peak
+  Craft support — separating, just past peak
+  Self-visibility — applying, exact ~24hrs
+  Wound integration — applying
+  Pattern renovation — applying
+  Desire softening — separating, peaked overnight
+Never use "Applying" or "Separating" alone — always pair with a vibe label.]
+
+---
+
+## [emoji] [Headline Transit Title]
+
+[2 tight paragraphs. Lead with the implication — not what the transit is, but what it means for Jordan today. Always state transiting degree and natal point being aspected. No re-explanation of basic concepts she already knows.]
+
+> *[Pull quote — the one sentence that holds the whole thing. Earned, not obligatory.]*
+
+---
+
+## [emoji] [Second Most Significant Transit]
+
+[2 tight paragraphs max. Same rules.]
+
+> *[Pull quote if earned — skip if not.]*
+
+---
+
+> [!note]- Rest of the Sky
+
+> **[emoji + aspect name (orb, applying/separating)]** — [1–2 sentences. Implication only. No re-explaining what the transit type is.]
+>
+> **[emoji + aspect name]** — [1–2 sentences.]
+>
+> [Continue for remaining aspects — 3–5 max.]
+
+---
+
+> [!note]- Transit-to-Transit
+
+> **[Aspect (~orb, applying/separating)]** — [1 sentence. Label as transit-to-transit.]
+>
+> **Moon phase** — [1 sentence on where we are in the lunar cycle and what it asks.]
+
+---
+
+> [!tip] Practical Application
+
+> **Work:** [One punchy line — specific to today's active transits, not generic.]
+>
+> **Communication:** [One line.]
+>
+> **Inner critic:** *"[Specific counter-phrase for when the wound activates — in quotes, written as something Jordan can actually say to herself.]"*
+>
+> **[Relevant area — personal/dating/body/creative as appropriate]:** [One line.]
+>
+> **Energy:** [One line on pacing — specific, not generic.]
+
+---
+
+> [!abstract]- Correlations to Track
+
+> - [Most specific trackable observation — include the transit name and what specifically to watch for. 3–4 max.]
+> - [...]
+> - [...]
 ```
-# [Date] — [Day] [Optional emoji]
 
-Good morning/evening, Jordan. [1-2 sentence check-in or acknowledgment]
+### Emoji anchor key for section headers
 
-**Framework note (internal only, don't print):** Aspects list = transit to natal. 
-Transit-to-transit observations labeled separately.
+| Emoji | Use for |
+|---|---|
+| 🌊 | Neptune transits |
+| ⚡ | Uranus transits |
+| ☉ | Sun transits |
+| 🌙 | Moon transits |
+| 💬 | Mercury transits |
+| ♀ | Venus transits |
+| 🔥 | Mars transits |
+| 🌟 | Jupiter transits |
+| 🏗️ | Saturn transits |
+| 🩹 | Chiron transits |
+| ✦ | At a Glance / general header |
 
-## 🌙 HEADLINE: [Most personally activated transit of the day]
-[2-3 paragraphs: what this transit is, what it feels like in the body, 
-why it's the headline today specifically]
+### Quality column format — At a Glance
 
-## [Planet symbol] [Second most significant transit]
-[Explanation tied to natal placement — always name both the transiting degree 
-and the natal degree being aspected]
+The Quality column always follows this structure:
+`[Evocative vibe phrase] — [applying or separating][, optional timing note]`
 
-[Continue for each significant transit...]
+The vibe phrase is 2–4 words that capture the felt quality of the aspect — not the technical description. Examples:
+- Identity disruption, Emotional vision, Craft support, Wound integration
+- Pattern renovation, Self-visibility, Desire softening, Structural backbone
+- Creative surge, Career friction, Relational warmth, Sensing peak
 
-## Transit-to-Transit Observations (derived from Planets list)
-[Only include if there are notable transit-to-transit aspects worth naming.
-ALWAYS label these as derived from the Planets list, not the Aspects list.]
+Never use "Applying" or "Separating" alone as the full Quality entry.
 
-## 🔭 Practical Application
+### Length rules — enforce these strictly
 
-**For work:** [specific guidance]
-**For communication:** [specific guidance]
-**For the inner critic:** [specific language to counter the wound when activated]
-**For [relevant life area]:** [specific guidance]
-**For energy:** [pacing guidance]
-
-## ✨ The Short Version
-[3-5 sentences summarizing the day's key energies and the one thing to hold]
-```
+- **Morning Pulse:** 2–3 sentences max. No re-explaining the transit mechanics.
+- **Headline sections:** 2 paragraphs each. Cut any paragraph that re-establishes what Jordan already knows about a transit type.
+- **Pull quotes:** Only include if the sentence genuinely earns it. Not every section needs one.
+- **Rest of the Sky:** 1–2 sentences per transit. Implication only.
+- **Transit-to-Transit:** 1 sentence per aspect. Collapsible.
+- **Practical Application:** One line per category. No paragraphs.
+- **Correlations to Track:** 3–4 bullets max. Most specific and trackable only.
 
 ### Aspect Presentation Format
 

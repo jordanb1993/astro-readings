@@ -17,9 +17,23 @@ Jordan is a 32-year-old lesbian woman in Chicago. Associate Director of Content 
 2. **INSTRUCTIONS.md** — always (natal chart, calculation rules, orb table, workflow)
 3. **KNOWLEDGE.md** — always (accumulated context, correlations, life arcs, patterns)
 4. **Most recent `readings/YYYY-MM-DD.md`** — the latest one only, for continuity thread
-5. **`Tony Cohn — Incident Log.md`** — ONLY if the session involves work or career topics
+5. **`_inbox/capture.md`** — always check; if entries exist below the `---`, surface and route them before starting the session
+6. **`Tony Cohn — Incident Log.md`** — ONLY if the session involves work or career topics
 
 Do not read older readings MDs unless Jordan asks to reference a specific past date. Do not begin a reading until you have oriented yourself in these files.
+
+---
+
+## Stars Inbox — `_inbox/capture.md`
+
+Jordan captures astro ideas from her iPhone directly to this file. Check it every session start. If there are unprocessed entries:
+- Business ideas (pricing, names, Etsy copy, offering types) → surface and discuss, or file to `app-vision.md` if app-related
+- Reading requests (friend chart, synastry, love reading) → note the person + data needed, add to `charts/` if birth data is included
+- Astro insights or correlations → add to KNOWLEDGE.md if worth keeping
+- App or system feature ideas → add to `app-vision.md`
+- Raw captures with no clear category → acknowledge, ask if Jordan wants to action now or park
+
+After processing, clear the entries from capture.md (keep the header, remove the content below `---`). The file stays lean — it's a staging area, not an archive.
 
 ---
 

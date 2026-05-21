@@ -78,9 +78,76 @@ The workplace digest is both a generous thing to offer coworkers AND a live demo
 
 ---
 
-## Sample distribution options
+## Slack Format Spec (for the weekly channel post)
 
-- Slack DM to Dasha on Monday mornings
-- A `#sky-at-work` optional Slack channel (suggest to Dasha first)
-- Email if someone wants it that way
+The `.md` file in this folder is the source reading — detailed, with tables, kept for the archive. The Slack post is a reformatted version of it: tighter, more conversational, designed for the channel.
+
+**The table problem:** Slack doesn't render markdown tables. The replacement is **stacked blockquotes** (`> text`). Each row becomes its own blockquote line — Slack renders these as a visual strip with a left border, which reads like a signal board. One row per aspect.
+
+### Slack post template
+
+```
+*☿ sky at work — week of [Month Day]* ✦
+
+[1-sentence pulse. Plain language. The dominant energy, what it means for the week.]
+
+*at a glance*
+> [emoji] *[Day]* — [aspect] — [what it means in one line]
+> [emoji] *[Day/range]* — [aspect] — [what it means in one line]
+> [emoji] *[Day]* — [aspect] — [what it means in one line]
+> [emoji] *[All week]* — [background condition] — [effect]
+
+*for communication*
+[2-3 sentences. Sharp and practical. What to do and when.]
+
+*for bold moves*
+[2-3 sentences. The action window — when to push, when to hold.]
+
+*watch for*
+• [One-line flag — a tension or timing note]
+• [One-line flag]
+
+— _transit-to-transit weather only. no birth charts required. just the sky we're all in._ ✦
+```
+
+### Emoji signal key (use these consistently)
+*Note: Unicode planet symbols (☿ ♃ ♄ ♅ ♆) break in Slack. Use emoji substitutes below.*
+
+| Emoji | Planet | Use for |
+|-------|--------|---------|
+| 💬 | Mercury | Communication, writing, contracts |
+| ♀ | Venus | Connection, asks, creative pitches (♀ works fine) |
+| 🔥 | Mars | Drive, action, friction |
+| 🌟 | Jupiter | Expansion, goodwill, meetings |
+| 🏗️ | Saturn | Structure, discipline, limits |
+| ⚡ | Uranus / Sun-Uranus | Disruption, breakthrough, tech, wildcards |
+| 🌊 | Neptune | Intuition, fog, vision |
+| ☉ | Sun | Identity, visibility, leadership (☉ works fine) |
+| 🌙 | Moon | Mood, emotional field, team energy |
+| ✦ | Header/footer | Branding element — consistent each week |
+
+### Channel name
+**`#astroflow-weekly`** — confirmed and live as of May 21, 2026
+
+### Automated Sunday workflow (added May 21, 2026)
+
+Every Sunday, the existing 4am CDT routine now also generates three additional files:
+
+1. **`readings/sky-at-work.html`** — the public, fully-formatted workplace weekly page
+   Live URL: `https://jordanb1993.github.io/astro-readings/readings/sky-at-work.html`
+   Transit-to-transit only. Sections: Pulse, At a Glance, Communication, Momentum, Collaboration, Watch For.
+
+2. **`readings/week-ahead.html`** — Jordan's personal week-ahead transit reading (private bookmark)
+   Live URL: `https://jordanb1993.github.io/astro-readings/readings/week-ahead.html`
+   Transit-to-natal, day-by-day exact aspects, active transits strip.
+
+3. **`readings/workplace/slack-draft.md`** — Monday morning Slack message, ready to copy-paste
+   Tight format, links to sky-at-work URL, follows the template below.
+
+**Monday morning routine:** Open slack-draft.md in Obsidian, copy the text, paste into `#astroflow-weekly`.
+
+### Distribution
+- Create the Slack channel, post Monday morning
+- Keep it optional and low-pressure — anyone can join or ignore
+- The post itself is the pitch; no explanation needed
 - Eventually: a Substack or paid weekly send
