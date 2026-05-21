@@ -500,62 +500,144 @@ def dominant_pulse(t2t_aspects):
 WHIMSIGOTH_CSS = """
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     :root {
-      --bg: #0a0614; --surface: #130921; --surface-2: #1a0d2e;
-      --gold: #c9a84c; --rose: #d4a0b5; --plum: #b482d2; --teal: #5bb8a8;
-      --text: #fdf6e8; --muted: rgba(253,246,232,0.60); --muted-2: rgba(253,246,232,0.32);
-      --muted-3: rgba(253,246,232,0.14); --border: rgba(180,130,210,0.20);
-      --gold-dim: rgba(201,168,76,0.12); --rose-dim: rgba(212,160,181,0.12);
-      --teal-dim: rgba(91,184,168,0.12);
+      --bg: #0a0614; --surface: #150a25; --surface-2: #1e1038;
+      --gold: #c9a84c; --gold-dim: rgba(201,168,76,0.11); --gold-mid: rgba(201,168,76,0.28);
+      --rose: #d4a0b5; --rose-dim: rgba(212,160,181,0.11); --rose-mid: rgba(212,160,181,0.28);
+      --plum: #7b4fa6; --plum-dim: rgba(123,79,166,0.20); --plum-bright: #b482d2;
+      --teal: #5bb8a8; --teal-dim: rgba(91,184,168,0.11); --teal-bright: #7ecfc2;
+      --text: #fdf6e8; --muted: rgba(253,246,232,0.58); --muted-2: rgba(253,246,232,0.30);
+      --muted-3: rgba(253,246,232,0.12); --border: rgba(180,130,210,0.18);
     }
-    body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif;
-           line-height: 1.6; padding: 0 16px 60px; max-width: 720px; margin: 0 auto; }
-    h1 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(22px,5vw,34px);
-         color: var(--text); letter-spacing: 0.04em; margin-bottom: 4px; }
-    h2 { font-family: 'Cormorant Garamond', serif; font-weight: 400; font-size: 18px;
-         color: var(--gold); letter-spacing: 0.06em; margin: 32px 0 12px; text-transform: uppercase; font-size: 13px; }
-    p  { color: var(--muted); font-size: 14px; line-height: 1.7; margin-bottom: 12px; }
-    .mono { font-family: 'IBM Plex Mono', monospace; font-size: 11px; }
-    .eyebrow { font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 0.18em;
-               color: var(--gold); text-transform: uppercase; opacity: 0.8; margin-bottom: 6px; }
-    header { padding: 44px 0 28px; border-bottom: 1px solid var(--border); margin-bottom: 8px; }
-    .pulse { background: var(--surface); border-left: 3px solid var(--gold); padding: 14px 16px;
-             border-radius: 0 4px 4px 0; margin: 20px 0; font-size: 14px; color: var(--text); }
-    .signal-board { display: flex; flex-direction: column; gap: 6px; margin: 12px 0 24px; }
+    html { background: var(--bg); color: var(--text); }
+    body { background: var(--bg); font-family: 'Inter', sans-serif; line-height: 1.6;
+           max-width: 720px; margin: 0 auto; padding: 0 0 60px; }
+    p { color: var(--muted); font-size: 0.90rem; line-height: 1.75; margin: 0; }
+    strong { color: var(--rose); font-weight: 600; }
+    .hero { position: relative; width: 100%; padding: 72px 56px 64px; text-align: center;
+            overflow: hidden;
+            background: radial-gradient(ellipse at 38% 28%, #2a1245 0%, #150a25 42%, #0a0614 100%); }
+    .hero-stars { position: absolute; inset: 0; pointer-events: none; }
+    .hero-border-outer { position: absolute; top: 18px; left: 18px; right: 18px; bottom: 18px;
+                         border: 1px solid rgba(180,130,210,0.30); pointer-events: none; }
+    .hero-border-inner { position: absolute; top: 28px; left: 28px; right: 28px; bottom: 28px;
+                         border: 1px solid rgba(180,130,210,0.13); pointer-events: none; }
+    .corner { position: absolute; font-family: 'Cormorant Garamond', serif; font-size: 15px;
+              color: var(--gold); opacity: 0.78; }
+    .corner.tl { top: 10px; left: 10px; } .corner.tr { top: 10px; right: 10px; }
+    .corner.bl { bottom: 10px; left: 10px; } .corner.br { bottom: 10px; right: 10px; }
+    .hero-col { position: absolute; top: 50%; transform: translateY(-50%); pointer-events: none; }
+    .hero-col.left { left: 36px; } .hero-col.right { right: 36px; }
+    .hero-label { font-family: 'Inter', sans-serif; font-size: 0.62rem; font-weight: 600;
+                  letter-spacing: 0.32em; text-transform: uppercase; color: var(--rose);
+                  opacity: 0.72; margin-bottom: 22px; position: relative; }
+    .hero-name { font-family: 'Cormorant Garamond', serif; font-size: clamp(36px,7vw,72px);
+                 font-weight: 300; line-height: 1.0; color: var(--text); letter-spacing: 0.05em;
+                 margin-bottom: 16px; position: relative; }
+    .hero-ornament { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem;
+                     letter-spacing: 0.55em; color: var(--gold); opacity: 0.55;
+                     margin-bottom: 28px; position: relative; padding-left: 0.55em; }
+    .hero-data { display: flex; justify-content: center; gap: 28px; flex-wrap: wrap; position: relative; }
+    .hero-datum-label { font-family: 'Inter', sans-serif; font-size: 0.58rem; letter-spacing: 0.22em;
+                        text-transform: uppercase; color: var(--muted-2); margin-bottom: 4px; }
+    .hero-datum-value { font-family: 'Cormorant Garamond', serif; font-size: 1.0rem;
+                        color: var(--gold); letter-spacing: 0.06em; }
+    .cel-divider { display: flex; align-items: center; gap: 12px; margin: 36px 44px 0; }
+    .cel-rule { flex: 1; height: 1px; }
+    .cel-rule.left { background: linear-gradient(90deg, transparent, var(--gold-mid)); }
+    .cel-rule.right { background: linear-gradient(90deg, var(--gold-mid), transparent); }
+    .cel-mark { font-family: 'Cormorant Garamond', serif; font-size: 0.80rem; letter-spacing: 0.55em;
+                color: var(--gold); opacity: 0.50; padding-left: 0.55em; }
+    .section-wrap { padding: 32px 44px 0; }
+    .section-eyebrow { font-family: 'Inter', sans-serif; font-size: 0.60rem; font-weight: 600;
+                       letter-spacing: 0.28em; text-transform: uppercase; color: var(--plum-bright);
+                       margin-bottom: 6px; }
+    .section-title { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 400;
+                     color: var(--gold); letter-spacing: 0.04em; margin-bottom: 18px; }
+    .pulse-card { background: radial-gradient(ellipse at 0% 50%, rgba(201,168,76,0.14) 0%, rgba(21,10,37,0.85) 60%);
+                  border: 1px solid rgba(201,168,76,0.22); border-radius: 10px; padding: 22px 26px; }
+    .pulse-card p { font-family: 'Cormorant Garamond', serif; font-style: italic;
+                    font-size: 1.08rem; color: var(--text); line-height: 1.75; }
+    .signal-board { display: flex; flex-direction: column; gap: 6px; }
     .signal-row { display: flex; align-items: baseline; gap: 10px; background: var(--surface);
-                  padding: 9px 14px; border-radius: 4px; border-left: 2px solid; }
-    .signal-row.gold  { border-color: var(--gold); }
-    .signal-row.rose  { border-color: var(--rose); }
-    .signal-row.plum  { border-color: var(--plum); }
-    .signal-row.teal  { border-color: var(--teal); }
-    .signal-row.muted { border-color: var(--muted-2); }
-    .sig-aspect { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--text); min-width: 140px; }
-    .sig-orb    { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--gold); min-width: 36px; }
-    .sig-note   { font-size: 12px; color: var(--muted); flex: 1; }
-    .section-card { background: var(--surface); border: 1px solid var(--border); border-radius: 6px;
-                    padding: 18px 20px; margin-bottom: 14px; }
-    .section-card h3 { font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 0.18em;
-                       text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
-    .section-card p { font-size: 13px; color: var(--muted); margin-bottom: 8px; }
-    .section-card p:last-child { margin-bottom: 0; }
-    .watch-list { list-style: none; padding: 0; }
-    .watch-list li { padding: 8px 0; border-bottom: 1px solid var(--muted-3); font-size: 13px;
-                     color: var(--muted); }
-    .watch-list li:last-child { border-bottom: none; }
-    .watch-list li::before { content: "•  "; color: var(--rose); }
-    .day-block { background: var(--surface); border: 1px solid var(--border); border-radius: 6px;
-                 padding: 14px 16px; margin-bottom: 10px; }
-    .day-label { font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 0.14em;
-                 color: var(--gold); text-transform: uppercase; margin-bottom: 8px; }
-    .day-aspect { font-size: 13px; color: var(--text); margin-bottom: 4px; }
-    .day-aspect span { color: var(--muted); font-style: italic; font-size: 12px; }
-    .planet-strip { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 28px; }
+                  padding: 10px 14px; border-radius: 6px; border-left: 2px solid; }
+    .signal-row.gold { border-color: var(--gold); }
+    .signal-row.rose { border-color: var(--rose); }
+    .signal-row.plum { border-color: var(--plum-bright); }
+    .signal-row.teal { border-color: var(--teal-bright); }
+    .signal-row.muted { border-color: rgba(253,246,232,0.20); }
+    .sig-aspect { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--text); min-width: 150px; }
+    .sig-orb { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--gold); min-width: 36px; }
+    .sig-note { font-size: 12px; color: var(--muted); flex: 1; }
+    .dive-section { margin-bottom: 14px; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+    .dive-section::before { content: ''; display: block; height: 2px; width: 100%; }
+    .dive-section.accent-gold::before { background: linear-gradient(90deg, transparent 0%, var(--gold) 40%, var(--gold) 60%, transparent 100%); }
+    .dive-section.accent-rose::before { background: linear-gradient(90deg, transparent 0%, var(--rose) 40%, var(--rose) 60%, transparent 100%); }
+    .dive-section.accent-plum::before { background: linear-gradient(90deg, transparent 0%, var(--plum-bright) 40%, var(--plum-bright) 60%, transparent 100%); }
+    .dive-section.accent-teal::before { background: linear-gradient(90deg, transparent 0%, var(--teal-bright) 40%, var(--teal-bright) 60%, transparent 100%); }
+    .dive-head { padding: 18px 22px 14px; display: flex; align-items: flex-start; gap: 14px; }
+    .dive-head.gold-head { background: radial-gradient(ellipse at 20% 50%, rgba(201,168,76,0.18) 0%, rgba(42,18,69,0.80) 55%, #0a0614 100%);
+                           border-bottom: 1px solid rgba(201,168,76,0.14); }
+    .dive-head.rose-head { background: radial-gradient(ellipse at 20% 50%, rgba(212,160,181,0.16) 0%, rgba(42,18,69,0.80) 55%, #0a0614 100%);
+                           border-bottom: 1px solid rgba(212,160,181,0.14); }
+    .dive-head.plum-head { background: radial-gradient(ellipse at 20% 50%, rgba(123,79,166,0.22) 0%, rgba(42,18,69,0.80) 55%, #0a0614 100%);
+                           border-bottom: 1px solid rgba(123,79,166,0.16); }
+    .dive-head.teal-head { background: radial-gradient(ellipse at 20% 50%, rgba(91,184,168,0.18) 0%, rgba(42,18,69,0.80) 55%, #0a0614 100%);
+                           border-bottom: 1px solid rgba(91,184,168,0.14); }
+    .dive-icon { font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; flex-shrink: 0; line-height: 1; margin-top: 2px; }
+    .accent-gold .dive-icon { color: var(--gold); }
+    .accent-rose .dive-icon { color: var(--rose); }
+    .accent-plum .dive-icon { color: var(--plum-bright); }
+    .accent-teal .dive-icon { color: var(--teal-bright); }
+    .dive-eyebrow { font-family: 'Inter', sans-serif; font-size: 0.58rem; font-weight: 600;
+                    letter-spacing: 0.26em; text-transform: uppercase; margin-bottom: 5px; }
+    .accent-gold .dive-eyebrow { color: rgba(201,168,76,0.65); }
+    .accent-rose .dive-eyebrow { color: rgba(212,160,181,0.65); }
+    .accent-plum .dive-eyebrow { color: rgba(180,130,210,0.65); }
+    .accent-teal .dive-eyebrow { color: rgba(91,184,168,0.65); }
+    .dive-title { font-family: 'Cormorant Garamond', serif; font-size: 1.28rem; font-weight: 400;
+                  line-height: 1.2; letter-spacing: 0.03em; }
+    .accent-gold .dive-title { color: var(--gold); }
+    .accent-rose .dive-title { color: var(--rose); }
+    .accent-plum .dive-title { color: var(--plum-bright); }
+    .accent-teal .dive-title { color: var(--teal-bright); }
+    .dive-body { padding: 18px 22px 16px; background: rgba(10,6,20,0.55);
+                 display: flex; flex-direction: column; gap: 8px; }
+    .dive-body p { font-size: 0.88rem; line-height: 1.80; color: var(--muted); }
+    .dive-body strong { color: var(--rose); }
+    .watch-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+    .watch-list li { font-size: 0.88rem; color: var(--muted); line-height: 1.65;
+                     padding-left: 16px; position: relative; }
+    .watch-list li::before { content: "\\2022"; color: var(--rose); position: absolute; left: 0; }
+    .planet-strip { display: flex; flex-wrap: wrap; gap: 8px; }
     .planet-pill { background: var(--surface); border: 1px solid var(--border); border-radius: 20px;
                    padding: 5px 12px; font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--muted); }
     .planet-pill .glyph { color: var(--gold); margin-right: 4px; }
     .planet-pill .retro { color: var(--rose); margin-left: 3px; font-size: 9px; }
-    footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border);
-             font-family: 'IBM Plex Mono', monospace; font-size: 9px; color: var(--muted-2);
-             letter-spacing: 0.1em; line-height: 1.8; }
+    .day-block { background: var(--surface); border: 1px solid var(--border); border-radius: 8px;
+                 padding: 14px 18px; margin-bottom: 10px; }
+    .day-block:last-child { margin-bottom: 0; }
+    .day-label { font-family: 'Inter', sans-serif; font-size: 0.60rem; font-weight: 600;
+                 letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold);
+                 opacity: 0.85; margin-bottom: 10px; }
+    .day-aspect { font-size: 0.88rem; color: var(--text); margin-bottom: 5px; line-height: 1.5; }
+    .day-aspect:last-child { margin-bottom: 0; }
+    .day-aspect span { color: var(--muted); font-style: italic; font-size: 0.82rem; }
+    .page-footer { margin: 40px 44px 0; padding-top: 18px; border-top: 1px solid var(--border);
+                   font-family: 'Inter', sans-serif; font-size: 0.62rem; color: var(--muted-2);
+                   letter-spacing: 0.10em; line-height: 1.8; text-align: center; }
+    @media (max-width: 680px) {
+      .hero { padding: 48px 20px 42px; }
+      .hero-col { display: none; }
+      .hero-border-outer { top: 12px; left: 12px; right: 12px; bottom: 12px; }
+      .hero-border-inner { top: 20px; left: 20px; right: 20px; bottom: 20px; }
+      .hero-name { font-size: clamp(28px,9vw,44px); }
+      .cel-divider { margin: 26px 18px 0; }
+      .section-wrap { padding: 22px 18px 0; }
+      .dive-head { padding: 14px 16px 12px; }
+      .dive-body { padding: 14px 16px 12px; }
+      .page-footer { margin: 28px 18px 0; }
+      .sig-aspect { min-width: 110px; font-size: 10px; }
+    }
 """
 
 GOOGLE_FONTS = '<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Inter:wght@300;400;500&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">'
@@ -586,7 +668,7 @@ def generate_sky_at_work_html(t2t_aspects, today_positions, week_start_str):
     cat = categorize_t2t(t2t_aspects)
     pulse = dominant_pulse(t2t_aspects)
 
-    # At a glance: top 5 aspects
+    # At a glance: top 5 signal rows
     glance_rows = ""
     for i, a in enumerate(t2t_aspects[:5]):
         color = _signal_color(a["aspect"], i)
@@ -595,68 +677,149 @@ def generate_sky_at_work_html(t2t_aspects, today_positions, week_start_str):
         note = meaning if meaning else a["aspect"]
         glance_rows += f"""
         <div class="signal-row {color}">
-          <span class="sig-aspect mono">{label}</span>
-          <span class="sig-orb mono">{a['orb']}°</span>
+          <span class="sig-aspect">{label}</span>
+          <span class="sig-orb">{a['orb']}&deg;</span>
           <span class="sig-note">{note}</span>
         </div>"""
 
-    def section_html(aspects, title, accent="gold"):
+    def dive_section(aspects, eyebrow, title, icon, accent):
         if not aspects:
             return ""
-        inner = ""
+        rows = ""
         for a in aspects:
             label = _aspect_label(a)
             meaning = get_work_meaning(a["planet1"], a["planet2"], a["aspect"])
-            if meaning:
-                inner += f"<p><strong style='color:var(--{accent})'>{label}</strong> ({a['orb']}°) &mdash; {meaning}</p>"
-            else:
-                inner += f"<p><strong style='color:var(--{accent})'>{label}</strong> ({a['orb']}°) &mdash; {a['aspect']} active this week.</p>"
-        return f'<div class="section-card"><h3>{title}</h3>{inner}</div>'
+            text = meaning if meaning else f"{a['aspect']} active this week"
+            rows += f'<p><strong>{label}</strong> ({a["orb"]}&deg;) &mdash; {text}</p>'
+        return (
+            f'<div class="dive-section accent-{accent}">'
+            f'<div class="dive-head {accent}-head">'
+            f'<div class="dive-icon">{icon}</div>'
+            f'<div><div class="dive-eyebrow">{eyebrow}</div>'
+            f'<div class="dive-title">{title}</div></div></div>'
+            f'<div class="dive-body">{rows}</div></div>'
+        )
 
-    comm_html     = section_html(cat["communication"], "For Communication", "gold")
-    momentum_html = section_html(cat["momentum"],      "For Momentum",      "rose")
-    conn_html     = section_html(cat["connection"],    "For Collaboration",  "teal")
+    comm_html     = dive_section(cat["communication"], "Mercury &middot; communication", "For Communication", "&#9791;", "gold")
+    momentum_html = dive_section(cat["momentum"],      "Mars &middot; Sun &middot; action", "For Momentum", "&#9794;", "rose")
+    conn_html     = dive_section(cat["connection"],    "Venus &middot; Jupiter &middot; connection", "For Collaboration", "&#9792;", "teal")
 
     watch_items = ""
     for a in cat["watch_for"]:
         label = _aspect_label(a)
         meaning = get_work_meaning(a["planet1"], a["planet2"], a["aspect"])
-        note = meaning if meaning else f"{a['aspect']}:watch for friction and pressure"
-        watch_items += f"<li><strong>{label}</strong> ({a['orb']}°): {note}</li>"
-    watch_html = f'<div class="section-card"><h3>Watch For</h3><ul class="watch-list">{watch_items}</ul></div>' if watch_items else ""
+        note = meaning if meaning else a["aspect"]
+        watch_items += f'<li><strong>{label}</strong> ({a["orb"]}&deg;): {note}</li>'
+    watch_html = (
+        '<div class="dive-section accent-plum">'
+        '<div class="dive-head plum-head">'
+        '<div class="dive-icon">&#9812;</div>'
+        '<div><div class="dive-eyebrow">friction &middot; tension &middot; pressure</div>'
+        '<div class="dive-title">Watch For</div></div></div>'
+        f'<div class="dive-body"><ul class="watch-list">{watch_items}</ul></div></div>'
+    ) if watch_items else ""
 
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>sky at work:week of {week_start_str}</title>
+  <title>Sky at Work &middot; Week of {week_start_str}</title>
   {GOOGLE_FONTS}
   <style>{WHIMSIGOTH_CSS}</style>
 </head>
 <body>
-  <header>
-    <div class="eyebrow">transit-to-transit · collective sky</div>
-    <h1>sky at work</h1>
-    <p style="color:var(--muted-2);font-family:'IBM Plex Mono',monospace;font-size:11px;margin-top:6px;">week of {week_start_str}</p>
-  </header>
 
-  <h2>The Pulse</h2>
-  <div class="pulse">{pulse}</div>
+<div class="hero">
+  <svg class="hero-stars" viewBox="0 0 720 440" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="52"  cy="62"  r="1.1" fill="#fff8ee" opacity="0.48"/>
+    <circle cx="168" cy="38"  r="0.9" fill="#fff8ee" opacity="0.36"/>
+    <circle cx="290" cy="55"  r="1.2" fill="#c9a84c" opacity="0.42"/>
+    <circle cx="420" cy="24"  r="0.8" fill="#fff8ee" opacity="0.36"/>
+    <circle cx="542" cy="50"  r="1.0" fill="#fff8ee" opacity="0.38"/>
+    <circle cx="654" cy="72"  r="1.1" fill="#c9a84c" opacity="0.44"/>
+    <circle cx="700" cy="32"  r="0.8" fill="#d4a0b5" opacity="0.38"/>
+    <circle cx="22"  cy="240" r="0.8" fill="#c9a84c" opacity="0.32"/>
+    <circle cx="698" cy="224" r="0.7" fill="#fff8ee" opacity="0.34"/>
+    <circle cx="360" cy="408" r="0.7" fill="#d4a0b5" opacity="0.28"/>
+    <text x="100" y="108" font-size="10" fill="#c9a84c" opacity="0.55" text-anchor="middle" font-family="serif">&#10022;</text>
+    <text x="612" y="126" font-size="7"  fill="#fff8ee" opacity="0.38" text-anchor="middle" font-family="serif">&#10023;</text>
+    <text x="364" y="18"  font-size="7"  fill="#c9a84c" opacity="0.48" text-anchor="middle" font-family="serif">&#10022;</text>
+    <circle cx="640" cy="90"  r="70" fill="#c9a84c" opacity="0.04"/>
+    <circle cx="70"  cy="340" r="80" fill="#9b59b6" opacity="0.05"/>
+  </svg>
+  <div class="hero-border-outer"></div>
+  <div class="hero-border-inner"></div>
+  <div class="corner tl">&#10022;</div>
+  <div class="corner tr">&#10022;</div>
+  <div class="corner bl">&#10022;</div>
+  <div class="corner br">&#10022;</div>
+  <svg class="hero-col left" width="22" height="380" viewBox="0 0 22 380" xmlns="http://www.w3.org/2000/svg">
+    <line x1="11" y1="0" x2="11" y2="380" stroke="#b482d2" stroke-width="0.8" opacity="0.22"/>
+    <text x="11" y="44"  text-anchor="middle" font-size="13" fill="#c9a84c" opacity="0.62" font-family="serif">&#9789;</text>
+    <text x="11" y="90"  text-anchor="middle" font-size="9"  fill="#fff8ee" opacity="0.42" font-family="serif">&#10022;</text>
+    <text x="11" y="140" text-anchor="middle" font-size="12" fill="#c9a84c" opacity="0.52" font-family="serif">&#9737;</text>
+    <circle cx="11" cy="180" r="1.3" fill="#d4a0b5" opacity="0.40"/>
+    <text x="11" y="228" text-anchor="middle" font-size="9"  fill="#d4a0b5" opacity="0.48" font-family="serif">&#10023;</text>
+    <text x="11" y="276" text-anchor="middle" font-size="13" fill="#fff8ee" opacity="0.28" font-family="serif">&#9790;</text>
+    <text x="11" y="330" text-anchor="middle" font-size="9"  fill="#c9a84c" opacity="0.42" font-family="serif">&#10022;</text>
+  </svg>
+  <svg class="hero-col right" width="22" height="380" viewBox="0 0 22 380" xmlns="http://www.w3.org/2000/svg">
+    <line x1="11" y1="0" x2="11" y2="380" stroke="#b482d2" stroke-width="0.8" opacity="0.22"/>
+    <text x="11" y="44"  text-anchor="middle" font-size="9"  fill="#fff8ee" opacity="0.42" font-family="serif">&#10022;</text>
+    <text x="11" y="90"  text-anchor="middle" font-size="13" fill="#c9a84c" opacity="0.58" font-family="serif">&#9790;</text>
+    <text x="11" y="140" text-anchor="middle" font-size="9"  fill="#d4a0b5" opacity="0.48" font-family="serif">&#10023;</text>
+    <circle cx="11" cy="180" r="1.3" fill="#c9a84c" opacity="0.36"/>
+    <text x="11" y="228" text-anchor="middle" font-size="12" fill="#c9a84c" opacity="0.52" font-family="serif">&#9737;</text>
+    <text x="11" y="276" text-anchor="middle" font-size="13" fill="#fff8ee" opacity="0.26" font-family="serif">&#9789;</text>
+    <text x="11" y="330" text-anchor="middle" font-size="9"  fill="#c9a84c" opacity="0.48" font-family="serif">&#10022;</text>
+  </svg>
+  <div class="hero-label">Transit-to-Transit &middot; Collective Sky</div>
+  <h1 class="hero-name">Sky at Work</h1>
+  <div class="hero-ornament">&#9789; &#10022; &#9737; &#10022; &#9790;</div>
+  <div class="hero-data">
+    <div>
+      <div class="hero-datum-label">Week of</div>
+      <div class="hero-datum-value">{week_start_str}</div>
+    </div>
+    <div>
+      <div class="hero-datum-label">Aspects</div>
+      <div class="hero-datum-value">Transit &middot; Transit</div>
+    </div>
+  </div>
+</div>
 
-  <h2>At a Glance</h2>
+<div class="cel-divider"><div class="cel-rule left"></div><div class="cel-mark">&#10022; &#10022; &#10022;</div><div class="cel-rule right"></div></div>
+
+<div class="section-wrap">
+  <div class="section-eyebrow">The Weather This Week</div>
+  <div class="section-title">The Pulse</div>
+  <div class="pulse-card"><p>{pulse}</p></div>
+</div>
+
+<div class="cel-divider"><div class="cel-rule left"></div><div class="cel-mark">&#10022; &#10022; &#10022;</div><div class="cel-rule right"></div></div>
+
+<div class="section-wrap">
+  <div class="section-eyebrow">Sorted by Exactness</div>
+  <div class="section-title">At a Glance</div>
   <div class="signal-board">{glance_rows}
   </div>
+</div>
 
+<div class="cel-divider"><div class="cel-rule left"></div><div class="cel-mark">&#10022; &#10022; &#10022;</div><div class="cel-rule right"></div></div>
+
+<div class="section-wrap">
   {comm_html}
   {momentum_html}
   {conn_html}
   {watch_html}
+</div>
 
-  <footer>
-    transit-to-transit aspects only · no natal charts used · everyone's in this weather<br>
-    generated via pyswisseph · swiss ephemeris
-  </footer>
+<div class="page-footer">
+  transit-to-transit aspects only &middot; no natal charts used &middot; everyone's in this weather<br>
+  generated via pyswisseph &middot; swiss ephemeris
+</div>
+
 </body>
 </html>"""
 
@@ -691,21 +854,22 @@ def generate_week_ahead_html(week_aspects, t2n_aspects, today_positions, week_st
                 t_glyph = PLANET_GLYPHS.get(a["transit"], a["transit"])
                 n_name = a["natal"]
                 n_house = a["natal_house"]
-                items += f'<div class="day-aspect">{t_glyph} {a["transit"]} {a["symbol"]} natal {n_name} ({n_house}) <span>· {a["orb"]}° · exact</span></div>'
-            day_blocks += f'<div class="day-block"><div class="day-label">{day} · {a["date"]}</div>{items}</div>'
+                items += f'<div class="day-aspect">{t_glyph} {a["transit"]} {a["symbol"]} natal {n_name} ({n_house}) <span>&middot; {a["orb"]}&deg; &middot; exact</span></div>'
+            day_blocks += f'<div class="day-block"><div class="day-label">{day} &middot; {a["date"]}</div>{items}</div>'
     else:
-        day_blocks = '<p style="color:var(--muted-2);font-size:13px;">No aspects exact within 0.5° this week. A spacious sky.</p>'
+        day_blocks = '<p style="color:var(--muted-2);font-size:0.88rem;">No aspects exact within 0.5&deg; this week. A spacious sky.</p>'
 
-    # Active transits (applying, tight)
+    # Active transits signal board
     active_rows = ""
     for a in t2n_aspects[:8]:
         if a["orb"] <= 3.0:
             t_glyph = PLANET_GLYPHS.get(a["transit"], "")
             direction = "applying" if a["applying"] else "separating"
+            color = "gold" if a["aspect"] in ("trine","sextile") else "rose" if a["aspect"] in ("square","opposition") else "plum"
             active_rows += f"""
-        <div class="signal-row {'gold' if a['aspect'] in ('trine','sextile') else 'rose' if a['aspect'] in ('square','opposition') else 'plum'}">
-          <span class="sig-aspect mono">{t_glyph} {a['transit']} {a['symbol']} natal {a['natal']} ({a['natal_house']})</span>
-          <span class="sig-orb mono">{a['orb']}°</span>
+        <div class="signal-row {color}">
+          <span class="sig-aspect">{t_glyph} {a['transit']} {a['symbol']} natal {a['natal']} ({a['natal_house']})</span>
+          <span class="sig-orb">{a['orb']}&deg;</span>
           <span class="sig-note">{direction}</span>
         </div>"""
 
@@ -714,33 +878,106 @@ def generate_week_ahead_html(week_aspects, t2n_aspects, today_positions, week_st
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>week ahead · {week_start_str}</title>
+  <title>Your Week Ahead &middot; {week_start_str}</title>
   {GOOGLE_FONTS}
   <style>{WHIMSIGOTH_CSS}</style>
 </head>
 <body>
-  <header>
-    <div class="eyebrow">personal transit reading · jordan</div>
-    <h1>your week ahead</h1>
-    <p style="color:var(--muted-2);font-family:'IBM Plex Mono',monospace;font-size:11px;margin-top:6px;">{week_start_str} – {week_end_str}</p>
-  </header>
 
-  <h2>Sky Now</h2>
+<div class="hero">
+  <svg class="hero-stars" viewBox="0 0 720 440" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="52"  cy="62"  r="1.1" fill="#fff8ee" opacity="0.48"/>
+    <circle cx="168" cy="38"  r="0.9" fill="#fff8ee" opacity="0.36"/>
+    <circle cx="290" cy="55"  r="1.2" fill="#c9a84c" opacity="0.42"/>
+    <circle cx="420" cy="24"  r="0.8" fill="#fff8ee" opacity="0.36"/>
+    <circle cx="542" cy="50"  r="1.0" fill="#d4a0b5" opacity="0.38"/>
+    <circle cx="654" cy="72"  r="1.1" fill="#c9a84c" opacity="0.44"/>
+    <circle cx="700" cy="32"  r="0.8" fill="#fff8ee" opacity="0.38"/>
+    <circle cx="22"  cy="240" r="0.8" fill="#c9a84c" opacity="0.32"/>
+    <circle cx="698" cy="224" r="0.7" fill="#fff8ee" opacity="0.34"/>
+    <circle cx="360" cy="408" r="0.7" fill="#d4a0b5" opacity="0.28"/>
+    <text x="100" y="108" font-size="10" fill="#c9a84c" opacity="0.55" text-anchor="middle" font-family="serif">&#10022;</text>
+    <text x="612" y="126" font-size="7"  fill="#fff8ee" opacity="0.38" text-anchor="middle" font-family="serif">&#10023;</text>
+    <text x="364" y="18"  font-size="7"  fill="#c9a84c" opacity="0.48" text-anchor="middle" font-family="serif">&#10022;</text>
+    <circle cx="640" cy="90"  r="70" fill="#c9a84c" opacity="0.04"/>
+    <circle cx="70"  cy="340" r="80" fill="#9b59b6" opacity="0.05"/>
+    <circle cx="80"  cy="70"  r="50" fill="#d4a0b5" opacity="0.04"/>
+  </svg>
+  <div class="hero-border-outer"></div>
+  <div class="hero-border-inner"></div>
+  <div class="corner tl">&#10022;</div>
+  <div class="corner tr">&#10022;</div>
+  <div class="corner bl">&#10022;</div>
+  <div class="corner br">&#10022;</div>
+  <svg class="hero-col left" width="22" height="380" viewBox="0 0 22 380" xmlns="http://www.w3.org/2000/svg">
+    <line x1="11" y1="0" x2="11" y2="380" stroke="#b482d2" stroke-width="0.8" opacity="0.22"/>
+    <text x="11" y="44"  text-anchor="middle" font-size="13" fill="#c9a84c" opacity="0.62" font-family="serif">&#9789;</text>
+    <text x="11" y="90"  text-anchor="middle" font-size="9"  fill="#fff8ee" opacity="0.42" font-family="serif">&#10022;</text>
+    <text x="11" y="140" text-anchor="middle" font-size="12" fill="#c9a84c" opacity="0.52" font-family="serif">&#9737;</text>
+    <circle cx="11" cy="180" r="1.3" fill="#d4a0b5" opacity="0.40"/>
+    <text x="11" y="228" text-anchor="middle" font-size="9"  fill="#d4a0b5" opacity="0.48" font-family="serif">&#10023;</text>
+    <text x="11" y="276" text-anchor="middle" font-size="13" fill="#fff8ee" opacity="0.28" font-family="serif">&#9790;</text>
+    <text x="11" y="330" text-anchor="middle" font-size="9"  fill="#c9a84c" opacity="0.42" font-family="serif">&#10022;</text>
+  </svg>
+  <svg class="hero-col right" width="22" height="380" viewBox="0 0 22 380" xmlns="http://www.w3.org/2000/svg">
+    <line x1="11" y1="0" x2="11" y2="380" stroke="#b482d2" stroke-width="0.8" opacity="0.22"/>
+    <text x="11" y="44"  text-anchor="middle" font-size="9"  fill="#fff8ee" opacity="0.42" font-family="serif">&#10022;</text>
+    <text x="11" y="90"  text-anchor="middle" font-size="13" fill="#c9a84c" opacity="0.58" font-family="serif">&#9790;</text>
+    <text x="11" y="140" text-anchor="middle" font-size="9"  fill="#d4a0b5" opacity="0.48" font-family="serif">&#10023;</text>
+    <circle cx="11" cy="180" r="1.3" fill="#c9a84c" opacity="0.36"/>
+    <text x="11" y="228" text-anchor="middle" font-size="12" fill="#c9a84c" opacity="0.52" font-family="serif">&#9737;</text>
+    <text x="11" y="276" text-anchor="middle" font-size="13" fill="#fff8ee" opacity="0.26" font-family="serif">&#9789;</text>
+    <text x="11" y="330" text-anchor="middle" font-size="9"  fill="#c9a84c" opacity="0.48" font-family="serif">&#10022;</text>
+  </svg>
+  <div class="hero-label">Personal Transit Reading &middot; Jordan</div>
+  <h1 class="hero-name">Your Week Ahead</h1>
+  <div class="hero-ornament">&#9789; &#10022; &#9737; &#10022; &#9790;</div>
+  <div class="hero-data">
+    <div>
+      <div class="hero-datum-label">From</div>
+      <div class="hero-datum-value">{week_start_str}</div>
+    </div>
+    <div>
+      <div class="hero-datum-label">Through</div>
+      <div class="hero-datum-value">{week_end_str}</div>
+    </div>
+    <div>
+      <div class="hero-datum-label">Aspects</div>
+      <div class="hero-datum-value">Transit &middot; Natal</div>
+    </div>
+  </div>
+</div>
+
+<div class="cel-divider"><div class="cel-rule left"></div><div class="cel-mark">&#10022; &#10022; &#10022;</div><div class="cel-rule right"></div></div>
+
+<div class="section-wrap">
+  <div class="section-eyebrow">Transiting Planets</div>
+  <div class="section-title">Sky Now</div>
   <div class="planet-strip">{planet_pills}</div>
+</div>
 
-  <h2>Active Transits This Week</h2>
-  <p style="font-size:12px;color:var(--muted-2);margin-bottom:12px;">Transit-to-natal · sorted by exactness</p>
+<div class="cel-divider"><div class="cel-rule left"></div><div class="cel-mark">&#10022; &#10022; &#10022;</div><div class="cel-rule right"></div></div>
+
+<div class="section-wrap">
+  <div class="section-eyebrow">Transit-to-Natal &middot; Sorted by Exactness</div>
+  <div class="section-title">Active Transits This Week</div>
   <div class="signal-board">{active_rows}
   </div>
+</div>
 
-  <h2>Exact This Week</h2>
-  <p style="font-size:12px;color:var(--muted-2);margin-bottom:12px;">Aspects within 0.5° orb on these days</p>
+<div class="cel-divider"><div class="cel-rule left"></div><div class="cel-mark">&#10022; &#10022; &#10022;</div><div class="cel-rule right"></div></div>
+
+<div class="section-wrap">
+  <div class="section-eyebrow">Within 0.5&deg; Orb</div>
+  <div class="section-title">Exact This Week</div>
   {day_blocks}
+</div>
 
-  <footer>
-    generated via pyswisseph · swiss ephemeris<br>
-    personal reading · jordan natal · transit-to-natal
-  </footer>
+<div class="page-footer">
+  generated via pyswisseph &middot; swiss ephemeris<br>
+  personal reading &middot; jordan natal &middot; transit-to-natal
+</div>
+
 </body>
 </html>"""
 
