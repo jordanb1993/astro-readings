@@ -130,14 +130,18 @@
     .sig-note { font-size: 0.78rem; color: var(--muted); line-height: 1.65; }
 
     /* ── Planets Strip ── */
+    .planets-wrap {
+      background: radial-gradient(ellipse at 50% 0%, rgba(42,18,69,0.55) 0%, rgba(21,10,37,0.70) 100%);
+      border: 1px solid var(--border); border-radius: 10px; overflow: hidden;
+    }
     .planets-table { width: 100%; border-collapse: collapse; font-size: 0.84rem; }
     .planets-table th { font-family: 'Inter', sans-serif; font-size: 0.55rem; font-weight: 600;
                         letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted-2);
-                        padding: 6px 10px; text-align: left; border-bottom: 1px solid var(--border); }
-    .planets-table td { padding: 8px 10px; border-bottom: 1px solid rgba(180,130,210,0.07);
+                        padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--border); }
+    .planets-table td { padding: 9px 14px; border-bottom: 1px solid rgba(180,130,210,0.07);
                         color: var(--muted); vertical-align: middle; }
     .planets-table tr:last-child td { border-bottom: none; }
-    .planets-table tr:nth-child(even) td { background: rgba(253,246,232,0.025); }
+    .planets-table tbody tr:nth-child(even) td { background: rgba(253,246,232,0.025); }
     .planet-glyph { color: var(--gold); font-size: 0.95rem; opacity: 0.80; }
     .planet-name { color: var(--text); font-weight: 500; font-size: 0.82rem; }
     .house-badge { display: inline-block; background: var(--surface-2); border: 1px solid var(--border);
@@ -219,22 +223,22 @@
                  letter-spacing: 0.13em; text-transform: uppercase; padding: 4px 11px;
                  border-radius: 20px; border: 1px solid; }
     .dive.gold  .theme-tag { background: rgba(201,168,76,0.08);  color: var(--gold);      border-color: rgba(201,168,76,0.30); }
-    .dive.rose  .theme-tag { background: rgba(212,160,181,0.07); color: var(--rose);     border-color: rgba(212,160,181,0.28); }
+    .dive.rose  .theme-tag { background: rgba(212,160,181,0.07); color: var(--rose);      border-color: rgba(212,160,181,0.28); }
     .dive.plum  .theme-tag { background: rgba(123,79,166,0.09);  color: var(--plum-bright); border-color: rgba(123,79,166,0.32); }
     .dive.teal  .theme-tag { background: rgba(91,184,168,0.08);  color: var(--teal-bright); border-color: rgba(91,184,168,0.28); }
-    .dive.muted .theme-tag { background: rgba(180,130,210,0.06); color: var(--muted-2);  border-color: var(--muted-3); }
+    .dive.muted .theme-tag { background: rgba(180,130,210,0.06); color: var(--muted-2);   border-color: var(--muted-3); }
 
     .dive-body { padding: 28px 32px 24px; background: rgba(10,6,20,0.55);
-                 display: flex; flex-direction: column; gap: 14px; }
+                 display: flex; flex-direction: column; gap: 18px; }
 
     .pullquote { font-family: 'Cormorant Garamond', serif; font-style: italic;
                  font-size: 1.13rem; line-height: 1.65; padding: 11px 22px;
                  border-left: 2px solid; border-radius: 0 5px 5px 0; }
-    .dive.gold  .pullquote { border-color: var(--gold);       background: var(--gold-dim);  color: var(--gold); }
-    .dive.rose  .pullquote { border-color: var(--rose);       background: var(--rose-dim);  color: var(--rose); }
-    .dive.plum  .pullquote { border-color: var(--plum-bright); background: var(--plum-dim); color: var(--plum-bright); }
-    .dive.teal  .pullquote { border-color: var(--teal-bright); background: var(--teal-dim); color: var(--teal-bright); }
-    .dive.muted .pullquote { border-color: var(--muted-2);    background: rgba(180,130,210,0.05); color: var(--muted); }
+    .dive.gold  .pullquote { border-color: var(--gold);        background: var(--gold-dim);  color: var(--gold); }
+    .dive.rose  .pullquote { border-color: var(--rose);        background: var(--rose-dim);  color: var(--rose); }
+    .dive.plum  .pullquote { border-color: var(--plum-bright); background: var(--plum-dim);  color: var(--plum-bright); }
+    .dive.teal  .pullquote { border-color: var(--teal-bright); background: var(--teal-dim);  color: var(--teal-bright); }
+    .dive.muted .pullquote { border-color: var(--muted-2); background: rgba(180,130,210,0.05); color: var(--muted); }
 
     /* ── Synastry section ── */
     .synastry-contact { background: rgba(91,184,168,0.06); border: 1px solid rgba(91,184,168,0.16);
@@ -378,7 +382,7 @@
       <div class="trio-placement">13° Libra</div>
       <div class="trio-house">12th House</div>
       <div class="trio-rule"></div>
-      <div class="trio-tagline">The soul behind the veil. Beauty, balance, and connection as core drives — running from the inside out, not the outside in.</div>
+      <div class="trio-tagline">The soul behind the veil. Beauty, balance, and connection as core drives, running from the inside out.</div>
     </div>
     <div class="trio-card moon">
       <span class="trio-glyph">☽</span>
@@ -386,7 +390,7 @@
       <div class="trio-placement">1° Scorpio</div>
       <div class="trio-house">1st House</div>
       <div class="trio-rule"></div>
-      <div class="trio-tagline">Emotional world on the surface — visible in your presence, impossible to fully hide. Scorpio Moon doesn't do shallow. All the way down, or not at all.</div>
+      <div class="trio-tagline">Emotional world on the surface, visible in your presence, impossible to fully hide. All the way down, or not at all.</div>
     </div>
     <div class="trio-card asc">
       <span class="trio-glyph">↑</span>
@@ -394,7 +398,7 @@
       <div class="trio-placement">19° Libra</div>
       <div class="trio-house">The Face You Lead With</div>
       <div class="trio-rule"></div>
-      <div class="trio-tagline">Graceful, diplomatic, attuned to beauty. The first impression is always Libra. Behind that ease: the full weight of a Scorpio inner world most people don't anticipate.</div>
+      <div class="trio-tagline">Graceful, diplomatic, attuned to beauty. Behind that ease: the full weight of a Scorpio inner world most people don't anticipate.</div>
     </div>
   </div>
 </div>
@@ -408,17 +412,17 @@
     <div class="sig-item">
       <div class="sig-label">Chart Ruler</div>
       <div class="sig-value">Venus in Scorpio, 2nd House</div>
-      <div class="sig-note">Libra Ascendant is ruled by Venus — which lives in Scorpio in your 2nd house of values and self-worth. Your entire chart is steered by deep love and the pursuit of what genuinely matters.</div>
+      <div class="sig-note">Libra Ascendant is ruled by Venus, which lives in Scorpio in your 2nd house of values and self-worth. Your entire chart is steered by deep love and the pursuit of what genuinely matters.</div>
     </div>
     <div class="sig-item">
       <div class="sig-label">Dominant Stellium</div>
       <div class="sig-value">Six Planets in Scorpio</div>
-      <div class="sig-note">Moon · Mercury · North Node · Venus · Jupiter · Pluto. Your inner architecture — emotional, mental, directional, values-based, expansive, transformative — is entirely Scorpio.</div>
+      <div class="sig-note">Moon · Mercury · North Node · Venus · Jupiter · Pluto. Your inner architecture, emotional, mental, directional, values-based, expansive, and transformative, is entirely Scorpio.</div>
     </div>
     <div class="sig-item">
       <div class="sig-label">7th House Ruler</div>
       <div class="sig-value">Mars in Leo, 10th House</div>
-      <div class="sig-note">The house of relationships is Aries-ruled, and Mars lives in Leo in the career house. Partnership and public life are deeply connected — who you love and who you become professionally are not separate questions.</div>
+      <div class="sig-note">The house of relationships is Aries-ruled, and Mars lives in Leo in the career house. Who you love and who you become professionally are not separate questions.</div>
     </div>
     <div class="sig-item">
       <div class="sig-label">Soul Direction</div>
@@ -433,33 +437,35 @@
 <div class="section-wrap">
   <div class="section-eyebrow">All Placements</div>
   <div class="section-title">Natal Planets 🪐</div>
-  <table class="planets-table">
-    <thead>
-      <tr>
-        <th></th>
-        <th>Planet</th>
-        <th>Sign &amp; Degree</th>
-        <th>House</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td class="planet-glyph">☉</td><td class="planet-name">Sun</td><td>13° Libra</td><td><span class="house-badge">12th</span></td></tr>
-      <tr><td class="planet-glyph">☽</td><td class="planet-name">Moon</td><td>1° Scorpio</td><td><span class="house-badge">1st</span></td></tr>
-      <tr><td class="planet-glyph">☿</td><td class="planet-name">Mercury</td><td>6° Scorpio</td><td><span class="house-badge">1st</span></td></tr>
-      <tr><td class="planet-glyph">♀</td><td class="planet-name">Venus</td><td>17° Scorpio</td><td><span class="house-badge">2nd</span></td></tr>
-      <tr><td class="planet-glyph">♂</td><td class="planet-name">Mars</td><td>1° Leo</td><td><span class="house-badge">10th</span></td></tr>
-      <tr><td class="planet-glyph">♃</td><td class="planet-name">Jupiter</td><td>16° Scorpio</td><td><span class="house-badge">2nd</span></td></tr>
-      <tr><td class="planet-glyph">♄</td><td class="planet-name">Saturn</td><td>7° Pisces <span class="retro-badge">Rx</span></td><td><span class="house-badge">5th</span></td></tr>
-      <tr><td class="planet-glyph">♅</td><td class="planet-name">Uranus</td><td>22° Capricorn</td><td><span class="house-badge">4th</span></td></tr>
-      <tr><td class="planet-glyph">♆</td><td class="planet-name">Neptune</td><td>21° Capricorn</td><td><span class="house-badge">3rd</span></td></tr>
-      <tr><td class="planet-glyph">♇</td><td class="planet-name">Pluto</td><td>26° Scorpio</td><td><span class="house-badge">2nd</span></td></tr>
-      <tr><td class="planet-glyph">⚷</td><td class="planet-name">Chiron</td><td>19° Virgo</td><td><span class="house-badge">11th</span></td></tr>
-      <tr><td class="planet-glyph">☊</td><td class="planet-name">North Node</td><td>15° Scorpio</td><td><span class="house-badge">1st</span></td></tr>
-      <tr><td class="planet-glyph">☋</td><td class="planet-name">South Node</td><td>15° Taurus</td><td><span class="house-badge">7th</span></td></tr>
-      <tr><td class="planet-glyph">↑</td><td class="planet-name">Ascendant</td><td>19° Libra</td><td>—</td></tr>
-      <tr><td class="planet-glyph">☀</td><td class="planet-name">Midheaven</td><td>22° Cancer</td><td>—</td></tr>
-    </tbody>
-  </table>
+  <div class="planets-wrap">
+    <table class="planets-table">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Planet</th>
+          <th>Sign &amp; Degree</th>
+          <th>House</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="planet-glyph">☉</td><td class="planet-name">Sun</td><td>13° Libra</td><td><span class="house-badge">12th</span></td></tr>
+        <tr><td class="planet-glyph">☽</td><td class="planet-name">Moon</td><td>1° Scorpio</td><td><span class="house-badge">1st</span></td></tr>
+        <tr><td class="planet-glyph">☿</td><td class="planet-name">Mercury</td><td>6° Scorpio</td><td><span class="house-badge">1st</span></td></tr>
+        <tr><td class="planet-glyph">♀</td><td class="planet-name">Venus</td><td>17° Scorpio</td><td><span class="house-badge">2nd</span></td></tr>
+        <tr><td class="planet-glyph">♂</td><td class="planet-name">Mars</td><td>1° Leo</td><td><span class="house-badge">10th</span></td></tr>
+        <tr><td class="planet-glyph">♃</td><td class="planet-name">Jupiter</td><td>16° Scorpio</td><td><span class="house-badge">2nd</span></td></tr>
+        <tr><td class="planet-glyph">♄</td><td class="planet-name">Saturn</td><td>7° Pisces <span class="retro-badge">Rx</span></td><td><span class="house-badge">5th</span></td></tr>
+        <tr><td class="planet-glyph">♅</td><td class="planet-name">Uranus</td><td>22° Capricorn</td><td><span class="house-badge">4th</span></td></tr>
+        <tr><td class="planet-glyph">♆</td><td class="planet-name">Neptune</td><td>21° Capricorn</td><td><span class="house-badge">3rd</span></td></tr>
+        <tr><td class="planet-glyph">♇</td><td class="planet-name">Pluto</td><td>26° Scorpio</td><td><span class="house-badge">2nd</span></td></tr>
+        <tr><td class="planet-glyph">⚷</td><td class="planet-name">Chiron</td><td>19° Virgo</td><td><span class="house-badge">11th</span></td></tr>
+        <tr><td class="planet-glyph">☊</td><td class="planet-name">North Node</td><td>15° Scorpio</td><td><span class="house-badge">1st</span></td></tr>
+        <tr><td class="planet-glyph">☋</td><td class="planet-name">South Node</td><td>15° Taurus</td><td><span class="house-badge">7th</span></td></tr>
+        <tr><td class="planet-glyph">↑</td><td class="planet-name">Ascendant</td><td>19° Libra</td><td>—</td></tr>
+        <tr><td class="planet-glyph">☀</td><td class="planet-name">Midheaven</td><td>22° Cancer</td><td>—</td></tr>
+      </tbody>
+    </table>
+  </div>
 </div>
 
 <!-- ════════════════════════════════════ ASPECTS STRIP ══ -->
@@ -471,82 +477,52 @@
   <div class="aspect-row conj">
     <div class="asp-planets">☉ Sun Q ♂ Mars</div>
     <div class="asp-type">Quintile · exact</div>
-    <div class="asp-orb-wrap">
-      <div class="asp-orb-bar-bg"><div class="asp-orb-bar" style="width:99%"></div></div>
-      <div class="asp-orb-label">0.04°</div>
-    </div>
+    <div class="asp-orb-wrap"><div class="asp-orb-bar-bg"><div class="asp-orb-bar" style="width:99%"></div></div><div class="asp-orb-label">0.04°</div></div>
   </div>
   <div class="aspect-row tension">
     <div class="asp-planets">☽ Moon □ ♂ Mars</div>
     <div class="asp-type">Square · exact</div>
-    <div class="asp-orb-wrap">
-      <div class="asp-orb-bar-bg"><div class="asp-orb-bar" style="width:96%"></div></div>
-      <div class="asp-orb-label">0.31°</div>
-    </div>
+    <div class="asp-orb-wrap"><div class="asp-orb-bar-bg"><div class="asp-orb-bar" style="width:96%"></div></div><div class="asp-orb-label">0.31°</div></div>
   </div>
   <div class="aspect-row flow">
     <div class="asp-planets">☿ Mercury △ ♄ Saturn</div>
     <div class="asp-type">Trine</div>
-    <div class="asp-orb-wrap">
-      <div class="asp-orb-bar-bg"><div class="asp-orb-bar" style="width:93%"></div></div>
-      <div class="asp-orb-label">0.59°</div>
-    </div>
+    <div class="asp-orb-wrap"><div class="asp-orb-bar-bg"><div class="asp-orb-bar" style="width:93%"></div></div><div class="asp-orb-label">0.59°</div></div>
   </div>
   <div class="aspect-row conj">
     <div class="asp-planets">♀ Venus ☌ ♃ Jupiter</div>
     <div class="asp-type">Conjunction</div>
-    <div class="asp-orb-wrap">
-      <div class="asp-orb-bar-bg"><div class="asp-orb-bar" style="width:88%"></div></div>
-      <div class="asp-orb-label">0.99°</div>
-    </div>
+    <div class="asp-orb-wrap"><div class="asp-orb-bar-bg"><div class="asp-orb-bar" style="width:88%"></div></div><div class="asp-orb-label">0.99°</div></div>
   </div>
   <div class="aspect-row conj">
     <div class="asp-planets">♃ Jupiter ☌ ☊ North Node</div>
     <div class="asp-type">Conjunction</div>
-    <div class="asp-orb-wrap">
-      <div class="asp-orb-bar-bg"><div class="asp-orb-bar" style="width:86%"></div></div>
-      <div class="asp-orb-label">1.10°</div>
-    </div>
+    <div class="asp-orb-wrap"><div class="asp-orb-bar-bg"><div class="asp-orb-bar" style="width:86%"></div></div><div class="asp-orb-label">1.10°</div></div>
   </div>
   <div class="aspect-row flow">
     <div class="asp-planets">♀ Venus ✶ ⚷ Chiron</div>
     <div class="asp-type">Sextile</div>
-    <div class="asp-orb-wrap">
-      <div class="asp-orb-bar-bg"><div class="asp-orb-bar" style="width:80%"></div></div>
-      <div class="asp-orb-label">1.59°</div>
-    </div>
+    <div class="asp-orb-wrap"><div class="asp-orb-bar-bg"><div class="asp-orb-bar" style="width:80%"></div></div><div class="asp-orb-label">1.59°</div></div>
   </div>
   <div class="aspect-row conj">
     <div class="asp-planets">♀ Venus ☌ ☊ North Node</div>
     <div class="asp-type">Conjunction</div>
-    <div class="asp-orb-wrap">
-      <div class="asp-orb-bar-bg"><div class="asp-orb-bar" style="width:74%"></div></div>
-      <div class="asp-orb-label">2.10°</div>
-    </div>
+    <div class="asp-orb-wrap"><div class="asp-orb-bar-bg"><div class="asp-orb-bar" style="width:74%"></div></div><div class="asp-orb-label">2.10°</div></div>
   </div>
   <div class="aspect-row flow">
     <div class="asp-planets">♆ Neptune △ ⚷ Chiron</div>
     <div class="asp-type">Trine</div>
-    <div class="asp-orb-wrap">
-      <div class="asp-orb-bar-bg"><div class="asp-orb-bar" style="width:77%"></div></div>
-      <div class="asp-orb-label">1.84°</div>
-    </div>
+    <div class="asp-orb-wrap"><div class="asp-orb-bar-bg"><div class="asp-orb-bar" style="width:77%"></div></div><div class="asp-orb-label">1.84°</div></div>
   </div>
   <div class="aspect-row flow">
     <div class="asp-planets">♂ Mars △ ♇ Pluto</div>
     <div class="asp-type">Trine</div>
-    <div class="asp-orb-wrap">
-      <div class="asp-orb-bar-bg"><div class="asp-orb-bar" style="width:41%"></div></div>
-      <div class="asp-orb-label">4.72°</div>
-    </div>
+    <div class="asp-orb-wrap"><div class="asp-orb-bar-bg"><div class="asp-orb-bar" style="width:41%"></div></div><div class="asp-orb-label">4.72°</div></div>
   </div>
   <div class="aspect-row flow">
     <div class="asp-planets">☽ Moon △ ♄ Saturn</div>
     <div class="asp-type">Trine</div>
-    <div class="asp-orb-wrap">
-      <div class="asp-orb-bar-bg"><div class="asp-orb-bar" style="width:34%"></div></div>
-      <div class="asp-orb-label">5.30°</div>
-    </div>
+    <div class="asp-orb-wrap"><div class="asp-orb-bar-bg"><div class="asp-orb-bar" style="width:34%"></div></div><div class="asp-orb-label">5.30°</div></div>
   </div>
 </div>
 
@@ -570,9 +546,9 @@
       </div>
     </div>
     <div class="dive-body">
-      <p>The 12th house is the house behind the veil — the realm of retreat, the unconscious, the hidden life of the self. Most people never guess this is where your Sun lives. You present as Libra: graceful, warm, diplomatically attuned to beauty and harmony. And that's real. But your Sun — the core light of who you are — operates privately, from behind the curtain, in a way that most people only catch glimpses of.</p>
-      <p>This placement has a specific quality: <strong>you are more than you appear.</strong> People who know you for years often feel like they're still discovering new rooms. That's not performance or withholding — it's the nature of a 12th house Sun. The self is genuinely interior, and it releases its depths slowly, on its own timing, only when it feels safe to be seen.</p>
-      <p>In Libra, the Sun's drive toward beauty, connection, and fairness is real — but it runs from an inward source rather than a visible one. You don't need to announce that you care about beauty; you simply bring it into the spaces you inhabit. The 12th house Sun is often quietly spiritual, drawn to the unseen and the felt rather than the stated and the literal. It can also carry an inherited confusion about identity — particularly around a parent figure who was in some way unavailable or whose presence felt more like a mystery than a given.</p>
+      <p>The 12th house is the house behind the veil: the realm of retreat, the unconscious, the hidden life of the self. Most people never guess this is where your Sun lives. You present as Libra, graceful, warm, diplomatically attuned to beauty and harmony. And that's real. But your Sun, the core light of who you are, operates privately, from behind the curtain, in a way that most people only catch glimpses of.</p>
+      <p>This placement has a specific quality: <strong>you are more than you appear.</strong> People who know you for years often feel like they're still discovering new rooms. That's not performance or withholding. It's the nature of a 12th house Sun. The self is genuinely interior, and it releases its depths slowly, on its own timing, only when it feels safe to be seen.</p>
+      <p>In Libra, the Sun's drive toward beauty, connection, and fairness is real, but it runs from an inward source rather than a visible one. You don't need to announce that you care about beauty; you simply bring it into the spaces you inhabit. The 12th house Sun is often quietly spiritual, drawn to the unseen and the felt rather than the stated and the literal. It can also carry an inherited confusion about identity, often around a parent figure who was in some way unavailable or whose presence felt more like a mystery than a given.</p>
       <div class="pullquote">The more you allow your actual interior world to be seen, the more people get to know the person who was always there.</div>
     </div>
   </div>
@@ -591,9 +567,9 @@
       </div>
     </div>
     <div class="dive-body">
-      <p>Your Ascendant is Libra — the face you naturally put forward is refined, harmonizing, and attuned to how things look and feel in a room. People often describe you as easy to be around. But your Moon and Mercury are both in Scorpio in the 1st house, which means <strong>the emotional and intellectual reality running underneath that Libra grace is pure Scorpio: intense, perceptive, loyal to the truth, and not interested in surface conversations.</strong></p>
-      <p>This creates a fascinating dynamic. You walk in and read the entire emotional undercurrent of a room before anyone has said a word. You know when something is being left unsaid. You notice the thing no one is naming. But you do this quietly, from behind the Libra exterior — which means people often don't realize how much you're perceiving until you say something unexpectedly precise.</p>
-      <p>The invitation in this placement is to let the Scorpio truth surface more readily rather than keeping it tucked behind Libra's diplomatic softness. Not every truth needs to be delivered harshly — Scorpio doesn't require that. But the people who know you best are the ones who've gotten to meet the Scorpio underneath, and they tend to be fiercely loyal once they do.</p>
+      <p>Your Ascendant is Libra: the face you naturally put forward is refined, harmonizing, and attuned to how things look and feel in a room. People often describe you as easy to be around. But your Moon and Mercury are both in Scorpio in the 1st house, which means <strong>the emotional and intellectual reality running underneath that Libra grace is pure Scorpio: intense, perceptive, loyal to the truth, and not interested in surface conversations.</strong></p>
+      <p>This creates a fascinating dynamic. You walk in and read the entire emotional undercurrent of a room before anyone has said a word. You know when something is being left unsaid. You notice the thing no one is naming. But you do this quietly, from behind the Libra exterior, which means people often don't realize how much you're perceiving until you say something unexpectedly precise.</p>
+      <p>The invitation in this placement is to let the Scorpio truth surface more readily rather than keeping it tucked behind Libra's diplomatic softness. Not every truth needs to be delivered harshly. Scorpio doesn't require that. But the people who know you best are the ones who've gotten to meet the Scorpio underneath, and they tend to be fiercely loyal once they do.</p>
     </div>
   </div>
 </div>
@@ -619,10 +595,10 @@
       </div>
     </div>
     <div class="dive-body">
-      <p>Moon in Scorpio in the 1st house is one of the most intensely felt Moon placements in the zodiac. Your emotional life is not tucked away somewhere private — it's on the surface of who you are (1st house), and it runs to extraordinary depths (Scorpio). You cannot easily hide how you feel, even when you try. The feeling shows up in your eyes, in your presence, in the quality of your attention. People who meet you briefly often leave with the sense that they encountered someone <em>real</em>.</p>
+      <p>Moon in Scorpio in the 1st house is one of the most intensely felt Moon placements in the zodiac. Your emotional life is not tucked away somewhere private, it's on the surface of who you are (1st house), and it runs to extraordinary depths (Scorpio). You cannot easily hide how you feel, even when you try. The feeling shows up in your eyes, in your presence, in the quality of your attention. People who meet you briefly often leave with the sense that they encountered someone <em>real</em>.</p>
       <p>Scorpio Moon doesn't do shallow emotion. When you feel something, it's not a ripple — it's the whole current. You likely know the difference between feelings you can name and the ones that live underneath, the ones you're still excavating weeks later. Scorpio Moon processes by going all the way down, and it takes as long as it takes. This is not a weakness. This is how you arrive at genuine insight instead of surface conclusions.</p>
-      <p><strong>Moon square Mars (0.31°, exact):</strong> your emotional world and your drive are in perpetual productive tension. At its best this creates tremendous vitality and a restlessness that powers real action. At its most activated it can feel like your feelings and your impulses are arguing — emotion pulling one way, the urge to do something pulling another. Learning to let the emotion exist without immediately needing to act on it is the ongoing work here.</p>
-      <p><strong>Moon trine Saturn (5°):</strong> the structural anchor for all that depth. Saturn in Pisces gives your emotional intensity a container — you don't just feel deeply, you can eventually build something from what you feel. Under pressure, you can hold steadiness in ways that surprise people who assumed the Scorpio depth meant instability.</p>
+      <p><strong>Moon square Mars (0.31°, exact):</strong> your emotional world and your drive are in perpetual productive tension. At its best this creates tremendous vitality and a restlessness that powers real action. At its most activated it can feel like your feelings and your impulses are arguing, emotion pulling one way, the urge to do something pulling another. Learning to let the emotion exist without immediately needing to act on it is the ongoing work here.</p>
+      <p><strong>Moon trine Saturn (5°):</strong> the structural anchor for all that depth. Saturn in Pisces gives your emotional intensity a container. You don't just feel deeply; you can eventually build something from what you feel. Under pressure, you can hold steadiness in ways that surprise people who assumed the Scorpio depth meant instability.</p>
       <div class="pullquote">You don't feel on the surface. You feel the whole thing, all the way down, and you come back up knowing more than when you went in.</div>
     </div>
   </div>
@@ -649,10 +625,10 @@
       </div>
     </div>
     <div class="dive-body">
-      <p>Six placements in Scorpio is extraordinary. Your emotional life (Moon), your mind (Mercury), your values and love (Venus), your expansion and wisdom (Jupiter), your soul direction (North Node), and your transformative depth (Pluto) all run through the same sign. <strong>Scorpio is not your sun sign or your moon sign alone — it is the entire operating system of your inner world.</strong></p>
-      <p><strong>Mercury in Scorpio (1st house):</strong> you think by going deep. Your mind is not built for survey-level analysis — it wants to excavate. You often know the truth of a situation before you can articulate why, and the process of trying to explain your knowing can be frustrating because the knowing arrived through feeling and depth, not logic. Scorpio Mercury takes longer than other Mercury placements to arrive at its conclusions — and those conclusions are more accurate for it.</p>
-      <p><strong>Venus conjunct Jupiter in Scorpio (1°, 2nd house):</strong> this is one of the most genuinely generous and abundant natal aspects possible. Venus and Jupiter are naturally complementary planets — love and expansion, beauty and wisdom, the personal and the universal — and their conjunction means these energies work together seamlessly in your chart. Your capacity to love is both deep and abundant. You don't love casually, but when you do love, you love with everything. <strong>Jupiter sitting on your Venus also means that love tends to find you, to expand what's around you, to bring genuine blessings in the areas of relationship and values.</strong></p>
-      <p><strong>Venus and Jupiter conjunct North Node (both within 2°):</strong> your soul's path in this lifetime — what you're moving toward — is literally defined by love and the things you value most. The North Node being conjunct both Venus and Jupiter means fulfilling your destiny has a deeply relational, Venusian quality. You become who you're meant to become through loving well, being loved well, and honoring what matters to you at the deepest level.</p>
+      <p>Six placements in Scorpio is extraordinary. Your emotional life (Moon), your mind (Mercury), your values and love (Venus), your expansion and wisdom (Jupiter), your soul direction (North Node), and your transformative depth (Pluto) all run through the same sign. <strong>Scorpio is not your sun sign or your moon sign alone. It is the entire operating system of your inner world.</strong></p>
+      <p><strong>Mercury in Scorpio (1st house):</strong> you think by going deep. Your mind is not built for survey-level analysis. It wants to excavate. You often know the truth of a situation before you can articulate why, and the process of trying to explain your knowing can be frustrating because the knowing arrived through feeling and depth, not logic. Scorpio Mercury takes longer than other Mercury placements to arrive at its conclusions. Those conclusions are more accurate for it.</p>
+      <p><strong>Venus conjunct Jupiter in Scorpio (1°, 2nd house):</strong> this is one of the most genuinely generous and abundant natal aspects possible. Venus and Jupiter are naturally complementary planets: love and expansion, beauty and wisdom, the personal and the universal. Their conjunction means these energies work together seamlessly in your chart. Your capacity to love is both deep and abundant. You don't love casually, but when you do love, you love with everything. <strong>Jupiter sitting on your Venus also means that love tends to find you, to expand what's around you, to bring genuine blessings in the areas of relationship and values.</strong></p>
+      <p><strong>Venus and Jupiter conjunct North Node (both within 2°):</strong> your soul's path in this lifetime, what you're moving toward, is literally defined by love and the things you value most. The North Node being conjunct both Venus and Jupiter means fulfilling your destiny has a deeply relational, Venusian quality. You become who you're meant to become through loving well, being loved well, and honoring what matters to you at the deepest level.</p>
       <div class="pullquote">You are not an intense person trying to be chill. You are a Scorpio trying to be seen — and the more you let the depth show, the more you become who you actually are.</div>
     </div>
   </div>
@@ -678,9 +654,9 @@
       </div>
     </div>
     <div class="dive-body">
-      <p>The South Node in Taurus in the 7th house is the default gravity you're working against. The old pattern — the one that feels safe and familiar — is seeking stability and comfort through relationships. Staying in what's known. Not disrupting the peace even when the peace is actually a form of stagnation. Prioritizing security over truth because security feels like love.</p>
-      <p>The North Node in Scorpio in the 1st house is where you're being asked to go: authentic depth. <strong>Your soul's work is becoming more fully, honestly yourself</strong> — not through external achievement but through the internal willingness to see clearly, feel fully, and choose the real thing over the comfortable one. Scorpio North Node asks you to trust transformation. To let things end when they're over rather than holding them in amber. To risk vulnerability because depth requires it.</p>
-      <p>North Node in the 1st house is particularly personal — this isn't about achieving something external, it's about the ongoing act of becoming. Every time you say the true thing instead of the diplomatically comfortable thing, every time you choose depth over safety in a relationship, every time you let the Scorpio underneath the Libra exterior speak — that's your North Node activating. The growth is in the presence you bring, not in a destination you reach.</p>
+      <p>The South Node in Taurus in the 7th house is the default gravity you're working against. The old pattern, the one that feels safe and familiar, is seeking stability and comfort through relationships. Staying in what's known. Not disrupting the peace even when the peace is actually a form of stagnation. Prioritizing security over truth because security feels like love.</p>
+      <p>The North Node in Scorpio in the 1st house is where you're being asked to go: authentic depth. <strong>Your soul's work is becoming more fully, honestly yourself,</strong> not through external achievement but through the internal willingness to see clearly, feel fully, and choose the real thing over the comfortable one. Scorpio North Node asks you to trust transformation. To let things end when they're over rather than holding them in amber. To risk vulnerability because depth requires it.</p>
+      <p>North Node in the 1st house is particularly personal: this isn't about achieving something external, it's about the ongoing act of becoming. Every time you say the true thing instead of the diplomatically comfortable thing, every time you choose depth over safety in a relationship, every time you let the Scorpio underneath the Libra exterior speak, that's your North Node activating. The growth is in the presence you bring, not in a destination you reach.</p>
       <div class="pullquote">The most important relationship in your life is the one between who you actually are and who you let people see.</div>
     </div>
   </div>
@@ -707,10 +683,10 @@
       </div>
     </div>
     <div class="dive-body">
-      <p>Mars is the drive planet, and in Leo it needs to do work it can be proud of. Not proud in the ego-driven, look-at-me sense — proud in the sense that the work has dignity, that it expresses something real, that you'd stand behind it in any room. The 10th house placement puts this drive in the public career arena: <strong>you are not built for behind-the-scenes competence without recognition.</strong> This doesn't mean you're attention-hungry; it means Leo energy withers when its efforts are invisible or unacknowledged.</p>
-      <p>Mars in Leo in the 10th also brings a creative quality to how you work. The drive isn't just toward productivity — it's toward expression, toward making something that carries your signature. When the work allows for that creative dimension, your energy is extraordinary. When it doesn't, something in you goes quiet.</p>
-      <p><strong>Mars trine Pluto (4.7°):</strong> your drive has deep strategic power behind it. When you put Mars and Pluto together you get ambition with staying power — not just burst-of-fire energy but the capacity to stay with something difficult until it transforms. This trine means your Leo pride in work has the intensity of Scorpio behind it. You can go very far in whatever direction you choose to go.</p>
-      <p><strong>Sun quintile Mars (0.04°, essentially exact):</strong> a quintile is a rare creative aspect that indicates an unusual, highly specific way of bringing two energies together. Your Sun (soul, identity) and Mars (drive, action) have a nearly perfect quintile relationship — this gives you a distinctive way of expressing yourself through action that doesn't follow conventional templates. The work you do best is the work nobody else would do quite the way you do it.</p>
+      <p>Mars is the drive planet, and in Leo it needs to do work it can be proud of. Not proud in the ego-driven, look-at-me sense. Proud in the sense that the work has dignity, that it expresses something real, that you'd stand behind it in any room. The 10th house placement puts this drive in the public career arena: <strong>you are not built for behind-the-scenes competence without recognition.</strong> This doesn't mean you're attention-hungry; it means Leo energy withers when its efforts are invisible or unacknowledged.</p>
+      <p>Mars in Leo in the 10th also brings a creative quality to how you work. The drive isn't just toward productivity: it's toward expression, toward making something that carries your signature. When the work allows for that creative dimension, your energy is extraordinary. When it doesn't, something in you goes quiet.</p>
+      <p><strong>Mars trine Pluto (4.7°):</strong> your drive has deep strategic power behind it. When you put Mars and Pluto together you get ambition with staying power, not just burst-of-fire energy but the capacity to stay with something difficult until it transforms. This trine means your Leo pride in work has the intensity of Scorpio behind it. You can go very far in whatever direction you choose to go.</p>
+      <p><strong>Sun quintile Mars (0.04°, essentially exact):</strong> a quintile is a rare creative aspect that indicates an unusual, highly specific way of bringing two energies together. Your Sun (soul, identity) and Mars (drive, action) have a nearly perfect quintile relationship. This gives you a distinctive way of expressing yourself through action that doesn't follow conventional templates. The work you do best is the work nobody else would do quite the way you do it.</p>
     </div>
   </div>
 </div>
@@ -736,10 +712,10 @@
       </div>
     </div>
     <div class="dive-body">
-      <p>Chiron in the 11th house places the wound in community, friendship, and collective belonging. In Virgo, it takes a specific form: a wound around <em>being useful or correct enough</em> to belong. There may be an early felt sense that your place in groups was conditional — that you belonged when you contributed the right thing, knew the right things, showed up in the right way. The underlying fear: if you stopped being competent or helpful, would you still be wanted?</p>
-      <p>This wound often creates one of two responses: over-giving in community settings in order to earn belonging, or withdrawing from groups entirely because the standard feels impossible to meet. Virgo Chiron is particularly hard on itself — the inner critic here is the relentlessly specific kind, noticing every way the self didn't measure up.</p>
-      <p><strong>Venus sextile Chiron (1.59°):</strong> your capacity for love and beauty provides direct medicine for this wound. Love — both given and received — softens the place in you that believes belonging must be earned. The sextile is a cooperative aspect: this isn't a fight, it's a flow. Your Venus actively helps your Chiron heal.</p>
-      <p><strong>Chiron sextile North Node (3.7°):</strong> the wound is on your path, not in the way of it. The healing of the belonging wound — learning to receive love and community freely, without needing to justify your place — is part of how you fulfill your North Node in Scorpio. The wound itself becomes the territory you know most deeply, and eventually the territory you offer to others who need a guide.</p>
+      <p>Chiron in the 11th house places the wound in community, friendship, and collective belonging. In Virgo, it takes a specific form: a wound around <em>being useful or correct enough</em> to belong. There may be an early felt sense that your place in groups was conditional, that you belonged when you contributed the right thing, knew the right things, showed up in the right way. The underlying fear: if you stopped being competent or helpful, would you still be wanted?</p>
+      <p>This wound often creates one of two responses: over-giving in community settings in order to earn belonging, or withdrawing from groups entirely because the standard feels impossible to meet. Virgo Chiron is particularly hard on itself. The inner critic here is relentlessly specific, noticing every way the self didn't measure up.</p>
+      <p><strong>Venus sextile Chiron (1.59°):</strong> your capacity for love and beauty provides direct medicine for this wound. Love, both given and received, softens the place in you that believes belonging must be earned. The sextile is a cooperative aspect: this isn't a fight, it's a flow. Your Venus actively helps your Chiron heal.</p>
+      <p><strong>Chiron sextile North Node (3.7°):</strong> the wound is on your path, not in the way of it. The healing of the belonging wound, learning to receive love and community freely without needing to justify your place, is part of how you fulfill your North Node in Scorpio. The wound itself becomes the territory you know most deeply, and eventually the territory you offer to others who need a guide.</p>
       <div class="pullquote">You belong before you've done anything to deserve it. The wound knows this is true. The healing is believing it.</div>
     </div>
   </div>
@@ -765,9 +741,9 @@
       </div>
     </div>
     <div class="dive-body">
-      <p>Saturn retrograde in the 5th house means the Saturnian critic lives inside rather than in the external world. Most people with this placement don't feel blocked by outside forces from creative expression — they feel blocked by their own inner voice, which asks: <em>is this serious enough? Does this have a purpose? Am I doing this correctly?</em> The 5th house is the house of pure creative joy, play, romance, and self-expression. Saturn here can make all of that feel heavy — like it needs to be justified before it can be enjoyed.</p>
-      <p>In Pisces, the creative impulse wants to transcend, to imagine, to move toward the spiritual and the beautiful. There's genuine creative depth here. But Saturn makes it hard to simply play — to make something without knowing where it's going, or to fall in love without calculating the risk first.</p>
-      <p><strong>Mercury trine Saturn (0.59°, the tightest trine in the chart):</strong> this is the chart's significant saving grace for this placement. Your mind and your structure work beautifully together — when you write or communicate, the discipline is an asset, not a cage. The analytical rigor of Mercury-Saturn trine gives your thinking and expression genuine precision. The creative work that comes through the mind — writing, conversation, conceptual work — is where this Saturn placement performs at its best rather than its most limiting.</p>
+      <p>Saturn retrograde in the 5th house means the Saturnian critic lives inside rather than in the external world. Most people with this placement don't feel blocked by outside forces from creative expression. The resistance is internal: their own inner voice asking <em>is this serious enough? Does this have a purpose? Am I doing this correctly?</em> The 5th house is the house of pure creative joy, play, romance, and self-expression. Saturn here can make all of that feel heavy, like something that needs to be justified before it can be enjoyed.</p>
+      <p>In Pisces, the creative impulse wants to transcend, to imagine, to move toward the spiritual and the beautiful. There's genuine creative depth here. But Saturn makes it hard to simply play, to make something without knowing where it's going, or to fall in love without calculating the risk first.</p>
+      <p><strong>Mercury trine Saturn (0.59°, the tightest trine in the chart):</strong> this is the chart's significant saving grace for this placement. Your mind and your structure work beautifully together. When you write or communicate, the discipline is an asset, not a cage. The analytical rigor of Mercury-Saturn trine gives your thinking and expression genuine precision. The creative work that comes through the mind (writing, conversation, conceptual work) is where this Saturn placement performs at its best rather than its most limiting.</p>
     </div>
   </div>
 </div>
@@ -792,8 +768,8 @@
       </div>
     </div>
     <div class="dive-body">
-      <p>The generational Uranus-Neptune conjunction in Capricorn falls for you in the 4th house — the house of home, family of origin, roots, and foundation. This makes the generational themes personal: the dissolving of old structures (Neptune) and the disruption of what was assumed to be stable (Uranus) hit you most directly in the territory of home and early life.</p>
-      <p>This can manifest as an unusual or shifting family background, an early environment that defied the conventional idea of home and security, or a sense that the foundation you were given was made of something more porous than you needed it to be. For many people with this placement, <strong>home is something they have to consciously build rather than something they inherited.</strong> The 4th house with Uranus and Neptune in it means your relationship to home is animated by both disruption and vision — it can feel unstable, but it also means you approach the question of home with a kind of spiritual intentionality that people with more conventional 4th houses often don't have.</p>
+      <p>The generational Uranus-Neptune conjunction in Capricorn falls for you in the 4th house: the house of home, family of origin, roots, and foundation. This makes the generational themes personal. The dissolving of old structures (Neptune) and the disruption of what was assumed to be stable (Uranus) hit you most directly in the territory of home and early life.</p>
+      <p>This can manifest as an unusual or shifting family background, an early environment that defied the conventional idea of home and security, or a sense that the foundation you were given was made of something more porous than you needed it to be. For many people with this placement, <strong>home is something they have to consciously build rather than something they inherited.</strong> Your relationship to home is animated by both disruption and vision. It can feel unstable, but it also means you approach the question of home with a kind of spiritual intentionality that people with more conventional 4th houses often don't have.</p>
       <p>Neptune trine Chiron (1.84°) creates a flow between your sense of spiritual imagination and the healing of your wound. The more you allow the Piscean, Neptunian quality of your imagination to inform your sense of home and belonging, the more the wound heals.</p>
     </div>
   </div>
@@ -819,38 +795,38 @@
       </div>
     </div>
     <div class="dive-body">
-      <p style="color: var(--teal-bright); font-size: 0.84rem; margin-bottom: 4px;">These are the five most exact contacts between your natal chart and Jordan's. Written for you to read — this is what the sky says about why this friendship has the quality it does.</p>
+      <p style="color: var(--teal-bright); font-size: 0.84rem;">These are the five most exact contacts between your natal chart and Jordan's: what the sky says about why this friendship has the quality it does.</p>
     </div>
   </div>
 
   <div class="synastry-contact">
     <div class="syn-planets">Your Mars (1° Leo) △ Her Sun (1° Sagittarius)</div>
     <div class="syn-orb">TRINE · 0.03° orb — essentially exact</div>
-    <div class="syn-text">This is the tightest aspect in the entire synastry — a fire trine so exact it's nearly theoretical. Your Leo drive and her Sagittarian identity are in perfect resonance. When you act, move, or bring your energy into a room, it activates something essential in her — not just something she enjoys, but something she fundamentally <em>is</em>. This is why being with you feels energizing to her in a way that doesn't require explanation. You don't just complement her identity; your fire is calibrated to her frequency exactly.</div>
+    <div class="syn-text">This is the tightest aspect in the entire synastry, a fire trine so exact it's nearly theoretical. Your Leo drive and her Sagittarian identity are in perfect resonance. When you act, move, or bring your energy into a room, it activates something essential in her, not just something she enjoys but something she fundamentally <em>is</em>. This is why being with you feels energizing to her in a way that doesn't require explanation. Your fire is calibrated to her frequency exactly.</div>
   </div>
 
   <div class="synastry-contact">
     <div class="syn-planets">Your Moon (1° Scorpio) ☌ Her Jupiter (2° Scorpio)</div>
     <div class="syn-orb">CONJUNCTION · 0.67° orb</div>
-    <div class="syn-text">Her Jupiter sits directly on your emotional Moon. Jupiter is the planet of expansion, abundance, and generosity — and it's landing right on the center of your feeling world. This is why being around Jordan makes you feel more seen, more held, more like there's room for your full emotional range rather than just the parts of it that are easy to receive. Her presence expands what's possible for you emotionally. This contact is a deep nourishment contact.</div>
+    <div class="syn-text">Her Jupiter sits directly on your emotional Moon. Jupiter is the planet of expansion, abundance, and generosity. It's landing right on the center of your feeling world. This is why being around Jordan makes you feel more seen, more held, more like there's room for your full emotional range rather than just the parts of it that are easy to receive. Her presence expands what's possible for you emotionally. This contact is a deep nourishment contact.</div>
   </div>
 
   <div class="synastry-contact">
     <div class="syn-planets">Your Venus (17° Scorpio) ☌ Her Venus (18° Scorpio)</div>
     <div class="syn-orb">CONJUNCTION · 0.85° orb</div>
-    <div class="syn-text">Venus conjunct Venus in synastry is rare and beautiful. You share the same fundamental love language — the same things feel like love to both of you, you find beauty in the same places, and at the most basic level you want the same things from love and friendship. This contact is why the friendship has always felt like a natural fit rather than an effortful construction. Your Venuses are speaking the same dialect.</div>
+    <div class="syn-text">Venus conjunct Venus in synastry is rare and beautiful. You share the same fundamental love language: the same things feel like love to both of you, you find beauty in the same places, and at the most basic level you want the same things from love and friendship. This contact is why the friendship has always felt like a natural fit rather than an effortful construction. Your Venuses are speaking the same dialect.</div>
   </div>
 
   <div class="synastry-contact">
     <div class="syn-planets">Your Chiron (19° Virgo) ✶ Her Venus (18° Scorpio)</div>
     <div class="syn-orb">SEXTILE · 0.74° orb</div>
-    <div class="syn-text">Your Virgo wound (11th house — belonging, community worthiness) sextiles Jordan's Venus in Scorpio. A sextile is a cooperative aspect — these two energies work together naturally. What this means: her Venus, her way of loving and valuing you, is actively meeting your wound in the place it most needs meeting. She doesn't just love you — the specific way she loves you is medicine for the wound that says you have to earn belonging. You don't earn anything with her. You simply receive.</div>
+    <div class="syn-text">Your Virgo wound (11th house, belonging and community worthiness) sextiles Jordan's Venus in Scorpio. A sextile is a cooperative aspect; these two energies work together naturally. Her Venus, her way of loving and valuing you, is actively meeting your wound in the place it most needs meeting. She doesn't just love you. The specific way she loves you is medicine for the wound that says you have to earn belonging. You don't earn anything with her. You simply receive.</div>
   </div>
 
   <div class="synastry-contact">
     <div class="syn-planets">Your Saturn (7° Pisces) ☍ Her Chiron (8° Virgo)</div>
     <div class="syn-orb">OPPOSITION · 1.37° orb</div>
-    <div class="syn-text">This one is worth knowing about honestly. Your Saturn in Pisces sits in opposition to her Chiron in Virgo — the wound of not-enoughness that lives at the center of her healing work. This doesn't mean the friendship causes harm; it means there's a particular dynamic where your Saturn energy (structure, expectation, reality-testing) can, without either of you intending it, press on the place in her that asks <em>am I doing enough?</em> The inverse also matters: you can be one of the people who, by just being real and present, helps her wound understand that structure and discipline can coexist with warmth. This contact asks for mutual awareness, not avoidance.</div>
+    <div class="syn-text">This one is worth knowing about honestly. Your Saturn in Pisces sits in opposition to her Chiron in Virgo, the wound of not-enoughness at the center of her healing work. This doesn't mean the friendship causes harm; it means there's a particular dynamic where your Saturn energy (structure, expectation, reality-testing) can, without either of you intending it, press on the place in her that asks <em>am I doing enough?</em> The inverse also matters: you can be one of the people who, by just being real and present, helps her wound understand that structure and discipline can coexist with warmth. This contact asks for mutual awareness, not avoidance.</div>
   </div>
 </div>
 
