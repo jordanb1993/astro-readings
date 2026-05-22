@@ -1,10 +1,10 @@
-# The Stars — Daily Digest | 2026-05-21
+# The Stars:Daily Digest | 2026-05-22
 
-**Moon:** 3.71° Leo | Waxing Crescent
+**Moon:** 17.66° Leo | Waxing Crescent
 
 **Top active transits (tight orb):**
-- Mars ☍ natal Jupiter (5th) — 0.16° separating
-- Neptune ☌ natal Moon (10th) — 0.17° applying
-- Venus □/ natal Venus (5th) — 0.21° applying
+- Venus □ natal Moon (10th):0.02° separating
+- Neptune ☌ natal Moon (10th):0.15° applying
+- Sun ☍ natal Sun (6th):0.3° applying
 
-*Full reading: the stars/readings/2026-05-21.md*
+*Full reading: the stars/readings/2026-05-22.md*
