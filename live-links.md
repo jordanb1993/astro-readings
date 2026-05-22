@@ -47,11 +47,15 @@ Gemini Sun · Aries Moon · Taurus Rising · Venus in 1st
 [marina.html](https://jordanb1993.github.io/astro-readings/natal/marina.html)
 Leo Sun · Sagittarius Moon · Libra Rising · Jupiter conjunct ASC
 
+**Kate Penkethman**
+[kate.html](https://jordanb1993.github.io/astro-readings/natal/kate.html)
+Libra Sun · Scorpio Moon · Libra Rising · six-planet Scorpio stellium
+
 ---
 
 ## Pending Charts
 
-Birth data still needed: Kate · Cat · Mimi · Carina
+Birth data still needed: Cat · Mimi · Carina
 
 ---
 
