@@ -1,6 +1,6 @@
 ---
 title: Week Ahead — May 25 through May 31, 2026
-generated: 2026-05-22
+generated: 2026-05-23
 tags:
   - week-ahead
   - astrology
@@ -8,7 +8,7 @@ tags:
 
 # Week Ahead — May 25 through May 31, 2026
 
-> The week moves in a single arc toward Thursday May 28, when Neptune and Chiron hit simultaneously near-exact — Neptune ☌ natal Moon at 0.01° and Chiron ✶ natal Ascendant at 0.01°, the tightest either transit reaches in its current arc. From Monday onward the sensing and healing-visibility fields are inside 0.10°; by Thursday they're as close as they get. Friday brings the Sun squaring natal Chiron and Saturn reaching near-exact inconjunct to natal Mercury — the wound meets the career axis on the same day communication demands careful structure.
+> Neptune reaches its first exact conjunction with your natal Moon this Thursday — the headline emotional transit of 2026–2027 landing at peak for the first time. Simultaneously Chiron sextiles your Ascendant to 0.01°, and Friday brings a triple exact: Sun squares natal Chiron and Midheaven while Saturn reaches exact inconjunct to natal Mercury. This is the week the sky hands you a mirror and asks what you're ready to see clearly.
 
 ---
 
@@ -16,56 +16,65 @@ tags:
 
 | Date | Day | Transit | Aspect | Natal Point | Orb at Peak |
 |------|-----|---------|--------|-------------|-------------|
-| May 25 | Mon | Neptune | ☌ Conjunction | Moon 4° Ari (10th) | 0.08° |
-| May 25 | Mon | Chiron | ✶ Sextile | Ascendant 29° Gem (1st) | 0.14° |
-| May 25 | Mon | Jupiter | ∠ Semi-square | Chiron 8° Vir (4th) | 0.16° |
-| May 25 | Mon | Sun | ✶ Sextile | Moon 4° Ari (10th) | 0.19° |
-| May 25 | Mon | Venus | △ Trine | Chiron 8° Vir (4th) | 0.45° |
-| May 26 | Tue | Jupiter | ∠ Semi-square | Chiron 8° Vir (4th) | **0.03°** |
-| May 26 | Tue | Jupiter | □/ Sesquiquadrate | Midheaven 8° Pis (10th) | **0.03°** |
-| May 26 | Tue | Neptune | ☌ Conjunction | Moon 4° Ari (10th) | 0.05° |
-| May 26 | Tue | Chiron | ✶ Sextile | Ascendant 29° Gem (1st) | 0.09° |
-| May 26 | Tue | Mercury | ⚻ Inconjunct | Uranus 19° Cap (7th) | 0.22° |
-| May 27 | Wed | Neptune | ☌ Conjunction | Moon 4° Ari (10th) | 0.03° |
-| May 27 | Wed | Chiron | ✶ Sextile | Ascendant 29° Gem (1st) | 0.04° |
-| May 27 | Wed | Venus | ⚻ Inconjunct | Mars 10° Sag (6th) | 0.08° |
-| May 27 | Wed | Saturn | ⚻ Inconjunct | Mercury 12° Sco (5th) | 0.16° |
-| May 28 | Thu | Neptune | ☌ Conjunction | Moon 4° Ari (10th) | **0.01°** |
-| May 28 | Thu | Chiron | ✶ Sextile | Ascendant 29° Gem (1st) | **0.01°** |
-| May 28 | Thu | Saturn | ⚻ Inconjunct | Mercury 12° Sco (5th) | 0.07° |
-| May 29 | Fri | Sun | □ Square | Chiron 8° Vir (4th) | **0.02°** |
-| May 29 | Fri | Sun | □ Square | Midheaven 8° Pis (10th) | **0.02°** |
-| May 29 | Fri | Saturn | ⚻ Inconjunct | Mercury 12° Sco (5th) | **0.02°** |
-| May 29 | Fri | Uranus | ⚻ Inconjunct | Jupiter 2° Sco (5th) | 0.09° |
-| May 29 | Fri | Mars | △ Trine | Chiron 8° Vir (4th) | 0.19° |
-| May 29 | Fri | Venus | △ Trine | Mercury 12° Sco (5th) | 0.29° |
+| May 24 | Sun | Neptune | conjunction ☌ | Moon 4° Ari (10th) | 0.10° |
+| May 24 | Sun | Chiron | sextile ✶ | Ascendant 29° Gem (1st) | 0.19° |
+| May 24 | Sun | Sun | opposition ☍ | NorthNode 3° Sag (6th) | 0.22° |
+| May 24 | Sun | Sun | conjunction ☌ | SouthNode 3° Gem (12th) | 0.22° |
+| May 25 | Mon | Neptune | conjunction ☌ | Moon 4° Ari (10th) | 0.08° |
+| May 25 | Mon | Jupiter | semi-square ∠ | Chiron 8° Vir (4th) | 0.16° |
+| May 25 | Mon | Sun | sextile ✶ | Moon 4° Ari (10th) | 0.18° |
+| May 25 | Mon | Venus | sextile ✶ | Chiron 8° Vir (4th) | 0.45° |
+| May 25 | Mon | Venus | trine △ | Midheaven ~8° Pis (10th) | 0.45° |
+| May 26 | Tue | Jupiter | semi-square ∠ | Chiron 8° Vir (4th) | **0.03°** |
+| May 26 | Tue | Jupiter | sesquiquadrate □/ | Midheaven ~8° Pis (10th) | **0.03°** |
+| May 26 | Tue | Neptune | conjunction ☌ | Moon 4° Ari (10th) | 0.05° |
+| May 26 | Tue | Chiron | sextile ✶ | Ascendant 29° Gem (1st) | 0.09° |
+| May 26 | Tue | Mercury | inconjunct ⚻ | Uranus 19° Cap (7th) | 0.23° |
+| May 27 | Wed | Neptune | conjunction ☌ | Moon 4° Ari (10th) | 0.03° |
+| May 27 | Wed | Chiron | sextile ✶ | Ascendant 29° Gem (1st) | 0.04° |
+| May 27 | Wed | Venus | inconjunct ⚻ | Mars 10° Sag (6th) | 0.08° |
+| May 27 | Wed | Saturn | inconjunct ⚻ | Mercury 12° Sco (5th) | 0.16° |
+| May 28 | Thu | Neptune | conjunction ☌ | Moon 4° Ari (10th) | **0.01°** |
+| May 28 | Thu | Chiron | sextile ✶ | Ascendant 29° Gem (1st) | **0.01°** |
+| May 28 | Thu | Saturn | inconjunct ⚻ | Mercury 12° Sco (5th) | 0.07° |
+| May 29 | Fri | Sun | square □ | Chiron 8° Vir (4th) | **0.02°** |
+| May 29 | Fri | Sun | square □ | Midheaven ~8° Pis (10th) | **0.02°** |
+| May 29 | Fri | Saturn | inconjunct ⚻ | Mercury 12° Sco (5th) | **0.02°** |
+| May 29 | Fri | Neptune | conjunction ☌ | Moon 4° Ari (10th) | 0.01° |
+| May 29 | Fri | Mars | trine △ | Chiron 8° Vir (4th) | 0.19° |
+| May 29 | Fri | Venus | trine △ | Mercury 12° Sco (5th) | 0.29° |
+| May 30 | Sat | Uranus | inconjunct ⚻ | Jupiter 2° Sco (5th) | **0.03°** |
+| May 30 | Sat | NNode | semi-sextile ⚺ | Moon 4° Ari (10th) | 0.02° |
+| May 30 | Sat | Neptune | conjunction ☌ | Moon 4° Ari (10th) | 0.03° |
 
 ---
 
 ## The Week's Dominant Themes
 
-**Neptune exact on natal Moon — the season's defining arrival** — Neptune reaches 0.01° from exact conjunction with natal Moon at 4° Aries (10th house) on Thursday May 28, the closest approach of the entire 2026–2027 arc. From Monday onward the orb is under 0.10°: the membrane between what you sense in professional contexts and what you can explain afterward is functionally dissolved. The 10th house Moon is where career performance and emotional intelligence fuse. At this proximity the antenna runs significantly ahead of the rational case — what you read in a room before the meeting ends, what you know about a project direction before the argument is assembled. The gift is precision; the risk is reading idealization into ambiguous signals. Trust the sensing, anchor it in the timestamped record, verify before acting.
+**Neptune Exact on Thursday — the 2026–2027 arc's first peak** — Neptune at 3.88° Aries has been tightening toward natal Moon at 4° Aries (10th house) all spring. Thursday May 28 it reaches 0.01° — functionally exact, the first exact pass of this multi-year arc. The 10th house Moon is professional sensing and emotional intelligence fused into one chart function; Neptune here dissolves the membrane between feeling and knowing. The entire week is a crescendo: 0.08° Monday, 0.05° Tuesday, 0.03° Wednesday, 0.01° Thursday. Professional intuition is running at maximum gain all week — what arrives as sensing before the rational case assembles is the accurate read. Anchor the signal in the record; verify before acting.
 
-**Chiron exact on natal Ascendant — the wound meets the face** — Chiron at 28.70° Aries reaches 0.01° sextile to natal Ascendant at 29° Gemini on the same day Neptune peaks — Thursday May 28. The anaretic 29° Ascendant conjunct the South Node is where the performed face, the shape-shifting, the room-reading adaptation has historically lived. Chiron sextile that point doesn't force anything open — it makes it easier for the integrated version of the wound to be what's visible, rather than the unhealed part or the performance. By Wednesday the approach is essentially exact; something in how you show up will carry a different quality. Note what that is.
+**Two Peaks on the Same Day — Thursday's double exact** — Chiron ✶ natal Ascendant also reaches 0.01° on Thursday May 28, the same day as Neptune's exact conjunction. The wound-healer in cooperative contact with the anaretic 29° Ascendant conjunct the South Node: the integration work already done offers itself as visible resource rather than wound requiring management. Having both transits at near-zero orb simultaneously is rare — the sensing field opens fully (Neptune-Moon) while what has healed becomes present in how you show up (Chiron-Ascendant sextile). Hold Thursday with some intentionality.
 
-**Jupiter frictional contact to the wound-career axis, then Sun squares it Friday** — Jupiter at 22.31° Cancer reaches exact semi-square to natal Chiron (4th house) and exact sesquiquadrate to natal Midheaven on Tuesday May 26 (0.03° both). Jupiter's frictional aspects to the Chiron-MC axis activate the place where the Virgo perfectionism wound intersects with career ambition and public facing identity — a brief but specific pressure point. Then Friday, the Sun at ~8° Gemini squares natal Chiron (4th house) and natal Midheaven (10th house) at near-exact 0.02°, bringing those same points into focus again via solar activation. The wound-career axis gets touched twice in the week: Jupiter's frictional pass Tuesday, solar square Friday.
+**Career-Identity-Voice Triple on Friday** — The day after the peak brings a different configuration: Sun squares natal Chiron (4th house, 0.02°), Sun squares natal Midheaven (0.02°), and Saturn exactly inconjuncts natal Mercury in the 5th (0.02°) — all on the same day. The Sun illuminating the foundational wound as it presses against the career axis, while Saturn structurally adjusts the creative voice. Not collapse — a clarity day. Mars trines natal Chiron the same day (0.19°), lending constructive energy to what the squares and Saturn are asking to be seen. What needs to shift in how you show up professionally, and what the voice needs structurally, becomes visible.
 
 ---
 
 ## Day-by-Day Texture
 
-**Monday May 25 (Memorial Day):** Neptune at 0.08° and Chiron ✶ ASC at 0.14° — both one breath from exact. A rest day carrying significant inner-field pressure from the approaching double-peak. Sun sextile natal Moon and Venus trine natal Chiron add cooperative warmth. Not an action day — an attunement day. Jupiter semi-square natal Chiron building toward tomorrow's exact.
+**Sunday May 24:** Sun conjuncts natal South Node exactly (0.22°) while Neptune holds at 0.10° — the Gemini-mirroring pattern gets solar illumination the day after the Eleanor chapter closed; what you recognize about relational patterns this weekend arrives with unusual precision.
 
-**Tuesday May 26:** Jupiter exactly semi-squares natal Chiron and sesquiquadrates the Midheaven (0.03°) — the wound and career destiny axis both frictionally activated at once. Neptune at 0.05° from natal Moon. Mercury inconjuncts natal Uranus and Neptune in the 7th — communication with partners or public-facing output has unusual texture today. The intuition is dialed in; the messaging may require extra care.
+**Monday May 25:** Venus reaches natal Chiron (4th) and Midheaven in a sextile-trine pair (0.45°) as the week opens — soft, cooperative energy in the foundation and career channels; Sun sextiles natal Moon (0.18°), brightening the 10th house; Jupiter semi-square natal Chiron building toward Tuesday's exact.
 
-**Wednesday May 27:** Neptune at 0.03°, Chiron ✶ ASC at 0.04° — essentially exact on both. Venus inconjuncts natal Mars in Sagittarius (0.08°), introducing a small friction between what Cancer Venus wants to draw close and what the Sagittarius 6th house drives toward. By today the quality of the approaching Thursday peak is palpable.
+**Tuesday May 26:** Jupiter semi-square natal Chiron goes exact (0.03°) — the growth-wound activation peaks; something in the home/foundation domain surfaces as frictionally activated, possibly uncomfortable; Neptune at 0.05° and Mercury inconjunct natal 7th house pair adds unusual texture to communication and partner dynamics.
 
-**Thursday May 28:** Neptune ☌ natal Moon at 0.01° and Chiron ✶ natal Ascendant at 0.01° — double exact simultaneously. Saturn also near-exact inconjunct natal Mercury (5th house, 0.07°), adding a layer of careful communication required in the creative and voice domain. This is the week's most significant day. Note what you sense professionally and personally, what you show people and how it lands, what feels different in the room.
+**Wednesday May 27:** Neptune at 0.03°, Chiron ✶ ASC at 0.04° — essentially exact on both; the palpable quality of the approaching Thursday peak is already present; Venus inconjuncts natal Mars in the 6th (0.08°), a small friction between what the heart wants to draw close and what the drive domain is running.
 
-**Friday May 29:** Neptune and Chiron begin separating — slowly, given their speed. But the Sun squares natal Chiron and natal Midheaven at 0.02° while Saturn reaches exact inconjunct natal Mercury at 0.02°: the wound-career axis lit by solar activation on the same day the 5th house creative voice faces structural constraint. Mars trines natal Chiron (0.19°) — there's also a supportive, action-available quality. Venus trines natal Mercury (0.29°). The day has both the friction and the flow.
+**Thursday May 28:** Neptune ☌ natal Moon AND Chiron ✶ natal Ascendant — both at 0.01° exact simultaneously; this is the week's most significant day; hold space; trust what you sense and what you've healed.
 
-**Weekend May 30–31:** Neptune and Chiron in gradual separation from their exact points — the peak has passed, the integration begins. The outer planet transits don't vanish; they shift from approach to something to work with. Good weekend for reflection, writing, or any reading work where the emotional sensing just ran at full range. Quieter texture after the week's build.
+**Friday May 29:** Sun squares natal Chiron and Midheaven + Saturn exactly inconjuncts natal Mercury — career identity and voice structure come into sharp focus; Mars trine natal Chiron (0.19°) and Venus trine natal Mercury (0.29°) lend flow alongside the friction; the day has both the pressure and the support.
+
+**Weekend May 30–31:** Uranus reaches exact inconjunct to natal Jupiter (5th house, 0.03°) — the creative expansion domain gets the full Uranus disruption signal; what wants to break free in the astrology business, creative work, or 5th house desire domain surfaces at its most precise; Neptune and Chiron begin gradual separation from their Thursday peaks.
 
 ---
 
-*Generated: 2026-05-22 | Full daily readings in readings/YYYY-MM-DD.md*
+*Generated: 2026-05-23 | Full daily reading: readings/2026-05-23.md*
