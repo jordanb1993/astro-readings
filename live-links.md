@@ -51,6 +51,10 @@ Leo Sun · Sagittarius Moon · Libra Rising · Jupiter conjunct ASC
 [kate.html](https://jordanb1993.github.io/astro-readings/natal/kate.html)
 Libra Sun · Scorpio Moon · Libra Rising · six-planet Scorpio stellium
 
+**Hazel Grace**
+[hazel.html](https://jordanb1993.github.io/astro-readings/natal/hazel.html)
+Taurus Sun (29°) · Virgo Moon · Aquarius Rising (29°) · 3rd house stellium · Jordan's niece
+
 ---
 
 ## Pending Charts
