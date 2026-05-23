@@ -1,0 +1,11 @@
+# Obsidian runtime / UI state files — change constantly, not content
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/appearance.json
+.obsidian/cache
+.obsidian/plugins/*/data.json
+.obsidian/plugins/*/manifest.json
+.obsidian/.trash/
+
+# macOS
+.DS_Store
