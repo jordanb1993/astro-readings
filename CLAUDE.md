@@ -18,7 +18,7 @@ Jordan is a 32-year-old lesbian woman in Chicago. Associate Director of Content 
 3. **KNOWLEDGE.md** — always (accumulated context, correlations, life arcs, patterns)
 4. **Most recent `readings/YYYY-MM-DD.md`** — the latest one only, for continuity thread
 5. **`_inbox/capture.md`** — always check; if entries exist below the `---`, surface and route them before starting the session
-6. **`Tony Cohn — Incident Log.md`** — ONLY if the session involves work or career topics
+6. **Tony Cohn — Incident Log** — moved to `Personal Life HQ/Work/Tony Cohn — Incident Log.md`. Load from there ONLY if the session involves active work or career topics.
 
 Do not read older readings MDs unless Jordan asks to reference a specific past date. Do not begin a reading until you have oriented yourself in these files.
 
