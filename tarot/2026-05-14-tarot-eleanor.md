@@ -1,6 +1,8 @@
 ---
 title: May 14, 2026 — Tarot Reading (Eleanor / Ending It)
 date: 2026-05-14
+cssclasses:
+  - stars-reading
 tags:
   - tarot
   - eleanor

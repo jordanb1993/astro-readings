@@ -27,10 +27,10 @@ Do not read older readings MDs unless Jordan asks to reference a specific past d
 ## Stars Inbox — `_inbox/capture.md`
 
 Jordan captures astro ideas from her iPhone directly to this file. Check it every session start. If there are unprocessed entries:
-- Business ideas (pricing, names, Etsy copy, offering types) → surface and discuss, or file to `app-vision.md` if app-related
+- Business ideas (pricing, names, Etsy copy, offering types) → surface and discuss, or file to `the build/app-vision.md` if app-related
 - Reading requests (friend chart, synastry, love reading) → note the person + data needed, add to `charts/` if birth data is included
 - Astro insights or correlations → add to KNOWLEDGE.md if worth keeping
-- App or system feature ideas → add to `app-vision.md`
+- App or system feature ideas → add to `the build/app-vision.md`
 - Raw captures with no clear category → acknowledge, ask if Jordan wants to action now or park
 
 After processing, clear the entries from capture.md (keep the header, remove the content below `---`). The file stays lean — it's a staging area, not an archive.
@@ -220,7 +220,7 @@ Claude pulls live planetary positions directly from the web at the start of ever
 
 **Personal / Dating:** Eleanor chapter closed with intention May 18 — kind, clean phone call. South Node mirroring pattern recognized at 2 dates, not years in. Two of Cups held as the tuning fork going forward. Bumble for Pride month June on radar. Summer: Portland with Carina (August, exact dates TBD), Dad visit (Jul 23 + Jul 27 + Aug 1 — shorter visits), Pride events. Ireland solo trip a live longing.
 
-Active transits as of 2026-05-23: Neptune 3.88° Aries:0.12° applying conjunction natal Moon (10th) | Uranus 1.56° Gemini:0.44° applying inconjunct natal Jupiter (5th) | Jupiter 22.49° Cancer:0.51° applying semi-square natal Chiron (4th) | Jupiter 22.49° Cancer:0.51° separating sesquiquadrate natal Midheaven (10th)
+Active transits as of 2026-05-22: Neptune 3.85° Aries:0.15° applying conjunction natal Moon (10th) | Uranus 1.50° Gemini:0.5° applying opposition natal Sun (6th) | Uranus 1.50° Gemini:0.5° applying inconjunct natal Jupiter (5th) | Saturn 11.38° Aries:0.62° separating inconjunct natal Mercury (5th)
 
 ---
 
@@ -252,7 +252,8 @@ This workspace and **Personal Life HQ** are in active dialogue. Key connections:
 |-------|---------------|
 | Astrology business plan (Etsy, reviews, 90-day plan) | `Personal Life HQ/Money/astrology-business-plan.md` |
 | Astrology business scope (phases, pricing, name shortlist) | `Personal Life HQ/Money/astrology-business-scope.md` |
-| App vision (expanded, with Phase 1 details) | `app-vision.md` ← this workspace |
+| App vision + phase roadmap | `the build/app-vision.md` ← this workspace |
+| Testimonials, feedback, early praise | `the build/testimonials.md` ← this workspace |
 | Psychological patterns (Chiron wound, South Node, etc.) | `Personal Life HQ/Growth & Craft/patterns-reference.md` |
 | Financial state (savings, CC balance, loan status) | `Personal Life HQ/Money/state.md` |
 | Dating / summer plans | `Personal Life HQ/Culture & Adventure/Summer 2026.md` |
@@ -288,9 +289,10 @@ the stars/
 ├── INSTRUCTIONS.md                  ← Operating rules, natal chart, calculation workflow
 ├── KNOWLEDGE.md                     ← Accumulated wisdom, correlations, context
 ├── Tony Cohn — Incident Log.md      ← Active workplace documentation
-├── tarot-log.md                     ← All card pulls with dates, positions, reflections
 ├── wheel-of-the-year.md             ← Seasonal calendar, ritual notes, moon tracking
-├── app-vision.md                    ← AI astrology app — running ideas scratchpad
+├── the build/                       ← Business OS — app vision, testimonials, brand
+│   ├── app-vision.md                ← AI astrology app — running ideas, phase roadmap
+│   └── testimonials.md              ← Feedback, praise, reviews — the receipts
 ├── charts/                          ← Friends' natal chart data for synastry
 │   ├── README.md
 │   ├── kate.md / marina.md / cat.md / miriam-mimi.md / carina.md / dasha.md
@@ -300,6 +302,9 @@ the stars/
 ├── ritual/                          ← Moon rituals, ceremonial tarot pulls
 │   ├── README.md
 │   └── YYYY-MM-DD-[descriptor].md
+├── tarot/                           ← All tarot pulls, spreads, and the running log
+│   ├── tarot-log.md                 ← Master log of every pull with summaries
+│   └── YYYY-MM-DD-tarot.md          ← Full individual readings
 ├── routine/                         ← Daily 4am reading automation
 │   ├── generate-positions.py        ← Swiss Ephemeris position calculator
 │   ├── ROUTINE-UPDATE-INSTRUCTIONS.md

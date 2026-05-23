@@ -1,3 +1,8 @@
+---
+cssclasses:
+  - stars-reading
+---
+
 # Eleanor Synastry ✦ May 14, 2026
 
 > *You already know. The chart just explains why.*

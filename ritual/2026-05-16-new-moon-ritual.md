@@ -1,6 +1,8 @@
 ---
 title: Taurus New Moon Ritual — May 16, 2026
 date: 2026-05-16
+cssclasses:
+  - stars-reading
 tags:
   - ritual
   - new-moon
@@ -29,17 +31,16 @@ It also lands the morning after **Uranus crossed exact opposition to your natal 
 
 ## What You'll Need
 
-You likely already have most of this.
-
-- **Sage or palo santo** — for clearing
-- **Small bowl of salt water** — your established cleansing practice
-- **2–3 bay leaves** — for the release burn
-- **A green candle** — Taurus/Venus color, for what's being planted
-- **A white candle** — for the self, clarity, the renovated identity
-- **Rosemary** — memory of power (you used this in the April ritual; it's right)
-- **Something earthy** — a plant you own, a handful of soil if you have it, a crystal (rose quartz, pyrite, anything green or golden). If you have nothing like this, your bare feet on the floor will do it.
-- **Journal or nice paper** — for the written intentions; these are meant to be kept, not burned
-- **Something for the close** — a specific playlist, a bath, a meal you love. More on this below.
+> [!note]- Gather these
+> - **Sage or palo santo** — for clearing
+> - **Small bowl of salt water** — your established cleansing practice
+> - **2–3 bay leaves** — for the release burn
+> - **A green candle** — Taurus/Venus color, for what's being planted
+> - **A white candle** — for the self, clarity, the renovated identity
+> - **Rosemary** — memory of power (you used this in the April ritual; it's right)
+> - **Something earthy** — a plant you own, a handful of soil, a crystal (rose quartz, pyrite, anything green or golden). Bare feet on the floor works too.
+> - **Journal or nice paper** — for the written intentions; these are meant to be kept, not burned
+> - **Something for the close** — a specific playlist, a bath, a meal you love
 
 ---
 

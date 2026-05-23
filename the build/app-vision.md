@@ -1,3 +1,4 @@
+
 # The App — Vision Scratchpad
 *AI-powered astrology tool. Running ideas, concepts, fragments.*
 
@@ -96,10 +97,69 @@ The architecture of CLAUDE.md + INSTRUCTIONS.md + KNOWLEDGE.md creating genuine 
 ## What Makes It Different
 
 1. Real expertise — years of serious study, not prompts
-2. The Claude pipeline is trained on Jordan's interpretive style — readings sound like a person
+2. **The voice is trained on Jordan's actual writing** — see Voice Differentiator section below
 3. Focus area personalization — not just "here's your chart" but "here's your chart for your relationship question"
 4. MFA-level writing quality — a pleasure to read, not a list of keywords
 5. Healing orientation — Chiron wound as north star
+
+---
+
+## Voice Differentiator — Training the Reading Voice on Jordan's Writing
+
+*Captured May 22, 2026*
+
+The single biggest market differentiator available: an astrology reading voice that is genuinely, recognizably Jordan's — not a generic AI interpretation in a generic AI tone.
+
+**The idea:** Train the reading voice on Jordan's actual creative writing work by:
+- Crawling old creative writing pieces (from the TCD MFA and beyond)
+- Written interviews (Jordan answering questions about her voice, process, sensibility)
+- Transcribed audio interviews — Jordan speaking naturally, for the AI to absorb rhythm, humor, and register
+- Ongoing readings like the ones in this workspace — which are already accumulating as a training corpus
+
+**Why this matters:** Every astrology app produces content. Almost none of it sounds like a person. Co-Star is cold and vague. The Pattern is personality-lite. What Jordan has is: MFA-level prose craft + psychologically precise interpretive voice + genuine humor + the witchcraft/healing/trauma-informed lens. That combination doesn't exist anywhere else.
+
+**The corpus to build:**
+1. Old creative writing from TCD MFA
+2. This workspace — KNOWLEDGE.md interpretive language, all readings archived under `readings/`
+3. Short written interviews: "What do I notice first in a chart?", "How do I talk about Chiron?", "What's my take on Neptune in the 7th?"
+4. Voice notes or transcripts of Jordan reading something aloud (lets the AI absorb rhythm and natural speech patterns)
+
+**Phase relevance:**
+- Phase 1: the voice is Jordan's naturally — she reviews every reading, it already sounds like her
+- Phase 2: the CLAUDE.md system + accumulated readings become the implicit training corpus
+- Phase 3: the formal process above creates a proprietary voice layer that can't be replicated by any competitor starting from scratch
+
+**The pitch in one sentence:** Every astrology app sounds the same. This one sounds like someone who got an MFA, worked through her religious trauma, and actually uses astrology to navigate her career and love life.
+
+---
+
+## Round Natal Chart — Coded Visual
+
+*Captured May 22, 2026*
+
+**The idea:** A fully coded round natal chart — SVG or canvas — in our unique aesthetic. Not a screenshot from an app, not a generic wheel. Built from scratch in our style, showing:
+- All 12 houses with house lines and numbers
+- All planetary placements at their exact degrees
+- Sign boundaries and glyphs
+- A map/key system so a non-astrologer can read it
+- Houses labeled (1st through 12th, or by rulership)
+- Degree markings
+
+**Why this matters for the business:**
+- The current natal chart PDF is beautiful (whimsigoth, Cormorant Garamond, celestial columns) but uses text-based placement descriptions rather than an actual chart wheel
+- A coded round chart at the same visual quality as the rest of the PDF = a product that feels like premium software, not a template
+- It becomes a visual signature — recognizable, ownable, and something no Etsy competitor is doing in this aesthetic
+
+**The build approach:**
+- SVG-based (scales cleanly to any size, prints perfectly)
+- Procedurally generated from birth data — house cusps, planetary degrees all computed and plotted to their actual positions
+- Full whimsigoth palette: deep plum bg, gold lines, rose for points, plum-bright for aspect lines
+- Map key panel alongside the wheel
+
+**Phase relevance:**
+- Phase 1: nice to have — would elevate the PDF significantly if built before the first paid readings
+- Phase 2: required — at scale, every PDF should have the wheel
+- Phase 3: the wheel becomes the signature visual of the app itself
 
 ---
 
@@ -154,3 +214,4 @@ The workplace digest format (see `readings/workplace/`) is a proof of concept fo
 
 - **May 18, 2026** — Phase 1 scoped in full. Full operational plan written in Personal Life HQ/Money/. App vision reframed as the destination, not a separate dream.
 - **May 19, 2026** — app-vision.md expanded with full Phase 1 details. Cross-workspace links established.
+- **May 22, 2026** — Voice Differentiator section added (training reading voice on Jordan's creative writing corpus). Round Natal Chart build concept added. Marina's natal chart testimonial logged in KNOWLEDGE.md as Phase 1 validation.

@@ -135,6 +135,29 @@ The Wheel reversed and Three reversed together confirmed the feeling rather than
 
 ---
 
+### May 22, 2026 — Intuitive Pull (Threshold Reading)
+**Deck:** Buffy the Vampire Slayer
+**Context:** Day after the Uranus cazimi / natal Sun exact opposition inflection point (May 21). #astroflow-weekly launched, Eleanor chapter closed May 18, astrology business scoped May 18. Question held: what is going on for me / what does it mean / what message does the universe have.
+**Astrological context:** Uranus 0.5° opposition natal Sun · Neptune 0.15° applying conjunction natal Moon · Uranus cazimi Sun exact opposition natal Sun (0.03° orb) was May 21 — this is the morning after.
+
+| Layer | Card | Notes |
+|---|---|---|
+| Fell out | Strength (VIII) | Inner mastery — working with the fire, not against it |
+| Fell out | Knight of Stakes (Knight of Wands) | The fire itself — clean, detached from Eleanor, pointing at Jordan's own life |
+| Fell out | The Chariot (VII) | Directed will, two opposing forces held on the same course |
+| Fell out | The Fool (0) | Leap before the landing — new beginning, trust before certainty |
+| Fell out | Nine of Stakes | Nearly there, battle-worn, still standing — check if the defensive posture is current |
+| Fell out | The Magician (I) | All tools already on the table. Nothing missing. |
+| Fell out | Knight of Scythes (Knight of Swords) | The mind as instrument — fast, clear, cutting |
+| Held in deck · bonded · facing inward | The Lovers (VI) | Interior layer — the alignment isn't complete yet, and that's correct |
+| Held in deck · bonded · facing inward | Six of Scythes (Six of Swords) | The crossing completes as the interior alignment completes — bonded message |
+
+**Reading summary:** All cards fell out while shuffling except The Lovers and Six of Scythes, which stayed in the deck stuck together and facing the opposite direction. Five Major Arcana. Two knights (fire + air). Stakes suit dominant (Knight of Stakes + Nine of Stakes). External read from the jumpers: fire is freed and clean, tools ready, threshold arrived, the Fool's courage and the Magician's completeness both present. Interior read from the two held cards: the crossing (Six of Swords) and the choice (Lovers) are one bonded message — the passage completes as the interior integration completes. Not blocked. In process. The deck held these two inward and kept them for last.
+**Notable:** Knight of Stakes appearing in three consecutive readings — May 12 (fire for Eleanor), May 14 (fire in shadow/Devil), May 22 (fire freed, pointing at Jordan's own life). The arc tracks exactly with the Eleanor chapter opening and closing. Also notable: two different knights in one pull (Stakes/fire + Scythes/air) — enthusiasm and clarity both present simultaneously.
+**Full reading:** [[tarot/2026-05-22-tarot]]
+
+---
+
 ### May 14, 2026 — Intuitive Pull (Eleanor / Ending It)
 **Deck:** Buffy the Vampire Slayer
 **Context:** Eleanor situation, night after second date (May 13). Held three intentions: what's going on internally / best course of action / how is ending it going to play out. Free-fall — no assigned positions.
@@ -153,6 +176,6 @@ The Wheel reversed and Three reversed together confirmed the feeling rather than
 
 **Reading summary:** Three fives (disruption threshold) ending at the Ten of Cups (highest emotional harmony). The arc moves through shadow entanglement → single clear action (Queen of Swords) → cold immediate aftermath → introspection → honest grief → emotional wholeness. The ending leads to the Ten, not away from it.
 **Notable:** First card comparison — May 12 opened with Knight of Wands (fire is real, outcome uncertain). May 14 opened with The Devil (shadow pull named, chains loose). The deck shifted because the internal knowing shifted. Queen of Swords as single answer card is unusually clear for a free-fall pull.
-**Full reading:** [[readings/2026-05-14-tarot-eleanor]]
+**Full reading:** [[tarot/2026-05-14-tarot-eleanor]]
 
 ---
