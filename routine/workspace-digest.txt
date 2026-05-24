@@ -1,10 +1,10 @@
-# The Stars:Daily Digest | 2026-05-22
+# The Stars:Daily Digest | 2026-05-24
 
-**Moon:** 17.66° Leo | Waxing Crescent
+**Moon:** 14.29° Virgo | First Quarter
 
 **Top active transits (tight orb):**
-- Venus □ natal Moon (10th):0.02° separating
-- Neptune ☌ natal Moon (10th):0.15° applying
-- Sun ☍ natal Sun (6th):0.3° applying
+- Mars ⚺ natal Moon (10th):0.08° separating
+- Neptune ☌ natal Moon (10th):0.1° applying
+- Chiron ✶ natal Ascendant (1st):0.19° applying
 
-*Full reading: the stars/readings/2026-05-22.md*
+*Full reading: the stars/readings/2026-05-24.md*
