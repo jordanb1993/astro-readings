@@ -220,7 +220,7 @@ Claude pulls live planetary positions directly from the web at the start of ever
 
 **Personal / Dating:** Eleanor chapter closed with intention May 18 — kind, clean phone call. South Node mirroring pattern recognized at 2 dates, not years in. Two of Cups held as the tuning fork going forward. Bumble for Pride month June on radar. Summer: Portland with Carina (August, exact dates TBD), Dad visit (Jul 23 + Jul 27 + Aug 1 — shorter visits), Pride events. Ireland solo trip a live longing.
 
-Active transits as of 2026-05-24: Neptune 3.90° Aries:0.1° applying conjunction natal Moon (10th) | Jupiter 22.67° Cancer:0.33° applying semi-square natal Chiron (4th) | Jupiter 22.67° Cancer:0.33° separating sesquiquadrate natal Midheaven (10th) | Uranus 1.62° Gemini:0.38° applying inconjunct natal Jupiter (5th)
+Active transits as of 2026-05-25: Neptune 3.92° Aries:0.08° applying conjunction natal Moon (10th) | Jupiter 22.85° Cancer:0.15° applying semi-square natal Chiron (4th) | Jupiter 22.85° Cancer:0.15° separating sesquiquadrate natal Midheaven (10th) | Uranus 1.68° Gemini:0.32° applying inconjunct natal Jupiter (5th)
 
 ---
 
