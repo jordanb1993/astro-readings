@@ -1,10 +1,10 @@
-# The Stars:Daily Digest | 2026-05-25
+# The Stars:Daily Digest | 2026-05-26
 
-**Moon:** 27.16° Virgo | First Quarter
+**Moon:** 9.62° Libra | First Quarter
 
 **Top active transits (tight orb):**
-- Neptune ☌ natal Moon (10th):0.08° applying
-- Chiron ✶ natal Ascendant (1st):0.14° applying
-- Jupiter ∠ natal Chiron (4th):0.15° applying
+- Jupiter ∠ natal Chiron (4th):0.03° applying
+- Jupiter □/ natal Midheaven (10th):0.03° separating
+- Neptune ☌ natal Moon (10th):0.05° applying
 
-*Full reading: the stars/readings/2026-05-25.md*
+*Full reading: the stars/readings/2026-05-26.md*
