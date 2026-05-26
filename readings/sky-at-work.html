@@ -16,20 +16,16 @@
       --gold:         #c9a84c;
       --gold-dim:     rgba(201,168,76,0.11);
       --gold-mid:     rgba(201,168,76,0.28);
-      --gold-bright:  rgba(201,168,76,0.65);
       --rose:         #d4a0b5;
       --rose-dim:     rgba(212,160,181,0.11);
-      --rose-mid:     rgba(212,160,181,0.28);
       --plum:         #7b4fa6;
       --plum-dim:     rgba(123,79,166,0.20);
-      --plum-mid:     rgba(123,79,166,0.35);
       --plum-bright:  #b482d2;
       --teal:         #5ab4a0;
       --teal-dim:     rgba(90,180,160,0.12);
       --teal-mid:     rgba(90,180,160,0.28);
       --amber:        #c8842a;
       --amber-dim:    rgba(200,132,42,0.11);
-      --amber-mid:    rgba(200,132,42,0.26);
       --text:         #fdf6e8;
       --muted:        rgba(253,246,232,0.58);
       --muted-2:      rgba(253,246,232,0.30);
@@ -37,714 +33,329 @@
     }
 
     html { background: var(--bg); color: var(--text); }
-
-    body {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 0;
-      background: var(--bg);
-      font-family: 'Inter', sans-serif;
-    }
-
-    h1, h2, h3, h4 {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 400;
-      letter-spacing: 0.03em;
-    }
-
-    p {
-      line-height: 1.82;
-      color: var(--muted);
-      font-size: 0.94rem;
-    }
-
+    body { max-width: 900px; margin: 0 auto; padding: 0; background: var(--bg); font-family: 'Inter', sans-serif; }
+    h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 400; letter-spacing: 0.03em; }
+    p { line-height: 1.82; color: var(--muted); font-size: 0.94rem; }
     strong { color: var(--rose); font-weight: 600; }
     em { color: rgba(253,246,232,0.82); font-style: italic; }
 
-    /* ════════════════════════════
-       STATUS BAR
-    ════════════════════════════ */
+    /* ── Scroll fade-in ─────────────────────── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── STATUS BAR ─────────────────────────── */
     .status-bar {
-      width: 100%;
-      background: rgba(10,6,20,0.96);
+      width: 100%; background: rgba(10,6,20,0.97);
       border-bottom: 1px solid rgba(180,130,210,0.15);
-      padding: 0 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      height: 38px;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      backdrop-filter: blur(8px);
+      padding: 0 20px; display: flex; align-items: center;
+      justify-content: space-between; gap: 10px;
+      height: 42px; position: sticky; top: 0; z-index: 200;
+      backdrop-filter: blur(10px);
     }
+    .status-left { display: flex; align-items: center; gap: 14px; }
+    .status-brand { font-family:'Inter',sans-serif; font-size:0.62rem; font-weight:600; letter-spacing:0.22em; text-transform:uppercase; color:var(--gold); opacity:0.85; }
+    .status-sep { width:1px; height:14px; background:rgba(180,130,210,0.20); }
+    .status-week { font-family:'Inter',sans-serif; font-size:0.60rem; letter-spacing:0.13em; color:var(--muted-2); text-transform:uppercase; }
+    .status-right { display:flex; align-items:center; gap:10px; }
+    .live-badge { display:flex; align-items:center; gap:6px; padding:3px 10px; border-radius:20px; border:1px solid rgba(90,180,160,0.28); background:rgba(90,180,160,0.07); }
+    .live-dot { width:6px; height:6px; border-radius:50%; background:var(--teal); animation:livepulse 2s ease-in-out infinite; }
+    @keyframes livepulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.4;transform:scale(0.7)} }
+    .live-text { font-family:'Inter',sans-serif; font-size:0.58rem; font-weight:600; letter-spacing:0.18em; text-transform:uppercase; color:var(--teal); }
 
-    .status-left { display: flex; align-items: center; gap: 16px; }
-
-    .status-brand {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.62rem;
-      font-weight: 600;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--gold);
-      opacity: 0.80;
-    }
-
-    .status-sep { width: 1px; height: 14px; background: rgba(180,130,210,0.20); }
-
-    .status-week {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.60rem;
-      letter-spacing: 0.14em;
-      color: var(--muted-2);
-      text-transform: uppercase;
-    }
-
-    .status-right { display: flex; align-items: center; gap: 12px; }
-
-    .live-badge {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      padding: 3px 10px;
-      border-radius: 20px;
-      border: 1px solid rgba(90,180,160,0.28);
-      background: rgba(90,180,160,0.07);
-    }
-
-    .live-dot {
-      width: 6px; height: 6px;
-      border-radius: 50%;
-      background: var(--teal);
-      animation: livepulse 2s ease-in-out infinite;
-    }
-
-    @keyframes livepulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50%       { opacity: 0.4; transform: scale(0.7); }
-    }
-
-    .live-text {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.58rem;
-      font-weight: 600;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--teal);
-    }
-
-    .status-channel {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.60rem;
-      letter-spacing: 0.08em;
-      color: var(--muted-2);
-    }
-
-    /* ════════════════════════════
-       HERO
-    ════════════════════════════ */
-    .hero {
-      position: relative;
-      width: 100%;
-      padding: 88px 70px 80px;
-      text-align: center;
-      overflow: hidden;
-      background: radial-gradient(ellipse at 40% 28%, #2a1245 0%, #150a25 42%, #0a0614 100%);
-    }
-
-    .hero-stars { position: absolute; inset: 0; pointer-events: none; }
-
-    .hero-border-outer {
-      position: absolute;
-      top: 22px; left: 22px; right: 22px; bottom: 22px;
-      border: 1px solid rgba(180,130,210,0.30);
-      pointer-events: none;
-    }
-
-    .hero-border-inner {
-      position: absolute;
-      top: 32px; left: 32px; right: 32px; bottom: 32px;
-      border: 1px solid rgba(180,130,210,0.13);
-      pointer-events: none;
-    }
-
-    .corner {
-      position: absolute;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 17px;
-      color: var(--gold);
-      opacity: 0.78;
-    }
-    .corner.tl { top: 12px; left: 12px; }
-    .corner.tr { top: 12px; right: 12px; }
-    .corner.bl { bottom: 12px; left: 12px; }
-    .corner.br { bottom: 12px; right: 12px; }
-
-    .hero-col {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      pointer-events: none;
-    }
-    .hero-col.left  { left: 44px; }
-    .hero-col.right { right: 44px; }
-
-    .hero-label {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.68rem;
-      font-weight: 600;
-      letter-spacing: 0.34em;
-      text-transform: uppercase;
-      color: var(--rose);
-      opacity: 0.72;
-      margin-bottom: 24px;
+    /* Sign picker button */
+    .sign-picker-btn {
+      display: flex; align-items: center; gap: 6px;
+      padding: 4px 12px; border-radius: 20px;
+      border: 1px solid rgba(180,130,210,0.28);
+      background: rgba(123,79,166,0.08);
+      font-family: 'Inter', sans-serif; font-size: 0.60rem;
+      font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--plum-bright); cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
       position: relative;
     }
+    .sign-picker-btn:hover { border-color: var(--plum-bright); background: rgba(123,79,166,0.14); }
+    .sign-picker-btn .sign-icon { font-size: 0.85rem; }
 
-    .hero-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(52px, 9vw, 96px);
-      font-weight: 300;
-      line-height: 0.96;
-      color: var(--text);
-      letter-spacing: 0.06em;
-      margin-bottom: 18px;
-      position: relative;
+    /* Sign dropdown panel */
+    .sign-panel {
+      position: absolute; top: 48px; right: 20px;
+      background: #130a20; border: 1px solid rgba(180,130,210,0.30);
+      border-radius: 12px; padding: 14px;
+      display: none; z-index: 300;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.55);
+      width: 280px;
+    }
+    .sign-panel.open { display: block; }
+    .sign-panel-label {
+      font-family: 'Inter', sans-serif; font-size: 0.58rem;
+      font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase;
+      color: var(--plum-bright); opacity: 0.7;
+      margin-bottom: 12px; display: block;
+    }
+    .sign-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
+    .sign-opt {
+      display: flex; flex-direction: column; align-items: center;
+      gap: 3px; padding: 8px 4px; border-radius: 8px;
+      border: 1px solid transparent; cursor: pointer;
+      transition: border-color 0.15s, background 0.15s;
+    }
+    .sign-opt:hover { border-color: rgba(180,130,210,0.30); background: rgba(123,79,166,0.10); }
+    .sign-opt.selected { border-color: var(--plum-bright); background: rgba(123,79,166,0.18); }
+    .sign-opt .sign-glyph { font-size: 1.3rem; }
+    .sign-opt .sign-name { font-family: 'Inter',sans-serif; font-size: 0.55rem; letter-spacing: 0.10em; text-transform: uppercase; color: var(--muted-2); }
+    .sign-panel-clear { margin-top: 12px; text-align: center; }
+    .sign-panel-clear button {
+      background: none; border: none; font-family: 'Inter',sans-serif;
+      font-size: 0.60rem; letter-spacing: 0.12em; color: var(--muted-2);
+      cursor: pointer; text-transform: uppercase; text-decoration: underline;
     }
 
-    .hero-ornament {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.4rem;
-      letter-spacing: 0.55em;
-      color: var(--gold);
-      opacity: 0.55;
-      margin-bottom: 30px;
-      position: relative;
-      padding-left: 0.55em;
+    /* ── WEEK PROGRESS BAR ──────────────────── */
+    .week-progress {
+      width: 100%; background: rgba(10,6,20,0.9);
+      border-bottom: 1px solid rgba(180,130,210,0.10);
+      padding: 0 20px; display: flex; align-items: stretch;
+      height: 30px; position: sticky; top: 42px; z-index: 190;
     }
-
-    .hero-data {
-      display: flex;
-      justify-content: center;
-      gap: 36px;
-      flex-wrap: wrap;
-      position: relative;
+    .week-days { display: flex; align-items: center; gap: 0; flex: 1; }
+    .week-day {
+      flex: 1; display: flex; flex-direction: column; align-items: center;
+      justify-content: center; gap: 0; position: relative;
+      font-family: 'Inter',sans-serif; font-size: 0.56rem; font-weight: 500;
+      letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted-2);
+      padding: 4px 0; cursor: default;
     }
-
-    .hero-datum-label {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.60rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--muted-2);
-      margin-bottom: 5px;
+    .week-day::after {
+      content: ''; position: absolute; bottom: 0; left: 10%; right: 10%;
+      height: 2px; border-radius: 2px; background: transparent;
     }
-
-    .hero-datum-value {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.05rem;
-      color: var(--gold);
-      letter-spacing: 0.06em;
+    .week-day.past { color: rgba(253,246,232,0.20); }
+    .week-day.today { color: var(--gold); font-weight: 600; }
+    .week-day.today::after { background: var(--gold); }
+    .week-dot {
+      width: 5px; height: 5px; border-radius: 50%;
+      background: rgba(253,246,232,0.12); margin-bottom: 2px;
     }
+    .week-day.today .week-dot { background: var(--gold); }
+    .week-day.past .week-dot { background: rgba(253,246,232,0.08); }
 
-    /* ════════════════════════════
-       CELESTIAL DIVIDER
-    ════════════════════════════ */
-    .cel-divider {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      margin: 52px 44px 0;
-    }
+    /* ── HERO ───────────────────────────────── */
+    .hero { position:relative; width:100%; padding:88px 70px 80px; text-align:center; overflow:hidden; background:radial-gradient(ellipse at 40% 28%, #2a1245 0%, #150a25 42%, #0a0614 100%); }
+    .hero-stars { position:absolute; inset:0; pointer-events:none; }
+    .hero-border-outer { position:absolute; top:22px;left:22px;right:22px;bottom:22px; border:1px solid rgba(180,130,210,0.30); pointer-events:none; }
+    .hero-border-inner { position:absolute; top:32px;left:32px;right:32px;bottom:32px; border:1px solid rgba(180,130,210,0.13); pointer-events:none; }
+    .corner { position:absolute; font-family:'Cormorant Garamond',serif; font-size:17px; color:var(--gold); opacity:0.78; }
+    .corner.tl{top:12px;left:12px} .corner.tr{top:12px;right:12px} .corner.bl{bottom:12px;left:12px} .corner.br{bottom:12px;right:12px}
+    .hero-col { position:absolute; top:50%; transform:translateY(-50%); pointer-events:none; }
+    .hero-col.left{left:44px} .hero-col.right{right:44px}
+    .hero-label { font-family:'Inter',sans-serif; font-size:0.68rem; font-weight:600; letter-spacing:0.34em; text-transform:uppercase; color:var(--rose); opacity:0.72; margin-bottom:24px; position:relative; }
+    .hero-title { font-family:'Cormorant Garamond',serif; font-size:clamp(52px,9vw,96px); font-weight:300; line-height:0.96; color:var(--text); letter-spacing:0.06em; margin-bottom:18px; position:relative; }
+    .hero-ornament { font-family:'Cormorant Garamond',serif; font-size:1.4rem; letter-spacing:0.55em; color:var(--gold); opacity:0.55; margin-bottom:30px; position:relative; padding-left:0.55em; }
+    .hero-data { display:flex; justify-content:center; gap:36px; flex-wrap:wrap; position:relative; }
+    .hero-datum-label { font-family:'Inter',sans-serif; font-size:0.60rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--muted-2); margin-bottom:5px; }
+    .hero-datum-value { font-family:'Cormorant Garamond',serif; font-size:1.05rem; color:var(--gold); letter-spacing:0.06em; }
 
-    .cel-rule { flex: 1; height: 1px; }
-    .cel-rule.left  { background: linear-gradient(90deg, transparent, var(--gold-mid)); }
-    .cel-rule.right { background: linear-gradient(90deg, var(--gold-mid), transparent); }
+    /* ── CELESTIAL DIVIDER ──────────────────── */
+    .cel-divider { display:flex; align-items:center; gap:14px; margin:52px 44px 0; }
+    .cel-rule { flex:1; height:1px; }
+    .cel-rule.left  { background:linear-gradient(90deg, transparent, rgba(201,168,76,0.28)); }
+    .cel-rule.right { background:linear-gradient(90deg, rgba(201,168,76,0.28), transparent); }
+    .cel-mark { font-family:'Cormorant Garamond',serif; font-size:0.85rem; letter-spacing:0.55em; color:var(--gold); opacity:0.50; padding-left:0.55em; }
 
-    .cel-mark {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 0.85rem;
-      letter-spacing: 0.55em;
-      color: var(--gold);
-      opacity: 0.50;
-      padding-left: 0.55em;
-    }
+    /* ── PULSE ──────────────────────────────── */
+    .pulse-wrap { padding:44px 44px 0; }
+    .pulse-card { background:radial-gradient(ellipse at 20% 50%, rgba(201,168,76,0.14) 0%, rgba(21,10,37,0.85) 55%, #0a0614 100%); border:1px solid rgba(201,168,76,0.22); border-top:2px solid var(--gold); border-radius:12px; overflow:hidden; }
+    .pulse-head { position:relative; padding:28px 32px 24px; border-bottom:1px solid rgba(201,168,76,0.14); overflow:hidden; }
+    .pulse-stars { position:absolute; inset:0; pointer-events:none; }
+    .pulse-eyebrow { font-family:'Inter',sans-serif; font-size:0.60rem; font-weight:600; letter-spacing:0.28em; text-transform:uppercase; color:rgba(201,168,76,0.65); margin-bottom:10px; position:relative; }
+    .pulse-title { font-family:'Cormorant Garamond',serif; font-size:1.65rem; font-weight:400; color:var(--gold); letter-spacing:0.03em; position:relative; }
+    .pulse-body { padding:26px 32px 24px; background:rgba(10,6,20,0.45); display:flex; flex-direction:column; gap:14px; }
 
-    /* ════════════════════════════
-       PULSE
-    ════════════════════════════ */
-    .pulse-wrap { padding: 44px 44px 0; }
-
-    .pulse-card {
-      background: radial-gradient(ellipse at 20% 50%, rgba(201,168,76,0.14) 0%, rgba(21,10,37,0.85) 55%, #0a0614 100%);
-      border: 1px solid rgba(201,168,76,0.22);
-      border-top: 2px solid var(--gold);
-      border-radius: 12px;
-      overflow: hidden;
-    }
-
-    .pulse-head {
-      position: relative;
-      padding: 28px 32px 24px;
-      border-bottom: 1px solid rgba(201,168,76,0.14);
-      overflow: hidden;
-    }
-
-    .pulse-stars { position: absolute; inset: 0; pointer-events: none; }
-
-    .pulse-eyebrow {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.60rem;
-      font-weight: 600;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: rgba(201,168,76,0.65);
-      margin-bottom: 10px;
-      position: relative;
-    }
-
-    .pulse-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.65rem;
-      font-weight: 400;
-      color: var(--gold);
-      letter-spacing: 0.03em;
-      position: relative;
-    }
-
-    .pulse-body {
-      padding: 26px 32px 24px;
-      background: rgba(10,6,20,0.45);
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-
-    /* ════════════════════════════
-       SIGNAL BOARD
-    ════════════════════════════ */
-    .signal-wrap { padding: 36px 44px 0; }
-
-    .signal-eyebrow {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.60rem;
-      font-weight: 600;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 14px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid var(--gold-mid);
-    }
-
-    .signal-board {
-      background: radial-gradient(ellipse at 50% 0%, rgba(42,18,69,0.55) 0%, rgba(21,10,37,0.70) 100%);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      overflow: hidden;
-    }
+    /* ── SIGNAL BOARD ───────────────────────── */
+    .signal-wrap { padding:36px 44px 0; }
+    .signal-eyebrow { font-family:'Inter',sans-serif; font-size:0.60rem; font-weight:600; letter-spacing:0.28em; text-transform:uppercase; color:var(--gold); margin-bottom:14px; padding-bottom:10px; border-bottom:1px solid rgba(201,168,76,0.28); }
+    .signal-board { background:radial-gradient(ellipse at 50% 0%, rgba(42,18,69,0.55) 0%, rgba(21,10,37,0.70) 100%); border:1px solid var(--border); border-radius:10px; overflow:hidden; }
 
     .signal-row {
-      display: grid;
-      grid-template-columns: 3px 1fr auto;
-      align-items: stretch;
-      border-bottom: 1px solid rgba(253,246,232,0.04);
+      display: grid; grid-template-columns: 3px 1fr auto;
+      align-items: stretch; border-bottom: 1px solid rgba(253,246,232,0.04);
+      cursor: pointer; transition: background 0.18s;
     }
     .signal-row:last-child { border-bottom: none; }
-    .signal-row:nth-child(even) { background: rgba(253,246,232,0.020); }
+    .signal-row:nth-child(odd) { background: rgba(253,246,232,0.010); }
+    .signal-row:hover { background: rgba(180,130,210,0.06); }
+    .signal-row.expanded { background: rgba(123,79,166,0.06); }
 
-    .signal-stripe { width: 3px; align-self: stretch; flex-shrink: 0; }
-    .stripe-gold   { background: var(--gold); }
-    .stripe-rose   { background: var(--rose); }
-    .stripe-plum   { background: var(--plum-bright); }
-    .stripe-teal   { background: var(--teal); }
-    .stripe-amber  { background: var(--amber); }
-    .stripe-muted  { background: rgba(180,130,210,0.35); }
+    .signal-stripe { width:3px; align-self:stretch; flex-shrink:0; }
+    .stripe-gold  { background:var(--gold); }
+    .stripe-rose  { background:var(--rose); }
+    .stripe-plum  { background:var(--plum-bright); }
+    .stripe-teal  { background:var(--teal); }
+    .stripe-amber { background:var(--amber); }
+    .stripe-muted { background:rgba(180,130,210,0.35); }
 
-    .signal-body {
-      padding: 14px 18px 14px 16px;
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
+    .signal-body { padding:14px 18px 14px 16px; display:flex; align-items:flex-start; gap:14px; }
+    .signal-icon { font-family:'Cormorant Garamond',serif; font-size:1.3rem; color:var(--gold); flex-shrink:0; width:26px; text-align:center; padding-top:1px; }
+    .signal-text-block { flex:1; }
+    .signal-aspect { font-family:'Cormorant Garamond',serif; font-size:1.02rem; color:var(--text); display:block; margin-bottom:3px; line-height:1.3; letter-spacing:0.02em; }
+    .signal-meaning { font-size:0.82rem; color:var(--muted); display:block; line-height:1.5; }
+    .signal-timing { padding:14px 18px 14px 0; align-self:center; }
+    .timing-pill { display:inline-block; padding:3px 10px; border-radius:20px; font-family:'Inter',sans-serif; font-size:0.58rem; font-weight:500; letter-spacing:0.12em; text-transform:uppercase; white-space:nowrap; }
+    .pill-all   { background:rgba(253,246,232,0.06); color:var(--muted-2); border:1px solid rgba(253,246,232,0.10); }
+    .pill-early { background:rgba(201,168,76,0.08);  color:var(--gold);    border:1px solid rgba(201,168,76,0.20); }
+    .pill-mid   { background:rgba(90,180,160,0.08);  color:var(--teal);    border:1px solid rgba(90,180,160,0.20); }
+    .pill-late  { background:rgba(212,160,181,0.08); color:var(--rose);    border:1px solid rgba(212,160,181,0.20); }
+
+    /* Signal detail panel */
+    .signal-detail {
+      grid-column: 1 / -1; overflow: hidden;
+      max-height: 0; opacity: 0;
+      transition: max-height 0.35s ease, opacity 0.25s ease;
     }
-
-    .signal-icon {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.3rem;
-      color: var(--gold);
-      flex-shrink: 0;
-      width: 26px;
-      text-align: center;
-      padding-top: 1px;
+    .signal-row.expanded .signal-detail { max-height: 260px; opacity: 1; }
+    .signal-detail-inner {
+      margin: 0 16px 14px 46px; padding: 14px 18px;
+      background: rgba(123,79,166,0.08); border-radius: 8px;
+      border-left: 2px solid rgba(180,130,210,0.35);
     }
+    .signal-detail-inner p { font-size: 0.86rem; line-height: 1.72; color: var(--muted); margin: 0; }
+    .signal-expand-hint { font-size: 0.62rem; color: var(--plum-bright); opacity: 0.55; display: block; margin-top: 6px; font-family: 'Inter',sans-serif; letter-spacing: 0.10em; }
 
-    .signal-text-block { flex: 1; }
-
-    .signal-aspect {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.02rem;
-      color: var(--text);
-      display: block;
-      margin-bottom: 3px;
-      line-height: 1.3;
-      letter-spacing: 0.02em;
-    }
-
-    .signal-meaning {
-      font-size: 0.82rem;
-      color: var(--muted);
-      display: block;
-      line-height: 1.5;
-    }
-
-    .signal-timing {
-      padding: 14px 18px 14px 0;
-      align-self: center;
-    }
-
-    .timing-pill {
-      display: inline-block;
-      padding: 3px 10px;
-      border-radius: 20px;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.58rem;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
-
-    .pill-all   { background: rgba(253,246,232,0.06); color: var(--muted-2); border: 1px solid rgba(253,246,232,0.10); }
-    .pill-early { background: rgba(201,168,76,0.08);  color: var(--gold);    border: 1px solid rgba(201,168,76,0.20); }
-    .pill-mid   { background: rgba(90,180,160,0.08);  color: var(--teal);    border: 1px solid rgba(90,180,160,0.20); }
-    .pill-late  { background: rgba(212,160,181,0.08); color: var(--rose);    border: 1px solid rgba(212,160,181,0.20); }
-
-    /* ════════════════════════════
-       SECTION CARDS
-    ════════════════════════════ */
-    .section-wrap { padding: 44px 44px 0; }
-
-    .section-card {
-      margin-bottom: 24px;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      overflow: hidden;
-    }
-    .section-card:last-child { margin-bottom: 0; }
-
-    .section-card::before { content: ''; display: block; height: 2px; }
-    .accent-gold::before  { background: linear-gradient(90deg, transparent 0%, var(--gold) 40%, var(--gold) 60%, transparent 100%); }
-    .accent-rose::before  { background: linear-gradient(90deg, transparent 0%, var(--rose) 40%, var(--rose) 60%, transparent 100%); }
-    .accent-plum::before  { background: linear-gradient(90deg, transparent 0%, var(--plum-bright) 40%, var(--plum-bright) 60%, transparent 100%); }
-    .accent-teal::before  { background: linear-gradient(90deg, transparent 0%, var(--teal) 40%, var(--teal) 60%, transparent 100%); }
-    .accent-amber::before { background: linear-gradient(90deg, transparent 0%, var(--amber) 40%, var(--amber) 60%, transparent 100%); }
-
-    .section-head {
-      position: relative;
-      padding: 24px 32px 20px;
-      overflow: hidden;
-      display: flex;
-      align-items: flex-start;
-      gap: 16px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .accent-gold  .section-head { background: radial-gradient(ellipse at 20% 50%, rgba(201,168,76,0.18) 0%, rgba(42,18,69,0.78) 55%, #0a0614 100%); }
-    .accent-rose  .section-head { background: radial-gradient(ellipse at 20% 50%, rgba(212,160,181,0.16) 0%, rgba(42,18,69,0.78) 55%, #0a0614 100%); }
-    .accent-plum  .section-head { background: radial-gradient(ellipse at 20% 50%, rgba(123,79,166,0.22) 0%, rgba(42,18,69,0.78) 55%, #0a0614 100%); }
-    .accent-teal  .section-head { background: radial-gradient(ellipse at 20% 50%, rgba(90,180,160,0.18) 0%, rgba(42,18,69,0.78) 55%, #0a0614 100%); }
-    .accent-amber .section-head { background: radial-gradient(ellipse at 20% 50%, rgba(200,132,42,0.18) 0%, rgba(42,18,69,0.78) 55%, #0a0614 100%); }
-
-    .section-head-stars { position: absolute; inset: 0; pointer-events: none; }
-
-    .section-icon {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2.1rem;
-      flex-shrink: 0;
-      margin-top: 2px;
-      position: relative;
-      line-height: 1;
-    }
-    .accent-gold  .section-icon { color: var(--gold); }
-    .accent-rose  .section-icon { color: var(--rose); }
-    .accent-plum  .section-icon { color: var(--plum-bright); }
-    .accent-teal  .section-icon { color: var(--teal); }
-    .accent-amber .section-icon { color: var(--amber); }
-
-    .section-head-text { flex: 1; position: relative; }
-
-    .section-eyebrow {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.60rem;
-      font-weight: 600;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      margin-bottom: 8px;
-    }
-    .accent-gold  .section-eyebrow { color: rgba(201,168,76,0.65); }
-    .accent-rose  .section-eyebrow { color: rgba(212,160,181,0.65); }
-    .accent-plum  .section-eyebrow { color: rgba(180,130,210,0.65); }
-    .accent-teal  .section-eyebrow { color: rgba(90,180,160,0.65); }
-    .accent-amber .section-eyebrow { color: rgba(200,132,42,0.65); }
-
-    .section-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.65rem;
-      font-weight: 400;
-      line-height: 1.15;
-      letter-spacing: 0.03em;
-    }
-    .accent-gold  .section-title { color: var(--gold); }
-    .accent-rose  .section-title { color: var(--rose); }
-    .accent-plum  .section-title { color: var(--plum-bright); }
-    .accent-teal  .section-title { color: var(--teal); }
-    .accent-amber .section-title { color: var(--amber); }
-
-    /* SECTION BODY: teaser always visible */
-    .section-body {
-      padding: 26px 32px 0;
-      background: rgba(10,6,20,0.50);
-    }
-
-    .section-teaser { padding-bottom: 0; }
-
-    /* EXPANDED CONTENT: hidden by default */
-    .section-expanded {
+    /* ── SIGN BANNER ────────────────────────── */
+    .sign-banner {
       display: none;
-      padding-top: 16px;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      overflow: hidden;
-      max-height: 0;
+      align-items: center; gap: 10px;
+      padding: 11px 16px; margin-bottom: 16px;
+      border-radius: 8px; border: 1px solid rgba(180,130,210,0.22);
+      background: rgba(123,79,166,0.10);
+    }
+    .sign-banner.active { display: flex; }
+    .sign-banner-glyph { font-size: 1.3rem; flex-shrink: 0; }
+    .sign-banner-label { font-family:'Inter',sans-serif; font-size:0.58rem; font-weight:600; letter-spacing:0.18em; text-transform:uppercase; color:var(--plum-bright); opacity:0.75; display:block; margin-bottom:3px; }
+    .sign-banner-text  { font-family:'Cormorant Garamond',serif; font-size:0.97rem; font-style:italic; color:rgba(253,246,232,0.78); line-height:1.5; }
+
+    /* ── SECTION CARDS ──────────────────────── */
+    .section-wrap { padding:44px 44px 0; }
+    .section-card { margin-bottom:24px; border:1px solid var(--border); border-radius:12px; overflow:hidden; }
+    .section-card:last-child { margin-bottom:0; }
+    .section-card::before { content:''; display:block; height:2px; }
+    .accent-gold::before  { background:linear-gradient(90deg, transparent 0%, var(--gold) 40%, var(--gold) 60%, transparent 100%); }
+    .accent-rose::before  { background:linear-gradient(90deg, transparent 0%, var(--rose) 40%, var(--rose) 60%, transparent 100%); }
+    .accent-plum::before  { background:linear-gradient(90deg, transparent 0%, var(--plum-bright) 40%, var(--plum-bright) 60%, transparent 100%); }
+    .accent-teal::before  { background:linear-gradient(90deg, transparent 0%, var(--teal) 40%, var(--teal) 60%, transparent 100%); }
+    .accent-amber::before { background:linear-gradient(90deg, transparent 0%, var(--amber) 40%, var(--amber) 60%, transparent 100%); }
+
+    .section-head { position:relative; padding:24px 32px 20px; overflow:hidden; display:flex; align-items:flex-start; gap:16px; border-bottom:1px solid var(--border); }
+    .accent-gold  .section-head { background:radial-gradient(ellipse at 20% 50%, rgba(201,168,76,0.18) 0%, rgba(42,18,69,0.78) 55%, #0a0614 100%); }
+    .accent-rose  .section-head { background:radial-gradient(ellipse at 20% 50%, rgba(212,160,181,0.16) 0%, rgba(42,18,69,0.78) 55%, #0a0614 100%); }
+    .accent-plum  .section-head { background:radial-gradient(ellipse at 20% 50%, rgba(123,79,166,0.22) 0%, rgba(42,18,69,0.78) 55%, #0a0614 100%); }
+    .accent-teal  .section-head { background:radial-gradient(ellipse at 20% 50%, rgba(90,180,160,0.18) 0%, rgba(42,18,69,0.78) 55%, #0a0614 100%); }
+    .accent-amber .section-head { background:radial-gradient(ellipse at 20% 50%, rgba(200,132,42,0.18) 0%, rgba(42,18,69,0.78) 55%, #0a0614 100%); }
+    .section-head-stars { position:absolute; inset:0; pointer-events:none; }
+    .section-icon { font-family:'Cormorant Garamond',serif; font-size:2.1rem; flex-shrink:0; margin-top:2px; position:relative; line-height:1; }
+    .accent-gold  .section-icon { color:var(--gold); }
+    .accent-rose  .section-icon { color:var(--rose); }
+    .accent-plum  .section-icon { color:var(--plum-bright); }
+    .accent-teal  .section-icon { color:var(--teal); }
+    .accent-amber .section-icon { color:var(--amber); }
+    .section-head-text { flex:1; position:relative; }
+    .section-eyebrow { font-family:'Inter',sans-serif; font-size:0.60rem; font-weight:600; letter-spacing:0.28em; text-transform:uppercase; margin-bottom:8px; }
+    .accent-gold  .section-eyebrow { color:rgba(201,168,76,0.65); }
+    .accent-rose  .section-eyebrow { color:rgba(212,160,181,0.65); }
+    .accent-plum  .section-eyebrow { color:rgba(180,130,210,0.65); }
+    .accent-teal  .section-eyebrow { color:rgba(90,180,160,0.65); }
+    .accent-amber .section-eyebrow { color:rgba(200,132,42,0.65); }
+    .section-title { font-family:'Cormorant Garamond',serif; font-size:1.65rem; font-weight:400; line-height:1.15; letter-spacing:0.03em; }
+    .accent-gold  .section-title { color:var(--gold); }
+    .accent-rose  .section-title { color:var(--rose); }
+    .accent-plum  .section-title { color:var(--plum-bright); }
+    .accent-teal  .section-title { color:var(--teal); }
+    .accent-amber .section-title { color:var(--amber); }
+
+    .section-body { padding:26px 32px 0; background:rgba(10,6,20,0.50); }
+    .section-teaser { }
+    .section-expanded {
+      display: flex; flex-direction: column; gap: 16px;
+      overflow: hidden; max-height: 0; opacity: 0;
       transition: max-height 0.4s ease, opacity 0.3s ease;
-      opacity: 0;
+      padding-top: 0;
     }
+    .section-card.open .section-expanded { max-height: 900px; opacity: 1; padding-top: 16px; }
 
-    .section-card.open .section-expanded {
-      max-height: 800px;
-      opacity: 1;
-    }
-
-    /* READ MORE BUTTON */
-    .read-more-wrap {
-      padding: 18px 32px 24px;
-      background: rgba(10,6,20,0.50);
-    }
-
+    .read-more-wrap { padding:18px 32px 24px; background:rgba(10,6,20,0.50); }
     .read-more-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      padding: 7px 18px;
-      border-radius: 20px;
-      border: 1px solid var(--border);
-      background: transparent;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.68rem;
-      font-weight: 500;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--muted);
-      cursor: pointer;
-      transition: border-color 0.2s, color 0.2s;
+      display:inline-flex; align-items:center; gap:7px;
+      padding:7px 18px; border-radius:20px; border:1px solid var(--border);
+      background:transparent; font-family:'Inter',sans-serif; font-size:0.68rem;
+      font-weight:500; letter-spacing:0.14em; text-transform:uppercase;
+      color:var(--muted); cursor:pointer; transition:border-color 0.2s, color 0.2s;
     }
+    .accent-gold  .read-more-btn:hover { border-color:var(--gold);        color:var(--gold); }
+    .accent-rose  .read-more-btn:hover { border-color:var(--rose);        color:var(--rose); }
+    .accent-plum  .read-more-btn:hover { border-color:var(--plum-bright); color:var(--plum-bright); }
+    .accent-teal  .read-more-btn:hover { border-color:var(--teal);        color:var(--teal); }
+    .accent-amber .read-more-btn:hover { border-color:var(--amber);       color:var(--amber); }
+    .btn-arrow { font-size:0.80rem; transition:transform 0.25s; }
+    .section-card.open .btn-arrow { transform:rotate(180deg); }
 
-    .accent-gold  .read-more-btn:hover { border-color: var(--gold);        color: var(--gold); }
-    .accent-rose  .read-more-btn:hover { border-color: var(--rose);        color: var(--rose); }
-    .accent-plum  .read-more-btn:hover { border-color: var(--plum-bright); color: var(--plum-bright); }
-    .accent-teal  .read-more-btn:hover { border-color: var(--teal);        color: var(--teal); }
-    .accent-amber .read-more-btn:hover { border-color: var(--amber);       color: var(--amber); }
+    .pull { border-left:2px solid var(--gold); padding:11px 22px; background:var(--gold-dim); border-radius:0 6px 6px 0; font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.10rem; color:var(--gold); line-height:1.65; }
+    .pull.rose-pull  { border-color:var(--rose);  background:var(--rose-dim);  color:var(--rose); }
+    .pull.teal-pull  { border-color:var(--teal);  background:var(--teal-dim);  color:var(--teal); }
+    .pull.amber-pull { border-color:var(--amber); background:var(--amber-dim); color:var(--amber); }
+    .pull.plum-pull  { border-color:var(--plum-bright); background:var(--plum-dim); color:var(--plum-bright); }
 
-    .btn-arrow { font-size: 0.80rem; transition: transform 0.25s; }
-    .section-card.open .btn-arrow { transform: rotate(180deg); }
+    .watch-list { list-style:none; display:flex; flex-direction:column; }
+    .watch-item { display:flex; align-items:flex-start; gap:14px; padding:12px 0; border-bottom:1px solid rgba(253,246,232,0.05); }
+    .watch-item:last-child { border-bottom:none; padding-bottom:0; }
+    .watch-glyph { font-family:'Cormorant Garamond',serif; font-size:1rem; color:var(--plum-bright); flex-shrink:0; margin-top:2px; width:22px; text-align:center; }
+    .watch-text { font-size:0.91rem; color:var(--muted); line-height:1.65; }
 
-    /* PULL QUOTE */
-    .pull {
-      border-left: 2px solid var(--gold);
-      padding: 11px 22px;
-      background: var(--gold-dim);
-      border-radius: 0 6px 6px 0;
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-size: 1.10rem;
-      color: var(--gold);
-      line-height: 1.65;
-    }
+    /* ── THREAD / CLOSING ───────────────────── */
+    .thread-wrap { padding:44px 44px 0; }
+    .thread { position:relative; overflow:hidden; border:1px solid rgba(180,130,210,0.22); border-radius:12px; padding:52px 52px 48px; text-align:center; background:radial-gradient(ellipse at 50% 10%, #2a1245 0%, #150a25 45%, #0a0614 100%); }
+    .thread-stars { position:absolute; inset:0; pointer-events:none; }
+    .thread-border { position:absolute; top:16px;left:16px;right:16px;bottom:16px; border:1px solid rgba(180,130,210,0.10); pointer-events:none; }
+    .thread-ornament { font-family:'Cormorant Garamond',serif; font-size:1.3rem; letter-spacing:0.55em; color:var(--gold); opacity:0.52; display:block; margin-bottom:24px; padding-left:0.55em; position:relative; }
+    .thread-title { font-family:'Cormorant Garamond',serif; font-size:1.85rem; font-weight:300; color:var(--text); letter-spacing:0.04em; margin-bottom:22px; position:relative; }
+    .thread p { max-width:600px; margin:0 auto 14px; font-size:0.92rem; line-height:1.85; color:var(--muted); position:relative; }
+    .thread-link { display:inline-block; margin-top:26px; padding:11px 26px; background:radial-gradient(ellipse at 30% 50%, #2a1245 0%, #150a25 100%); border:1px solid rgba(201,168,76,0.45); border-radius:40px; font-family:'Inter',sans-serif; font-size:0.72rem; font-weight:500; letter-spacing:0.18em; text-transform:uppercase; color:var(--gold); text-decoration:none; box-shadow:0 4px 24px rgba(0,0,0,0.4); position:relative; transition:border-color 0.2s, box-shadow 0.2s; }
+    .thread-link:hover { border-color:rgba(201,168,76,0.75); box-shadow:0 4px 32px rgba(0,0,0,0.5), 0 0 20px rgba(201,168,76,0.10); }
+    .thread-close { margin-top:32px; font-family:'Inter',sans-serif; font-size:0.60rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--muted-2); position:relative; }
 
-    .pull.rose-pull  { border-color: var(--rose);  background: var(--rose-dim);  color: var(--rose); }
-    .pull.teal-pull  { border-color: var(--teal);  background: var(--teal-dim);  color: var(--teal); }
-    .pull.amber-pull { border-color: var(--amber); background: var(--amber-dim); color: var(--amber); }
-    .pull.plum-pull  { border-color: var(--plum-bright); background: var(--plum-dim); color: var(--plum-bright); }
+    .footer { text-align:center; padding:44px 44px 60px; font-family:'Inter',sans-serif; font-size:0.68rem; color:var(--muted-2); letter-spacing:0.10em; line-height:1.9; }
 
-    /* WATCH FOR LIST */
-    .watch-list { list-style: none; display: flex; flex-direction: column; }
-
-    .watch-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      padding: 12px 0;
-      border-bottom: 1px solid rgba(253,246,232,0.05);
-    }
-    .watch-item:last-child { border-bottom: none; padding-bottom: 0; }
-
-    .watch-glyph {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1rem;
-      color: var(--plum-bright);
-      flex-shrink: 0;
-      margin-top: 2px;
-      width: 22px;
-      text-align: center;
-    }
-
-    .watch-text {
-      font-size: 0.91rem;
-      color: var(--muted);
-      line-height: 1.65;
-    }
-
-    /* ════════════════════════════
-       THROUGH-LINE / CLOSING
-    ════════════════════════════ */
-    .thread-wrap { padding: 44px 44px 0; }
-
-    .thread {
-      position: relative;
-      overflow: hidden;
-      border: 1px solid rgba(180,130,210,0.22);
-      border-radius: 12px;
-      padding: 52px 52px 48px;
-      text-align: center;
-      background: radial-gradient(ellipse at 50% 10%, #2a1245 0%, #150a25 45%, #0a0614 100%);
-    }
-
-    .thread-stars  { position: absolute; inset: 0; pointer-events: none; }
-
-    .thread-border {
-      position: absolute;
-      top: 16px; left: 16px; right: 16px; bottom: 16px;
-      border: 1px solid rgba(180,130,210,0.10);
-      pointer-events: none;
-    }
-
-    .thread-ornament {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.3rem;
-      letter-spacing: 0.55em;
-      color: var(--gold);
-      opacity: 0.52;
-      display: block;
-      margin-bottom: 24px;
-      padding-left: 0.55em;
-      position: relative;
-    }
-
-    .thread-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.85rem;
-      font-weight: 300;
-      color: var(--text);
-      letter-spacing: 0.04em;
-      margin-bottom: 22px;
-      position: relative;
-    }
-
-    .thread p {
-      max-width: 600px;
-      margin: 0 auto 14px;
-      font-size: 0.92rem;
-      line-height: 1.85;
-      color: var(--muted);
-      position: relative;
-    }
-
-    .thread-link {
-      display: inline-block;
-      margin-top: 26px;
-      padding: 11px 26px;
-      background: radial-gradient(ellipse at 30% 50%, #2a1245 0%, #150a25 100%);
-      border: 1px solid rgba(201,168,76,0.45);
-      border-radius: 40px;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.72rem;
-      font-weight: 500;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--gold);
-      text-decoration: none;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.4);
-      position: relative;
-      transition: border-color 0.2s, box-shadow 0.2s;
-    }
-
-    .thread-link:hover {
-      border-color: rgba(201,168,76,0.75);
-      box-shadow: 0 4px 32px rgba(0,0,0,0.5), 0 0 20px rgba(201,168,76,0.10);
-    }
-
-    .thread-close {
-      margin-top: 32px;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.60rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--muted-2);
-      position: relative;
-    }
-
-    /* ════════════════════════════
-       FOOTER
-    ════════════════════════════ */
-    .footer {
-      text-align: center;
-      padding: 44px 44px 60px;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.68rem;
-      color: var(--muted-2);
-      letter-spacing: 0.10em;
-      line-height: 1.9;
-    }
-
-    /* ════════════════════════════
-       MOBILE
-    ════════════════════════════ */
-    @media (max-width: 680px) {
-
-      p { font-size: 1rem; line-height: 1.78; }
-
-      .hero { padding: 58px 22px 50px; }
-      .hero-col { display: none; }
-      .hero-border-outer { top: 14px; left: 14px; right: 14px; bottom: 14px; }
-      .hero-border-inner { top: 22px; left: 22px; right: 22px; bottom: 22px; }
-      .hero-title { font-size: clamp(40px, 11vw, 62px); }
-      .hero-data { gap: 18px; }
-
-      .status-channel { display: none; }
-      .cel-divider  { margin: 32px 18px 0; }
-      .pulse-wrap   { padding: 32px 18px 0; }
-      .pulse-head   { padding: 20px 20px 16px; }
-      .pulse-body   { padding: 20px 20px 18px; }
-      .signal-wrap  { padding: 28px 18px 0; }
-      .section-wrap { padding: 28px 18px 0; }
-      .thread-wrap  { padding: 28px 18px 0; }
-
-      .section-head   { padding: 18px 20px 16px; gap: 12px; }
-      .section-title  { font-size: 1.4rem; }
-      .section-body   { padding: 18px 20px 0; }
-      .read-more-wrap { padding: 14px 20px 18px; }
-      .pull { font-size: 1rem; padding: 10px 16px; }
-
-      .signal-body   { padding: 12px 14px 12px 12px; gap: 10px; }
-      .signal-timing { padding: 12px 14px 12px 0; }
-      .signal-aspect { font-size: 0.95rem; }
-
-      .thread { padding: 36px 22px 32px; }
-      .thread-title { font-size: 1.55rem; }
-      .footer { padding: 28px 18px 44px; }
+    /* ── MOBILE ─────────────────────────────── */
+    @media (max-width:680px) {
+      p { font-size:1rem; line-height:1.78; }
+      .hero { padding:58px 22px 50px; }
+      .hero-col { display:none; }
+      .hero-border-outer { top:14px;left:14px;right:14px;bottom:14px; }
+      .hero-border-inner { top:22px;left:22px;right:22px;bottom:22px; }
+      .hero-title { font-size:clamp(40px,11vw,62px); }
+      .hero-data { gap:18px; }
+      .status-week { display:none; }
+      .cel-divider { margin:32px 18px 0; }
+      .pulse-wrap, .signal-wrap, .section-wrap, .thread-wrap { padding:28px 18px 0; }
+      .pulse-head { padding:20px 20px 16px; }
+      .pulse-body { padding:20px 20px 18px; }
+      .section-head { padding:18px 20px 16px; gap:12px; }
+      .section-title { font-size:1.4rem; }
+      .section-body { padding:18px 20px 0; }
+      .read-more-wrap { padding:14px 20px 18px; }
+      .pull { font-size:1rem; padding:10px 16px; }
+      .signal-body { padding:12px 14px 12px 12px; gap:10px; }
+      .signal-timing { padding:12px 14px 12px 0; }
+      .signal-detail-inner { margin:0 10px 12px 38px; }
+      .thread { padding:36px 22px 32px; }
+      .thread-title { font-size:1.55rem; }
+      .footer { padding:28px 18px 44px; }
+      .sign-panel { right:10px; width:260px; }
+      .week-progress { top:42px; }
     }
 
   </style>
@@ -763,13 +374,46 @@
       <div class="live-dot"></div>
       <span class="live-text">Live</span>
     </div>
-    <span class="status-channel">Transit-to-transit only</span>
+    <button class="sign-picker-btn" id="signPickerBtn" onclick="toggleSignPanel()">
+      <span class="sign-icon" id="signBtnIcon">✦</span>
+      <span id="signBtnLabel">Your sign</span>
+    </button>
+  </div>
+
+  <!-- Sign dropdown -->
+  <div class="sign-panel" id="signPanel">
+    <span class="sign-panel-label">Personalize by sun sign</span>
+    <div class="sign-grid">
+      <div class="sign-opt" onclick="selectSign('aries')">    <span class="sign-glyph">♈</span><span class="sign-name">Aries</span></div>
+      <div class="sign-opt" onclick="selectSign('taurus')">   <span class="sign-glyph">♉</span><span class="sign-name">Taurus</span></div>
+      <div class="sign-opt" onclick="selectSign('gemini')">   <span class="sign-glyph">♊</span><span class="sign-name">Gemini</span></div>
+      <div class="sign-opt" onclick="selectSign('cancer')">   <span class="sign-glyph">♋</span><span class="sign-name">Cancer</span></div>
+      <div class="sign-opt" onclick="selectSign('leo')">      <span class="sign-glyph">♌</span><span class="sign-name">Leo</span></div>
+      <div class="sign-opt" onclick="selectSign('virgo')">    <span class="sign-glyph">♍</span><span class="sign-name">Virgo</span></div>
+      <div class="sign-opt" onclick="selectSign('libra')">    <span class="sign-glyph">♎</span><span class="sign-name">Libra</span></div>
+      <div class="sign-opt" onclick="selectSign('scorpio')">  <span class="sign-glyph">♏</span><span class="sign-name">Scorpio</span></div>
+      <div class="sign-opt" onclick="selectSign('sagittarius')"><span class="sign-glyph">♐</span><span class="sign-name">Sagittarius</span></div>
+      <div class="sign-opt" onclick="selectSign('capricorn')"><span class="sign-glyph">♑</span><span class="sign-name">Capricorn</span></div>
+      <div class="sign-opt" onclick="selectSign('aquarius')"> <span class="sign-glyph">♒</span><span class="sign-name">Aquarius</span></div>
+      <div class="sign-opt" onclick="selectSign('pisces')">   <span class="sign-glyph">♓</span><span class="sign-name">Pisces</span></div>
+    </div>
+    <div class="sign-panel-clear"><button onclick="clearSign()">Clear personalization</button></div>
+  </div>
+</div>
+
+<!-- WEEK PROGRESS BAR -->
+<div class="week-progress">
+  <div class="week-days" id="weekDays">
+    <div class="week-day" data-idx="0"><div class="week-dot"></div>Mon</div>
+    <div class="week-day" data-idx="1"><div class="week-dot"></div>Tue</div>
+    <div class="week-day" data-idx="2"><div class="week-dot"></div>Wed</div>
+    <div class="week-day" data-idx="3"><div class="week-dot"></div>Thu</div>
+    <div class="week-day" data-idx="4"><div class="week-dot"></div>Fri</div>
   </div>
 </div>
 
 <!-- HERO -->
 <div class="hero">
-
   <svg class="hero-stars" viewBox="0 0 900 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
     <circle cx="62"  cy="74"  r="1.2" fill="#fff8ee" opacity="0.48"/>
     <circle cx="198" cy="42"  r="0.9" fill="#fff8ee" opacity="0.36"/>
@@ -787,19 +431,12 @@
     <text x="456" y="20"  font-size="7"  fill="#c9a84c" opacity="0.50" text-anchor="middle" font-family="serif">✦</text>
     <text x="66"  y="370" font-size="8"  fill="#d4a0b5" opacity="0.36" text-anchor="middle" font-family="serif">✦</text>
     <circle cx="800" cy="108" r="80" fill="#c9a84c" opacity="0.04"/>
-    <circle cx="800" cy="108" r="40" fill="#c9a84c" opacity="0.05"/>
     <circle cx="88"  cy="390" r="90" fill="#9b59b6" opacity="0.06"/>
-    <circle cx="100" cy="86"  r="60" fill="#d4a0b5" opacity="0.04"/>
   </svg>
-
   <div class="hero-border-outer"></div>
   <div class="hero-border-inner"></div>
-
-  <div class="corner tl">✦</div>
-  <div class="corner tr">✦</div>
-  <div class="corner bl">✦</div>
-  <div class="corner br">✦</div>
-
+  <div class="corner tl">✦</div><div class="corner tr">✦</div>
+  <div class="corner bl">✦</div><div class="corner br">✦</div>
   <svg class="hero-col left" width="26" height="420" viewBox="0 0 26 420" xmlns="http://www.w3.org/2000/svg">
     <line x1="13" y1="0" x2="13" y2="420" stroke="#b482d2" stroke-width="0.8" opacity="0.22"/>
     <text x="13" y="50"  text-anchor="middle" font-size="15" fill="#c9a84c" opacity="0.65" font-family="serif">☽</text>
@@ -809,9 +446,7 @@
     <text x="13" y="246" text-anchor="middle" font-size="10" fill="#d4a0b5" opacity="0.50" font-family="serif">✧</text>
     <text x="13" y="298" text-anchor="middle" font-size="15" fill="#fff8ee" opacity="0.28" font-family="serif">☾</text>
     <text x="13" y="350" text-anchor="middle" font-size="10" fill="#c9a84c" opacity="0.44" font-family="serif">✦</text>
-    <text x="13" y="412" text-anchor="middle" font-size="11" fill="#c9a84c" opacity="0.40" font-family="serif">☉</text>
   </svg>
-
   <svg class="hero-col right" width="26" height="420" viewBox="0 0 26 420" xmlns="http://www.w3.org/2000/svg">
     <line x1="13" y1="0" x2="13" y2="420" stroke="#b482d2" stroke-width="0.8" opacity="0.22"/>
     <text x="13" y="50"  text-anchor="middle" font-size="10" fill="#fff8ee" opacity="0.44" font-family="serif">✦</text>
@@ -822,31 +457,19 @@
     <text x="13" y="298" text-anchor="middle" font-size="15" fill="#fff8ee" opacity="0.26" font-family="serif">☽</text>
     <circle cx="13" cy="338" r="1.2" fill="#d4a0b5" opacity="0.40"/>
     <text x="13" y="388" text-anchor="middle" font-size="10" fill="#c9a84c" opacity="0.50" font-family="serif">✦</text>
-    <text x="13" y="412" text-anchor="middle" font-size="11" fill="#fff8ee" opacity="0.36" font-family="serif">☉</text>
   </svg>
-
   <div class="hero-label">Weekly Transit Forecast · #Astroflow-Weekly</div>
   <h1 class="hero-title">Sky at Work</h1>
   <div class="hero-ornament">☽ ✦ ☉ ✦ ☾</div>
   <div class="hero-data">
-    <div>
-      <div class="hero-datum-label">Week</div>
-      <div class="hero-datum-value">May 25 – 31, 2026</div>
-    </div>
-    <div>
-      <div class="hero-datum-label">Method</div>
-      <div class="hero-datum-value">Transit-to-Transit Only</div>
-    </div>
-    <div>
-      <div class="hero-datum-label">Channel</div>
-      <div class="hero-datum-value">#Astroflow-Weekly</div>
-    </div>
+    <div><div class="hero-datum-label">Week</div><div class="hero-datum-value">May 25 – 31, 2026</div></div>
+    <div><div class="hero-datum-label">Method</div><div class="hero-datum-value">Transit-to-Transit Only</div></div>
+    <div><div class="hero-datum-label">Channel</div><div class="hero-datum-value">#Astroflow-Weekly</div></div>
   </div>
-
 </div>
 
 <!-- PULSE -->
-<div class="pulse-wrap">
+<div class="pulse-wrap fade-in">
   <div class="pulse-card">
     <div class="pulse-head">
       <svg class="pulse-stars" viewBox="0 0 900 90" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
@@ -860,17 +483,17 @@
     </div>
     <div class="pulse-body">
       <p>Drive meets resistance all week, ease costs a little more than usual, and the clearest window of leverage lands midweek. The sky's instructions: <strong>write it down</strong>, push with intention, trust the idea before you have the full argument ready.</p>
-      <p>No birth charts required for any of this. It's the collective weather: the planetary patterns that everyone is moving through together this week, regardless of when or where they were born.</p>
+      <p>No birth charts required. This is the collective weather: the planetary patterns everyone is moving through together this week, regardless of when or where they were born. <em>Select your sun sign above</em> to see a personalized lens on each section.</p>
     </div>
   </div>
 </div>
 
 <!-- SIGNAL BOARD -->
-<div class="signal-wrap">
-  <div class="signal-eyebrow">Aspects at a Glance</div>
+<div class="signal-wrap fade-in">
+  <div class="signal-eyebrow">Aspects at a Glance — click any row to learn more</div>
   <div class="signal-board">
 
-    <div class="signal-row">
+    <div class="signal-row" onclick="toggleSignalRow(this)">
       <div class="signal-stripe stripe-amber"></div>
       <div class="signal-body">
         <div class="signal-icon">♂</div>
@@ -880,9 +503,15 @@
         </div>
       </div>
       <div class="signal-timing"><span class="timing-pill pill-all">All Week</span></div>
+      <div class="signal-detail">
+        <div class="signal-detail-inner">
+          <p>Mars is the planet of action and drive; Pluto is the planet of deep, structural power. When they're at a 90° angle (a "square"), forward momentum meets immovable forces. In practice: things that should be moving will push back. A proposal hits an unexpected wall. A process gets stuck. Rather than forcing through it, the better move is to ask what the resistance is pointing at. These are often the weeks when it becomes clear which obstacles are worth fighting and which are protecting something you didn't realize was fragile.</p>
+          <span class="signal-expand-hint">↑ click to close</span>
+        </div>
+      </div>
     </div>
 
-    <div class="signal-row">
+    <div class="signal-row" onclick="toggleSignalRow(this)">
       <div class="signal-stripe stripe-muted"></div>
       <div class="signal-body">
         <div class="signal-icon">♀</div>
@@ -892,9 +521,15 @@
         </div>
       </div>
       <div class="signal-timing"><span class="timing-pill pill-all">All Week</span></div>
+      <div class="signal-detail">
+        <div class="signal-detail-inner">
+          <p>Venus is the planet of connection, ease, and relational warmth; Saturn is the planet of structure, limits, and earned trust. When they're square, the usual social shortcuts don't land as well. Warmth is still felt — it just has to be backed by something real. People can sense the difference between genuine connection and performance, and this week they're more likely to act on that sense. Showing up prepared and present matters more than usual.</p>
+          <span class="signal-expand-hint">↑ click to close</span>
+        </div>
+      </div>
     </div>
 
-    <div class="signal-row">
+    <div class="signal-row" onclick="toggleSignalRow(this)">
       <div class="signal-stripe stripe-plum"></div>
       <div class="signal-body">
         <div class="signal-icon">♀</div>
@@ -904,9 +539,15 @@
         </div>
       </div>
       <div class="signal-timing"><span class="timing-pill pill-all">All Week</span></div>
+      <div class="signal-detail">
+        <div class="signal-detail-inner">
+          <p>Venus (connection, what we value) meets Neptune (imagination, idealism) in a tense angle. The gap between how you imagined something would go and how it's actually going can feel wider than usual. This doesn't mean the vision is wrong. It means the vision needs a concrete next step attached to it before it'll move. The ask this week: ground what you're hoping for in a specific, doable action rather than holding it as a feeling.</p>
+          <span class="signal-expand-hint">↑ click to close</span>
+        </div>
+      </div>
     </div>
 
-    <div class="signal-row">
+    <div class="signal-row" onclick="toggleSignalRow(this)">
       <div class="signal-stripe stripe-gold"></div>
       <div class="signal-body">
         <div class="signal-icon">☉</div>
@@ -916,9 +557,15 @@
         </div>
       </div>
       <div class="signal-timing"><span class="timing-pill pill-early">Mon – Tue</span></div>
+      <div class="signal-detail">
+        <div class="signal-detail-inner">
+          <p>The Sun (conscious identity, direction) meets Neptune (intuition, imagination) in a supportive 60° angle. These two working together produce: ideas and impressions that arrive before the logic does. You might have a strong sense of the right direction without being able to articulate exactly why yet. That's not a problem — it's the feature. Trust the instinct, then spend a day building the argument for it. Monday and Tuesday are the strongest window for this kind of intuitive clarity.</p>
+          <span class="signal-expand-hint">↑ click to close</span>
+        </div>
+      </div>
     </div>
 
-    <div class="signal-row">
+    <div class="signal-row" onclick="toggleSignalRow(this)">
       <div class="signal-stripe stripe-teal"></div>
       <div class="signal-body">
         <div class="signal-icon">☿</div>
@@ -928,9 +575,15 @@
         </div>
       </div>
       <div class="signal-timing"><span class="timing-pill pill-mid">Tue – Wed</span></div>
+      <div class="signal-detail">
+        <div class="signal-detail-inner">
+          <p>Mercury (communication, thinking) meets Saturn (structure, discipline, what lasts) in a supportive 60° angle. What this produces: the unusual capacity to think both quickly and carefully at the same time. Precision is available without sacrificing speed. This is the strongest window of the week for anything that needs to both move efficiently and hold up over time: proposals, contracts, documentation, decisions that need to stick. If it matters, get it in writing Tuesday or Wednesday.</p>
+          <span class="signal-expand-hint">↑ click to close</span>
+        </div>
+      </div>
     </div>
 
-    <div class="signal-row">
+    <div class="signal-row" onclick="toggleSignalRow(this)">
       <div class="signal-stripe stripe-rose"></div>
       <div class="signal-body">
         <div class="signal-icon">♀</div>
@@ -940,13 +593,19 @@
         </div>
       </div>
       <div class="signal-timing"><span class="timing-pill pill-late">Thru Wed</span></div>
+      <div class="signal-detail">
+        <div class="signal-detail-inner">
+          <p>Venus (what you want, connection) and Mars (what you're doing about it) in a supportive angle means desire and action are pointing in the same direction. "Separating" means this aspect was exact last week and is fading, but it's still in range through Wednesday. In practical terms: the collaborative window where goodwill and momentum run together is still open. If you need both relational buy-in and forward momentum for something, earlier in the week carries more fuel than later.</p>
+          <span class="signal-expand-hint">↑ click to close</span>
+        </div>
+      </div>
     </div>
 
   </div>
 </div>
 
 <!-- CELESTIAL DIVIDER -->
-<div class="cel-divider">
+<div class="cel-divider fade-in">
   <div class="cel-rule left"></div>
   <div class="cel-mark">✦ ✦ ✦</div>
   <div class="cel-rule right"></div>
@@ -956,7 +615,7 @@
 <div class="section-wrap">
 
   <!-- FOR COMMUNICATION -->
-  <div class="section-card accent-teal" id="card-comms">
+  <div class="section-card accent-teal fade-in" id="card-comms">
     <div class="section-head">
       <svg class="section-head-stars" viewBox="0 0 900 100" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
         <circle cx="820" cy="28" r="0.9" fill="#5ab4a0" opacity="0.42"/>
@@ -971,13 +630,17 @@
       </div>
     </div>
     <div class="section-body">
+      <div class="sign-banner" id="banner-comms">
+        <span class="sign-banner-glyph" id="banner-comms-glyph"></span>
+        <div><span class="sign-banner-label">For you this week</span><span class="sign-banner-text" id="banner-comms-text"></span></div>
+      </div>
       <div class="section-teaser">
-        <p>Best writing window of the week falls Tuesday and Wednesday. If something was decided in a meeting but never written down, this is the moment to fix that.</p>
+        <p>Best writing window of the week falls Tuesday and Wednesday. If something was decided in a meeting but never documented, this is the moment to fix that.</p>
       </div>
       <div class="section-expanded">
         <p>The communication planet (Mercury) is at peak strength this week and links up with the structure planet (Saturn) midweek. In plain terms: anything that needs to both move quickly and hold up over time has a real window Tuesday and Wednesday. Proposals, formal follow-ups, contracts, decisions that need to actually stick.</p>
         <div class="pull teal-pull">Write it down. Verbal agreements that aren't documented tend to get revisited this week. The paper trail is the point.</div>
-        <p>Best days: Tuesday and Wednesday. Monday is still in holiday-rhythm diffusion mode, so loose async is lower-quality than usual. Don't wait until Thursday: by then the window has tightened.</p>
+        <p>Best days: Tuesday and Wednesday. Monday is still in holiday-rhythm diffusion, so loose async is lower quality than usual. Don't wait until Thursday: by then the window has tightened considerably.</p>
       </div>
     </div>
     <div class="read-more-wrap">
@@ -989,7 +652,7 @@
   </div>
 
   <!-- FOR DECISIONS + MOMENTUM -->
-  <div class="section-card accent-amber" id="card-momentum">
+  <div class="section-card accent-amber fade-in" id="card-momentum">
     <div class="section-head">
       <svg class="section-head-stars" viewBox="0 0 900 100" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
         <circle cx="818" cy="30" r="0.9" fill="#c8842a" opacity="0.44"/>
@@ -1004,13 +667,17 @@
       </div>
     </div>
     <div class="section-body">
+      <div class="sign-banner" id="banner-momentum">
+        <span class="sign-banner-glyph" id="banner-momentum-glyph"></span>
+        <div><span class="sign-banner-label">For you this week</span><span class="sign-banner-text" id="banner-momentum-text"></span></div>
+      </div>
       <div class="section-teaser">
         <p>Expect pushback this week and don't take it personally. The resistance is telling you something useful about where the real obstacles are.</p>
       </div>
       <div class="section-expanded">
         <p>The action planet (Mars) is in a tense angle with Pluto all week. What this looks like in practice: things that should be moving will push back. A proposal hits an unexpected wall. A process doesn't flow the way it usually does. The instinct is to force through it. The better move is to ask what the resistance is pointing at: whether you're hitting the wrong wall or the right one.</p>
         <div class="pull amber-pull">The weeks when drive meets resistance are often when it becomes clear which things are worth the friction and which aren't.</div>
-        <p>The collaborative window is still open through Wednesday (Venus and Mars are still in a supportive angle from last week). If something needs both goodwill and momentum, earlier in the week has more fuel. By Thursday the "not yet" register gets louder, so don't leave big asks for the end of the week.</p>
+        <p>The collaborative window is still open through Wednesday (Venus and Mars are still in a supportive angle from last week). If something needs both goodwill and momentum, earlier in the week has more fuel. By Thursday the "not yet" register gets louder, so don't save big asks for the end of the week.</p>
       </div>
     </div>
     <div class="read-more-wrap">
@@ -1022,7 +689,7 @@
   </div>
 
   <!-- FOR COLLABORATION -->
-  <div class="section-card accent-rose" id="card-collab">
+  <div class="section-card accent-rose fade-in" id="card-collab">
     <div class="section-head">
       <svg class="section-head-stars" viewBox="0 0 900 100" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
         <circle cx="816" cy="30" r="0.9" fill="#d4a0b5" opacity="0.44"/>
@@ -1037,13 +704,17 @@
       </div>
     </div>
     <div class="section-body">
+      <div class="sign-banner" id="banner-collab">
+        <span class="sign-banner-glyph" id="banner-collab-glyph"></span>
+        <div><span class="sign-banner-label">For you this week</span><span class="sign-banner-text" id="banner-collab-text"></span></div>
+      </div>
       <div class="section-teaser">
         <p>The room is paying attention this week. Bring substance. Enthusiasm alone won't carry a pitch or a proposal the way it might in a softer week.</p>
       </div>
       <div class="section-expanded">
-        <p>The relational planets are in a tense configuration this week, which translates to: people can feel the difference between genuine connection and social performance, and they'll respond to it (consciously or not). Collaborative pitches built on actual substance land. Anything relying primarily on goodwill from last month, or on how well you get along with someone, will get quietly interrogated.</p>
+        <p>The relational planets are in a tense configuration this week, which translates to: people can feel the difference between genuine connection and social performance. Collaborative pitches built on actual substance land. Anything relying primarily on goodwill or on how well you get along with someone will get quietly interrogated.</p>
         <div class="pull rose-pull">This isn't a bad week for collaboration. It's a demanding one. The people who've done the work hold the room.</div>
-        <p>The background pressure all of 2026: the sky keeps asking what the concrete plan is behind the idea. Teams that can answer that question feel the pressure as useful. Teams that can't feel it as stall. This week makes that distinction sharper than usual.</p>
+        <p>The background pressure all of 2026: the sky keeps asking what the concrete plan is behind the idea. Teams that can answer that question feel this week's pressure as useful. Teams that can't feel it as stall. This week makes that distinction sharper than usual.</p>
       </div>
     </div>
     <div class="read-more-wrap">
@@ -1055,7 +726,7 @@
   </div>
 
   <!-- WORTH WATCHING -->
-  <div class="section-card accent-plum" id="card-watch">
+  <div class="section-card accent-plum fade-in" id="card-watch">
     <div class="section-head">
       <svg class="section-head-stars" viewBox="0 0 900 100" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
         <circle cx="816" cy="30" r="0.9" fill="#b482d2" opacity="0.42"/>
@@ -1101,16 +772,15 @@
 </div>
 
 <!-- CELESTIAL DIVIDER -->
-<div class="cel-divider">
+<div class="cel-divider fade-in">
   <div class="cel-rule left"></div>
   <div class="cel-mark">✦ ✦ ✦</div>
   <div class="cel-rule right"></div>
 </div>
 
 <!-- THROUGH-LINE -->
-<div class="thread-wrap">
+<div class="thread-wrap fade-in">
   <div class="thread">
-
     <svg class="thread-stars" viewBox="0 0 900 320" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
       <circle cx="58"  cy="66"  r="1.1" fill="#fff8ee" opacity="0.40"/>
       <circle cx="198" cy="36"  r="0.8" fill="#c9a84c" opacity="0.42"/>
@@ -1118,61 +788,214 @@
       <circle cx="512" cy="22"  r="0.7" fill="#d4a0b5" opacity="0.40"/>
       <circle cx="664" cy="48"  r="1.0" fill="#fff8ee" opacity="0.34"/>
       <circle cx="814" cy="70"  r="1.1" fill="#c9a84c" opacity="0.38"/>
-      <circle cx="28"  cy="238" r="0.9" fill="#c9a84c" opacity="0.28"/>
-      <circle cx="872" cy="220" r="0.8" fill="#fff8ee" opacity="0.30"/>
       <text x="128" y="114" font-size="11" fill="#c9a84c" opacity="0.50" text-anchor="middle" font-family="serif">✦</text>
       <text x="766" y="132" font-size="8"  fill="#fff8ee" opacity="0.34" text-anchor="middle" font-family="serif">✧</text>
       <circle cx="800" cy="106" r="76" fill="#c9a84c" opacity="0.04"/>
       <circle cx="88"  cy="228" r="68" fill="#9b59b6" opacity="0.06"/>
     </svg>
-
     <div class="thread-border"></div>
-
     <span class="thread-ornament">✦ ✦ ✦</span>
     <h2 class="thread-title">Transit-to-Transit Only</h2>
     <p>No birth charts used. This is the collective sky: planetary patterns everyone is moving through this week, regardless of when or where they were born. The aspects describe the conditions. What you build in them is yours.</p>
     <a class="thread-link" href="https://jordanb1993.github.io/astro-readings/readings/sky-at-work.html">✦ &nbsp; Permalink to this forecast</a>
     <div class="thread-close">✦ &nbsp; Sky at Work · Week of May 25–31, 2026 · #Astroflow-Weekly</div>
-
   </div>
 </div>
 
-<!-- FOOTER -->
 <div class="footer">
   Transit-to-transit aspects only · No natal charts used · Collective weather for the week<br>
   jordanb1993.github.io/astro-readings/readings/sky-at-work.html
 </div>
 
 <script>
-  function toggleCard(id, btn) {
-    const card = document.getElementById(id);
-    const expanded = card.querySelector('.section-expanded');
-    const isOpen = card.classList.contains('open');
+// ── Sign data ────────────────────────────────────────────
+const SIGNS = {
+  aries:       { glyph:'♈', name:'Aries' },
+  taurus:      { glyph:'♉', name:'Taurus' },
+  gemini:      { glyph:'♊', name:'Gemini' },
+  cancer:      { glyph:'♋', name:'Cancer' },
+  leo:         { glyph:'♌', name:'Leo' },
+  virgo:       { glyph:'♍', name:'Virgo' },
+  libra:       { glyph:'♎', name:'Libra' },
+  scorpio:     { glyph:'♏', name:'Scorpio' },
+  sagittarius: { glyph:'♐', name:'Sagittarius' },
+  capricorn:   { glyph:'♑', name:'Capricorn' },
+  aquarius:    { glyph:'♒', name:'Aquarius' },
+  pisces:      { glyph:'♓', name:'Pisces' }
+};
 
-    if (isOpen) {
-      card.classList.remove('open');
-      expanded.style.maxHeight = '0';
-      expanded.style.opacity = '0';
-      btn.querySelector('.btn-text').textContent = 'Read more';
-    } else {
-      card.classList.add('open');
-      expanded.style.maxHeight = expanded.scrollHeight + 'px';
-      expanded.style.opacity = '1';
-      btn.querySelector('.btn-text').textContent = 'Show less';
-    }
+const SIGN_COPY = {
+  comms: {
+    aries:       "Mercury lights up your communication house — your written voice carries unusual authority this week. Send the thing.",
+    taurus:      "Mercury activates your value and resources area — a money or worth conversation you've been circling is worth naming directly.",
+    gemini:      "Mercury is in your sign. This is your week. Anything you write or say will be sharper than usual.",
+    cancer:      "Mercury moves through your hidden house — put everything important in writing rather than assuming it was received.",
+    leo:         "Mercury activates your network — a group message, team-wide communication, or broadcast to many lands well now.",
+    virgo:       "Mercury in your career sector means reputation-building communication carries weight. A visible proposal or deliverable is the move.",
+    libra:       "Mercury in your big-picture sector favors strategic framing. Lead with the vision, then the tactics.",
+    scorpio:     "Mercury activates your depth and research house — the hard conversation, the deep analysis, or the finding you've been sitting on. This week it moves.",
+    sagittarius: "Mercury lights up your partnership area — the conversation with a specific person. Name what you want from them.",
+    capricorn:   "Mercury in your work and systems sector: operational documentation is your leverage. The process conversation is worth having this week.",
+    aquarius:    "Mercury in your creative house — pitch an idea, present something you made, or make yourself visible. Visibility is the move.",
+    pisces:      "Mercury activates your home and foundation sector — an internal or close-to-home conversation. Useful week to address something that's been sitting."
+  },
+  momentum: {
+    aries:       "Mars is your ruling planet — you feel this week's friction more personally. Use it as a steering signal, not a stop sign.",
+    taurus:      "Mars is in your sign squaring Pluto in your career sector. Professional structures are under pressure. Worth examining what you're actually pushing against.",
+    gemini:      "Mars in your hidden house is under-the-surface drive — you're working harder than it looks from the outside. Trust the internal momentum.",
+    cancer:      "Mars activates your collective and team house — shared goals and group momentum are where your energy lands best this week.",
+    leo:         "Mars in your career sector is professional activation. The friction is about visibility and authority. It's worth the push.",
+    virgo:       "Mars in your big-picture house: strategic action or an opportunity that requires boldness. Don't overthink the first step.",
+    libra:       "Mars in your shared resources and power sector — friction around who controls what, or a decision that needs clarity about ownership.",
+    scorpio:     "Mars activates your partnership area. Tension in a specific relationship or 1:1 dynamic is the main story. Ask what it's really about.",
+    sagittarius: "Mars in your work and craft house: the friction is between your drive to execute and something in the process. Name the specific block.",
+    capricorn:   "Mars in your creative and personal projects sector: the tension points at something in a project you're personally invested in. Worth refining.",
+    aquarius:    "Mars activates your home and foundation house — private or domestic friction that may be connected to work stress. Address the root.",
+    pisces:      "Mars in your communication sector — a conversation that keeps hitting a wall. Name the actual question rather than circling it."
+  },
+  collab: {
+    aries:       "Venus in Cancer softens your natural directness in collaborative spaces this week — lean into the warmth, it's working.",
+    taurus:      "Venus is your ruling planet and she's in a demanding week. You'll sense when the room is with you and when it's not. Trust that read.",
+    gemini:      "Venus activates your earned income and value area: what you bring to collaboration has a price this week. Don't undersell it.",
+    cancer:      "Venus is in your sign. You're the most naturally compelling person in collaborative spaces right now. Lead with warmth, back it with prep.",
+    leo:         "Venus in your hidden house: collaborative work that happens behind the scenes lands better than grand visible pitches this week.",
+    virgo:       "Venus activates your network and team sector — group pitches, community-building, or team dynamics are your strongest collaborative leverage.",
+    libra:       "Venus is your ruling planet in your career sector — professional reputation and relational credibility are the same thing this week. Both are visible.",
+    scorpio:     "Venus in your big-picture and cross-context house: collaborative work with people from different backgrounds or disciplines carries unusual goodwill.",
+    sagittarius: "Venus in your depth and shared resources sector — the collaborative dynamic that goes deeper than usual. Worth leaning into.",
+    capricorn:   "Venus activates your partnership house directly. If there's a specific person who needs a check-in, this week is the moment.",
+    aquarius:    "Venus in your work sector: small daily acts of collaboration carry unusual weight this week. Don't underestimate informal goodwill.",
+    pisces:      "Venus in your creative sector — bring something you've been personally working on into a team context. Share what you've made."
   }
+};
 
-  // Override CSS default display:flex on expanded so it starts hidden
+// ── Sign picker ──────────────────────────────────────────
+let currentSign = localStorage.getItem('saw_sign') || null;
+
+function toggleSignPanel() {
+  document.getElementById('signPanel').classList.toggle('open');
+}
+
+function selectSign(sign) {
+  currentSign = sign;
+  localStorage.setItem('saw_sign', sign);
+  document.getElementById('signPanel').classList.remove('open');
+  applySign(sign);
+  // Mark selected option
+  document.querySelectorAll('.sign-opt').forEach(el => el.classList.remove('selected'));
+  document.querySelector(`.sign-opt[onclick="selectSign('${sign}')"]`).classList.add('selected');
+}
+
+function clearSign() {
+  currentSign = null;
+  localStorage.removeItem('saw_sign');
+  document.getElementById('signPanel').classList.remove('open');
+  document.querySelectorAll('.sign-opt').forEach(el => el.classList.remove('selected'));
+  // Update button
+  document.getElementById('signBtnIcon').textContent = '✦';
+  document.getElementById('signBtnLabel').textContent = 'Your sign';
+  // Hide banners
+  ['comms','momentum','collab'].forEach(section => {
+    document.getElementById('banner-' + section).classList.remove('active');
+  });
+}
+
+function applySign(sign) {
+  const s = SIGNS[sign];
+  // Update status bar button
+  document.getElementById('signBtnIcon').textContent = s.glyph;
+  document.getElementById('signBtnLabel').textContent = s.name;
+  // Populate and show banners
+  ['comms','momentum','collab'].forEach(section => {
+    const banner = document.getElementById('banner-' + section);
+    document.getElementById('banner-' + section + '-glyph').textContent = s.glyph;
+    document.getElementById('banner-' + section + '-text').textContent = SIGN_COPY[section][sign];
+    banner.classList.add('active');
+  });
+}
+
+// ── Week progress bar ────────────────────────────────────
+(function initWeekBar() {
+  // Week starts May 25 (Monday). Today = May 26 = index 1.
+  const weekStart = new Date(2026, 4, 25); // May 25
+  const now = new Date();
+  const diffDays = Math.floor((now - weekStart) / 86400000);
+  const todayIdx = Math.max(0, Math.min(4, diffDays));
+  document.querySelectorAll('.week-day').forEach((el, i) => {
+    if (i < todayIdx) el.classList.add('past');
+    else if (i === todayIdx) el.classList.add('today');
+  });
+})();
+
+// ── Read-more toggle ─────────────────────────────────────
+function toggleCard(id, btn) {
+  const card = document.getElementById(id);
+  const expanded = card.querySelector('.section-expanded');
+  const isOpen = card.classList.contains('open');
+  if (isOpen) {
+    card.classList.remove('open');
+    expanded.style.maxHeight = '0';
+    expanded.style.opacity = '0';
+    expanded.style.paddingTop = '0';
+    btn.querySelector('.btn-text').textContent = 'Read more';
+  } else {
+    card.classList.add('open');
+    expanded.style.maxHeight = expanded.scrollHeight + 80 + 'px';
+    expanded.style.opacity = '1';
+    expanded.style.paddingTop = '16px';
+    btn.querySelector('.btn-text').textContent = 'Show less';
+  }
+}
+
+// ── Signal board row toggle ──────────────────────────────
+function toggleSignalRow(row) {
+  const detail = row.querySelector('.signal-detail');
+  const isOpen = row.classList.contains('expanded');
+  // Close all others first
+  document.querySelectorAll('.signal-row.expanded').forEach(r => {
+    r.classList.remove('expanded');
+    r.querySelector('.signal-detail').style.maxHeight = '0';
+    r.querySelector('.signal-detail').style.opacity = '0';
+  });
+  if (!isOpen) {
+    row.classList.add('expanded');
+    detail.style.maxHeight = detail.scrollHeight + 'px';
+    detail.style.opacity = '1';
+  }
+}
+
+// ── Scroll fade-in ───────────────────────────────────────
+(function initFadeIn() {
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+})();
+
+// ── Init on load ─────────────────────────────────────────
+(function init() {
+  // Init expanded sections as hidden
   document.querySelectorAll('.section-expanded').forEach(el => {
-    el.style.display = 'flex';
-    el.style.flexDirection = 'column';
-    el.style.gap = '16px';
-    el.style.overflow = 'hidden';
     el.style.maxHeight = '0';
     el.style.opacity = '0';
-    el.style.transition = 'max-height 0.4s ease, opacity 0.3s ease';
     el.style.paddingTop = '0';
   });
+  // Init signal details as hidden
+  document.querySelectorAll('.signal-detail').forEach(el => {
+    el.style.maxHeight = '0';
+    el.style.opacity = '0';
+  });
+  // Restore sign if saved
+  if (currentSign) applySign(currentSign);
+  // Close sign panel on outside click
+  document.addEventListener('click', e => {
+    const panel = document.getElementById('signPanel');
+    const btn = document.getElementById('signPickerBtn');
+    if (panel.classList.contains('open') && !panel.contains(e.target) && !btn.contains(e.target)) {
+      panel.classList.remove('open');
+    }
+  });
+})();
 </script>
 
 </body>
