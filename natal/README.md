@@ -6,10 +6,14 @@ This folder contains full natal chart reading HTMLs in the whimsigoth aesthetic.
 
 | Name | File | Live URL | Notes |
 |------|------|----------|-------|
-| Jordan | `jordan-natal.html` | — | Canonical visual template (original build) |
+| Jordan | `jordan-natal.html` | `jordanb1993.github.io/astro-readings/natal/jordan-natal.html` | Canonical visual template (original build) |
 | Dasha | `dasha.html` | `jordanb1993.github.io/astro-readings/natal/dasha.html` | Noon chart, time unconfirmed |
 | Iza | `iza.html` | `jordanb1993.github.io/astro-readings/natal/iza.html` | Confirmed birth time |
 | Su | `su.html` | `jordanb1993.github.io/astro-readings/natal/su.html` | Confirmed birth time |
+| Marina | `marina.html` | `jordanb1993.github.io/astro-readings/natal/marina.html` | Leo Sun · Sagittarius Moon · Libra Rising |
+| Kate | `kate.html` | `jordanb1993.github.io/astro-readings/natal/kate.html` | |
+| Hazel | `hazel.html` | `jordanb1993.github.io/astro-readings/natal/hazel.html` | |
+| Yvonne | `yvonne.html` | `jordanb1993.github.io/astro-readings/natal/yvonne.html` | Cancer Sun · Libra Moon · Sagittarius Rising · coworker |
 
 ---
 
@@ -108,8 +112,6 @@ Copy the file, rename it `[name].html`, then swap all content.
 
 | Name | Birth data status |
 |------|-------------------|
-| Kate | Needed |
-| Marina | Needed |
 | Cat | Needed |
 | Mimi | Needed |
 | Carina | Needed |

@@ -47,6 +47,12 @@ Gemini Sun · Aries Moon · Taurus Rising · Venus in 1st
 [marina.html](https://jordanb1993.github.io/astro-readings/natal/marina.html)
 Leo Sun · Sagittarius Moon · Libra Rising · Jupiter conjunct ASC
 
+**Kate**
+[kate.html](https://jordanb1993.github.io/astro-readings/natal/kate.html)
+
+**Hazel**
+[hazel.html](https://jordanb1993.github.io/astro-readings/natal/hazel.html)
+
 **Yvonne** *(coworker)*
 [yvonne.html](https://jordanb1993.github.io/astro-readings/natal/yvonne.html)
 Cancer Sun · Libra Moon · Sagittarius Rising · Sun opposite Neptune exact
