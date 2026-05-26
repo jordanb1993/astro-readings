@@ -146,8 +146,54 @@ Every Sunday, the existing 4am CDT routine now also generates three additional f
 
 **Monday morning routine:** Open slack-draft.md in Obsidian, copy the text, paste into `#astroflow-weekly`.
 
+---
+
+## sky-at-work.html — Interactive App Format (canonical as of May 26, 2026)
+
+`readings/sky-at-work.html` is the live public page. **Same URL every week — overwrite the file, push to GitHub, done.** The URL never changes.
+
+### Design system
+- Palette: deep plum `#0a0614`, gold `#c9a84c`, rose `#d4a0b5`, plum-bright `#b482d2`, teal `#5ab4a0`
+- Fonts: Cormorant Garamond (display) + Inter (sans) — loaded from Google Fonts
+- Matches the natal chart HTML design system (not the retro terminal `_template.html`)
+
+### Interactive features (rebuild these every week)
+
+**Sticky status bar** (top, z-index 200): channel name + week label on the left, "Your sign" picker button on the right.
+
+**Week progress bar** (below status bar, z-index 190): Mon–Fri dots, today's day highlighted in gold. Update `weekStart` in JS each Sunday:
+```js
+const weekStart = new Date(2026, 4, 25); // month is 0-indexed — May = 4
+```
+
+**Signal board** (At a Glance section): one row per transit aspect. Each row is clickable — expands a plain-English detail panel below it. Only one panel open at a time. Rows follow a 3-column grid: left stripe (color-coded by planet type), center content, right timing pill.
+
+**Sign personalization** (added May 26, 2026):
+- Status bar button opens a 12-sign grid panel
+- On selection, a "For you this week" banner appears in Communication, Momentum, and Collaboration sections
+- Each banner has a one-sentence sign-specific callout written fresh each week
+- Selection persists via `localStorage` key `saw_sign`
+- **Sun sign is the current lens** — accurate enough for a collective/workplace context
+- **Future upgrade:** add rising sign as the primary picker, sun sign as fallback. Rising sign is more accurate for transit work because it determines house placement. Framing: "rising sign = most accurate / sun sign = good starting point"
+
+**Read-more dropdowns** (4 section cards): teaser paragraph visible by default, full content expands on button click. Uses `max-height` + `opacity` CSS transition, toggled via `toggleCard()` JS.
+
+**Scroll fade-in**: `.fade-in` class + IntersectionObserver — elements animate in as they enter the viewport.
+
+### Weekly rebuild checklist
+
+Each Sunday when generating the new week's file:
+- [ ] Update `weekStart` date in JS
+- [ ] Update headline text + week label in the hero
+- [ ] Update the At a Glance signal board rows (aspect name, orb, timing pill, detail panel copy)
+- [ ] Update teaser + expanded content in all 4 section cards
+- [ ] Update all 36 sign-specific callout lines in `SIGN_COPY` (12 signs × 3 sections: comms, momentum, collab)
+- [ ] Update Watch For bullets
+- [ ] Push to GitHub: `git add readings/sky-at-work.html && git commit -m "sky at work: week of [date]" && git push origin main`
+- [ ] Update `slack-draft.md` with new week's content + pbcopy
+
 ### Distribution
-- Create the Slack channel, post Monday morning
+- Post `slack-draft.md` content to `#astroflow-weekly` Monday morning
 - Keep it optional and low-pressure — anyone can join or ignore
 - The post itself is the pitch; no explanation needed
 - Eventually: a Substack or paid weekly send
