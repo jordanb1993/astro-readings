@@ -62,6 +62,87 @@
     em { color: rgba(253,246,232,0.82); font-style: italic; }
 
     /* ════════════════════════════
+       STATUS BAR
+    ════════════════════════════ */
+    .status-bar {
+      width: 100%;
+      background: rgba(10,6,20,0.96);
+      border-bottom: 1px solid rgba(180,130,210,0.15);
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      height: 38px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(8px);
+    }
+
+    .status-left { display: flex; align-items: center; gap: 16px; }
+
+    .status-brand {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      opacity: 0.80;
+    }
+
+    .status-sep { width: 1px; height: 14px; background: rgba(180,130,210,0.20); }
+
+    .status-week {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.60rem;
+      letter-spacing: 0.14em;
+      color: var(--muted-2);
+      text-transform: uppercase;
+    }
+
+    .status-right { display: flex; align-items: center; gap: 12px; }
+
+    .live-badge {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 3px 10px;
+      border-radius: 20px;
+      border: 1px solid rgba(90,180,160,0.28);
+      background: rgba(90,180,160,0.07);
+    }
+
+    .live-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--teal);
+      animation: livepulse 2s ease-in-out infinite;
+    }
+
+    @keyframes livepulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%       { opacity: 0.4; transform: scale(0.7); }
+    }
+
+    .live-text {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.58rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--teal);
+    }
+
+    .status-channel {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.60rem;
+      letter-spacing: 0.08em;
+      color: var(--muted-2);
+    }
+
+    /* ════════════════════════════
        HERO
     ════════════════════════════ */
     .hero {
@@ -73,11 +154,7 @@
       background: radial-gradient(ellipse at 40% 28%, #2a1245 0%, #150a25 42%, #0a0614 100%);
     }
 
-    .hero-stars {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-    }
+    .hero-stars { position: absolute; inset: 0; pointer-events: none; }
 
     .hero-border-outer {
       position: absolute;
@@ -182,10 +259,7 @@
       margin: 52px 44px 0;
     }
 
-    .cel-rule {
-      flex: 1;
-      height: 1px;
-    }
+    .cel-rule { flex: 1; height: 1px; }
     .cel-rule.left  { background: linear-gradient(90deg, transparent, var(--gold-mid)); }
     .cel-rule.right { background: linear-gradient(90deg, var(--gold-mid), transparent); }
 
@@ -199,11 +273,9 @@
     }
 
     /* ════════════════════════════
-       PULSE — WEEKLY HEADLINE
+       PULSE
     ════════════════════════════ */
-    .pulse-wrap {
-      padding: 44px 44px 0;
-    }
+    .pulse-wrap { padding: 44px 44px 0; }
 
     .pulse-card {
       background: radial-gradient(ellipse at 20% 50%, rgba(201,168,76,0.14) 0%, rgba(21,10,37,0.85) 55%, #0a0614 100%);
@@ -220,11 +292,7 @@
       overflow: hidden;
     }
 
-    .pulse-stars {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-    }
+    .pulse-stars { position: absolute; inset: 0; pointer-events: none; }
 
     .pulse-eyebrow {
       font-family: 'Inter', sans-serif;
@@ -257,9 +325,7 @@
     /* ════════════════════════════
        SIGNAL BOARD
     ════════════════════════════ */
-    .signal-wrap {
-      padding: 36px 44px 0;
-    }
+    .signal-wrap { padding: 36px 44px 0; }
 
     .signal-eyebrow {
       font-family: 'Inter', sans-serif;
@@ -290,12 +356,12 @@
     .signal-row:nth-child(even) { background: rgba(253,246,232,0.020); }
 
     .signal-stripe { width: 3px; align-self: stretch; flex-shrink: 0; }
-    .stripe-gold    { background: var(--gold); }
-    .stripe-rose    { background: var(--rose); }
-    .stripe-plum    { background: var(--plum-bright); }
-    .stripe-teal    { background: var(--teal); }
-    .stripe-amber   { background: var(--amber); }
-    .stripe-muted   { background: rgba(180,130,210,0.35); }
+    .stripe-gold   { background: var(--gold); }
+    .stripe-rose   { background: var(--rose); }
+    .stripe-plum   { background: var(--plum-bright); }
+    .stripe-teal   { background: var(--teal); }
+    .stripe-amber  { background: var(--amber); }
+    .stripe-muted  { background: rgba(180,130,210,0.35); }
 
     .signal-body {
       padding: 14px 18px 14px 16px;
@@ -334,23 +400,31 @@
     }
 
     .signal-timing {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.62rem;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--muted-2);
-      white-space: nowrap;
       padding: 14px 18px 14px 0;
       align-self: center;
     }
 
+    .timing-pill {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.58rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .pill-all   { background: rgba(253,246,232,0.06); color: var(--muted-2); border: 1px solid rgba(253,246,232,0.10); }
+    .pill-early { background: rgba(201,168,76,0.08);  color: var(--gold);    border: 1px solid rgba(201,168,76,0.20); }
+    .pill-mid   { background: rgba(90,180,160,0.08);  color: var(--teal);    border: 1px solid rgba(90,180,160,0.20); }
+    .pill-late  { background: rgba(212,160,181,0.08); color: var(--rose);    border: 1px solid rgba(212,160,181,0.20); }
+
     /* ════════════════════════════
        SECTION CARDS
     ════════════════════════════ */
-    .section-wrap {
-      padding: 44px 44px 0;
-    }
+    .section-wrap { padding: 44px 44px 0; }
 
     .section-card {
       margin-bottom: 24px;
@@ -360,11 +434,7 @@
     }
     .section-card:last-child { margin-bottom: 0; }
 
-    .section-card::before {
-      content: '';
-      display: block;
-      height: 2px;
-    }
+    .section-card::before { content: ''; display: block; height: 2px; }
     .accent-gold::before  { background: linear-gradient(90deg, transparent 0%, var(--gold) 40%, var(--gold) 60%, transparent 100%); }
     .accent-rose::before  { background: linear-gradient(90deg, transparent 0%, var(--rose) 40%, var(--rose) 60%, transparent 100%); }
     .accent-plum::before  { background: linear-gradient(90deg, transparent 0%, var(--plum-bright) 40%, var(--plum-bright) 60%, transparent 100%); }
@@ -381,17 +451,13 @@
       border-bottom: 1px solid var(--border);
     }
 
-    .accent-gold .section-head  { background: radial-gradient(ellipse at 20% 50%, rgba(201,168,76,0.18) 0%, rgba(42,18,69,0.78) 55%, #0a0614 100%); }
-    .accent-rose .section-head  { background: radial-gradient(ellipse at 20% 50%, rgba(212,160,181,0.16) 0%, rgba(42,18,69,0.78) 55%, #0a0614 100%); }
-    .accent-plum .section-head  { background: radial-gradient(ellipse at 20% 50%, rgba(123,79,166,0.22) 0%, rgba(42,18,69,0.78) 55%, #0a0614 100%); }
-    .accent-teal .section-head  { background: radial-gradient(ellipse at 20% 50%, rgba(90,180,160,0.18) 0%, rgba(42,18,69,0.78) 55%, #0a0614 100%); }
+    .accent-gold  .section-head { background: radial-gradient(ellipse at 20% 50%, rgba(201,168,76,0.18) 0%, rgba(42,18,69,0.78) 55%, #0a0614 100%); }
+    .accent-rose  .section-head { background: radial-gradient(ellipse at 20% 50%, rgba(212,160,181,0.16) 0%, rgba(42,18,69,0.78) 55%, #0a0614 100%); }
+    .accent-plum  .section-head { background: radial-gradient(ellipse at 20% 50%, rgba(123,79,166,0.22) 0%, rgba(42,18,69,0.78) 55%, #0a0614 100%); }
+    .accent-teal  .section-head { background: radial-gradient(ellipse at 20% 50%, rgba(90,180,160,0.18) 0%, rgba(42,18,69,0.78) 55%, #0a0614 100%); }
     .accent-amber .section-head { background: radial-gradient(ellipse at 20% 50%, rgba(200,132,42,0.18) 0%, rgba(42,18,69,0.78) 55%, #0a0614 100%); }
 
-    .section-head-stars {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-    }
+    .section-head-stars { position: absolute; inset: 0; pointer-events: none; }
 
     .section-icon {
       font-family: 'Cormorant Garamond', serif;
@@ -436,13 +502,64 @@
     .accent-teal  .section-title { color: var(--teal); }
     .accent-amber .section-title { color: var(--amber); }
 
+    /* SECTION BODY: teaser always visible */
     .section-body {
-      padding: 26px 32px 24px;
+      padding: 26px 32px 0;
       background: rgba(10,6,20,0.50);
+    }
+
+    .section-teaser { padding-bottom: 0; }
+
+    /* EXPANDED CONTENT: hidden by default */
+    .section-expanded {
+      display: none;
+      padding-top: 16px;
       display: flex;
       flex-direction: column;
       gap: 16px;
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.4s ease, opacity 0.3s ease;
+      opacity: 0;
     }
+
+    .section-card.open .section-expanded {
+      max-height: 800px;
+      opacity: 1;
+    }
+
+    /* READ MORE BUTTON */
+    .read-more-wrap {
+      padding: 18px 32px 24px;
+      background: rgba(10,6,20,0.50);
+    }
+
+    .read-more-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 7px 18px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      background: transparent;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      cursor: pointer;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .accent-gold  .read-more-btn:hover { border-color: var(--gold);        color: var(--gold); }
+    .accent-rose  .read-more-btn:hover { border-color: var(--rose);        color: var(--rose); }
+    .accent-plum  .read-more-btn:hover { border-color: var(--plum-bright); color: var(--plum-bright); }
+    .accent-teal  .read-more-btn:hover { border-color: var(--teal);        color: var(--teal); }
+    .accent-amber .read-more-btn:hover { border-color: var(--amber);       color: var(--amber); }
+
+    .btn-arrow { font-size: 0.80rem; transition: transform 0.25s; }
+    .section-card.open .btn-arrow { transform: rotate(180deg); }
 
     /* PULL QUOTE */
     .pull {
@@ -457,12 +574,13 @@
       line-height: 1.65;
     }
 
-    .pull.rose-pull  { border-color: var(--rose); background: var(--rose-dim); color: var(--rose); }
-    .pull.teal-pull  { border-color: var(--teal); background: var(--teal-dim); color: var(--teal); }
+    .pull.rose-pull  { border-color: var(--rose);  background: var(--rose-dim);  color: var(--rose); }
+    .pull.teal-pull  { border-color: var(--teal);  background: var(--teal-dim);  color: var(--teal); }
     .pull.amber-pull { border-color: var(--amber); background: var(--amber-dim); color: var(--amber); }
+    .pull.plum-pull  { border-color: var(--plum-bright); background: var(--plum-dim); color: var(--plum-bright); }
 
     /* WATCH FOR LIST */
-    .watch-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .watch-list { list-style: none; display: flex; flex-direction: column; }
 
     .watch-item {
       display: flex;
@@ -476,7 +594,7 @@
     .watch-glyph {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1rem;
-      color: var(--amber);
+      color: var(--plum-bright);
       flex-shrink: 0;
       margin-top: 2px;
       width: 22px;
@@ -492,9 +610,7 @@
     /* ════════════════════════════
        THROUGH-LINE / CLOSING
     ════════════════════════════ */
-    .thread-wrap {
-      padding: 44px 44px 0;
-    }
+    .thread-wrap { padding: 44px 44px 0; }
 
     .thread {
       position: relative;
@@ -506,11 +622,7 @@
       background: radial-gradient(ellipse at 50% 10%, #2a1245 0%, #150a25 45%, #0a0614 100%);
     }
 
-    .thread-stars {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-    }
+    .thread-stars  { position: absolute; inset: 0; pointer-events: none; }
 
     .thread-border {
       position: absolute;
@@ -598,118 +710,6 @@
     }
 
     /* ════════════════════════════
-       STATUS BAR (workplace chrome)
-    ════════════════════════════ */
-    .status-bar {
-      width: 100%;
-      background: rgba(10,6,20,0.96);
-      border-bottom: 1px solid rgba(180,130,210,0.15);
-      padding: 0 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      height: 38px;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      backdrop-filter: blur(8px);
-    }
-
-    .status-left {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-
-    .status-brand {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.62rem;
-      font-weight: 600;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--gold);
-      opacity: 0.80;
-    }
-
-    .status-sep {
-      width: 1px;
-      height: 14px;
-      background: rgba(180,130,210,0.20);
-    }
-
-    .status-week {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.60rem;
-      letter-spacing: 0.14em;
-      color: var(--muted-2);
-      text-transform: uppercase;
-    }
-
-    .status-right {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .live-badge {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      padding: 3px 10px;
-      border-radius: 20px;
-      border: 1px solid rgba(90,180,160,0.28);
-      background: rgba(90,180,160,0.07);
-    }
-
-    .live-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--teal);
-      animation: livepulse 2s ease-in-out infinite;
-    }
-
-    @keyframes livepulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50%       { opacity: 0.4; transform: scale(0.7); }
-    }
-
-    .live-text {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.58rem;
-      font-weight: 600;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--teal);
-    }
-
-    .status-channel {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.60rem;
-      letter-spacing: 0.08em;
-      color: var(--muted-2);
-    }
-
-    /* Timing pills (signal board) */
-    .timing-pill {
-      display: inline-block;
-      padding: 3px 10px;
-      border-radius: 20px;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.58rem;
-      font-weight: 500;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
-
-    .pill-all    { background: rgba(253,246,232,0.06); color: var(--muted-2); border: 1px solid rgba(253,246,232,0.10); }
-    .pill-early  { background: rgba(201,168,76,0.08);  color: var(--gold);    border: 1px solid rgba(201,168,76,0.20); }
-    .pill-mid    { background: rgba(90,180,160,0.08);  color: var(--teal);    border: 1px solid rgba(90,180,160,0.20); }
-    .pill-late   { background: rgba(212,160,181,0.08); color: var(--rose);    border: 1px solid rgba(212,160,181,0.20); }
-
-    /* ════════════════════════════
        MOBILE
     ════════════════════════════ */
     @media (max-width: 680px) {
@@ -724,21 +724,22 @@
       .hero-data { gap: 18px; }
 
       .status-channel { display: none; }
-      .cel-divider   { margin: 32px 18px 0; }
-      .pulse-wrap    { padding: 32px 18px 0; }
-      .pulse-head    { padding: 20px 20px 16px; }
-      .pulse-body    { padding: 20px 20px 18px; }
-      .signal-wrap   { padding: 28px 18px 0; }
-      .section-wrap  { padding: 28px 18px 0; }
-      .thread-wrap   { padding: 28px 18px 0; }
+      .cel-divider  { margin: 32px 18px 0; }
+      .pulse-wrap   { padding: 32px 18px 0; }
+      .pulse-head   { padding: 20px 20px 16px; }
+      .pulse-body   { padding: 20px 20px 18px; }
+      .signal-wrap  { padding: 28px 18px 0; }
+      .section-wrap { padding: 28px 18px 0; }
+      .thread-wrap  { padding: 28px 18px 0; }
 
-      .section-head { padding: 18px 20px 16px; gap: 12px; }
-      .section-title { font-size: 1.4rem; }
-      .section-body { padding: 18px 20px 16px; }
+      .section-head   { padding: 18px 20px 16px; gap: 12px; }
+      .section-title  { font-size: 1.4rem; }
+      .section-body   { padding: 18px 20px 0; }
+      .read-more-wrap { padding: 14px 20px 18px; }
       .pull { font-size: 1rem; padding: 10px 16px; }
 
-      .signal-body { padding: 12px 14px 12px 12px; gap: 10px; }
-      .signal-timing { padding: 12px 14px 12px 0; font-size: 0.58rem; }
+      .signal-body   { padding: 12px 14px 12px 12px; gap: 10px; }
+      .signal-timing { padding: 12px 14px 12px 0; }
       .signal-aspect { font-size: 0.95rem; }
 
       .thread { padding: 36px 22px 32px; }
@@ -766,9 +767,7 @@
   </div>
 </div>
 
-<!-- ════════════════════════════════════
-     HERO
-════════════════════════════════════ -->
+<!-- HERO -->
 <div class="hero">
 
   <svg class="hero-stars" viewBox="0 0 900 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
@@ -783,14 +782,10 @@
     <circle cx="878" cy="272" r="0.8" fill="#fff8ee" opacity="0.36"/>
     <circle cx="44"  cy="420" r="1.1" fill="#fff8ee" opacity="0.28"/>
     <circle cx="858" cy="400" r="0.9" fill="#c9a84c" opacity="0.36"/>
-    <circle cx="435" cy="468" r="0.8" fill="#d4a0b5" opacity="0.32"/>
-    <circle cx="122" cy="176" r="0.8" fill="#fff8ee" opacity="0.26"/>
-    <circle cx="762" cy="158" r="0.9" fill="#c9a84c" opacity="0.30"/>
     <text x="128" y="128" font-size="11" fill="#c9a84c" opacity="0.58" text-anchor="middle" font-family="serif">✦</text>
     <text x="758" y="148" font-size="8"  fill="#fff8ee" opacity="0.40" text-anchor="middle" font-family="serif">✧</text>
     <text x="456" y="20"  font-size="7"  fill="#c9a84c" opacity="0.50" text-anchor="middle" font-family="serif">✦</text>
     <text x="66"  y="370" font-size="8"  fill="#d4a0b5" opacity="0.36" text-anchor="middle" font-family="serif">✦</text>
-    <text x="836" y="358" font-size="7"  fill="#c9a84c" opacity="0.42" text-anchor="middle" font-family="serif">✧</text>
     <circle cx="800" cy="108" r="80" fill="#c9a84c" opacity="0.04"/>
     <circle cx="800" cy="108" r="40" fill="#c9a84c" opacity="0.05"/>
     <circle cx="88"  cy="390" r="90" fill="#9b59b6" opacity="0.06"/>
@@ -805,7 +800,6 @@
   <div class="corner bl">✦</div>
   <div class="corner br">✦</div>
 
-  <!-- Left celestial column -->
   <svg class="hero-col left" width="26" height="420" viewBox="0 0 26 420" xmlns="http://www.w3.org/2000/svg">
     <line x1="13" y1="0" x2="13" y2="420" stroke="#b482d2" stroke-width="0.8" opacity="0.22"/>
     <text x="13" y="50"  text-anchor="middle" font-size="15" fill="#c9a84c" opacity="0.65" font-family="serif">☽</text>
@@ -815,11 +809,9 @@
     <text x="13" y="246" text-anchor="middle" font-size="10" fill="#d4a0b5" opacity="0.50" font-family="serif">✧</text>
     <text x="13" y="298" text-anchor="middle" font-size="15" fill="#fff8ee" opacity="0.28" font-family="serif">☾</text>
     <text x="13" y="350" text-anchor="middle" font-size="10" fill="#c9a84c" opacity="0.44" font-family="serif">✦</text>
-    <circle cx="13" cy="388" r="1.2" fill="#fff8ee" opacity="0.34"/>
     <text x="13" y="412" text-anchor="middle" font-size="11" fill="#c9a84c" opacity="0.40" font-family="serif">☉</text>
   </svg>
 
-  <!-- Right celestial column -->
   <svg class="hero-col right" width="26" height="420" viewBox="0 0 26 420" xmlns="http://www.w3.org/2000/svg">
     <line x1="13" y1="0" x2="13" y2="420" stroke="#b482d2" stroke-width="0.8" opacity="0.22"/>
     <text x="13" y="50"  text-anchor="middle" font-size="10" fill="#fff8ee" opacity="0.44" font-family="serif">✦</text>
@@ -833,7 +825,6 @@
     <text x="13" y="412" text-anchor="middle" font-size="11" fill="#fff8ee" opacity="0.36" font-family="serif">☉</text>
   </svg>
 
-  <!-- Content -->
   <div class="hero-label">Weekly Transit Forecast · #Astroflow-Weekly</div>
   <h1 class="hero-title">Sky at Work</h1>
   <div class="hero-ornament">☽ ✦ ☉ ✦ ☾</div>
@@ -854,16 +845,13 @@
 
 </div>
 
-<!-- ════════════════════════════════════
-     PULSE
-════════════════════════════════════ -->
+<!-- PULSE -->
 <div class="pulse-wrap">
   <div class="pulse-card">
     <div class="pulse-head">
       <svg class="pulse-stars" viewBox="0 0 900 90" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
         <circle cx="820" cy="26" r="0.9" fill="#c9a84c" opacity="0.48"/>
         <circle cx="72"  cy="50" r="0.8" fill="#fff8ee" opacity="0.30"/>
-        <circle cx="540" cy="16" r="0.9" fill="#fff8ee" opacity="0.26"/>
         <text x="838" y="68" font-size="9" fill="#c9a84c" opacity="0.42" text-anchor="middle" font-family="serif">✦</text>
         <circle cx="858" cy="38" r="38" fill="#c9a84c" opacity="0.05"/>
       </svg>
@@ -871,15 +859,13 @@
       <div class="pulse-title">Short week, compressed intensity</div>
     </div>
     <div class="pulse-body">
-      <p>Mars squaring Pluto says drive meets structural resistance all week — not as an obstacle but as information about which walls are load-bearing. Venus squaring both Saturn and Neptune means ease costs more than usual and the idealized version needs grounding. The leverage point: <em>Mercury sextile Saturn exact midweek</em>, a rare window where precision, speed, and staying power all run in the same lane at once.</p>
-      <p>The sky's instructions this week: <strong>write it down</strong>, push with intention, and trust the concept before the argument is fully assembled.</p>
+      <p>Drive meets resistance all week, ease costs a little more than usual, and the clearest window of leverage lands midweek. The sky's instructions: <strong>write it down</strong>, push with intention, trust the idea before you have the full argument ready.</p>
+      <p>No birth charts required for any of this. It's the collective weather: the planetary patterns that everyone is moving through together this week, regardless of when or where they were born.</p>
     </div>
   </div>
 </div>
 
-<!-- ════════════════════════════════════
-     SIGNAL BOARD
-════════════════════════════════════ -->
+<!-- SIGNAL BOARD -->
 <div class="signal-wrap">
   <div class="signal-eyebrow">Aspects at a Glance</div>
   <div class="signal-board">
@@ -890,7 +876,7 @@
         <div class="signal-icon">♂</div>
         <div class="signal-text-block">
           <span class="signal-aspect">Mars □ Pluto Rx</span>
-          <span class="signal-meaning">Drive pressing against entrenched structure — friction is purposeful, not personal</span>
+          <span class="signal-meaning">Drive pressing against deep structure. Friction is purposeful, not personal.</span>
         </div>
       </div>
       <div class="signal-timing"><span class="timing-pill pill-all">All Week</span></div>
@@ -902,7 +888,7 @@
         <div class="signal-icon">♀</div>
         <div class="signal-text-block">
           <span class="signal-aspect">Venus □ Saturn</span>
-          <span class="signal-meaning">Ease costs more than usual — warmth reads genuine but gets examined</span>
+          <span class="signal-meaning">Ease costs more than usual. Warmth reads genuine but gets examined.</span>
         </div>
       </div>
       <div class="signal-timing"><span class="timing-pill pill-all">All Week</span></div>
@@ -914,7 +900,7 @@
         <div class="signal-icon">♀</div>
         <div class="signal-text-block">
           <span class="signal-aspect">Venus □ Neptune</span>
-          <span class="signal-meaning">Vision vs. reality tension — the idealized version needs grounding</span>
+          <span class="signal-meaning">Vision vs. reality tension. The idealized version needs grounding.</span>
         </div>
       </div>
       <div class="signal-timing"><span class="timing-pill pill-all">All Week</span></div>
@@ -926,7 +912,7 @@
         <div class="signal-icon">☉</div>
         <div class="signal-text-block">
           <span class="signal-aspect">Sun ✶ Neptune</span>
-          <span class="signal-meaning">Ideas arrive before the argument is assembled — trust the concept, then build the case</span>
+          <span class="signal-meaning">Ideas arrive before the argument is assembled. Trust the concept, then build the case.</span>
         </div>
       </div>
       <div class="signal-timing"><span class="timing-pill pill-early">Mon – Tue</span></div>
@@ -938,7 +924,7 @@
         <div class="signal-icon">☿</div>
         <div class="signal-text-block">
           <span class="signal-aspect">Mercury ✶ Saturn</span>
-          <span class="signal-meaning">Documentation window — write it down; precision outperforms speed this week</span>
+          <span class="signal-meaning">Best documentation window of the week. Write it down. Precision beats speed.</span>
         </div>
       </div>
       <div class="signal-timing"><span class="timing-pill pill-mid">Tue – Wed</span></div>
@@ -950,7 +936,7 @@
         <div class="signal-icon">♀</div>
         <div class="signal-text-block">
           <span class="signal-aspect">Venus ✶ Mars (separating)</span>
-          <span class="signal-meaning">Collaborative goodwill still in range — the relational ask works through midweek</span>
+          <span class="signal-meaning">Collaborative goodwill still in range. The relational ask works through midweek.</span>
         </div>
       </div>
       <div class="signal-timing"><span class="timing-pill pill-late">Thru Wed</span></div>
@@ -959,22 +945,18 @@
   </div>
 </div>
 
-<!-- ════════════════════════════════════
-     CELESTIAL DIVIDER
-════════════════════════════════════ -->
+<!-- CELESTIAL DIVIDER -->
 <div class="cel-divider">
   <div class="cel-rule left"></div>
   <div class="cel-mark">✦ ✦ ✦</div>
   <div class="cel-rule right"></div>
 </div>
 
-<!-- ════════════════════════════════════
-     SECTION CARDS
-════════════════════════════════════ -->
+<!-- SECTION CARDS -->
 <div class="section-wrap">
 
   <!-- FOR COMMUNICATION -->
-  <div class="section-card accent-teal">
+  <div class="section-card accent-teal" id="card-comms">
     <div class="section-head">
       <svg class="section-head-stars" viewBox="0 0 900 100" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
         <circle cx="820" cy="28" r="0.9" fill="#5ab4a0" opacity="0.42"/>
@@ -984,19 +966,30 @@
       </svg>
       <div class="section-icon">☿</div>
       <div class="section-head-text">
-        <div class="section-eyebrow">Mercury · Writing · Precision</div>
+        <div class="section-eyebrow">Writing · Documentation · Precision</div>
         <div class="section-title">For Communication</div>
       </div>
     </div>
     <div class="section-body">
-      <p>Mercury is in Gemini — its home sign — sitting in a sextile to Saturn in Aries, exact midweek. That combination is unusually favorable for anything that needs to move quickly <em>and</em> hold up under scrutiny: proposals, written follow-ups, contracts, formal documentation. The precision register is open and available.</p>
-      <div class="pull teal-pull">Write it down. Decisions made in conversation but not recorded are likely to get revisited under this sky. Verbal alignment alone won't hold when Saturn is watching.</div>
-      <p>Anything verbally agreed in the last two weeks but not yet formalized — this is the window to close that loop. Best days: Tuesday–Wednesday. Avoid loose async on Monday when the holiday rhythm is still diffusing through the week.</p>
+      <div class="section-teaser">
+        <p>Best writing window of the week falls Tuesday and Wednesday. If something was decided in a meeting but never written down, this is the moment to fix that.</p>
+      </div>
+      <div class="section-expanded">
+        <p>The communication planet (Mercury) is at peak strength this week and links up with the structure planet (Saturn) midweek. In plain terms: anything that needs to both move quickly and hold up over time has a real window Tuesday and Wednesday. Proposals, formal follow-ups, contracts, decisions that need to actually stick.</p>
+        <div class="pull teal-pull">Write it down. Verbal agreements that aren't documented tend to get revisited this week. The paper trail is the point.</div>
+        <p>Best days: Tuesday and Wednesday. Monday is still in holiday-rhythm diffusion mode, so loose async is lower-quality than usual. Don't wait until Thursday: by then the window has tightened.</p>
+      </div>
+    </div>
+    <div class="read-more-wrap">
+      <button class="read-more-btn" onclick="toggleCard('card-comms', this)">
+        <span class="btn-text">Read more</span>
+        <span class="btn-arrow">↓</span>
+      </button>
     </div>
   </div>
 
   <!-- FOR DECISIONS + MOMENTUM -->
-  <div class="section-card accent-amber">
+  <div class="section-card accent-amber" id="card-momentum">
     <div class="section-head">
       <svg class="section-head-stars" viewBox="0 0 900 100" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
         <circle cx="818" cy="30" r="0.9" fill="#c8842a" opacity="0.44"/>
@@ -1006,19 +999,30 @@
       </svg>
       <div class="section-icon">♂</div>
       <div class="section-head-text">
-        <div class="section-eyebrow">Mars · Saturn · Action Window</div>
+        <div class="section-eyebrow">Action · Friction · Forward Moves</div>
         <div class="section-title">For Decisions &amp; Momentum</div>
       </div>
     </div>
     <div class="section-body">
-      <p>Mars in Taurus squaring Pluto Rx in Aquarius is the dominant texture all week. This doesn't stop things from moving — it means whatever you push on will push back, and the resistance tends to be structural rather than personal. That's useful data: <em>if something keeps meeting friction, the question is whether you're pressing against the wrong constraint, or the right one.</em></p>
-      <div class="pull amber-pull">The weeks when drive meets Pluto are often when it becomes clear which things are worth the friction and which aren't.</div>
-      <p>Venus sextile Mars is still in orb from last week, separating but present through Wednesday. The collaborative ask and the action impulse are still reasonably aligned through midweek — if something needs both relational goodwill and forward momentum, earlier in the week carries more fuel. Thursday, when Venus-Saturn tightens, the "not yet" register gets louder.</p>
+      <div class="section-teaser">
+        <p>Expect pushback this week and don't take it personally. The resistance is telling you something useful about where the real obstacles are.</p>
+      </div>
+      <div class="section-expanded">
+        <p>The action planet (Mars) is in a tense angle with Pluto all week. What this looks like in practice: things that should be moving will push back. A proposal hits an unexpected wall. A process doesn't flow the way it usually does. The instinct is to force through it. The better move is to ask what the resistance is pointing at: whether you're hitting the wrong wall or the right one.</p>
+        <div class="pull amber-pull">The weeks when drive meets resistance are often when it becomes clear which things are worth the friction and which aren't.</div>
+        <p>The collaborative window is still open through Wednesday (Venus and Mars are still in a supportive angle from last week). If something needs both goodwill and momentum, earlier in the week has more fuel. By Thursday the "not yet" register gets louder, so don't leave big asks for the end of the week.</p>
+      </div>
+    </div>
+    <div class="read-more-wrap">
+      <button class="read-more-btn" onclick="toggleCard('card-momentum', this)">
+        <span class="btn-text">Read more</span>
+        <span class="btn-arrow">↓</span>
+      </button>
     </div>
   </div>
 
   <!-- FOR COLLABORATION -->
-  <div class="section-card accent-rose">
+  <div class="section-card accent-rose" id="card-collab">
     <div class="section-head">
       <svg class="section-head-stars" viewBox="0 0 900 100" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
         <circle cx="816" cy="30" r="0.9" fill="#d4a0b5" opacity="0.44"/>
@@ -1028,19 +1032,30 @@
       </svg>
       <div class="section-icon">♀</div>
       <div class="section-head-text">
-        <div class="section-eyebrow">Venus · Jupiter · Relational Field</div>
+        <div class="section-eyebrow">Connection · Teamwork · Pitching</div>
         <div class="section-title">For Collaboration</div>
       </div>
     </div>
     <div class="section-body">
-      <p>Venus at 7° Cancer is squaring both Neptune and Saturn this week — the relational field has a <em>prove it</em> quality. Warmth reads as genuine but also gets interrogated. Collaborative pitches built on actual substance land; anything relying primarily on enthusiasm or relationship-credit as its argument will get examined more carefully than it would in a softer week.</p>
-      <div class="pull rose-pull">This isn't a bad week for collaboration — it's a demanding week. The people who've done the work hold the room.</div>
-      <p>The background note: Saturn conjunct Neptune in Aries (ongoing all of 2026) continues to run as structural pressure on big visions. The sky keeps asking what the concrete plan is behind the idea. Teams that can answer that question feel the pressure as useful. Teams that can't feel it as stall.</p>
+      <div class="section-teaser">
+        <p>The room is paying attention this week. Bring substance. Enthusiasm alone won't carry a pitch or a proposal the way it might in a softer week.</p>
+      </div>
+      <div class="section-expanded">
+        <p>The relational planets are in a tense configuration this week, which translates to: people can feel the difference between genuine connection and social performance, and they'll respond to it (consciously or not). Collaborative pitches built on actual substance land. Anything relying primarily on goodwill from last month, or on how well you get along with someone, will get quietly interrogated.</p>
+        <div class="pull rose-pull">This isn't a bad week for collaboration. It's a demanding one. The people who've done the work hold the room.</div>
+        <p>The background pressure all of 2026: the sky keeps asking what the concrete plan is behind the idea. Teams that can answer that question feel the pressure as useful. Teams that can't feel it as stall. This week makes that distinction sharper than usual.</p>
+      </div>
+    </div>
+    <div class="read-more-wrap">
+      <button class="read-more-btn" onclick="toggleCard('card-collab', this)">
+        <span class="btn-text">Read more</span>
+        <span class="btn-arrow">↓</span>
+      </button>
     </div>
   </div>
 
-  <!-- WATCH FOR -->
-  <div class="section-card accent-plum">
+  <!-- WORTH WATCHING -->
+  <div class="section-card accent-plum" id="card-watch">
     <div class="section-head">
       <svg class="section-head-stars" viewBox="0 0 900 100" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
         <circle cx="816" cy="30" r="0.9" fill="#b482d2" opacity="0.42"/>
@@ -1050,42 +1065,49 @@
       </svg>
       <div class="section-icon">✦</div>
       <div class="section-head-text">
-        <div class="section-eyebrow">Tensions · Timing · Watch For</div>
+        <div class="section-eyebrow">Tensions · Timing · Heads Up</div>
         <div class="section-title">Worth Watching</div>
       </div>
     </div>
     <div class="section-body">
-      <ul class="watch-list">
-        <li class="watch-item">
-          <div class="watch-glyph">☌</div>
-          <div class="watch-text"><strong>Mars-Pluto resistance is information.</strong> If a project keeps meeting structural pushback this week, that's not bad luck — it's Pluto telling you which structures are load-bearing. Note which resistances persist after multiple approaches; those are the ones worth understanding, not routing around.</div>
-        </li>
-        <li class="watch-item">
-          <div class="watch-glyph">☽</div>
-          <div class="watch-text"><strong>Short week + high compression.</strong> Four working days after a holiday tend to compress Tuesday's energy. The instinct to catch up Monday-by-proxy on Tuesday usually produces rushed decisions that Thursday has to unwind. Set the pace deliberately rather than catching up to a phantom Monday.</div>
-        </li>
-        <li class="watch-item">
-          <div class="watch-glyph">☿</div>
-          <div class="watch-text"><strong>Documentation window is exact midweek.</strong> Mercury sextile Saturn peaks Tuesday–Wednesday. Anything important verbally agreed recently but not yet formalized — this is the window. Don't let it pass.</div>
-        </li>
-      </ul>
+      <div class="section-teaser">
+        <p>Three things to keep in mind this week.</p>
+      </div>
+      <div class="section-expanded">
+        <ul class="watch-list">
+          <li class="watch-item">
+            <div class="watch-glyph">✦</div>
+            <div class="watch-text"><strong>Friction is information.</strong> If a project keeps hitting walls this week, treat it as data rather than bad luck. Ask what the resistance is telling you about the structure of the problem, rather than just looking for a way around it.</div>
+          </li>
+          <li class="watch-item">
+            <div class="watch-glyph">✦</div>
+            <div class="watch-text"><strong>Tuesday runs hot.</strong> Four working days after a holiday compresses. The urge to make Tuesday feel like a catch-up Monday usually produces rushed calls that Thursday has to unwind. Set a deliberate pace early.</div>
+          </li>
+          <li class="watch-item">
+            <div class="watch-glyph">✦</div>
+            <div class="watch-text"><strong>Close open loops in writing.</strong> If something got decided verbally in the last two weeks but never formally documented, this week (especially Tuesday and Wednesday) is the ideal window to make it official.</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="read-more-wrap">
+      <button class="read-more-btn" onclick="toggleCard('card-watch', this)">
+        <span class="btn-text">Read more</span>
+        <span class="btn-arrow">↓</span>
+      </button>
     </div>
   </div>
 
 </div>
 
-<!-- ════════════════════════════════════
-     CELESTIAL DIVIDER
-════════════════════════════════════ -->
+<!-- CELESTIAL DIVIDER -->
 <div class="cel-divider">
   <div class="cel-rule left"></div>
   <div class="cel-mark">✦ ✦ ✦</div>
   <div class="cel-rule right"></div>
 </div>
 
-<!-- ════════════════════════════════════
-     THROUGH-LINE / CLOSING
-════════════════════════════════════ -->
+<!-- THROUGH-LINE -->
 <div class="thread-wrap">
   <div class="thread">
 
@@ -1100,7 +1122,6 @@
       <circle cx="872" cy="220" r="0.8" fill="#fff8ee" opacity="0.30"/>
       <text x="128" y="114" font-size="11" fill="#c9a84c" opacity="0.50" text-anchor="middle" font-family="serif">✦</text>
       <text x="766" y="132" font-size="8"  fill="#fff8ee" opacity="0.34" text-anchor="middle" font-family="serif">✧</text>
-      <text x="455" y="16"  font-size="7"  fill="#c9a84c" opacity="0.44" text-anchor="middle" font-family="serif">✦</text>
       <circle cx="800" cy="106" r="76" fill="#c9a84c" opacity="0.04"/>
       <circle cx="88"  cy="228" r="68" fill="#9b59b6" opacity="0.06"/>
     </svg>
@@ -1109,20 +1130,50 @@
 
     <span class="thread-ornament">✦ ✦ ✦</span>
     <h2 class="thread-title">Transit-to-Transit Only</h2>
-    <p>No birth charts used in this forecast. Everything here is collective weather — the sky everyone is standing under this week, regardless of when or where they were born. The aspects describe conditions and terrain. What you build in them is yours.</p>
+    <p>No birth charts used. This is the collective sky: planetary patterns everyone is moving through this week, regardless of when or where they were born. The aspects describe the conditions. What you build in them is yours.</p>
     <a class="thread-link" href="https://jordanb1993.github.io/astro-readings/readings/sky-at-work.html">✦ &nbsp; Permalink to this forecast</a>
     <div class="thread-close">✦ &nbsp; Sky at Work · Week of May 25–31, 2026 · #Astroflow-Weekly</div>
 
   </div>
 </div>
 
-<!-- ════════════════════════════════════
-     FOOTER
-════════════════════════════════════ -->
+<!-- FOOTER -->
 <div class="footer">
   Transit-to-transit aspects only · No natal charts used · Collective weather for the week<br>
   jordanb1993.github.io/astro-readings/readings/sky-at-work.html
 </div>
+
+<script>
+  function toggleCard(id, btn) {
+    const card = document.getElementById(id);
+    const expanded = card.querySelector('.section-expanded');
+    const isOpen = card.classList.contains('open');
+
+    if (isOpen) {
+      card.classList.remove('open');
+      expanded.style.maxHeight = '0';
+      expanded.style.opacity = '0';
+      btn.querySelector('.btn-text').textContent = 'Read more';
+    } else {
+      card.classList.add('open');
+      expanded.style.maxHeight = expanded.scrollHeight + 'px';
+      expanded.style.opacity = '1';
+      btn.querySelector('.btn-text').textContent = 'Show less';
+    }
+  }
+
+  // Override CSS default display:flex on expanded so it starts hidden
+  document.querySelectorAll('.section-expanded').forEach(el => {
+    el.style.display = 'flex';
+    el.style.flexDirection = 'column';
+    el.style.gap = '16px';
+    el.style.overflow = 'hidden';
+    el.style.maxHeight = '0';
+    el.style.opacity = '0';
+    el.style.transition = 'max-height 0.4s ease, opacity 0.3s ease';
+    el.style.paddingTop = '0';
+  });
+</script>
 
 </body>
 </html>
