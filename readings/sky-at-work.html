@@ -4,583 +4,1125 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sky at Work — Week of May 25</title>
-  <link href="https://fonts.googleapis.com/css2?family=VT323&family=Press+Start+2P&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --bg:             #05061a;
-      --surface:        #0a0c22;
-      --surface2:       #080919;
-      --border:         #1e1c44;
-      --border-hi:      #5540a0;
-      --text:           #d8caf0;
-      --dim:            #4a4070;
-      --gold:           #c89a2a;
-      --gold-hi:        #e8c040;
-      --gold-glow:      rgba(200,154,42,0.2);
-      --amethyst:       #8a5cb8;
-      --amethyst-glow:  rgba(138,92,184,0.18);
-      --teal:           #2a9080;
-      --teal-glow:      rgba(42,144,128,0.16);
-      --rose:           #b84070;
-      --rose-glow:      rgba(184,64,112,0.18);
-      --amber:          #d08030;
-      --amber-glow:     rgba(208,128,48,0.18);
-      --moon:           #7888cc;
-      --blue:           #3868c8;
-      --blue-glow:      rgba(56,104,200,0.16);
+      --bg:           #0a0614;
+      --surface:      #150a25;
+      --surface-2:    #1e1038;
+      --gold:         #c9a84c;
+      --gold-dim:     rgba(201,168,76,0.11);
+      --gold-mid:     rgba(201,168,76,0.28);
+      --gold-bright:  rgba(201,168,76,0.65);
+      --rose:         #d4a0b5;
+      --rose-dim:     rgba(212,160,181,0.11);
+      --rose-mid:     rgba(212,160,181,0.28);
+      --plum:         #7b4fa6;
+      --plum-dim:     rgba(123,79,166,0.20);
+      --plum-mid:     rgba(123,79,166,0.35);
+      --plum-bright:  #b482d2;
+      --teal:         #5ab4a0;
+      --teal-dim:     rgba(90,180,160,0.12);
+      --teal-mid:     rgba(90,180,160,0.28);
+      --amber:        #c8842a;
+      --amber-dim:    rgba(200,132,42,0.11);
+      --amber-mid:    rgba(200,132,42,0.26);
+      --text:         #fdf6e8;
+      --muted:        rgba(253,246,232,0.58);
+      --muted-2:      rgba(253,246,232,0.30);
+      --border:       rgba(180,130,210,0.18);
     }
 
-    /* scanlines */
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background: repeating-linear-gradient(
-        to bottom,
-        transparent 0px, transparent 3px,
-        rgba(0,0,0,0.08) 3px, rgba(0,0,0,0.08) 4px
-      );
-      pointer-events: none;
-      z-index: 9998;
-    }
+    html { background: var(--bg); color: var(--text); }
 
     body {
-      background-color: var(--bg);
-      background-image:
-        radial-gradient(ellipse at 15% 10%, rgba(60,28,140,0.28) 0%, transparent 50%),
-        radial-gradient(ellipse at 85% 20%, rgba(130,30,70,0.16) 0%, transparent 45%),
-        radial-gradient(ellipse at 50% 90%, rgba(20,50,140,0.2) 0%, transparent 50%),
-        radial-gradient(ellipse at 5% 85%, rgba(50,20,100,0.16) 0%, transparent 40%);
-      color: var(--text);
-      font-family: 'VT323', monospace;
-      font-size: 20px;
-      min-height: 100vh;
-      padding: 24px 16px 72px;
-      position: relative;
-    }
-
-    #starfield {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 0;
-      overflow: hidden;
-    }
-
-    @keyframes twinkle {
-      0%, 100% { opacity: 0.15; transform: scale(0.85); }
-      50%       { opacity: 0.9;  transform: scale(1.2);  }
-    }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(14px); }
-      to   { opacity: 1; transform: translateY(0);    }
-    }
-
-    @keyframes pulseGlow {
-      0%, 100% { box-shadow: 0 0 20px rgba(200,154,42,0.12), 0 0 60px rgba(80,50,160,0.08); }
-      50%       { box-shadow: 0 0 36px rgba(200,154,42,0.22), 0 0 80px rgba(80,50,160,0.14); }
-    }
-
-    /* WINDOW CHROME */
-    .window {
-      position: relative;
-      z-index: 1;
-      max-width: 860px;
+      max-width: 900px;
       margin: 0 auto;
-      border: 2px solid var(--border-hi);
-      animation: pulseGlow 6s ease-in-out infinite;
-    }
-
-    .titlebar {
-      background: linear-gradient(90deg,
-        #100a30 0%, #3a1870 30%, #701840 60%, #100a30 100%);
-      padding: 5px 8px 5px 10px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      user-select: none;
-      gap: 8px;
-    }
-
-    .titlebar-label {
-      font-family: 'Press Start 2P', monospace;
-      font-size: 7px;
-      color: #f0e0b8;
-      letter-spacing: 1.5px;
-      text-shadow: 0 1px 4px rgba(0,0,0,0.8);
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .titlebar-btns { display: flex; gap: 3px; flex-shrink: 0; }
-
-    .tbtn {
-      width: 18px; height: 15px;
-      background: #c0c0c0;
-      box-shadow: inset -1px -1px #6a6a6a, inset 1px 1px #ffffff;
-      font-size: 10px;
-      font-family: 'VT323', monospace;
-      color: #000;
-      display: flex; align-items: center; justify-content: center;
-      cursor: default; border: none;
-    }
-
-    /* MAIN CONTENT */
-    .content {
+      padding: 0;
       background: var(--bg);
-      padding: 36px 44px 48px;
+      font-family: 'Inter', sans-serif;
     }
 
-    /* HERO */
-    .hero-tag {
-      font-family: 'Press Start 2P', monospace;
-      font-size: 7px;
-      color: var(--gold);
-      letter-spacing: 3px;
-      text-shadow: 0 0 12px var(--gold-glow);
-      margin-bottom: 10px;
-      animation: fadeUp 0.6s ease both;
+    h1, h2, h3, h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      letter-spacing: 0.03em;
     }
-
-    h1 {
-      font-family: 'VT323', monospace;
-      font-size: 72px;
-      color: var(--gold-hi);
-      text-shadow: 0 0 30px var(--gold-glow), 0 0 70px rgba(200,154,42,0.1);
-      line-height: 0.95;
-      margin-bottom: 10px;
-      animation: fadeUp 0.7s ease both;
-      letter-spacing: 2px;
-    }
-
-    .hero-week {
-      font-size: 24px;
-      color: var(--amethyst);
-      letter-spacing: 4px;
-      margin-bottom: 6px;
-      animation: fadeUp 0.8s ease both;
-    }
-
-    .hero-sub {
-      color: var(--dim);
-      font-size: 17px;
-      letter-spacing: 2.5px;
-      margin-bottom: 32px;
-      animation: fadeUp 0.9s ease both;
-    }
-
-    /* DIVIDER */
-    .divider {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin: 26px 0;
-    }
-
-    .divider::before,
-    .divider::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--border-hi), transparent);
-    }
-
-    .divider-inner {
-      font-size: 18px;
-      color: var(--gold);
-      letter-spacing: 10px;
-      text-shadow: 0 0 10px var(--gold-glow);
-      white-space: nowrap;
-    }
-
-    /* PULSE (headline) */
-    .pulse {
-      background: #09091e;
-      border-left: 3px solid var(--gold);
-      box-shadow: -6px 0 24px var(--gold-glow), inset 0 0 40px rgba(200,154,42,0.03);
-      padding: 22px 26px;
-      margin-bottom: 26px;
-      animation: fadeUp 1s ease both;
-    }
-
-    .section-eyebrow {
-      font-family: 'Press Start 2P', monospace;
-      font-size: 7px;
-      letter-spacing: 2px;
-      margin-bottom: 14px;
-      text-shadow: 0 0 10px currentColor;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .pulse .section-eyebrow { color: var(--gold); }
-    .comms .section-eyebrow { color: var(--teal); }
-    .momentum .section-eyebrow { color: var(--amethyst); }
-    .collab .section-eyebrow { color: var(--rose); }
-    .watchfor .section-eyebrow { color: var(--amber); }
 
     p {
-      line-height: 1.62;
-      margin-bottom: 10px;
-      font-size: 20px;
+      line-height: 1.82;
+      color: var(--muted);
+      font-size: 0.94rem;
     }
-    p:last-child { margin-bottom: 0; }
 
-    em     { color: var(--gold-hi); font-style: normal; }
-    strong { color: var(--amethyst); }
+    strong { color: var(--rose); font-weight: 600; }
+    em { color: rgba(253,246,232,0.82); font-style: italic; }
 
-    /* SIGNAL BOARD */
-    .signal-board {
-      background: var(--surface2);
-      border: 1px solid var(--border);
-      border-top: 2px solid var(--gold);
-      margin-bottom: 26px;
+    /* ════════════════════════════
+       HERO
+    ════════════════════════════ */
+    .hero {
+      position: relative;
+      width: 100%;
+      padding: 88px 70px 80px;
+      text-align: center;
       overflow: hidden;
-      animation: fadeUp 1.1s ease both;
+      background: radial-gradient(ellipse at 40% 28%, #2a1245 0%, #150a25 42%, #0a0614 100%);
     }
 
-    .signal-header {
-      padding: 12px 18px 10px;
+    .hero-stars {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    .hero-border-outer {
+      position: absolute;
+      top: 22px; left: 22px; right: 22px; bottom: 22px;
+      border: 1px solid rgba(180,130,210,0.30);
+      pointer-events: none;
+    }
+
+    .hero-border-inner {
+      position: absolute;
+      top: 32px; left: 32px; right: 32px; bottom: 32px;
+      border: 1px solid rgba(180,130,210,0.13);
+      pointer-events: none;
+    }
+
+    .corner {
+      position: absolute;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 17px;
+      color: var(--gold);
+      opacity: 0.78;
+    }
+    .corner.tl { top: 12px; left: 12px; }
+    .corner.tr { top: 12px; right: 12px; }
+    .corner.bl { bottom: 12px; left: 12px; }
+    .corner.br { bottom: 12px; right: 12px; }
+
+    .hero-col {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
+    .hero-col.left  { left: 44px; }
+    .hero-col.right { right: 44px; }
+
+    .hero-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.34em;
+      text-transform: uppercase;
+      color: var(--rose);
+      opacity: 0.72;
+      margin-bottom: 24px;
+      position: relative;
+    }
+
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(52px, 9vw, 96px);
+      font-weight: 300;
+      line-height: 0.96;
+      color: var(--text);
+      letter-spacing: 0.06em;
+      margin-bottom: 18px;
+      position: relative;
+    }
+
+    .hero-ornament {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      letter-spacing: 0.55em;
+      color: var(--gold);
+      opacity: 0.55;
+      margin-bottom: 30px;
+      position: relative;
+      padding-left: 0.55em;
+    }
+
+    .hero-data {
+      display: flex;
+      justify-content: center;
+      gap: 36px;
+      flex-wrap: wrap;
+      position: relative;
+    }
+
+    .hero-datum-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.60rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--muted-2);
+      margin-bottom: 5px;
+    }
+
+    .hero-datum-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      color: var(--gold);
+      letter-spacing: 0.06em;
+    }
+
+    /* ════════════════════════════
+       CELESTIAL DIVIDER
+    ════════════════════════════ */
+    .cel-divider {
       display: flex;
       align-items: center;
-      gap: 10px;
-      border-bottom: 1px solid var(--border);
+      gap: 14px;
+      margin: 52px 44px 0;
     }
 
-    .signal-header-text {
-      font-family: 'Press Start 2P', monospace;
-      font-size: 7px;
+    .cel-rule {
+      flex: 1;
+      height: 1px;
+    }
+    .cel-rule.left  { background: linear-gradient(90deg, transparent, var(--gold-mid)); }
+    .cel-rule.right { background: linear-gradient(90deg, var(--gold-mid), transparent); }
+
+    .cel-mark {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.55em;
       color: var(--gold);
-      letter-spacing: 2px;
-      text-shadow: 0 0 8px var(--gold-glow);
+      opacity: 0.50;
+      padding-left: 0.55em;
+    }
+
+    /* ════════════════════════════
+       PULSE — WEEKLY HEADLINE
+    ════════════════════════════ */
+    .pulse-wrap {
+      padding: 44px 44px 0;
+    }
+
+    .pulse-card {
+      background: radial-gradient(ellipse at 20% 50%, rgba(201,168,76,0.14) 0%, rgba(21,10,37,0.85) 55%, #0a0614 100%);
+      border: 1px solid rgba(201,168,76,0.22);
+      border-top: 2px solid var(--gold);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .pulse-head {
+      position: relative;
+      padding: 28px 32px 24px;
+      border-bottom: 1px solid rgba(201,168,76,0.14);
+      overflow: hidden;
+    }
+
+    .pulse-stars {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    .pulse-eyebrow {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.60rem;
+      font-weight: 600;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: rgba(201,168,76,0.65);
+      margin-bottom: 10px;
+      position: relative;
+    }
+
+    .pulse-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.65rem;
+      font-weight: 400;
+      color: var(--gold);
+      letter-spacing: 0.03em;
+      position: relative;
+    }
+
+    .pulse-body {
+      padding: 26px 32px 24px;
+      background: rgba(10,6,20,0.45);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    /* ════════════════════════════
+       SIGNAL BOARD
+    ════════════════════════════ */
+    .signal-wrap {
+      padding: 36px 44px 0;
+    }
+
+    .signal-eyebrow {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.60rem;
+      font-weight: 600;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--gold-mid);
+    }
+
+    .signal-board {
+      background: radial-gradient(ellipse at 50% 0%, rgba(42,18,69,0.55) 0%, rgba(21,10,37,0.70) 100%);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
     }
 
     .signal-row {
       display: grid;
-      grid-template-columns: 4px 40px 90px 1fr;
-      align-items: center;
-      gap: 0 14px;
-      padding: 12px 18px 12px 0;
-      border-bottom: 1px solid rgba(30,28,68,0.8);
-      transition: background 0.2s;
+      grid-template-columns: 3px 1fr auto;
+      align-items: stretch;
+      border-bottom: 1px solid rgba(253,246,232,0.04);
     }
     .signal-row:last-child { border-bottom: none; }
-    .signal-row:hover { background: rgba(255,255,255,0.02); }
+    .signal-row:nth-child(even) { background: rgba(253,246,232,0.020); }
 
-    .signal-stripe { height: 100%; align-self: stretch; }
-    .signal-emoji { font-size: 20px; text-align: center; padding-left: 14px; }
-    .signal-timing {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 11px;
-      color: var(--dim);
-      white-space: nowrap;
-      letter-spacing: 0.5px;
-    }
-    .signal-text { font-size: 19px; line-height: 1.4; }
-    .signal-aspect { display: block; color: var(--gold-hi); margin-bottom: 2px; font-size: 20px; }
-    .signal-meaning { display: block; color: var(--text); font-size: 18px; opacity: 0.85; }
+    .signal-stripe { width: 3px; align-self: stretch; flex-shrink: 0; }
+    .stripe-gold    { background: var(--gold); }
+    .stripe-rose    { background: var(--rose); }
+    .stripe-plum    { background: var(--plum-bright); }
+    .stripe-teal    { background: var(--teal); }
+    .stripe-amber   { background: var(--amber); }
+    .stripe-muted   { background: rgba(180,130,210,0.35); }
 
-    /* friction = amber/red */
-    .row-friction .signal-stripe { background: var(--amber); }
-    .row-friction .signal-aspect  { color: #e8a050; }
-
-    /* structure = blue-grey */
-    .row-structure .signal-stripe { background: var(--moon); }
-    .row-structure .signal-aspect  { color: #9aabdd; }
-
-    /* fog/vision = teal */
-    .row-fog .signal-stripe { background: var(--teal); }
-    .row-fog .signal-aspect  { color: #50c0a8; }
-
-    /* precision = amethyst */
-    .row-precision .signal-stripe { background: var(--amethyst); }
-    .row-precision .signal-aspect  { color: #b080e0; }
-
-    /* intuition = gold */
-    .row-intuition .signal-stripe { background: var(--gold); }
-    .row-intuition .signal-aspect  { color: var(--gold-hi); }
-
-    /* collab = rose */
-    .row-collab .signal-stripe { background: var(--rose); }
-    .row-collab .signal-aspect  { color: #e080a8; }
-
-    /* CONTENT SECTIONS */
-    .section-card {
-      padding: 22px 26px;
-      margin-bottom: 18px;
-      animation: fadeUp 1.2s ease both;
-    }
-
-    .comms    { background: #070f14; border-left: 3px solid var(--teal);     box-shadow: -6px 0 20px var(--teal-glow);     }
-    .momentum { background: #0a0716; border-left: 3px solid var(--amethyst); box-shadow: -6px 0 20px var(--amethyst-glow); }
-    .collab   { background: #110710; border-left: 3px solid var(--rose);     box-shadow: -6px 0 20px var(--rose-glow);     }
-    .watchfor { background: #110a06; border-left: 3px solid var(--amber);    box-shadow: -6px 0 20px var(--amber-glow);    }
-
-    /* WATCH FOR bullets */
-    .watch-list { list-style: none; padding: 0; }
-    .watch-list li {
-      padding: 10px 0 10px 0;
-      border-bottom: 1px dotted rgba(208,128,48,0.18);
-      font-size: 19px;
-      line-height: 1.52;
+    .signal-body {
+      padding: 14px 18px 14px 16px;
       display: flex;
-      gap: 10px;
-    }
-    .watch-list li:last-child { border-bottom: none; padding-bottom: 0; }
-    .watch-bullet {
-      color: var(--amber);
-      flex-shrink: 0;
-      font-size: 18px;
-      margin-top: 2px;
+      align-items: flex-start;
+      gap: 14px;
     }
 
-    /* FOOTER */
-    .footer-block {
-      margin-top: 30px;
-      padding-top: 22px;
-      border-top: 1px solid var(--border);
+    .signal-icon {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      color: var(--gold);
+      flex-shrink: 0;
+      width: 26px;
+      text-align: center;
+      padding-top: 1px;
+    }
+
+    .signal-text-block { flex: 1; }
+
+    .signal-aspect {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.02rem;
+      color: var(--text);
+      display: block;
+      margin-bottom: 3px;
+      line-height: 1.3;
+      letter-spacing: 0.02em;
+    }
+
+    .signal-meaning {
+      font-size: 0.82rem;
+      color: var(--muted);
+      display: block;
+      line-height: 1.5;
+    }
+
+    .signal-timing {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.62rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted-2);
+      white-space: nowrap;
+      padding: 14px 18px 14px 0;
+      align-self: center;
+    }
+
+    /* ════════════════════════════
+       SECTION CARDS
+    ════════════════════════════ */
+    .section-wrap {
+      padding: 44px 44px 0;
+    }
+
+    .section-card {
+      margin-bottom: 24px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .section-card:last-child { margin-bottom: 0; }
+
+    .section-card::before {
+      content: '';
+      display: block;
+      height: 2px;
+    }
+    .accent-gold::before  { background: linear-gradient(90deg, transparent 0%, var(--gold) 40%, var(--gold) 60%, transparent 100%); }
+    .accent-rose::before  { background: linear-gradient(90deg, transparent 0%, var(--rose) 40%, var(--rose) 60%, transparent 100%); }
+    .accent-plum::before  { background: linear-gradient(90deg, transparent 0%, var(--plum-bright) 40%, var(--plum-bright) 60%, transparent 100%); }
+    .accent-teal::before  { background: linear-gradient(90deg, transparent 0%, var(--teal) 40%, var(--teal) 60%, transparent 100%); }
+    .accent-amber::before { background: linear-gradient(90deg, transparent 0%, var(--amber) 40%, var(--amber) 60%, transparent 100%); }
+
+    .section-head {
+      position: relative;
+      padding: 24px 32px 20px;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .accent-gold .section-head  { background: radial-gradient(ellipse at 20% 50%, rgba(201,168,76,0.18) 0%, rgba(42,18,69,0.78) 55%, #0a0614 100%); }
+    .accent-rose .section-head  { background: radial-gradient(ellipse at 20% 50%, rgba(212,160,181,0.16) 0%, rgba(42,18,69,0.78) 55%, #0a0614 100%); }
+    .accent-plum .section-head  { background: radial-gradient(ellipse at 20% 50%, rgba(123,79,166,0.22) 0%, rgba(42,18,69,0.78) 55%, #0a0614 100%); }
+    .accent-teal .section-head  { background: radial-gradient(ellipse at 20% 50%, rgba(90,180,160,0.18) 0%, rgba(42,18,69,0.78) 55%, #0a0614 100%); }
+    .accent-amber .section-head { background: radial-gradient(ellipse at 20% 50%, rgba(200,132,42,0.18) 0%, rgba(42,18,69,0.78) 55%, #0a0614 100%); }
+
+    .section-head-stars {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    .section-icon {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.1rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+      position: relative;
+      line-height: 1;
+    }
+    .accent-gold  .section-icon { color: var(--gold); }
+    .accent-rose  .section-icon { color: var(--rose); }
+    .accent-plum  .section-icon { color: var(--plum-bright); }
+    .accent-teal  .section-icon { color: var(--teal); }
+    .accent-amber .section-icon { color: var(--amber); }
+
+    .section-head-text { flex: 1; position: relative; }
+
+    .section-eyebrow {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.60rem;
+      font-weight: 600;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .accent-gold  .section-eyebrow { color: rgba(201,168,76,0.65); }
+    .accent-rose  .section-eyebrow { color: rgba(212,160,181,0.65); }
+    .accent-plum  .section-eyebrow { color: rgba(180,130,210,0.65); }
+    .accent-teal  .section-eyebrow { color: rgba(90,180,160,0.65); }
+    .accent-amber .section-eyebrow { color: rgba(200,132,42,0.65); }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.65rem;
+      font-weight: 400;
+      line-height: 1.15;
+      letter-spacing: 0.03em;
+    }
+    .accent-gold  .section-title { color: var(--gold); }
+    .accent-rose  .section-title { color: var(--rose); }
+    .accent-plum  .section-title { color: var(--plum-bright); }
+    .accent-teal  .section-title { color: var(--teal); }
+    .accent-amber .section-title { color: var(--amber); }
+
+    .section-body {
+      padding: 26px 32px 24px;
+      background: rgba(10,6,20,0.50);
       display: flex;
       flex-direction: column;
-      align-items: center;
-      gap: 10px;
+      gap: 16px;
+    }
+
+    /* PULL QUOTE */
+    .pull {
+      border-left: 2px solid var(--gold);
+      padding: 11px 22px;
+      background: var(--gold-dim);
+      border-radius: 0 6px 6px 0;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.10rem;
+      color: var(--gold);
+      line-height: 1.65;
+    }
+
+    .pull.rose-pull  { border-color: var(--rose); background: var(--rose-dim); color: var(--rose); }
+    .pull.teal-pull  { border-color: var(--teal); background: var(--teal-dim); color: var(--teal); }
+    .pull.amber-pull { border-color: var(--amber); background: var(--amber-dim); color: var(--amber); }
+
+    /* WATCH FOR LIST */
+    .watch-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+
+    .watch-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(253,246,232,0.05);
+    }
+    .watch-item:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .watch-glyph {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      color: var(--amber);
+      flex-shrink: 0;
+      margin-top: 2px;
+      width: 22px;
       text-align: center;
     }
 
-    .footer-glyph {
-      font-size: 24px;
+    .watch-text {
+      font-size: 0.91rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    /* ════════════════════════════
+       THROUGH-LINE / CLOSING
+    ════════════════════════════ */
+    .thread-wrap {
+      padding: 44px 44px 0;
+    }
+
+    .thread {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(180,130,210,0.22);
+      border-radius: 12px;
+      padding: 52px 52px 48px;
+      text-align: center;
+      background: radial-gradient(ellipse at 50% 10%, #2a1245 0%, #150a25 45%, #0a0614 100%);
+    }
+
+    .thread-stars {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    .thread-border {
+      position: absolute;
+      top: 16px; left: 16px; right: 16px; bottom: 16px;
+      border: 1px solid rgba(180,130,210,0.10);
+      pointer-events: none;
+    }
+
+    .thread-ornament {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      letter-spacing: 0.55em;
       color: var(--gold);
-      letter-spacing: 12px;
-      text-shadow: 0 0 12px var(--gold-glow);
+      opacity: 0.52;
+      display: block;
+      margin-bottom: 24px;
+      padding-left: 0.55em;
+      position: relative;
     }
 
-    .footer-disclaimer {
-      font-size: 15px;
-      color: var(--dim);
-      letter-spacing: 2px;
-      line-height: 1.6;
+    .thread-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.85rem;
+      font-weight: 300;
+      color: var(--text);
+      letter-spacing: 0.04em;
+      margin-bottom: 22px;
+      position: relative;
     }
 
-    .footer-permalink {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 11px;
-      color: var(--border-hi);
-      letter-spacing: 0.5px;
-      opacity: 0.7;
+    .thread p {
+      max-width: 600px;
+      margin: 0 auto 14px;
+      font-size: 0.92rem;
+      line-height: 1.85;
+      color: var(--muted);
+      position: relative;
     }
 
-    /* MOBILE */
-    @media (max-width: 600px) {
-      body { padding: 12px 8px 56px; }
-      .content { padding: 24px 20px 36px; }
-      h1 { font-size: 52px; }
-      .hero-week { font-size: 18px; letter-spacing: 2px; }
-      .signal-row {
-        grid-template-columns: 4px 32px 72px 1fr;
-        gap: 0 10px;
-        padding: 10px 12px 10px 0;
-      }
-      .signal-emoji { padding-left: 10px; font-size: 17px; }
-      .signal-timing { font-size: 10px; }
-      .signal-aspect { font-size: 17px; }
-      .signal-meaning { font-size: 15px; }
-      .pulse, .section-card { padding: 18px 16px; }
-      .section-eyebrow { font-size: 6px; }
-      p { font-size: 18px; }
-      .titlebar-label { font-size: 6px; letter-spacing: 0.5px; }
+    .thread-link {
+      display: inline-block;
+      margin-top: 26px;
+      padding: 11px 26px;
+      background: radial-gradient(ellipse at 30% 50%, #2a1245 0%, #150a25 100%);
+      border: 1px solid rgba(201,168,76,0.45);
+      border-radius: 40px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-decoration: none;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.4);
+      position: relative;
+      transition: border-color 0.2s, box-shadow 0.2s;
     }
+
+    .thread-link:hover {
+      border-color: rgba(201,168,76,0.75);
+      box-shadow: 0 4px 32px rgba(0,0,0,0.5), 0 0 20px rgba(201,168,76,0.10);
+    }
+
+    .thread-close {
+      margin-top: 32px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.60rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--muted-2);
+      position: relative;
+    }
+
+    /* ════════════════════════════
+       FOOTER
+    ════════════════════════════ */
+    .footer {
+      text-align: center;
+      padding: 44px 44px 60px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.68rem;
+      color: var(--muted-2);
+      letter-spacing: 0.10em;
+      line-height: 1.9;
+    }
+
+    /* ════════════════════════════
+       STATUS BAR (workplace chrome)
+    ════════════════════════════ */
+    .status-bar {
+      width: 100%;
+      background: rgba(10,6,20,0.96);
+      border-bottom: 1px solid rgba(180,130,210,0.15);
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      height: 38px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(8px);
+    }
+
+    .status-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .status-brand {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      opacity: 0.80;
+    }
+
+    .status-sep {
+      width: 1px;
+      height: 14px;
+      background: rgba(180,130,210,0.20);
+    }
+
+    .status-week {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.60rem;
+      letter-spacing: 0.14em;
+      color: var(--muted-2);
+      text-transform: uppercase;
+    }
+
+    .status-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .live-badge {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 3px 10px;
+      border-radius: 20px;
+      border: 1px solid rgba(90,180,160,0.28);
+      background: rgba(90,180,160,0.07);
+    }
+
+    .live-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--teal);
+      animation: livepulse 2s ease-in-out infinite;
+    }
+
+    @keyframes livepulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%       { opacity: 0.4; transform: scale(0.7); }
+    }
+
+    .live-text {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.58rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--teal);
+    }
+
+    .status-channel {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.60rem;
+      letter-spacing: 0.08em;
+      color: var(--muted-2);
+    }
+
+    /* Timing pills (signal board) */
+    .timing-pill {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.58rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .pill-all    { background: rgba(253,246,232,0.06); color: var(--muted-2); border: 1px solid rgba(253,246,232,0.10); }
+    .pill-early  { background: rgba(201,168,76,0.08);  color: var(--gold);    border: 1px solid rgba(201,168,76,0.20); }
+    .pill-mid    { background: rgba(90,180,160,0.08);  color: var(--teal);    border: 1px solid rgba(90,180,160,0.20); }
+    .pill-late   { background: rgba(212,160,181,0.08); color: var(--rose);    border: 1px solid rgba(212,160,181,0.20); }
+
+    /* ════════════════════════════
+       MOBILE
+    ════════════════════════════ */
+    @media (max-width: 680px) {
+
+      p { font-size: 1rem; line-height: 1.78; }
+
+      .hero { padding: 58px 22px 50px; }
+      .hero-col { display: none; }
+      .hero-border-outer { top: 14px; left: 14px; right: 14px; bottom: 14px; }
+      .hero-border-inner { top: 22px; left: 22px; right: 22px; bottom: 22px; }
+      .hero-title { font-size: clamp(40px, 11vw, 62px); }
+      .hero-data { gap: 18px; }
+
+      .status-channel { display: none; }
+      .cel-divider   { margin: 32px 18px 0; }
+      .pulse-wrap    { padding: 32px 18px 0; }
+      .pulse-head    { padding: 20px 20px 16px; }
+      .pulse-body    { padding: 20px 20px 18px; }
+      .signal-wrap   { padding: 28px 18px 0; }
+      .section-wrap  { padding: 28px 18px 0; }
+      .thread-wrap   { padding: 28px 18px 0; }
+
+      .section-head { padding: 18px 20px 16px; gap: 12px; }
+      .section-title { font-size: 1.4rem; }
+      .section-body { padding: 18px 20px 16px; }
+      .pull { font-size: 1rem; padding: 10px 16px; }
+
+      .signal-body { padding: 12px 14px 12px 12px; gap: 10px; }
+      .signal-timing { padding: 12px 14px 12px 0; font-size: 0.58rem; }
+      .signal-aspect { font-size: 0.95rem; }
+
+      .thread { padding: 36px 22px 32px; }
+      .thread-title { font-size: 1.55rem; }
+      .footer { padding: 28px 18px 44px; }
+    }
+
   </style>
 </head>
 <body>
 
-<div id="starfield"></div>
+<!-- STATUS BAR -->
+<div class="status-bar">
+  <div class="status-left">
+    <span class="status-brand">Sky at Work</span>
+    <div class="status-sep"></div>
+    <span class="status-week">Week of May 25 · #Astroflow-Weekly</span>
+  </div>
+  <div class="status-right">
+    <div class="live-badge">
+      <div class="live-dot"></div>
+      <span class="live-text">Live</span>
+    </div>
+    <span class="status-channel">Transit-to-transit only</span>
+  </div>
+</div>
 
-<div class="window">
+<!-- ════════════════════════════════════
+     HERO
+════════════════════════════════════ -->
+<div class="hero">
 
-  <div class="titlebar">
-    <span class="titlebar-label">✦ SKY AT WORK &nbsp;·&nbsp; WEEK OF MAY 25 &nbsp;·&nbsp; TRANSIT-TO-TRANSIT ONLY ✦</span>
-    <div class="titlebar-btns">
-      <button class="tbtn">_</button>
-      <button class="tbtn">□</button>
-      <button class="tbtn">✕</button>
+  <svg class="hero-stars" viewBox="0 0 900 500" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="62"  cy="74"  r="1.2" fill="#fff8ee" opacity="0.48"/>
+    <circle cx="198" cy="42"  r="0.9" fill="#fff8ee" opacity="0.36"/>
+    <circle cx="355" cy="64"  r="1.4" fill="#fff8ee" opacity="0.42"/>
+    <circle cx="510" cy="26"  r="0.8" fill="#c9a84c" opacity="0.55"/>
+    <circle cx="668" cy="52"  r="1.1" fill="#fff8ee" opacity="0.38"/>
+    <circle cx="808" cy="86"  r="1.3" fill="#fff8ee" opacity="0.46"/>
+    <circle cx="872" cy="36"  r="0.9" fill="#d4a0b5" opacity="0.40"/>
+    <circle cx="28"  cy="290" r="0.9" fill="#c9a84c" opacity="0.34"/>
+    <circle cx="878" cy="272" r="0.8" fill="#fff8ee" opacity="0.36"/>
+    <circle cx="44"  cy="420" r="1.1" fill="#fff8ee" opacity="0.28"/>
+    <circle cx="858" cy="400" r="0.9" fill="#c9a84c" opacity="0.36"/>
+    <circle cx="435" cy="468" r="0.8" fill="#d4a0b5" opacity="0.32"/>
+    <circle cx="122" cy="176" r="0.8" fill="#fff8ee" opacity="0.26"/>
+    <circle cx="762" cy="158" r="0.9" fill="#c9a84c" opacity="0.30"/>
+    <text x="128" y="128" font-size="11" fill="#c9a84c" opacity="0.58" text-anchor="middle" font-family="serif">✦</text>
+    <text x="758" y="148" font-size="8"  fill="#fff8ee" opacity="0.40" text-anchor="middle" font-family="serif">✧</text>
+    <text x="456" y="20"  font-size="7"  fill="#c9a84c" opacity="0.50" text-anchor="middle" font-family="serif">✦</text>
+    <text x="66"  y="370" font-size="8"  fill="#d4a0b5" opacity="0.36" text-anchor="middle" font-family="serif">✦</text>
+    <text x="836" y="358" font-size="7"  fill="#c9a84c" opacity="0.42" text-anchor="middle" font-family="serif">✧</text>
+    <circle cx="800" cy="108" r="80" fill="#c9a84c" opacity="0.04"/>
+    <circle cx="800" cy="108" r="40" fill="#c9a84c" opacity="0.05"/>
+    <circle cx="88"  cy="390" r="90" fill="#9b59b6" opacity="0.06"/>
+    <circle cx="100" cy="86"  r="60" fill="#d4a0b5" opacity="0.04"/>
+  </svg>
+
+  <div class="hero-border-outer"></div>
+  <div class="hero-border-inner"></div>
+
+  <div class="corner tl">✦</div>
+  <div class="corner tr">✦</div>
+  <div class="corner bl">✦</div>
+  <div class="corner br">✦</div>
+
+  <!-- Left celestial column -->
+  <svg class="hero-col left" width="26" height="420" viewBox="0 0 26 420" xmlns="http://www.w3.org/2000/svg">
+    <line x1="13" y1="0" x2="13" y2="420" stroke="#b482d2" stroke-width="0.8" opacity="0.22"/>
+    <text x="13" y="50"  text-anchor="middle" font-size="15" fill="#c9a84c" opacity="0.65" font-family="serif">☽</text>
+    <text x="13" y="104" text-anchor="middle" font-size="10" fill="#fff8ee" opacity="0.44" font-family="serif">✦</text>
+    <text x="13" y="158" text-anchor="middle" font-size="14" fill="#c9a84c" opacity="0.54" font-family="serif">☉</text>
+    <circle cx="13" cy="198" r="1.5" fill="#d4a0b5" opacity="0.42"/>
+    <text x="13" y="246" text-anchor="middle" font-size="10" fill="#d4a0b5" opacity="0.50" font-family="serif">✧</text>
+    <text x="13" y="298" text-anchor="middle" font-size="15" fill="#fff8ee" opacity="0.28" font-family="serif">☾</text>
+    <text x="13" y="350" text-anchor="middle" font-size="10" fill="#c9a84c" opacity="0.44" font-family="serif">✦</text>
+    <circle cx="13" cy="388" r="1.2" fill="#fff8ee" opacity="0.34"/>
+    <text x="13" y="412" text-anchor="middle" font-size="11" fill="#c9a84c" opacity="0.40" font-family="serif">☉</text>
+  </svg>
+
+  <!-- Right celestial column -->
+  <svg class="hero-col right" width="26" height="420" viewBox="0 0 26 420" xmlns="http://www.w3.org/2000/svg">
+    <line x1="13" y1="0" x2="13" y2="420" stroke="#b482d2" stroke-width="0.8" opacity="0.22"/>
+    <text x="13" y="50"  text-anchor="middle" font-size="10" fill="#fff8ee" opacity="0.44" font-family="serif">✦</text>
+    <text x="13" y="104" text-anchor="middle" font-size="15" fill="#c9a84c" opacity="0.60" font-family="serif">☾</text>
+    <text x="13" y="158" text-anchor="middle" font-size="10" fill="#d4a0b5" opacity="0.50" font-family="serif">✧</text>
+    <circle cx="13" cy="198" r="1.5" fill="#c9a84c" opacity="0.38"/>
+    <text x="13" y="246" text-anchor="middle" font-size="14" fill="#c9a84c" opacity="0.54" font-family="serif">☉</text>
+    <text x="13" y="298" text-anchor="middle" font-size="15" fill="#fff8ee" opacity="0.26" font-family="serif">☽</text>
+    <circle cx="13" cy="338" r="1.2" fill="#d4a0b5" opacity="0.40"/>
+    <text x="13" y="388" text-anchor="middle" font-size="10" fill="#c9a84c" opacity="0.50" font-family="serif">✦</text>
+    <text x="13" y="412" text-anchor="middle" font-size="11" fill="#fff8ee" opacity="0.36" font-family="serif">☉</text>
+  </svg>
+
+  <!-- Content -->
+  <div class="hero-label">Weekly Transit Forecast · #Astroflow-Weekly</div>
+  <h1 class="hero-title">Sky at Work</h1>
+  <div class="hero-ornament">☽ ✦ ☉ ✦ ☾</div>
+  <div class="hero-data">
+    <div>
+      <div class="hero-datum-label">Week</div>
+      <div class="hero-datum-value">May 25 – 31, 2026</div>
+    </div>
+    <div>
+      <div class="hero-datum-label">Method</div>
+      <div class="hero-datum-value">Transit-to-Transit Only</div>
+    </div>
+    <div>
+      <div class="hero-datum-label">Channel</div>
+      <div class="hero-datum-value">#Astroflow-Weekly</div>
     </div>
   </div>
 
-  <div class="content">
+</div>
 
-    <div class="hero-tag">COLLECTIVE TRANSIT WEATHER &nbsp;·&nbsp; #ASTROFLOW-WEEKLY</div>
-    <h1>SKY AT WORK</h1>
-    <div class="hero-week">✦ WEEK OF MAY 25–31 ✦</div>
-    <div class="hero-sub">transit-to-transit aspects only &nbsp;·&nbsp; no birth charts required &nbsp;·&nbsp; just the sky we're all in</div>
-
-    <!-- PULSE -->
-    <div class="pulse">
-      <div class="section-eyebrow">✦ THE WEEK AT A GLANCE</div>
-      <p>A short week, compressed intensity. Mars squaring Pluto says drive meets structural resistance all week — not as an obstacle but as information about which walls are load-bearing. Venus squaring both Saturn and Neptune means ease costs more than usual and the idealized version needs grounding. The leverage point: <em>Mercury sextile Saturn exact midweek</em>, a rare window where precision, speed, and staying power all run in the same lane at once.</p>
-      <p>The sky's instructions this week: <em>write it down, push with intention, and trust the concept before the argument is fully assembled.</em></p>
+<!-- ════════════════════════════════════
+     PULSE
+════════════════════════════════════ -->
+<div class="pulse-wrap">
+  <div class="pulse-card">
+    <div class="pulse-head">
+      <svg class="pulse-stars" viewBox="0 0 900 90" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="820" cy="26" r="0.9" fill="#c9a84c" opacity="0.48"/>
+        <circle cx="72"  cy="50" r="0.8" fill="#fff8ee" opacity="0.30"/>
+        <circle cx="540" cy="16" r="0.9" fill="#fff8ee" opacity="0.26"/>
+        <text x="838" y="68" font-size="9" fill="#c9a84c" opacity="0.42" text-anchor="middle" font-family="serif">✦</text>
+        <circle cx="858" cy="38" r="38" fill="#c9a84c" opacity="0.05"/>
+      </svg>
+      <div class="pulse-eyebrow">The Week at a Glance</div>
+      <div class="pulse-title">Short week, compressed intensity</div>
     </div>
+    <div class="pulse-body">
+      <p>Mars squaring Pluto says drive meets structural resistance all week — not as an obstacle but as information about which walls are load-bearing. Venus squaring both Saturn and Neptune means ease costs more than usual and the idealized version needs grounding. The leverage point: <em>Mercury sextile Saturn exact midweek</em>, a rare window where precision, speed, and staying power all run in the same lane at once.</p>
+      <p>The sky's instructions this week: <strong>write it down</strong>, push with intention, and trust the concept before the argument is fully assembled.</p>
+    </div>
+  </div>
+</div>
 
-    <!-- SIGNAL BOARD -->
-    <div class="signal-board">
-      <div class="signal-header">
-        <span class="signal-header-text">▸ ASPECTS AT A GLANCE</span>
-      </div>
+<!-- ════════════════════════════════════
+     SIGNAL BOARD
+════════════════════════════════════ -->
+<div class="signal-wrap">
+  <div class="signal-eyebrow">Aspects at a Glance</div>
+  <div class="signal-board">
 
-      <div class="signal-row row-friction">
-        <div class="signal-stripe"></div>
-        <div class="signal-emoji">🔥</div>
-        <div class="signal-timing">ALL WEEK</div>
-        <div class="signal-text">
+    <div class="signal-row">
+      <div class="signal-stripe stripe-amber"></div>
+      <div class="signal-body">
+        <div class="signal-icon">♂</div>
+        <div class="signal-text-block">
           <span class="signal-aspect">Mars □ Pluto Rx</span>
-          <span class="signal-meaning">Drive presses against entrenched structure — friction is purposeful, not personal</span>
+          <span class="signal-meaning">Drive pressing against entrenched structure — friction is purposeful, not personal</span>
         </div>
       </div>
+      <div class="signal-timing"><span class="timing-pill pill-all">All Week</span></div>
+    </div>
 
-      <div class="signal-row row-structure">
-        <div class="signal-stripe"></div>
-        <div class="signal-emoji">🏗️</div>
-        <div class="signal-timing">ALL WEEK</div>
-        <div class="signal-text">
+    <div class="signal-row">
+      <div class="signal-stripe stripe-muted"></div>
+      <div class="signal-body">
+        <div class="signal-icon">♀</div>
+        <div class="signal-text-block">
           <span class="signal-aspect">Venus □ Saturn</span>
           <span class="signal-meaning">Ease costs more than usual — warmth reads genuine but gets examined</span>
         </div>
       </div>
+      <div class="signal-timing"><span class="timing-pill pill-all">All Week</span></div>
+    </div>
 
-      <div class="signal-row row-fog">
-        <div class="signal-stripe"></div>
-        <div class="signal-emoji">🌊</div>
-        <div class="signal-timing">ALL WEEK</div>
-        <div class="signal-text">
+    <div class="signal-row">
+      <div class="signal-stripe stripe-plum"></div>
+      <div class="signal-body">
+        <div class="signal-icon">♀</div>
+        <div class="signal-text-block">
           <span class="signal-aspect">Venus □ Neptune</span>
           <span class="signal-meaning">Vision vs. reality tension — the idealized version needs grounding</span>
         </div>
       </div>
+      <div class="signal-timing"><span class="timing-pill pill-all">All Week</span></div>
+    </div>
 
-      <div class="signal-row row-intuition">
-        <div class="signal-stripe"></div>
-        <div class="signal-emoji">☉</div>
-        <div class="signal-timing">MON – TUE</div>
-        <div class="signal-text">
+    <div class="signal-row">
+      <div class="signal-stripe stripe-gold"></div>
+      <div class="signal-body">
+        <div class="signal-icon">☉</div>
+        <div class="signal-text-block">
           <span class="signal-aspect">Sun ✶ Neptune</span>
           <span class="signal-meaning">Ideas arrive before the argument is assembled — trust the concept, then build the case</span>
         </div>
       </div>
+      <div class="signal-timing"><span class="timing-pill pill-early">Mon – Tue</span></div>
+    </div>
 
-      <div class="signal-row row-precision">
-        <div class="signal-stripe"></div>
-        <div class="signal-emoji">💬</div>
-        <div class="signal-timing">TUE – WED</div>
-        <div class="signal-text">
+    <div class="signal-row">
+      <div class="signal-stripe stripe-teal"></div>
+      <div class="signal-body">
+        <div class="signal-icon">☿</div>
+        <div class="signal-text-block">
           <span class="signal-aspect">Mercury ✶ Saturn</span>
-          <span class="signal-meaning">Documentation window — write it down. Precision outperforms speed this week</span>
+          <span class="signal-meaning">Documentation window — write it down; precision outperforms speed this week</span>
         </div>
       </div>
+      <div class="signal-timing"><span class="timing-pill pill-mid">Tue – Wed</span></div>
+    </div>
 
-      <div class="signal-row row-collab">
-        <div class="signal-stripe"></div>
-        <div class="signal-emoji">♀</div>
-        <div class="signal-timing">THROUGH WED</div>
-        <div class="signal-text">
+    <div class="signal-row">
+      <div class="signal-stripe stripe-rose"></div>
+      <div class="signal-body">
+        <div class="signal-icon">♀</div>
+        <div class="signal-text-block">
           <span class="signal-aspect">Venus ✶ Mars (separating)</span>
           <span class="signal-meaning">Collaborative goodwill still in range — the relational ask works through midweek</span>
         </div>
       </div>
-
-    </div><!-- end signal board -->
-
-    <div class="divider"><span class="divider-inner">✦ ☿ ✦</span></div>
-
-    <!-- FOR COMMUNICATION -->
-    <div class="section-card comms">
-      <div class="section-eyebrow">💬 FOR COMMUNICATION</div>
-      <p>Mercury is in Gemini (its home sign) sitting in a sextile to Saturn in Aries, exact midweek. That combination is unusually good for anything that needs to move quickly <em>and</em> hold up under scrutiny: proposals, written follow-ups, contracts, documentation. The precision register is open and available.</p>
-      <p>The key move this week: <em>write it down.</em> Decisions made in conversation but not recorded are likely to get revisited under this sky. Anything verbally agreed in the last two weeks but not formalized — this is the week to close that loop. Verbal alignment alone won't hold when Saturn is watching.</p>
-      <p>Best days: Tuesday–Wednesday. Avoid loose async on Monday when the holiday rhythm is still diffusing.</p>
+      <div class="signal-timing"><span class="timing-pill pill-late">Thru Wed</span></div>
     </div>
 
-    <div class="divider"><span class="divider-inner">✦ ♂ ✦</span></div>
+  </div>
+</div>
 
-    <!-- FOR MOMENTUM -->
-    <div class="section-card momentum">
-      <div class="section-eyebrow">🔥 FOR DECISIONS &amp; MOMENTUM</div>
+<!-- ════════════════════════════════════
+     CELESTIAL DIVIDER
+════════════════════════════════════ -->
+<div class="cel-divider">
+  <div class="cel-rule left"></div>
+  <div class="cel-mark">✦ ✦ ✦</div>
+  <div class="cel-rule right"></div>
+</div>
+
+<!-- ════════════════════════════════════
+     SECTION CARDS
+════════════════════════════════════ -->
+<div class="section-wrap">
+
+  <!-- FOR COMMUNICATION -->
+  <div class="section-card accent-teal">
+    <div class="section-head">
+      <svg class="section-head-stars" viewBox="0 0 900 100" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="820" cy="28" r="0.9" fill="#5ab4a0" opacity="0.42"/>
+        <circle cx="70"  cy="52" r="0.8" fill="#fff8ee" opacity="0.26"/>
+        <text x="838" y="70" font-size="9" fill="#5ab4a0" opacity="0.38" text-anchor="middle" font-family="serif">✦</text>
+        <circle cx="858" cy="40" r="38" fill="#5ab4a0" opacity="0.05"/>
+      </svg>
+      <div class="section-icon">☿</div>
+      <div class="section-head-text">
+        <div class="section-eyebrow">Mercury · Writing · Precision</div>
+        <div class="section-title">For Communication</div>
+      </div>
+    </div>
+    <div class="section-body">
+      <p>Mercury is in Gemini — its home sign — sitting in a sextile to Saturn in Aries, exact midweek. That combination is unusually favorable for anything that needs to move quickly <em>and</em> hold up under scrutiny: proposals, written follow-ups, contracts, formal documentation. The precision register is open and available.</p>
+      <div class="pull teal-pull">Write it down. Decisions made in conversation but not recorded are likely to get revisited under this sky. Verbal alignment alone won't hold when Saturn is watching.</div>
+      <p>Anything verbally agreed in the last two weeks but not yet formalized — this is the window to close that loop. Best days: Tuesday–Wednesday. Avoid loose async on Monday when the holiday rhythm is still diffusing through the week.</p>
+    </div>
+  </div>
+
+  <!-- FOR DECISIONS + MOMENTUM -->
+  <div class="section-card accent-amber">
+    <div class="section-head">
+      <svg class="section-head-stars" viewBox="0 0 900 100" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="818" cy="30" r="0.9" fill="#c8842a" opacity="0.44"/>
+        <circle cx="68"  cy="54" r="0.8" fill="#fff8ee" opacity="0.26"/>
+        <text x="836" y="72" font-size="9" fill="#c8842a" opacity="0.40" text-anchor="middle" font-family="serif">✦</text>
+        <circle cx="856" cy="42" r="40" fill="#c8842a" opacity="0.05"/>
+      </svg>
+      <div class="section-icon">♂</div>
+      <div class="section-head-text">
+        <div class="section-eyebrow">Mars · Saturn · Action Window</div>
+        <div class="section-title">For Decisions &amp; Momentum</div>
+      </div>
+    </div>
+    <div class="section-body">
       <p>Mars in Taurus squaring Pluto Rx in Aquarius is the dominant texture all week. This doesn't stop things from moving — it means whatever you push on will push back, and the resistance tends to be structural rather than personal. That's useful data: <em>if something keeps meeting friction, the question is whether you're pressing against the wrong constraint, or the right one.</em></p>
-      <p>Venus sextile Mars is still in orb from last week, separating but present through Wednesday. The collaborative ask and the action impulse are still reasonably aligned through midweek — if something needs both relational goodwill and forward momentum, earlier in the week carries more fuel.</p>
-      <p>Best days for forward moves: Tuesday–Wednesday. Thursday, when Venus-Saturn tightens, the "not yet" register gets louder.</p>
+      <div class="pull amber-pull">The weeks when drive meets Pluto are often when it becomes clear which things are worth the friction and which aren't.</div>
+      <p>Venus sextile Mars is still in orb from last week, separating but present through Wednesday. The collaborative ask and the action impulse are still reasonably aligned through midweek — if something needs both relational goodwill and forward momentum, earlier in the week carries more fuel. Thursday, when Venus-Saturn tightens, the "not yet" register gets louder.</p>
     </div>
+  </div>
 
-    <div class="divider"><span class="divider-inner">✦ ♀ ✦</span></div>
-
-    <!-- FOR COLLABORATION -->
-    <div class="section-card collab">
-      <div class="section-eyebrow">♀ FOR COLLABORATION</div>
-      <p>Venus at 7° Cancer is squaring both Neptune and Saturn this week — the relational field has a <em>"prove it"</em> quality. Warmth reads as genuine but also gets interrogated. Collaborative pitches built on actual substance land; anything relying primarily on enthusiasm or relationship-credit as its argument will get examined more carefully than it would in a softer week.</p>
-      <p>This isn't a bad week for collaboration — it's a <em>demanding</em> week. The people who've done the work hold the room. The background note: Saturn conjunct Neptune in Aries (ongoing all of 2026) keeps asking what the concrete plan is behind the idea. Teams that can answer that feel the pressure as useful.</p>
+  <!-- FOR COLLABORATION -->
+  <div class="section-card accent-rose">
+    <div class="section-head">
+      <svg class="section-head-stars" viewBox="0 0 900 100" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="816" cy="30" r="0.9" fill="#d4a0b5" opacity="0.44"/>
+        <circle cx="70"  cy="54" r="0.8" fill="#fff8ee" opacity="0.26"/>
+        <text x="834" y="72" font-size="9" fill="#d4a0b5" opacity="0.40" text-anchor="middle" font-family="serif">✦</text>
+        <circle cx="856" cy="42" r="40" fill="#d4a0b5" opacity="0.05"/>
+      </svg>
+      <div class="section-icon">♀</div>
+      <div class="section-head-text">
+        <div class="section-eyebrow">Venus · Jupiter · Relational Field</div>
+        <div class="section-title">For Collaboration</div>
+      </div>
     </div>
+    <div class="section-body">
+      <p>Venus at 7° Cancer is squaring both Neptune and Saturn this week — the relational field has a <em>prove it</em> quality. Warmth reads as genuine but also gets interrogated. Collaborative pitches built on actual substance land; anything relying primarily on enthusiasm or relationship-credit as its argument will get examined more carefully than it would in a softer week.</p>
+      <div class="pull rose-pull">This isn't a bad week for collaboration — it's a demanding week. The people who've done the work hold the room.</div>
+      <p>The background note: Saturn conjunct Neptune in Aries (ongoing all of 2026) continues to run as structural pressure on big visions. The sky keeps asking what the concrete plan is behind the idea. Teams that can answer that question feel the pressure as useful. Teams that can't feel it as stall.</p>
+    </div>
+  </div>
 
-    <div class="divider"><span class="divider-inner">✦ ☉ ✦</span></div>
-
-    <!-- WATCH FOR -->
-    <div class="section-card watchfor">
-      <div class="section-eyebrow">⚠ WATCH FOR</div>
+  <!-- WATCH FOR -->
+  <div class="section-card accent-plum">
+    <div class="section-head">
+      <svg class="section-head-stars" viewBox="0 0 900 100" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="816" cy="30" r="0.9" fill="#b482d2" opacity="0.42"/>
+        <circle cx="70"  cy="54" r="0.8" fill="#fff8ee" opacity="0.24"/>
+        <text x="834" y="72" font-size="9" fill="#b482d2" opacity="0.38" text-anchor="middle" font-family="serif">✦</text>
+        <circle cx="856" cy="42" r="40" fill="#7b4fa6" opacity="0.07"/>
+      </svg>
+      <div class="section-icon">✦</div>
+      <div class="section-head-text">
+        <div class="section-eyebrow">Tensions · Timing · Watch For</div>
+        <div class="section-title">Worth Watching</div>
+      </div>
+    </div>
+    <div class="section-body">
       <ul class="watch-list">
-        <li>
-          <span class="watch-bullet">▸</span>
-          <span><em>Mars-Pluto resistance is information.</em> If a project keeps meeting structural pushback this week, that's not bad luck — it's Pluto telling you which structures are load-bearing. Note which resistances persist after multiple approaches; those are the ones worth understanding, not just routing around.</span>
+        <li class="watch-item">
+          <div class="watch-glyph">☌</div>
+          <div class="watch-text"><strong>Mars-Pluto resistance is information.</strong> If a project keeps meeting structural pushback this week, that's not bad luck — it's Pluto telling you which structures are load-bearing. Note which resistances persist after multiple approaches; those are the ones worth understanding, not routing around.</div>
         </li>
-        <li>
-          <span class="watch-bullet">▸</span>
-          <span><em>Short week + high compression.</em> Four working days after a holiday tend to compress Tuesday's energy. The impulse to catch up Monday-by-proxy on Tuesday usually produces rushed decisions that Thursday has to unwind. Set the pace deliberately rather than catching up to a phantom Monday.</span>
+        <li class="watch-item">
+          <div class="watch-glyph">☽</div>
+          <div class="watch-text"><strong>Short week + high compression.</strong> Four working days after a holiday tend to compress Tuesday's energy. The instinct to catch up Monday-by-proxy on Tuesday usually produces rushed decisions that Thursday has to unwind. Set the pace deliberately rather than catching up to a phantom Monday.</div>
         </li>
-        <li>
-          <span class="watch-bullet">▸</span>
-          <span><em>Documentation window is exact midweek.</em> Mercury sextile Saturn peaks Tuesday–Wednesday. Anything verbally agreed recently but not formalized — this is the window. Don't let it pass.</span>
+        <li class="watch-item">
+          <div class="watch-glyph">☿</div>
+          <div class="watch-text"><strong>Documentation window is exact midweek.</strong> Mercury sextile Saturn peaks Tuesday–Wednesday. Anything important verbally agreed recently but not yet formalized — this is the window. Don't let it pass.</div>
         </li>
       </ul>
     </div>
+  </div>
 
-    <!-- FOOTER -->
-    <div class="footer-block">
-      <div class="footer-glyph">✦ ☽ ✦</div>
-      <div class="footer-disclaimer">
-        transit-to-transit aspects only · no birth charts used<br>
-        this is the collective weather — everyone's in it
-      </div>
-      <div class="footer-permalink">jordanb1993.github.io/astro-readings/readings/sky-at-work.html</div>
-    </div>
+</div>
 
-  </div><!-- .content -->
-</div><!-- .window -->
+<!-- ════════════════════════════════════
+     CELESTIAL DIVIDER
+════════════════════════════════════ -->
+<div class="cel-divider">
+  <div class="cel-rule left"></div>
+  <div class="cel-mark">✦ ✦ ✦</div>
+  <div class="cel-rule right"></div>
+</div>
 
-<script>
-(function () {
-  const field = document.getElementById('starfield');
-  const syms  = ['✦','✧','★','✩','·','·','·','✦'];
-  for (let i = 0; i < 110; i++) {
-    const s   = document.createElement('span');
-    s.textContent = syms[Math.floor(Math.random() * syms.length)];
-    const size = 5 + Math.random() * 14;
-    const dur  = 2 + Math.random() * 6;
-    const del  = Math.random() * 8;
-    const op   = 0.1 + Math.random() * 0.55;
-    s.style.cssText = [
-      'position:absolute',
-      `left:${(Math.random()*100).toFixed(2)}%`,
-      `top:${(Math.random()*100).toFixed(2)}%`,
-      `font-size:${size.toFixed(1)}px`,
-      `color:rgba(200,160,45,${op.toFixed(2)})`,
-      `animation:twinkle ${dur.toFixed(1)}s ease-in-out ${del.toFixed(1)}s infinite`,
-      'pointer-events:none',
-      'user-select:none',
-      'line-height:1'
-    ].join(';');
-    field.appendChild(s);
-  }
-})();
-</script>
+<!-- ════════════════════════════════════
+     THROUGH-LINE / CLOSING
+════════════════════════════════════ -->
+<div class="thread-wrap">
+  <div class="thread">
+
+    <svg class="thread-stars" viewBox="0 0 900 320" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="58"  cy="66"  r="1.1" fill="#fff8ee" opacity="0.40"/>
+      <circle cx="198" cy="36"  r="0.8" fill="#c9a84c" opacity="0.42"/>
+      <circle cx="355" cy="56"  r="1.3" fill="#fff8ee" opacity="0.34"/>
+      <circle cx="512" cy="22"  r="0.7" fill="#d4a0b5" opacity="0.40"/>
+      <circle cx="664" cy="48"  r="1.0" fill="#fff8ee" opacity="0.34"/>
+      <circle cx="814" cy="70"  r="1.1" fill="#c9a84c" opacity="0.38"/>
+      <circle cx="28"  cy="238" r="0.9" fill="#c9a84c" opacity="0.28"/>
+      <circle cx="872" cy="220" r="0.8" fill="#fff8ee" opacity="0.30"/>
+      <text x="128" y="114" font-size="11" fill="#c9a84c" opacity="0.50" text-anchor="middle" font-family="serif">✦</text>
+      <text x="766" y="132" font-size="8"  fill="#fff8ee" opacity="0.34" text-anchor="middle" font-family="serif">✧</text>
+      <text x="455" y="16"  font-size="7"  fill="#c9a84c" opacity="0.44" text-anchor="middle" font-family="serif">✦</text>
+      <circle cx="800" cy="106" r="76" fill="#c9a84c" opacity="0.04"/>
+      <circle cx="88"  cy="228" r="68" fill="#9b59b6" opacity="0.06"/>
+    </svg>
+
+    <div class="thread-border"></div>
+
+    <span class="thread-ornament">✦ ✦ ✦</span>
+    <h2 class="thread-title">Transit-to-Transit Only</h2>
+    <p>No birth charts used in this forecast. Everything here is collective weather — the sky everyone is standing under this week, regardless of when or where they were born. The aspects describe conditions and terrain. What you build in them is yours.</p>
+    <a class="thread-link" href="https://jordanb1993.github.io/astro-readings/readings/sky-at-work.html">✦ &nbsp; Permalink to this forecast</a>
+    <div class="thread-close">✦ &nbsp; Sky at Work · Week of May 25–31, 2026 · #Astroflow-Weekly</div>
+
+  </div>
+</div>
+
+<!-- ════════════════════════════════════
+     FOOTER
+════════════════════════════════════ -->
+<div class="footer">
+  Transit-to-transit aspects only · No natal charts used · Collective weather for the week<br>
+  jordanb1993.github.io/astro-readings/readings/sky-at-work.html
+</div>
 
 </body>
 </html>
