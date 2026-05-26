@@ -11,8 +11,8 @@ This folder contains full natal chart reading HTMLs in the whimsigoth aesthetic.
 | Iza | `iza.html` | `jordanb1993.github.io/astro-readings/natal/iza.html` | Confirmed birth time |
 | Su | `su.html` | `jordanb1993.github.io/astro-readings/natal/su.html` | Confirmed birth time |
 | Marina | `marina.html` | `jordanb1993.github.io/astro-readings/natal/marina.html` | Leo Sun · Sagittarius Moon · Libra Rising |
-| Kate | `kate.html` | `jordanb1993.github.io/astro-readings/natal/kate.html` | |
-| Hazel | `hazel.html` | `jordanb1993.github.io/astro-readings/natal/hazel.html` | |
+| Kate | `kate.html` | `jordanb1993.github.io/astro-readings/natal/kate.html` | Libra Sun · Scorpio Moon · Libra Rising |
+| Hazel | `hazel.html` | `jordanb1993.github.io/astro-readings/natal/hazel.html` | Taurus Sun · Virgo Moon · 29° Aquarius Rising |
 | Yvonne | `yvonne.html` | `jordanb1993.github.io/astro-readings/natal/yvonne.html` | Cancer Sun · Libra Moon · Sagittarius Rising · coworker |
 
 ---

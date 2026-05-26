@@ -47,11 +47,13 @@ Gemini Sun · Aries Moon · Taurus Rising · Venus in 1st
 [marina.html](https://jordanb1993.github.io/astro-readings/natal/marina.html)
 Leo Sun · Sagittarius Moon · Libra Rising · Jupiter conjunct ASC
 
-**Kate**
+**Kate Penkethman**
 [kate.html](https://jordanb1993.github.io/astro-readings/natal/kate.html)
+Libra Sun · Scorpio Moon · Libra Rising · Sun in 12th house
 
-**Hazel**
+**Hazel Grace**
 [hazel.html](https://jordanb1993.github.io/astro-readings/natal/hazel.html)
+Taurus Sun · Virgo Moon · 29° Aquarius Rising
 
 **Yvonne** *(coworker)*
 [yvonne.html](https://jordanb1993.github.io/astro-readings/natal/yvonne.html)
