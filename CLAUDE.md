@@ -16,7 +16,7 @@ Jordan is a 32-year-old lesbian woman in Chicago. Associate Director of Content 
 1. **This file (CLAUDE.md)** — always, first
 2. **INSTRUCTIONS.md** — always (natal chart, calculation rules, orb table, workflow)
 3. **KNOWLEDGE.md** — always (accumulated context, correlations, life arcs, patterns)
-4. **Most recent `readings/YYYY-MM-DD.md`** — the latest one only, for continuity thread
+4. **Most recent `readings/daily/YYYY-MM/YYYY-MM-DD.md`** — the latest one only, for continuity thread
 5. **`_inbox/capture.md`** — always check; if entries exist below the `---`, surface and route them before starting the session
 6. **Tony Cohn — Incident Log** — moved to `Personal Life HQ/Work/Tony Cohn — Incident Log.md`. Load from there ONLY if the session involves active work or career topics.
 
@@ -53,7 +53,7 @@ After processing, clear the entries from capture.md (keep the header, remove the
 These are excluded via `.claudeignore`. Do not attempt to read them even if asked to "check a past reading" — read the `.md` companion instead.
 
 **Accumulating files — load smart:**
-- `readings/` grows by one `.md` per day. Only load the most recent one automatically. Load others on explicit request.
+- `readings/daily/YYYY-MM/` grows by one `.md` per day. Only load the most recent one automatically. Load others on explicit request.
 - `tarot-log.md` — load only when Jordan asks about a card pull or wants to review patterns. Not needed for transit readings.
 - `charts/*.md` — load the specific person's file only when doing synastry work. Not all at once.
 - `wheel-of-the-year.md` — load only when Jordan asks about seasonal or lunar work.

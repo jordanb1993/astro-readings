@@ -1,6 +1,6 @@
 # Jordan's Personal Astrologer — INSTRUCTIONS.md
 *Claude Code Workspace — Astrology Operating System*
-*Last updated: April 2026*
+*Last updated: May 28, 2026 — natal positions updated to arc-minute precision*
 
 ---
 
