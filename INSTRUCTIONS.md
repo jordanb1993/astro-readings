@@ -20,27 +20,29 @@ Jordan's spiritual practice includes astrology, witchcraft traditions, observati
 
 | Planet/Point | Sign | Degree | House |
 |---|---|---|---|
-| Sun | Sagittarius | 1° | 6th |
-| Moon | Aries | 4° | 10th |
-| Ascendant | Gemini | 29° (anaretic) | — |
-| Mercury | Scorpio | 12° | 5th |
-| Venus | Scorpio | 18° | 5th |
-| Mars | Sagittarius | 10° | 6th |
-| Jupiter | Scorpio | 2° | 5th |
-| Saturn | Aquarius | 24° | 9th |
-| Uranus | Capricorn | 19° | 7th |
-| Neptune | Capricorn | 19° | 7th |
-| Pluto | Scorpio | 25° | 6th |
-| Chiron | Virgo | 8° | 4th |
-| North Node | Sagittarius | 3° | 6th |
-| South Node | Gemini | 3° | 12th |
-| Midheaven | Pisces | 8° | 10th cusp |
+| Sun | Sagittarius | 1°49' | 6th |
+| Moon | Aries | 4°58' | 10th |
+| Ascendant | Gemini | 29°22' (anaretic) | — |
+| Mercury | Scorpio | 12°17' | 5th |
+| Venus | Scorpio | 18°50' | 5th |
+| Mars | Sagittarius | 10°46' | 6th |
+| Jupiter | Scorpio | 2°52' | 5th |
+| Saturn | Aquarius | 24°15' | 9th |
+| Uranus | Capricorn | 19°34' | 7th |
+| Neptune | Capricorn | 19°11' | 7th |
+| Pluto | Scorpio | 25°40' | 6th |
+| Chiron | Virgo | 8°29' | 4th |
+| North Node ℞ | Sagittarius | 3°02' | 6th |
+| South Node ℞ | Gemini | 3°02' | 12th |
+| Midheaven | Pisces | 8°16' | 10th cusp |
+| Lot of Fortune | Aquarius | 26°13' | 9th |
 
 **Key natal patterns:**
 - Scorpio stellium (Mercury, Venus, Jupiter) in the 5th house
 - Sagittarius stellium (Sun, Mars, North Node) in the 6th house
-- South Node conjunct Ascendant at 29° Gemini — anaretic degree
-- Uranus conjunct Neptune in Capricorn in the 7th house
+- South Node conjunct Ascendant at 29°22' Gemini — anaretic degree
+- Uranus 19°34' conjunct Neptune 19°11' in Capricorn (0°23' orb) in the 7th house — generational pair extremely tight
+- Chiron 8°29' Virgo opposite Midheaven 8°16' Pisces (0°13' orb) — wound axis runs directly through the public/career point
 - Chiron in Virgo in the 4th house — foundational wound
 
 ---
@@ -111,7 +113,7 @@ Aries 0-29, Taurus 30-59, Gemini 60-89, Cancer 90-119, Leo 120-149, Virgo 150-17
 
 **Active long-term transits:**
 - **Uranus 1°03' Gemini — exact opposition natal Sun (1° Sag).** The defining identity transit of this period. Uranus has ingressed Gemini and is sitting exactly on the opposition to Jordan's Sun. Also approaching conjunction with South Node (3° Gem) / opposition North Node (3° Sag) — 2° away, applying. Breaking up the South Node Gemini mirroring pattern at its root. Will make multiple passes through 2026. Near-term: conjunction South Node ~2026-2027. Long-term: conjunction natal Ascendant 29° Gemini ~2033-2034.
-- **Neptune 3°39' Aries — 0°21' from exact conjunction natal Moon (4° Aries).** Extremely tight. The headline emotional transit of 2026-2027. Porosity, dissolution of old emotional patterns, visionary feeling quality. Will make multiple passes. See KNOWLEDGE.md.
+- **Neptune 3°39' Aries — 1°19' from exact conjunction natal Moon (4°58' Aries).** Still the headline emotional transit of 2026-2027 — applying and building. Exact peak arrives when Neptune reaches 4°58', roughly late June 2026 at current speed (~0.01°/day). Porosity, dissolution of old emotional patterns, visionary feeling quality. Will make multiple passes. See KNOWLEDGE.md. (Note: prior readings cited a tighter orb because natal Moon was incorrectly stored as 4°00' — corrected May 28, 2026.)
 - Saturn 10°38' Aries — exact trine natal Mars (10° Sag), 0°38' orb. Discipline supporting drive. Second Saturn pass over natal Moon (4° Aries) coming via retrograde later in 2026.
 - Neptune trine natal Sun (1° Sag) — ongoing long-term visionary backdrop
 - Pluto sextile natal Moon — ongoing, emotional depth becoming strength

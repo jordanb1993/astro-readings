@@ -51,21 +51,22 @@ def setup_swisseph():
 # ─── Jordan's Natal Chart ─────────────────────────────────────────────────────
 
 NATAL = {
-    "Sun":         {"deg": 241.0,  "sign": "Sagittarius", "house": "6th"},   # 1° Sag
-    "Moon":        {"deg": 4.0,    "sign": "Aries",       "house": "10th"},  # 4° Aries
-    "Mercury":     {"deg": 222.0,  "sign": "Scorpio",     "house": "5th"},   # 12° Sco
-    "Venus":       {"deg": 228.0,  "sign": "Scorpio",     "house": "5th"},   # 18° Sco
-    "Mars":        {"deg": 250.0,  "sign": "Sagittarius", "house": "6th"},   # 10° Sag
-    "Jupiter":     {"deg": 212.0,  "sign": "Scorpio",     "house": "5th"},   # 2° Sco
-    "Saturn":      {"deg": 324.0,  "sign": "Aquarius",    "house": "9th"},   # 24° Aqu
-    "Uranus":      {"deg": 289.0,  "sign": "Capricorn",   "house": "7th"},   # 19° Cap
-    "Neptune":     {"deg": 289.0,  "sign": "Capricorn",   "house": "7th"},   # 19° Cap
-    "Pluto":       {"deg": 235.0,  "sign": "Scorpio",     "house": "6th"},   # 25° Sco
-    "Chiron":      {"deg": 158.0,  "sign": "Virgo",       "house": "4th"},   # 8° Vir
-    "NorthNode":   {"deg": 243.0,  "sign": "Sagittarius", "house": "6th"},   # 3° Sag
-    "SouthNode":   {"deg": 63.0,   "sign": "Gemini",      "house": "12th"},  # 3° Gem
-    "Ascendant":   {"deg": 89.0,   "sign": "Gemini",      "house": "1st"},   # 29° Gem
-    "Midheaven":   {"deg": 338.0,  "sign": "Pisces",      "house": "10th"},  # 8° Pis
+    "Sun":          {"deg": 241.8167, "sign": "Sagittarius", "house": "6th"},   # 1°49' Sag
+    "Moon":         {"deg": 4.9667,   "sign": "Aries",       "house": "10th"},  # 4°58' Aries
+    "Mercury":      {"deg": 222.2833, "sign": "Scorpio",     "house": "5th"},   # 12°17' Sco
+    "Venus":        {"deg": 228.8333, "sign": "Scorpio",     "house": "5th"},   # 18°50' Sco
+    "Mars":         {"deg": 250.7667, "sign": "Sagittarius", "house": "6th"},   # 10°46' Sag
+    "Jupiter":      {"deg": 212.8667, "sign": "Scorpio",     "house": "5th"},   # 2°52' Sco
+    "Saturn":       {"deg": 324.25,   "sign": "Aquarius",    "house": "9th"},   # 24°15' Aqu
+    "Uranus":       {"deg": 289.5667, "sign": "Capricorn",   "house": "7th"},   # 19°34' Cap
+    "Neptune":      {"deg": 289.1833, "sign": "Capricorn",   "house": "7th"},   # 19°11' Cap
+    "Pluto":        {"deg": 235.6667, "sign": "Scorpio",     "house": "6th"},   # 25°40' Sco
+    "Chiron":       {"deg": 158.4833, "sign": "Virgo",       "house": "4th"},   # 8°29' Vir
+    "NorthNode":    {"deg": 243.0333, "sign": "Sagittarius", "house": "6th"},   # 3°02' Sag ℞
+    "SouthNode":    {"deg": 63.0333,  "sign": "Gemini",      "house": "12th"},  # 3°02' Gem ℞
+    "Ascendant":    {"deg": 89.3667,  "sign": "Gemini",      "house": "1st"},   # 29°22' Gem
+    "Midheaven":    {"deg": 338.2667, "sign": "Pisces",      "house": "10th"},  # 8°16' Pis
+    "LotOfFortune": {"deg": 326.2167, "sign": "Aquarius",    "house": "9th"},   # 26°13' Aqu
 }
 
 # Planet IDs in Swiss Ephemeris
