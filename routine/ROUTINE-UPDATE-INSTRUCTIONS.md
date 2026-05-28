@@ -29,7 +29,8 @@ Go to `claude.ai/code/routines` → find routine `trig_01Rtm1xSST2GbdCZh896F2vP`
                                 READ THIS before writing the reading — use it to ground Practical Application
                                 in what's actually happening in her life right now
 
-4. Write readings/YYYY-MM-DD.md using positions-today.json data.
+4. Write readings/daily/YYYY-MM/YYYY-MM-DD.md using positions-today.json data.
+   First create the directory: mkdir -p readings/daily/YYYY-MM (substitute real year-month, e.g. readings/daily/2026-05)
    Follow the format in CLAUDE.md exactly.
    Transit-to-natal aspects from positions-today.json → transit_to_natal array.
    Transit-to-transit aspects from transit_to_transit array.
@@ -91,7 +92,7 @@ Go to `claude.ai/code/routines` → find routine `trig_01Rtm1xSST2GbdCZh896F2vP`
 
 ---
 
-*Generated: [date] | Full daily readings in readings/YYYY-MM-DD.md*
+*Generated: [date] | Full daily readings in readings/daily/YYYY-MM/YYYY-MM-DD.md*
 ```
 
 ---

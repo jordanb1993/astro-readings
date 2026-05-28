@@ -147,6 +147,9 @@ What it actually felt like:
 **As of May 9, 2026:** Neptune at 3°31' Aries — 0°29' from exact conjunction. Applying. Still building toward exact.
 **Transit duration:** Through late 2026 / into 2027 (multiple passes with retrograde).
 
+**Verified correlation — May 27, 2026 (0.03° from exact, peak day):**
+At maximum proximity, a workplace incident involving being unseen after 30 hours of exceptional output landed at full emotional volume — not as professional frustration but as something closer to erasure. The 10th house Moon means career visibility and emotional life are the same organ; Neptune at 0.03° on that Moon meant the usual filtering layer was completely absent. Being uncredited after an intense sprint registered at body level, not just mind level. Jordan regulated, stayed professional in public, and held the full picture alone — but the cost was real and high. This is Neptune-Moon at its most active: the professional sensing field runs at maximum fidelity and maximum porosity simultaneously. Impressions are accurate AND unfiltered. Everything lands louder. This is the transit working exactly as described — and the guidance holds: trust the first read, document the receipts, rest after peaks.
+
 ---
 
 ### Uranus Opposition Natal Sun (1° Sagittarius) — May 2026 onward

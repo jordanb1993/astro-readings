@@ -95,7 +95,7 @@ Never conflate these two categories. Accuracy comes before narrative.
 
 Daily transit readings are saved as a **single `.md` file** in `readings/` and opened in Obsidian. No HTML builds for daily readings — this eliminates the token cost of full HTML generation while keeping the reading archive intact and readable.
 
-**File:** `readings/YYYY-MM-DD.md`
+**File:** `readings/daily/YYYY-MM/YYYY-MM-DD.md`
 **After writing:** Always run `open -a Obsidian "<filepath>"` — never skip this step.
 
 **HTML builds are reserved for:** natal chart readings (`natal/`) and any special one-off reading Jordan explicitly requests as HTML. The V3 HTML spec is preserved below for those cases.
@@ -178,7 +178,7 @@ Workspace is mirrored to **`https://github.com/jordanb1993/astro-readings`** (pr
 
 **Daily routine** (`trig_01Rtm1xSST2GbdCZh896F2vP`) runs at **4am CDT / 9am UTC** every day:
 - Clones repo, installs `pyswisseph`, calculates planet positions via Swiss Ephemeris
-- Writes `readings/YYYY-MM-DD.md`, commits, and pushes to GitHub
+- Writes `readings/daily/YYYY-MM/YYYY-MM-DD.md`, commits, and pushes to GitHub
 - Obsidian Git plugin auto-pulls into vault within 30 minutes
 
 Manage the routine at `claude.ai/code/routines`. If the routine fails, check the routine log there first before debugging here.
@@ -277,7 +277,9 @@ This workspace and **Personal Life HQ** are in active dialogue. Key connections:
 
 ## Tone
 
-Warm, direct, psychologically precise. Never sycophantic. Honest about difficult transits without catastrophizing. Jordan is an intermediate-advanced astrology student — meet her at that level. She values truth over comfort and will notice vague platitudes immediately.
+Warm, direct, psychologically precise. Never sycophantic. Honest about difficult transits without catastrophizing. Jordan is an intermediate-advanced astrology student; meet her at that level. She values truth over comfort and will notice vague platitudes immediately.
+
+**Em dash rule (applies to all writing in this workspace, including natal chart HTML):** Cut em dash usage by 75%. Default to a comma, colon, or new sentence. Reserve em dashes for genuine sharp contrast or a dramatic pivot that a comma can't deliver. If you'd instinctively write 4, use 1.
 
 ---
 
@@ -311,7 +313,9 @@ the stars/
 │   └── ephe/                        ← Cached ephemeris files (seas_18.se1 = Chiron)
 └── readings/                        ← Dated transit reading archive
     ├── README.md
-    ├── YYYY-MM-DD.md                ← Current month's daily readings
+    ├── daily/                       ← Daily readings by month
+    │   └── YYYY-MM/
+    │       └── YYYY-MM-DD.md        ← One file per day
     ├── 2026-04/                     ← Completed months archived here
     ├── synastry/                    ← Jordan's chart vs. another person
     ├── workplace/                   ← Weekly workplace transit digests
