@@ -1,6 +1,6 @@
 ---
 title: Week Ahead — May 28 through June 3, 2026
-generated: 2026-05-27
+generated: 2026-05-28
 tags:
   - week-ahead
   - astrology
@@ -8,7 +8,7 @@ tags:
 
 # Week Ahead — May 28 through June 3, 2026
 
-> The week opens with its emotional center already here: Neptune and Chiron reaching simultaneous 0.01° peaks on the natal Moon (10th) and natal Ascendant (1st) Thursday — the sensing field at maximum, the wound at the presentation face at its gentlest angle, both at the same moment. From there the sky pivots: Friday brings the work week's hardest day (Sun square natal Chiron and Midheaven at 0.03°, Saturn near-exact on Mercury) alongside genuine trine support. The weekend moves into identity and drive territory — Uranus reaching its nearest inconjunct to natal Jupiter Saturday, the Sun facing down natal Mars Sunday alongside Jupiter pressing natal Saturn, with the waxing Sagittarius Full Moon building on the horizon through it all.
+> The week's emotional center is already here: Neptune and Chiron landing simultaneous 0.01° peaks on natal Moon (10th) and natal Ascendant (1st) today — the sensing field at maximum, the wound at the presentation face at its gentlest angle, both at the same moment. From there the sky pivots: Friday brings the week's hardest day on the career-wound axis (Sun square natal Chiron and Midheaven at 0.03°, Saturn near-exact on Mercury) alongside genuine trine support from Mars. The weekend moves into identity and drive territory — Uranus reaching its nearest inconjunct to natal Jupiter Saturday, the Sun facing down natal Mars Sunday, Jupiter pressing natal Saturn — before the week closes Wednesday with Venus trining natal Venus and Mars building toward opposition natal Mercury.
 
 ---
 
@@ -16,52 +16,54 @@ tags:
 
 | Date | Day | Transit | Aspect | Natal Point | Orb at Peak |
 |------|-----|---------|--------|-------------|-------------|
-| May 28 | Thu | Neptune | ☌ Conjunction | Moon 4° Ari (10th) | **0.01°** |
-| May 28 | Thu | Chiron | ✶ Sextile | Ascendant 29° Gem (1st) | **0.01°** |
-| May 28 | Thu | Saturn | ⚻ Inconjunct | Mercury 12° Sco (5th) | 0.07° |
-| May 28 | Thu | Uranus | ⚻ Inconjunct | Jupiter 2° Sco (5th) | 0.15° |
-| May 29 | Fri | Saturn | ⚻ Inconjunct | Mercury 12° Sco (5th) | **0.02°** |
-| May 29 | Fri | Sun | □ Square | Chiron 8° Vir (4th) | **0.03°** |
-| May 29 | Fri | Sun | □ Square | Midheaven 8° Pis (10th) | **0.03°** |
-| May 29 | Fri | Uranus | ⚻ Inconjunct | Jupiter 2° Sco (5th) | 0.09° |
-| May 29 | Fri | Mars | △ Trine | Chiron 8° Vir (4th) | 0.18° |
-| May 29 | Fri | Venus | △ Trine | Mercury 12° Sco (5th) | 0.30° |
-| May 30 | Sat | Uranus | ⚻ Inconjunct | Jupiter 2° Sco (5th) | **0.03°** |
-| May 30 | Sat | NNode | ∠ Semi-square | Uranus 19° Cap (7th) | 0.02° |
-| May 31 | Sun | Uranus | ⚻ Inconjunct | Jupiter 2° Sco (5th) | 0.03° |
-| May 31 | Sun | Sun | ☍ Opposition | Mars 10° Sag (6th) | **0.05°** |
-| May 31 | Sun | Jupiter | ⚻ Inconjunct | Saturn 24° Aqu (9th) | **0.05°** |
-| Jun 1 | Mon | Mars | ⚻ Inconjunct | Mars 10° Sag (6th) | **0.04°** |
-| Jun 1 | Mon | Neptune | ☌ Conjunction | Moon 4° Ari (10th) | 0.07° |
-| Jun 3 | Wed | Venus | △ Trine | Venus 18° Sco (5th) | 0.20° |
-| Jun 3 | Wed | Jupiter | △ Trine | Pluto 25° Sco (6th) | 0.48° |
+| May 28 | Thu | Neptune | ☌ Conjunction | Moon 4° Aries (10th) | **0.01°** |
+| May 28 | Thu | Chiron | ✶ Sextile | Ascendant 29° Gemini (1st) | **0.01°** |
+| May 29 | Fri | Saturn | ⚻ Inconjunct | Mercury 12° Scorpio (5th) | **0.02°** |
+| May 29 | Fri | Sun | □ Square | Chiron 8° Virgo (4th) | **0.03°** |
+| May 29 | Fri | Sun | □ Square | Midheaven 8° Pisces (10th) | **0.03°** |
+| May 29 | Fri | Chiron | ✶ Sextile | Ascendant 29° Gemini (1st) | 0.06° |
+| May 29 | Fri | Uranus | ⚻ Inconjunct | Jupiter 2° Scorpio (5th) | 0.09° |
+| May 29 | Fri | Mars | △ Trine | Chiron 8° Virgo (4th) | 0.18° |
+| May 29 | Fri | Mars | ✶ Sextile | Midheaven 8° Pisces (10th) | 0.18° |
+| May 29 | Fri | Venus | △ Trine | Mercury 12° Scorpio (5th) | 0.30° |
+| May 30 | Sat | NNode ℞ | ∠ Semi-square | Uranus 19° Capricorn (7th) | **0.02°** |
+| May 30 | Sat | Uranus | ⚻ Inconjunct | Jupiter 2° Scorpio (5th) | **0.03°** |
+| May 31 | Sun | Sun | ☍ Opposition | Mars 10° Sagittarius (6th) | **0.05°** |
+| May 31 | Sun | Jupiter | ⚻ Inconjunct | Saturn 24° Aquarius (9th) | **0.05°** |
+| Jun 1 | Mon | Mars | ⚻ Inconjunct | Mars 10° Sagittarius (6th) | **0.04°** |
+| Jun 1 | Mon | Neptune | ☌ Conjunction | Moon 4° Aries (10th) | 0.07° |
+| Jun 3 | Wed | Venus | △ Trine | Venus 18° Scorpio (5th) | 0.20° |
+| Jun 3 | Wed | Mars | ☍ Opposition | Mercury 12° Scorpio (5th) | 0.48° |
+| Jun 3 | Wed | Jupiter | △ Trine | Pluto 25° Scorpio (6th) | 0.48° |
 
 ---
 
 ## The Week's Dominant Themes
 
-**Thursday's Double Exact — Neptune and Chiron at Simultaneous 0.01°** — Tomorrow Neptune reaches exact conjunction with natal Moon at 4° Aries (10th house) and Chiron reaches exact sextile to natal Ascendant at 29° Gemini (1st house) — both at 0.01°, both simultaneously, both at the tightest point of their respective arcs in this pass. The 10th house Moon is the antenna for career intuition, emotional sense of purpose, what you're building toward in the public self; Neptune at its mathematical peak means the sensing field isn't sharpened — it's dissolved into a kind of maximum permeability. Chiron at the sextile to the anaretic Ascendant-South Node conjunction is a cooperative invitation to let what's been carried in the wound stop needing to be managed behind the face. The inner field and the outer face arriving at exact simultaneously is the week's center of gravity: what you sense (Neptune-Moon) and what you show (Chiron-ASC) are touching the same frequency at once. This is not a crisis transit — it's a peak integration moment.
+**Neptune and Chiron at Simultaneous Exactness — Today** — Neptune reaches exact conjunction with natal Moon at 4° Aries (10th house) and Chiron reaches exact sextile to natal Ascendant at 29° Gemini (1st house) — both at 0.01°, both today, both at the tightest point of their respective arcs in this pass. The 10th house Moon is the emotional antenna for public life, career intuition, the management of feeling in visible contexts; Neptune at its mathematical peak means the sensing field isn't sharpened — it's become permeable. The usual Aries Moon armor of emotional self-sufficiency is thinned to near-nothing. Chiron at the sextile to the anaretic Ascendant-South Node conjunction is the healer at the face, offering integration rather than rupture. What you sense and what you show are touching the same frequency today. This is a peak integration moment, not a crisis transit.
 
-**Friday's Pressure and Grace — Wound, Career, Voice, Support Landing Together** — After Thursday's peak, Friday May 29 brings the Sun to 0.03° square of both natal Chiron (4th house) and natal Midheaven (10th house) — the exact same wound-career axis Jupiter pressed earlier in the week, now hit by the Sun in Gemini with sharper light. Saturn simultaneously reaches 0.02° inconjunct natal Mercury in the 5th, the tightest this Venus-to-voice friction gets in this arc. Hard aspects on the wound-career axis and the communication channel at the end of the work week. And then — on the same day — Mars at 0.18° trine natal Chiron and Venus at 0.30° trine natal Mercury, both applying. The physical grounding of the healing process (Mars-Chiron trine) and the relational grace in expression (Venus-Mercury trine) land alongside the friction. This isn't either/or: it's the hardest pressure day supported by the gentlest trine day at once.
+**Friday's Pressure and Grace — Wound, Career, and Voice Together** — Friday May 29 brings the Sun to 0.03° square of both natal Chiron (4th) and natal Midheaven (10th) simultaneously — the same wound-career axis, now hit by the Sun in Gemini with direct, revealing light. Saturn reaches 0.02° inconjunct natal Mercury in the 5th, the tightest this communication pressure gets in this arc. Hard aspects on the wound-career axis and the expression channel at the end of the work week. And on the same day — Mars trine natal Chiron (0.18°) and Venus trine natal Mercury (0.30°), both applying. Physical grounding of the healing process and relational grace in expression land alongside the friction. The pressure and the support are not in alternation this week — they arrive together.
 
-**Weekend into Next Week — Identity, Drive, and the Scorpio Stellium** — Saturday Uranus reaches 0.03° inconjunct natal Jupiter at 2° Scorpio (5th house) — the creative and philosophical dimension of the stellium at its nearest reorganization point in this pass. Sunday closes with the Sun at 0.05° opposition natal Mars (6th) — identity and personal drive in exact confrontation — and Jupiter at 0.05° inconjunct natal Saturn in the 9th, the expansion-versus-structure, ambition-versus-belief tension at its sharpest. Monday adds Mars at 0.04° inconjunct natal Mars — drive in direct friction with its natal signature. Then Wednesday June 3 offers a closing grace note: Venus trines natal Venus (0.20°) and Jupiter applies toward trine natal Pluto (0.48°) — two water-water trines bringing nourishment through the 5th house Scorpio field after a week of pressure and integration.
+**The Inconjunct Series — Adjustment Without Resolution** — Saturn inconjunct natal Mercury peaks Friday; Uranus inconjunct natal Jupiter peaks Saturday; Mars inconjunct natal Mars peaks Monday. Three inconjuncts in four days. The inconjunct doesn't resolve — it requires calibration. The things being held in friction (Gemini's speed versus Scorpio's depth in the creative field; Aries drive versus Sagittarius direction in Mars; communication precision versus 5th house expression) are all asking for the same thing: find how to work within the adjustment rather than waiting for it to become comfortable. What's being produced by this series isn't yet visible, but it's forming.
 
 ---
 
 ## Day-by-Day Texture
 
-**Wednesday May 27:** Neptune at 0.03° and Chiron at 0.04° are already at peak intensity — the eve of Thursday's exact; Venus in Cancer simultaneously applying to both natal Mars and Pluto at 0.07° adds desire-drive friction under the open field.
+**Thursday (today):** Neptune and Chiron both at 0.01° on the emotional-public axis — the permeability is here now; trust the sensing register, don't try to manage it back into shape.
 
-**Thursday May 28:** Neptune and Chiron both hit 0.01° simultaneously — the week's emotional and integrative peak; note what you sense and what the face does differently when the armor isn't running at full cost.
+**Friday:** The week's hardest day — Sun squaring natal Chiron and Midheaven, Saturn tight on natal Mercury — but Mars trine Chiron and Venus trine Mercury are the grace notes in the same hours. Friction with genuine support embedded in it.
 
-**Friday May 29:** The work week's most demanding day — Sun square natal Chiron and Midheaven at 0.03°, Saturn tight on natal Mercury — with Mars trine natal Chiron and Venus trine natal Mercury landing as counterweight; pressure and grace in the same hours.
+**Saturday:** Uranus-Jupiter inconjunct at its closest — the 5th house creative stellium at its nearest reorganization point. NNode semi-square natal Uranus (7th) activates something relational that's worth noticing without immediately acting on.
 
-**Saturday May 30:** Uranus at 0.03° inconjunct natal Jupiter — the 5th house creative stellium at its nearest reorganization point; quieter surface, significant depth underway.
+**Sunday:** Sun exactly opposite natal Mars, Jupiter exact inconjunct natal Saturn — identity in direct tension with drive, and expansion pressing against the belief-structure architecture in the 9th. Diagnostic rather than productive; let the oppositions do their work.
 
-**Sunday May 31:** Sun exactly opposite natal Mars, Jupiter exact inconjunct natal Saturn — identity in direct tension with drive, expansion pressing against the belief and structure architecture in the 9th house; the building Full Moon makes this day's stakes feel legible.
+**Monday:** Mars inconjunct natal Mars opens the new week — drive in direct friction with its natal signature, asking what the momentum is actually in service of. Neptune on the Moon (0.07°) holds the emotional permeability steady.
 
-**Weekend note June 1:** Mars at 0.04° inconjunct natal Mars opens the new week — drive in friction with its own natal signature, asking what the momentum is actually in service of; Neptune on the Moon holds steady in the 0.07° range.
+**Tuesday:** Neptune still within 0.1° of natal Moon; the transiting Moon will square natal Moon during the day. The week's emotional accumulation reaches a pressure point. Build in space rather than treating this as a full output day.
+
+**Weekend:** Venus trines natal Venus in the 5th Wednesday — creative and relational field opens warmly. Mars building toward opposition natal Mercury (peaks next week) means communication is gaining charge; Wednesday it's warm, next week it sharpens.
 
 ---
 
-*Generated: 2026-05-27 | Full daily readings in readings/daily/2026-05/YYYY-MM-DD.md*
+*Generated: 2026-05-28 | Full daily reading: readings/2026-05-28.md*
