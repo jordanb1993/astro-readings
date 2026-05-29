@@ -1,14 +1,16 @@
 ---
-title: Week Ahead — June 1 through June 7, 2026
+title: Week Ahead — May 30 through June 5, 2026
 generated: 2026-05-29
+cssclasses:
+  - stars-reading
 tags:
   - week-ahead
   - astrology
 ---
 
-# Week Ahead — June 1 through June 7
+# Week Ahead — May 30 through June 5, 2026
 
-> The sky this week runs communication through a double filter: Saturn demands precision at exact inconjunct to natal Mercury on Monday, then Mars arrives in exact opposition to natal Mercury by Thursday — a gauntlet from structured demand to direct confrontation. Running underneath both, Chiron sextiles natal Ascendant toward exactness mid-week, offering the wound's wisdom at the face as a steady resource. Thursday concentrates the week's full charge: the North Node squares natal Nodes exactly, Mars confronts natal Mercury, and Venus activates the 7th-house pair all in the same day.
+> The week opens with the Sagittarius Full Moon conjunct natal Mars (May 31) — the wound-career axis that Sun and Jupiter have been pressing all week reaches its culmination in fire and directed drive. The second half quiets but brings its own precision: Saturn-Mercury exact, Mercury at the natal Ascendant, Jupiter inconjunct natal Saturn, and then Venus opposing the natal 7th house Capricorn pair, bringing the relational dissolution theme forward just as the week closes.
 
 ---
 
@@ -16,45 +18,45 @@ tags:
 
 | Date | Day | Transit | Aspect | Natal Point | Orb at Peak |
 |------|-----|---------|--------|-------------|-------------|
-| 2026-05-30 | Saturday | Mars | △ trine | Chiron (4th) | 0°08' |
-| 2026-05-30 | Saturday | Uranus | ☍ opposition | Sun (6th) | 0°15' |
-| 2026-05-31 | Sunday | Saturn | ⚻ inconjunct | Mercury (5th) | 0°09' |
-| 2026-06-01 | Monday | Saturn | ⚻ inconjunct | Mercury (5th) | 0°01' |
-| 2026-06-01 | Monday | Sun | ☍ opposition | Mars (6th) | 0°14' |
-| 2026-06-01 | Monday | Mercury | ☌ conjunction | Ascendant (1st) | 0°44' |
-| 2026-06-02 | Tuesday | Mars | ⚻ inconjunct | Mars (6th) | 0°02' |
-| 2026-06-02 | Tuesday | Jupiter | ⚻ inconjunct | Saturn (9th) | 0°08' |
-| 2026-06-03 | Wednesday | Chiron | ✶ sextile | Ascendant (1st) | 0°06' |
-| 2026-06-04 | Thursday | NNode | □ square | North Node (6th) | 0°00' |
-| 2026-06-04 | Thursday | Mars | ☍ opposition | Mercury (5th) | 0°02' |
-| 2026-06-04 | Thursday | Venus | ☍ opposition | Uranus (7th) | 0°19' |
+| May 30 | Sat | Mars 8°00' Tau | sextile | MC 8°16' Pis (10th) | ~0°16' |
+| May 30-31 | Sat-Sun | Mars 8°29' Tau | trine | Chiron 8°29' Vir (4th) | ~0° exact |
+| May 31 | Sun | Full Moon ~9°51' Sag | conjunct | Mars 10°46' Sag (6th) | ~0°55' |
+| May 31 | Sun | Full Moon ~9°51' Sag | square | Chiron 8°29' Vir (4th) | ~1°22' |
+| May 31 | Sun | Full Moon ~9°51' Sag | square | MC 8°16' Pis (10th) | ~1°35' |
+| June 1 | Mon | Saturn ~12°13' Ari | inconjunct | Mercury 12°17' Sco (5th) | ~0°04' |
+| June 1-2 | Mon-Tue | Mercury 29°22' Gem | conjunct | Ascendant 29°22' Gem (1st) | ~0° exact |
+| June 2 | Tue | Jupiter ~24°15' Can | inconjunct | Saturn 24°15' Aqu (9th) | ~0° exact |
+| June 3 | Wed | Venus ~18°50' Can | trine | Venus 18°50' Sco (5th) | ~0° exact |
+| June 3-4 | Wed-Thu | Venus ~19°11' Can | opposition | Neptune 19°11' Cap (7th) | ~0° exact |
+| June 4 | Thu | Venus ~19°34' Can | opposition | Uranus 19°34' Cap (7th) | ~0° exact |
+| June 5-6 | Fri-Sat | Chiron 29°22' Ari | sextile | Ascendant 29°22' Gem (1st) | ~0° exact |
 
 ---
 
 ## The Week's Dominant Themes
 
-**Communication Under Pressure, Then Confrontation** — Saturn's inconjunct to natal Mercury (12°17' Scorpio, 5th house) peaks at exact on Monday (0°01'), completing a 10-day precision demand on expression and creative communication. The Saturn squeeze eases through Tuesday and Wednesday, but by Thursday Mars arrives in exact opposition to natal Mercury at 0°02' — direct, pointed, unambiguous. The week moves from structured demand to direct challenge. Both require showing up fully in language; neither is bad unless avoided.
+**Sagittarius Full Moon conjunct natal Mars (May 31)** — The Full Moon at ~9°51' Sagittarius lands 0°55' from natal Mars at 10°46' Sagittarius in the 6th house — close enough to be effectively conjunct the drive, the pursuer, the part that initiates action. At the same moment it squares natal Chiron (1°22') and natal MC (1°35') — the same wound-career axis that Sun and Jupiter have been pressing all week. This lunation is the week's natural peak and the culmination of everything building since Monday May 25. The ritual Jordan has planned lands exactly right. North Node is nearby at 3°02' Sagittarius; this Full Moon has soul-path resonance on top of the Mars activation.
 
-**The Wound at the Face** — Transiting Chiron at 29° Aries sextiles natal Ascendant at 29° Gemini through the whole week, approaching near-exact by Wednesday (0°06') and holding near-exact through Thursday. Two anaretic-degree placements cooperating: the wound and the self-presentation threshold, both at the edge of their signs and both asking what comes next. The healing that's been happening internally is arriving at the surface of how you show up — not as performance, as access. This thread runs quiet beneath the communication noise and is worth tracking.
+**Mercury at the Ascendant + Saturn-Mercury exact (June 1)** — Saturn inconjunct natal Mercury (12°17' Scorpio, 5th house) reaches exact on June 1, completing the precision demand that has been building for two weeks. On the same day, transiting Mercury arrives at natal Ascendant 29°22' Gemini — both at the anaretic degree, both at a threshold. What you say and how you say it carries particular weight: Saturn pressing for accuracy while Mercury arrives at the identity boundary. Mercury ingresses Cancer on June 2, shifting the communication register from Gemini intellectual clarity to Cancer emotional intelligence.
 
-**Thursday's Soul Path Turning Point** — June 4 is the week's most concentrated day. The North Node reaches exact square to natal North Node (0°00'), a nodal pressure point where the soul's current direction comes into direct tension with the natal path axis. In the same window, Mars exactly opposes natal Mercury and Venus activates the 7th-house Uranus/Neptune pair. For Jordan: the Eleanor chapter closed with the South Node mirroring pattern named at two dates instead of two years, and Bumble for Pride is on the near horizon. Thursday is the day the relational and soul-path threads fully converge.
+**Venus through the 7th house (June 3-4)** — Venus in Cancer trines natal Venus in Scorpio (5th house ease, creative warmth flowing well) while simultaneously opposing natal Neptune (19°11' Cap) then natal Uranus (19°34' Cap) in the 7th. The Capricorn pair in the 7th already makes the partnership space dissolution-prone and unpredictable. Venus transiting through the opposition brings those themes to the surface: desire and connection meeting where commitment dissolves or surprises. Relational dynamics mid-week may carry more charge than expected, even if the week otherwise feels lighter after the Full Moon peak.
 
 ---
 
 ## Day-by-Day Texture
 
-**Monday:** Saturn inconjunct Mercury reaches exact (0°01') while Mercury simultaneously conjuncts natal Ascendant — maximum precision demand meets maximum self-visibility; what you say is both high-standard and unusually forward-facing.
+**Saturday May 30:** Mars exact trine natal Chiron + sextile natal MC — the most physically supported day of the week. Grounded, productive, body-based action with structural backing. Good reset day.
 
-**Tuesday:** Mars inconjunct natal Mars (0°02') alongside Jupiter inconjunct natal Saturn (0°08') — drive energy needs redirection rather than push; the ambition-structure axis is recalibrating and neither force wins by brute effort alone.
+**Sunday May 31:** Sagittarius Full Moon conjunct natal Mars at ~8am CDT — the week's peak. North Node axis. Chiron-MC squared. Ritual day. This is what the week has been building toward.
 
-**Wednesday:** Chiron approaching exact sextile to Ascendant (0°06') — the wound's wisdom is available right at the surface; the healer frequency is forward-facing rather than the wound itself.
+**Monday June 1:** Saturn-Mercury inconjunct exact + Mercury crosses natal Ascendant — precision demand at full force meets identity threshold. Professional communication deserves extra care; say exactly what you mean.
 
-**Thursday:** The week's charge converges: NNode squares natal Nodes exactly, Mars exactly opposes natal Mercury, Venus activates the 7th-house pair — directness, relational activation, and a legible soul-path turn all in the same day.
+**Tuesday June 2:** Jupiter inconjunct natal Saturn exact + Mercury enters Cancer — expansion pressing structure, emotional register shifting. Sales call day; useful framing is what's opening rather than what to push.
 
-**Friday:** Decompression. The major exact aspects are separating; NNode approaching trine to natal Jupiter (0°09') offers a philosophical exhale after Thursday's concentration.
+**Wednesday June 3:** Venus trine natal Venus exact — first genuinely soft day of the week. Creative warmth, ease, desire available without friction.
 
-**Weekend:** Integration. The slow outer planets continue (Uranus-Sun holding, Neptune approaching natal Moon, Chiron-Ascendant sextile still present). The charge from Thursday is absorbed.
+**Thursday-Friday June 4-5:** Venus opposition natal Neptune then Uranus — 7th house themes surface; relational revelation or disruption possible. Chiron approaching exact sextile to natal Ascendant.
 
 ---
 
-*Generated: 2026-05-29 | Full daily readings in readings/daily/2026-05/2026-05-29.md*
+*Generated: 2026-05-29 | Recalculated with corrected arc-minute natal positions | Full daily readings: readings/daily/2026-05/*
