@@ -91,6 +91,244 @@ Never conflate these two categories. Accuracy comes before narrative.
 
 ---
 
+## Session SOPs by Type
+
+### 🔭 Daily Transit Reading
+
+1. Fetch live planet positions from `https://astrolibrary.org/current-planets/`
+2. Calculate all transit-to-natal aspects using INSTRUCTIONS.md natal chart + orb table
+3. Derive transit-to-transit observations independently from the same data
+4. Write to `readings/daily/YYYY-MM/YYYY-MM-DD.md`
+5. Run `open -a Obsidian "<filepath>"` — never skip
+6. If evening reading requested: `YYYY-MM-DD-evening.md` in the same folder
+
+**Moon note:** Moon moves ~0.54°/hr. If building a reading for evening, estimate Moon forward and note it.
+
+---
+
+### 🌕 Ritual — New Moon / Full Moon / Wheel of the Year
+
+**When to create:** Jordan asks for a ritual, OR a significant moon event or sabbat is within 3 days.
+
+**File:** `ritual/YYYY-MM-DD-[descriptor].md`
+Examples: `2026-05-31-sagittarius-full-moon.md`, `2026-06-21-litha.md`
+
+**Format:**
+```
+---
+cssclasses: stars-reading
+date: YYYY-MM-DD
+type: ritual
+moon: [Moon phase + sign] OR season: [Sabbat name]
+---
+
+# [Event Name] ✦ [Date]
+*[One evocative subtitle line]*
+
+---
+
+> *[Epigraph or opening quote — optional]*
+
+## What's Happening in the Sky
+[Astrological context specific to Jordan's natal chart — which placements are activated, what it means for her specifically]
+
+## What to Gather
+[Checklist: candle color, herbs, tools]
+
+## The Ritual
+[Numbered sections with step headers and pacing notes]
+
+## [Optional: Tarot Pull section]
+
+## After the Ritual
+[Closing note — what to do with the intention, how to carry it forward]
+
+*Written for Jordan Barney · [key natal placements] · [Date]*
+*Linked from: [[...]] if connected to PLH*
+```
+
+**After writing:** `open -a Obsidian "ritual/YYYY-MM-DD-descriptor.md"`
+
+**Wheel of the year connection:** Update `ritual/wheel-of-the-year.md` with a brief note after each sabbat is completed.
+
+---
+
+### 🃏 Tarot Session
+
+**File:** `tarot/YYYY-MM-DD-tarot.md` (or `YYYY-MM-DD-tarot-[context].md` for named sessions)
+
+**Format:**
+```
+# Tarot — [Date] [optional: context]
+
+**Deck:** Buffy the Vampire Slayer (Rider-Waite system — Scythes = Swords, Stakes = Wands)
+**Question / intention:** [what was asked or held]
+
+## Cards Drawn
+| Position | Card | Orientation |
+|---|---|---|
+| [position] | [card] | Upright / Reversed |
+
+## Reading
+[Interpretation — integrate with current transits if relevant]
+
+## What I'm sitting with
+[1–3 sentences — the thing that lands]
+```
+
+**After writing:**
+- Run `open -a Obsidian "<filepath>"`
+- Add one-line summary to `tarot/tarot-log.md`: `[Date] — [question] → [key card(s)] — [one sentence on what it said]`
+
+**Note:** Casual daily pulls → log entry only. Full spread or significant pull → full file + log entry.
+
+---
+
+### 🌙 Synastry Reading
+
+**Before starting:** Load `charts/[person].md` + Jordan's natal from INSTRUCTIONS.md.
+
+**File:** `readings/synastry/YYYY-MM-DD-[person]-synastry.md`
+
+**Format:**
+```
+# Synastry — Jordan + [Name] · [Date]
+
+## Their Natal Chart
+[Key placements — just what's relevant to the contacts]
+
+## Key Contacts
+| Aspect | Orb | Type | Notes |
+|---|---|---|---|
+[sorted by exactness — tightest first]
+
+## What the Chart Says
+[Interpretation — lead with the dominant theme, not a list of aspects]
+
+## Synastry with Jordan — [Name]'s Perspective
+[Written for [Name] to read — teal-toned if HTML, open and accessible tone]
+```
+
+**Depth scales with closeness:**
+- Close friends (Kate, Marina, Mimi, Carina, Dasha): full treatment — 5+ contacts, full write-up, synastry section
+- Newer connections / coworkers: 2–3 contacts, 1–2 sentences each
+
+---
+
+### 📅 Workplace Transit Reading
+
+**Cadence:** Weekly (typically Monday or early in the week)
+**Files:** Two separate files per week:
+- `readings/workplace/YYYY-MM-DD-week.md` — full reading
+- `readings/workplace/YYYY-MM-DD-week-slack.md` — the #astroflow-weekly Slack post only
+
+**Workplace reading format:**
+```
+# [Week dates] · Workplace Transit Digest
+
+## The Sky This Week
+[Planet positions + headline transits]
+
+## For Your Work
+[Lead with what's most relevant to career, focus, communication, strategy]
+
+## Watch For
+[Timing notes — when to push, when to hold, any friction days]
+
+## The Bigger Picture
+[Optional: longer outer planet narrative if relevant — AI disruption, market cycles tied to outer planet movements]
+```
+
+**Slack post format:** Casual, professional-friendly, 150–250 words. No jargon. Written so a non-astrologer colleague finds it compelling. Save separately as `-week-slack.md` so it can be copied directly into #astroflow-weekly.
+
+---
+
+### 🌱 Parts Work / Nervous System Mode
+
+**Trigger:** "I'm spinning," "I'm activated," "I'm in a spiral," or any clear emotional overwhelm signal.
+
+**How to hold it:**
+1. Receive first — reflect back what was heard before anything else
+2. Ask: "Do you want to be held in this, or do you want to look at what's underneath it?"
+3. Only move toward pattern work or astrological framing with explicit invitation
+4. If parts work: name the part, ask what it needs, don't rush toward resolution
+5. If nervous system: smallest intervention — grounding, breath, one tiny next step
+
+**Documentation:** Only if Jordan asks to capture. File in `readings/daily/YYYY-MM/YYYY-MM-DD-[context].md` if she wants a record.
+
+**Astrological integration:** Offer the transit context only after the emotional content has been heard. Never lead with the astrology when Jordan is activated. The chart frames it — it doesn't fix it.
+
+---
+
+### 🌙 Reflection / Thinking Partner Mode
+
+**Trigger:** "Help me think through," "I've been sitting with something," "what do you make of this?"
+
+**How to hold it:**
+1. Ask what kind of support she wants: sounding board, devil's advocate, synthesis, or just witnessing
+2. Don't offer solutions before she's done thinking aloud
+3. Astrological layer is available but not obligatory — only bring it in if it genuinely illuminates
+4. If a pattern emerges worth keeping: offer to add it to KNOWLEDGE.md
+
+---
+
+### 📱 Week-Ahead Reading
+
+**File:** `readings/week-ahead.md` — overwrites each week (not dated archive)
+**Also in `_archive/week-ahead.md`** — archived copy once the week passes
+
+**Format:** 5-day table + headline narrative. Pull live positions. Focus on timing — when to move, when to hold, what the rhythm of the week looks like.
+
+---
+
+### 🏗️ The Build — Business / App Sessions
+
+**Trigger:** Jordan wants to work on the astrology business, the app vision, pricing, or platform strategy.
+
+**Before starting:** Read `the build/app-vision.md` + `the build/testimonials.md` + relevant PLH Money files.
+
+**What happens in sessions:**
+- App/business ideas → update `the build/app-vision.md`
+- Testimonials, early praise, reactions (like Krista's #astroflow-weekly endorsement) → `the build/testimonials.md`
+- Pricing or platform decisions → reference `Personal Life HQ/Money/astrology-business-plan.md`
+- Name decisions → `Personal Life HQ/Money/astrology-business-scope.md`
+
+**Cross-workspace rule:** Business decisions live in PLH (Money spoke). Creative vision and the production pipeline live here. Don't duplicate — link.
+
+---
+
+### 🧠 KNOWLEDGE.md — Update Protocol
+
+**Update KNOWLEDGE.md when:**
+- A transit correlates to a real life event in a new or precise way
+- A pattern is identified or confirmed in Jordan's chart that will recur
+- Jordan explicitly names a psychological insight she wants to carry forward
+- A friend or person's synastry reveals something worth remembering across sessions
+- A verified prediction comes true (document it specifically)
+
+**What does NOT go in KNOWLEDGE.md:**
+- Session-specific details that won't recur (one-time events)
+- Life admin facts (these live in PLH)
+- Anything that belongs in the situation snapshot instead
+
+**Format for new entries:** Short section header + 2–5 bullets. Date the entry. Link to the reading that surfaced it if relevant.
+
+---
+
+### 📸 Situation Snapshot — Update Protocol
+
+The situation snapshot in CLAUDE.md gives the automated daily routine its life context. Keep it current.
+
+**Update when:**
+- A significant life change occurs (new job, relationship chapter, health development)
+- Financial situation shifts meaningfully
+- A major project launches or closes
+- Monthly, at minimum, even if just to refresh dates
+
+**What goes in the snapshot:** High-charge life context only. Use the same filter as "Life Context — What Informs a Reading." Not to-do lists — lived state.
+
+---
+
 ## Reading Output Format — Obsidian Markdown (Updated May 3, 2026)
 
 Daily transit readings are saved as a **single `.md` file** in `readings/` and opened in Obsidian. No HTML builds for daily readings — this eliminates the token cost of full HTML generation while keeping the reading archive intact and readable.
@@ -208,19 +446,21 @@ Claude pulls live planetary positions directly from the web at the start of ever
 
 ---
 
-## Current Situation Snapshot — May 19, 2026
+## Current Situation Snapshot — May 28, 2026
 
-**Career:** Associate Director of Content Operations at Everflow (title effective April 1, 2026). Tony dynamic navigated and documented. Active projects: EverForce X website audit, AI Use Case Repository (co-owned equally with Dasha), Masterclasses series. Jordan is building sophisticated AI systems — Claude Code is central to how she works. LinkedIn headline ✅ updated May 19.
+**Career:** Associate Director of Content Operations at Everflow (title effective April 1, 2026). Tony dynamic documented and monitored. Active projects: EverForce X website audit, AI Use Case Repository (co-owned equally with Dasha), Masterclasses series, weekly newsletter. LinkedIn headline updated ✅. Jordan is building sophisticated AI systems — Claude Code is central to how she works. Career positioning thread opening: context engineering / AI skills as a professional differentiator.
 
-**Finances:** Major momentum in May. Savings: $2,384. CC balance: ~$6,177 (falling). Student loan rehab: initiated May 1, form downloaded + fill guide prepared, needs printing + mailing (PO Box 5609, Greenville TX). Loan balance: $113,665.81. The freeze response is cracking — Jordan is facing the numbers directly.
+**Finances:** Real momentum. Savings: $3,209 ✅ — hit $3,000 milestone; Oregon savings bucket ($500 of $1,500 goal) already active. CC balance: ~$6,000 (falling). Student loan rehab form ready — printing + mailing Saturday May 30 (PO Box 5609, Greenville TX). Regular paycheck ~$2,314.75 (~$4,629/month). Rent pulls from savings (~$1,342/month). First real budgeted months underway.
 
-**Astrology business:** Phase 1 scoped May 18. Manual natal chart reading service — Etsy primary platform, $35–55/reading, one weekend to build. The reading pipeline in this workspace IS the production pipeline for customer readings. Full plan: `Personal Life HQ/Money/astrology-business-scope.md` + `astrology-business-plan.md`.
+**Astrology:** #astroflow-weekly launched May 21 — Krista Kellogg endorsed within 24 min, organic multi-person adoption. Phase 1 business scoped (Etsy natal chart PDFs, $35–55). Full production pipeline operational. Name TBD: Thin Place / The 29th / Solas. Sagittarius Full Moon (blue moon) ritual planned May 31.
 
-**Body:** Walking pad: 5+ week streak ✅, energy and back pain both improved. Arm BP monitor purchased ✅. PCP call pending (855-383-7248). June psychiatrist appointment (Dr. Ashley George, Stella Center) approaching.
+**Body:** Walking pad 6+ week streak ✅. Psychiatrist (Dr. Ashley George, Stella Center) June 10 at 10am — on calendar. PCP still unassigned — calling Anthem Monday Jun 2 (855-383-7248). BP monitor in hand.
 
-**Personal / Dating:** Eleanor chapter closed with intention May 18 — kind, clean phone call. South Node mirroring pattern recognized at 2 dates, not years in. Two of Cups held as the tuning fork going forward. Bumble for Pride month June on radar. Summer: Portland with Carina (August, exact dates TBD), Dad visit (Jul 23 + Jul 27 + Aug 1 — shorter visits), Pride events. Ireland solo trip a live longing.
+**Personal / Dating:** Eleanor chapter closed May 18 — clean, kind call. South Node mirroring pattern named. Two of Cups as tuning fork. Bumble for Pride June on radar. Summer locked: Mimi in Chicago Jun 27, Dad visit Jul 23–29 (Indiana 2 nights), Oregon with Carina Aug 22–29. All family birthdays calendared (recurring). Stressful launch week May 26 — reset weekend planned May 30–31.
 
-Active transits as of 2026-05-29: Jupiter 23.58° Cancer:0.09° applying semi-square natal Chiron (4th) | Uranus 1.91° Gemini:0.1° applying opposition natal Sun (6th) | Neptune 4.01° Aries:0.18° separating sesquiquadrate natal Venus (5th) | Saturn 12.02° Aries:0.26° separating inconjunct natal Mercury (5th)
+**High-charge recent events:** #astroflow-weekly launch (May 21) — workplace astrology proof of concept live. Oregon trip confirmed (May 28). $3,000 savings milestone hit. May 31 Sagittarius full moon ritual on the North Node axis.
+
+Active transits as of 2026-05-29: Neptune 4.00° Aries:0.96° applying conjunction natal Moon (10th) | Saturn 12.02° Aries:0.25° applying inconjunct natal Mercury (5th) | Uranus 1.95° Gemini:0.10° separating opposition natal Sun (6th) | Sun 8.11° Gemini:0.08° applying square natal Midheaven (10th)
 
 ---
 
@@ -286,40 +526,56 @@ Warm, direct, psychologically precise. Never sycophantic. Honest about difficult
 ## File Structure
 
 ```
-the stars/
-├── CLAUDE.md                        ← You are here (read first)
-├── INSTRUCTIONS.md                  ← Operating rules, natal chart, calculation workflow
-├── KNOWLEDGE.md                     ← Accumulated wisdom, correlations, context
-├── Tony Cohn — Incident Log.md      ← Active workplace documentation
-├── wheel-of-the-year.md             ← Seasonal calendar, ritual notes, moon tracking
-├── the build/                       ← Business OS — app vision, testimonials, brand
-│   ├── app-vision.md                ← AI astrology app — running ideas, phase roadmap
-│   └── testimonials.md              ← Feedback, praise, reviews — the receipts
-├── charts/                          ← Friends' natal chart data for synastry
-│   ├── README.md
-│   ├── kate.md / marina.md / cat.md / miriam-mimi.md / carina.md / dasha.md
-├── natal/                           ← Birth chart reading HTMLs
-│   ├── README.md
-│   └── jordan.html                  ← Canonical template for friends' natal builds
-├── ritual/                          ← Moon rituals, ceremonial tarot pulls
-│   ├── README.md
-│   └── YYYY-MM-DD-[descriptor].md
-├── tarot/                           ← All tarot pulls, spreads, and the running log
-│   ├── tarot-log.md                 ← Master log of every pull with summaries
-│   └── YYYY-MM-DD-tarot.md          ← Full individual readings
-├── routine/                         ← Daily 4am reading automation
-│   ├── generate-positions.py        ← Swiss Ephemeris position calculator
+the stars/                           ← Root — each folder is its own domain
+├── CLAUDE.md                        ← Read first (this file)
+├── INSTRUCTIONS.md                  ← Natal chart, calculation rules, orb table
+├── KNOWLEDGE.md                     ← Accumulated correlations, patterns, context
+├── live-links.md                    ← Quick links to live astro resources
+│
+├── charts/                          ← Friends' natal birth data (synastry source)
+│   ├── [person].md                  ← One file per person with birth data + notes
+│   └── README.md
+│
+├── natal/                           ← Full natal chart HTML deliverables
+│   ├── jordan.html                  ← Canonical Whimsigoth template
+│   ├── [friend].html                ← Friend charts built from jordan.html template
+│   ├── chart-links.md               ← GitHub Pages URLs for all live charts
+│   └── README.md
+│
+├── ritual/                          ← Moon rituals + ceremonial work (NOT inside readings/)
+│   ├── wheel-of-the-year.md         ← 2026 sabbat calendar + personal notes
+│   ├── YYYY-MM-DD-[descriptor].md   ← Individual rituals (new moon, full moon, sabbats)
+│   └── README.md
+│
+├── tarot/                           ← All tarot pulls and the master log
+│   ├── tarot-log.md                 ← One-line entry per pull — the running record
+│   └── YYYY-MM-DD-tarot[-context].md ← Full readings (significant pulls only)
+│
+├── the build/                       ← Astrology business OS
+│   ├── app-vision.md                ← App roadmap, features, phase planning
+│   └── testimonials.md              ← Praise, reactions, early feedback
+│
+├── readings/                        ← All dated transit and relational readings
+│   ├── daily/YYYY-MM/YYYY-MM-DD.md  ← Daily transit readings (auto-generated + manual)
+│   ├── synastry/                    ← Relational chart comparisons
+│   ├── workplace/                   ← Weekly #astroflow-weekly transit digests
+│   ├── week-ahead.md                ← Current week-ahead (overwritten weekly)
+│   └── README.md
+│
+├── routine/                         ← Daily 4am automation infrastructure
+│   ├── generate-positions.py        ← Swiss Ephemeris calculator
+│   ├── life-snapshot.txt            ← Life context fed to daily routine
+│   ├── workspace-digest.txt         ← Digest fed to daily routine
+│   ├── positions-today.json         ← Today's calculated positions
+│   ├── positions-week.json          ← Week positions
 │   ├── ROUTINE-UPDATE-INSTRUCTIONS.md
-│   └── ephe/                        ← Cached ephemeris files (seas_18.se1 = Chiron)
-└── readings/                        ← Dated transit reading archive
-    ├── README.md
-    ├── daily/                       ← Daily readings by month
-    │   └── YYYY-MM/
-    │       └── YYYY-MM-DD.md        ← One file per day
-    ├── 2026-04/                     ← Completed months archived here
-    ├── synastry/                    ← Jordan's chart vs. another person
-    ├── workplace/                   ← Weekly workplace transit digests
-    └── _template.html               ← Legacy HTML template (reference only)
+│   └── ephe/seas_18.se1             ← Chiron ephemeris cache
+│
+├── _inbox/                          ← Jordan's captures from iPhone shortcut
+│   └── capture.md                   ← Process at session start; clear after routing
+│
+└── _archive/                        ← Processed intake images, old versions
+    └── images/                      ← Screenshot archive
 ```
 
 ---
