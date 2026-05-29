@@ -1,3 +1,33 @@
 # Life Snapshot | 2026-05-29
+# Updated manually from PLH spoke-digest + CLAUDE.md situation snapshot.
+# Refresh this file whenever a significant life change occurs.
+# The routine reads this to ground the Practical Application section of daily readings.
 
-*spoke-digest.md not found:reading continues without life context*
+---
+
+## HIGH-CHARGE CONTEXT (feed into readings)
+
+**Career:** Associate Director of Content Operations at Everflow since April 1 — title won through sustained self-advocacy. AI Use Case Repository co-owned equally with Dasha. EFX audit delivered May 15. #astroflow-weekly launched in company Slack May 21; Krista Kellogg endorsed within 24 min, organic multi-person adoption same day. Live proof-of-concept for the workplace astrology angle.
+
+**Astrology business:** Phase 1 scoped May 18. Etsy natal chart PDFs $35–55. Full Whimsigoth design system live. All friend charts live on GitHub Pages. Production pipeline fully operational. Name TBD (Thin Place / The 29th / Solas). May 31 Sagittarius Full Moon (blue moon) ritual planned — falls on the North Node axis.
+
+**Finances:** Real momentum. Savings $3,209 — hit the $3,000 milestone. Oregon savings bucket active. CC ~$6,000 and falling. Student loan rehab form printing and mailing Saturday May 30. First real budgeted months underway.
+
+**Body:** Walking pad 6+ week streak. Psychiatrist (Dr. Ashley George, Stella Center) June 10 on calendar. BP monitor in hand.
+
+**Personal:** Eleanor chapter closed May 18 — clean, kind phone call. South Node mirroring pattern named. Two of Cups as tuning fork going forward. Summer full: Mimi in Chicago Jun 27, Dad visit Jul 23–29, Oregon with Carina confirmed Aug 22–29.
+
+**High-charge recent events:**
+- #astroflow-weekly launch May 21 — workplace astrology proof-of-concept live
+- Oregon trip confirmed May 28 — first major solo + friend trip in a long time
+- $3,000 savings milestone hit
+- May 31 Sagittarius Full Moon ritual on the North Node axis
+- Uranus exact opposition natal Sun May 28 — the defining identity transit of 2026 just crested
+
+---
+
+## ACTIVE TRANSITS (as of 2026-05-29)
+Neptune 4.00° Aries: 0.96° applying conjunction natal Moon (10th) — peaks late July 2026
+Saturn 12.02° Aries: 0.25° applying inconjunct natal Mercury (5th) — exact today/tomorrow
+Uranus 1.95° Gemini: 0.10° separating opposition natal Sun (6th) — just crested; approaching South Node
+Sun 8.11° Gemini: 0.08° applying square natal Midheaven (10th) — exact today
