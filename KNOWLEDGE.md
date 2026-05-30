@@ -540,7 +540,7 @@ After the Tony escalation week (April 7-10), Jordan experienced a textbook Chiro
 
 **Professionally:** Associate Director of Content Operations at Everflow — title effective April 1, 2026. Q2 active. EverForce X website audit, AI Use Case Repository (co-owned equally with Dasha), Masterclasses series. LinkedIn headline ✅ updated May 19. Tony dynamic documented and navigated. Jordan's footprint growing through project leadership and direct relationships with Michael and Kristen.
 
-**The Astrology Business:** Phase 1 scoped and ready to build as of May 18. Manual natal chart reading service on Etsy — $35–55/reading, one weekend to build, 5 free readings to friends to seed reviews first. This reading pipeline IS the production tool. Full plan in Personal Life HQ/Money. Name top three: Thin Place · The 29th · Solas.
+**The Astrology Business:** Phase 1 scoped and ready to build as of May 18. Manual natal chart reading service on Etsy — $35–55/reading, one weekend to build, 5 free readings to friends to seed reviews first. This reading pipeline IS the production tool. Full plan in the bones/Money. Name top three: Thin Place · The 29th · Solas.
 
 **Financially:** Major progress in May 2026. Savings: $2,384. CC balance: ~$6,177 (falling). Student loan rehab initiated May 1 — form needs printing + mailing (PO Box 5609, Greenville TX). Loan balance: $113,665.81. The freeze response is cracking. The shame-free approach is working.
 
@@ -554,7 +554,7 @@ After the Tony escalation week (April 7-10), Jordan experienced a textbook Chiro
 
 **Identity:** Uranus is opposition the natal Sun — the identity transit has arrived. The casing built for older rooms is being renovated. The business launch, the Eleanor pattern recognition, the LinkedIn update — all Uranus opposition Sun lived out. The North Node assignment continues.
 
-**The Astrology Business (Phase 1 — May 2026):** The app vision landed as a concrete business plan May 18, 2026. Phase 1 is a manual natal chart reading service — Etsy platform, $35–55/reading, one weekend to build. The reading pipeline in this workspace IS the production tool for customer readings. Full operational plan lives in Personal Life HQ/Money. Name shortlist: Thin Place · The 29th · Solas. Critical path: 5 free readings to Marina, Miriam, Kate, Cat → 5 Etsy reviews → first paying customer. This workspace runs the natal chart pipeline for every reading. The app is not a separate dream — it's what Phase 2 becomes when the last human step is automated.
+**The Astrology Business (Phase 1 — May 2026):** The app vision landed as a concrete business plan May 18, 2026. Phase 1 is a manual natal chart reading service — Etsy platform, $35–55/reading, one weekend to build. The reading pipeline in this workspace IS the production tool for customer readings. Full operational plan lives in the bones/Money. Name shortlist: Thin Place · The 29th · Solas. Critical path: 5 free readings to Marina, Miriam, Kate, Cat → 5 Etsy reviews → first paying customer. This workspace runs the natal chart pipeline for every reading. The app is not a separate dream — it's what Phase 2 becomes when the last human step is automated.
 
 **LinkedIn:** ✅ Updated May 19, 2026 — headline corrected.
 

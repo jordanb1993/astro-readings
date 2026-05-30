@@ -24,8 +24,8 @@ Go to `claude.ai/code/routines` → find routine `trig_01Rtm1xSST2GbdCZh896F2vP`
    - positions-today.json     → full planet positions + transit-to-natal + t2t aspects
    - positions-week.json      → aspects approaching exact in next 7 days
    - active-transits.txt      → one-liner for CLAUDE.md patch
-   - workspace-digest.txt     → 5-line digest for Personal Life HQ
-   - life-snapshot.txt        → Jordan's current life context (spoke status from Personal Life HQ)
+   - workspace-digest.txt     → 5-line digest for the bones
+   - life-snapshot.txt        → Jordan's current life context (spoke status from the bones)
                                 READ THIS before writing the reading — ground Practical Application
                                 in what's actually happening in her life right now
 

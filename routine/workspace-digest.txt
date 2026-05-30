@@ -1,10 +1,10 @@
 # The Stars:Daily Digest | 2026-05-30
 
-**Moon:** 3.42° Sagittarius | Waxing Gibbous
+**Moon:** 3.71° Sagittarius | Waxing Gibbous
 
 **Top active transits (tight orb):**
 - Saturn ⚻ natal Mercury (5th):0.14° separating
+- Mercury □/ natal Mercury (5th):0.15° applying
 - Uranus ☍ natal Sun (6th):0.18° applying
-- Mercury □/ natal Mercury (5th):0.2° applying
 
-*Full reading: the stars/readings/2026-05-30.md*
+*Full reading: the stars/daily readings/2026-05/2026-05-30.md*

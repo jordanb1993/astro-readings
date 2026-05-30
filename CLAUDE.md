@@ -18,7 +18,7 @@ Jordan is a 32-year-old lesbian woman in Chicago. Associate Director of Content 
 3. **KNOWLEDGE.md** — always (accumulated context, correlations, life arcs, patterns)
 4. **Most recent `daily readings/YYYY-MM/YYYY-MM-DD.md`** — the latest one only, for continuity thread
 5. **`_inbox/capture.md`** — always check; if entries exist below the `---`, surface and route them before starting the session
-6. **Tony Cohn — Incident Log** — moved to `Personal Life HQ/Work/Tony Cohn — Incident Log.md`. Load from there ONLY if the session involves active work or career topics.
+6. **Tony Cohn — Incident Log** — moved to `the bones/Work/Tony Cohn — Incident Log.md`. Load from there ONLY if the session involves active work or career topics.
 
 Do not read older readings MDs unless Jordan asks to reference a specific past date. Do not begin a reading until you have oriented yourself in these files.
 
@@ -334,8 +334,8 @@ type: week-ahead
 **What happens in sessions:**
 - App/business ideas → update `the build/app-vision.md`
 - Testimonials, early praise, reactions (like Krista's #astroflow-weekly endorsement) → `the build/testimonials.md`
-- Pricing or platform decisions → reference `Personal Life HQ/Money/astrology-business-plan.md`
-- Name decisions → `Personal Life HQ/Money/astrology-business-scope.md`
+- Pricing or platform decisions → reference `the bones/Money/astrology-business-plan.md`
+- Name decisions → `the bones/Money/astrology-business-scope.md`
 
 **Cross-workspace rule:** Business decisions live in PLH (Money spoke). Creative vision and the production pipeline live here. Don't duplicate — link.
 
@@ -531,17 +531,17 @@ The distinction: *does this item connect to a transit, a pattern, a wound, or an
 
 ## Cross-Workspace Awareness
 
-This workspace and **Personal Life HQ** are in active dialogue. Key connections:
+This workspace and **the bones** are in active dialogue. Key connections:
 
 | Topic | Where it lives |
 |-------|---------------|
-| Astrology business plan (Etsy, reviews, 90-day plan) | `Personal Life HQ/Money/astrology-business-plan.md` |
-| Astrology business scope (phases, pricing, name shortlist) | `Personal Life HQ/Money/astrology-business-scope.md` |
+| Astrology business plan (Etsy, reviews, 90-day plan) | `the bones/Money/astrology-business-plan.md` |
+| Astrology business scope (phases, pricing, name shortlist) | `the bones/Money/astrology-business-scope.md` |
 | App vision + phase roadmap | `the build/app-vision.md` ← this workspace |
 | Testimonials, feedback, early praise | `the build/testimonials.md` ← this workspace |
-| Psychological patterns (Chiron wound, South Node, etc.) | `Personal Life HQ/Growth & Craft/patterns-reference.md` |
-| Financial state (savings, CC balance, loan status) | `Personal Life HQ/Money/state.md` |
-| Dating / summer plans | `Personal Life HQ/Culture & Adventure/Summer 2026.md` |
+| Psychological patterns (Chiron wound, South Node, etc.) | `the bones/Growth & Craft/patterns-reference.md` |
+| Financial state (savings, CC balance, loan status) | `the bones/Money/state.md` |
+| Dating / summer plans | `the bones/Culture & Adventure/Summer 2026.md` |
 
 **When Jordan asks about the business in this workspace:** The reading pipeline here (CLAUDE.md + INSTRUCTIONS.md + natal chart data) IS the production system. For pricing, platform, or marketing questions, reference the Money spoke files. For how to run a reading for a paying customer, use this workspace exactly as for any other natal chart.
 

@@ -7,7 +7,7 @@ Produces:
   1. positions-today.json   :today's full planet data (transit-to-natal + transit-to-transit aspects)
   2. positions-week.json    :next 7 days of aspect data (for week-ahead file)
   3. active-transits.txt    :one-liner for CLAUDE.md auto-patch
-  4. workspace-digest.txt   :5-line cross-workspace snapshot for Personal Life HQ
+  4. workspace-digest.txt   :5-line cross-workspace snapshot for the bones
 
 Run: python3 generate-positions.py
 """
@@ -1044,15 +1044,15 @@ def generate_slack_draft(t2t_aspects, week_start_str, today_positions):
     return "\n".join(sections)
 
 
-# ─── Life Snapshot (from Personal Life HQ → for reading context) ─────────────
+# ─── Life Snapshot (from the bones → for reading context) ─────────────
 
 PERSONAL_HQ_PATH = os.path.expanduser(
-    "~/Library/Mobile Documents/iCloud~md~obsidian/Documents/Personal Life HQ"
+    "~/Library/Mobile Documents/iCloud~md~obsidian/Documents/the bones"
 )
 
 def read_life_snapshot(date_str):
     """
-    Read spoke-digest.md from Personal Life HQ and distill into life context
+    Read spoke-digest.md from the bones and distill into life context
     that meaningfully informs an astrology reading.
 
     Pulls: recent events (Cleared This Month), identity/emotional spoke status.
@@ -1136,16 +1136,16 @@ def read_life_snapshot(date_str):
         "---",
         "",
         "*Admin flags (forms, calls, logistics) omitted:low astrological charge.*",
-        "*Full spoke detail: Personal Life HQ/spoke-digest.md*",
+        "*Full spoke detail: the bones/spoke-digest.md*",
     ]
 
     return "\n".join(snapshot_lines)
 
 
-# ─── Cross-Workspace Digest (for Personal Life HQ) ───────────────────────────
+# ─── Cross-Workspace Digest (for the bones) ───────────────────────────
 
 def workspace_digest(positions, today_aspects, date_str):
-    """5-line digest for Personal Life HQ the-stars-daily.md"""
+    """5-line digest for the bones the-stars-daily.md"""
     # Moon phase (approx from Sun-Moon angle)
     sun_deg = positions.get("Sun", {}).get("deg", 0)
     moon_deg = positions.get("Moon", {}).get("deg", 0)
@@ -1216,7 +1216,7 @@ def main():
     # 5. Cross-workspace digest
     digest = workspace_digest(today_positions, t2n_aspects, date_str)
 
-    # 6. Life snapshot (Personal Life HQ → Stars)
+    # 6. Life snapshot (the bones → Stars)
     life_snapshot = read_life_snapshot(date_str)
 
     # ── Output files ─────────────────────────────────────────────────────────
@@ -1244,7 +1244,7 @@ def main():
     with open(os.path.join(out_dir, "active-transits.txt"), "w") as f:
         f.write(f"Active transits as of {date_str}: {active_summary}\n")
 
-    # workspace-digest.txt → Personal Life HQ
+    # workspace-digest.txt → the bones
     with open(os.path.join(out_dir, "workspace-digest.txt"), "w") as f:
         f.write(digest)
 
@@ -1252,14 +1252,14 @@ def main():
     try:
         with open(personal_hq_digest_path, "w") as f:
             f.write(digest)
-        print(f"Cross-workspace digest written to Personal Life HQ")
+        print(f"Cross-workspace digest written to the bones")
     except Exception as e:
-        print(f"Could not write to Personal Life HQ: {e}")
+        print(f"Could not write to the bones: {e}")
 
-    # life-snapshot.txt → Stars (Personal Life HQ → Stars direction)
+    # life-snapshot.txt → Stars (the bones → Stars direction)
     with open(os.path.join(out_dir, "life-snapshot.txt"), "w") as f:
         f.write(life_snapshot)
-    print(f"Life snapshot pulled from Personal Life HQ spoke-digest")
+    print(f"Life snapshot pulled from the bones spoke-digest")
 
     # ── Sunday: generate week-ahead + workplace HTML + Slack draft ───────────
     if now.weekday() == 6:  # 0=Mon … 6=Sun

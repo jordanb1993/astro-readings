@@ -8,9 +8,9 @@
 
 **Phase 1 is scoped and ready to build.** The app is the destination. The manual reading service is the path. Not a detour — the thing itself.
 
-Full operational plan lives in Personal Life HQ:
-- **Scope + roadmap:** `Personal Life HQ/Money/astrology-business-scope.md`
-- **Tactical plan (Etsy, reviews, 90-day week-by-week):** `Personal Life HQ/Money/astrology-business-plan.md`
+Full operational plan lives in the bones:
+- **Scope + roadmap:** `the bones/Money/astrology-business-scope.md`
+- **Tactical plan (Etsy, reviews, 90-day week-by-week):** `the bones/Money/astrology-business-plan.md`
 
 ---
 
@@ -212,6 +212,6 @@ The workplace digest format (see `readings/workplace/`) is a proof of concept fo
 
 ## Session log
 
-- **May 18, 2026** — Phase 1 scoped in full. Full operational plan written in Personal Life HQ/Money/. App vision reframed as the destination, not a separate dream.
+- **May 18, 2026** — Phase 1 scoped in full. Full operational plan written in the bones/Money/. App vision reframed as the destination, not a separate dream.
 - **May 19, 2026** — app-vision.md expanded with full Phase 1 details. Cross-workspace links established.
 - **May 22, 2026** — Voice Differentiator section added (training reading voice on Jordan's creative writing corpus). Round Natal Chart build concept added. Marina's natal chart testimonial logged in KNOWLEDGE.md as Phase 1 validation.

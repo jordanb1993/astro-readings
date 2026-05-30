@@ -43,4 +43,4 @@
 ---
 
 *Admin flags (forms, calls, logistics) omitted:low astrological charge.*
-*Full spoke detail: Personal Life HQ/spoke-digest.md*
+*Full spoke detail: the bones/spoke-digest.md*
