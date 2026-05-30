@@ -1,5 +1,5 @@
 # Routine Update Instructions
-_How to upgrade the daily 4am reading routine with all 4 improvements_
+_Current prompt for the daily 4am reading routine — last updated May 30, 2026_
 
 ---
 
@@ -9,11 +9,11 @@ Go to `claude.ai/code/routines` → find routine `trig_01Rtm1xSST2GbdCZh896F2vP`
 
 ---
 
-## What the updated routine should do (replace existing prompt with this)
+## Full routine prompt (replace existing with this)
 
 ```
 1. Clone the repo:
-   cd /tmp && git clone https://github.com/jordanb1993/astro-readings.git stars
+   cd /tmp && rm -rf stars && git clone https://github.com/jordanb1993/astro-readings.git stars
    cd stars
 
 2. Run the position calculator:
@@ -25,38 +25,43 @@ Go to `claude.ai/code/routines` → find routine `trig_01Rtm1xSST2GbdCZh896F2vP`
    - positions-week.json      → aspects approaching exact in next 7 days
    - active-transits.txt      → one-liner for CLAUDE.md patch
    - workspace-digest.txt     → 5-line digest for Personal Life HQ
-   - life-snapshot.txt        → Jordan's current life context (flags + spoke status pulled from Personal Life HQ)
-                                READ THIS before writing the reading — use it to ground Practical Application
+   - life-snapshot.txt        → Jordan's current life context (spoke status from Personal Life HQ)
+                                READ THIS before writing the reading — ground Practical Application
                                 in what's actually happening in her life right now
 
-4. Write readings/daily/YYYY-MM/YYYY-MM-DD.md using positions-today.json data.
-   First create the directory: mkdir -p readings/daily/YYYY-MM (substitute real year-month, e.g. readings/daily/2026-05)
+4. Write "daily readings/YYYY-MM/YYYY-MM-DD.md" using positions-today.json data.
+   Create the directory first:
+     mkdir -p "daily readings/YYYY-MM"
+   (substitute real year-month, e.g. "daily readings/2026-05")
    Follow the format in CLAUDE.md exactly.
    Transit-to-natal aspects from positions-today.json → transit_to_natal array.
-   Transit-to-transit aspects from transit_to_transit array.
-   Chiron is now exact (no more estimates — the ephe file downloads automatically).
+   Transit-to-transit observations from transit_to_transit array.
+   Chiron is calculated precisely — no estimates needed.
 
-5. Write readings/week-ahead.md using positions-week.json.
+5. Write "weekly readings/YYYY-MM-DD-week-ahead.md" using positions-week.json.
+   Use the date of the COMING Monday as the filename date (e.g. "weekly readings/2026-06-01-week-ahead.md").
+   Only write this file on Sundays — skip on other days.
    Format: see template below.
 
 6. Patch CLAUDE.md active transits line:
-   Replace the "Active transits as of [date]:" line with the content of active-transits.txt.
+   Replace the line beginning with "Active transits as of" in CLAUDE.md with the
+   content of active-transits.txt. The line is inside the "Current Situation Snapshot" section.
 
-7. Write workspace-digest.txt content to:
-   /Users/jordanashleybarney/Library/Mobile Documents/iCloud~md~obsidian/Documents/Personal Life HQ/the-stars-daily.md
-   (this is the iCloud path — write directly, Obsidian picks it up automatically)
-
-8. On Mondays only: also write readings/workplace/YYYY-MM-DD-week.md
-   (see workplace digest format in readings/workplace/README.md)
-
-9. git add -A && git commit -m "reading + week-ahead + patches YYYY-MM-DD" && git push origin main
+7. Commit and push:
+   git add -A && git commit -m "reading + week-ahead + patches YYYY-MM-DD" && git push origin main
 ```
 
 ---
 
-## Week-ahead file format (readings/week-ahead.md)
+## Week-ahead file format ("weekly readings/YYYY-MM-DD-week-ahead.md")
 
 ```markdown
+---
+cssclasses: stars-reading
+date: YYYY-MM-DD
+type: week-ahead
+---
+
 # Week Ahead — [Mon Date] through [Sun Date]
 
 > [2-sentence overview of the week's dominant energy — what themes the sky is running]
@@ -92,37 +97,44 @@ Go to `claude.ai/code/routines` → find routine `trig_01Rtm1xSST2GbdCZh896F2vP`
 
 ---
 
-*Generated: [date] | Full daily readings in readings/daily/YYYY-MM/YYYY-MM-DD.md*
+*Generated: [date] | Full daily readings in "daily readings/YYYY-MM/YYYY-MM-DD.md"*
 ```
 
 ---
 
-## CLAUDE.md auto-patch rule
+## CLAUDE.md active transits auto-patch rule
 
-Find the line beginning with `**Active transits as of` in CLAUDE.md and replace the entire line (up to the next blank line) with the content of `active-transits.txt`.
-
----
-
-## Personal Life HQ cross-workspace file
-
-Write to:
-`/Users/jordanashleybarney/Library/Mobile Documents/iCloud~md~obsidian/Documents/Personal Life HQ/the-stars-daily.md`
-
-This file is automatically picked up by Obsidian in the Personal Life HQ vault.
-Format is already written by `workspace-digest.txt` — write it verbatim.
-
----
-
-## Chiron fix note
-
-`generate-positions.py` downloads `seas_18.se1` from astro.com on first run and caches it in `routine/ephe/`. Subsequent runs use the cached file. If the download fails, it falls back to the Moshier ephemeris (less precise but no estimate needed). Chiron should now appear as a real calculated value in every reading.
+Find the line beginning with `Active transits as of` in CLAUDE.md (inside the Current Situation Snapshot section) and replace the entire line with the content of `active-transits.txt`.
 
 ---
 
 ## Monday workplace digest
 
 On Mondays only, after writing the personal reading, also generate:
-`readings/workplace/YYYY-MM-DD-week.md`
+`"workplace readings/YYYY-MM-DD-week.md"`
+and
+`"workplace readings/YYYY-MM-DD-week-slack.md"`
 
 Use the transit-to-transit aspects from `positions-today.json → transit_to_transit`.
-Format documented in `readings/workplace/README.md`.
+Format documented in `"workplace readings/README.md"`.
+
+---
+
+## Chiron note
+
+`generate-positions.py` downloads `seas_18.se1` from GitHub on first run and caches it in `routine/ephe/`. Subsequent runs use the cached file. Chiron appears as a real calculated value — no estimates.
+
+---
+
+## Important: shell quoting
+
+All folder names with spaces must be quoted in shell commands:
+- `"daily readings/YYYY-MM/"`
+- `"natal readings/"`
+- `"weekly readings/"`
+- `"workplace readings/"`
+- `"synastry readings/"`
+- `"tarot readings/"`
+- `"the build/"`
+
+The `git add -A` command handles all files regardless of spaces — no per-file quoting needed for the commit step.

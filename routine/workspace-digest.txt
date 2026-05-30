@@ -1,10 +1,10 @@
-# The Stars:Daily Digest | 2026-05-29
+# The Stars:Daily Digest | 2026-05-30
 
-**Moon:** 16.24° Scorpio | Waxing Gibbous
+**Moon:** 3.42° Sagittarius | Waxing Gibbous
 
 **Top active transits (tight orb):**
-- NNode ∠ natal Neptune (7th):0.01° applying
-- Venus △ natal Mercury (5th):0.02° applying
-- Jupiter ∠ natal Chiron (4th):0.09° applying
+- Saturn ⚻ natal Mercury (5th):0.14° separating
+- Uranus ☍ natal Sun (6th):0.18° applying
+- Mercury □/ natal Mercury (5th):0.2° applying
 
-*Full reading: the stars/readings/2026-05-29.md*
+*Full reading: the stars/readings/2026-05-30.md*

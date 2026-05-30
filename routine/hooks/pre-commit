@@ -2,5 +2,5 @@
 # Prevent reading files from being accidentally staged for deletion in any commit.
 # Sessions that pull/rebase onto the routine's commits can leave reading files
 # staged for deletion as a side effect. This hook silently undoes that every time.
-git restore --staged "readings/daily/" 2>/dev/null
+git restore --staged "daily readings/" 2>/dev/null
 exit 0

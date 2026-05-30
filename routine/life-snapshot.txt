@@ -1,33 +1,46 @@
-# Life Snapshot | 2026-05-29
-# Updated manually from PLH spoke-digest + CLAUDE.md situation snapshot.
-# Refresh this file whenever a significant life change occurs.
-# The routine reads this to ground the Practical Application section of daily readings.
+# Jordan's Life Snapshot for Today's Reading | 2026-05-30
+
+> Use this to ground the reading in Jordan's actual life:what's alive, in motion,
+> recently completed, or emotionally charged. Admin tasks are excluded intentionally.
+
+## What's happened recently (last 30 days)
+*These are completed events:what's manifesting in Jordan's life right now.*
+
+- Illinois car registration renewed (May 1)
+- Called Default Resolution Group — rehab initiated (May 1)
+- Financial intake — real numbers locked in (May 1)
+- Comms overwhelm cleared — 7 backed-up threads sent (May 5)
+- Heated rivalry sleepover confirmed May 24 (May 5)
+- Amazon order placed — litter box, BP monitor, Nespresso, filter, incense, light (May 9)
+- CC $600 payment scheduled (May 9)
+- $1,000 saved (paycheck → savings same day) (May 9)
+- First budgeted month begun (May 9)
+- Eleanor ending handled with intention — natal chart gift + call (May 18)
+- Spoke system redesigned from 12 → 7 spokes (May 18)
+- GitHub repo set up + inbox router routine running every other day (May 18)
+- iOS Quick Capture shortcut live on home screen (May 18)
+- Lease renewal signed ✅ (May 19)
+- LinkedIn headline updated ✅ (May 19)
+- Portland trip research completed + filed as standalone doc (May 19)
+- MCAS research completed + filed in Body (May 19)
+- Vault standards written (`_knowledge/VAULT-STANDARDS.md`) (May 19)
+- Ground Control + spoke-digest + 5 state files patched for accuracy (May 19)
+- Full Whimsigoth natal chart design system built + all friend charts live on GitHub Pages (May 20)
+- Marina's natal chart shipped — first friend to receive the new design (May 20)
+- Weekly sky-at-work + week-ahead pages redesigned with full Whimsigoth system (May 21)
+- #astroflow-weekly Slack channel launched — Krista Kellogg endorsed within 24 min (May 21)
+- Astrology production pipeline fully operational — ready for Etsy Phase 1 (May 21)
+
+## What's alive in Jordan's life right now
+*Narrative status per spoke:the emotional and identity context.*
+
+**Growth & Craft:** Walking pad 5+ weeks thriving. Financial clarity real. Dating window open for summer. Healing ongoing — Stella Center, ADHD meds stable, Rula/Anthem therapy available when ready.
+**People:** Comms overwhelm cleared May 5 ✅. Daily Bagel with Jonathan ✅ happened. Sleepover May 24 ✅.
+**Work:** Associate Director since Apr 1. EFX audit May 15 milestone delivered ✅. LinkedIn headline updated May 19 ✅.
+**Body:** Anthem login ✅ resolved. BP monitor ✅ purchased. PCP unresolved — Anthem never called back May 11. Main blocker before June psychiatrist appt.
+**Culture & Adventure:** Travel — Ireland nearly fundable (~$0–116 gap). **Oregon trip: Carina confirmed May 28.** Dallas OR (~1h 15min from PDX). Rough plan: solo leg (Portland, coast, caves, hikes) → arrive Carina's ~Aug 25 after her camping trip (Timothy Lake Aug 23–24) → stay through end of August. Cat sitter Rachel available last week of August ✅. Full plan in `Culture & Adventure/portland-trip-research.md`. Next: book PTO → flights → rental car (August rates climbing). Michigan lake Airbnb (needs group text). Indianapolis/Mimi (driveable anytime).
 
 ---
 
-## HIGH-CHARGE CONTEXT (feed into readings)
-
-**Career:** Associate Director of Content Operations at Everflow since April 1 — title won through sustained self-advocacy. AI Use Case Repository co-owned equally with Dasha. EFX audit delivered May 15. #astroflow-weekly launched in company Slack May 21; Krista Kellogg endorsed within 24 min, organic multi-person adoption same day. Live proof-of-concept for the workplace astrology angle.
-
-**Astrology business:** Phase 1 scoped May 18. Etsy natal chart PDFs $35–55. Full Whimsigoth design system live. All friend charts live on GitHub Pages. Production pipeline fully operational. Name TBD (Thin Place / The 29th / Solas). May 31 Sagittarius Full Moon (blue moon) ritual planned — falls on the North Node axis.
-
-**Finances:** Real momentum. Savings $3,209 — hit the $3,000 milestone. Oregon savings bucket active. CC ~$6,000 and falling. Student loan rehab form printing and mailing Saturday May 30. First real budgeted months underway.
-
-**Body:** Walking pad 6+ week streak. Psychiatrist (Dr. Ashley George, Stella Center) June 10 on calendar. BP monitor in hand.
-
-**Personal:** Eleanor chapter closed May 18 — clean, kind phone call. South Node mirroring pattern named. Two of Cups as tuning fork going forward. Summer full: Mimi in Chicago Jun 27, Dad visit Jul 23–29, Oregon with Carina confirmed Aug 22–29.
-
-**High-charge recent events:**
-- #astroflow-weekly launch May 21 — workplace astrology proof-of-concept live
-- Oregon trip confirmed May 28 — first major solo + friend trip in a long time
-- $3,000 savings milestone hit
-- May 31 Sagittarius Full Moon ritual on the North Node axis
-- Uranus exact opposition natal Sun May 28 — the defining identity transit of 2026 just crested
-
----
-
-## ACTIVE TRANSITS (as of 2026-05-29)
-Neptune 4.00° Aries: 0.96° applying conjunction natal Moon (10th) — peaks late July 2026
-Saturn 12.02° Aries: 0.25° applying inconjunct natal Mercury (5th) — exact today/tomorrow
-Uranus 1.95° Gemini: 0.10° separating opposition natal Sun (6th) — just crested; approaching South Node
-Sun 8.11° Gemini: 0.08° applying square natal Midheaven (10th) — exact today
+*Admin flags (forms, calls, logistics) omitted:low astrological charge.*
+*Full spoke detail: Personal Life HQ/spoke-digest.md*

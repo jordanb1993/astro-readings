@@ -16,7 +16,7 @@ Jordan is a 32-year-old lesbian woman in Chicago. Associate Director of Content 
 1. **This file (CLAUDE.md)** — always, first
 2. **INSTRUCTIONS.md** — always (natal chart, calculation rules, orb table, workflow)
 3. **KNOWLEDGE.md** — always (accumulated context, correlations, life arcs, patterns)
-4. **Most recent `readings/daily/YYYY-MM/YYYY-MM-DD.md`** — the latest one only, for continuity thread
+4. **Most recent `daily readings/YYYY-MM/YYYY-MM-DD.md`** — the latest one only, for continuity thread
 5. **`_inbox/capture.md`** — always check; if entries exist below the `---`, surface and route them before starting the session
 6. **Tony Cohn — Incident Log** — moved to `Personal Life HQ/Work/Tony Cohn — Incident Log.md`. Load from there ONLY if the session involves active work or career topics.
 
@@ -40,23 +40,23 @@ After processing, clear the entries from capture.md (keep the header, remove the
 ## Token Protocol — Do Not Skip This
 
 **Write-only files — never read, never load:**
-- `readings/*.html` — legacy HTML readings. No longer generated for daily readings (switched to Obsidian .md format May 3, 2026). If they exist, ignore them — the `.md` is the source of truth.
-- `natal/*.html` — visual output for natal/special readings. Never read these; build fresh from natal `.md` data when needed.
-- `readings/_template.html` — only read if explicitly rebuilding the template.
-- All images in root (`*.jpg`, `*.png`) — visual references, not needed for calculation or reading.
+- `daily readings/2026-04/*.html` — legacy HTML readings from April. Ignore; the `.md` is the source of truth.
+- `natal readings/*.html` — visual output for natal/special readings. Never read these; build fresh from natal `.md` data when needed.
+- `_archive/_template.html` — only read if explicitly rebuilding the reading HTML template.
+- All images in `_archive/images/` (`*.jpg`, `*.png`) — visual references, not needed for calculation.
 
 **Auto-open rule (always):**
-- `.html` files (readings, natal charts) → `open "<filepath>"` — opens in browser
+- `.html` files (natal charts, weekly reading HTMLs) → `open "<filepath>"` — opens in browser
 - `.md` files Jordan needs to read → `open -a Obsidian "<filepath>"` — opens in Obsidian for easy reading
 - Never skip the open step after writing a file Jordan will want to view.
 
 These are excluded via `.claudeignore`. Do not attempt to read them even if asked to "check a past reading" — read the `.md` companion instead.
 
 **Accumulating files — load smart:**
-- `readings/daily/YYYY-MM/` grows by one `.md` per day. Only load the most recent one automatically. Load others on explicit request.
-- `tarot-log.md` — load only when Jordan asks about a card pull or wants to review patterns. Not needed for transit readings.
+- `daily readings/YYYY-MM/` grows by one `.md` per day. Only load the most recent one automatically. Load others on explicit request.
+- `tarot readings/tarot-log.md` — load only when Jordan asks about a card pull or wants to review patterns. Not needed for transit readings.
 - `charts/*.md` — load the specific person's file only when doing synastry work. Not all at once.
-- `wheel-of-the-year.md` — load only when Jordan asks about seasonal or lunar work.
+- `rituals/wheel-of-the-year.md` — load only when Jordan asks about seasonal or lunar work.
 
 **Always loaded (accept the cost — genuinely needed):**
 - CLAUDE.md (11K), INSTRUCTIONS.md (20K), KNOWLEDGE.md (37K)
@@ -98,7 +98,7 @@ Never conflate these two categories. Accuracy comes before narrative.
 1. Fetch live planet positions from `https://astrolibrary.org/current-planets/`
 2. Calculate all transit-to-natal aspects using INSTRUCTIONS.md natal chart + orb table
 3. Derive transit-to-transit observations independently from the same data
-4. Write to `readings/daily/YYYY-MM/YYYY-MM-DD.md`
+4. Write to `daily readings/YYYY-MM/YYYY-MM-DD.md` (create month folder if needed: `mkdir -p "daily readings/YYYY-MM"`)
 5. Run `open -a Obsidian "<filepath>"` — never skip
 6. If evening reading requested: `YYYY-MM-DD-evening.md` in the same folder
 
@@ -110,7 +110,7 @@ Never conflate these two categories. Accuracy comes before narrative.
 
 **When to create:** Jordan asks for a ritual, OR a significant moon event or sabbat is within 3 days.
 
-**File:** `ritual/YYYY-MM-DD-[descriptor].md`
+**File:** `rituals/YYYY-MM-DD-[descriptor].md`
 Examples: `2026-05-31-sagittarius-full-moon.md`, `2026-06-21-litha.md`
 
 **Format:**
@@ -147,15 +147,15 @@ moon: [Moon phase + sign] OR season: [Sabbat name]
 *Linked from: [[...]] if connected to PLH*
 ```
 
-**After writing:** `open -a Obsidian "ritual/YYYY-MM-DD-descriptor.md"`
+**After writing:** `open -a Obsidian "rituals/YYYY-MM-DD-descriptor.md"`
 
-**Wheel of the year connection:** Update `ritual/wheel-of-the-year.md` with a brief note after each sabbat is completed.
+**Wheel of the year connection:** Update `rituals/wheel-of-the-year.md` with a brief note after each sabbat is completed.
 
 ---
 
 ### 🃏 Tarot Session
 
-**File:** `tarot/YYYY-MM-DD-tarot.md` (or `YYYY-MM-DD-tarot-[context].md` for named sessions)
+**File:** `tarot readings/YYYY-MM-DD-tarot.md` (or `YYYY-MM-DD-tarot-[context].md` for named sessions)
 
 **Format:**
 ```
@@ -178,7 +178,7 @@ moon: [Moon phase + sign] OR season: [Sabbat name]
 
 **After writing:**
 - Run `open -a Obsidian "<filepath>"`
-- Add one-line summary to `tarot/tarot-log.md`: `[Date] — [question] → [key card(s)] — [one sentence on what it said]`
+- Add one-line summary to `tarot readings/tarot-log.md`: `[Date] — [question] → [key card(s)] — [one sentence on what it said]`
 
 **Note:** Casual daily pulls → log entry only. Full spread or significant pull → full file + log entry.
 
@@ -188,7 +188,7 @@ moon: [Moon phase + sign] OR season: [Sabbat name]
 
 **Before starting:** Load `charts/[person].md` + Jordan's natal from INSTRUCTIONS.md.
 
-**File:** `readings/synastry/YYYY-MM-DD-[person]-synastry.md`
+**File:** `synastry readings/YYYY-MM-DD-[person]-synastry.md`
 
 **Format:**
 ```
@@ -219,8 +219,8 @@ moon: [Moon phase + sign] OR season: [Sabbat name]
 
 **Cadence:** Weekly (typically Monday or early in the week)
 **Files:** Two separate files per week:
-- `readings/workplace/YYYY-MM-DD-week.md` — full reading
-- `readings/workplace/YYYY-MM-DD-week-slack.md` — the #astroflow-weekly Slack post only
+- `workplace readings/YYYY-MM-DD-week.md` — full reading
+- `workplace readings/YYYY-MM-DD-week-slack.md` — the #astroflow-weekly Slack post only
 
 **Workplace reading format:**
 ```
@@ -254,7 +254,7 @@ moon: [Moon phase + sign] OR season: [Sabbat name]
 4. If parts work: name the part, ask what it needs, don't rush toward resolution
 5. If nervous system: smallest intervention — grounding, breath, one tiny next step
 
-**Documentation:** Only if Jordan asks to capture. File in `readings/daily/YYYY-MM/YYYY-MM-DD-[context].md` if she wants a record.
+**Documentation:** Only if Jordan asks to capture. File in `daily readings/YYYY-MM/YYYY-MM-DD-[context].md` if she wants a record.
 
 **Astrological integration:** Offer the transit context only after the emotional content has been heard. Never lead with the astrology when Jordan is activated. The chart frames it — it doesn't fix it.
 
@@ -274,10 +274,54 @@ moon: [Moon phase + sign] OR season: [Sabbat name]
 
 ### 📱 Week-Ahead Reading
 
-**File:** `readings/week-ahead.md` — overwrites each week (not dated archive)
-**Also in `_archive/week-ahead.md`** — archived copy once the week passes
+**File:** `weekly readings/YYYY-MM-DD-week-ahead.md` — dated, never overwritten (use the coming Monday's date as filename)
+**Cadence:** Sundays, as part of the automated routine. Can also be done manually on request.
 
-**Format:** 5-day table + headline narrative. Pull live positions. Focus on timing — when to move, when to hold, what the rhythm of the week looks like.
+**Format:**
+```
+---
+cssclasses: stars-reading
+date: YYYY-MM-DD
+type: week-ahead
+---
+
+# Week Ahead — [Mon Date] through [Sun Date]
+
+> [2-sentence overview of the week's dominant energy]
+
+---
+
+## Approaching Exact This Week
+
+| Date | Day | Transit | Aspect | Natal Point | Orb at Peak |
+|------|-----|---------|--------|-------------|-------------|
+[from positions-week.json → upcoming_exact_aspects]
+
+---
+
+## The Week's Dominant Themes
+
+**[Theme 1 title]** — [2-3 sentences]
+**[Theme 2 title]** — [2-3 sentences]
+**[Theme 3 title]** — [2-3 sentences]
+
+---
+
+## Day-by-Day Texture
+
+**Monday:** [one sentence]
+**Tuesday:** [one sentence]
+**Wednesday:** [one sentence]
+**Thursday:** [one sentence]
+**Friday:** [one sentence]
+**Weekend:** [one sentence]
+
+---
+
+*Generated: [date] | Full daily readings in "daily readings/YYYY-MM/YYYY-MM-DD.md"*
+```
+
+**After writing:** `open -a Obsidian "weekly readings/YYYY-MM-DD-week-ahead.md"`
 
 ---
 
@@ -331,12 +375,12 @@ The situation snapshot in CLAUDE.md gives the automated daily routine its life c
 
 ## Reading Output Format — Obsidian Markdown (Updated May 3, 2026)
 
-Daily transit readings are saved as a **single `.md` file** in `readings/` and opened in Obsidian. No HTML builds for daily readings — this eliminates the token cost of full HTML generation while keeping the reading archive intact and readable.
+Daily transit readings are saved as a **single `.md` file** in `daily readings/` and opened in Obsidian. No HTML builds for daily readings — this eliminates the token cost of full HTML generation while keeping the reading archive intact and readable.
 
-**File:** `readings/daily/YYYY-MM/YYYY-MM-DD.md`
+**File:** `daily readings/YYYY-MM/YYYY-MM-DD.md`
 **After writing:** Always run `open -a Obsidian "<filepath>"` — never skip this step.
 
-**HTML builds are reserved for:** natal chart readings (`natal/`) and any special one-off reading Jordan explicitly requests as HTML. The V3 HTML spec is preserved below for those cases.
+**HTML builds are reserved for:** natal chart readings (`natal readings/`) and any special one-off reading Jordan explicitly requests as HTML. The V3 HTML spec is preserved below for those cases.
 
 ### Daily Reading .md Structure (Obsidian format)
 
@@ -396,9 +440,9 @@ Daily transit readings are saved as a **single `.md` file** in `readings/` and o
 
 Lightened deep indigo background (`--bg: #090b1f`), lighter surface cards (`--surface: #111535`), subtler scanline (0.04 opacity), more generous whitespace. Four-font system: VT323 (h1), Press Start 2P (tiny badges/labels), IBM Plex Mono (aspect technical blocks), IBM Plex Sans (everything else). Same color-coded aspect system, same W95 chrome. Page structure: Morning Pulse → Planet strip → At a Glance → Headline section → Rest of the Sky → Practical Application. Mobile fixes required. Open in browser after writing.
 
-## Birth Chart Readings — Natal Folder
+## Birth Chart Readings — Natal Readings Folder
 
-Natal chart readings live in `natal/` (not `readings/`). **`natal/jordan.html`** is the canonical template — built April 23, 2026, uses full v2 aesthetic with additional components:
+Natal chart readings live in `natal readings/` (not `daily readings/`). **`natal readings/jordan-natal.html`** is the canonical template — built April 23, 2026, uses full v2 aesthetic with additional components:
 - **Identity Trio** — 3-column Sun / Moon / Rising summary cards at the top
 - **Chart Signature panel** — chart ruler, stelliums, anaretic degree, 7th house notes
 - **Natal Planets strip** — all placements at a glance
@@ -406,7 +450,7 @@ Natal chart readings live in `natal/` (not `readings/`). **`natal/jordan.html`**
 - **Theme tags** — inside each collapsible section (e.g., IDENTITY = SOUL PATH)
 - **Collapsible sections per planet/axis** — same v2 collapse/reveal mechanics as transit readings
 
-When building a friend's natal chart: use `natal/jordan.html` as the structural template, swap in their placements, write fresh interpretive content. Birth data needed: date, time, location.
+When building a friend's natal chart: use `natal readings/jordan-natal.html` as the structural template, swap in their placements, write fresh interpretive content. Birth data needed: date, time, location.
 
 ---
 
@@ -416,8 +460,9 @@ Workspace is mirrored to **`https://github.com/jordanb1993/astro-readings`** (pr
 
 **Daily routine** (`trig_01Rtm1xSST2GbdCZh896F2vP`) runs at **4am CDT / 9am UTC** every day:
 - Clones repo, installs `pyswisseph`, calculates planet positions via Swiss Ephemeris
-- Writes `readings/daily/YYYY-MM/YYYY-MM-DD.md`, commits, and pushes to GitHub
+- Writes `daily readings/YYYY-MM/YYYY-MM-DD.md`, commits, and pushes to GitHub
 - Obsidian Git plugin auto-pulls into vault within 30 minutes
+- Full routine prompt lives in `routine/ROUTINE-UPDATE-INSTRUCTIONS.md`
 
 Manage the routine at `claude.ai/code/routines`. If the routine fails, check the routine log there first before debugging here.
 
@@ -460,7 +505,7 @@ Claude pulls live planetary positions directly from the web at the start of ever
 
 **High-charge recent events:** #astroflow-weekly launch (May 21) — workplace astrology proof of concept live. Oregon trip confirmed (May 28). $3,000 savings milestone hit. May 31 Sagittarius full moon ritual on the North Node axis.
 
-Active transits as of 2026-05-29: Neptune 4.00° Aries:0.96° applying conjunction natal Moon (10th) | Saturn 12.02° Aries:0.25° applying inconjunct natal Mercury (5th) | Uranus 1.95° Gemini:0.10° separating opposition natal Sun (6th) | Sun 8.11° Gemini:0.08° applying square natal Midheaven (10th)
+Active transits as of 2026-05-30: Saturn 12.14° Aries:0.14° separating inconjunct natal Mercury (5th) | Uranus 2.00° Gemini:0.18° applying opposition natal Sun (6th) | Neptune 4.04° Aries:0.2° separating sesquiquadrate natal Venus (5th) | Jupiter 23.85° Cancer:0.36° applying semi-square natal Chiron (4th)
 
 ---
 
@@ -526,56 +571,64 @@ Warm, direct, psychologically precise. Never sycophantic. Honest about difficult
 ## File Structure
 
 ```
-the stars/                           ← Root — each folder is its own domain
-├── CLAUDE.md                        ← Read first (this file)
-├── INSTRUCTIONS.md                  ← Natal chart, calculation rules, orb table
-├── KNOWLEDGE.md                     ← Accumulated correlations, patterns, context
-├── live-links.md                    ← Quick links to live astro resources
+the stars/                              ← Root — each folder is its own domain
+├── CLAUDE.md                           ← Read first (this file)
+├── INSTRUCTIONS.md                     ← Natal chart, calculation rules, orb table
+├── KNOWLEDGE.md                        ← Accumulated correlations, patterns, context
+├── live-links.md                       ← Quick links to live astro resources
 │
-├── charts/                          ← Friends' natal birth data (synastry source)
-│   ├── [person].md                  ← One file per person with birth data + notes
-│   └── README.md
+├── charts/                             ← Friends' natal birth data (synastry source)
+│   └── [person].md                     ← One file per person with birth data + notes
 │
-├── natal/                           ← Full natal chart HTML deliverables
-│   ├── jordan.html                  ← Canonical Whimsigoth template
-│   ├── [friend].html                ← Friend charts built from jordan.html template
-│   ├── chart-links.md               ← GitHub Pages URLs for all live charts
-│   └── README.md
+├── natal readings/                     ← Full natal chart HTML deliverables
+│   ├── jordan-natal.html               ← Canonical Whimsigoth template
+│   ├── [friend].html                   ← Friend charts built from jordan-natal.html
+│   └── chart-links.md                  ← GitHub Pages URLs for all live charts
 │
-├── ritual/                          ← Moon rituals + ceremonial work (NOT inside readings/)
-│   ├── wheel-of-the-year.md         ← 2026 sabbat calendar + personal notes
-│   ├── YYYY-MM-DD-[descriptor].md   ← Individual rituals (new moon, full moon, sabbats)
-│   └── README.md
+├── daily readings/                     ← Daily transit readings (auto-generated + manual)
+│   └── YYYY-MM/YYYY-MM-DD.md           ← One file per day; month subfolders
 │
-├── tarot/                           ← All tarot pulls and the master log
-│   ├── tarot-log.md                 ← One-line entry per pull — the running record
-│   └── YYYY-MM-DD-tarot[-context].md ← Full readings (significant pulls only)
+├── synastry readings/                  ← Relational chart comparisons
+│   └── YYYY-MM-DD-[person]-synastry.md
 │
-├── the build/                       ← Astrology business OS
-│   ├── app-vision.md                ← App roadmap, features, phase planning
-│   └── testimonials.md              ← Praise, reactions, early feedback
+├── workplace readings/                 ← Weekly #astroflow-weekly transit digests
+│   ├── YYYY-MM-DD-week.md              ← Full workplace reading
+│   ├── YYYY-MM-DD-week-slack.md        ← Slack post copy only
+│   └── sky-at-work.html                ← Public-facing transit HTML (auto-generated Sundays)
 │
-├── readings/                        ← All dated transit and relational readings
-│   ├── daily/YYYY-MM/YYYY-MM-DD.md  ← Daily transit readings (auto-generated + manual)
-│   ├── synastry/                    ← Relational chart comparisons
-│   ├── workplace/                   ← Weekly #astroflow-weekly transit digests
-│   ├── week-ahead.md                ← Current week-ahead (overwritten weekly)
-│   └── README.md
+├── weekly readings/                    ← Personal week-ahead readings (dated, not overwritten)
+│   ├── YYYY-MM-DD-week-ahead.md        ← Dated .md (auto-generated Sundays + manual)
+│   └── YYYY-MM-DD-week-ahead.html      ← HTML version (auto-generated Sundays)
 │
-├── routine/                         ← Daily 4am automation infrastructure
-│   ├── generate-positions.py        ← Swiss Ephemeris calculator
-│   ├── life-snapshot.txt            ← Life context fed to daily routine
-│   ├── workspace-digest.txt         ← Digest fed to daily routine
-│   ├── positions-today.json         ← Today's calculated positions
-│   ├── positions-week.json          ← Week positions
-│   ├── ROUTINE-UPDATE-INSTRUCTIONS.md
-│   └── ephe/seas_18.se1             ← Chiron ephemeris cache
+├── rituals/                            ← Moon rituals + ceremonial work
+│   ├── wheel-of-the-year.md            ← 2026 sabbat calendar + personal notes
+│   └── YYYY-MM-DD-[descriptor].md      ← Individual rituals (new moon, full moon, sabbats)
 │
-├── _inbox/                          ← Jordan's captures from iPhone shortcut
-│   └── capture.md                   ← Process at session start; clear after routing
+├── tarot readings/                     ← All tarot pulls and the master log
+│   ├── tarot-log.md                    ← One-line entry per pull — the running record
+│   └── YYYY-MM-DD-tarot[-context].md   ← Full readings (significant pulls only)
 │
-└── _archive/                        ← Processed intake images, old versions
-    └── images/                      ← Screenshot archive
+├── the build/                          ← Astrology business OS
+│   ├── app-vision.md                   ← App roadmap, features, phase planning
+│   └── testimonials.md                 ← Praise, reactions, early feedback
+│
+├── routine/                            ← Daily 4am automation infrastructure
+│   ├── generate-positions.py           ← Swiss Ephemeris calculator + Sunday HTML generator
+│   ├── ROUTINE-UPDATE-INSTRUCTIONS.md  ← Full routine prompt to paste into claude.ai/code/routines
+│   ├── life-snapshot.txt               ← Life context fed to daily routine
+│   ├── workspace-digest.txt            ← Digest fed to daily routine
+│   ├── active-transits.txt             ← One-liner patched into CLAUDE.md snapshot
+│   ├── positions-today.json            ← Today's calculated positions
+│   ├── positions-week.json             ← Week positions
+│   ├── hooks/pre-commit                ← Prevents daily readings from being accidentally deleted
+│   └── ephe/seas_18.se1                ← Chiron ephemeris cache
+│
+├── _inbox/                             ← Jordan's captures from iPhone shortcut
+│   └── capture.md                      ← Process at session start; clear after routing
+│
+└── _archive/                           ← Legacy files, old versions, template
+    ├── _template.html                  ← Legacy HTML reading template (reference only)
+    └── images/                         ← Screenshot archive
 ```
 
 ---

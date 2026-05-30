@@ -1027,7 +1027,7 @@ def generate_slack_draft(t2t_aspects, week_start_str, today_positions):
         note = meaning if meaning else a["aspect"]
         watch_text = f"• {a['planet1']} {a['symbol']} {a['planet2']} ({a['orb']}°): {note}"
 
-    url = "https://jordanb1993.github.io/astro-readings/readings/sky-at-work.html"
+    url = "https://jordanb1993.github.io/astro-readings/workplace%20readings/sky-at-work.html"
 
     sections = [f"*☿ sky at work · week of {week_start_str}* ✦\n",
                 f"{pulse}\n",
@@ -1187,7 +1187,7 @@ def workspace_digest(positions, today_aspects, date_str):
             f"({a['natal_house']}):{a['orb']}° {direction}"
         )
 
-    lines += ["", f"*Full reading: the stars/readings/{date_str}.md*"]
+    lines += ["", f"*Full reading: the stars/daily readings/{date_str[:7]}/{date_str}.md*"]
     return "\n".join(lines)
 
 
@@ -1271,24 +1271,24 @@ def main():
         stars_root = os.path.join(out_dir, "..")
 
         sky_html = generate_sky_at_work_html(t2t_aspects, today_positions, week_start_str)
-        sky_path = os.path.join(stars_root, "readings", "sky-at-work.html")
+        sky_path = os.path.join(stars_root, "workplace readings", "sky-at-work.html")
         with open(sky_path, "w") as f:
             f.write(sky_html)
 
         week_html = generate_week_ahead_html(
             week_aspects, t2n_aspects, today_positions, week_start_str, week_end_str)
-        week_path = os.path.join(stars_root, "readings", "week-ahead.html")
+        week_dir = os.path.join(stars_root, "weekly readings")
+        os.makedirs(week_dir, exist_ok=True)
+        week_path = os.path.join(week_dir, f"{date_str}-week-ahead.html")
         with open(week_path, "w") as f:
             f.write(week_html)
 
         slack = generate_slack_draft(t2t_aspects, week_start_str, today_positions)
-        slack_dir = os.path.join(stars_root, "readings", "workplace")
-        os.makedirs(slack_dir, exist_ok=True)
-        slack_path = os.path.join(slack_dir, "slack-draft.md")
+        slack_path = os.path.join(stars_root, "workplace readings", "slack-draft.md")
         with open(slack_path, "w") as f:
             f.write(slack)
 
-        print(f"Sunday files written: sky-at-work.html, week-ahead.html, slack-draft.md")
+        print(f"Sunday files written: sky-at-work.html, {date_str}-week-ahead.html, slack-draft.md")
 
     print("Done. Output files written to routine/")
     print(f"Active transits: {active_summary}")
