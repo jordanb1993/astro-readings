@@ -1,19 +1,19 @@
-# natal/ — Birth Chart Readings
+# natal readings/ — Birth Chart Readings
 
-This folder contains full natal chart reading HTMLs in the whimsigoth aesthetic. Each chart is also hosted live on GitHub Pages at `jordanb1993.github.io/astro-readings/natal/[name].html`.
+This folder contains full natal chart reading HTMLs in the whimsigoth aesthetic. Each chart is also hosted live on GitHub Pages at `jordanb1993.github.io/astro-readings/natal%20readings/[name].html`.
 
 ## Completed charts
 
 | Name | File | Live URL | Notes |
 |------|------|----------|-------|
-| Jordan | `jordan-natal.html` | `jordanb1993.github.io/astro-readings/natal/jordan-natal.html` | Canonical visual template (original build) |
-| Dasha | `dasha.html` | `jordanb1993.github.io/astro-readings/natal/dasha.html` | Noon chart, time unconfirmed |
-| Iza | `iza.html` | `jordanb1993.github.io/astro-readings/natal/iza.html` | Confirmed birth time |
-| Su | `su.html` | `jordanb1993.github.io/astro-readings/natal/su.html` | Confirmed birth time |
-| Marina | `marina.html` | `jordanb1993.github.io/astro-readings/natal/marina.html` | Leo Sun · Sagittarius Moon · Libra Rising |
-| Kate | `kate.html` | `jordanb1993.github.io/astro-readings/natal/kate.html` | Libra Sun · Scorpio Moon · Libra Rising |
-| Hazel | `hazel.html` | `jordanb1993.github.io/astro-readings/natal/hazel.html` | Taurus Sun · Virgo Moon · 29° Aquarius Rising |
-| Yvonne | `yvonne.html` | `jordanb1993.github.io/astro-readings/natal/yvonne.html` | Cancer Sun · Libra Moon · Sagittarius Rising · coworker |
+| Jordan | `jordan-natal.html` | `jordanb1993.github.io/astro-readings/natal%20readings/jordan-natal.html` | Canonical visual template (original build) |
+| Dasha | `dasha.html` | `jordanb1993.github.io/astro-readings/natal%20readings/dasha.html` | Noon chart, time unconfirmed |
+| Iza | `iza.html` | `jordanb1993.github.io/astro-readings/natal%20readings/iza.html` | Confirmed birth time |
+| Su | `su.html` | `jordanb1993.github.io/astro-readings/natal%20readings/su.html` | Confirmed birth time |
+| Marina | `marina.html` | `jordanb1993.github.io/astro-readings/natal%20readings/marina.html` | Leo Sun · Sagittarius Moon · Libra Rising |
+| Kate | `kate.html` | `jordanb1993.github.io/astro-readings/natal%20readings/kate.html` | Libra Sun · Scorpio Moon · Libra Rising |
+| Hazel | `hazel.html` | `jordanb1993.github.io/astro-readings/natal%20readings/hazel.html` | Taurus Sun · Virgo Moon · 29° Aquarius Rising |
+| Yvonne | `yvonne.html` | `jordanb1993.github.io/astro-readings/natal%20readings/yvonne.html` | Cancer Sun · Libra Moon · Sagittarius Rising · coworker |
 
 ---
 
@@ -102,8 +102,8 @@ Copy the file, rename it `[name].html`, then swap all content.
 ### Step 7 — After writing
 
 1. Run `open "[filepath]"` to open in browser and check visually
-2. Commit to GitHub: `git add natal/[name].html && git commit -m "Add [Name] natal chart" && git push origin main`
-3. Share the live URL: `jordanb1993.github.io/astro-readings/natal/[name].html`
+2. Commit to GitHub: `git add "natal readings/[name].html" && git commit -m "Add [Name] natal chart" && git push origin main`
+3. Share the live URL: `jordanb1993.github.io/astro-readings/natal%20readings/[name].html`
 4. GitHub Pages goes live within ~2 minutes of push
 
 ---

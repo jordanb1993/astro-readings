@@ -1,4 +1,4 @@
-# readings/synastry/
+# synastry readings/
 
 Synastry readings — Jordan's chart compared with another person's.
 
