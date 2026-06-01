@@ -218,9 +218,23 @@ moon: [Moon phase + sign] OR season: [Sabbat name]
 ### 📅 Workplace Transit Reading
 
 **Cadence:** Weekly (typically Monday or early in the week)
-**Files:** Two separate files per week:
-- `workplace readings/YYYY-MM-DD-week.md` — full reading
-- `workplace readings/YYYY-MM-DD-week-slack.md` — the #astroflow-weekly Slack post only
+**Files:** Three deliverables per week:
+- `workplace readings/YYYY-MM-DD-week.md` — full reading (includes Slack draft embedded at bottom)
+- `workplace readings/YYYY-MM-DD-week-slack.md` — Slack post only, copy-paste ready
+- `workplace readings/sky-at-work.html` — public interactive HTML, overwritten each week (same URL always)
+
+**Note on sky-at-work.html:** The 4am Sunday routine auto-generates a static skeleton. The full interactive build (sticky status bar, week progress bar, clickable signal board with detail panels, rising sign personalization, read-more dropdowns, scroll fade-in, first-visit hint tooltip) must be written in the session. Do not leave the skeleton — replace it with the full build.
+
+**After writing all three:** Commit and push to GitHub so GitHub Pages updates:
+```
+cd "/Users/jordanashleybarney/Library/Mobile Documents/iCloud~md~obsidian/Documents/the stars"
+git add "workplace readings/sky-at-work.html" "workplace readings/YYYY-MM-DD-week.md" "workplace readings/YYYY-MM-DD-week-slack.md"
+git commit -m "sky at work: week of [date]"
+git push origin main
+```
+
+**Live URL:** `https://jordanb1993.github.io/astro-readings/workplace%20readings/sky-at-work.html`
+(The space in the folder name URL-encodes to `%20`. This is the only correct URL — `readings/sky-at-work.html` without the folder prefix does not exist.)
 
 **Workplace reading format:**
 ```
