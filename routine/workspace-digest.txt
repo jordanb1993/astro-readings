@@ -1,10 +1,10 @@
-# The Stars:Daily Digest | 2026-05-31
+# The Stars:Daily Digest | 2026-06-01
 
-**Moon:** 10.12° Sagittarius | Full Moon / Waning Gibbous
+**Moon:** 22.01° Sagittarius | Full Moon / Waning Gibbous
 
 **Top active transits (tight orb):**
-- Saturn ⚻ natal Mercury (5th):0.09° separating
-- Uranus ☍ natal Sun (6th):0.21° applying
-- Chiron ✶ natal Ascendant (1st):0.21° applying
+- Saturn ⚻ natal Mercury (5th):0.01° separating
+- Jupiter ⚻ natal Saturn (9th):0.11° separating
+- Sun ☍ natal Mars (6th):0.14° applying
 
-*Full reading: the stars/daily readings/2026-05/2026-05-31.md*
+*Full reading: the stars/daily readings/2026-06/2026-06-01.md*
