@@ -134,7 +134,7 @@ The `.md` file in this folder is the source reading — detailed, with tables, k
 Every Sunday, the existing 4am CDT routine now also generates three additional files:
 
 1. **`readings/sky-at-work.html`** — the public, fully-formatted workplace weekly page
-   Live URL: `https://jordanb1993.github.io/astro-readings/readings/sky-at-work.html`
+   Live URL: `https://jordanb1993.github.io/astro-readings/workplace%20readings/sky-at-work.html`
    Transit-to-transit only. Sections: Pulse, At a Glance, Communication, Momentum, Collaboration, Watch For.
 
 2. **`readings/week-ahead.html`** — Jordan's personal week-ahead transit reading (private bookmark)

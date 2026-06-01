@@ -17,7 +17,7 @@ These auto-update every Sunday at 4am CDT via the daily routine. Same URL every 
 Day-by-day exact aspects · active transit strip · Jordan's natal chart only · private bookmark
 
 **Sky at Work** *(public, transit-to-transit)*
-[sky-at-work.html](https://jordanb1993.github.io/astro-readings/readings/sky-at-work.html)
+[sky-at-work.html](https://jordanb1993.github.io/astro-readings/workplace%20readings/sky-at-work.html)
 Collective sky · work framing · shareable with anyone · links in Monday Slack message
 
 ---
