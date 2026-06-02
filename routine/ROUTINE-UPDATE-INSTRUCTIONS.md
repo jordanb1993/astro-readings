@@ -30,6 +30,9 @@ Go to `claude.ai/code/routines` → find routine `trig_01Rtm1xSST2GbdCZh896F2vP`
                                 in what's actually happening in her life right now
 
 4. Write "daily readings/YYYY-MM/YYYY-MM-DD.md" using positions-today.json data.
+   CRITICAL: The reading title format is "[Weekday], [Month] [Day], [Year]".
+   Use the "weekday" field from positions-today.json exactly — do NOT compute or guess
+   the day name from the date. The JSON field is always correct; LLM date arithmetic is not.
    Create the directory first:
      mkdir -p "daily readings/YYYY-MM"
    (substitute real year-month, e.g. "daily readings/2026-05")

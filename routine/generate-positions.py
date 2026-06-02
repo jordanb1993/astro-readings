@@ -1236,6 +1236,7 @@ def main():
     with open(os.path.join(out_dir, "positions-today.json"), "w") as f:
         json.dump({
             "date": date_str,
+            "weekday": now.strftime("%A"),   # e.g. "Tuesday" — use this, never compute it
             "positions": {k: {**v, "formatted": deg_to_sign(v["deg"]) if v.get("deg") else None}
                          for k, v in today_positions.items()},
             "transit_to_natal": t2n_aspects,

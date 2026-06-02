@@ -6,7 +6,7 @@ type: week-ahead
 
 # Week Ahead — June 1 through June 7, 2026
 
-> The Full Moon's afterglow carries into Monday, which is loaded with exact transits — Saturn-Mercury at 0.01°, Uranus still at peak on the Sun, Mercury crossing the natal Ascendant. The middle of the week brings a structural crossroads on Thursday: the transiting North Node squares your natal nodal axis exactly, Mars opposes natal Mercury, and Venus moves across the natal 7th house pair. By Friday the energy shifts — the North Node-Jupiter trine takes hold and holds through Sunday, opening the 5th house with fated warmth.
+> The first half runs precise and slightly pressured: Chiron at the threshold, a Thursday loaded with exact crossroads transits. Then it breaks open. Friday shifts into a three-day fated warmth in the 5th house that holds through Sunday.
 
 ---
 
@@ -15,49 +15,48 @@ type: week-ahead
 | Date | Day | Transit | Aspect | Natal Point | Orb at Peak |
 |------|-----|---------|--------|-------------|-------------|
 | Jun 1 | Mon | Saturn 12°12' Ari | ⚻ inconjunct | Mercury 12°17' Sco (5th) | 0.01° |
-| Jun 1 | Mon | Jupiter 23°57' Can | ⚻ inconjunct | Saturn 24°15' Aqu (9th) | 0.11° |
 | Jun 1 | Mon | Chiron 29°10' Ari | ✶ sextile | Ascendant 29°22' Gem (1st) | 0.16° |
-| Jun 1 | Mon | Uranus 2°02' Gem | ☍ opposition | Sun 1°49' Sag (6th) | 0.27° |
-| Jun 1 | Mon | Mercury 28°05' Gem | ☌ conjunction | Ascendant 29°22' Gem (1st) | 0.44° |
+| Jun 1 | Mon | Uranus 2°02' Gem | ☍ opposition | Sun 1°49' Sag (6th) | 0.27° sep |
 | Jun 2 | Tue | Mars 9°18' Tau | ⚻ inconjunct | Mars 10°46' Sag (6th) | 0.02° |
-| Jun 3 | Wed | Chiron 29°10' Ari | ✶ sextile | Ascendant 29°22' Gem (1st) | 0.06° |
+| Jun 2 | Tue | Chiron 29°16' Ari | ✶ sextile | Ascendant 29°22' Gem (1st) | 0.11° |
+| Jun 3 | Wed | Chiron | ✶ sextile | Ascendant 29°22' Gem (1st) | 0.06° |
 | Jun 3 | Wed | Mercury | △ trine | Jupiter 2°52' Sco (5th) | 0.24° |
-| Jun 4 | Thu | NNode 3°45' Pis ℞ | □ square | North Node 3°02' Sag (6th) | 0.00° exact |
+| Jun 4 | Thu | NNode Rx | □ square | North Node 3°02' Sag (6th) | exact |
 | Jun 4 | Thu | Mars | ☍ opposition | Mercury 12°17' Sco (5th) | 0.02° |
 | Jun 4 | Thu | Venus | ☍ opposition | Neptune 19°11' Cap (7th) | 0.20° |
 | Jun 4 | Thu | Venus | ☍ opposition | Uranus 19°34' Cap (7th) | 0.19° |
 | Jun 4 | Thu | Chiron | ✶ sextile | Ascendant 29°22' Gem (1st) | 0.02° |
-| Jun 5 | Fri | NNode ℞ | △ trine | Jupiter 2°52' Sco (5th) | 0.09° |
-| Jun 6 | Sat | NNode ℞ | △ trine | Jupiter 2°52' Sco (5th) | 0.06° |
-| Jun 7 | Sun | NNode ℞ | △ trine | Jupiter 2°52' Sco (5th) | 0.06° |
-| Jun 7 | Sun | Jupiter 23°57' Can | △ trine | Pluto 25°40' Sco (6th) | 0.37° |
+| Jun 5 | Fri | NNode Rx | △ trine | Jupiter 2°52' Sco (5th) | 0.09° |
+| Jun 6 | Sat | NNode Rx | △ trine | Jupiter 2°52' Sco (5th) | 0.06° |
+| Jun 7 | Sun | NNode Rx | △ trine | Jupiter 2°52' Sco (5th) | 0.06° |
+| Jun 7 | Sun | Jupiter | △ trine | Pluto 25°40' Sco (6th) | 0.37° |
 
 ---
 
 ## The Week's Dominant Themes
 
-**Precision and recalibration (Monday–Tuesday)** — Saturn's inconjunct to natal Mercury reaches 0.01° on Monday — effectively exact, the tightest transit of the week. On the same day, Uranus holds 0.27° from exact opposition to natal Sun, Mercury crosses into conjunction with natal Ascendant, and Chiron applies to the Ascendant sextile. Monday is dense with transits that press on the same theme: who you are at your threshold, what you communicate from that place, and how you hold the precision that's been building. Tuesday brings Mars inconjunct natal Mars (0.02°), asking for a calibration of effort — not more force, but a slight adjustment in angle. Both days reward care over speed.
+**The wound at the door (Monday–Wednesday).** Chiron at the final degree of Aries has been sextiling your natal Ascendant all week, reaching its closest point Wednesday at 0.02°. Two anaretic degrees: Chiron completing something about the right to assert, your Ascendant at the threshold of the whole chart. The sextile is an invitation. Across three days it keeps returning to the same question: what do you let through before the self-edit arrives? Monday brought the sharpest precision with Saturn exact on natal Mercury. Tuesday is the recalibration. Wednesday is when Chiron is most exactly at the door.
 
-**Crossroads and disruption (Thursday)** — June 4 is the charged day of the week. The transiting North Node squares your natal nodal axis exactly — a karmic checkpoint on the Pisces-Sagittarius square, which activates your 6th house North Node directly. Simultaneously, Mars opposes natal Mercury in Scorpio (5th house), bringing friction to how you think and speak under pressure, and Venus transits through opposition to both natal Neptune and natal Uranus in Capricorn (7th house). The natal Capricorn pair already makes the partnership zone dissolution-prone and unpredictable; Venus opposing them can bring relational themes forward with more charge than the surface of the week suggests. Thursday is a day for observation over reaction. What feels fated or stuck is information, not instruction.
+**Thursday is the fulcrum.** June 4 is the week's hardest day to move through cleanly and the most informative one. The transiting North Node squares your natal nodal axis exactly — a karmic checkpoint where where-you're-heading (Pisces North Node) meets where-you're-meant-to-go (Sagittarius 6th house), and the friction between them is literal. At the same moment, Mars reaches exact opposition to natal Mercury in Scorpio: thinking and speaking under pressure get tested. And Venus opposes both natal Neptune and natal Uranus in your 7th house, which is already your most dissolution-prone and unpredictable zone for relationships. Don't try to resolve what surfaces. Observe it. What feels fated or stuck Thursday is data, not a verdict.
 
-**Fated expansion (Friday–Sunday)** — The North Node trine natal Jupiter (5th house) peaks Friday and holds nearly exact through Sunday. Three full days at the tightest orb this transit reaches, in the 5th house: creativity, joy, romance, authentic self-expression. The North Node trine is not the same as an easy soft aspect — it carries a quality of fated opening, an alignment between where you're heading and where the joy is. Jupiter trine natal Pluto deepens the field on Sunday: transformation available through expansion, the depth beneath the pleasure. The weekend opens.
+**The opening (Friday through Sunday).** The North Node trine natal Jupiter in your Scorpio 5th house peaks Friday at 0.09° and holds nearly exact through Sunday. Three full days. The 5th house: self-expression, creative work, pleasure, the astrology work in early motion. This isn't a soft easy aspect in the generic sense — it carries fated quality, alignment between your soul's direction and where your creative intelligence lives. Jupiter trine natal Pluto deepens the field Sunday: transformation available through expansion, real depth beneath the warmth. The weekend has texture worth leaning into.
 
 ---
 
 ## Day-by-Day Texture
 
-**Monday:** Dense with exact transits — Saturn-Mercury at 0.01°, Mercury approaching the natal Ascendant, Uranus still at peak on the Sun. Sharp, precise energy; communication matters. Say what you actually mean.
+**Monday:** *(passed)* Saturn-Mercury at 0.01°, Mercury fresh off the natal Ascendant, Uranus separating from its May 31 peak. Dense, precise energy. Say what you actually mean.
 
-**Tuesday:** Mars inconjunct natal Mars — effort feels slightly off-angle. Adjust the approach rather than pushing harder. Minor friction that resolves with recalibration.
+**Tuesday:** Mars inconjunct natal Mars just past exact — effort slightly off-angle, easing through the day. Mercury in Cancer trining natal Jupiter: ideas flow more easily, communication warmer than Monday.
 
-**Wednesday:** Chiron-Ascendant nearest to exact, Mercury trines natal Jupiter — the most open communication day of the week. Ideas flow, healing of self-presentation available, creative warmth.
+**Wednesday:** Chiron sextile Ascendant at its nearest all week. The most open day for authentic self-presentation. Good for the #astroflow-weekly drop, for anything where your voice needs to land clearly.
 
-**Thursday:** The loaded day. Nodal axis square exact, Mars opposing natal Mercury, Venus disrupting the 7th house pair. Watch what surfaces; don't act from the first reaction. Things may feel fated or stuck — both are information.
+**Thursday:** The loaded day. Nodal axis square exact, Mars opposing natal Mercury, Venus disrupting the 7th house pair. Observe before acting. Things may feel fated or stuck — both are information.
 
-**Friday:** The shift. North Node trine natal Jupiter begins to dominate. Something opens in the 5th house zone — creativity, connection, expression. The week's charge releases into warmth.
+**Friday:** The shift. NNode trine natal Jupiter takes hold. Something opens in the 5th house zone. The week's pressure releases into warmth and creative current.
 
-**Weekend:** NNode-Jupiter trine holds through Sunday, Jupiter-Pluto trine deepens the field Sunday. Good for creative and social openings, pleasure that goes somewhere, connection with real depth.
+**Weekend:** NNode-Jupiter trine holds through Sunday. Jupiter trine natal Pluto deepens the field Sunday. Good for creative work, for connection that goes somewhere, for the astrology business threads that need space rather than urgency.
 
 ---
 
-*Generated: 2026-05-31 | Full daily readings in "daily readings/2026-05/2026-05-31.md"*
+*Written June 2, 2026 · Updated voice and style · Full daily readings in "daily readings/2026-06/"*
