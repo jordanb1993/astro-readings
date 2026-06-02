@@ -77,6 +77,8 @@ Self-serve: customer enters birth info → instant personalized reading. No Jord
 
 The architecture of CLAUDE.md + INSTRUCTIONS.md + KNOWLEDGE.md creating genuine continuity across sessions — that's essentially what the app needs to do for every customer at scale. The reading pipeline here is the prototype.
 
+**Reading quality standards live in `the build/voice-canon.md`.** That document is the product brief for the reading voice: what makes it differentiated, the accumulated quality standards with the reasoning behind each one, a technical accuracy log, and a dated refinement log. Update it whenever the reading system improves. It's the thing that separates "AI astrology app" from "this specific product built over two years of deliberate iteration."
+
 ---
 
 ## Revenue projections (honest version)
@@ -215,3 +217,4 @@ The workplace digest format (see `readings/workplace/`) is a proof of concept fo
 - **May 18, 2026** — Phase 1 scoped in full. Full operational plan written in the bones/Money/. App vision reframed as the destination, not a separate dream.
 - **May 19, 2026** — app-vision.md expanded with full Phase 1 details. Cross-workspace links established.
 - **May 22, 2026** — Voice Differentiator section added (training reading voice on Jordan's creative writing corpus). Round Natal Chart build concept added. Marina's natal chart testimonial logged in KNOWLEDGE.md as Phase 1 validation.
+- **June 2, 2026** — `voice-canon.md` created as the product brief for reading quality. Two bugs fixed in the calculation layer (applying/separating wrong for non-conjunction aspects; active-transits.txt propagating wrong labels into readings). Prose style standards codified after calibration session: Morning Pulse format, deep-dive variety rules, Practical Application specificity, tone calibration, em dash rule tightened. Refinement log started — each quality improvement now has a dated entry with reasoning. This is the product iterating on itself.
