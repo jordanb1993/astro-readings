@@ -519,7 +519,7 @@ Claude pulls live planetary positions directly from the web at the start of ever
 
 **High-charge recent events:** #astroflow-weekly launch (May 21) — workplace astrology proof of concept live. Oregon trip confirmed (May 28). $3,000 savings milestone hit. May 31 Sagittarius full moon ritual on the North Node axis.
 
-Active transits as of 2026-06-01: Saturn 12.28° Aries:0.01° separating inconjunct natal Mercury (5th) | Jupiter 24.14° Cancer:0.11° separating inconjunct natal Saturn (9th) | Neptune 4.07° Aries:0.23° separating sesquiquadrate natal Venus (5th) | Uranus 2.09° Gemini:0.27° applying opposition natal Sun (6th)
+Active transits as of 2026-06-02: Jupiter 24.33° Cancer:0.08° separating inconjunct natal Saturn (9th) | Saturn 12.36° Aries:0.08° separating inconjunct natal Mercury (5th) | Neptune 4.09° Aries:0.25° separating sesquiquadrate natal Venus (5th) | Uranus 2.14° Gemini:0.33° applying opposition natal Sun (6th)
 
 ---
 
