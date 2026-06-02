@@ -38,6 +38,38 @@ Go to `claude.ai/code/routines` → find routine `trig_01Rtm1xSST2GbdCZh896F2vP`
    Transit-to-transit observations from transit_to_transit array.
    Chiron is calculated precisely — no estimates needed.
 
+   CRITICAL — applying/separating verification (do this before writing):
+   The JSON "applying" field is computed by generate-positions.py. Before using it,
+   independently verify EVERY slow-planet aspect (Saturn, Uranus, Neptune, Pluto, Chiron)
+   by comparing today's orb to the most recent previous reading:
+     - If today's orb is SMALLER than yesterday's → applying ✓
+     - If today's orb is LARGER than yesterday's → separating ✓
+   If the JSON label and the orb trend disagree, trust the orb trend. Correct the label
+   in your reading. Never write "applying" and "wider than yesterday" in the same sentence —
+   those are contradictory; that contradiction means the JSON label is wrong.
+
+   LANGUAGE VARIETY — do not repeat phrases across consecutive readings:
+   Read the most recent previous reading (step 4 of CLAUDE.md session protocol) and
+   avoid repeating its distinctive phrases, metaphors, or structural patterns. Each
+   reading should feel like a fresh voice even when covering the same ongoing transits.
+   Ongoing transits (Uranus-Sun, Neptune-Moon, etc.) need a new angle each day:
+   different facet of the meaning, different house emphasis, different practical hook.
+   Do not open consecutive readings with the same transit or the same framing.
+
+   CORRELATIONS TO TRACK — no-repeat rule:
+   The "Correlations to Track" section must NOT re-list correlations that already appeared
+   in the previous reading unchanged. Rules:
+     - If a correlation was listed yesterday and nothing has changed (same orb band, same
+       theme), skip it or upgrade it: name what has changed, what's been observed, or
+       what the next marker to watch for is.
+     - Ongoing slow transits (Neptune-Moon, Uranus-Sun) should generate AT MOST one
+       correlation entry per week, not one per day. If it was listed yesterday, drop it
+       today unless the orb crossed a meaningful threshold or something happened.
+     - Correlations should be FORWARD-LOOKING and SPECIFIC to today: what exactly to
+       watch for IN THE NEXT 24 HOURS, not a standing order to "track over weeks."
+     - If there's nothing new to track for a given transit today, omit it rather than
+       repeating the same prompt with slightly different wording.
+
 5. Write "weekly readings/YYYY-MM-DD-week-ahead.md" using positions-week.json.
    Use the date of the COMING Monday as the filename date (e.g. "weekly readings/2026-06-01-week-ahead.md").
    Only write this file on Sundays — skip on other days.

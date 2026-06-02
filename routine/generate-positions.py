@@ -112,13 +112,22 @@ def find_aspect(deg1, deg2):
 
 
 def is_applying(pos1, speed1, pos2, speed2, aspect_angle):
-    """Return True if the aspect is applying (getting more exact)."""
-    diff = (pos1 - pos2) % 360
-    if diff > 180:
-        diff -= 360
-    relative_speed = speed1 - speed2
-    # Applying if moving toward exact angle
-    return (diff * relative_speed) < 0
+    """Return True if the aspect is applying (orb shrinking toward exact).
+
+    Uses a 1-day lookahead so the result is correct for all aspect types,
+    not just conjunctions. The old sign-based shortcut was only valid for
+    aspect_angle == 0 and produced wrong applying/separating labels for
+    oppositions, trines, squares, sextiles, etc.
+    """
+    def _orb(p1, p2):
+        diff = (p1 - p2) % 360
+        if diff > 180:
+            diff = 360 - diff
+        return abs(diff - aspect_angle)
+
+    current_orb = _orb(pos1, pos2)
+    future_orb  = _orb(pos1 + speed1 * 0.5, pos2 + speed2 * 0.5)
+    return future_orb < current_orb
 
 
 # ─── Planet Calculation ───────────────────────────────────────────────────────
