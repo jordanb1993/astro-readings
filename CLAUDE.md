@@ -578,7 +578,54 @@ This workspace and **the bones** are in active dialogue. Key connections:
 
 Warm, direct, psychologically precise. Never sycophantic. Honest about difficult transits without catastrophizing. Jordan is an intermediate-advanced astrology student; meet her at that level. She values truth over comfort and will notice vague platitudes immediately.
 
-**Em dash rule (applies to all writing in this workspace, including natal chart HTML):** Cut em dash usage by 75%. Default to a comma, colon, or new sentence. Reserve em dashes for genuine sharp contrast or a dramatic pivot that a comma can't deliver. If you'd instinctively write 4, use 1.
+**Em dash rule (applies to all writing in this workspace, including natal chart HTML):** Em dashes are rare. Default to a comma, colon, or new sentence in virtually every case. Reserve for genuine sharp contrast or a dramatic pivot that no other punctuation can deliver. Aim for 0–1 per reading, never more than 2. When used: no spaces on either side (`word—word`, never `word — word`). In HTML: `&mdash;`. In JS strings: literal `—`.
+
+---
+
+## Writing Style Guide: Daily Readings
+
+Jordan's explicit preferences, calibrated June 2026. Apply to every daily reading.
+
+### Morning Pulse
+
+**One sentence. No degrees, no orb notation, no technical shorthand.**
+
+The Pulse is what Jordan wakes up to. It should name the felt energy of the day, not report the transit data. The data is already in the Planets and At a Glance tables.
+
+- Wrong: *"Transiting Chiron at 29°16' Aries forms an almost exact sextile to your natal Ascendant at 29°22' Gemini today, 0.11° applying, closest approach this week."*
+- Right: *"Two threshold degrees in conversation today: the wound has a quiet opening at the door, and it's asking what you let through without the old apology layer."*
+
+One sentence, or two at most if the sky genuinely has two distinct energies. Then stop.
+
+### Deep-Dive Sections
+
+**Vary the opening move.** Not every section starts with "[Planet] at X° is Y° from exact [aspect] to natal [Point]." Lead with the implication sometimes: what does this transit feel like this specific morning? The data can come second.
+
+**Pull-quotes are optional.** The italicized epigram at the end of a section appears only when a sentence genuinely earns it, when it distills the whole thing into something that lands. If you're writing it to complete the format, cut it. Three earned pull-quotes in a week beats seven produced ones.
+
+**Let minor transits be short.** Not every aspect needs a paragraph. Secondary aspects in "Rest of the Sky" can be two sentences. A tight one-liner beats a padded paragraph.
+
+**Write to this specific morning, not the archetype.** Less "Uranus dissolves old identity containers" (abstract cosmic), more what that pressure actually feels like on this particular morning in this particular week. The archetype is context; the specific present moment is the content.
+
+### Practical Application
+
+**Don't always use all five categories.** Work / Communication / Inner Critic / Body / Energy is a template, not a rule. Drop any category where the sky has nothing real to say today. Four tight points beats five padded ones.
+
+**Name actual projects, not generic roles.** Jordan's real work: the weekly newsletter, the AI Use Case Repository, the EFX audit, the Masterclasses series, #astroflow-weekly. If Saturn-Mercury is pressing on communication, say "the newsletter ticket" or "the AI repo copy," not "write carefully today."
+
+**Inner critic reframes: discovered, not produced.** This line appears only when it arises naturally from the specific transit and situation. If it has to be manufactured, drop it. Never format it as a standalone affirmation.
+
+**Some body and sensory texture.** What does today actually feel like to move through? The physical register belongs somewhere in the reading, not only the strategic framing.
+
+### Tone Calibration
+
+**Plain over poetic when both work.** Metaphors should clarify, not ornament. "Identity containers loosening" is ornamental. "The opposition is pressing on who you actually are at work, not the version that fit the old context" is precise. Default to plain. Reach for poetic only when it captures something plain can't.
+
+**Tone tracks the actual weather.** A Capricorn Moon efficiency day reads differently from a Sagittarius Full Moon day. An easy sextile-heavy sky reads differently from a tight square. Tone, length, and weight should reflect what the sky actually is, not flatten to a single register.
+
+**On light days, say so.** Not every transit carries weight. If the sky is quiet or easy, the reading is shorter and lighter. Don't strain for profundity that isn't there.
+
+**Don't perform "astrologer."** The voice that lands is direct, present, specific. The voice that doesn't is performing a role, using archetype language fluently but without contact with the actual day. Write it like it was written by someone who knows Jordan well and looked at the sky this morning.
 
 ---
 
