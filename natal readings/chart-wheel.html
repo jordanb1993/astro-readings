@@ -3,10 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#08162e">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <title>Carina — Natal Chart Wheel</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
+/* ── RESET ── */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* ── BASE ── */
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
 
 body {
   background: #08162e;
@@ -15,91 +26,114 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 48px 20px 80px;
+  padding: 48px 20px 88px;
   font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
 }
 
+/* Lock body scroll when drawer open */
+body.drawer-open { overflow: hidden; }
+
+/* ── PAGE CHROME ── */
 .chart-label {
   font-size: 0.60rem;
-  letter-spacing: 0.34em;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
   color: rgba(212,180,80,0.65);
-  margin-bottom: 28px;
+  margin-bottom: 24px;
+  text-align: center;
 }
 
 .chart-wrap {
   width: min(720px, 96vw);
   height: min(720px, 96vw);
+  touch-action: pan-x pan-y pinch-zoom;
 }
 
+#chart-svg {
+  display: block;
+  width: 100%; height: 100%;
+  overflow: visible;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  font-variant-emoji: text;
+}
 #chart-svg text { font-variant-emoji: text; }
 
 .chart-sub {
-  margin-top: 22px;
+  margin-top: 20px;
   font-size: 0.57rem;
-  letter-spacing: 0.20em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: rgba(240,228,200,0.22);
+  text-align: center;
 }
 
 /* ── FLOATING KEY BUTTON ── */
 .key-btn {
   position: fixed;
-  bottom: 28px; right: 28px;
-  width: 46px; height: 46px;
+  bottom: max(24px, calc(env(safe-area-inset-bottom) + 14px));
+  right:  max(24px, calc(env(safe-area-inset-right)  + 14px));
+  width: 48px; height: 48px;
+  min-width: 44px; min-height: 44px;
   border-radius: 50%;
   background: radial-gradient(ellipse at 40% 35%, #1a2d50, #091830);
   border: 1px solid rgba(212,180,80,0.50);
-  color: rgba(212,180,80,0.88);
+  color: rgba(212,180,80,0.90);
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.3rem;
   cursor: pointer;
   display: flex; align-items: center; justify-content: center;
   box-shadow: 0 4px 20px rgba(0,0,0,0.50), 0 0 14px rgba(212,180,80,0.08);
-  transition: all 0.2s;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
   z-index: 100;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 .key-btn:hover {
   border-color: rgba(212,180,80,0.80);
   box-shadow: 0 4px 28px rgba(0,0,0,0.60), 0 0 22px rgba(212,180,80,0.16);
   transform: scale(1.06);
 }
+.key-btn:active { transform: scale(0.96); }
 
-/* ── KEY SIDE DRAWER ── */
-
-/* Dim overlay behind the drawer (doesn't cover chart area) */
+/* ── DIM OVERLAY ── */
 .key-dimmer {
   position: fixed; inset: 0; z-index: 498;
-  background: rgba(8,22,46,0.25);
+  background: rgba(8,22,46,0.30);
   opacity: 0; pointer-events: none;
   transition: opacity 0.32s ease;
 }
 .key-dimmer.open { opacity: 1; pointer-events: auto; }
 
-/* Drawer slides in from the right */
+/* ── SIDE DRAWER ── */
 .key-overlay {
   position: fixed;
   top: 0; right: 0; bottom: 0;
-  width: min(380px, 96vw);
+  width: min(380px, 92vw);
   z-index: 500;
   background: linear-gradient(180deg, #0f1e3a 0%, #08162e 60%);
   border-left: 1px solid rgba(212,180,80,0.20);
-  box-shadow: -8px 0 40px rgba(0,0,0,0.55), -1px 0 0 rgba(212,180,80,0.08);
+  box-shadow: -8px 0 48px rgba(0,0,0,0.60), -1px 0 0 rgba(212,180,80,0.08);
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: contain;
   padding: 0;
   transform: translateX(100%);
   transition: transform 0.34s cubic-bezier(0.32,0,0.18,1);
-  /* No display:none — use transform */
+  will-change: transform;
 }
 .key-overlay.open { transform: translateX(0); }
 
-/* Drawer header — sticky at top */
+/* ── DRAWER HEADER (sticky) ── */
 .key-header {
   position: sticky; top: 0; z-index: 2;
   display: flex; align-items: center; justify-content: space-between;
-  padding: 22px 24px 18px;
+  padding: 20px 22px 16px;
   background: rgba(10,20,42,0.96);
   backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border-bottom: 1px solid rgba(212,180,80,0.12);
 }
 
@@ -113,57 +147,116 @@ body {
 
 .key-close {
   background: none; border: none;
-  color: rgba(240,228,200,0.40);
+  color: rgba(240,228,200,0.45);
   font-size: 1.4rem; cursor: pointer;
-  font-family: 'Cormorant Garamond', serif; line-height: 1;
-  padding: 4px 8px;
-  transition: color 0.15s, transform 0.15s;
+  font-family: 'Cormorant Garamond', serif;
+  min-width: 44px; min-height: 44px;
+  display: flex; align-items: center; justify-content: center;
+  padding: 4px 10px;
+  transition: color 0.15s;
   flex-shrink: 0;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
-.key-close:hover { color: rgba(240,228,200,0.85); transform: scale(1.15); }
+.key-close:hover  { color: rgba(240,228,200,0.88); }
+.key-close:active { color: rgba(240,228,200,1.00); }
 
-/* Drawer content */
-.key-content { padding: 24px 20px 48px; }
+/* ── DRAWER CONTENT ── */
+.key-content {
+  padding: 22px 18px;
+  padding-bottom: max(48px, calc(env(safe-area-inset-bottom) + 24px));
+}
 
-.key-section { margin-bottom: 28px; }
+.key-section { margin-bottom: 26px; }
 
 .key-sh {
-  font-size: 0.56rem; letter-spacing: 0.28em;
+  font-size: 0.55rem; letter-spacing: 0.26em;
   text-transform: uppercase;
   color: rgba(212,180,80,0.48);
-  margin-bottom: 12px;
+  margin-bottom: 11px;
   padding-bottom: 7px;
   border-bottom: 1px solid rgba(212,180,80,0.10);
 }
 
-/* Narrower grid for the side panel */
+/* ── KEY GRIDS ── */
 .key-grid { display: grid; gap: 6px 5px; }
 .g6 { grid-template-columns: repeat(2,1fr); }
 .g4 { grid-template-columns: repeat(2,1fr); }
-.g3 { grid-template-columns: repeat(3,1fr); }
+.g3 { grid-template-columns: 1fr; }
 
+/* ── KEY ITEMS ── */
 .ki {
   display: flex; align-items: center; gap: 8px;
-  padding: 8px 10px;
+  padding: 7px 9px;
   background: rgba(240,228,200,0.025);
   border: 1px solid rgba(212,180,80,0.08);
   border-radius: 6px;
+  touch-action: manipulation;
 }
 .ki-gl {
-  font-size: 16px;
+  font-size: 15px;
   font-family: 'Apple Symbols','Segoe UI Symbol','Noto Sans Symbols',serif;
   flex-shrink: 0; line-height: 1;
+  font-variant-emoji: text;
 }
-.ki-name { font-size: 0.68rem; font-family:'Cormorant Garamond',serif; color:rgba(240,228,200,0.78); display:block; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-.ki-note { font-size: 0.54rem; font-family:'Inter',sans-serif; color:rgba(240,228,200,0.30); letter-spacing:0.06em; display:block; margin-top:1px; }
-.ki-sw { width:10px;height:10px;border-radius:50%;flex-shrink:0; }
+.ki-name {
+  font-size: 0.67rem;
+  font-family: 'Cormorant Garamond', serif;
+  color: rgba(240,228,200,0.80);
+  display: block;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.ki-note {
+  font-size: 0.53rem;
+  font-family: 'Inter', sans-serif;
+  color: rgba(240,228,200,0.32);
+  letter-spacing: 0.05em;
+  display: block; margin-top: 1px;
+}
+.ki-sw { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
 
-/* Aspects: single column in the drawer (more descriptive text) */
-.g3 { grid-template-columns: 1fr; }
+/* ── EMBED MODE (?embed=1) ── */
+html.embed body {
+  padding: 0;
+  min-height: unset;
+  background: transparent;
+  justify-content: flex-start;
+}
+html.embed .chart-label,
+html.embed .chart-sub { display: none; }
+html.embed .chart-wrap { width: 100%; height: min(100vw, 680px); }
+html.embed .key-btn { bottom: 12px; right: 12px; width: 42px; height: 42px; font-size: 1.1rem; }
 
-@media(max-width:480px){
-  .g6,.g4 { grid-template-columns: 1fr; }
-  .key-overlay { width: 100vw; }
+/* ── TABLET (≤768px) ── */
+@media (max-width: 768px) {
+  body { padding: 32px 16px 88px; }
+  .chart-label { letter-spacing: 0.20em; margin-bottom: 20px; }
+  .key-overlay { width: min(400px, 94vw); }
+}
+
+/* ── MOBILE (≤600px) ── */
+@media (max-width: 600px) {
+  body { padding: 18px 10px 80px; }
+  .chart-label { font-size: 0.58rem; letter-spacing: 0.14em; margin-bottom: 14px; }
+  .chart-sub   { font-size: 0.54rem; letter-spacing: 0.11em; margin-top: 12px; }
+  .chart-wrap  { width: min(720px, 98vw); height: min(720px, 98vw); }
+  .key-overlay { width: 100vw; border-left: none; }
+  .key-header  { padding: 16px 18px 13px; }
+  .key-title   { font-size: 1.1rem; }
+  .key-content { padding: 16px 14px; }
+  .ki          { padding: 6px 8px; gap: 7px; }
+  .ki-name     { font-size: 0.64rem; }
+  .ki-note     { font-size: 0.50rem; }
+  .g6, .g4    { grid-template-columns: 1fr; }
+  .key-btn    { width: 52px; height: 52px; font-size: 1.45rem; }
+}
+
+/* ── LANDSCAPE MOBILE (short + wide) ── */
+@media (max-height: 500px) and (orientation: landscape) {
+  body { padding: 10px 16px; flex-direction: row; gap: 16px; align-items: center; justify-content: center; }
+  .chart-label, .chart-sub { display: none; }
+  .chart-wrap { width: min(440px, 58vw); height: min(440px, 58vw); }
+  .key-btn { bottom: 10px; right: 10px; }
 }
 </style>
 </head>
@@ -878,30 +971,45 @@ function buildKey(){
 buildKey();
 
 // Key toggle
-// Side drawer toggle
-const overlay  = document.getElementById('keyOverlay');
-const dimmer   = document.getElementById('keyDimmer');
-const btn      = document.getElementById('keyBtn');
+// ── EMBED MODE — chart-wheel.html?embed=1 strips page chrome
+if (new URLSearchParams(location.search).has('embed'))
+  document.documentElement.classList.add('embed');
 
-function openKey(){
+// ── SIDE DRAWER ──────────────────────────────────────────────────────────────
+const overlay = document.getElementById('keyOverlay');
+const dimmer  = document.getElementById('keyDimmer');
+const btn     = document.getElementById('keyBtn');
+
+function openKey() {
   overlay.classList.add('open');
   dimmer.classList.add('open');
+  document.body.classList.add('drawer-open');
   btn.textContent = '×';
   btn.title = 'Close Chart Key';
 }
-function closeKey(){
+
+function closeKey() {
   overlay.classList.remove('open');
   dimmer.classList.remove('open');
+  document.body.classList.remove('drawer-open');
   btn.textContent = '✦';
   btn.title = 'Open Chart Key';
 }
 
-btn.addEventListener('click', () => overlay.classList.contains('open') ? closeKey() : openKey());
+btn.addEventListener('click', () =>
+  overlay.classList.contains('open') ? closeKey() : openKey());
 document.getElementById('keyClose').addEventListener('click', closeKey);
 dimmer.addEventListener('click', closeKey);
 
-// Close on Escape
-document.addEventListener('keydown', e => { if(e.key === 'Escape') closeKey(); });
+// Keyboard — Escape to close
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeKey(); });
+
+// Touch — swipe right on drawer to close
+let _swipeX = 0;
+overlay.addEventListener('touchstart', e => { _swipeX = e.touches[0].clientX; }, { passive: true });
+overlay.addEventListener('touchend', e => {
+  if (e.changedTouches[0].clientX - _swipeX > 80) closeKey();
+}, { passive: true });
 </script>
 </body>
 </html>
