@@ -49,7 +49,11 @@ Cancer Sun · Libra Moon · Sagittarius Rising · coworker
 
 **Carina**
 [carina.html](https://jordanb1993.github.io/astro-readings/natal%20readings/carina.html)
-Gemini Sun · Pisces Moon · Scorpio Rising · Jupiter on MC
+Gemini Sun · Pisces Moon · Scorpio Rising · Jupiter on MC · v2 design (June 2026)
+
+**Carina — Chart Wheel**
+[chart-wheel.html](https://jordanb1993.github.io/astro-readings/natal%20readings/chart-wheel.html)
+Interactive natal chart wheel · Whimsigoth Sacred Geometry · floating key ✦
 
 ---
 
