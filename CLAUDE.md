@@ -466,6 +466,10 @@ Natal chart readings live in `natal readings/` (not `daily readings/`). **`natal
 
 When building a friend's natal chart: use `natal readings/jordan-natal.html` as the structural template, swap in their placements, write fresh interpretive content. Birth data needed: date, time, location.
 
+**Chart Wheel — `natal readings/chart-wheel.html`** (built June 4, 2026): A separate, self-contained HTML file that generates a visual circular natal chart wheel from Swiss Ephemeris data. Carina's chart is baked in as the first build. For any new chart: copy the file, replace the `CHART` constant with the new person's data, update the title. Full SOP in `natal readings/README.md`. Aesthetic: Whimsigoth Sacred Geometry — jewel navy + warm gold + element arcs + watercolor house fills + sacred geometry sunburst center. Fully mobile-audited. Embed via `?embed=1` for iframe integration into natal reading HTML pages.
+
+**Token rule exception for chart wheel builds:** Read `natal readings/chart-wheel.html` (or another recent wheel) at the start of any new chart wheel session — it is the live template and must be read to produce a correct build. Do not read it for any other purpose.
+
 ---
 
 ## GitHub Backup + Automated Daily Routine
