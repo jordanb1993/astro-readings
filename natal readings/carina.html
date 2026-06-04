@@ -81,20 +81,10 @@
 
     .hero-stars { position: absolute; inset: 0; pointer-events: none; }
 
-    .hero-border-outer {
-      position: absolute;
-      top: 22px; left: 22px; right: 22px; bottom: 22px;
-      border: 1px solid rgba(74, 159, 212, 0.28);
-      pointer-events: none;
-    }
-    .hero-border-inner {
-      position: absolute;
-      top: 32px; left: 32px; right: 32px; bottom: 32px;
-      border: 1px solid rgba(74, 159, 212, 0.12);
-      pointer-events: none;
-    }
+    .hero-border-outer,
+    .hero-border-inner { display: none; }
 
-    .corner { position: absolute; font-family: 'Cormorant Garamond', serif; font-size: 17px; color: var(--gold); opacity: 0.78; }
+    .corner { display: none; }
     .corner.tl { top: 12px; left: 12px; }
     .corner.tr { top: 12px; right: 12px; }
     .corner.bl { bottom: 12px; left: 12px; }
@@ -107,24 +97,24 @@
     .hero-label {
       font-family: 'Inter', sans-serif;
       font-size: 0.68rem;
-      font-weight: 600;
+      font-weight: 500;
       letter-spacing: 0.34em;
       text-transform: uppercase;
-      color: var(--rose);
-      opacity: 0.72;
+      color: rgba(240,228,200,0.55);
       margin-bottom: 28px;
       position: relative;
     }
 
     .hero-name {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(58px, 9vw, 104px);
+      font-size: clamp(68px, 10vw, 118px);
       font-weight: 300;
       line-height: 0.96;
       color: var(--text);
       letter-spacing: 0.05em;
-      margin-bottom: 22px;
+      margin-bottom: 24px;
       position: relative;
+      text-shadow: 0 2px 40px rgba(9,14,38,0.60);
     }
 
     .hero-ornament {
@@ -148,16 +138,16 @@
 
     .hero-datum-label {
       font-family: 'Inter', sans-serif;
-      font-size: 0.60rem;
+      font-size: 0.58rem;
       letter-spacing: 0.22em;
       text-transform: uppercase;
-      color: var(--muted-2);
+      color: rgba(240,228,200,0.38);
       margin-bottom: 5px;
     }
     .hero-datum-value {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.08rem;
-      color: var(--gold);
+      color: rgba(232,192,64,0.90);
       letter-spacing: 0.06em;
     }
 
@@ -632,7 +622,7 @@
     @media (max-width: 680px) {
       body { font-size: 16px; }
       p { font-size: 1rem; line-height: 1.78; }
-      .hero { padding: 58px 22px 50px; }
+      .hero { padding: 68px 22px 56px; }
       .hero-col { display: none; }
       .hero-border-outer { top: 14px; left: 14px; right: 14px; bottom: 14px; }
       .hero-border-inner { top: 22px; left: 22px; right: 22px; bottom: 22px; }
@@ -1228,6 +1218,9 @@
     </div>
   </div>
 </div>
+
+<!-- ── Thin gold accent line separating header from content ── -->
+<div style="width:100%;height:1px;background:linear-gradient(90deg,transparent,rgba(232,192,64,0.30),rgba(232,192,64,0.55),rgba(232,192,64,0.30),transparent);margin:0;"></div>
 
 <!-- ── IDENTITY TRIO ── -->
 <div class="trio-wrap fade-in">
