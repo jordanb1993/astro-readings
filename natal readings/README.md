@@ -52,7 +52,27 @@ Identify:
 - 4-5 deep dive topics: choose the aspects/placements with the most psychological richness, not just the most exact
 - Synastry: calculate aspects between their chart and Jordan's natal (see INSTRUCTIONS.md for her degrees)
 
-### Step 4 — Use dasha.html as the base template
+### ⚠️ Design direction update — June 4, 2026
+
+**`carina.html` is now the canonical v2 template.** Supersedes `dasha.html` / `iza.html` for all new builds.
+
+**v2 design system (locked):**
+- **Site-wide fixed background:** `hero-stars` SVG is `position: fixed; inset: 0` — covers the entire reading, not just the hero
+- **Fixed celestial side columns:** `hero-col left/right` are `position: fixed; height: 100vh` — frame the full page with ☽ ☾ ☉ ✦ symbols
+- **Hero = website header:** No double borders, no card bg — name floats on the constellation
+- **Glassmorphism:** `backdrop-filter: blur` on dive bodies, sig-panel, planet list/aspects
+- **Watercolor section blooms:** `::before/::after` blurred radial gradients on key sections
+- **Collapsible dives:** "Read more ▾" expand/collapse on all dive sections
+- **Scroll fade-in:** IntersectionObserver on each major section
+- **Planet pill strip:** Glyph + degree + sign + house chips, color-coded by group
+- **Aspect rows:** Color-coded left border per type
+- **Palette:** Cosmic indigo `#09102a`, gold `#e8c040`, cerulean `#4ab8e8`, ivory `#f0e4cc` — NO purple
+
+**For all new readings:** copy `carina.html`, update CHART constant, update title/subtitle/name, swap in fresh interpretive content.
+
+---
+
+### Step 4 — Use dasha.html as the base template (legacy — use carina.html for v2)
 
 `dasha.html` (or `iza.html` / `su.html`) has all current session edits incorporated:
 - Cream text palette (`--text: #fdf6e8`, `--muted: rgba(253, 246, 232, 0.58)`)
