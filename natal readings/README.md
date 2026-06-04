@@ -114,6 +114,127 @@ The full style guide lives in `CLAUDE.md → Writing Style Guide: All Reading Ty
 
 ---
 
+---
+
+## Chart Wheel SOP — `chart-wheel.html`
+
+*Built June 4, 2026. First iteration. Aesthetic: Whimsigoth Sacred Geometry.*
+
+The chart wheel is a procedurally generated SVG natal wheel that can be built for any person with known birth data. It lives as a standalone HTML file and will eventually be embedded into each natal reading HTML above the Identity Trio.
+
+### What you need
+
+- Birth date, time, location (same as for the reading HTML)
+- Calculated positions from Swiss Ephemeris (run the natal Python script)
+- The natal aspects for that chart (the top 7, calculated from the positions)
+
+### Step 1 — Calculate the chart data
+
+Run the calculation script (same as for the reading HTML):
+
+```bash
+cd "/Users/jordanashleybarney/Library/Mobile Documents/iCloud~md~obsidian/Documents/the stars/routine"
+python3 - << 'EOF'
+# paste the natal calculation script from any prior build session
+# outputs: planet absolute degrees, house cusps, ASC, MC
+EOF
+```
+
+You need:
+- `asc` — Ascendant in absolute degrees (0–360)
+- `mc` — Midheaven in absolute degrees
+- `cusps` — Array of 12 Placidus house cusps (absolute degrees, starting with H1=ASC)
+- For each planet: absolute degree, retrograde flag, sign index (0=Aries...11=Pisces), degree within sign
+
+### Step 2 — Build the wheel
+
+Open `natal readings/chart-wheel.html` and locate the `CHART` constant near the top of the `<script>` block. Replace the data:
+
+```javascript
+const CHART = {
+  asc: [ASC absolute degree],
+  mc:  [MC absolute degree],
+  cusps: [H1, H2, H3, H4, H5, H6, H7, H8, H9, H10, H11, H12],
+  planets: [
+    {id:'sun',     gl:'☉'+T, deg:[abs°], retro:false, grp:'luminary', si:[sign 0-11], sd:[deg in sign]},
+    {id:'moon',    gl:'☽'+T, deg:[abs°], retro:false, grp:'luminary', si:[sign],      sd:[deg in sign]},
+    {id:'mercury', gl:'☿'+T, deg:[abs°], retro:false, grp:'personal', si:[sign],      sd:[deg in sign]},
+    {id:'venus',   gl:'♀'+T, deg:[abs°], retro:false, grp:'personal', si:[sign],      sd:[deg in sign]},
+    {id:'mars',    gl:'♂'+T, deg:[abs°], retro:false, grp:'personal', si:[sign],      sd:[deg in sign]},
+    {id:'jupiter', gl:'♃'+T, deg:[abs°], retro:false, grp:'social',   si:[sign],      sd:[deg in sign]},
+    {id:'saturn',  gl:'♄'+T, deg:[abs°], retro:false, grp:'social',   si:[sign],      sd:[deg in sign]},
+    {id:'uranus',  gl:'♅'+T, deg:[abs°], retro:false, grp:'outer',    si:[sign],      sd:[deg in sign]},
+    {id:'neptune', gl:'♆'+T, deg:[abs°], retro:false, grp:'outer',    si:[sign],      sd:[deg in sign]},
+    {id:'pluto',   gl:'♇'+T, deg:[abs°], retro:false, grp:'outer',    si:[sign],      sd:[deg in sign]},
+    {id:'chiron',  gl:'⚷'+T, deg:[abs°], retro:false, grp:'point',    si:[sign],      sd:[deg in sign]},
+    {id:'nnode',   gl:'☊'+T, deg:[abs°], retro:false, grp:'point',    si:[sign],      sd:[deg in sign]},
+  ],
+  aspects:[
+    // Top 7 natal aspects by exactness — {p1:'planet_id', p2:'planet_id_or_mc', type:'conjunction|sextile|trine|square|opposition|inconjunct', orb:0.00}
+  ],
+};
+```
+
+**Planet group codes:** `luminary` (Sun/Moon), `personal` (Mercury/Venus/Mars), `social` (Jupiter/Saturn), `outer` (Uranus/Neptune/Pluto), `point` (Chiron/NNode)
+
+**Retrograde:** set `retro:true` for planets with negative speed from Swiss Ephemeris
+
+### Step 3 — Save as the person's file
+
+Save (or copy) as `natal readings/[name]-wheel.html`. Keep `chart-wheel.html` as the template/Carina's chart.
+
+### Step 4 — Verify visually
+
+```bash
+open "natal readings/[name]-wheel.html"
+```
+
+Check:
+- All 12 sign glyphs visible in zodiac ring
+- Planets placed in approximately correct positions (order matters more than exact angle)
+- Degree labels readable for all planets
+- House cusp degree labels showing at each cusp line
+- Aspect lines color-coded correctly
+- ✦ key button → side drawer opens with correct data
+- ASC/MC labels fully visible (not clipping)
+
+### Step 5 — Commit and push
+
+```bash
+cd "/Users/jordanashleybarney/Library/Mobile Documents/iCloud~md~obsidian/Documents/the stars"
+git add "natal readings/[name]-wheel.html"
+git commit -m "Add [Name] natal chart wheel"
+git push origin main
+```
+
+Live URL: `https://jordanb1993.github.io/astro-readings/natal%20readings/[name]-wheel.html`
+
+### Design system reference
+
+| Element | Spec |
+|---|---|
+| Background | `#08162e` jewel navy |
+| Gold | `#d0a840` |
+| Element arcs | Fire `#c87840`, Earth `#58925a`, Air `#5878c8`, Water `#3880b8` |
+| Aspect: conjunction | gold `#d0a840` |
+| Aspect: sextile | cerulean `#3e8fc0` |
+| Aspect: trine | teal `#5ab8a8` |
+| Aspect: square | rose `#c89898` dashed |
+| Aspect: inconjunct | ivory dim, dotted |
+| Font: display | Cormorant Garamond |
+| Font: labels | Inter |
+| Font: glyphs | Apple Symbols / Segoe UI Symbol / Noto Sans Symbols |
+
+### Planned next steps (Tier 2+)
+
+- Embed wheel above Identity Trio in each natal reading HTML
+- Degree tick marks in zodiac band (0°, 10°, 20° per sign)
+- Hover tooltips on planet glyphs
+- Aspect line draw animation on page load
+- Biwheel mode for transit charts
+
+---
+
 ## Friends with pending charts
 
 | Name | Birth data status |
