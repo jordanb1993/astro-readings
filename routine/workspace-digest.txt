@@ -1,10 +1,10 @@
-# The Stars:Daily Digest | 2026-06-03
+# The Stars:Daily Digest | 2026-06-04
 
-**Moon:** 15.76° Capricorn | Full Moon / Waning Gibbous
+**Moon:** 27.70° Capricorn | Full Moon / Waning Gibbous
 
 **Top active transits (tight orb):**
-- Chiron ✶ natal Ascendant (1st):0.06° applying
-- Mercury ⚻ natal NorthNode (6th):0.08° separating
-- Mercury ⚺ natal SouthNode (12th):0.08° separating
+- NNode □ natal NorthNode (6th):0.0° separating
+- NNode □ natal SouthNode (12th):0.0° separating
+- Mars ☍ natal Mercury (5th):0.02° separating
 
-*Full reading: the stars/daily readings/2026-06/2026-06-03.md*
+*Full reading: the stars/daily readings/2026-06/2026-06-04.md*
