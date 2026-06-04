@@ -711,13 +711,257 @@
       .planet-pill { font-size: 0.62rem; padding: 4px 10px; }
     }
 
+
+    /* ════════════════════════════════════════════════════
+       WHIMSY UPGRADE — Sacred Geometry + Watercolor + Glass
+       ════════════════════════════════════════════════════ */
+
+    /* ── Shimmer animation ── */
+    @keyframes shimmer {
+      0%   { background-position: -300% center; }
+      100% { background-position:  300% center; }
+    }
+    @keyframes aurora {
+      0%, 100% { opacity: 0.70; }
+      50%       { opacity: 1.00; }
+    }
+    @keyframes floatUp {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(-4px); }
+    }
+
+    /* ── Glassmorphism on dive card bodies ── */
+    .dive-body {
+      background: rgba(9, 14, 36, 0.42) !important;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-top: 1px solid rgba(240,228,200,0.03);
+    }
+
+    /* ── More vivid dive head gradients — dual layer ── */
+    .dive-head.gold-head {
+      background:
+        radial-gradient(circle at 4% 50%, rgba(208,168,64,0.32) 0%, transparent 50%),
+        radial-gradient(circle at 96% 15%, rgba(212,160,181,0.12) 0%, transparent 40%),
+        radial-gradient(circle at 50% 100%, rgba(74,159,212,0.06) 0%, transparent 50%),
+        linear-gradient(135deg, rgba(16,28,56,0.92) 0%, rgba(10,16,38,0.96) 100%);
+      border-bottom: 1px solid rgba(208,168,64,0.24);
+    }
+    .dive-head.rose-head {
+      background:
+        radial-gradient(circle at 4% 50%, rgba(212,160,181,0.30) 0%, transparent 50%),
+        radial-gradient(circle at 96% 15%, rgba(208,168,64,0.10) 0%, transparent 40%),
+        radial-gradient(circle at 50% 100%, rgba(90,184,168,0.06) 0%, transparent 50%),
+        linear-gradient(135deg, rgba(16,24,52,0.92) 0%, rgba(10,16,38,0.96) 100%);
+      border-bottom: 1px solid rgba(212,160,181,0.22);
+    }
+    .dive-head.plum-head {
+      background:
+        radial-gradient(circle at 4% 50%, rgba(74,159,212,0.30) 0%, transparent 50%),
+        radial-gradient(circle at 96% 15%, rgba(90,184,168,0.10) 0%, transparent 40%),
+        radial-gradient(circle at 50% 100%, rgba(212,160,181,0.06) 0%, transparent 50%),
+        linear-gradient(135deg, rgba(12,20,52,0.92) 0%, rgba(9,15,38,0.96) 100%);
+      border-bottom: 1px solid rgba(74,159,212,0.24);
+    }
+    .dive-head.teal-head {
+      background:
+        radial-gradient(circle at 4% 50%, rgba(90,184,168,0.30) 0%, transparent 50%),
+        radial-gradient(circle at 96% 15%, rgba(208,168,64,0.10) 0%, transparent 40%),
+        radial-gradient(circle at 50% 100%, rgba(74,159,212,0.06) 0%, transparent 50%),
+        linear-gradient(135deg, rgba(10,22,50,0.92) 0%, rgba(9,16,40,0.96) 100%);
+      border-bottom: 1px solid rgba(90,184,168,0.22);
+    }
+
+    /* ── Bi-color top bar on dive cards (was single color) ── */
+    .dive-section.accent-gold::before {
+      height: 3px;
+      background: linear-gradient(90deg, transparent 0%, var(--gold) 20%, rgba(212,160,181,0.70) 70%, transparent 100%);
+    }
+    .dive-section.accent-rose::before {
+      height: 3px;
+      background: linear-gradient(90deg, transparent 0%, var(--rose) 20%, rgba(74,159,212,0.70) 70%, transparent 100%);
+    }
+    .dive-section.accent-plum::before {
+      height: 3px;
+      background: linear-gradient(90deg, transparent 0%, var(--cerulean) 20%, rgba(90,184,168,0.70) 70%, transparent 100%);
+    }
+    .dive-section.accent-teal::before {
+      height: 3px;
+      background: linear-gradient(90deg, transparent 0%, var(--teal) 20%, rgba(208,168,64,0.70) 70%, transparent 100%);
+    }
+
+    /* ── Pull quote: two-tone gradient background ── */
+    .pull.rose-pull {
+      background: linear-gradient(135deg, rgba(212,160,181,0.12) 0%, rgba(74,159,212,0.06) 100%);
+    }
+    .pull.plum-pull {
+      background: linear-gradient(135deg, rgba(74,159,212,0.12) 0%, rgba(90,184,168,0.06) 100%);
+    }
+    .pull.teal-pull {
+      background: linear-gradient(135deg, rgba(90,184,168,0.12) 0%, rgba(208,168,64,0.06) 100%);
+    }
+    .pull { border-radius: 0 8px 8px 0; }
+
+    /* ── Watercolor section blooms (::before overlays) ── */
+    .sig-wrap { position: relative; overflow: visible; }
+    .sig-wrap::before {
+      content: ''; position: absolute;
+      top: -100px; right: -80px;
+      width: 420px; height: 420px;
+      background: radial-gradient(ellipse, rgba(74,159,212,0.10) 0%, transparent 65%);
+      filter: blur(55px); pointer-events: none; border-radius: 50%;
+    }
+
+    .dive-wrap { position: relative; overflow: visible; }
+    .dive-wrap::before {
+      content: ''; position: absolute;
+      top: 100px; left: -100px;
+      width: 320px; height: 700px;
+      background: radial-gradient(ellipse, rgba(212,160,181,0.07) 0%, transparent 65%);
+      filter: blur(70px); pointer-events: none;
+    }
+    .dive-wrap::after {
+      content: ''; position: absolute;
+      top: 600px; right: -80px;
+      width: 280px; height: 400px;
+      background: radial-gradient(ellipse, rgba(74,159,212,0.07) 0%, transparent 65%);
+      filter: blur(60px); pointer-events: none;
+    }
+
+    .thread-wrap { position: relative; overflow: visible; }
+    .thread-wrap::before {
+      content: ''; position: absolute;
+      top: -80px; right: -60px;
+      width: 300px; height: 300px;
+      background: radial-gradient(ellipse, rgba(208,168,64,0.09) 0%, transparent 65%);
+      filter: blur(50px); pointer-events: none; border-radius: 50%;
+    }
+    .thread-wrap::after {
+      content: ''; position: absolute;
+      bottom: -60px; left: -80px;
+      width: 280px; height: 280px;
+      background: radial-gradient(ellipse, rgba(74,159,212,0.08) 0%, transparent 65%);
+      filter: blur(45px); pointer-events: none; border-radius: 50%;
+    }
+
+    /* ── Planet strip shimmer ── */
+    .planet-strip-wrap { position: relative; overflow: hidden; }
+    .planet-strip-wrap::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(208,168,64,0.04) 30%,
+        rgba(208,168,64,0.09) 50%,
+        rgba(208,168,64,0.04) 70%,
+        transparent 100%);
+      background-size: 300% 100%;
+      animation: shimmer 7s infinite linear;
+      pointer-events: none;
+    }
+
+    /* ── Aspect rows: color left-border + hover ── */
+    .aspect-row { transition: background 0.18s; position: relative; }
+    .aspect-row:hover { background: rgba(240,228,200,0.04); }
+    .aspect-row:has(.asp-sym.conj)  { border-left: 2px solid rgba(208,168,64,0.55); }
+    .aspect-row:has(.asp-sym.trine) { border-left: 2px solid rgba(90,184,168,0.55); }
+    .aspect-row:has(.asp-sym.sext)  { border-left: 2px solid rgba(74,159,212,0.55); }
+    .aspect-row:has(.asp-sym.sq)    { border-left: 2px solid rgba(212,160,181,0.55); }
+    .aspect-row:has(.asp-sym.incon) { border-left: 2px solid rgba(240,228,200,0.25); }
+
+    /* ── Trio card: lift on hover + subtle glow ── */
+    .trio-card {
+      transition: transform 0.30s ease, box-shadow 0.30s ease;
+    }
+    .trio-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.40), 0 0 24px rgba(208,168,64,0.07);
+    }
+
+    /* ── Sacred geometry decoration: inline SVG in sig-panel ── */
+    /* Applied via JS-injected SVG overlay */
+
+    /* ── Enhanced cel-divider: extended dot trails ── */
+    .cel-mark { position: relative; }
+    .cel-mark::before, .cel-mark::after {
+      content: '· · ·';
+      position: absolute; top: 50%; transform: translateY(-50%);
+      font-size: 0.48rem; letter-spacing: 0.40em;
+      color: var(--gold); opacity: 0.22; white-space: nowrap;
+    }
+    .cel-mark::before { right: 100%; padding-right: 10px; }
+    .cel-mark::after  { left: 100%;  padding-left:  10px; }
+
+    /* ── Subtle aurora on planet pills on hover ── */
+    .planet-pill {
+      transition: border-color 0.20s, background 0.20s, transform 0.20s;
+    }
+    .planet-pill:hover { transform: translateY(-2px); }
+    .planet-pill.luminary:hover { background: rgba(208,168,64,0.12); border-color: rgba(208,168,64,0.45); }
+    .planet-pill.personal:hover { background: rgba(212,160,181,0.12); border-color: rgba(212,160,181,0.45); }
+    .planet-pill.social:hover   { background: rgba(74,159,212,0.12);  border-color: rgba(74,159,212,0.45); }
+    .planet-pill.outer:hover    { background: rgba(90,184,168,0.12);  border-color: rgba(90,184,168,0.45); }
+
+    /* ── Floating animation on identity trio glyphs ── */
+    .trio-glyph { animation: floatUp 4s ease-in-out infinite; }
+    .trio-card.sun  .trio-glyph { animation-delay: 0s; }
+    .trio-card.moon .trio-glyph { animation-delay: 1.3s; }
+    .trio-card.asc  .trio-glyph { animation-delay: 2.6s; }
+
+    /* ── Sacred geometry page scatter (fixed low-opacity layer) ── */
+    #sg-scatter {
+      position: fixed; inset: 0;
+      pointer-events: none; z-index: 0;
+      opacity: 1;
+    }
   </style>
 </head>
 <body>
 
+<!-- ── Sacred geometry scatter — fixed page background ── -->
+<svg id="sg-scatter" viewBox="0 0 1200 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+  <!-- Tiny scattered alchemical / sacred symbols at very low opacity -->
+  <g fill="none" stroke="#d0a840" stroke-width="0.5" opacity="0.06">
+    <!-- Small circles with cross (Sun symbol) -->
+    <circle cx="80"  cy="300" r="8"/><line x1="72"  y1="300" x2="88"  y2="300"/><line x1="80"  y1="292" x2="80"  y2="308"/>
+    <circle cx="1100" cy="250" r="8"/><line x1="1092" y1="250" x2="1108" y2="250"/><line x1="1100" y1="242" x2="1100" y2="258"/>
+    <circle cx="950" cy="700" r="6"/><line x1="944"  y1="700" x2="956"  y2="700"/><line x1="950"  y1="694" x2="950"  y2="706"/>
+    <!-- Small triangles -->
+    <polygon points="140,500 155,475 170,500"/>
+    <polygon points="1050,400 1065,375 1080,400"/>
+    <polygon points="50,700  65,675  80,700"/>
+    <!-- Tiny 6-pointed stars -->
+    <polygon points="200,200 205,212 218,212 208,220 212,232 200,224 188,232 192,220 182,212 195,212" fill="#d0a840" stroke="none" opacity="0.08"/>
+    <polygon points="1000,600 1005,612 1018,612 1008,620 1012,632 1000,624 988,632 992,620 982,612 995,612" fill="#d0a840" stroke="none" opacity="0.06"/>
+    <!-- Small diamonds -->
+    <polygon points="60,550 70,540 80,550 70,560" fill="none" stroke="#d0a840" stroke-width="0.5" opacity="0.08"/>
+    <polygon points="1120,480 1130,470 1140,480 1130,490" fill="none" stroke="#d0a840" stroke-width="0.5" opacity="0.06"/>
+    <!-- Dot clusters -->
+  </g>
+  <g fill="#d0a840" opacity="0.07">
+    <circle cx="120" cy="400" r="1.5"/>
+    <circle cx="135" cy="415" r="1"/>
+    <circle cx="115" cy="420" r="1"/>
+    <circle cx="1080" cy="350" r="1.5"/>
+    <circle cx="1095" cy="365" r="1"/>
+    <circle cx="1075" cy="370" r="1"/>
+  </g>
+  <!-- Faint diagonal lines (from inspo image 28) -->
+  <g stroke="#4a9fd4" stroke-width="0.4" opacity="0.04">
+    <line x1="0" y1="600" x2="400" y2="0"/>
+    <line x1="800" y1="900" x2="1200" y2="300"/>
+  </g>
+</svg>
+
+
 <!-- ── HERO ── -->
 <div class="hero">
   <svg class="hero-stars" viewBox="0 0 900 560" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <filter id="heroWC" x="-50%" y="-50%" width="200%" height="200%">
+        <feGaussianBlur stdDeviation="25"/>
+      </filter>
+    </defs>
+
     <circle cx="74"   cy="88"   r="1.2" fill="#f0e4cc" opacity="0.48"/>
     <circle cx="210"  cy="52"   r="0.9" fill="#d0a840" opacity="0.42"/>
     <circle cx="368"  cy="74"   r="1.4" fill="#f0e4cc" opacity="0.40"/>
@@ -742,6 +986,44 @@
     <circle cx="800" cy="122" r="42" fill="#4a9fd4" opacity="0.05"/>
     <circle cx="92"  cy="420" r="90" fill="#5bb8a8" opacity="0.04"/>
     <circle cx="104" cy="96"  r="60" fill="#d0a840" opacity="0.04"/>
+    <!-- ── Constellation network — from sacred geometry inspo ── -->
+    <g opacity="0.18">
+      <!-- Primary web lines connecting existing sparkle nodes -->
+      <line x1="134" y1="142" x2="460" y2="24"  stroke="#d0a840" stroke-width="0.5"/>
+      <line x1="460" y1="24"  x2="762" y2="162" stroke="#d0a840" stroke-width="0.5"/>
+      <line x1="762" y1="162" x2="840" y2="382" stroke="#d0a840" stroke-width="0.5"/>
+      <line x1="134" y1="142" x2="70"  y2="396" stroke="#d0a840" stroke-width="0.5"/>
+      <line x1="70"  y1="396" x2="454" y2="546" stroke="#d0a840" stroke-width="0.5"/>
+      <line x1="454" y1="546" x2="840" y2="382" stroke="#d0a840" stroke-width="0.5"/>
+      <!-- Cross connectors -->
+      <line x1="134" y1="142" x2="762" y2="162" stroke="#d0a840" stroke-width="0.4"/>
+      <line x1="460" y1="24"  x2="70"  y2="396" stroke="#4a9fd4" stroke-width="0.4"/>
+      <line x1="762" y1="162" x2="454" y2="546" stroke="#4a9fd4" stroke-width="0.4"/>
+    </g>
+    <!-- Additional constellation nodes -->
+    <circle cx="285" cy="310" r="1.8" fill="#d0a840" opacity="0.38"/>
+    <circle cx="628" cy="440" r="1.4" fill="#d0a840" opacity="0.32"/>
+    <circle cx="178" cy="490" r="1.2" fill="#4a9fd4" opacity="0.30"/>
+    <circle cx="730" cy="380" r="1.0" fill="#d4a0b5" opacity="0.32"/>
+    <g opacity="0.15">
+      <line x1="134" y1="142" x2="285" y2="310" stroke="#d0a840" stroke-width="0.4"/>
+      <line x1="762" y1="162" x2="628" y2="440" stroke="#d0a840" stroke-width="0.4"/>
+      <line x1="70"  y1="396" x2="178" y2="490" stroke="#4a9fd4" stroke-width="0.4"/>
+      <line x1="454" y1="546" x2="285" y2="310" stroke="#d0a840" stroke-width="0.4"/>
+      <line x1="840" y1="382" x2="730" y2="380" stroke="#d4a0b5" stroke-width="0.4"/>
+    </g>
+    <!-- Large faint orbital rings — sacred geometry ── -->
+    <circle cx="450" cy="280" r="220" fill="none" stroke="#d0a840" stroke-width="0.4" opacity="0.07"/>
+    <circle cx="450" cy="280" r="170" fill="none" stroke="#4a9fd4" stroke-width="0.3" opacity="0.06"/>
+    <!-- Amber watercolor bloom — upper right (from inspo) -->
+    <ellipse cx="800" cy="90" rx="200" ry="120" fill="rgba(200,145,60,0.07)" filter="url(#heroWC)"/>
+    <!-- Extra sparkle types for variety -->
+    <text x="290" y="180" font-size="7"  fill="#d4a0b5" opacity="0.45" text-anchor="middle" font-family="serif">✩</text>
+    <text x="640" y="400" font-size="6"  fill="#d0a840" opacity="0.40" text-anchor="middle" font-family="serif">✪</text>
+    <text x="380" y="480" font-size="5"  fill="#4a9fd4" opacity="0.38" text-anchor="middle" font-family="serif">✦</text>
+    <text x="720" y="60"  font-size="6"  fill="#f0e4cc" opacity="0.32" text-anchor="middle" font-family="serif">✧</text>
+    <text x="150" y="350" font-size="5"  fill="#d0a840" opacity="0.32" text-anchor="middle" font-family="serif">·</text>
+    <text x="580" y="500" font-size="5"  fill="#d4a0b5" opacity="0.30" text-anchor="middle" font-family="serif">·</text>
   </svg>
 
   <div class="hero-border-outer"></div>
