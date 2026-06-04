@@ -65,59 +65,81 @@ body {
   transform: scale(1.06);
 }
 
-/* ── KEY OVERLAY ── */
+/* ── KEY SIDE DRAWER ── */
+
+/* Dim overlay behind the drawer (doesn't cover chart area) */
+.key-dimmer {
+  position: fixed; inset: 0; z-index: 498;
+  background: rgba(8,22,46,0.25);
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.32s ease;
+}
+.key-dimmer.open { opacity: 1; pointer-events: auto; }
+
+/* Drawer slides in from the right */
 .key-overlay {
-  display: none;
-  position: fixed; inset: 0; z-index: 500;
-  background: rgba(8,22,46,0.90);
-  backdrop-filter: blur(14px);
+  position: fixed;
+  top: 0; right: 0; bottom: 0;
+  width: min(380px, 96vw);
+  z-index: 500;
+  background: linear-gradient(180deg, #0f1e3a 0%, #08162e 60%);
+  border-left: 1px solid rgba(212,180,80,0.20);
+  box-shadow: -8px 0 40px rgba(0,0,0,0.55), -1px 0 0 rgba(212,180,80,0.08);
   overflow-y: auto;
-  padding: 32px 20px 48px;
+  padding: 0;
+  transform: translateX(100%);
+  transition: transform 0.34s cubic-bezier(0.32,0,0.18,1);
+  /* No display:none — use transform */
 }
-.key-overlay.open { display: block; }
+.key-overlay.open { transform: translateX(0); }
 
-.key-modal {
-  max-width: 800px;
-  margin: 0 auto;
-  background: radial-gradient(ellipse at 50% 0%, #162040 0%, #0d1a35 50%, #08162e 100%);
-  border: 1px solid rgba(212,180,80,0.18);
-  border-radius: 14px;
-  padding: 42px 38px;
-  position: relative;
+/* Drawer header — sticky at top */
+.key-header {
+  position: sticky; top: 0; z-index: 2;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 22px 24px 18px;
+  background: rgba(10,20,42,0.96);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(212,180,80,0.12);
 }
-
-.key-close {
-  position: absolute; top: 18px; right: 22px;
-  background: none; border: none;
-  color: rgba(240,228,200,0.40);
-  font-size: 1.5rem; cursor: pointer;
-  font-family: 'Cormorant Garamond', serif; line-height: 1;
-  transition: color 0.15s;
-}
-.key-close:hover { color: rgba(240,228,200,0.85); }
 
 .key-title {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.65rem; font-weight: 300;
-  color: rgba(212,180,80,0.88);
+  font-size: 1.25rem; font-weight: 300;
+  color: rgba(212,180,80,0.90);
   letter-spacing: 0.08em;
-  margin-bottom: 38px;
+  margin: 0;
 }
 
-.key-section { margin-bottom: 32px; }
+.key-close {
+  background: none; border: none;
+  color: rgba(240,228,200,0.40);
+  font-size: 1.4rem; cursor: pointer;
+  font-family: 'Cormorant Garamond', serif; line-height: 1;
+  padding: 4px 8px;
+  transition: color 0.15s, transform 0.15s;
+  flex-shrink: 0;
+}
+.key-close:hover { color: rgba(240,228,200,0.85); transform: scale(1.15); }
+
+/* Drawer content */
+.key-content { padding: 24px 20px 48px; }
+
+.key-section { margin-bottom: 28px; }
 
 .key-sh {
-  font-size: 0.58rem; letter-spacing: 0.28em;
+  font-size: 0.56rem; letter-spacing: 0.28em;
   text-transform: uppercase;
   color: rgba(212,180,80,0.48);
-  margin-bottom: 14px;
-  padding-bottom: 8px;
+  margin-bottom: 12px;
+  padding-bottom: 7px;
   border-bottom: 1px solid rgba(212,180,80,0.10);
 }
 
-.key-grid { display: grid; gap: 8px 6px; }
-.g6 { grid-template-columns: repeat(6,1fr); }
-.g4 { grid-template-columns: repeat(4,1fr); }
+/* Narrower grid for the side panel */
+.key-grid { display: grid; gap: 6px 5px; }
+.g6 { grid-template-columns: repeat(2,1fr); }
+.g4 { grid-template-columns: repeat(2,1fr); }
 .g3 { grid-template-columns: repeat(3,1fr); }
 
 .ki {
@@ -136,10 +158,12 @@ body {
 .ki-note { font-size: 0.54rem; font-family:'Inter',sans-serif; color:rgba(240,228,200,0.30); letter-spacing:0.06em; display:block; margin-top:1px; }
 .ki-sw { width:10px;height:10px;border-radius:50%;flex-shrink:0; }
 
-@media(max-width:600px){
-  .g6{grid-template-columns:repeat(3,1fr);}
-  .g4,.g3{grid-template-columns:repeat(2,1fr);}
-  .key-modal{padding:28px 18px;}
+/* Aspects: single column in the drawer (more descriptive text) */
+.g3 { grid-template-columns: 1fr; }
+
+@media(max-width:480px){
+  .g6,.g4 { grid-template-columns: 1fr; }
+  .key-overlay { width: 100vw; }
 }
 </style>
 </head>
@@ -151,17 +175,39 @@ body {
 </div>
 <div class="chart-sub">June 10, 1993 &nbsp;·&nbsp; 6:30 PM CDT &nbsp;·&nbsp; DeKalb, Illinois &nbsp;·&nbsp; Placidus</div>
 
-<button class="key-btn" id="keyBtn" title="Chart Key">✦</button>
+<!-- Floating key toggle button -->
+<button class="key-btn" id="keyBtn" title="Open Chart Key">✦</button>
 
-<div class="key-overlay" id="keyOverlay">
-  <div class="key-modal">
-    <button class="key-close" id="keyClose">×</button>
+<!-- Dim overlay (click to close) -->
+<div class="key-dimmer" id="keyDimmer"></div>
+
+<!-- Side drawer — slides in from right, chart stays visible -->
+<div class="key-overlay" id="keyOverlay" role="complementary" aria-label="Chart Key">
+
+  <div class="key-header">
     <div class="key-title">Chart Key</div>
-    <div class="key-section"><div class="key-sh">Zodiac Signs</div><div class="key-grid g6" id="kS"></div></div>
-    <div class="key-section"><div class="key-sh">Planets &amp; Points</div><div class="key-grid g6" id="kP"></div></div>
-    <div class="key-section"><div class="key-sh">Aspect Lines</div><div class="key-grid g3" id="kA"></div></div>
-    <div class="key-section"><div class="key-sh">Elements</div><div class="key-grid g4" id="kE"></div></div>
+    <button class="key-close" id="keyClose" aria-label="Close key">←</button>
   </div>
+
+  <div class="key-content">
+    <div class="key-section">
+      <div class="key-sh">Zodiac Signs</div>
+      <div class="key-grid g6" id="kS"></div>
+    </div>
+    <div class="key-section">
+      <div class="key-sh">Planets &amp; Points</div>
+      <div class="key-grid g6" id="kP"></div>
+    </div>
+    <div class="key-section">
+      <div class="key-sh">Aspect Lines</div>
+      <div class="key-grid g3" id="kA"></div>
+    </div>
+    <div class="key-section">
+      <div class="key-sh">Elements</div>
+      <div class="key-grid g4" id="kE"></div>
+    </div>
+  </div>
+
 </div>
 
 <script>
@@ -832,9 +878,30 @@ function buildKey(){
 buildKey();
 
 // Key toggle
-document.getElementById('keyBtn').addEventListener('click',()=>document.getElementById('keyOverlay').classList.add('open'));
-document.getElementById('keyClose').addEventListener('click',()=>document.getElementById('keyOverlay').classList.remove('open'));
-document.getElementById('keyOverlay').addEventListener('click',e=>{if(e.target===e.currentTarget)e.currentTarget.classList.remove('open');});
+// Side drawer toggle
+const overlay  = document.getElementById('keyOverlay');
+const dimmer   = document.getElementById('keyDimmer');
+const btn      = document.getElementById('keyBtn');
+
+function openKey(){
+  overlay.classList.add('open');
+  dimmer.classList.add('open');
+  btn.textContent = '×';
+  btn.title = 'Close Chart Key';
+}
+function closeKey(){
+  overlay.classList.remove('open');
+  dimmer.classList.remove('open');
+  btn.textContent = '✦';
+  btn.title = 'Open Chart Key';
+}
+
+btn.addEventListener('click', () => overlay.classList.contains('open') ? closeKey() : openKey());
+document.getElementById('keyClose').addEventListener('click', closeKey);
+dimmer.addEventListener('click', closeKey);
+
+// Close on Escape
+document.addEventListener('keydown', e => { if(e.key === 'Escape') closeKey(); });
 </script>
 </body>
 </html>
