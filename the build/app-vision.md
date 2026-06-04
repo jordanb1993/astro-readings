@@ -135,33 +135,42 @@ The single biggest market differentiator available: an astrology reading voice t
 
 ---
 
-## Round Natal Chart — Coded Visual
+## Round Natal Chart — Coded Visual ✅ BUILT June 4, 2026
 
-*Captured May 22, 2026*
+*Conceived May 22, 2026 · Built June 4, 2026*
 
-**The idea:** A fully coded round natal chart — SVG or canvas — in our unique aesthetic. Not a screenshot from an app, not a generic wheel. Built from scratch in our style, showing:
-- All 12 houses with house lines and numbers
-- All planetary placements at their exact degrees
-- Sign boundaries and glyphs
-- A map/key system so a non-astrologer can read it
-- Houses labeled (1st through 12th, or by rulership)
-- Degree markings
+**Status: live proof of concept** — `natal readings/chart-wheel.html` (Carina's chart). Commits to GitHub Pages.
 
-**Why this matters for the business:**
-- The current natal chart PDF is beautiful (whimsigoth, Cormorant Garamond, celestial columns) but uses text-based placement descriptions rather than an actual chart wheel
-- A coded round chart at the same visual quality as the rest of the PDF = a product that feels like premium software, not a template
-- It becomes a visual signature — recognizable, ownable, and something no Etsy competitor is doing in this aesthetic
+**What was built:**
+- Full SVG natal chart wheel procedurally generated from Swiss Ephemeris data (pyswisseph)
+- 12-segment zodiac ring with element-colored fills (fire/earth/air/water) AND colored outer arcs for instant element identification
+- All planetary placements at exact ecliptic degrees with collision-spread algorithm
+- Planet glyphs, degree labels, Rx markers
+- House cusp lines + cusp degree labels at each boundary
+- Alternating house shading with **watercolor element blooms** (blurred, element-tinted circles that pool like watercolor in each house sector)
+- 16-ray golden sunburst center (sacred geometry / whimsigoth sun motif)
+- House numbers pulled to center zone for clarity
+- Diagonal ribbon sweeps (warm amber + cerulean) — inspo from sacred geometry illustrations
+- Floating ✦ key button → overlay with full key: signs, planets, aspects, elements
+- Background: jewel navy `#08162e` — fully off purple
 
-**The build approach:**
-- SVG-based (scales cleanly to any size, prints perfectly)
-- Procedurally generated from birth data — house cusps, planetary degrees all computed and plotted to their actual positions
-- Full whimsigoth palette: deep plum bg, gold lines, rose for points, plum-bright for aspect lines
-- Map key panel alongside the wheel
+**Design aesthetic: Whimsigoth Sacred Geometry**
+- Practical Magic / Phoebe Buffay / Willow from Buffy — warm celestial humanity
+- Sacred geometry precision (hairline gold rings, geometric proportions)
+- Watercolor softness within the structure (element house blooms)
+- Cerulean + warm gold + ivory — NO purple
 
 **Phase relevance:**
-- Phase 1: nice to have — would elevate the PDF significantly if built before the first paid readings
-- Phase 2: required — at scale, every PDF should have the wheel
-- Phase 3: the wheel becomes the signature visual of the app itself
+- Phase 1: ✅ ready to attach to natal chart PDFs — elevates from template to premium software feel
+- Phase 2: required at scale — every PDF gets the wheel
+- Phase 3: the wheel becomes the signature visual of the app
+
+**Next build steps for the wheel:**
+- Degree marks in the zodiac band (0°, 10°, 20° per sign)
+- Hover tooltips (planet name, sign, degree, house, key phrase)
+- Animation: aspect lines draw in on page load
+- Biwheel mode for transit charts
+- Embed in natal HTML reading pages (above the Identity Trio)
 
 ---
 
@@ -217,4 +226,6 @@ The workplace digest format (see `readings/workplace/`) is a proof of concept fo
 - **May 18, 2026** — Phase 1 scoped in full. Full operational plan written in the bones/Money/. App vision reframed as the destination, not a separate dream.
 - **May 19, 2026** — app-vision.md expanded with full Phase 1 details. Cross-workspace links established.
 - **May 22, 2026** — Voice Differentiator section added (training reading voice on Jordan's creative writing corpus). Round Natal Chart build concept added. Marina's natal chart testimonial logged in KNOWLEDGE.md as Phase 1 validation.
+- **June 4, 2026** — Chart wheel built from scratch in Whimsigoth Sacred Geometry aesthetic. Full SVG natal wheel: element arcs, watercolor house blooms, 16-ray sunburst center, floating key overlay, jewel navy palette, all procedurally generated from Swiss Ephemeris data. Carina's chart is the first. This is a real IP asset — no competitor is doing this in this aesthetic.
+- **June 4, 2026** — Writing style guide expanded to all reading types (natal, workplace, weekly, synastry). Voice DNA codified: 11 personality principles behind every craft rule. KNOWLEDGE.md updated with May 2026 correlations. INSTRUCTIONS.md current transits updated to June 4.
 - **June 2, 2026** — `voice-canon.md` created as the product brief for reading quality. Two bugs fixed in the calculation layer (applying/separating wrong for non-conjunction aspects; active-transits.txt propagating wrong labels into readings). Prose style standards codified after calibration session: Morning Pulse format, deep-dive variety rules, Practical Application specificity, tone calibration, em dash rule tightened. Refinement log started — each quality improvement now has a dated entry with reasoning. This is the product iterating on itself.
