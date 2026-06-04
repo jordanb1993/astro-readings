@@ -174,6 +174,35 @@ The single biggest market differentiator available: an astrology reading voice t
 
 ---
 
+## Visual Polish Queue — Natal Reading v2
+
+*Captured June 4, 2026. Ideas for the next polish pass on carina.html and future readings.*
+
+### High priority
+- **Hover tooltips on planet pills** — click/hover a pill to expand a small card showing: planet name, sign, degree, house, what it means in 1 sentence. Keeps the strip clean at rest but gives depth on demand.
+- **Scroll-based color shift** — as you scroll through the reading, the background constellation subtly shifts in hue or intensity. Sections feel distinct without card borders. Could use scroll-linked CSS variables or a simple IntersectionObserver tinting different blobs.
+- **Celestial column richness** — the left/right moon columns tile at 460px height. At full page height they repeat. Next pass: extend the SVG content so the symbols are spaced properly across the full page rather than repeating.
+- **Embed the chart wheel** — iframe above the Identity Trio with `?embed=1`. One-line addition once polish is done.
+
+### Typography refinements
+- The hero name size could respond slightly to the length of the name (shorter names like "Mimi" get larger; longer names like "Sagittarius" scale down)
+- Pull quote font size could go up to 1.20–1.25rem — it's a bit small at current size
+- The planet pill label font (`0.66rem`) could go to `0.70rem` for better mobile legibility
+
+### Design depth
+- **Section header mini-dividers** — right now the sections flow together. A very fine 1px gold line + small symbol (like `· ✦ ·`) between signature, planet strip, and dives would create cleaner visual breaks
+- **Aspect row expanded detail** — clicking an aspect row could expand a one-sentence explanation of what that aspect means for this person specifically. Same collapsible pattern as the dives.
+- **The through-line section** — currently a text block. Could have a subtle SVG constellation element drawn specifically for this person's chart shape embedded behind the text.
+- **Glassmorphism enhancement** — the card backgrounds could catch a subtle iridescent shimmer on scroll (CSS scroll-driven animations, modern browsers only)
+
+### Chart wheel polish
+- Degree tick marks in zodiac band at 5° intervals
+- Hover on planet glyph → tooltip with full placement + 1-line meaning
+- Aspect lines animate in sequentially on page load (draw effect)
+- Color-code the house cusp labels by element of the sign on that cusp
+
+---
+
 ## Emerging Product Line: Corporate Women's Career Astrology
 
 *Seeded May 19, 2026 — this is a distinct market with real demand and zero good competition*
