@@ -41,7 +41,7 @@ After processing, clear the entries from capture.md (keep the header, remove the
 
 **Write-only files — never read, never load (except as noted):**
 - `daily readings/2026-04/*.html` — legacy HTML readings from April. Ignore; the `.md` is the source of truth.
-- `natal readings/*.html` — visual output for natal/special readings. **Exception: read one existing chart (iza.html or dasha.html) at the start of any new natal chart build session** so the full template structure is available. This produces dramatically better first drafts. Do not read for any other purpose (e.g., checking a past reading — read the `.md` instead).
+- `natal readings/*.html` — visual output for natal/special readings. **Exception: read `carina.html` (v2 canonical template, June 2026) at the start of any new natal chart reading or chart wheel build session.** This is the design-complete template — all whimsy CSS, glassmorphism, site-wide constellation background, celestial columns, watercolor effects, collapsible dives, planet pills are already built in. Reading it produces dramatically better first drafts. Do not read older templates (iza.html, dasha.html) for new builds — they are v1 and outdated. Do not read for any other purpose (e.g., checking a past reading — read the `.md` instead).
 - `_archive/_template.html` — only read if explicitly rebuilding the reading HTML template.
 - All images in `_archive/images/` (`*.jpg`, `*.png`) — visual references, not needed for calculation.
 

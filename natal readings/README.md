@@ -380,7 +380,144 @@ The `?embed=1` parameter hides the page chrome (title, subtitle) and makes the b
 - Degree tick marks in zodiac band (0°, 10°, 20° per sign)
 - Biwheel mode for transit charts
 
+------
+
+## V2 Natal Reading SOP — Building a New Reading from `carina.html`
+
+*June 2026. This is the current standard for all new natal reading HTML builds.*
+
 ---
+
+### What the v2 template already has (do not rebuild)
+
+When you copy `carina.html`, ALL of the following comes with it for free:
+
+- Site-wide fixed constellation background (hero-stars SVG)
+- Fixed celestial side columns (☽ ☾ ☉ ✦ framing the full page)
+- Hero as website header (no card borders, name floats on constellation)
+- Glassmorphism on all cards (`backdrop-filter: blur`)
+- Watercolor section blooms (::before overlays on sig/dive/thread sections)
+- Sacred geometry scatter elements
+- Shimmer animations and fade-in effects
+- Collapsible dive sections with "Read more ▾"
+- Scroll fade-in (IntersectionObserver)
+- Planet pill strip (color-coded by planet group)
+- Aspect row color coding and hover
+- Trio card float animation
+- Full mobile audit (safe areas, touch targets, responsive)
+- PDF save button with dynamic page height
+- The complete Whimsigoth Sacred Geometry palette
+
+**You only need to update the CONTENT — the design is inherited.**
+
+---
+
+### What you DO need to update for each new person
+
+**Step 1 — Calculate natal chart data**
+Run the Python/swisseph script from the Chart Wheel SOP (see below) to get:
+- Planet absolute degrees (0–360)
+- Retrograde flags
+- House cusps (Placidus)
+- ASC and MC
+
+**Step 2 — Copy the template**
+```bash
+cp "natal readings/carina.html" "natal readings/[name].html"
+```
+
+**Step 3 — Update identifying information**
+In the HTML `<head>`:
+- `<title>` → `[Name] — Natal Chart Reading`
+
+In the hero section:
+- `.hero-label` text → `Natal Chart Reading`
+- `.hero-name` → person's name
+- `.hero-datum-value` × 4 → birth date / time / place / system
+
+In the footer:
+- Birth data and Big Three
+
+**Step 4 — Update the Identity Trio (3 cards)**
+For each of Sun, Moon, Rising:
+- `.trio-placement` → sign name
+- `.trio-house` → house number and brief note
+- `.trio-tagline` → 1-line poetic tagline written for the person to read
+
+**Step 5 — Update Chart Signature (5 `sig-item` entries)**
+5 structural patterns — the most important things about the chart.
+Each: bold label + 1-2 sentences of meaning.
+
+**Step 6 — Update planet pills**
+12 `planet-pill` spans with glyph + degree + sign + house.
+Color groups: `luminary` (Sun/Moon), `personal` (Mercury/Venus/Mars), `social` (Jupiter/Saturn), `outer` (Uranus/Neptune/Pluto), `point` (Chiron/NNode).
+
+**Step 7 — Update aspects table**
+7 `aspect-row` entries with symbol class, description, and orb.
+Symbol classes: `conj`, `sext`, `trine`, `sq`, `incon`.
+
+**Step 8 — Write the 4 deep dive sections**
+Structure for each dive: eyebrow · title · subtitle · tags · body text.
+
+Body text structure (JS handles the collapse automatically):
+- First `<p>` = teaser (shows before "Read more")
+- Subsequent `<p>` tags = expanded content (hidden until clicked)
+- `<blockquote class="pull [color]-pull">` = pull quote (optional, earned not produced)
+
+Accent classes: `accent-gold`, `accent-rose`, `accent-plum`, `accent-teal`
+Head classes: `gold-head`, `rose-head`, `plum-head`, `teal-head`
+Pull quote variants: `.pull` (gold), `.rose-pull`, `.plum-pull`, `.teal-pull`
+
+Writing rules: see `CLAUDE.md → Writing Style Guide` and `the build/voice-canon.md → Voice DNA`.
+Short paragraphs. Vary length. Implication first. No em dashes. Warm-precise.
+
+**Step 9 — Write the synastry section** (always last, teal)
+5 contacts with Jordan, sorted by exactness, written for the friend to read.
+Each contact: `syn-label` (contact number + orb) · `syn-aspect` (what aspects what) · `syn-body` (1-3 sentences).
+Written in second person from the friend's perspective.
+
+**Step 10 — Update the through-line** (3 short paragraphs)
+Synthesize the whole chart. No new placements. The pattern that holds it together.
+Always close with: *"The chart doesn't predict what happens. It describes the terrain and the nature of the person walking it."*
+
+**Step 11 — Open and verify**
+```bash
+open "natal readings/[name].html"
+```
+Check: hero floats on constellation, dives collapse correctly, pills display, aspects have color borders, mobile looks right.
+
+**Step 12 — Commit and push**
+```bash
+git add "natal readings/[name].html"
+git commit -m "Add [Name] natal reading v2"
+git push origin main
+```
+
+Live URL: `https://jordanb1993.github.io/astro-readings/natal%20readings/[name].html`
+
+---
+
+### Combining the chart wheel with the reading
+
+When ready to embed the chart wheel above the Identity Trio:
+
+```html
+<!-- Add this just before <div class="trio-wrap"> -->
+<div style="width:100%;max-width:680px;aspect-ratio:1;margin:0 auto 40px;display:block;">
+  <iframe
+    src="[name]-wheel.html?embed=1"
+    style="width:100%;height:100%;border:none;display:block;"
+    loading="lazy"
+    title="[Name] Natal Chart Wheel">
+  </iframe>
+</div>
+```
+
+The `?embed=1` parameter strips the wheel's page chrome (title, subtitle) and makes its background transparent.
+
+---
+
+
 ## Friends with pending charts
 
 | Name | Birth data status |
