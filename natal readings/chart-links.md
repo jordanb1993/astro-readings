@@ -47,6 +47,12 @@ Cancer Sun · Libra Moon · Sagittarius Rising · coworker
 
 ---
 
+**Carina**
+[carina.html](https://jordanb1993.github.io/astro-readings/natal%20readings/carina.html)
+Gemini Sun · Pisces Moon · Scorpio Rising · Jupiter on MC
+
+---
+
 ## Pending
 
-Cat · Mimi · Carina — birth data needed
+Cat · Mimi — birth data needed

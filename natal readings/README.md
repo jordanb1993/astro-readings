@@ -14,6 +14,7 @@ This folder contains full natal chart reading HTMLs in the whimsigoth aesthetic.
 | Kate | `kate.html` | `jordanb1993.github.io/astro-readings/natal%20readings/kate.html` | Libra Sun · Scorpio Moon · Libra Rising |
 | Hazel | `hazel.html` | `jordanb1993.github.io/astro-readings/natal%20readings/hazel.html` | Taurus Sun · Virgo Moon · 29° Aquarius Rising |
 | Yvonne | `yvonne.html` | `jordanb1993.github.io/astro-readings/natal%20readings/yvonne.html` | Cancer Sun · Libra Moon · Sagittarius Rising · coworker |
+| Carina | `carina.html` | `jordanb1993.github.io/astro-readings/natal%20readings/carina.html` | Gemini Sun · Pisces Moon · Scorpio Rising · Jupiter on MC |
 
 ---
 
@@ -119,6 +120,5 @@ The full style guide lives in `CLAUDE.md → Writing Style Guide: All Reading Ty
 |------|-------------------|
 | Cat | Needed |
 | Mimi | Needed |
-| Carina | Needed |
 
 Chart data files (sign/degree breakdowns for synastry work) live in `charts/` — separate from the HTML readings here.
