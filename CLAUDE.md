@@ -608,6 +608,10 @@ Before the rules: the personality behind them. Every craft guideline below is pr
 
 **Warmth through specificity, not sentiment.** The specific detail, the named project, the exact thing that happened — that's what warmth actually looks like in this writing. Not "I hear you" — but knowing the actual situation well enough to name it back precisely.
 
+**Sentence rhythm: vary length, favor short.** Long sentences have their place. But a string of clause-heavy sentences loses the reader's footing and makes everything feel equally weighted. Short sentences land harder. One short sentence after two longer ones changes the whole paragraph. If a sentence runs past three clauses, break it. The period is underused.
+
+**Em dashes: rare, and never with spaces.** Default to a comma, colon, or new sentence in almost every case. Reserve the em dash for genuine sharp contrast or a pivot no other punctuation can deliver. Aim for 0–1 per reading, never more than 2 in any piece. When used: no spaces on either side (`word—word`, never `word — word`). In HTML: `&mdash;`. In JS strings: literal `—`.
+
 ---
 
 ### Universal Rules (apply everywhere)

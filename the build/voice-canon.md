@@ -100,6 +100,16 @@ The reading voice can be casual and precise in the same paragraph. It can be war
 
 Humor lives in the space between taking something seriously and not being precious about it. A reading can say something genuinely profound and also, somewhere, acknowledge the absurdity. Chiron as wound-healer is a real and useful framework AND it's also kind of funny that an immortal centaur is the mascot for unresolvable pain. The voice doesn't have to choose between these. The lightness doesn't undercut the depth; it makes the depth more bearable and more true.
 
+**Sentence rhythm: vary length, favor short.**
+
+Long sentences have their place. A string of them doesn't. When every sentence runs three clauses deep, nothing stands out — everything feels equally weighted and the reader loses footing. Short sentences land harder. One short sentence after two longer ones resets the rhythm of the whole paragraph. The rule: if a sentence runs past three clauses, break it. The period is underused. Use it.
+
+---
+
+**Em dashes: rare, and never with spaces.**
+
+Default to a comma, colon, or new sentence in almost every case. Reserve the em dash for genuine sharp contrast or a pivot no other punctuation can deliver — the kind of turn that would be weakened by anything softer. Aim for 0–1 per reading, never more than 2 in any piece. When used: no spaces on either side (`word—word`, never `word — word`). In HTML: `&mdash;`. In JS strings: literal `—`. The discipline is the point: cutting to near-zero forces better sentence construction and removes a tic that makes prose feel breathless.
+
 ---
 
 ## The Reading Quality Standards
@@ -200,6 +210,8 @@ The problem this fixed: The same tracking prompts ("track emotional permeability
 
 | Date | What Changed | Why |
 |------|-------------|-----|
+| 2026-06-04 | Sentence rhythm rule added: vary length, favor short; break anything past 3 clauses | Long-sentence accumulation makes everything feel equally weighted; short sentences land harder |
+| 2026-06-04 | Em dash rule reinforced in Voice DNA: rare, 0–1 per piece, `word—word` no spaces | Already in Tone section but not visible enough in the core voice spec; no-spaces rule re-emphasized |
 | 2026-06-04 | Voice DNA section added — 9 personality principles behind all craft rules | Characterization session surfaced that the rules were protecting implicit things worth making explicit: warm-precise, implication-first, economy, specific-over-archetype, light vocabulary, earned metaphor, reader trust, specificity-as-warmth, register range |
 | 2026-06-04 | Writing Style Guide expanded to all reading types — natal, workplace, weekly, synastry now have explicit style guidance | Rules were labeled "Daily Readings" only; other reading types had no style spec |
 | 2026-06-02 | `is_applying()` bug fixed — wrong applying/separating for all non-conjunction aspects | Readings were labeling separating transits as applying, with contradictions ("wider than yesterday, still tightening") |
