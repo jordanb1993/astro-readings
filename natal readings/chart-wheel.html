@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carina — Natal Chart Wheel</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: #08162e;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 20px 80px;
+  font-family: 'Inter', sans-serif;
+}
+
+.chart-label {
+  font-size: 0.60rem;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: rgba(212,180,80,0.65);
+  margin-bottom: 28px;
+}
+
+.chart-wrap {
+  width: min(720px, 96vw);
+  height: min(720px, 96vw);
+}
+
+#chart-svg text { font-variant-emoji: text; }
+
+.chart-sub {
+  margin-top: 22px;
+  font-size: 0.57rem;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: rgba(240,228,200,0.22);
+}
+
+/* ── FLOATING KEY BUTTON ── */
+.key-btn {
+  position: fixed;
+  bottom: 28px; right: 28px;
+  width: 46px; height: 46px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at 40% 35%, #1a2d50, #091830);
+  border: 1px solid rgba(212,180,80,0.50);
+  color: rgba(212,180,80,0.88);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.50), 0 0 14px rgba(212,180,80,0.08);
+  transition: all 0.2s;
+  z-index: 100;
+}
+.key-btn:hover {
+  border-color: rgba(212,180,80,0.80);
+  box-shadow: 0 4px 28px rgba(0,0,0,0.60), 0 0 22px rgba(212,180,80,0.16);
+  transform: scale(1.06);
+}
+
+/* ── KEY OVERLAY ── */
+.key-overlay {
+  display: none;
+  position: fixed; inset: 0; z-index: 500;
+  background: rgba(8,22,46,0.90);
+  backdrop-filter: blur(14px);
+  overflow-y: auto;
+  padding: 32px 20px 48px;
+}
+.key-overlay.open { display: block; }
+
+.key-modal {
+  max-width: 800px;
+  margin: 0 auto;
+  background: radial-gradient(ellipse at 50% 0%, #162040 0%, #0d1a35 50%, #08162e 100%);
+  border: 1px solid rgba(212,180,80,0.18);
+  border-radius: 14px;
+  padding: 42px 38px;
+  position: relative;
+}
+
+.key-close {
+  position: absolute; top: 18px; right: 22px;
+  background: none; border: none;
+  color: rgba(240,228,200,0.40);
+  font-size: 1.5rem; cursor: pointer;
+  font-family: 'Cormorant Garamond', serif; line-height: 1;
+  transition: color 0.15s;
+}
+.key-close:hover { color: rgba(240,228,200,0.85); }
+
+.key-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.65rem; font-weight: 300;
+  color: rgba(212,180,80,0.88);
+  letter-spacing: 0.08em;
+  margin-bottom: 38px;
+}
+
+.key-section { margin-bottom: 32px; }
+
+.key-sh {
+  font-size: 0.58rem; letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(212,180,80,0.48);
+  margin-bottom: 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(212,180,80,0.10);
+}
+
+.key-grid { display: grid; gap: 8px 6px; }
+.g6 { grid-template-columns: repeat(6,1fr); }
+.g4 { grid-template-columns: repeat(4,1fr); }
+.g3 { grid-template-columns: repeat(3,1fr); }
+
+.ki {
+  display: flex; align-items: center; gap: 8px;
+  padding: 8px 10px;
+  background: rgba(240,228,200,0.025);
+  border: 1px solid rgba(212,180,80,0.08);
+  border-radius: 6px;
+}
+.ki-gl {
+  font-size: 16px;
+  font-family: 'Apple Symbols','Segoe UI Symbol','Noto Sans Symbols',serif;
+  flex-shrink: 0; line-height: 1;
+}
+.ki-name { font-size: 0.68rem; font-family:'Cormorant Garamond',serif; color:rgba(240,228,200,0.78); display:block; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.ki-note { font-size: 0.54rem; font-family:'Inter',sans-serif; color:rgba(240,228,200,0.30); letter-spacing:0.06em; display:block; margin-top:1px; }
+.ki-sw { width:10px;height:10px;border-radius:50%;flex-shrink:0; }
+
+@media(max-width:600px){
+  .g6{grid-template-columns:repeat(3,1fr);}
+  .g4,.g3{grid-template-columns:repeat(2,1fr);}
+  .key-modal{padding:28px 18px;}
+}
+</style>
+</head>
+<body>
+
+<div class="chart-label">Natal Chart &nbsp;·&nbsp; Carina</div>
+<div class="chart-wrap">
+  <svg id="chart-svg" viewBox="0 0 720 720" xmlns="http://www.w3.org/2000/svg"></svg>
+</div>
+<div class="chart-sub">June 10, 1993 &nbsp;·&nbsp; 6:30 PM CDT &nbsp;·&nbsp; DeKalb, Illinois &nbsp;·&nbsp; Placidus</div>
+
+<button class="key-btn" id="keyBtn" title="Chart Key">✦</button>
+
+<div class="key-overlay" id="keyOverlay">
+  <div class="key-modal">
+    <button class="key-close" id="keyClose">×</button>
+    <div class="key-title">Chart Key</div>
+    <div class="key-section"><div class="key-sh">Zodiac Signs</div><div class="key-grid g6" id="kS"></div></div>
+    <div class="key-section"><div class="key-sh">Planets &amp; Points</div><div class="key-grid g6" id="kP"></div></div>
+    <div class="key-section"><div class="key-sh">Aspect Lines</div><div class="key-grid g3" id="kA"></div></div>
+    <div class="key-section"><div class="key-sh">Elements</div><div class="key-grid g4" id="kE"></div></div>
+  </div>
+</div>
+
+<script>
+const T = '︎'; // text variation selector — prevents emoji rendering
+
+// ─── CHART DATA ──────────────────────────────────────────────────────────────
+const CHART = {
+  asc: 236.87, mc: 161.65,
+  cusps: [236.87,267.99,304.70,341.65,12.59,36.91,56.87,87.99,124.70,161.65,192.59,216.91],
+  planets: [
+    {id:'sun',     gl:'☉'+T, deg: 80.07, retro:false, grp:'luminary', si:2,  sd:20},
+    {id:'moon',    gl:'☽'+T, deg:336.30, retro:false, grp:'luminary', si:11, sd: 6},
+    {id:'mercury', gl:'☿'+T, deg:103.50, retro:false, grp:'personal', si:3,  sd:13},
+    {id:'venus',   gl:'♀'+T, deg: 34.31, retro:false, grp:'personal', si:1,  sd: 4},
+    {id:'mars',    gl:'♂'+T, deg:142.99, retro:false, grp:'personal', si:4,  sd:22},
+    {id:'jupiter', gl:'♃'+T, deg:184.90, retro:false, grp:'social',   si:6,  sd: 4},
+    {id:'saturn',  gl:'♄'+T, deg:330.33, retro:true,  grp:'social',   si:11, sd: 0},
+    {id:'uranus',  gl:'♅'+T, deg:291.39, retro:true,  grp:'outer',    si:9,  sd:21},
+    {id:'neptune', gl:'♆'+T, deg:290.56, retro:true,  grp:'outer',    si:9,  sd:20},
+    {id:'pluto',   gl:'♇'+T, deg:233.42, retro:true,  grp:'outer',    si:7,  sd:23},
+    {id:'chiron',  gl:'⚷'+T, deg:139.76, retro:false, grp:'point',    si:4,  sd:19},
+    {id:'nnode',   gl:'☊'+T, deg:251.90, retro:true,  grp:'point',    si:8,  sd:11},
+  ],
+  aspects:[
+    {p1:'nnode',  p2:'mc',      type:'square',     orb:0.25},
+    {p1:'sun',    p2:'chiron',  type:'sextile',    orb:0.32},
+    {p1:'mars',   p2:'pluto',   type:'square',     orb:0.44},
+    {p1:'venus',  p2:'jupiter', type:'inconjunct', orb:0.60},
+    {p1:'neptune',p2:'chiron',  type:'inconjunct', orb:0.80},
+    {p1:'uranus', p2:'neptune', type:'conjunction',orb:0.84},
+    {p1:'moon',   p2:'venus',   type:'sextile',    orb:1.98},
+  ],
+};
+
+// ─── GEOMETRY ────────────────────────────────────────────────────────────────
+const CX=360, CY=360;
+const R = {
+  rim3:   354, elArc:  347, rim1:   340,
+  zodOut: 328, zodMid: 302, zodIn:  276,
+  cuspLbl:265, hNum:   162, sepRing:240,
+  pGlyph: 244, pLbl:   258,
+  asp:    218, cRing:  18,  cDot:   11,
+};
+
+// ─── PALETTE — WHIMSIGOTH SACRED GEOMETRY ────────────────────────────────────
+// Jewel navy base, warm gold, cerulean, amber — NO purple
+const C = {
+  gold:       '#d0a840',
+  goldM:      'rgba(208,168,64,0.28)',
+  goldBrt:    'rgba(208,168,64,0.58)',
+  goldF:      'rgba(208,168,64,0.07)',
+  ivory:      '#f0e4cc',
+  ivoryM:     'rgba(240,228,200,0.55)',
+  ivoryDim:   'rgba(240,228,200,0.28)',
+  ivoryDimmer:'rgba(240,228,200,0.14)',
+  // Blues
+  cerulean:   '#3e8fc0',
+  ceruleanM:  'rgba(62,143,192,0.60)',
+  ceruleanF:  'rgba(62,143,192,0.10)',
+  sky:        '#6abce0',
+  moonSilver: '#b0c8e0',
+  // Teal stays
+  teal:       '#5ab8a8',
+  tealM:      'rgba(90,184,168,0.60)',
+  // Warm rose (not purple)
+  rose:       '#c89898',
+  roseM:      'rgba(200,152,152,0.65)',
+  // Element fills — watercolor washes
+  fire:   'rgba(210,130,48,0.26)',
+  earth:  'rgba(80,142,68,0.19)',
+  air:    'rgba(80,112,200,0.20)',
+  water:  'rgba(40,128,188,0.28)',
+  // Element arc colors on outer rim
+  fireArc:  '#c87840',
+  earthArc: '#58925a',
+  airArc:   '#5878c8',
+  waterArc: '#3880b8',
+  // Structural
+  axis:   'rgba(208,168,64,0.72)',
+  hLine:  'rgba(208,168,64,0.15)',
+};
+
+const PLANET_COLOR = {
+  luminary: '#d8b850',
+  personal: '#c8a0a0',
+  social:   '#7ab0d0',
+  outer:    '#5ab8a8',
+  point:    'rgba(240,228,200,0.70)',
+};
+
+const ASP_STYLE = {
+  conjunction: {color:'#d0a840',                 dash:'',   w:1.2,op:0.82},
+  sextile:     {color:'#3e8fc0',                 dash:'',   w:0.9,op:0.70},
+  trine:       {color:'#5ab8a8',                 dash:'',   w:0.9,op:0.65},
+  square:      {color:'#c89898',                 dash:'5,3',w:0.9,op:0.75},
+  opposition:  {color:'#c89898',                 dash:'',   w:0.9,op:0.68},
+  inconjunct:  {color:'rgba(240,228,200,0.38)',   dash:'2,4',w:0.7,op:0.65},
+};
+
+const SIGNS = [
+  {gl:'♈'+T,el:'fire', name:'Aries',      abbr:'Ar',color:'#d4a050'},
+  {gl:'♉'+T,el:'earth',name:'Taurus',     abbr:'Ta',color:'#80c070'},
+  {gl:'♊'+T,el:'air',  name:'Gemini',     abbr:'Ge',color:'#8090d8'},
+  {gl:'♋'+T,el:'water',name:'Cancer',     abbr:'Cn',color:'#50b8d0'},
+  {gl:'♌'+T,el:'fire', name:'Leo',        abbr:'Le',color:'#d4a050'},
+  {gl:'♍'+T,el:'earth',name:'Virgo',      abbr:'Vi',color:'#80c070'},
+  {gl:'♎'+T,el:'air',  name:'Libra',      abbr:'Li',color:'#8090d8'},
+  {gl:'♏'+T,el:'water',name:'Scorpio',    abbr:'Sc',color:'#50b8d0'},
+  {gl:'♐'+T,el:'fire', name:'Sagittarius',abbr:'Sg',color:'#d4a050'},
+  {gl:'♑'+T,el:'earth',name:'Capricorn',  abbr:'Cp',color:'#80c070'},
+  {gl:'♒'+T,el:'air',  name:'Aquarius',   abbr:'Aq',color:'#8090d8'},
+  {gl:'♓'+T,el:'water',name:'Pisces',     abbr:'Pi',color:'#50b8d0'},
+];
+
+const GLYPH_FONT = "'Apple Symbols','Segoe UI Symbol','Noto Sans Symbols',serif";
+const MODALITY = {Ar:'Cardinal',Ta:'Fixed',Ge:'Mutable',Cn:'Cardinal',Le:'Fixed',Vi:'Mutable',Li:'Cardinal',Sc:'Fixed',Sg:'Mutable',Cp:'Cardinal',Aq:'Fixed',Pi:'Mutable'};
+
+// ─── MATH ────────────────────────────────────────────────────────────────────
+const norm = a=>((a%360)+360)%360;
+const rad  = d=>d*Math.PI/180;
+const f    = n=>n.toFixed(2);
+const svgA = (ecl,asc)=>norm(180-(ecl-asc));
+const pt   = (a,r)=>({x:CX+r*Math.cos(rad(a)),y:CY+r*Math.sin(rad(a))});
+const ept  = (ecl,r,asc)=>pt(svgA(ecl,asc),r);
+
+function sector(s,e,rO,rI,asc){
+  const a1=svgA(s,asc),a2=svgA(e,asc);
+  const o1=pt(a1,rO),o2=pt(a2,rO),i1=pt(a1,rI),i2=pt(a2,rI);
+  return `M${f(o1.x)} ${f(o1.y)} A${rO} ${rO} 0 0 0 ${f(o2.x)} ${f(o2.y)} L${f(i2.x)} ${f(i2.y)} A${rI} ${rI} 0 0 1 ${f(i1.x)} ${f(i1.y)}Z`;
+}
+function arcStroke(s,e,r,asc){
+  const a1=svgA(s,asc),a2=svgA(e,asc);
+  const p1=pt(a1,r),p2=pt(a2,r);
+  return `M${f(p1.x)} ${f(p1.y)} A${r} ${r} 0 0 0 ${f(p2.x)} ${f(p2.y)}`;
+}
+function eclSD(ecl){
+  const idx=Math.floor(ecl/30)%12;
+  return {idx,deg:Math.floor(ecl%30),sign:SIGNS[idx]};
+}
+
+// ─── SPREAD ──────────────────────────────────────────────────────────────────
+function spread(planets){
+  const sorted=[...planets].sort((a,b)=>a.deg-b.deg);
+  const out=[];let i=0;
+  while(i<sorted.length){
+    let j=i+1;
+    while(j<sorted.length&&sorted[j].deg-sorted[i].deg<8)j++;
+    const cl=sorted.slice(i,j);
+    if(cl.length===1){out.push({...cl[0],disp:cl[0].deg});}
+    else{
+      const mean=cl.reduce((s,p)=>s+p.deg,0)/cl.length;
+      const step=cl.length===2?10:8;
+      const off=-(cl.length-1)*step/2;
+      cl.forEach((p,k)=>out.push({...p,disp:mean+off+k*step}));
+    }
+    i=j;
+  }
+  return out;
+}
+
+// ─── SVG HELPERS ─────────────────────────────────────────────────────────────
+const NS='http://www.w3.org/2000/svg';
+function el(tag,attrs){
+  const e=document.createElementNS(NS,tag);
+  for(const[k,v]of Object.entries(attrs))e.setAttribute(k,String(v));
+  return e;
+}
+function tx(content,attrs){const t=el('text',attrs);t.textContent=content;return t;}
+function glTx(content,x,y,size,color,opacity,extra={}){
+  return tx(content,{x:f(x),y:f(y),fill:color,opacity,
+    'font-size':size,'font-family':GLYPH_FONT,'font-variant-emoji':'text',
+    'text-anchor':'middle','dominant-baseline':'central',...extra});
+}
+
+// ─── DEFS ────────────────────────────────────────────────────────────────────
+function drawDefs(svg){
+  const defs=el('defs',{});
+
+  // Jewel navy background glow
+  const g1=el('radialGradient',{id:'bgG',cx:'50%',cy:'50%',r:'50%'});
+  g1.appendChild(el('stop',{offset:'0%',  'stop-color':'#1a3060','stop-opacity':'0.80'}));
+  g1.appendChild(el('stop',{offset:'55%', 'stop-color':'#0e1e3e','stop-opacity':'0.45'}));
+  g1.appendChild(el('stop',{offset:'100%','stop-color':'#08162e','stop-opacity':'0'}));
+  defs.appendChild(g1);
+
+  // Warm amber ribbon (diagonal)
+  const g2=el('linearGradient',{id:'amberRib',x1:'0%',y1:'0%',x2:'100%',y2:'100%'});
+  g2.appendChild(el('stop',{offset:'0%',  'stop-color':'#c89040','stop-opacity':'0'}));
+  g2.appendChild(el('stop',{offset:'35%', 'stop-color':'#c89040','stop-opacity':'0.06'}));
+  g2.appendChild(el('stop',{offset:'65%', 'stop-color':'#d4a848','stop-opacity':'0.05'}));
+  g2.appendChild(el('stop',{offset:'100%','stop-color':'#c89040','stop-opacity':'0'}));
+  defs.appendChild(g2);
+
+  // Cerulean ribbon (opposite diagonal)
+  const g3=el('linearGradient',{id:'cyanRib',x1:'100%',y1:'0%',x2:'0%',y2:'100%'});
+  g3.appendChild(el('stop',{offset:'0%',  'stop-color':'#3880b8','stop-opacity':'0'}));
+  g3.appendChild(el('stop',{offset:'40%', 'stop-color':'#3880b8','stop-opacity':'0.08'}));
+  g3.appendChild(el('stop',{offset:'70%', 'stop-color':'#50a0c8','stop-opacity':'0.06'}));
+  g3.appendChild(el('stop',{offset:'100%','stop-color':'#3880b8','stop-opacity':'0'}));
+  defs.appendChild(g3);
+
+  // Watercolor blur filter for element washes
+  const fWC=el('filter',{id:'wc',x:'-30%',y:'-30%',width:'160%',height:'160%'});
+  fWC.appendChild(el('feGaussianBlur',{stdDeviation:'12'}));
+  defs.appendChild(fWC);
+
+  // Inner glow filter
+  const fG=el('filter',{id:'glow',x:'-20%',y:'-20%',width:'140%',height:'140%'});
+  fG.appendChild(el('feGaussianBlur',{in:'SourceGraphic',stdDeviation:'3',result:'b'}));
+  const m=el('feMerge',{});
+  ['b','SourceGraphic'].forEach(s=>{const n=el('feMergeNode',{});n.setAttribute('in',s);m.appendChild(n);});
+  fG.appendChild(m);
+  defs.appendChild(fG);
+
+  svg.appendChild(defs);
+}
+
+// ─── BACKGROUND ──────────────────────────────────────────────────────────────
+function drawBackground(svg){
+  const g=el('g',{id:'bg'});
+
+  // Clip everything to the chart circle so nothing bleeds outside
+  const clipDefs=svg.querySelector('defs')||el('defs',{});
+  const cp=el('clipPath',{id:'chartClip'});
+  cp.appendChild(el('circle',{cx:CX,cy:CY,r:358}));
+  clipDefs.appendChild(cp);
+
+  // Full-page base
+  g.appendChild(el('rect',{x:0,y:0,width:720,height:720,fill:'#08162e'}));
+
+  // Outer glow ring — separates chart from page bg
+  g.appendChild(el('circle',{cx:CX,cy:CY,r:360,fill:'none',
+    stroke:'rgba(208,168,64,0.12)','stroke-width':'3'}));
+  g.appendChild(el('circle',{cx:CX,cy:CY,r:358,fill:'none',
+    stroke:'rgba(62,143,192,0.10)','stroke-width':'2'}));
+
+  // All internal content clipped to chart circle
+  const chartG=el('g',{'clip-path':'url(#chartClip)'});
+
+  chartG.appendChild(el('circle',{cx:CX,cy:CY,r:358,fill:'#08162e'}));
+  chartG.appendChild(el('circle',{cx:CX,cy:CY,r:358,fill:'url(#bgG)'}));
+
+  // Organic ribbon sweeps — clipped, so they stay inside the circle
+  chartG.appendChild(el('ellipse',{cx:CX+60,cy:CY-80,rx:300,ry:100,
+    fill:'rgba(200,144,64,0.06)',transform:`rotate(-38,${CX},${CY})`}));
+  chartG.appendChild(el('ellipse',{cx:CX-60,cy:CY+80,rx:300,ry:110,
+    fill:'rgba(38,110,180,0.07)',transform:`rotate(-38,${CX},${CY})`}));
+  // Secondary warm glow in upper right
+  chartG.appendChild(el('ellipse',{cx:CX+120,cy:CY-120,rx:180,ry:70,
+    fill:'rgba(180,120,40,0.05)',transform:`rotate(-20,${CX},${CY})`}));
+
+  // Watercolor element blooms inside the chart
+  const blooms=[
+    // Fire: Leo (top), Aries (right), Sag (left)
+    {ecl:135,color:'rgba(200,120,40,0.09)'},
+    {ecl:15, color:'rgba(200,120,40,0.07)'},
+    {ecl:255,color:'rgba(200,120,40,0.07)'},
+    // Water: Cancer (top-right), Scorpio (left), Pisces (bottom)
+    {ecl:105,color:'rgba(30,120,180,0.10)'},
+    {ecl:225,color:'rgba(30,120,180,0.09)'},
+    {ecl:345,color:'rgba(30,120,180,0.09)'},
+    // Air: Gemini, Libra, Aquarius
+    {ecl:75, color:'rgba(70,100,200,0.07)'},
+    {ecl:195,color:'rgba(70,100,200,0.07)'},
+    {ecl:315,color:'rgba(70,100,200,0.07)'},
+    // Earth: Taurus, Virgo, Capricorn
+    {ecl:45, color:'rgba(70,130,60,0.06)'},
+    {ecl:165,color:'rgba(70,130,60,0.06)'},
+    {ecl:285,color:'rgba(70,130,60,0.06)'},
+  ];
+  for(const b of blooms){
+    const p=ept(b.ecl,302,CHART.asc);
+    chartG.appendChild(el('circle',{cx:f(p.x),cy:f(p.y),r:62,fill:b.color,filter:'url(#wc)'}));
+  }
+
+  // Stars — warm ivory/cream tones (Practical Magic warmth)
+  const stars=[
+    [38,72,1.1,0.38,'#f0e8d0'],[152,44,0.8,0.30,'#e8f0f8'],
+    [300,32,1.2,0.34,'#f0e8d0'],[460,50,0.9,0.32,'#d8e8f0'],
+    [616,40,1.0,0.36,'#f0e8d0'],[668,88,0.8,0.30,'#e8d8b8'],
+    [690,220,0.9,0.24,'#e8f0f8'],[678,400,1.0,0.22,'#f0e8d0'],
+    [660,548,0.8,0.26,'#d8e8f0'],[596,640,1.1,0.30,'#f0e8d0'],
+    [448,672,0.9,0.24,'#e8f0f8'],[272,676,0.8,0.22,'#f0e8d0'],
+    [106,652,1.0,0.26,'#e8d8b8'],[34,556,0.9,0.24,'#f0e8d0'],
+    [20,408,0.8,0.22,'#e8f0f8'],[32,252,1.0,0.28,'#f0e8d0'],
+    [80,156,0.7,0.18,'#e8d8b8'],[580,156,0.7,0.18,'#d8e8f0'],
+    [590,528,0.8,0.20,'#f0e8d0'],[108,520,0.7,0.17,'#e8f0f8'],
+    [196,60,0.6,0.16,'#f0e8d0'],[508,68,0.7,0.18,'#e8d8b8'],
+    [360,14,0.8,0.20,'#f0e8d0'],[710,360,0.7,0.16,'#e8f0f8'],
+    [8,360,0.7,0.16,'#f0e8d0'],[360,710,0.8,0.18,'#e8d8b8'],
+    // Brighter accent stars
+    [240,90,1.4,0.28,'#f8e8b0'],[480,650,1.3,0.26,'#f8e8b0'],
+    [620,200,1.2,0.24,'#d8f0f8'],[100,520,1.2,0.22,'#f8e8b0'],
+  ];
+  for(const[sx,sy,sr,so,sc]of stars)
+    chartG.appendChild(el('circle',{cx:sx,cy:sy,r:sr,fill:sc,opacity:so}));
+
+  for(const[sx,sy,s,fs,op,c]of[
+    [90,110,'✦',11,0.28,'#f0e8d0'],[638,132,'✧',9,0.24,'#d8e8f0'],
+    [74,562,'✦',9,0.22,'#f0e8d0'],[628,562,'✧',11,0.26,'#e8d8b8'],
+  ])chartG.appendChild(tx(s,{x:sx,y:sy,fill:c,opacity:op,'font-size':fs,'text-anchor':'middle','font-family':'serif'}));
+
+  g.appendChild(chartG);
+  svg.appendChild(g);
+}
+
+// ─── OUTER RINGS ─────────────────────────────────────────────────────────────
+function drawRims(svg){
+  const g=el('g',{id:'rims'});
+
+  // Element color arcs on outer rim — the jewel-toned crown
+  for(let i=0;i<12;i++){
+    const s=SIGNS[i];
+    g.appendChild(el('path',{
+      d:arcStroke(i*30,i*30+30,R.elArc,CHART.asc),
+      fill:'none',stroke:C[s.el+'Arc'],'stroke-width':'7',opacity:'0.68','stroke-linecap':'butt',
+    }));
+  }
+
+  // Thin gold ring borders
+  for(const[r,op]of[[R.rim3,0.32],[R.rim1,0.18]])
+    g.appendChild(el('circle',{cx:CX,cy:CY,r,fill:'none',stroke:C.gold,'stroke-width':'0.5',opacity:op}));
+
+  // Sign cusp dots
+  for(let i=0;i<12;i++){
+    const p=ept(i*30,R.rim3+5,CHART.asc);
+    g.appendChild(el('circle',{cx:f(p.x),cy:f(p.y),r:2.0,fill:C.gold,opacity:'0.55'}));
+  }
+
+  // 10° dots — slightly more visible
+  for(let i=0;i<36;i++){
+    if(i%3===0)continue;
+    const p=ept(i*10,R.rim1,CHART.asc);
+    g.appendChild(el('circle',{cx:f(p.x),cy:f(p.y),r:0.9,fill:C.gold,opacity:'0.28'}));
+  }
+
+  svg.appendChild(g);
+}
+
+// ─── ZODIAC RING ─────────────────────────────────────────────────────────────
+function drawZodiac(svg){
+  const g=el('g',{id:'zodiac'});
+
+  for(let i=0;i<12;i++){
+    const s=SIGNS[i];
+    const startEcl=i*30,endEcl=startEcl+30;
+
+    // Sector fill
+    g.appendChild(el('path',{
+      d:sector(startEcl,endEcl,R.zodOut,R.zodIn,CHART.asc),
+      fill:C[s.el],stroke:C.goldM,'stroke-width':'0.6',
+    }));
+
+    // 10° tick marks — slightly more visible
+    for(const off of[10,20]){
+      const a=svgA(startEcl+off,CHART.asc);
+      const oT=pt(a,R.zodIn+14),iT=pt(a,R.zodIn+2);
+      g.appendChild(el('line',{x1:f(oT.x),y1:f(oT.y),x2:f(iT.x),y2:f(iT.y),stroke:C.goldBrt,'stroke-width':'0.6'}));
+    }
+
+    // Sign glyph
+    const gp=ept(startEcl+15,R.zodMid,CHART.asc);
+    g.appendChild(glTx(s.gl,gp.x,gp.y,21,s.color,'0.93'));
+  }
+
+  // Ring boundaries
+  g.appendChild(el('circle',{cx:CX,cy:CY,r:R.zodOut,fill:'none',stroke:C.goldBrt,'stroke-width':'0.9'}));
+  g.appendChild(el('circle',{cx:CX,cy:CY,r:R.zodIn, fill:'none',stroke:C.goldM,  'stroke-width':'0.7'}));
+
+  svg.appendChild(g);
+}
+
+// ─── INNER WHEEL ─────────────────────────────────────────────────────────────
+function drawHouses(svg){
+  const g=el('g',{id:'houses'});
+
+  // Inner wheel — jewel navy
+  g.appendChild(el('circle',{cx:CX,cy:CY,r:R.zodIn,fill:'#08162e'}));
+  // Subtle inner tint (slightly lighter center)
+  const ig=el('radialGradient',{id:'innerG',cx:'50%',cy:'50%',r:'50%'});
+  ig.appendChild(el('stop',{offset:'0%', 'stop-color':'#122040','stop-opacity':'0.6'}));
+  ig.appendChild(el('stop',{offset:'100%','stop-color':'#08162e','stop-opacity':'0'}));
+  const innerDefs=svg.querySelector('defs')||el('defs',{});
+  innerDefs.appendChild(ig);
+  g.appendChild(el('circle',{cx:CX,cy:CY,r:R.zodIn,fill:'url(#innerG)'}));
+
+  // ── Watercolor alternating house fills ───────────────────────────────────
+  // Element color lookup by sign index (Aries=0 through Pisces=11)
+  const EL_WC = {
+    fire:  'rgba(205,125,45,',
+    earth: 'rgba(75,138,65,',
+    air:   'rgba(75,108,195,',
+    water: 'rgba(38,118,178,',
+  };
+  const EL_BY_SIGN = ['fire','earth','air','water','fire','earth',
+                       'air','water','fire','earth','air','water'];
+
+  for(let i=0;i<12;i++){
+    if(i%2===0) continue; // shade odd-indexed houses
+    const c1=CHART.cusps[i], c2=CHART.cusps[(i+1)%12];
+
+    // Base sector fill — very light flat wash
+    g.appendChild(el('path',{
+      d:sector(c1, c2, R.zodIn, R.cDot+6, CHART.asc),
+      fill:'rgba(240,228,200,0.04)', stroke:'none',
+    }));
+
+    // Watercolor bloom — element-tinted blurred circle at house midpoint
+    const mid = c2 > c1 ? (c1+c2)/2 : norm((c1+c2+360)/2);
+    const signIdx = Math.floor(CHART.cusps[i]/30) % 12;
+    const wcColor = EL_WC[EL_BY_SIGN[signIdx]];
+    const blobP = ept(mid, 125, CHART.asc);
+    g.appendChild(el('circle',{
+      cx:f(blobP.x), cy:f(blobP.y), r:70,
+      fill: wcColor + '0.11)', filter:'url(#wc)',
+    }));
+
+    // Second smaller bloom offset toward zodiac ring for depth
+    const blobP2 = ept(mid, 200, CHART.asc);
+    g.appendChild(el('circle',{
+      cx:f(blobP2.x), cy:f(blobP2.y), r:45,
+      fill: wcColor + '0.07)', filter:'url(#wc)',
+    }));
+  }
+
+  // Cusp lines + cusp degree labels
+  for(let i=0;i<12;i++){
+    const cusp=CHART.cusps[i];
+    const isAngle=(i%3===0);
+    const oP=ept(cusp,R.zodIn,CHART.asc);
+    const iP=ept(cusp,R.cDot+6,CHART.asc);
+
+    // Main cusp line — all lines now clearly visible
+    g.appendChild(el('line',{
+      x1:f(oP.x),y1:f(oP.y),x2:f(iP.x),y2:f(iP.y),
+      stroke:isAngle?C.axis:'rgba(208,168,64,0.42)',
+      'stroke-width':isAngle?1.4:0.9,
+    }));
+
+    // Marker dot at zodiac inner edge
+    g.appendChild(el('circle',{cx:f(oP.x),cy:f(oP.y),r:isAngle?2.2:1.6,
+      fill:isAngle?C.gold:C.goldM,opacity:isAngle?'0.85':'0.55'}));
+
+    // Marker dot at separator ring — tracks the boundary through the planet zone
+    const sp=ept(cusp,R.sepRing,CHART.asc);
+    g.appendChild(el('circle',{cx:f(sp.x),cy:f(sp.y),r:isAngle?2.4:1.5,
+      fill:isAngle?C.gold:C.goldM,opacity:isAngle?'0.80':'0.48'}));
+
+    // Cusp degree + sign label — larger & more legible
+    const{deg,sign}=eclSD(cusp);
+    const lp=ept(cusp,R.cuspLbl,CHART.asc);
+    g.appendChild(el('circle',{cx:f(lp.x),cy:f(lp.y),r:12,fill:'rgba(8,22,46,0.85)'}));
+    g.appendChild(tx(`${deg}°`,{
+      x:f(lp.x),y:f(lp.y-4.5),
+      fill:isAngle?C.gold:C.ivory,opacity:isAngle?'0.90':'0.72',
+      'font-size':isAngle?8.5:7.5,'font-family':"'Inter',sans-serif",
+      'text-anchor':'middle','dominant-baseline':'central',
+    }));
+    g.appendChild(glTx(sign.gl,lp.x,lp.y+5.2,isAngle?8.5:7.5,
+      isAngle?C.gold:C.ivory,isAngle?'0.90':'0.68'));
+  }
+
+  // House numbers — in center zone, large and clear
+  for(let i=0;i<12;i++){
+    const c1=CHART.cusps[i],c2=CHART.cusps[(i+1)%12];
+    const mid=c2>c1?(c1+c2)/2:norm((c1+c2+360)/2);
+    const np=ept(mid,R.hNum,CHART.asc);
+    // Dark backing for legibility over aspect lines
+    g.appendChild(el('circle',{cx:f(np.x),cy:f(np.y),r:11,fill:'rgba(8,22,46,0.75)'}));
+    g.appendChild(tx(String(i+1),{
+      x:f(np.x),y:f(np.y),
+      fill:C.ivory, opacity:'0.72',
+      'font-size':12.5,'font-family':"'Cormorant Garamond',serif",
+      'font-weight':'400','font-style':'italic',
+      'text-anchor':'middle','dominant-baseline':'central',
+    }));
+  }
+
+  // Thin separator ring
+  g.appendChild(el('circle',{cx:CX,cy:CY,r:R.sepRing,fill:'none',stroke:C.goldM,'stroke-width':'0.35'}));
+
+  // Inner aspect circle — cerulean tint, stronger presence
+  g.appendChild(el('circle',{cx:CX,cy:CY,r:R.asp,
+    fill:'rgba(8,18,38,0.45)',stroke:'rgba(62,143,192,0.28)','stroke-width':'0.9'}));
+
+  svg.appendChild(g);
+}
+
+// ─── CENTER SUNBURST ─────────────────────────────────────────────────────────
+function drawCenter(svg){
+  const g=el('g',{id:'center'});
+
+  // 16-ray sunburst — whimsigoth sun motif, sacred geometry
+  for(let i=0;i<16;i++){
+    const angle=i*(360/16);
+    const inner=14, outer=i%2===0?42:30;
+    const p1=pt(angle,inner), p2=pt(angle,outer);
+    g.appendChild(el('line',{
+      x1:f(p1.x),y1:f(p1.y),x2:f(p2.x),y2:f(p2.y),
+      stroke:C.gold,'stroke-width': i%2===0?'0.8':'0.4',opacity: i%2===0?'0.30':'0.14',
+    }));
+  }
+
+  // Glowing halo rings around center
+  for(const[r,op]of[[32,0.06],[25,0.07],[19,0.08]])
+    g.appendChild(el('circle',{cx:CX,cy:CY,r,fill:'none',stroke:C.gold,'stroke-width':'0.5',opacity:op}));
+
+  g.appendChild(el('circle',{cx:CX,cy:CY,r:R.cRing,fill:'none',stroke:C.goldM,'stroke-width':'0.7'}));
+  g.appendChild(el('circle',{cx:CX,cy:CY,r:R.cDot,fill:'#0d1e3e',stroke:C.gold,'stroke-width':'0.9',opacity:'0.85'}));
+  g.appendChild(tx('✦',{x:CX,y:CY,fill:C.gold,opacity:'0.92','font-size':8,'font-family':'serif','text-anchor':'middle','dominant-baseline':'central'}));
+
+  svg.appendChild(g);
+}
+
+// ─── ASPECT LINES ────────────────────────────────────────────────────────────
+function drawAspects(svg){
+  const g=el('g',{id:'aspects'});
+  const dMap={};
+  CHART.planets.forEach(p=>dMap[p.id]=p.deg);
+  dMap.mc=CHART.mc; dMap.asc=CHART.asc;
+  for(const asp of CHART.aspects){
+    const st=ASP_STYLE[asp.type];if(!st)continue;
+    const d1=dMap[asp.p1],d2=dMap[asp.p2];if(d1==null||d2==null)continue;
+    const p1=ept(d1,R.asp,CHART.asc),p2=ept(d2,R.asp,CHART.asc);
+    const ln=el('line',{x1:f(p1.x),y1:f(p1.y),x2:f(p2.x),y2:f(p2.y),stroke:st.color,'stroke-width':st.w,opacity:st.op});
+    if(st.dash)ln.setAttribute('stroke-dasharray',st.dash);
+    g.appendChild(ln);
+  }
+  svg.appendChild(g);
+}
+
+// ─── AXES ────────────────────────────────────────────────────────────────────
+function drawAxes(svg){
+  const g=el('g',{id:'axes'});
+  for(const[ecl,label]of[[CHART.asc,'ASC'],[CHART.mc,'MC']]){
+    const p1=ept(ecl,R.zodOut+4,CHART.asc),p2=ept(ecl+180,R.zodOut+4,CHART.asc);
+    g.appendChild(el('line',{x1:f(p1.x),y1:f(p1.y),x2:f(p2.x),y2:f(p2.y),stroke:C.gold,'stroke-width':'1.1',opacity:'0.55'}));
+    const lp=ept(ecl,R.zodOut+28,CHART.asc);
+    g.appendChild(tx(label,{x:f(lp.x),y:f(lp.y),fill:C.gold,opacity:'0.85',
+      'font-size':8.5,'font-family':"'Inter',sans-serif",'font-weight':'500',
+      'letter-spacing':'0.12em','text-anchor':'middle','dominant-baseline':'central'}));
+  }
+  svg.appendChild(g);
+}
+
+// ─── PLANETS ─────────────────────────────────────────────────────────────────
+function drawPlanets(svg){
+  const g=el('g',{id:'planets'});
+  const sp=spread(CHART.planets);
+
+  for(const p of sp){
+    const color=PLANET_COLOR[p.grp];
+    const sign=SIGNS[p.si];
+
+    // True position dot on inner circle
+    const tP=ept(p.deg,R.asp,CHART.asc);
+    g.appendChild(el('circle',{cx:f(tP.x),cy:f(tP.y),r:2.2,fill:color,opacity:'0.80'}));
+
+    // Connector when spread
+    if(Math.abs(p.disp-p.deg)>2.5){
+      const lA=ept(p.deg,R.asp+5,CHART.asc),lB=ept(p.disp,R.pGlyph-14,CHART.asc);
+      g.appendChild(el('line',{x1:f(lA.x),y1:f(lA.y),x2:f(lB.x),y2:f(lB.y),stroke:color,'stroke-width':'0.4',opacity:'0.28'}));
+    }
+
+    // Degree + sign OUTSIDE glyph (near zodiac ring)
+    const lp=ept(p.disp,R.pLbl,CHART.asc);
+    g.appendChild(tx(`${p.sd}°`,{x:f(lp.x),y:f(lp.y-4.2),fill:color,opacity:'0.72',
+      'font-size':8,'font-family':"'Inter',sans-serif",'text-anchor':'middle','dominant-baseline':'central'}));
+    g.appendChild(glTx(sign.gl,lp.x,lp.y+5.2,8.5,color,'0.68'));
+
+    // Glyph
+    const gp=ept(p.disp,R.pGlyph,CHART.asc);
+    g.appendChild(el('circle',{cx:f(gp.x),cy:f(gp.y),r:11,fill:color,opacity:'0.04'}));
+    g.appendChild(glTx(p.gl,gp.x,gp.y,18,color,'0.96'));
+
+    // Retrograde Rx — same radius, adjacent, larger
+    if(p.retro){
+      const rxA=svgA(p.disp,CHART.asc)+9;
+      const rxP=pt(rxA,R.pGlyph-10);
+      g.appendChild(tx('Rx',{x:f(rxP.x),y:f(rxP.y),fill:color,opacity:'0.68',
+        'font-size':7.5,'font-family':"'Inter',sans-serif",'font-style':'italic',
+        'text-anchor':'middle','dominant-baseline':'central'}));
+    }
+  }
+  svg.appendChild(g);
+}
+
+// ─── RENDER ──────────────────────────────────────────────────────────────────
+function render(){
+  const svg=document.getElementById('chart-svg');
+  drawDefs(svg);
+  drawBackground(svg);
+  drawRims(svg);
+  drawZodiac(svg);
+  drawHouses(svg);
+  drawAspects(svg);
+  drawAxes(svg);
+  drawPlanets(svg);
+  drawCenter(svg);
+}
+render();
+
+// ─── KEY DATA ────────────────────────────────────────────────────────────────
+const KS=SIGNS.map(s=>({gl:s.gl,color:s.color,name:s.name,
+  note:({fire:'Fire',earth:'Earth',air:'Air',water:'Water'})[s.el]+' · '+MODALITY[s.abbr]}));
+
+const KP=[
+  {gl:'☉'+T,c:'#d8b850',name:'Sun',       note:'Vitality · core identity'},
+  {gl:'☽'+T,c:'#d8b850',name:'Moon',      note:'Emotion · instinct · needs'},
+  {gl:'☿'+T,c:'#c8a0a0',name:'Mercury',   note:'Mind · communication'},
+  {gl:'♀'+T,c:'#c8a0a0',name:'Venus',     note:'Love · beauty · values'},
+  {gl:'♂'+T,c:'#c8a0a0',name:'Mars',      note:'Drive · assertion · will'},
+  {gl:'♃'+T,c:'#7ab0d0',name:'Jupiter',   note:'Expansion · wisdom · luck'},
+  {gl:'♄'+T,c:'#7ab0d0',name:'Saturn',    note:'Structure · discipline · time'},
+  {gl:'♅'+T,c:'#5ab8a8',name:'Uranus',    note:'Innovation · disruption'},
+  {gl:'♆'+T,c:'#5ab8a8',name:'Neptune',   note:'Dreams · dissolution · vision'},
+  {gl:'♇'+T,c:'#5ab8a8',name:'Pluto',     note:'Transformation · depth · power'},
+  {gl:'⚷'+T,c:'rgba(240,228,200,0.70)',name:'Chiron',note:'The wound · the healer'},
+  {gl:'☊'+T,c:'rgba(240,228,200,0.70)',name:'North Node',note:'Soul path · growth edge'},
+];
+
+const KA=[
+  {color:'#d0a840',dash:false,name:'Conjunction', note:'0° · unity, intensity, merger'},
+  {color:'#3e8fc0',dash:false,name:'Sextile',     note:'60° · opportunity, ease, flow'},
+  {color:'#5ab8a8',dash:false,name:'Trine',       note:'120° · natural talent, grace'},
+  {color:'#c89898',dash:true, name:'Square',      note:'90° · friction, growth pressure'},
+  {color:'#c89898',dash:false,name:'Opposition',  note:'180° · tension, polarity, awareness'},
+  {color:'rgba(240,228,200,0.38)',dash:true,name:'Inconjunct',note:'150° · adjustment, redirection'},
+];
+
+const KE=[
+  {color:'#c87840',name:'Fire', note:'Aries · Leo · Sagittarius'},
+  {color:'#58925a',name:'Earth',note:'Taurus · Virgo · Capricorn'},
+  {color:'#5878c8',name:'Air',  note:'Gemini · Libra · Aquarius'},
+  {color:'#3880b8',name:'Water',note:'Cancer · Scorpio · Pisces'},
+];
+
+function ki(html,bc){
+  const d=document.createElement('div');
+  d.className='ki';d.style.borderColor=`${bc}18`;
+  d.innerHTML=html;return d;
+}
+
+function buildKey(){
+  const sg=document.getElementById('kS');
+  for(const s of KS) sg.appendChild(ki(
+    `<span class="ki-gl" style="color:${s.color}">${s.gl}</span>
+     <span><span class="ki-name">${s.name}</span><span class="ki-note">${s.note}</span></span>`,s.color));
+
+  const pg=document.getElementById('kP');
+  for(const p of KP) pg.appendChild(ki(
+    `<span class="ki-gl" style="color:${p.c}">${p.gl}</span>
+     <span><span class="ki-name">${p.name}</span><span class="ki-note">${p.note}</span></span>`,p.c));
+
+  const ag=document.getElementById('kA');
+  for(const a of KA){
+    const ln=`<svg width="30" height="14" style="flex-shrink:0">
+      <line x1="2" y1="7" x2="28" y2="7" stroke="${a.color}" stroke-width="1.5"
+        ${a.dash?'stroke-dasharray="5,3"':''} opacity="0.88"/></svg>`;
+    ag.appendChild(ki(`${ln}<span><span class="ki-name">${a.name}</span><span class="ki-note">${a.note}</span></span>`,a.color));
+  }
+
+  const eg=document.getElementById('kE');
+  for(const e of KE) eg.appendChild(ki(
+    `<span class="ki-sw" style="background:${e.color};box-shadow:0 0 7px ${e.color}55"></span>
+     <span><span class="ki-name">${e.name}</span><span class="ki-note">${e.note}</span></span>`,e.color));
+}
+buildKey();
+
+// Key toggle
+document.getElementById('keyBtn').addEventListener('click',()=>document.getElementById('keyOverlay').classList.add('open'));
+document.getElementById('keyClose').addEventListener('click',()=>document.getElementById('keyOverlay').classList.remove('open'));
+document.getElementById('keyOverlay').addEventListener('click',e=>{if(e.target===e.currentTarget)e.currentTarget.classList.remove('open');});
+</script>
+</body>
+</html>
