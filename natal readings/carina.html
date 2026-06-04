@@ -844,20 +844,8 @@
       filter: blur(45px); pointer-events: none; border-radius: 50%;
     }
 
-    /* ── Planet strip shimmer ── */
-    .planet-strip-wrap { position: relative; overflow: hidden; }
-    .planet-strip-wrap::after {
-      content: ''; position: absolute; inset: 0;
-      background: linear-gradient(90deg,
-        transparent 0%,
-        rgba(208,168,64,0.04) 30%,
-        rgba(208,168,64,0.09) 50%,
-        rgba(208,168,64,0.04) 70%,
-        transparent 100%);
-      background-size: 300% 100%;
-      animation: shimmer 7s infinite linear;
-      pointer-events: none;
-    }
+    /* ── Planet strip ── */
+    .planet-strip-wrap { position: relative; }
 
     /* ── Aspect rows: color left-border + hover ── */
     .aspect-row { transition: background 0.18s; position: relative; }
