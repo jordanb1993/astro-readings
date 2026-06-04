@@ -1,7 +1,7 @@
 # Jordan's Personal Astrologer — KNOWLEDGE.md
-*Accumulated wisdom from daily astrological work — March through April 2026*
+*Accumulated wisdom from daily astrological work — March 2026 through present*
 *Claude Code Workspace — Astrology Knowledge Base*
-*Last updated: April 2026*
+*Last updated: June 4, 2026*
 
 ---
 
@@ -376,6 +376,16 @@ These real-time correlations between sky events and Jordan's lived experience ar
 11. **Mars at 29° Pisces (anaretic degree) on April 9th = the NAGA aftershock** — the unresolved Mars energy hadn't discharged, explaining why the confrontation continued.
 
 12. **Mars entering Aries on April 9th = professional energy shift** — the murky, emotionally complicated Pisces professional dynamic cleared into something more direct and legible.
+
+**May 2026:**
+
+13. **Neptune-Moon peak (May 27, 0.03° orb) = workplace erasure registered at body level** — being uncredited after a 30-hour sprint landed not as professional frustration but as something closer to erasure. Neptune on the 10th house Moon strips the filtering layer entirely. The reading was accurate, not catastrophizing. See full entry in Part Two.
+
+14. **Uranus exact opposition natal Sun (May 21, 2026) — external breakthrough day.** The #astroflow-weekly channel launched May 21 — the same week Uranus was at its closest opposition to natal Sun. Krista endorsed it within 24 minutes; organic multi-person adoption same day. The transit associated with innovation, disruption, and new paths expressed as: the astrology work breaking out of the private into the visible professional sphere. First public proof of concept for the business. Uranus doing exactly what it does: what was internal goes external, sometimes before you've planned it.
+
+15. **Eleanor chapter closed May 18 — South Node dating pattern named.** Eleanor dated May 10–18, a clean and kind closure call. Pattern named precisely: South Node in Gemini = unconsciously seeking mirrors, people who reflect rather than meet. Two of Cups as a tuning fork going forward — what genuine mutual recognition feels like, not just ease of connection. Jupiter-opposition-Uranus/Neptune 7th house relational window closed with this chapter rather than deepened. The naming IS the healing.
+
+16. **$3,000 savings milestone hit May 2026 under Jupiter in Cancer** — Jupiter transiting the Cancer-Capricorn axis (1st house expansion, opposing natal 7th house) began with Jupiter conjunct nothing, but with Jupiter in Cancer (exaltation) and tightening trine to natal Sun (Sag), material accumulation became possible after years of financial stagnation. The savings milestone is the transit's material signature.
 
 ---
 

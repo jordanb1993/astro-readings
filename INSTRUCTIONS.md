@@ -93,31 +93,32 @@ Aries 0-29, Taurus 30-59, Gemini 60-89, Cancer 90-119, Leo 120-149, Virgo 150-17
 
 ---
 
-## CURRENT TRANSITS — May 2026
+## CURRENT TRANSITS — June 2026
 
-*Update this section monthly. Last updated May 14, 2026.*
+*Update this section monthly. Last updated June 4, 2026.*
 
-**Transiting planets (May 14, 2026 — live from astrolibrary.org):**
-- Sun: 24°04' Taurus (12th house)
+**Transiting planets (June 4, 2026 — from positions-today.json via Swiss Ephemeris):**
+- Sun: 13°47' Gemini
 - Moon: moves ~13°/day — check current position
-- Mercury: 24°24' Taurus (12th house) — conjunct Sun
-- Venus: 25°00' Gemini (1st house)
-- Mars: 26°56' Aries (11th house)
-- Jupiter: 21°01' Cancer (1st house)
-- Saturn: 10°38' Aries (10th house)
-- Uranus: 1°03' Gemini (12th house) — ingressed from Taurus
-- Neptune: 3°39' Aries (10th house)
-- Pluto: 5°29' Aquarius Rx (8th house)
-- Chiron: 28°17' Aries (11th house)
-- North Node: 5°38' Pisces R (9th house)
+- Mercury: 4°42' Cancer
+- Venus: 19°23' Cancer
+- Mars: 12°16' Taurus
+- Jupiter: 24°43' Cancer
+- Saturn: 12°31' Aries
+- Uranus: 2°16' Gemini
+- Neptune: 4°07' Aries
+- Pluto: 5°19' Aquarius Rx
+- Chiron: 29°21' Aries (anaretic)
+- North Node: 3°02' Pisces Rx
 
 **Active long-term transits:**
-- **Uranus 1°03' Gemini — exact opposition natal Sun (1° Sag).** The defining identity transit of this period. Uranus has ingressed Gemini and is sitting exactly on the opposition to Jordan's Sun. Also approaching conjunction with South Node (3° Gem) / opposition North Node (3° Sag) — 2° away, applying. Breaking up the South Node Gemini mirroring pattern at its root. Will make multiple passes through 2026. Near-term: conjunction South Node ~2026-2027. Long-term: conjunction natal Ascendant 29° Gemini ~2033-2034.
-- **Neptune 3°39' Aries — 1°19' from exact conjunction natal Moon (4°58' Aries).** Still the headline emotional transit of 2026-2027 — applying and building. Exact peak arrives when Neptune reaches 4°58', roughly late June 2026 at current speed (~0.01°/day). Porosity, dissolution of old emotional patterns, visionary feeling quality. Will make multiple passes. See KNOWLEDGE.md. (Note: prior readings cited a tighter orb because natal Moon was incorrectly stored as 4°00' — corrected May 28, 2026.)
-- Saturn 10°38' Aries — exact trine natal Mars (10° Sag), 0°38' orb. Discipline supporting drive. Second Saturn pass over natal Moon (4° Aries) coming via retrograde later in 2026.
-- Neptune trine natal Sun (1° Sag) — ongoing long-term visionary backdrop
-- Pluto sextile natal Moon — ongoing, emotional depth becoming strength
-- Jupiter 21° Cancer in 1st house — expanding personal presence, separating from opposition natal 7th house pair
+- **Uranus 2°16' Gemini — opposition natal Sun (1°49' Sag), 0°44' orb, separating.** Still the defining identity transit of this period. Now also 0°77' from conjunction natal South Node (3°02' Gem) — applying. Breaking up the South Node Gemini mirroring pattern at its root. Will make multiple passes. Near-term: conjunction South Node ~late 2026. Long-term: conjunction natal Ascendant 29° Gemini ~2033-2034.
+- **Neptune 4°07' Aries — 0°84' from exact conjunction natal Moon (4°58' Aries), applying.** Still the headline emotional transit of 2026-2027. Exact peak arrives when Neptune reaches 4°58', approximately late June/early July 2026 at current speed (~0.017°/day). Porosity, dissolution of old emotional patterns, visionary feeling quality. Will make multiple passes. See KNOWLEDGE.md. (Note: natal Moon corrected to 4°58' from incorrect 4°00' — May 28, 2026.)
+- **Chiron 29°21' Aries (anaretic) — sextile natal Ascendant (29°22' Gem), 0°02' orb, exact June 4.** The wound completing its Aries chapter, offering through the Ascendant. Threshold contact.
+- Saturn 12°31' Aries — separating trine natal Mars (10°46' Sag), 1°76' orb. Discipline supporting drive, peak passed. Second Saturn pass over natal Moon (4°58' Aries) coming via retrograde later in 2026 — watch this.
+- Neptune trine natal Sun (1°49' Sag) — 2°31' orb, ongoing visionary backdrop
+- Pluto Rx sextile natal Moon (4°58' Aries) — 0°36' orb, applying. Emotional depth becoming authority; slow background strengthening.
+- Jupiter 24°43' Cancer — trine natal Sun applying (7°10' orb, tightening). Expanding personal presence and purpose.
 
 ---
 
@@ -331,7 +332,7 @@ Never just say "Moon square Chiron" — always specify transiting vs. natal and 
 
 ## CURRENT LIFE CONTEXT — April 2026
 
-*Update this section as life evolves. Last updated April 13, 2026.*
+*⚠ This section is legacy — last updated April 13, 2026. For current life context, read the Situation Snapshot in CLAUDE.md (updated May 28, 2026 + routine-patched daily). The data below is kept for historical reference only; do not treat it as current.*
 
 ### Career
 Associate Director of Content Operations at Everflow — title awarded after sustained self-advocacy including a metrics-based proposal presented to SVP Michael Cole. Q1 complete. Now in Q2.
