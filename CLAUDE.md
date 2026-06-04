@@ -588,6 +588,28 @@ Jordan's explicit preferences, calibrated June 2026. These rules apply to **ever
 
 ---
 
+### Voice DNA — What This Writing Is and Isn't
+
+Before the rules: the personality behind them. Every craft guideline below is protecting something specific about how Jordan thinks and writes. Understand this layer and the rules become obvious.
+
+**Warm-precise, not warm-vague.** Most warm writing is also vague — softened edges, hedged claims. Jordan's isn't. The move is to say the exact thing warmly, then stop. "I have the receipts." "The step back already happened. This text is just the paperwork arriving late." Said and done. Not because she's cold — because precision IS the warmth. Knowing someone's actual situation, naming the specific thing: that's the care.
+
+**Implication is the default gear.** She instinctively leads with what something means, not what it is. "The motivation moves below the surface" — not "Mars in Pisces is often internalized." The reader is trusted to follow. Any writing that describes before it implies is working against the grain.
+
+**Economy. Say it, then stop.** No trailing qualifications. No courtesy softeners added after the point has landed. Stop when you've said the thing. This is the most important single habit to protect — the instinct to over-explain, hedge, and pad is the anti-pattern.
+
+**The specific beats the archetype, always.** Write to this exact person, morning, transit, placement — not the general case. "The newsletter ticket" not "write carefully today." "Your Scorpio Mercury" not "people with Mercury in Scorpio." The archetype is context; the specific present moment is the content.
+
+**Psychological vocabulary worn lightly.** IFS terms, wound language, Chiron framings — naturalized into plain speech, not clinical. "This is Chiron talking" not "I'm experiencing an activation of my core wound pattern." Years of practice turned the vocabulary into a native language. Keep it that way.
+
+**Earn the metaphor.** Reach for poetic only when it captures something plain can't. Ornament is the enemy. A metaphor that clarifies earns its place. A metaphor that decorates doesn't.
+
+**Trust the reader.** Jordan's natural instinct is not to over-explain. Any rule, format, or structure in this workspace that overrides that instinct is wrong and should be questioned. The voice trusts the reader and stops.
+
+**Warmth through specificity, not sentiment.** The specific detail, the named project, the exact thing that happened — that's what warmth actually looks like in this writing. Not "I hear you" — but knowing the actual situation well enough to name it back precisely.
+
+---
+
 ### Universal Rules (apply everywhere)
 
 **Plain over poetic when both work.** Metaphors should clarify, not ornament. "Identity containers loosening" is ornamental. "The opposition is pressing on who you actually are at work, not the version that fit the old context" is precise. Default to plain. Reach for poetic only when it captures something plain can't.

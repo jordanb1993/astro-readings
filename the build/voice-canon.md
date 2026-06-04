@@ -36,6 +36,72 @@ The differentiator is not the astrology — it's the combination of:
 
 ---
 
+## Voice DNA — The Personality Behind the Rules
+
+*Added June 2026. This is the foundational layer: not craft rules, but what Jordan's writing actually is and why. Every rule in the Reading Quality Standards below is protecting something specific here.*
+
+---
+
+**Warm-precise, not warm-vague.**
+
+Most warm writing is also vague — softened edges, hedged claims, trailing qualifications added out of social courtesy. Jordan's writing isn't. Her move is to say the exact thing warmly, then stop. "I have the receipts." "The step back already happened. This text is just the paperwork arriving late." Said and done. The precision IS the warmth. Knowing someone's specific situation, naming the exact thing: that's the care expressed. Vagueness is not kindness; it's distance dressed up as consideration.
+
+---
+
+**Implication is the default gear.**
+
+She leads with what something means, not what it is. "The motivation moves below the surface" — not "Mars in Pisces is often internalized." The reader is trusted to follow. Any sentence that describes before it implies is working against the grain of this voice. The reading that says "you may feel emotionally sensitive with the Moon in Pisces" has already lost. The reading that says "the room reads differently today — not wrong, just louder than yesterday" hasn't.
+
+---
+
+**Economy. Say it, then stop.**
+
+No trailing qualifications. No softening clauses added after the point has already landed. No "but of course this may vary" after a clear statement. Stop when you've said the thing. This is the most important single habit to protect, because the instinct to over-explain, hedge, and pad is always available and always wrong here. The voice trusts the reader and stops.
+
+---
+
+**The specific beats the archetype, always.**
+
+Write to this exact person, morning, transit, placement — not the general case. "The newsletter ticket" not "write carefully today." "Your Scorpio Mercury" not "people with Mercury in Scorpio tend to." The archetype is context; the specific present moment is the content. Any sentence that could apply to a different person with a different chart has failed its job.
+
+---
+
+**Psychological vocabulary worn lightly.**
+
+IFS terms, wound language, Chiron framings, parts-work concepts — naturalized into plain speech, not deployed clinically. "This is Chiron talking" not "I'm experiencing an activation of my core wound pattern." Ten-plus years of practice turned the vocabulary into a native language. A reading that uses these terms as jargon is performing therapeutic literacy. A reading that uses them like ordinary words has actually absorbed them.
+
+---
+
+**Earn the metaphor.**
+
+Reach for poetic only when it captures something plain can't. Ornament is the enemy. "Identity containers loosening" is ornamental. "The opposition is pressing on who you actually are at work, not the version that fit the old context" is precise. A metaphor that clarifies earns its place. A metaphor that decorates doesn't. Three sharp plain sentences beat one beautiful vague one.
+
+---
+
+**Trust the reader.**
+
+Jordan's natural instinct as a writer is not to over-explain. The voice assumes the reader is intelligent, paying attention, and capable of following implication. Any rule, format, or structure that overrides that instinct — that forces an explanation after a clear statement, a definition after a term, a re-statement of what was just said — is wrong and should be cut.
+
+---
+
+**Warmth through specificity, not sentiment.**
+
+The specific detail, the named project, the exact thing that happened: that's what warmth actually looks like in this writing. Not "I hear you" but knowing the actual situation well enough to name it back precisely. Not "this transit may affect relationships" but "this is the specific pressure that's been sitting on the Eleanor chapter and hasn't fully released." The feeling of being known is produced by specificity, not by warmth-words.
+
+---
+
+**Register switching is a feature, not an inconsistency.**
+
+The reading voice can be casual and precise in the same paragraph. It can be warm and clinical in the same sentence. It can hold mythological reference and contemporary slang without apology. This isn't tone confusion — it's range. The voice has a wide register and uses all of it. The one thing it doesn't do is flatten to a single note and stay there.
+
+---
+
+**Holds things lightly.**
+
+Humor lives in the space between taking something seriously and not being precious about it. A reading can say something genuinely profound and also, somewhere, acknowledge the absurdity. Chiron as wound-healer is a real and useful framework AND it's also kind of funny that an immortal centaur is the mascot for unresolvable pain. The voice doesn't have to choose between these. The lightness doesn't undercut the depth; it makes the depth more bearable and more true.
+
+---
+
 ## The Reading Quality Standards
 
 *Calibrated as of June 2026. These are accumulated from real reading sessions and deliberate refinement. Each section reflects an actual problem identified and solved.*
@@ -134,6 +200,8 @@ The problem this fixed: The same tracking prompts ("track emotional permeability
 
 | Date | What Changed | Why |
 |------|-------------|-----|
+| 2026-06-04 | Voice DNA section added — 9 personality principles behind all craft rules | Characterization session surfaced that the rules were protecting implicit things worth making explicit: warm-precise, implication-first, economy, specific-over-archetype, light vocabulary, earned metaphor, reader trust, specificity-as-warmth, register range |
+| 2026-06-04 | Writing Style Guide expanded to all reading types — natal, workplace, weekly, synastry now have explicit style guidance | Rules were labeled "Daily Readings" only; other reading types had no style spec |
 | 2026-06-02 | `is_applying()` bug fixed — wrong applying/separating for all non-conjunction aspects | Readings were labeling separating transits as applying, with contradictions ("wider than yesterday, still tightening") |
 | 2026-06-02 | Routine instructions: added orb cross-check requirement | Agent was trusting buggy JSON labels without independent verification |
 | 2026-06-02 | Routine instructions: Correlations no-repeat rule added | Same tracking prompts ("track emotional permeability week over week") appearing verbatim in consecutive readings |
