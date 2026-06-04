@@ -289,11 +289,9 @@
     /* ── DATA GRID ── */
     .data-wrap {
       padding: 44px 44px 0;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-      align-items: start;
+      display: block;
     }
+    .data-wrap > div { width: 100%; }
 
     .data-section-title {
       font-family: 'Inter', sans-serif;
@@ -684,7 +682,15 @@
     .read-more.open .chev { transform: rotate(180deg); }
 
     /* Planet pills strip */
-    .planet-strip { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 24px; }
+    .planet-strip-wrap { padding: 52px 44px 0; }
+    .planet-strip { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 0; }
+    .planet-strip-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.58rem; font-weight: 600;
+      letter-spacing: 0.26em; text-transform: uppercase;
+      color: var(--gold); opacity: 0.50;
+      margin-bottom: 14px;
+    }
     .planet-pill {
       display: inline-flex; align-items: center; gap: 6px;
       padding: 5px 13px; border-radius: 20px;
@@ -699,7 +705,11 @@
     .planet-pill.outer    { color: var(--teal);     border-color: rgba(90,184,168,0.28);  background: rgba(90,184,168,0.06); }
     .planet-pill.point    { color: var(--muted);    border-color: rgba(240,228,200,0.15); background: rgba(240,228,200,0.04); }
 
-    @media (max-width: 680px) { .planet-strip { gap: 5px; } .planet-pill { font-size: 0.62rem; padding: 4px 10px; } }
+    @media (max-width: 680px) {
+      .planet-strip-wrap { padding: 36px 18px 0; }
+      .planet-strip { gap: 5px; }
+      .planet-pill { font-size: 0.62rem; padding: 4px 10px; }
+    }
 
   </style>
 </head>
@@ -864,8 +874,15 @@
 
 <!-- ── PLANETS + ASPECTS ── -->
 
-    <!-- ── PLANET PILLS — quick at-a-glance strip ── -->
-    <div class="planet-strip" id="planetStrip">
+<div class="cel-divider">
+  <div class="cel-rule left"></div>
+  <div class="cel-mark">✦ ✦ ✦</div>
+  <div class="cel-rule right"></div>
+</div>
+
+<div class="planet-strip-wrap fade-in">
+  <div class="planet-strip-label">At a Glance</div>
+  <div class="planet-strip" id="planetStrip">
       <span class="planet-pill luminary"><span class="pp-gl">☉︎</span> 20° Gem · 7th</span>
       <span class="planet-pill luminary"><span class="pp-gl">☽︎</span> 6° Pis · 3rd</span>
       <span class="planet-pill personal"><span class="pp-gl">☿︎</span> 13° Can · 8th</span>
@@ -879,104 +896,9 @@
       <span class="planet-pill point"><span class="pp-gl">⚷︎</span> 19° Leo · 9th</span>
       <span class="planet-pill point"><span class="pp-gl">☊︎</span> 11° Sag ℞ · 1st</span>
     </div>
+</div><!-- /planet-strip-wrap -->
 
 <div class="data-wrap fade-in">
-
-  <div>
-    <div class="data-section-title">Natal Planets + Points</div>
-    <div class="planet-list">
-      <div class="planet-row">
-        <span class="pl-glyph">☉</span>
-        <span class="pl-name">Sun</span>
-        <span class="pl-sign">20°04' Gemini</span>
-        <span class="pl-house">7th H</span>
-      </div>
-      <div class="planet-row">
-        <span class="pl-glyph">☽</span>
-        <span class="pl-name">Moon</span>
-        <span class="pl-sign">6°17' Pisces</span>
-        <span class="pl-house">3rd H</span>
-      </div>
-      <div class="planet-row">
-        <span class="pl-glyph">↑</span>
-        <span class="pl-name">Ascendant</span>
-        <span class="pl-sign">26°52' Scorpio</span>
-        <span class="pl-house">—</span>
-      </div>
-      <div class="planet-row">
-        <span class="pl-glyph">☿</span>
-        <span class="pl-name">Mercury</span>
-        <span class="pl-sign">13°30' Cancer</span>
-        <span class="pl-house">8th H</span>
-      </div>
-      <div class="planet-row">
-        <span class="pl-glyph">♀</span>
-        <span class="pl-name">Venus</span>
-        <span class="pl-sign">4°18' Taurus</span>
-        <span class="pl-house">5th H</span>
-      </div>
-      <div class="planet-row">
-        <span class="pl-glyph">♂</span>
-        <span class="pl-name">Mars</span>
-        <span class="pl-sign">22°59' Leo</span>
-        <span class="pl-house">9th H</span>
-      </div>
-      <div class="planet-row">
-        <span class="pl-glyph">♃</span>
-        <span class="pl-name">Jupiter</span>
-        <span class="pl-sign">4°54' Libra</span>
-        <span class="pl-house">10th H</span>
-      </div>
-      <div class="planet-row">
-        <span class="pl-glyph">♄</span>
-        <span class="pl-name">Saturn</span>
-        <span class="pl-sign">0°19' Pisces ℞</span>
-        <span class="pl-house">3rd H</span>
-      </div>
-      <div class="planet-row">
-        <span class="pl-glyph">♅</span>
-        <span class="pl-name">Uranus</span>
-        <span class="pl-sign">21°23' Capricorn ℞</span>
-        <span class="pl-house">2nd H</span>
-      </div>
-      <div class="planet-row">
-        <span class="pl-glyph">♆</span>
-        <span class="pl-name">Neptune</span>
-        <span class="pl-sign">20°33' Capricorn ℞</span>
-        <span class="pl-house">2nd H</span>
-      </div>
-      <div class="planet-row">
-        <span class="pl-glyph">♇</span>
-        <span class="pl-name">Pluto</span>
-        <span class="pl-sign">23°25' Scorpio ℞</span>
-        <span class="pl-house">12th H</span>
-      </div>
-      <div class="planet-row">
-        <span class="pl-glyph">⚷</span>
-        <span class="pl-name">Chiron</span>
-        <span class="pl-sign">19°45' Leo</span>
-        <span class="pl-house">9th H</span>
-      </div>
-      <div class="planet-row">
-        <span class="pl-glyph">☊</span>
-        <span class="pl-name">North Node</span>
-        <span class="pl-sign">11°54' Sagittarius ℞</span>
-        <span class="pl-house">1st H</span>
-      </div>
-      <div class="planet-row">
-        <span class="pl-glyph">☋</span>
-        <span class="pl-name">South Node</span>
-        <span class="pl-sign">11°54' Gemini</span>
-        <span class="pl-house">7th H</span>
-      </div>
-      <div class="planet-row">
-        <span class="pl-glyph">MC</span>
-        <span class="pl-name">Midheaven</span>
-        <span class="pl-sign">11°39' Virgo</span>
-        <span class="pl-house">—</span>
-      </div>
-    </div>
-  </div>
 
   <div>
     <div class="data-section-title">Key Natal Aspects · by exactness</div>
