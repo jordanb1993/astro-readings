@@ -171,7 +171,7 @@ body {
 
 <div class="chart-label">Natal Chart &nbsp;·&nbsp; Carina</div>
 <div class="chart-wrap">
-  <svg id="chart-svg" viewBox="0 0 720 720" xmlns="http://www.w3.org/2000/svg"></svg>
+  <svg id="chart-svg" viewBox="-22 -22 764 764" xmlns="http://www.w3.org/2000/svg" style="overflow:visible"></svg>
 </div>
 <div class="chart-sub">June 10, 1993 &nbsp;·&nbsp; 6:30 PM CDT &nbsp;·&nbsp; DeKalb, Illinois &nbsp;·&nbsp; Placidus</div>
 
@@ -359,7 +359,7 @@ function spread(planets){
     if(cl.length===1){out.push({...cl[0],disp:cl[0].deg});}
     else{
       const mean=cl.reduce((s,p)=>s+p.deg,0)/cl.length;
-      const step=cl.length===2?10:8;
+      const step=cl.length===2?14:11;
       const off=-(cl.length-1)*step/2;
       cl.forEach((p,k)=>out.push({...p,disp:mean+off+k*step}));
     }
@@ -764,12 +764,12 @@ function drawPlanets(svg){
 
     // True position dot on inner circle
     const tP=ept(p.deg,R.asp,CHART.asc);
-    g.appendChild(el('circle',{cx:f(tP.x),cy:f(tP.y),r:2.2,fill:color,opacity:'0.80'}));
+    g.appendChild(el('circle',{cx:f(tP.x),cy:f(tP.y),r:2.8,fill:color,opacity:'0.88'}));
 
     // Connector when spread
     if(Math.abs(p.disp-p.deg)>2.5){
       const lA=ept(p.deg,R.asp+5,CHART.asc),lB=ept(p.disp,R.pGlyph-14,CHART.asc);
-      g.appendChild(el('line',{x1:f(lA.x),y1:f(lA.y),x2:f(lB.x),y2:f(lB.y),stroke:color,'stroke-width':'0.4',opacity:'0.28'}));
+      g.appendChild(el('line',{x1:f(lA.x),y1:f(lA.y),x2:f(lB.x),y2:f(lB.y),stroke:color,'stroke-width':'0.5',opacity:'0.42'}));
     }
 
     // Degree + sign OUTSIDE glyph (near zodiac ring)
@@ -780,8 +780,8 @@ function drawPlanets(svg){
 
     // Glyph
     const gp=ept(p.disp,R.pGlyph,CHART.asc);
-    g.appendChild(el('circle',{cx:f(gp.x),cy:f(gp.y),r:11,fill:color,opacity:'0.04'}));
-    g.appendChild(glTx(p.gl,gp.x,gp.y,18,color,'0.96'));
+    g.appendChild(el('circle',{cx:f(gp.x),cy:f(gp.y),r:13,fill:color,opacity:'0.05'}));
+    g.appendChild(glTx(p.gl,gp.x,gp.y,21,color,'0.97'));
 
     // Retrograde Rx — same radius, adjacent, larger
     if(p.retro){
