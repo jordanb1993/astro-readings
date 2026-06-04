@@ -59,17 +59,32 @@ Taurus Sun · Virgo Moon · 29° Aquarius Rising
 [yvonne.html](https://jordanb1993.github.io/astro-readings/natal/yvonne.html)
 Cancer Sun · Libra Moon · Sagittarius Rising · Sun opposite Neptune exact
 
+**Carina** *(v2 design — June 2026)*
+[carina.html](https://jordanb1993.github.io/astro-readings/natal%20readings/carina.html)
+Gemini Sun · Pisces Moon · Scorpio Rising · Jupiter on MC · site-wide constellation bg · glassmorphism · watercolor dives
+
+---
+
+## Chart Wheels
+
+Interactive SVG natal chart wheels — element arcs, watercolor house fills, floating key ✦, mobile-ready.
+
+**Carina — Chart Wheel**
+[chart-wheel.html](https://jordanb1993.github.io/astro-readings/natal%20readings/chart-wheel.html)
+Gemini Sun · Pisces Moon · Scorpio Rising · Whimsigoth Sacred Geometry build (June 2026)
+
 ---
 
 ## Pending Charts
 
-Birth data still needed: Kate · Cat · Mimi · Carina
+Birth data still needed: Mimi · Cat
 
 ---
 
 ## Build Notes
 
-- New natal chart: use `jordan-natal.html` as template, follow `natal/README.md`
-- Monday Slack draft: auto-generated to `readings/workplace/slack-draft.md` each Sunday
+- New natal chart (v2): use `carina.html` as template — design is fully built in, just update content. Follow `natal readings/README.md` for full SOP.
+- New chart wheel: copy `chart-wheel.html`, update CHART constant. Full SOP in `natal readings/README.md`.
+- Monday Slack draft: auto-generated to `workplace readings/slack-draft.md` each Sunday
 - GitHub repo: `github.com/jordanb1993/astro-readings` (private)
-- Pages go live within ~5 min of routine push
+- Pages go live within ~5 min of push
