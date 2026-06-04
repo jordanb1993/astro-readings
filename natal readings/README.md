@@ -92,12 +92,17 @@ Copy the file, rename it `[name].html`, then swap all content.
 
 ### Step 6 — Writing style
 
-- Written for the friend to read, not as a report about them
-- Lead with implication, not description: "The motivation moves below the surface" not "Mars in Pisces is often internalized"
-- State exact degrees in the technical lines (subtitle, aspects table) but let the prose breathe
-- No em dashes unless they earn it. Use colons for elaboration, commas for appositives, periods when in doubt
-- Pull quotes: one sentence that holds the whole section's truth. Cormorant Garamond italic. Should feel like something to write on a mirror.
+The full style guide lives in `CLAUDE.md → Writing Style Guide: All Reading Types`. Universal rules (plain over poetic, don't perform "astrologer," pull-quotes earned not produced, vary opening moves, let minor content be short) apply here too. Natal-specific additions:
+
+- Written for the friend to read, not as a report about them. Second-person where possible.
 - Friends' charts: warm, accessible, written to land emotionally. Jordan's own readings: clean, technical, no emojis.
+- Lead with implication, not description: "The motivation moves below the surface" not "Mars in Pisces is often internalized"
+- Write to this specific person, not the archetype. Draw on what you know about them — every Scorpio Moon is different.
+- State exact degrees in the technical lines (subtitle, aspects table) but let the prose breathe
+- Em dash rule applies: rare, no spaces (`word—word`), `&mdash;` in HTML. Default to comma, colon, or new sentence.
+- Pull quotes: one sentence that holds the section's truth. Cormorant Garamond italic. Should feel like something to write on a mirror. Not every section needs one.
+- No section eyebrow/title above deep-dive cards (creates double title). No emojis in section titles.
+- Through-Line synthesizes, doesn't list. Close with: *"The chart doesn't predict what happens. It describes the terrain and the nature of the person walking it."*
 
 ### Step 7 — After writing
 

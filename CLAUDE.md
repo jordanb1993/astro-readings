@@ -582,50 +582,94 @@ Warm, direct, psychologically precise. Never sycophantic. Honest about difficult
 
 ---
 
-## Writing Style Guide: Daily Readings
+## Writing Style Guide: All Reading Types
 
-Jordan's explicit preferences, calibrated June 2026. Apply to every daily reading.
+Jordan's explicit preferences, calibrated June 2026. These rules apply to **every reading type** — daily, natal, workplace, weekly, synastry. Reading-type-specific callouts noted below.
 
-### Morning Pulse
+---
 
-**One sentence. No degrees, no orb notation, no technical shorthand.**
+### Universal Rules (apply everywhere)
 
-The Pulse is what Jordan wakes up to. It should name the felt energy of the day, not report the transit data. The data is already in the Planets and At a Glance tables.
+**Plain over poetic when both work.** Metaphors should clarify, not ornament. "Identity containers loosening" is ornamental. "The opposition is pressing on who you actually are at work, not the version that fit the old context" is precise. Default to plain. Reach for poetic only when it captures something plain can't.
+
+**Don't perform "astrologer."** The voice that lands is direct, present, specific. The voice that doesn't is performing a role, using archetype language fluently but without contact with the actual person or moment. Write like someone who knows the subject well and actually looked at the sky (or chart).
+
+**Tone tracks the actual energy.** A Capricorn Moon efficiency day reads differently from a Sagittarius Full Moon day. A natally well-aspected chart reads differently from one built on squares. Tone, length, and weight should reflect what's actually there, not flatten to a single register.
+
+**On quiet skies and easy charts, say so.** Not every transit or placement carries weight. If the sky is quiet or easy, the reading is shorter and lighter. If a chart section is straightforward, write one clear sentence rather than padding to fill the format.
+
+**Pull-quotes are optional and earned, never produced.** The italicized epigram at the end of a section appears only when a sentence genuinely distills the whole thing into something that lands. If you're writing it to complete the format, cut it. An absence of pull-quotes is better than manufactured ones.
+
+**Vary the opening move.** Not every section starts with "[Planet] at X° is Y° from exact [aspect] to natal [Point]." Lead with the implication sometimes — what does this transit or placement actually feel like? The data can come second.
+
+**Lead with implication, not description.** "The motivation moves below the surface" instead of "Mars in Pisces is often internalized." The reader doesn't need the archetype explained; they need to understand what it means for them specifically.
+
+**Let minor content be short.** Not every aspect or placement needs a paragraph. A tight one-liner beats a padded paragraph.
+
+**No manufactured inner critic reframes.** Chiron/wound language appears only when it arises naturally from the specific transit or placement. Never format it as a standalone affirmation to fill a category.
+
+---
+
+### Daily Reading Specifics
+
+**Morning Pulse: one sentence, no technical shorthand.** The Pulse names the felt energy of the day, not the transit data. The data is already in the tables.
 
 - Wrong: *"Transiting Chiron at 29°16' Aries forms an almost exact sextile to your natal Ascendant at 29°22' Gemini today, 0.11° applying, closest approach this week."*
 - Right: *"Two threshold degrees in conversation today: the wound has a quiet opening at the door, and it's asking what you let through without the old apology layer."*
 
 One sentence, or two at most if the sky genuinely has two distinct energies. Then stop.
 
-### Deep-Dive Sections
+**Write to this specific morning, not the archetype.** Less "Uranus dissolves old identity containers" (abstract cosmic), more what that pressure actually feels like on this particular morning in this particular week.
 
-**Vary the opening move.** Not every section starts with "[Planet] at X° is Y° from exact [aspect] to natal [Point]." Lead with the implication sometimes: what does this transit feel like this specific morning? The data can come second.
+**Practical Application: drop categories where the sky has nothing real to say.** Work / Communication / Inner Critic / Body / Energy is a template, not a rule. Four tight points beats five padded ones.
 
-**Pull-quotes are optional.** The italicized epigram at the end of a section appears only when a sentence genuinely earns it, when it distills the whole thing into something that lands. If you're writing it to complete the format, cut it. Three earned pull-quotes in a week beats seven produced ones.
+**Name actual projects.** Jordan's real work: the weekly newsletter, the AI Use Case Repository, the EFX audit, the Masterclasses series, #astroflow-weekly. If Saturn-Mercury is pressing on communication, say "the newsletter ticket" or "the AI repo copy," not "write carefully today."
 
-**Let minor transits be short.** Not every aspect needs a paragraph. Secondary aspects in "Rest of the Sky" can be two sentences. A tight one-liner beats a padded paragraph.
+**Some body and sensory texture belongs somewhere in every daily reading.** What does today actually feel like to move through? Not only the strategic framing.
 
-**Write to this specific morning, not the archetype.** Less "Uranus dissolves old identity containers" (abstract cosmic), more what that pressure actually feels like on this particular morning in this particular week. The archetype is context; the specific present moment is the content.
+---
 
-### Practical Application
+### Natal Chart Specifics
 
-**Don't always use all five categories.** Work / Communication / Inner Critic / Body / Energy is a template, not a rule. Drop any category where the sky has nothing real to say today. Four tight points beats five padded ones.
+**Written for the friend to read, not as a report about them.** Second-person where possible. The subject is reading this about themselves, not hearing an analysis.
 
-**Name actual projects, not generic roles.** Jordan's real work: the weekly newsletter, the AI Use Case Repository, the EFX audit, the Masterclasses series, #astroflow-weekly. If Saturn-Mercury is pressing on communication, say "the newsletter ticket" or "the AI repo copy," not "write carefully today."
+**Friends' charts: warm, accessible, written to land emotionally.** Jordan's own readings: clean, technical, no emojis. This is the one tonal split across reading types.
 
-**Inner critic reframes: discovered, not produced.** This line appears only when it arises naturally from the specific transit and situation. If it has to be manufactured, drop it. Never format it as a standalone affirmation.
+**Pull quotes in natal charts should feel like something to write on a mirror.** One sentence that holds the section's truth. Cormorant Garamond italic. Not every section needs one.
 
-**Some body and sensory texture.** What does today actually feel like to move through? The physical register belongs somewhere in the reading, not only the strategic framing.
+**Write to this specific person, not the archetype.** Every person has the same Scorpio Moon archetype in the books. This person has *their* Scorpio Moon — write to what that means for who they specifically are, drawing on what you know about them.
 
-### Tone Calibration
+**Through-Line synthesizes, it doesn't list.** Three short paragraphs. No new placements introduced — just the pattern that holds all the pieces together. Always close with: *"The chart doesn't predict what happens. It describes the terrain and the nature of the person walking it."*
 
-**Plain over poetic when both work.** Metaphors should clarify, not ornament. "Identity containers loosening" is ornamental. "The opposition is pressing on who you actually are at work, not the version that fit the old context" is precise. Default to plain. Reach for poetic only when it captures something plain can't.
+**No section eyebrow/title above deep-dive cards** (creates double title). No emojis in any section title.
 
-**Tone tracks the actual weather.** A Capricorn Moon efficiency day reads differently from a Sagittarius Full Moon day. An easy sextile-heavy sky reads differently from a tight square. Tone, length, and weight should reflect what the sky actually is, not flatten to a single register.
+---
 
-**On light days, say so.** Not every transit carries weight. If the sky is quiet or easy, the reading is shorter and lighter. Don't strain for profundity that isn't there.
+### Workplace Reading Specifics
 
-**Don't perform "astrologer."** The voice that lands is direct, present, specific. The voice that doesn't is performing a role, using archetype language fluently but without contact with the actual day. Write it like it was written by someone who knows Jordan well and looked at the sky this morning.
+**Accessible to non-astrologers.** #astroflow-weekly is read by colleagues who aren't fluent. The Slack version especially: no jargon, no house numbers, no orb notation. The full `.md` version can be more specific, but not dense.
+
+**Name the actual team context, not generic career archetypes.** "Mercury-Saturn favors the AI repo copy editing over the newsletter brainstorm this week" over "think before you speak." Translate to the real work wherever possible.
+
+**Collective sky, not personal transits.** The workplace reading applies to multiple people in multiple roles — keep it general enough to resonate beyond Jordan's own chart.
+
+---
+
+### Weekly Reading Specifics
+
+**Lead with the week's dominant theme, not Monday's transit.** The lede is the felt quality of the week as a whole. Day-by-day detail comes after, kept to one sentence per day.
+
+**Approaching-exact aspects are the signal.** Anything tightening toward exact this week is more important than aspects that already peaked. The `positions-week.json` upcoming_exact_aspects table is the starting point.
+
+---
+
+### Synastry Reading Specifics
+
+**Lead with the dominant relational theme, not a list of contacts.** What's the through-line of this connection? State that first, then show the contacts that support it.
+
+**The synastry section is written for the friend, not Jordan.** The "Synastry with Jordan" section at the end of a natal chart is addressed to the friend directly — open, accessible, teal-toned in HTML. It describes the connection from their perspective.
+
+**Depth scales with closeness.** Close friends (Kate, Marina, Mimi, Carina, Dasha): full treatment — 5+ contacts, full write-up. Coworkers/newer connections: 2–3 contacts, 1–2 sentences each.
 
 ---
 
