@@ -75,9 +75,15 @@ Gemini Sun · Pisces Moon · Scorpio Rising · Whimsigoth Sacred Geometry build 
 
 ---
 
+**Mimi**
+[mimi.html](https://jordanb1993.github.io/astro-readings/natal%20readings/mimi.html)
+Aries Sun · Leo Moon · Scorpio Rising · fire grand trine · NNode exact sextile MC · Venus/Saturn Pisces H4
+
+---
+
 ## Pending Charts
 
-Birth data still needed: Mimi · Cat
+Birth data still needed: Cat
 
 ---
 

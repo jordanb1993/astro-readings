@@ -15,6 +15,7 @@ This folder contains full natal chart reading HTMLs in the whimsigoth aesthetic.
 | Hazel | `hazel.html` | `jordanb1993.github.io/astro-readings/natal%20readings/hazel.html` | Taurus Sun · Virgo Moon · 29° Aquarius Rising |
 | Yvonne | `yvonne.html` | `jordanb1993.github.io/astro-readings/natal%20readings/yvonne.html` | Cancer Sun · Libra Moon · Sagittarius Rising · coworker |
 | Carina | `carina.html` | `jordanb1993.github.io/astro-readings/natal%20readings/carina.html` | Gemini Sun · Pisces Moon · Scorpio Rising · Jupiter in 10th · **v2 canonical template** |
+| Mimi | `mimi.html` | `jordanb1993.github.io/astro-readings/natal%20readings/mimi.html` | Aries Sun · Leo Moon · Scorpio Rising · fire grand trine · NNode exact sextile MC |
 
 ---
 
@@ -523,6 +524,5 @@ The `?embed=1` parameter strips the wheel's page chrome (title, subtitle) and ma
 | Name | Birth data status |
 |------|-------------------|
 | Cat | Needed |
-| Mimi | Needed |
 
 Chart data files (sign/degree breakdowns for synastry work) live in `charts/` — separate from the HTML readings here.
