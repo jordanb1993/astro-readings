@@ -111,12 +111,13 @@ The corporate women's career astrology angle (sky-at-work, timing professional m
 
 ---
 
-### Phase 1: Manual Natal Chart Reading Service on Etsy
+### Phase 1: Build + Internal Beta (No Etsy)
 **Status: RESOLVED**
-**Decided:** May 18, 2026
-**Details:** Manual readings delivered via Etsy, $35 (Essential) / $55 (Full) / $85 (Deep Dive, after 10 reviews). 48-hour delivery. Jordan generates via this workspace pipeline, reviews, exports PDF.
-**Platform:** Etsy primary (90M+ buyer discovery engine), Gumroad secondary.
-**Critical path:** 5 free readings to friends (Marina, Miriam, Kate, Cat, Carina) → 5 Etsy reviews → first paying customer.
+**Original decision:** May 18, 2026 (Etsy plan)
+**Revised:** June 5, 2026
+**Details:** Etsy plan dropped. Jordan has a full-time job and doesn't need early reading income. Beta testing is already live — Jordan's daily readings are the primary user research, and friends' natal chart builds are the beta product. No external validation platform needed.
+**Phase 1 goal:** Perfect the pipeline across multiple reading types (natal, daily transit, synastry, ritual) using Jordan + close friends as beta users. Build until the product is something Jordan would be proud to hand to a paying stranger.
+**Critical path:** Complete 5 friend readings across multiple types → formalize all templates → begin Phase 2 closed beta cohort.
 
 ---
 
@@ -158,13 +159,14 @@ The corporate women's career astrology angle (sky-at-work, timing professional m
 
 ---
 
-### Phase Structure: Manual → Semi-Automated → Self-Serve App
+### Phase Structure: Build + Beta → Closed Subscription → Public App
 **Status: RESOLVED**
-**Decided:** May 2026
+**Originally decided:** May 2026
+**Revised:** June 5, 2026
 **Details:**
-- Phase 1: Manual (Jordan in loop, Etsy)
-- Phase 2: Semi-automated (intake form → Claude generates → Jordan approves → delivers), monthly transit subscription $15/month
-- Phase 3: Self-serve app (user enters birth data → instant reading, no Jordan in loop), subscription model
+- Phase 1: Build + internal beta (Jordan + friends, no Etsy, perfect all reading type templates)
+- Phase 2: Closed subscription beta (~20 paying subscribers, $20–35/month, Jordan reviews generated readings)
+- Phase 3: Public subscription app (self-serve, no Jordan in loop for generation, $25–35/month)
 
 ---
 
@@ -179,8 +181,8 @@ The corporate women's career astrology angle (sky-at-work, timing professional m
 
 | Date | Decision | Status |
 |---|---|---|
-| May 18, 2026 | Phase 1: Etsy natal chart readings | RESOLVED |
-| May 2026 | Phase structure: Manual → Semi-auto → App | RESOLVED |
+| May 18, 2026 | Phase 1: Etsy natal chart readings | REVISED June 5 |
+| May 2026 | Phase structure: Build+Beta → Closed Beta → Public App | RESOLVED |
 | May 2026 | Visual aesthetic: Whimsigoth Sacred Geometry | RESOLVED |
 | May 2026 | Voice: trained on Jordan's writing | RESOLVED |
 | June 4, 2026 | Aesthetic locked with carina.html v2 | RESOLVED |

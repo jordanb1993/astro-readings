@@ -180,23 +180,23 @@ This is not a feature to add later. It is the subscription model's entire justif
 
 ---
 
-## Immediate Next Steps (Unchanged)
+## Immediate Next Steps
 
-Before first Etsy listing:
-1. Add PWA manifest to reading template
-2. Ship Mimi's reading (first on canonical template)
+*Etsy plan dropped (June 5, 2026). Jordan has a full-time job; beta testing is already live via daily readings and friend chart builds. Building the product is the goal.*
+
+Phase 1 — Build + Internal Beta:
+1. Add PWA manifest to reading template — home screen delivery
+2. Ship Mimi's reading (second friend on canonical template)
 3. Embed chart wheel into reading
+4. Planet-specific glyph prominence in sg-scatter layer (make each reading's background cosmically personal)
+5. Formalize daily transit reading template — the format Jordan already uses for herself becomes the subscription's core daily delivery
+6. Build new moon / full moon ritual template
+7. Complete all five friend readings (Marina, Miriam, Kate, Cat, Carina)
 
-Before $1,000/month:
-4. Etsy listing live — Full Reading $55, Essential $35
-5. Five friend readings, five reviews
-6. Planet-specific glyph prominence in sg-scatter layer
-
-Phase 2 trigger (at 10 reviews):
-7. Deep Dive $85 live
-8. Transit subscription $15/month
-9. Semi-automated intake pipeline
-10. Begin daily transit reading template (the format that becomes the subscription's daily delivery)
+Phase 2 trigger (pipeline is stable, all reading types have templates):
+8. Invite closed beta cohort (~20 people, friends of friends + Slack community)
+9. Subscription at $20–35/month
+10. Chart vault data structure (birth data stored, positions pre-calculated)
 
 ---
 

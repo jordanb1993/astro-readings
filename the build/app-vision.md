@@ -34,36 +34,45 @@ Not an astrology app. Not a content platform. A subscription product that holds 
 
 ---
 
-## Phase structure (as of May 18, 2026)
+## Phase Structure (updated June 5, 2026)
 
-### Phase 1 — Manual MVP
-**Product:** Personalized Natal Chart Reading (PDF, delivered within 48 hours)
+*Note: The Etsy plan is dropped. Jordan has a full-time job and doesn't need early income from readings. The beta testing is already happening — herself (daily readings) and friends (natal chart builds). No Etsy validation needed. Build the product.*
 
-| Tier | What's included | Price |
-|------|----------------|-------|
-| Essential | Big Three + 4 key placements + 1 transit + 800–1,000 words | $35 launch |
-| Full Reading | Full chart + focus area + 2–3 transits + 1,500–2,000 words | $55 |
-| Deep Dive | Full + synastry OR solar return + 2,500+ words | $85 (after 10 reviews) |
+### Phase 1 — Build + Internal Beta (now)
+**What it is:** Perfecting the pipeline using Jordan and close friends as beta users. Every morning reading is user research. Every friend chart build is a beta product. The standard is: would Jordan be proud to hand this to a paying stranger?
 
-**Workflow using this workspace:**
-1. Customer submits intake form (birth date, time, place + focus area)
-2. Jordan runs the natal chart pipeline here → Claude generates the reading
-3. Jordan reviews + light edits (15–20 min)
-4. Export to PDF → deliver via Etsy messaging
+**Reading types to build in Phase 1:**
+- Natal: ✅ template built (carina.html)
+- Daily transit: 🔄 already running for Jordan — formalize the template
+- Synastry: build the template (Carina's chart has synastry section as a start)
+- Ritual: new moon + full moon template
+- Area-specific: at least one (love or career) to prove the model
 
-**Platform:** Etsy primary (discovery engine, 90M+ buyers). Gumroad secondary.
+**Success condition:** Five complete friend readings (Marina, Miriam, Kate, Cat, Carina) across multiple reading types. The pipeline runs without Jordan needing to rebuild from scratch each time. The visual system is consistent. The voice is trained.
 
-**Critical path:** 5 free readings to friends (Marina, Miriam, Kate, Cat) → 5 reviews on Etsy → first paying customer.
+### Phase 2 — Closed Subscription Beta (months 3–6)
+**What it is:** A small paid cohort, invited not discovered. Friends of friends, people from the Slack community, early supporters. Subscription at $20–35/month. Jordan still in the loop reviewing generated readings before they go out.
 
-### Phase 2 — Semi-automated (1–3 months)
-- Intake form responses processed automatically by Claude Code
-- Reading generated without manual pipeline trigger
-- Monthly Transit Subscription: $15/month (personalized forecast from natal chart)
-- Solar Return reading: $25 add-on
-- At 20 natal charts + 30 transit subs: ~$1,350/month, 5–8 hours/week
+**Features:**
+- Chart vault: subscriber's birth data stored, positions pre-calculated
+- Daily transit reading delivered (automated generation, Jordan spot-checks)
+- Monthly: new moon + full moon ritual
+- On-demand: synastry reading (subscriber adds a second chart)
+- Quarterly: area-specific deep dive
 
-### Phase 3 — The App (6–18 months)
-Self-serve: customer enters birth info → instant personalized reading. No Jordan in the loop. Subscription model for ongoing transits and forecasts. This is what Phase 2 becomes when you automate the last human step.
+**Success condition:** 20 paying subscribers renewing. Feedback confirming the daily reading and ritual formats land. Retention data.
+
+### Phase 3 — Public Subscription App (6–18 months)
+**What it is:** Self-serve. User enters birth data → full onboarding reading → daily readings start immediately. No Jordan in the loop for generation. Jordan as editor/curator of the voice and reading system. Subscription at $25–35/month.
+
+**The product at full build:**
+- Chart vault for self + saved charts for others
+- Daily personalized transit reading
+- Synastry on demand
+- Area-specific readings (love, career, money, body, creativity)
+- Full moon + new moon rituals personalized to chart
+- Wheel of the year: all 8 Sabbats, personalized
+- Beautiful, proprietary visual system throughout
 
 ---
 
