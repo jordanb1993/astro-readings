@@ -572,6 +572,49 @@ After the Tony escalation week (April 7-10), Jordan experienced a textbook Chiro
 
 ---
 
+## PART THIRTEEN: BUILD CORRELATIONS AND ASTROLOGICAL DESIGN PRINCIPLES
+
+*Added June 5, 2026 — the chart as the design system*
+
+### Chiron Transiting the 11th House — The Wound Working Through Networks and Technology
+*(Corrected entry — June 5, 2026)*
+
+Transiting Chiron at 29° Aries (anaretic degree) is in Jordan's 11th house, making a sextile to natal Ascendant at 29° Gemini. This is NOT just a Chiron-to-Ascendant aspect in isolation — it carries the full 11th house context.
+
+The 11th house rules: networks, communities, collective causes, technology, future visions, the groups we belong to and build for.
+
+**What this means for the build:** The wound is operating through the exact house that the app is designed to serve. Chiron transiting the technology/networks house while making a cooperative opening to the Ascendant (self-expression/identity) = the wounded healer archetype showing up in the technology-and-collective sphere, with a direct channel to how Jordan presents herself in the world. The app IS this transit expressed as a product.
+
+**The sextile mechanism:** A sextile is cooperative, not automatic. It creates an opening but requires intentional engagement to activate. Chiron is making an offer: use the wound (the 4th house Virgo Chiron, the foundational not-enoughness) through the 11th house (technology, collective) to do something that serves people. The sextile to the Ascendant is the channel through which that wound work becomes visible identity.
+
+**Verification note:** House placement of transiting planets requires the full house cusp table, not just natal points. Always confirm transiting planet house positions against Jordan's actual Placidus cusps before making or challenging house-based claims. Jordan's 11th house cusp is in Aries; Chiron at 29° Aries is in the 11th house.
+
+---
+
+### Neptune Conjunct Natal Moon (10th) — Collective Emotional Intelligence as UX Sensing Tool
+*(Added June 5, 2026)*
+
+Neptune-Moon has been framed primarily as emotional porosity and career sensitivity. The additional layer worth carrying: Neptune conjunct the 10th house Moon is giving Jordan an unusually precise read on what people feel when they receive an astrology reading — what they need from it emotionally, what lands as healing vs. what lands as data delivery.
+
+**Practical implication for the build:** Phase 1 hands-on readings are not just review-building. They are UX research that can only be done during Neptune at this proximity to the Moon. Jordan's sensitivity to the emotional transaction right now — what makes Marina say "felt very affirming" vs. what would have just felt accurate — is design intelligence. This is the season to do the hands-on reading work, observe what happens, and let that calibrate the agent training.
+
+**The opening/closing window:** Neptune-Moon exact peak arrives approximately late June/early July 2026. The most precise access to collective emotional sensing is the next few weeks.
+
+---
+
+### NNode Trine Natal Jupiter (5th, Scorpio) — The Creative Initiation Window
+*(Added June 5, 2026 — 0.09° orb on June 5)*
+
+Transiting NNode at 2°58' Pisces Rx trine natal Jupiter at 2°52' Scorpio (5th house) is at 0.09° orb as of June 5 — extremely tight. This is the tightest aspect in the chart after Chiron-Ascendant (just completed).
+
+**What it means structurally:** The soul path direction (NNode in Pisces: dissolution, visioning, releasing what can't be carried forward) is flowing with direct grace into the 5th house Jupiter in Scorpio — the house of creative passion projects, speculative ventures, joyful creation. The Scorpio depth and the Pisces intuition are cooperating through the trine.
+
+**The 5th house Jupiter application:** Jupiter in Scorpio 5th house is where Jordan's deep creative work, passion projects, and speculative business live. The NNode trine is a timing window — not manufactured encouragement, but an actual structural opening where creative initiation has unusual ease. Something taken on in the creative/build sphere right now reaches fuller expression.
+
+**What to watch for:** An easy creative step that arrives without friction this weekend. The ease itself is the signal. This transit doesn't announce itself loudly — it shows up as something flowing better than expected.
+
+---
+
 ## PART ELEVEN: CORRELATIONS — MAY 2026
 
 *Updated May 19, 2026*

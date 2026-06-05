@@ -73,6 +73,44 @@ Self-serve: customer enters birth info → instant personalized reading. No Jord
 
 ---
 
+## The Transit Map for the Build — SPARK/FUEL/ENGINE/CODE
+*Active June 2026 — all four simultaneously live*
+
+The four major active transits each perform a specific function in the development process. Use this as a reference when the build direction feels uncertain.
+
+```
+✦ THE SPARK:        Uranus conjunct South Node (12th, Gemini)
+                    Downloads revolutionary tech concepts. Latent intellectual architecture
+                    activating. Where the architectural insights come from.
+
+✦ THE FUEL:         NNode trine natal Jupiter (5th, Scorpio — 0.09° June 5, live now)
+                    The soul path's grace opening into the creative/speculative house.
+                    The destined yes that runs the whole project. Act on this window.
+
+✦ THE ENGINE:       Jupiter trine natal Pluto (6th, Scorpio — exact June 9)
+                    Psychological depth + expansion + eventual financial scale.
+                    Plant architecture seeds before June 9.
+
+✦ THE CODE & RULES: Saturn inconjunct natal Mercury (5th, Scorpio — separating)
+                    The structural accountability that makes it real.
+                    AI prompts must be systematic. Agent workflows must be reliable.
+```
+
+These four transits are not in conflict. They're four departments running simultaneously.
+Full technical spec: `the build/agent-architecture.md`
+
+---
+
+## The 12th House Design Principle — The Invisible Thinker
+
+Jordan's 12th house is Gemini-ruled: hidden architecture that communicates seamlessly through the visible surface. This is the app's core design mandate.
+
+All calculation complexity (ephemeris math, aspect logic, context synthesis, database queries, agent routing) lives in the 12th house — completely invisible to the user. What surfaces at the Ascendant (the interface) is clear, conversational, and human-feeling. The user should never sense the machinery.
+
+**Practical implication for every interface decision:** If it makes the system feel like a calculation engine rather than a knowledgeable friend, push it back into the 12th house.
+
+---
+
 ## This workspace IS the infrastructure
 
 The architecture of CLAUDE.md + INSTRUCTIONS.md + KNOWLEDGE.md creating genuine continuity across sessions — that's essentially what the app needs to do for every customer at scale. The reading pipeline here is the prototype.
@@ -233,6 +271,41 @@ The workplace digest format (see `readings/workplace/`) is a proof of concept fo
 
 ---
 
+## PWA / Home Screen App Delivery
+**Source:** Dasha's June 4 tip — confirmed by Jordan as underused
+
+Any hosted URL can be added to a phone's home screen as a Progressive Web App (PWA) — no App Store submission, no native code, no approval process. The sky-at-work.html is already on GitHub Pages. Every natal chart reading HTML is already hosted. The entire Phase 3 app can ship as a PWA.
+
+**Why this matters:**
+- Phase 1: Jordan can send customers a link to their natal chart that lives on their home screen, not in a Downloads folder. Feels like a real product.
+- Phase 2: Transit subscription delivery becomes a URL customers add to their home screen. Returns every week, feels like an app.
+- Phase 3: The full app ships as a PWA before (or instead of) native iOS/Android. Faster to market, no App Store gatekeeping, works on any device.
+
+**What to add to make a URL a great home screen app:**
+- `manifest.json` with app name, icons, theme color
+- `<meta name="apple-mobile-web-app-capable" content="yes">` for iOS
+- A service worker for offline support (optional Phase 1, valuable Phase 3)
+
+The chart wheel and sky-at-work.html are halfway there already. A manifest and icons make them home-screen worthy.
+
+---
+
+## Competitive Intelligence — Research Queue
+**Source:** Dasha's June 4 tip (via intake June 5)
+
+**The approach:** Use Playwright MCP (browser automation agent) to visit competitor apps, screenshot key screens, and scrape help desk/FAQ content. Full spec in `the build/agent-architecture.md` (Agent 4).
+
+**Competitor targets:** Co-Star, The Pattern, CHANI, Sanctuary, Time Passages, Astro.com
+
+**What this answers:**
+- The open UX design pole decision (conversational/therapeutic vs. analytical/technical) — what's already in the market, what's missing
+- Feature gaps — what users consistently ask for that no competitor provides
+- Visual differentiation — what the Whimsigoth aesthetic stands apart from
+
+**Status:** Playwright MCP not yet set up. Can be added to Claude Code via settings. Queue for next build session.
+
+---
+
 ## Open Questions
 
 - Name decision (let one land — top three: Thin Place · The 29th · Solas)
@@ -258,5 +331,7 @@ The workplace digest format (see `readings/workplace/`) is a proof of concept fo
 - **June 4, 2026** — Full session: Carina's natal reading v2 + chart wheel shipped. Design system locked. SOPs documented. Next session: Mimi's build (birth data pending) + visual polish + embed wheel into reading.
 - **June 4, 2026** — Natal reading design v2 completed (carina.html). Site-wide design system locked: constellation background fixed full-page, celestial side columns (☽ ☾ ☉ ✦) frame full viewport height, glassmorphism on cards, watercolor section blooms, sacred geometry scatter, collapsible dive sections, scroll fade-in, planet pill strip, aspect row color coding, trio card animations. Background: Whimsigoth Sacred Geometry — jewel cosmic indigo, vibrant gold (#e8c040), cerulean, warm ivory — no purple. See carina.html as the canonical v2 template.
 - **June 4, 2026** — Chart wheel built from scratch in Whimsigoth Sacred Geometry aesthetic. Full SVG natal wheel: element arcs, watercolor house blooms, 16-ray sunburst center, floating key overlay, jewel navy palette, all procedurally generated from Swiss Ephemeris data. Carina's chart is the first. This is a real IP asset — no competitor is doing this in this aesthetic.
+- **June 5, 2026 (2)** — Dasha Slack tips (June 4) fully ingested via intake protocol: Playwright MCP competitive intelligence agent (Agent 4) added to architecture spec; PWA delivery section added; competitor target list built (Co-Star, The Pattern, CHANI, Sanctuary, Time Passages, Astro.com); build-from-scratch IP decision logged as RESOLVED in product-decisions.md.
+- **June 5, 2026** — Co-builder role formalized. Dual-role identity (astrologer + co-builder) added to CLAUDE.md. Three new build documents created: `intake-protocol.md`, `agent-architecture.md`, `product-decisions.md`. SPARK/FUEL/ENGINE/CODE transit framework + 12th house design principle added to app-vision.md. Multi-agent spec (3 agents) documented. Two open UX design decisions surfaced: conversational/therapeutic vs. analytical/technical; freemium vs. subscription. Intake SOP established for large data drops. KNOWLEDGE.md updated with Chiron 11th house correction, Neptune-Moon UX insight, NNode-Jupiter timing window.
 - **June 4, 2026** — Writing style guide expanded to all reading types (natal, workplace, weekly, synastry). Voice DNA codified: 11 personality principles behind every craft rule. KNOWLEDGE.md updated with May 2026 correlations. INSTRUCTIONS.md current transits updated to June 4.
 - **June 2, 2026** — `voice-canon.md` created as the product brief for reading quality. Two bugs fixed in the calculation layer (applying/separating wrong for non-conjunction aspects; active-transits.txt propagating wrong labels into readings). Prose style standards codified after calibration session: Morning Pulse format, deep-dive variety rules, Practical Application specificity, tone calibration, em dash rule tightened. Refinement log started — each quality improvement now has a dated entry with reasoning. This is the product iterating on itself.
