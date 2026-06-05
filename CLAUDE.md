@@ -36,7 +36,7 @@ Do not read older readings MDs unless Jordan asks to reference a specific past d
 ## Stars Inbox — `_inbox/capture.md`
 
 Jordan captures astro ideas from her iPhone directly to this file. Check it every session start. If there are unprocessed entries:
-- Business ideas (pricing, names, Etsy copy, offering types) → surface and discuss, or file to `the build/app-vision.md` if app-related
+- Business ideas (pricing, names, app features, offering types) → surface and discuss, or file to `the build/app-vision.md` if app-related
 - Reading requests (friend chart, synastry, love reading) → note the person + data needed, add to `charts/` if birth data is included
 - Astro insights or correlations → add to KNOWLEDGE.md if worth keeping
 - App or system feature ideas → add to `the build/app-vision.md`
@@ -480,7 +480,7 @@ Lightened deep indigo background (`--bg: #090b1f`), lighter surface cards (`--su
 
 ## Birth Chart Readings — Natal Readings Folder
 
-Natal chart readings live in `natal readings/` (not `daily readings/`). **`natal readings/jordan-natal.html`** is the canonical template — built April 23, 2026, uses full v2 aesthetic with additional components:
+Natal chart readings live in `natal readings/` (not `daily readings/`). **`natal readings/carina.html`** is the canonical v2 template (June 2026) — use this for all new builds. `jordan-natal.html` is the v1 original (April 2026) and is kept as historical reference only. The v2 template includes all of the following built in:
 - **Identity Trio** — 3-column Sun / Moon / Rising summary cards at the top
 - **Chart Signature panel** — chart ruler, stelliums, anaretic degree, 7th house notes
 - **Natal Planets strip** — all placements at a glance
@@ -488,7 +488,7 @@ Natal chart readings live in `natal readings/` (not `daily readings/`). **`natal
 - **Theme tags** — inside each collapsible section (e.g., IDENTITY = SOUL PATH)
 - **Collapsible sections per planet/axis** — same v2 collapse/reveal mechanics as transit readings
 
-When building a friend's natal chart: use `natal readings/jordan-natal.html` as the structural template, swap in their placements, write fresh interpretive content. Birth data needed: date, time, location.
+When building a friend's natal chart: use `natal readings/carina.html` as the template (v2 canonical). Design is fully inherited — only update content. Full SOP in `natal readings/README.md`. Birth data needed: date, time, location.
 
 **Chart Wheel — `natal readings/chart-wheel.html`** (built June 4, 2026): A separate, self-contained HTML file that generates a visual circular natal chart wheel from Swiss Ephemeris data. Carina's chart is baked in as the first build. For any new chart: copy the file, replace the `CHART` constant with the new person's data, update the title. Full SOP in `natal readings/README.md`. Aesthetic: Whimsigoth Sacred Geometry — jewel navy + warm gold + element arcs + watercolor house fills + sacred geometry sunburst center. Fully mobile-audited. Embed via `?embed=1` for iframe integration into natal reading HTML pages.
 
@@ -539,7 +539,7 @@ Claude pulls live planetary positions directly from the web at the start of ever
 
 **Finances:** Real momentum. Savings: $3,209 ✅ — hit $3,000 milestone; Oregon savings bucket ($500 of $1,500 goal) already active. CC balance: ~$6,000 (falling). Student loan rehab form ready — printing + mailing Saturday May 30 (PO Box 5609, Greenville TX). Regular paycheck ~$2,314.75 (~$4,629/month). Rent pulls from savings (~$1,342/month). First real budgeted months underway.
 
-**Astrology:** #astroflow-weekly launched May 21 — Krista Kellogg endorsed within 24 min, organic multi-person adoption. Phase 1 business scoped (Etsy natal chart PDFs, $35–55). Full production pipeline operational. Name TBD: Thin Place / The 29th / Solas. Sagittarius Full Moon (blue moon) ritual planned May 31.
+**Astrology:** #astroflow-weekly launched May 21 — Krista Kellogg endorsed within 24 min, organic multi-person adoption. Building a subscription AI astrology app (NOT Etsy — Jordan has a full-time job; beta testing already live via daily readings + friend chart builds). Phase 1 = build + internal beta; Phase 2 = closed cohort ~20 subscribers $20–35/mo; Phase 3 = public app. Full production pipeline operational. Name TBD: Thin Place / The 29th / Solas. Business docs: `the build/app-vision.md`, `the build/market-strategy-2026-06-05.md`, `the build/product-decisions.md`.
 
 **Body:** Walking pad 6+ week streak ✅. Psychiatrist (Dr. Ashley George, Stella Center) June 10 at 10am — on calendar. PCP still unassigned — calling Anthem Monday Jun 2 (855-383-7248). BP monitor in hand.
 
@@ -577,10 +577,12 @@ This workspace and **the bones** are in active dialogue. Key connections:
 
 | Topic | Where it lives |
 |-------|---------------|
-| Astrology business plan (Etsy, reviews, 90-day plan) | `the bones/Money/astrology-business-plan.md` |
-| Astrology business scope (phases, pricing, name shortlist) | `the bones/Money/astrology-business-scope.md` |
-| App vision + phase roadmap | `the build/app-vision.md` ← this workspace |
+| App vision + full phase roadmap | `the build/app-vision.md` ← this workspace |
+| Product decisions (resolved + open) | `the build/product-decisions.md` ← this workspace |
+| Market gap + differentiation strategy | `the build/market-strategy-2026-06-05.md` ← this workspace |
+| Business name shortlist | `the build/product-decisions.md` (Business Name section) |
 | Testimonials, feedback, early praise | `the build/testimonials.md` ← this workspace |
+| Legacy early-phase business planning | `the bones/Money/astrology-business-plan.md` (outdated — Etsy plan dropped June 5) |
 | Psychological patterns (Chiron wound, South Node, etc.) | `the bones/Growth & Craft/patterns-reference.md` |
 | Financial state (savings, CC balance, loan status) | `the bones/Money/state.md` |
 | Dating / summer plans | `the bones/Culture & Adventure/Summer 2026.md` |
@@ -769,6 +771,12 @@ the stars/                              ← Root — each folder is its own doma
 │
 ├── the build/                          ← Astrology business OS
 │   ├── app-vision.md                   ← App roadmap, features, phase planning
+│   ├── product-decisions.md            ← All resolved + open product decisions
+│   ├── agent-architecture.md           ← Multi-agent system design + principles
+│   ├── market-strategy-2026-06-05.md   ← Market gap analysis + differentiation strategy
+│   ├── competitor-research-2026-06-05.md ← Competitive intelligence (all 6 major apps)
+│   ├── voice-canon.md                  ← Reading quality standards + refinement log
+│   ├── intake-protocol.md              ← Protocol for processing large data drops
 │   └── testimonials.md                 ← Praise, reactions, early feedback
 │
 ├── routine/                            ← Daily 4am automation infrastructure

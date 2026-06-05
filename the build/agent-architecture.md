@@ -125,7 +125,7 @@ The UI is not a report. It's a discovery experience. Interactive, visually immer
 - `sky-at-work.html` signal board: click-to-reveal, sticky status bar, scannable at a glance
 - `chart-wheel.html`: visual + interactive, key overlay, procedurally generated from data
 
-**Anti-pattern:** The natal reading HTML scroll — beautiful but linear. You read it once. It doesn't invite return visits or exploration.
+**The reading as artifact:** The natal reading scroll is the product, not an anti-pattern. It is an art object you return to. The return-visit challenge is solved by building recurring touchpoints (daily transits, lunar rituals, seasonal readings) that orbit the natal reading as a fixed reference — not by replacing it with a card feed.
 
 ### Gamified / Joyful Element (5th House Design Philosophy)
 **Source:** June 5 Gemini intake — natal Jupiter in Scorpio, 5th house
@@ -137,18 +137,19 @@ What this might look like:
 - A transits feed that shows "what's building toward you" like a forecast with movement
 - Rising sign personalization that makes the same chart feel specifically yours
 
-### The Two Undecided Design Poles
-**Source:** June 5 Gemini intake — open product decision, not yet resolved
+### The UX Register: Contemplative Artifact
+**Source:** June 5 — resolved via competitive research
+**Status: RESOLVED**
 
-**Pole A: Conversational and Therapeutic**
-The primary interface is a conversation. The app asks you questions, you respond, it goes deeper. Reading feels like talking to a knowledgeable, warm friend. Modeled on the 4-modes session experience.
+The Pole A / Pole B framing was a false binary. Competitive research across all six major apps (see `competitor-research-2026-06-05.md`) confirmed that every competitor picks one: either cold/analytical or warm/chatty. Neither pole is the product.
 
-**Pole B: Analytical and Technical**
-The primary interface is a dashboard. You see your chart, your active transits, your forecast. You select what to explore. Reading is on-demand depth beneath a scannable surface.
+**Ruling:** The natal reading is a contemplative artifact. You receive it, you scroll it, you return to it. The experience is immersion, not interaction. The app's core deliverable — the natal chart reading — stays a scroll. An art object made for one specific person.
 
-These may not be mutually exclusive — Pole A as the onboarding/emotional layer, Pole B as the returning-user layer. But the primary register needs to be decided before building Phase 3 UX.
-
-**Status: OPEN — Jordan to decide**
+**What this means for the interface:**
+- The reading format (scroll, beautiful, deep) is not an anti-pattern — it is the product. Preserve it.
+- Interactivity lives in the layers *around* the reading: transit updates, ritual prompts, synastry on demand, lunar moments.
+- If a conversational layer is ever built, model it on CHANI (narrative, authored, empowering) not The Pattern (personality quiz cards).
+- The return-visit problem is solved by building recurring touchpoints around the reading — not by replacing the reading with an app feed.
 
 ---
 
@@ -167,7 +168,7 @@ Use this as a reference when the build direction feels uncertain. Each of the fo
 ---
 
 ## Agent 4: Competitive Intelligence / Research Agent
-**Status: NOT BUILT — queued**
+**Status: COMPLETE — June 5, 2026**
 **Source:** Dasha's June 4 Slack tips (via intake June 5)
 
 **Function:** A browser-based agent that visits competitor apps, websites, and help desks — takes screenshots, scrapes copy and UI patterns, surfaces what competitors do and what their users struggle with.
@@ -198,6 +199,8 @@ Each competitor's help/FAQ section reveals: what users ask most, what features c
 
 **IP note:** We build our own code entirely (see product-decisions.md). The research agent is for intelligence only — screenshots, UI patterns, and pain point research — not for copying implementation.
 
+**Results filed:** `the build/competitor-research-2026-06-05.md` (full analysis). UX pole decision resolved from findings. Market gap strategy filed to `the build/market-strategy-2026-06-05.md`.
+
 ---
 
 1. **Database layer:** When does the move from flat files (CLAUDE.md / INSTRUCTIONS.md) to a structured database make sense? What format — JSON per user, SQLite, Supabase? What triggers the migration?
@@ -206,7 +209,7 @@ Each competitor's help/FAQ section reveals: what users ask most, what features c
 
 3. **Ephemeris integration:** The current implementation uses astrolibrary.org web scraping. For a production app, direct Swiss Ephemeris integration (pyswisseph, already in use in the routine) is more reliable. When does this get built into the app layer?
 
-4. **Delivery mechanism:** Phase 2 is Etsy messaging + PDF. Phase 3 is the app. What's the intermediate format — a hosted link, a downloadable, an email? 
+4. **Delivery mechanism:** Phase 2 is a hosted reading URL (GitHub Pages, PWA-enabled) delivered to a closed subscriber cohort. Phase 3 is the full self-serve app. The PDF format is legacy — the URL format (reading lives on device home screen) is the direction.
 
 5. **Intake form design:** What questions does the user answer before a reading is generated? Birth data is the minimum. What else is needed — focus area, emotional context, life chapter?
 

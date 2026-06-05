@@ -386,15 +386,19 @@ Associate Director of Content Operations at Everflow — title awarded after sus
 
 | Person | Relationship | Notes |
 |---|---|---|
-| Kate | Close friend | Part of core friend group, attended Ostara |
-| Marina | Close friend | Lives with parents, Jordan cat-sits, attended Ostara |
-| Miriam (Mimi) | Close friend | Sends voice messages, Jordan guilt loop about responding |
-| Carina | Close friend | Sporadic contact, Jordan guilt loop |
-| Megan | Ex-situationship | Closed March 2026, chapter complete |
-| Tony Cohn | Direct manager | Active difficult workplace dynamic, documented |
+| Kate | Close friend | Core friend group, attended Ostara March 2026 |
+| Marina | Close friend | Core friend group, Jordan cat-sits her cat, attended Ostara |
+| Miriam (Mimi) | Close friend | Core friend group; natal chart build pending |
+| Carina | Close friend | Core friend group; Oregon trip Aug 22–29 2026; natal chart built June 2026 |
+| Megan | Ex-situationship | Closed March 2026 (Equinox), complete |
+| Eleanor | Ex-chapter | Chapter fully closed May 18, 2026 — clean, kind call; South Node mirroring pattern named |
+| Tony Cohn | Direct manager | Active difficult workplace dynamic, documented (Tony Cohn — Incident Log in the bones) |
 | Michael Cole | SVP Marketing, skip-level | Safe escalation, supportive |
 | Kristen Bell | Peer/colleague | Ally, escalated Tony situation to Michael |
-| Dasha | Peer/colleague | Ally, independently corroborates Tony pattern |
+| Dasha | Peer/colleague + friend | Close ally, co-owns AI Playbook; natal chart built; synastry with Jordan documented |
+| Krista Kellogg | Colleague | Endorsed #astroflow-weekly within 24 min; wants a natal chart reading (Virgo Sun, Aries Rising; birth date/time needed) |
+| Yvonne | Colleague | Sales/MP; learning vibe coding; natal chart built |
+| Sam | Colleague (VP?) | Uses Flowbie daily; accountability-oriented in sales calls |
 
 ---
 

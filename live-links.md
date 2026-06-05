@@ -26,42 +26,42 @@ Collective sky · work framing · shareable with anyone · links in Monday Slack
 
 Static pages — updated only when a new chart is built or revised.
 
-**Jordan**
-[jordan-natal.html](https://jordanb1993.github.io/astro-readings/natal/jordan-natal.html)
+**Jordan** *(v1 — kept for reference)*
+[jordan-natal.html](https://jordanb1993.github.io/astro-readings/natal%20readings/jordan-natal.html)
 Sagittarius Sun · Aries Moon · 29° Gemini Rising · Scorpio stellium
-*Canonical template for all friend charts*
+*v1 template — superseded by carina.html (v2)*
 
 **Dasha Shareyko**
-[dasha.html](https://jordanb1993.github.io/astro-readings/natal/dasha.html)
+[dasha.html](https://jordanb1993.github.io/astro-readings/natal%20readings/dasha.html)
 Sagittarius Sun · Scorpio Moon · Pisces Rising (approx.) · noon chart
 
 **Iza**
-[iza.html](https://jordanb1993.github.io/astro-readings/natal/iza.html)
+[iza.html](https://jordanb1993.github.io/astro-readings/natal%20readings/iza.html)
 Pisces Sun · Aries Moon · Sagittarius Rising · Chiron exact on MC
 
 **Su**
-[su.html](https://jordanb1993.github.io/astro-readings/natal/su.html)
+[su.html](https://jordanb1993.github.io/astro-readings/natal%20readings/su.html)
 Gemini Sun · Aries Moon · Taurus Rising · Venus in 1st
 
 **Marina LaRusso**
-[marina.html](https://jordanb1993.github.io/astro-readings/natal/marina.html)
+[marina.html](https://jordanb1993.github.io/astro-readings/natal%20readings/marina.html)
 Leo Sun · Sagittarius Moon · Libra Rising · Jupiter conjunct ASC
 
 **Kate Penkethman**
-[kate.html](https://jordanb1993.github.io/astro-readings/natal/kate.html)
+[kate.html](https://jordanb1993.github.io/astro-readings/natal%20readings/kate.html)
 Libra Sun · Scorpio Moon · Libra Rising · Sun in 12th house
 
 **Hazel Grace**
-[hazel.html](https://jordanb1993.github.io/astro-readings/natal/hazel.html)
+[hazel.html](https://jordanb1993.github.io/astro-readings/natal%20readings/hazel.html)
 Taurus Sun · Virgo Moon · 29° Aquarius Rising
 
 **Yvonne** *(coworker)*
-[yvonne.html](https://jordanb1993.github.io/astro-readings/natal/yvonne.html)
+[yvonne.html](https://jordanb1993.github.io/astro-readings/natal%20readings/yvonne.html)
 Cancer Sun · Libra Moon · Sagittarius Rising · Sun opposite Neptune exact
 
-**Carina** *(v2 design — June 2026)*
+**Carina** *(v2 canonical — June 2026)*
 [carina.html](https://jordanb1993.github.io/astro-readings/natal%20readings/carina.html)
-Gemini Sun · Pisces Moon · Scorpio Rising · Jupiter on MC · site-wide constellation bg · glassmorphism · watercolor dives
+Gemini Sun · Pisces Moon · Scorpio Rising · Jupiter in 10th · site-wide constellation bg · glassmorphism · watercolor dives
 
 ---
 
