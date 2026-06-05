@@ -23,22 +23,30 @@ Do not re-open resolved decisions without flagging it explicitly. Do not assume 
 ---
 
 ### UX Philosophy: Conversational/Therapeutic vs. Analytical/Technical
-**Status: OPEN**
+**Status: RESOLVED**
 **Raised:** June 5, 2026 (Gemini intake)
+**Decided:** June 5, 2026 (competitive research)
 
-Two design poles:
+**Ruling: Neither pole. The reading is a contemplative artifact.**
 
-**Pole A — Conversational and Therapeutic**
-Primary interface is a conversation. The app asks questions, user responds, it deepens. Modeled on the 4-modes session experience. Warm entry point. Best for new users or emotionally activated users.
+Competitive research across all six major players (full findings in `the build/competitor-research-2026-06-05.md`) revealed that Pole A vs. Pole B is a false binary for this product. Every competitor picks one:
 
-**Pole B — Analytical and Technical**
-Primary interface is a dashboard. User sees their chart, active transits, forecast at a glance. Selects what to explore. Better for returning users who know what they want.
+- Co-Star, Time Passages, Astro.com: Pole B (data-first, cold)
+- CHANI, The Pattern, Sanctuary: Pole A (therapeutic, chatty, personality-quiz adjacent)
 
-**Note:** These may not be mutually exclusive. Pole A as onboarding/emotional layer, Pole B as the returning-user power layer. But the primary register needs to be decided before Phase 3 UX is built.
+None of them do what the natal reading scroll already does: **a reading as an art object you receive and return to.** Deep, specific, beautiful, made for one person. Not interactive, not a dashboard, not a chatbot.
 
-**Astrological note:** Neptune conjunct the 10th house Moon = Jordan has unusually precise access to the collective emotional landscape right now. What users feel when they receive a reading — she can sense this with unusual clarity during this transit. This is the season to make this decision from direct empathic observation, not market research.
+The UX register for the natal reading product is **contemplative**: you scroll, you absorb, you sit with it. Immersion, not interaction. The experience is the reading itself.
 
-**What's blocking:** Need to decide whether we're building for new seekers (Pole A) or for people who already know their chart (Pole B). Likely relates to the freemium vs. subscription question below.
+**Implications:**
+- The natal reading HTML format is the correct primary deliverable format. Do not replace it with a chat interface.
+- Interactivity (if any) should be in supplementary layers: transit tracking, return-visit hooks, ritual prompts. Not in the reading itself.
+- If the app ever develops a conversational layer, model it on CHANI (narrative, authored, empowering) rather than The Pattern (personality quiz output).
+- The return-visit problem (flagged in app-vision.md as the main anti-pattern of the scroll format) is still open. Solving it means building features around the reading, not changing the reading.
+
+**Market white space confirmed by research:** Sacred geometry + warm color palette, technical precision + emotional warmth, the reading-as-artifact format. All three are uncrowded.
+
+**Astrological note:** Neptune conjunct the 10th house Moon = Jordan has unusually precise access to the collective emotional landscape right now. What users feel when they receive a reading — she can sense this with unusual clarity during this transit. This decision was made from direct empathic observation and competitive data simultaneously.
 
 ---
 
@@ -178,7 +186,7 @@ The corporate women's career astrology angle (sky-at-work, timing professional m
 | June 4, 2026 | Aesthetic locked with carina.html v2 | RESOLVED |
 | June 5, 2026 | Architecture: non-linear, modular, agentic | RESOLVED |
 | June 5, 2026 | Development stage: stealth mode | RESOLVED |
-| June 5, 2026 | UX philosophy: conversational vs. analytical | OPEN |
+| June 5, 2026 | UX philosophy: contemplative artifact (neither pole) | RESOLVED |
 | June 5, 2026 | Business model: freemium vs. subscription | OPEN |
 | Ongoing | Business name: Thin Place / The 29th / Solas | OPEN |
 | Ongoing | Corporate product: same brand or separate | OPEN |
