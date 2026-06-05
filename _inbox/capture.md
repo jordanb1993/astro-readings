@@ -8,6 +8,29 @@ _Drop anything here. Business ideas, reading requests, app features, astro insig
 
 ---
 
+## FOR CLAUDIA — next session start (Playwright is live)
+
+Playwright MCP is available in this session. Run the competitive intelligence research immediately.
+
+**What to do:**
+1. Visit each competitor, screenshot the key screens (onboarding, daily reading UI, chart view, subscription/pricing)
+2. Visit their help desk / FAQ, scrape the most common user questions — this is the free user research Dasha flagged
+3. Synthesize findings against the open UX decision: **conversational/therapeutic (Pole A) vs. analytical/technical (Pole B)**
+
+**Target list (full spec in `the build/agent-architecture.md`):**
+- Co-Star — market leader, cold/data-driven, what Jordan's app is NOT
+- The Pattern — psychological depth, closest to Jordan's angle
+- CHANI — feminist/healing, closest to the tone
+- Sanctuary — conversational-first, live + AI hybrid
+- Time Passages — Jordan uses this, good baseline
+- Astro.com — serious astrologer tool, ugly but deep
+
+**Output:** file findings to `the build/` as `competitor-research-[date].md`. Update `product-decisions.md` UX pole section with what's learned. Surface the answer to Jordan directly.
+
+**Also verify before Jordan shares Carina's link:** "Jupiter in Libra on the Midheaven" in the sig-panel — check if MC is ~11° Virgo or early Libra. If Virgo, the language should say "in the 10th house" not "on the Midheaven." Quick Time Passages check.
+
+---
+
 
 %%
 PROCESSED May 22, 2026:
