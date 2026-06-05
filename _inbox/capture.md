@@ -10,24 +10,44 @@ _Drop anything here. Business ideas, reading requests, app features, astro insig
 
 ## FOR CLAUDIA — next session start (Playwright is live)
 
-Playwright MCP is available in this session. Run the competitive intelligence research immediately.
+**Session order:**
+1. Visual audit pass on carina.html + chart-wheel.html using Playwright (screenshots first, then fix)
+2. Verify Jupiter/MC flag in carina.html
+3. Competitive intelligence research (second, after the build is locked)
 
-**What to do:**
-1. Visit each competitor, screenshot the key screens (onboarding, daily reading UI, chart view, subscription/pricing)
-2. Visit their help desk / FAQ, scrape the most common user questions — this is the free user research Dasha flagged
-3. Synthesize findings against the open UX decision: **conversational/therapeutic (Pole A) vs. analytical/technical (Pole B)**
+---
 
-**Target list (full spec in `the build/agent-architecture.md`):**
-- Co-Star — market leader, cold/data-driven, what Jordan's app is NOT
-- The Pattern — psychological depth, closest to Jordan's angle
-- CHANI — feminist/healing, closest to the tone
-- Sanctuary — conversational-first, live + AI hybrid
-- Time Passages — Jordan uses this, good baseline
-- Astro.com — serious astrologer tool, ugly but deep
+### PART 1 — Visual audit with Playwright (do this first)
 
-**Output:** file findings to `the build/` as `competitor-research-[date].md`. Update `product-decisions.md` UX pole section with what's learned. Surface the answer to Jordan directly.
+Playwright can take real screenshots of the live pages. Use it to do what a code-only audit can't: see exactly what Carina sees, catch rendering issues, lock in the design before it goes out.
 
-**Also verify before Jordan shares Carina's link:** "Jupiter in Libra on the Midheaven" in the sig-panel — check if MC is ~11° Virgo or early Libra. If Virgo, the language should say "in the 10th house" not "on the Midheaven." Quick Time Passages check.
+**Pages to screenshot and audit:**
+- `https://jordanb1993.github.io/astro-readings/natal%20readings/carina.html` — full desktop pass: hero, chart wheel embed, identity trio, planet pills, sig panel, deep dive cards, synastry section, through-line. Then mobile viewport (375px wide).
+- `https://jordanb1993.github.io/astro-readings/natal%20readings/chart-wheel.html` — standalone wheel: full render, key overlay open, mobile viewport.
+
+**What to look for:**
+- Chart wheel iframe: does it render fully at 680px height, or does it clip? Does the background blend?
+- Celestial columns: do they now run full viewport height after the SVG fix?
+- Planet pill detail strip: does it have enough height when text is long?
+- Chart Key button + Save as PDF button: spacing, overlap risk on small screens?
+- Mobile: hero section, trio cards, dive cards — anything cramped or broken at 375px?
+- Typography: pull quotes at 1.20rem, pill labels at 0.70rem — do they read well?
+- Constellation background: visible and atmospheric, or too subtle / too heavy?
+- Any layout shifts, broken gradients, clipped elements
+
+Fix whatever needs fixing. Jordan wants this locked before Carina gets the link.
+
+**Also verify:** "Jupiter in Libra on the Midheaven" in the sig-panel and through-line. If MC is ~11° Virgo (as suggested by the NNode square MC aspect at 0.25° orb in Sag/Virgo), change to "in the 10th house." Needs a Time Passages spot-check or chart data verification.
+
+---
+
+### PART 2 — Competitive intelligence (after visual pass is done)
+
+Use Playwright to visit each competitor, screenshot key screens, scrape help desk content for user pain points. Full spec in `the build/agent-architecture.md` → "Agent 4."
+
+**Targets:** Co-Star · The Pattern · CHANI · Sanctuary · Time Passages · Astro.com (+ their help desks)
+
+**Goal:** Answer the open UX decision — conversational/therapeutic (Pole A) vs. analytical/technical (Pole B). File findings to `the build/competitor-research-[date].md`, update `product-decisions.md`, surface answer to Jordan.
 
 ---
 
