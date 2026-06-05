@@ -16,11 +16,21 @@ Full operational plan lives in the bones:
 
 ## The Core Idea
 
-An AI astrology tool that offers genuinely personalized readings to people who don't have Jordan's astrological literacy. The wound (Chiron in Virgo, 4th house) becoming the gift — making meaning-making through astrology accessible to people who want real depth without years of study.
+**"Your AI astrologer who lives with your chart."**
+
+Not an astrology app. Not a content platform. A subscription product that holds your birth chart as a permanent anchor and generates everything — daily readings, rituals, synastry, the full wheel of the year — in specific relationship to your placements.
+
+**What it does:**
+- Daily transit readings personalized to your chart (not generic sun-sign content)
+- Synastry readings on demand: add any chart, get a full relationship interpretation
+- Area-specific readings: love, career, money, body, creativity — deep dives through your chart's lens
+- Other people's charts: subscribers can hold and read for friends, partners, family
+- Personalized new moon + full moon rituals, written to how each lunation lands in your chart
+- Personalized wheel of the year: all 8 Sabbats interpreted through your specific placements
 
 **The origin:** Mercury stationed retrograde directly opposite Jordan's natal Chiron. The wound is the literal turning point. Chiron could not heal his own immortal wound but became the greatest healer of others precisely because of it.
 
-**The differentiator:** Generic AI astrology apps produce output. This produces readings. Co-Star and The Pattern are horoscope-adjacent entertainment. What this delivers is personalized interpretation by a person who actually studied this, written in prose good enough to read twice.
+**The differentiator:** Every astrology app produces content. This produces *your astrology* — daily, seasonal, relational, specific to the exact chart you were born with. Co-Star and The Pattern are horoscope-adjacent entertainment that you outgrow in three months. This is the product you go to after that.
 
 ---
 
@@ -134,13 +144,31 @@ The architecture of CLAUDE.md + INSTRUCTIONS.md + KNOWLEDGE.md creating genuine 
 
 ---
 
+## Reading Types (Full Product Scope)
+
+Five reading types, each needing its own template, voice register, and generation logic:
+
+| Type | Status | Description |
+|---|---|---|
+| Natal | ✅ Built | Full chart synthesis — the scroll (carina.html canonical template) |
+| Daily transit | 🔄 Prototype | What Claudia generates for Jordan each morning — personalized to natal chart |
+| Synastry | 📋 Planned | Two-chart comparison, full relationship interpretation |
+| Area-specific | 📋 Planned | Natal through one lens: love / career / money / body / creativity |
+| Ritual | 📋 Planned | New moon, full moon, wheel of the year — ceremonial, action-oriented |
+
+The natal template is the visual and voice foundation. Every other type inherits the aesthetic and reading voice, adapted to its register (daily readings are shorter and grounded in the present; rituals are ceremonial and forward-leaning; synastry has its own two-person dynamics).
+
+---
+
 ## What Makes It Different
 
 1. Real expertise — years of serious study, not prompts
 2. **The voice is trained on Jordan's actual writing** — see Voice Differentiator section below
-3. Focus area personalization — not just "here's your chart" but "here's your chart for your relationship question"
-4. MFA-level writing quality — a pleasure to read, not a list of keywords
-5. Healing orientation — Chiron wound as north star
+3. Persistent chart relationship — the app knows your chart the way an astrologer who has worked with you for years knows it
+4. The full astrological year — daily, lunar, seasonal, all personalized
+5. MFA-level writing quality — a pleasure to read, not a list of keywords
+6. Healing orientation — Chiron wound as north star
+7. Visual system with no competitor analog — sacred geometry, proprietary, unmistakable
 
 ---
 

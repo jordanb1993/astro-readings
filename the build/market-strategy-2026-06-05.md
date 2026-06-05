@@ -1,6 +1,30 @@
 # Market Gap + Differentiation Strategy
 *Synthesized from competitive research — June 5, 2026*
+*Updated with Jordan's full product vision — June 5, 2026*
 *Read competitor-research-2026-06-05.md first for the raw findings.*
+
+---
+
+## The Product Vision (Jordan's Words, June 5, 2026)
+
+Not an Etsy product. Not a reading business. A subscription app that holds someone's birth chart and becomes their personal AI astrologer — one that grows deeper over time and personalizes everything to that specific chart.
+
+**What it does:**
+- Daily transit readings, like what Claudia generates for Jordan every morning — but for every subscriber, personalized to their actual placements
+- Synastry readings on demand: add someone's chart, get a reading of the relationship
+- Area-specific readings: love, career, money, body, creativity — readings that go deep into one area of life through the chart's lens
+- Other people's charts: subscribers can hold charts for friends, partners, family and pull readings for them
+- Personalized full moon and new moon rituals: not generic lunar content, but rituals written to how *this* moon hits *your* chart
+- Personalized wheel of the year: Samhain, Yule, Imbolc, Ostara, Beltane, Litha, Lughnasadh, Mabon — each one written to your chart's relationship with that moment
+
+**What it is not:**
+- A horoscope app (Co-Star sends you a horoscope; this sends you your astrology)
+- A content app (CHANI is a media brand; this is a personal tool)
+- A one-time reading product (the Etsy phase is Phase 1 validation only, not the brand identity)
+- Free or low-cost (Co-Star is free; this justifies premium subscription pricing because it does something categorically different)
+
+**The one-sentence pitch:**
+"Your AI astrologer who lives with your chart — daily readings, rituals, synastry, and the whole turning year, all written to you specifically."
 
 ---
 
@@ -12,137 +36,169 @@ Six major astrology products exist. Every single one falls into one of two camps
 
 **Camp 2: Warm and shallow.** The Pattern, CHANI, Sanctuary. Emotionally resonant. Psychologically framed. But the interpretations are thin — personality summaries, daily nudges, generic affirmations. Users feel seen but not deeply seen.
 
-The gap in the middle is exactly what this product already occupies: **technically rigorous AND emotionally resonant AND visually extraordinary.** No one else is in that space. This is not a small gap. It is the entire center of the market.
+The gap in the middle is exactly what this product occupies: **technically rigorous AND emotionally resonant AND visually extraordinary.** No one else is there. This is not a small gap. It is the entire center of the market.
+
+But the bigger point — the one the competitor research makes undeniable — is that this product is not a better version of any of them. It is a **different category.** Not an astrology app. A personal astrologer that lives in your phone.
 
 ---
 
 ## What No Competitor Has Built
 
-After reviewing all six, these four things are genuinely absent from the entire consumer astrology market:
+### 1. A Persistent Relationship With Your Chart
 
-### 1. The Reading as Art Object
+Every competitor treats your chart as a data input, not a relationship. You enter your birth data, get a chart, and the app gives you generic content filtered by your sun sign. None of them build a living model of your chart that informs everything else you receive.
 
-Every competitor delivers information through one of three formats: feed (Co-Star's daily notifications), card (The Pattern's personality summaries), or report (Time Passages' PDF). None of them deliver a *reading* — a piece of writing that is specific to one person, worthy of returning to, beautiful to look at, and structured the way a gifted astrologer actually thinks.
+What Jordan is building: your chart is the permanent anchor. Every daily reading, every ritual, every synastry interpretation is generated in specific relationship to your placements, your aspects, your current transits. The app knows you the way an astrologer who has been working with your chart for years knows you.
 
-The natal reading scroll is not a format that exists in the market. It is an artifact you were given, not a product you subscribed to. That distinction matters enormously. People share and talk about their Co-Star placement the way they share memes. People would *keep* and *show* this reading the way they keep a meaningful letter.
+This is not a feature. It is the entire product architecture. And nobody has it.
 
-**This is the core product insight.** It should drive every decision.
+### 2. The Full Astrological Calendar as a Personal Practice
 
-### 2. The Visual Language of the Actual Tradition
+Co-Star gives you daily notifications. CHANI gives you moon circle content. Neither gives you what an actual practitioner gets: a full year of astrological rhythm — new moons, full moons, eclipses, solstices, equinoxes, the wheel of the year — interpreted through your specific chart.
 
-There is a 2,000-year visual history of astrology: celestial maps, alchemical manuscripts, sacred geometry, the beautiful illustrated charts people kept on their walls. Not one consumer app uses it. Co-Star and The Pattern use editorial minimalism borrowed from fashion. Time Passages looks like 2009 desktop software. CHANI uses hand-drawn illustration that's warm but not cosmic.
+A subscriber to this product would receive:
+- Daily reading (transits to natal, personalized)
+- New moon ritual (written to how this moon lands in your chart)
+- Full moon ritual (same)
+- Seasonal celebration for each of the 8 wheel of the year points
+- Personalized eclipse readings when eclipses hit key natal points
 
-The Whimsigoth Sacred Geometry system — jewel navy, vibrant gold, cerulean, watercolor blooms, geometric compass wheels, astrological glyphs as background texture — is not just a visual preference. It is an untouched market position. Nobody is here. The brand recognition available to the first product that owns this space is enormous.
+This is what a dedicated personal astrologer offers at $150-300/hour. This product delivers it at subscription pricing.
 
-The chart wheel built for Carina is already proof. No competitor has anything close to it.
+### 3. Synastry and Relationship Intelligence at Depth
 
-### 3. The Intermediate-Advanced User
+The Pattern has a rudimentary "Your Bonds" feature. Co-Star has compatibility scores. Neither produces actual synastry analysis — the real interpretive work of how two charts interact, which placements create tension, which create flow, what the relationship is asking each person to become.
 
-Every major app aims at beginners. Co-Star made its name by making astrology accessible to people who didn't know what a rising sign was. The Pattern explains personality traits from chart data. CHANI speaks to readers just beginning to learn.
+Synastry is one of the most requested and least well-served areas in consumer astrology. People want to understand their relationships through this lens. A subscriber being able to add anyone's chart and receive a full synastry reading is a major retention driver and a natural gift purchase trigger.
 
-The user who has been studying for 2-5 years — who knows their placements, can read an aspect table, wants depth rather than translation — is not served by any of these products. They outgrow Co-Star fast and migrate to Astro.com (ugly, free) or Time Passages (functional, expensive, no warmth).
+### 4. The Reading as Art Object
 
-This is Jordan's actual ICP: people who already know something and want more. Not beginner-curious seekers, but people who went through the gateway and are hungry for real interpretation at depth.
+Every competitor delivers information through feeds, cards, or reports. None of them deliver a *reading* — writing specific to one person, beautiful to look at, structured the way a gifted astrologer actually thinks, worthy of keeping and returning to.
 
-### 4. Precision + Voice Together
+The natal reading scroll (carina.html) is proof of concept. That format — and the sacred geometry visual system around it — does not exist anywhere in the consumer market. It is an artifact, not a product. People would save it, share it, show it the way they show a meaningful letter.
 
-The reading voice described in voice-canon.md — "warm-precise, not warm-vague" — does not exist in any competitor product. CHANI is warm but not precise (it's spiritually affirming, not technically rigorous). Time Passages is precise but not warm. Co-Star is allegedly data-driven but its interpretations are cryptic to the point of uselessness.
+### 5. The Visual Language of the Actual Tradition
 
-An astrology reading that is both genuinely technically accurate AND written by someone with an MFA and a decade of self-work is a different category of product. Not a better version of what exists. A different thing.
+Two thousand years of astrology produced extraordinary visual culture: celestial maps, alchemical manuscripts, sacred geometry, the beautiful illustrated charts people treasured. Not one consumer app uses it. The Whimsigoth Sacred Geometry system — jewel navy, vibrant gold, watercolor blooms, compass rose wheels, astrological glyphs as texture — is completely uncrowded territory.
 
----
-
-## What This Means for the Build
-
-### Double down on the scroll format — don't compress it into cards
-
-The app-vision.md flagged the scroll as the anti-pattern (users read it once and don't return). That concern is real. But the answer is not to replace the scroll with a card-feed. The answer is to build return-visit hooks *around* the reading: transit updates that link back to natal placements, a "today in your chart" layer, ritual notes tied to upcoming lunations. The reading itself stays a scroll. It becomes a fixed reference point that fresh context orbits around.
-
-Every competitor built for the feed model. The scroll is the differentiator. Preserve it.
-
-### The chart wheel is a bigger asset than it looks
-
-Right now it's attached to Carina's reading. Over time, that chart wheel — its specific aesthetic, its watercolor blooms, its sunburst center — becomes a brand signature the way the Spotify Wrapped visual became a signature. When someone shares their chart from this app, the image is unmistakably from this product. No other app has visual IP like this.
-
-Priority for Phase 2: every reading ships with the wheel embedded. Not optional.
-
-### PWA delivery makes Phase 1 feel like Phase 3
-
-Per Dasha's June 4 tip (already logged in app-vision.md): any URL can be a home screen app. When Jordan delivers a natal chart reading as a URL instead of a PDF, the customer experiences it as an app. It lives on their home screen. It's not a download in their Files folder that gets forgotten. It becomes part of their phone's real estate.
-
-This should happen before the first paying Etsy customer. Add the manifest.json and Apple meta tags to the reading template now. The product perception difference is enormous at zero technical cost.
-
-### Sacred geometry layer needs to evolve per reading
-
-The current `#sg-scatter` layer in carina.html is shared across all future readings. But the glyphs that appear most prominently in the background could reflect the specific person's dominant planets. A Scorpio stellium reading backgrounds Mars and Pluto glyphs. A Moon-heavy chart surfaces the crescent prominently. This would be cheap to implement (the SVG glyphs are already there, it's just reordering opacity values) and would make each reading feel cosmically personal in a way users would notice even if they couldn't name why.
+When someone shares their natal chart from this app, the image is unmistakably from this product. Visual IP that no competitor can easily replicate.
 
 ---
 
-## What This Means for the Business Plan
+## The Market Positioning
 
-### Pricing is permanently undercut at the bottom — don't compete there
+### Price Point and Why It Works
 
-Co-Star is free. Astro.com is free. The Pattern is free. Sanctuary charges per reading for human readers at competitive rates. There is no winning a price war in the $0-15 tier.
+Co-Star: free. The Pattern: free. CHANI: free (app) + premium content. Time Passages: $28-489 one-time. Sanctuary: per-reading.
 
-The pricing power for this product comes entirely from the "different category" positioning. You're not a cheaper Co-Star. You're the thing serious people graduate to when they're done with Co-Star. That customer will pay $55-85 for a natal chart because they've been wanting something this precise and this beautiful for years and it hasn't existed before.
+A subscription of $25-35/month for this product is:
+- Cheaper than one session with a human astrologer
+- 3-5x more than Co-Star's premium tier
+- Justified entirely by what it actually delivers — daily personalized readings, rituals, synastry, the full year — versus any competitor
 
-**Do not launch at the bottom of the price range to compete.** The Etsy listing should open at $55 for the Full Reading, $35 for Essential as a clear entry point, not as the main offer.
+The customer who pays this is not the Co-Star user. It is the person who has been reading their chart for years, has outgrown every app on the market, and has been wanting something this deep and this beautiful since they got serious about this practice. They exist. They're underserved. They'll pay.
 
-### CHANI is the correct brand comp — with a key differentiator
+### CHANI Is the Right Brand Comp — With Key Differences
 
-CHANI Nicholas has built the closest thing to what this could become: a premium spiritual brand built on one person's authentic voice and worldview, with a loyal audience who pays because it feels like it was made specifically for them. Annual revenue reported at ~$10M+.
+CHANI Nicholas has built the closest analog: a premium spiritual brand built on one person's authentic voice and worldview, loyal audience, reported ~$10M+ revenue. The model works.
 
-The difference: CHANI is explicitly politically framed (queer, feminist, progressive) and built entirely on Chani Nicholas being present. It can't outlive her and it doesn't speak to users outside her specific political context.
+Differences that create room:
 
-This brand can be politically conscious without being politically contingent. The reading voice carries a worldview — healing-oriented, psychologically rigorous, anti-toxic-positivity — without requiring customers to share a specific set of beliefs to receive value.
+| | CHANI | This product |
+|---|---|---|
+| Content type | Blog, horoscopes, media | Personalized readings, rituals, synastry |
+| Personalization | None (generic content) | Full (everything to your chart) |
+| Visual system | Hand-drawn illustration | Sacred geometry, proprietary |
+| Technical rigor | Spiritual framing, not precise | Both |
+| Political framing | Explicitly queer/feminist | Worldview-driven, not contingent |
+| Scalability | Dependent on Chani Nicholas | AI-powered, scalable |
 
-**The CHANI comparison is the investor pitch.** "We're building what CHANI built, except the visual language is sacred geometry instead of illustration, the interpretations are technically rigorous, and the audience is everyone who outgrew their sun sign app — not just the specific subset of people who want political framing with their astrology."
+The CHANI comparison is the investor pitch: "We're building what CHANI built — premium, authored, worldview-driven — but the product is a personal AI astrologer, not a content brand. The personalization layer is what makes it scalable."
 
-### The corporate angle is a second product, not a feature
+### The Intermediate-Advanced User Is the ICP
 
-Sky-at-work is already live and already getting organic adoption. The corporate women's career astrology market is genuinely uncovered by every competitor (astrology with political framing comes close but isn't career-strategic). This is a B2B SaaS play, not a consumer app feature. It should have:
-- Its own pricing (per-team monthly subscription, not per-reading)
-- Its own brand positioning (strategic intelligence, not mysticism)
-- Its own acquisition channel (LinkedIn, not TikTok)
+Every app aims at beginners. The person who knows their placements, has been reading charts for years, and finds Co-Star useful for exactly 3 months before outgrowing it — nobody is building for them. They are Jordan's natural audience. They are the people who will immediately understand what this is and why it matters.
 
-The personal reading business (Phase 1-3) and the corporate product should eventually operate as separate verticals under the same or related brands. The live test running now in Slack is product validation happening in real time.
-
-### Phase 2 semi-automation is actually the hardest phase to protect
-
-Phase 1 is defensible by Jordan's voice and labor. Phase 3 is defensible by the proprietary visual system, the trained voice layer, and the accumulated user data. Phase 2 — where intake → generate → approve → deliver is semi-automated but Jordan is still in the loop — is the window where a well-funded competitor could theoretically catch up if they moved fast.
-
-The protection is the voice corpus. The CLAUDE.md + INSTRUCTIONS.md + KNOWLEDGE.md + voice-canon.md architecture is not something a competitor can replicate from a standing start. They would need years of readings, specific interpretive decisions, a trained style, and Jordan's actual life experience informing the interpretive layer. That's the moat. It should be deepened deliberately during Phase 2, not treated as a byproduct.
-
----
-
-## The One-Sentence Brand Position
-
-"The natal chart reading that looks like it came from the stars, reads like it was written for you specifically, and actually knows what it's talking about."
-
-Everything else follows from that.
+A reading that is technically precise enough to respect what they already know, voiced beautifully enough to feel like it was written specifically for them, and delivered in a visual system that honors the actual tradition they've been studying — that's what they've been waiting for.
 
 ---
 
-## Immediate Implications for the Next Three Sessions
+## The Corporate Vertical Is a Separate Product
 
-**This session:** Research filed, UX pole resolved.
+Sky-at-work (already live, already getting organic adoption) maps to a distinct market: professional women who want to use astrological timing the way Jordan uses it — for career moves, salary negotiation, navigating workplace dynamics. Not horoscopes, strategic intelligence.
 
-**Next priority (before first Etsy listing):**
-1. Add PWA manifest to carina.html template — home screen delivery
-2. Ship Mimi's reading using carina.html as the canonical template (first reading on the new template)
-3. Embed chart wheel iframe into the reading
+This is B2B SaaS, not a feature of the personal subscription app:
+- Per-team monthly subscription ($200-400/month)
+- Corporate timing consults ($85-125/reading)
+- Separate brand and acquisition channel (LinkedIn, not TikTok or Instagram)
+- Separate positioning (strategic, not spiritual)
 
-**Before $1,000/month:**
-4. Etsy listing live — Full Reading at $55, Essential at $35
-5. Five free readings to friends (Marina, Miriam, Kate, Cat, Carina) — ask for reviews
-6. Add planet-specific glyph prominence to the sg-scatter layer (make each reading's background cosmically personal)
+Run both. Don't merge them. The live test in Slack is already validating the concept.
 
-**Phase 2 trigger (at 10 reviews):**
-7. Deep Dive tier at $85 live
-8. Transit subscription at $15/month
+---
+
+## Phase 1 Correction: Etsy Is Validation, Not Identity
+
+The Etsy phase (5 free readings → 5 reviews → first paying customer) remains the right tactical move for Phase 1. It answers the question: does the reading quality land with real people who paid for it?
+
+But Etsy should never be the brand. The listing exists to collect social proof, not to define the product. The URL (GitHub Pages), the reading format (the scroll), the visual system (Whimsigoth) — these are the product. Etsy is just the payment rail and discovery engine for the first 10-20 customers.
+
+Phase 2 moves delivery to a direct URL with a proper intake form. Phase 3 is the subscription app. Etsy is scaffolding.
+
+---
+
+## What the Build Needs to Support This Vision
+
+### The chart vault (the architectural foundation)
+
+Every feature Jordan named depends on one thing: the app holding a user's birth chart as a persistent, queryable object. Every reading, ritual, and synastry calculation runs against that chart. The chart vault — birth data, calculated positions, aspect table, house cusps — is the data layer the whole product sits on.
+
+This is already being built. The carina.md file is the manual version. The Swiss Ephemeris calculation layer is the prototype. Phase 3 needs this as a proper database schema: one record per chart, all positions pre-calculated, transits calculated fresh daily.
+
+### Multiple reading types (not just natal)
+
+The reading pipeline needs to scale into at least five types:
+1. Natal (already built — carina.html is the template)
+2. Daily transit (what Claudia generates for Jordan — automated, personalized)
+3. Synastry (two-chart comparison, in-depth relationship interpretation)
+4. Area-specific (natal through the lens of career/love/money/body)
+5. Ritual (new moon, full moon, wheel of the year — action-oriented, ceremonial)
+
+Each type needs its own reading template, voice register, and generation logic. The natal template is done. Daily transit is partially built (Jordan's morning routine). The others are next.
+
+### The return-visit architecture
+
+The natal reading scroll solves "why do I come to this product." The daily reading solves "why do I come back every day." Rituals solve "why does this feel like a practice, not just an app." Together these create the retention loop that no competitor has: the product grows more valuable the longer you stay.
+
+This is not a feature to add later. It is the subscription model's entire justification. Without the daily reading and the ritual layers, the subscription has no recurring reason to exist.
+
+---
+
+## The One-Sentence Brand Position (Updated)
+
+"Your AI astrologer who lives with your chart — daily readings, rituals, synastry, and the full turning year, all written to you."
+
+---
+
+## Immediate Next Steps (Unchanged)
+
+Before first Etsy listing:
+1. Add PWA manifest to reading template
+2. Ship Mimi's reading (first on canonical template)
+3. Embed chart wheel into reading
+
+Before $1,000/month:
+4. Etsy listing live — Full Reading $55, Essential $35
+5. Five friend readings, five reviews
+6. Planet-specific glyph prominence in sg-scatter layer
+
+Phase 2 trigger (at 10 reviews):
+7. Deep Dive $85 live
+8. Transit subscription $15/month
 9. Semi-automated intake pipeline
+10. Begin daily transit reading template (the format that becomes the subscription's daily delivery)
 
 ---
 
 *Filed: the build/market-strategy-2026-06-05.md*
-*Cross-reference: competitor-research-2026-06-05.md, product-decisions.md, app-vision.md*
+*Cross-reference: competitor-research-2026-06-05.md, product-decisions.md, app-vision.md, agent-architecture.md*
