@@ -55,8 +55,16 @@ Gemini Sun · Pisces Moon · Scorpio Rising · Jupiter on MC · v2 design (June 
 [chart-wheel.html](https://jordanb1993.github.io/astro-readings/natal%20readings/chart-wheel.html)
 Interactive natal chart wheel · Whimsigoth Sacred Geometry · floating key ✦
 
+**Mimi**
+[mimi.html](https://jordanb1993.github.io/astro-readings/natal%20readings/mimi.html)
+Aries Sun · Leo Moon · Scorpio Rising · Fire Grand Trine · NNode exact sextile MC
+
+**Mimi — Chart Wheel**
+[mimi-wheel.html](https://jordanb1993.github.io/astro-readings/natal%20readings/mimi-wheel.html)
+Interactive natal chart wheel · April 9, 1995 · Chicago
+
 ---
 
 ## Pending
 
-Cat · Mimi — birth data needed
+Cat — birth data needed
