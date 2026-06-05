@@ -492,7 +492,7 @@
       border-radius: 0 5px 5px 0;
       font-family: 'Cormorant Garamond', serif;
       font-style: italic;
-      font-size: 1.13rem;
+      font-size: 1.20rem;
       color: var(--gold);
       line-height: 1.65;
     }
@@ -708,7 +708,7 @@
     .planet-pill {
       display: inline-flex; align-items: center; gap: 6px;
       padding: 5px 13px; border-radius: 20px;
-      font-family: 'Inter', sans-serif; font-size: 0.66rem; font-weight: 400;
+      font-family: 'Inter', sans-serif; font-size: 0.70rem; font-weight: 400;
       letter-spacing: 0.04em; border: 1px solid; white-space: nowrap;
       cursor: default;
     }
@@ -722,7 +722,7 @@
     @media (max-width: 680px) {
       .planet-strip-wrap { padding: 36px 18px 0; }
       .planet-strip { gap: 5px; }
-      .planet-pill { font-size: 0.62rem; padding: 4px 10px; }
+      .planet-pill { font-size: 0.66rem; padding: 4px 10px; }
     }
 
 
@@ -916,6 +916,47 @@
       width: 100vw; height: 100vh;
       opacity: 1;
     }
+
+    /* ── CHART WHEEL EMBED ── */
+    .wheel-embed-wrap { padding: 52px 44px 0; }
+    .wheel-iframe {
+      display: block; width: 100%; height: 680px;
+      border: none; border-radius: 12px;
+      outline: 1px solid var(--border);
+      background: var(--bg);
+    }
+    @media (max-width: 680px) {
+      .wheel-embed-wrap { padding: 36px 0 0; }
+      .wheel-iframe { height: 100vw; border-radius: 0; }
+    }
+
+    /* ── PLANET PILL TOOLTIPS ── */
+    .planet-pill { position: relative; }
+    .planet-pill[data-tip]::after {
+      content: attr(data-tip);
+      position: absolute;
+      bottom: calc(100% + 10px);
+      left: 50%; transform: translateX(-50%);
+      background: rgba(8,14,36,0.97);
+      border: 1px solid rgba(208,168,64,0.28);
+      border-radius: 8px;
+      padding: 9px 14px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.68rem; font-weight: 400;
+      color: var(--text); line-height: 1.55;
+      white-space: nowrap;
+      pointer-events: none;
+      opacity: 0; transition: opacity 0.18s;
+      z-index: 200;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 8px 28px rgba(0,0,0,0.45);
+      letter-spacing: 0.01em;
+    }
+    .planet-pill[data-tip]:hover::after { opacity: 1; }
+    @media (max-width: 680px) {
+      .planet-pill[data-tip]::after { display: none; }
+    }
   </style>
 </head>
 <body>
@@ -1002,30 +1043,40 @@
   <div class="corner bl">✦</div>
   <div class="corner br">✦</div>
 
-  <svg class="hero-col left" width="26" viewBox="0 0 26 460" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" style="height:100vh">
-    <line x1="13" y1="0" x2="13" y2="460" stroke="#3e6fa0" stroke-width="0.8" opacity="0.22"/>
+  <svg class="hero-col left" width="26" viewBox="0 0 26 900" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" style="height:100vh">
+    <line x1="13" y1="0" x2="13" y2="900" stroke="#3e6fa0" stroke-width="0.8" opacity="0.22"/>
     <text x="13" y="52"  text-anchor="middle" font-size="15" fill="#d0a840" opacity="0.68" font-family="serif">☽</text>
-    <text x="13" y="108" text-anchor="middle" font-size="10" fill="#f0e4cc" opacity="0.44" font-family="serif">✦</text>
-    <text x="13" y="164" text-anchor="middle" font-size="14" fill="#d4a0b5" opacity="0.58" font-family="serif">☉</text>
-    <circle cx="13" cy="206" r="1.5" fill="#d0a840" opacity="0.44"/>
-    <text x="13" y="254" text-anchor="middle" font-size="10" fill="#d4a0b5" opacity="0.50" font-family="serif">✧</text>
-    <text x="13" y="308" text-anchor="middle" font-size="15" fill="#f0e4cc" opacity="0.30" font-family="serif">☾</text>
-    <text x="13" y="364" text-anchor="middle" font-size="10" fill="#d0a840" opacity="0.44" font-family="serif">✦</text>
-    <circle cx="13" cy="402" r="1.2" fill="#f0e4cc" opacity="0.34"/>
-    <text x="13" y="448" text-anchor="middle" font-size="11" fill="#d0a840" opacity="0.40" font-family="serif">☉</text>
+    <text x="13" y="112" text-anchor="middle" font-size="10" fill="#f0e4cc" opacity="0.44" font-family="serif">✦</text>
+    <text x="13" y="180" text-anchor="middle" font-size="14" fill="#d4a0b5" opacity="0.58" font-family="serif">☉</text>
+    <circle cx="13" cy="240" r="1.5" fill="#d0a840" opacity="0.44"/>
+    <text x="13" y="300" text-anchor="middle" font-size="10" fill="#d4a0b5" opacity="0.50" font-family="serif">✧</text>
+    <text x="13" y="368" text-anchor="middle" font-size="15" fill="#f0e4cc" opacity="0.30" font-family="serif">☾</text>
+    <circle cx="13" cy="432" r="1.2" fill="#f0e4cc" opacity="0.34"/>
+    <text x="13" y="498" text-anchor="middle" font-size="10" fill="#d0a840" opacity="0.44" font-family="serif">✦</text>
+    <text x="13" y="564" text-anchor="middle" font-size="11" fill="#d0a840" opacity="0.40" font-family="serif">☉</text>
+    <text x="13" y="634" text-anchor="middle" font-size="14" fill="#d4a0b5" opacity="0.48" font-family="serif">☽</text>
+    <circle cx="13" cy="698" r="1.5" fill="#d0a840" opacity="0.36"/>
+    <text x="13" y="762" text-anchor="middle" font-size="10" fill="#f0e4cc" opacity="0.38" font-family="serif">✧</text>
+    <text x="13" y="830" text-anchor="middle" font-size="15" fill="#d0a840" opacity="0.32" font-family="serif">☾</text>
+    <circle cx="13" cy="882" r="1.2" fill="#d4a0b5" opacity="0.28"/>
   </svg>
 
-  <svg class="hero-col right" width="26" viewBox="0 0 26 460" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" style="height:100vh">
-    <line x1="13" y1="0" x2="13" y2="460" stroke="#3e6fa0" stroke-width="0.8" opacity="0.22"/>
+  <svg class="hero-col right" width="26" viewBox="0 0 26 900" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" style="height:100vh">
+    <line x1="13" y1="0" x2="13" y2="900" stroke="#3e6fa0" stroke-width="0.8" opacity="0.22"/>
     <text x="13" y="52"  text-anchor="middle" font-size="10" fill="#f0e4cc" opacity="0.44" font-family="serif">✦</text>
-    <text x="13" y="108" text-anchor="middle" font-size="15" fill="#d0a840" opacity="0.60" font-family="serif">☾</text>
-    <text x="13" y="164" text-anchor="middle" font-size="10" fill="#d4a0b5" opacity="0.50" font-family="serif">✧</text>
-    <circle cx="13" cy="206" r="1.5" fill="#d0a840" opacity="0.38"/>
-    <text x="13" y="254" text-anchor="middle" font-size="14" fill="#d0a840" opacity="0.54" font-family="serif">☉</text>
-    <text x="13" y="308" text-anchor="middle" font-size="15" fill="#f0e4cc" opacity="0.28" font-family="serif">☽</text>
-    <circle cx="13" cy="350" r="1.2" fill="#d4a0b5" opacity="0.42"/>
-    <text x="13" y="400" text-anchor="middle" font-size="10" fill="#d0a840" opacity="0.50" font-family="serif">✦</text>
-    <text x="13" y="448" text-anchor="middle" font-size="11" fill="#f0e4cc" opacity="0.36" font-family="serif">☉</text>
+    <text x="13" y="112" text-anchor="middle" font-size="15" fill="#d0a840" opacity="0.60" font-family="serif">☾</text>
+    <text x="13" y="180" text-anchor="middle" font-size="10" fill="#d4a0b5" opacity="0.50" font-family="serif">✧</text>
+    <circle cx="13" cy="240" r="1.5" fill="#d0a840" opacity="0.38"/>
+    <text x="13" y="300" text-anchor="middle" font-size="14" fill="#d0a840" opacity="0.54" font-family="serif">☉</text>
+    <text x="13" y="368" text-anchor="middle" font-size="15" fill="#f0e4cc" opacity="0.28" font-family="serif">☽</text>
+    <circle cx="13" cy="432" r="1.2" fill="#d4a0b5" opacity="0.42"/>
+    <text x="13" y="498" text-anchor="middle" font-size="10" fill="#d0a840" opacity="0.50" font-family="serif">✦</text>
+    <text x="13" y="564" text-anchor="middle" font-size="11" fill="#f0e4cc" opacity="0.36" font-family="serif">☉</text>
+    <text x="13" y="634" text-anchor="middle" font-size="15" fill="#d0a840" opacity="0.40" font-family="serif">☾</text>
+    <circle cx="13" cy="698" r="1.5" fill="#d4a0b5" opacity="0.34"/>
+    <text x="13" y="762" text-anchor="middle" font-size="10" fill="#d0a840" opacity="0.36" font-family="serif">✦</text>
+    <text x="13" y="830" text-anchor="middle" font-size="14" fill="#f0e4cc" opacity="0.28" font-family="serif">☽</text>
+    <circle cx="13" cy="882" r="1.2" fill="#d0a840" opacity="0.26"/>
   </svg>
 
   <div class="hero-label">Natal Chart Reading</div>
@@ -1057,6 +1108,15 @@
 
 <!-- ── Thin gold accent line separating header from content ── -->
 <div style="width:100%;height:1px;background:linear-gradient(90deg,transparent,rgba(232,192,64,0.30),rgba(232,192,64,0.55),rgba(232,192,64,0.30),transparent);margin:0;"></div>
+
+<!-- ── CHART WHEEL ── -->
+<div class="wheel-embed-wrap fade-in">
+  <iframe class="wheel-iframe"
+          src="chart-wheel.html?embed=1"
+          frameborder="0"
+          scrolling="no"
+          title="Carina — Natal Chart Wheel"></iframe>
+</div>
 
 <!-- ── IDENTITY TRIO ── -->
 <div class="trio-wrap fade-in">
@@ -1141,18 +1201,18 @@
 <div class="planet-strip-wrap fade-in">
   <div class="planet-strip-label">At a Glance</div>
   <div class="planet-strip" id="planetStrip">
-      <span class="planet-pill luminary"><span class="pp-gl">☉︎</span> 20° Gem · 7th</span>
-      <span class="planet-pill luminary"><span class="pp-gl">☽︎</span> 6° Pis · 3rd</span>
-      <span class="planet-pill personal"><span class="pp-gl">☿︎</span> 13° Can · 8th</span>
-      <span class="planet-pill personal"><span class="pp-gl">♀︎</span> 4° Tau · 5th</span>
-      <span class="planet-pill personal"><span class="pp-gl">♂︎</span> 22° Leo · 9th</span>
-      <span class="planet-pill social"><span class="pp-gl">♃︎</span> 4° Lib · 10th</span>
-      <span class="planet-pill social"><span class="pp-gl">♄︎</span> 0° Pis ℞ · 3rd</span>
-      <span class="planet-pill outer"><span class="pp-gl">♅︎</span> 21° Cap ℞ · 2nd</span>
-      <span class="planet-pill outer"><span class="pp-gl">♆︎</span> 20° Cap ℞ · 2nd</span>
-      <span class="planet-pill outer"><span class="pp-gl">♇︎</span> 23° Sco ℞ · 12th</span>
-      <span class="planet-pill point"><span class="pp-gl">⚷︎</span> 19° Leo · 9th</span>
-      <span class="planet-pill point"><span class="pp-gl">☊︎</span> 11° Sag ℞ · 1st</span>
+      <span class="planet-pill luminary" data-tip="Sun · 20° Gemini · 7th house · identity forms through connection and conversation"><span class="pp-gl">☉︎</span> 20° Gem · 7th</span>
+      <span class="planet-pill luminary" data-tip="Moon · 6° Pisces · 3rd house · feeling naturally flows into language"><span class="pp-gl">☽︎</span> 6° Pis · 3rd</span>
+      <span class="planet-pill personal" data-tip="Mercury · 13° Cancer · 8th house · mind drawn to depth, memory, and what's unspoken"><span class="pp-gl">☿︎</span> 13° Can · 8th</span>
+      <span class="planet-pill personal" data-tip="Venus · 4° Taurus · 5th house · love expressed through loyalty, presence, and sensory warmth"><span class="pp-gl">♀︎</span> 4° Tau · 5th</span>
+      <span class="planet-pill personal" data-tip="Mars · 22° Leo · 9th house · drive toward bold self-expression and expansive belief"><span class="pp-gl">♂︎</span> 22° Leo · 9th</span>
+      <span class="planet-pill social" data-tip="Jupiter · 4° Libra · 10th house · growth and recognition through partnership and public life"><span class="pp-gl">♃︎</span> 4° Lib · 10th</span>
+      <span class="planet-pill social" data-tip="Saturn ℞ · 0° Pisces · 3rd house · real authority in communication, earned slowly"><span class="pp-gl">♄︎</span> 0° Pis ℞ · 3rd</span>
+      <span class="planet-pill outer" data-tip="Uranus ℞ · 21° Capricorn · 2nd house · unconventional relationship with money and resources"><span class="pp-gl">♅︎</span> 21° Cap ℞ · 2nd</span>
+      <span class="planet-pill outer" data-tip="Neptune ℞ · 20° Capricorn · 2nd house · idealism woven into the approach to material security"><span class="pp-gl">♆︎</span> 20° Cap ℞ · 2nd</span>
+      <span class="planet-pill outer" data-tip="Pluto ℞ · 23° Scorpio · 12th house · transformative power operating beneath the surface"><span class="pp-gl">♇︎</span> 23° Sco ℞ · 12th</span>
+      <span class="planet-pill point" data-tip="Chiron · 19° Leo · 9th house · wound around visibility and bold self-expression; close to Mars"><span class="pp-gl">⚷︎</span> 19° Leo · 9th</span>
+      <span class="planet-pill point" data-tip="North Node ℞ · 11° Sagittarius · 1st house · soul path toward embodied, self-directed expansion"><span class="pp-gl">☊︎</span> 11° Sag ℞ · 1st</span>
     </div>
 </div><!-- /planet-strip-wrap -->
 
