@@ -645,7 +645,7 @@
       .hero-border-outer { top: 14px; left: 14px; right: 14px; bottom: 14px; }
       .hero-border-inner { top: 22px; left: 22px; right: 22px; bottom: 22px; }
       .hero-name { position: relative; z-index: 2; font-size: clamp(38px, 10.5vw, 56px); }
-      .hero-data { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 20px; max-width: 260px; margin-left: auto; margin-right: auto; }
+      .hero-data { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px 24px; max-width: none; }
       .trio-wrap { padding: 36px 18px 0; }
       .trio { grid-template-columns: 1fr; gap: 12px; }
       .trio-card { padding: 22px 18px 18px; }
@@ -927,10 +927,10 @@
     }
     @media (max-width: 680px) {
       .wheel-embed-wrap { padding: 36px 0 0; }
-      .wheel-iframe { height: 100vw; border-radius: 0; }
+      .wheel-iframe { height: 100vw; border-radius: 0; outline: none; }
     }
 
-    /* ── PLANET PILL TOOLTIPS ── */
+    /* ── PLANET PILL TOOLTIPS (desktop hover) ── */
     .planet-pill { position: relative; }
     .planet-pill[data-tip]::after {
       content: attr(data-tip);
@@ -953,9 +953,43 @@
       box-shadow: 0 8px 28px rgba(0,0,0,0.45);
       letter-spacing: 0.01em;
     }
-    .planet-pill[data-tip]:hover::after { opacity: 1; }
+    @media (hover: hover) {
+      .planet-pill[data-tip]:hover::after { opacity: 1; }
+    }
     @media (max-width: 680px) {
       .planet-pill[data-tip]::after { display: none; }
+    }
+
+    /* ── PILL DETAIL STRIP (tap/click, all devices) ── */
+    .pill-detail {
+      margin-top: 12px;
+      padding: 0 16px;
+      background: rgba(10,14,36,0.92);
+      border: 1px solid rgba(208,168,64,0.20);
+      border-radius: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.80rem; color: var(--muted);
+      line-height: 1.55; letter-spacing: 0.01em;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      max-height: 0; overflow: hidden; opacity: 0;
+      transition: max-height 0.28s ease, opacity 0.22s ease, padding 0.22s ease;
+    }
+    .pill-detail.visible {
+      max-height: 72px; opacity: 1; padding: 11px 16px;
+    }
+    .planet-pill.tip-open.luminary { background: rgba(208,168,64,0.16); border-color: rgba(208,168,64,0.52); }
+    .planet-pill.tip-open.personal { background: rgba(212,160,181,0.16); border-color: rgba(212,160,181,0.52); }
+    .planet-pill.tip-open.social   { background: rgba(74,159,212,0.16);  border-color: rgba(74,159,212,0.52); }
+    .planet-pill.tip-open.outer    { background: rgba(90,184,168,0.16);  border-color: rgba(90,184,168,0.52); }
+    .planet-pill.tip-open.point    { background: rgba(240,228,200,0.12); border-color: rgba(240,228,200,0.35); }
+
+    /* ── CHART KEY OUTER BUTTON ── */
+    .key-outer-btn {
+      bottom: 90px;
+    }
+    @media (max-width: 680px) {
+      .key-outer-btn { bottom: 76px; right: 18px; }
     }
   </style>
 </head>
@@ -1214,6 +1248,7 @@
       <span class="planet-pill point" data-tip="Chiron · 19° Leo · 9th house · wound around visibility and bold self-expression; close to Mars"><span class="pp-gl">⚷︎</span> 19° Leo · 9th</span>
       <span class="planet-pill point" data-tip="North Node ℞ · 11° Sagittarius · 1st house · soul path toward embodied, self-directed expansion"><span class="pp-gl">☊︎</span> 11° Sag ℞ · 1st</span>
     </div>
+  <div class="pill-detail" id="pillDetail"></div>
 </div><!-- /planet-strip-wrap -->
 
 <div class="data-wrap fade-in">
@@ -1509,10 +1544,23 @@
   Gemini Sun · Pisces Moon · Scorpio Rising · Placidus House System
 </div>
 
+<button class="save-btn key-outer-btn" onclick="toggleChartKey()">
+  <span class="save-btn-icon">◈</span>
+  Chart Key
+</button>
+
 <button class="save-btn" onclick="savePDF()">
   <span class="save-btn-icon">✦</span>
   Save as PDF
 </button>
+
+<script>
+  // ── CHART KEY — postMessage to embedded wheel iframe ────────────────────
+  function toggleChartKey() {
+    const iframe = document.querySelector('.wheel-iframe');
+    if (iframe) iframe.contentWindow.postMessage('toggle-key', '*');
+  }
+</script>
 
 <script>
   function savePDF() {
@@ -1564,6 +1612,41 @@
 
     body.appendChild(expanded);
     body.appendChild(btn);
+  });
+
+  // ── PLANET PILL TAP-TO-DETAIL (all devices) ─────────────────────────────
+  const pillDetail = document.getElementById('pillDetail');
+  let activePill = null;
+
+  document.querySelectorAll('.planet-pill[data-tip]').forEach(pill => {
+    pill.setAttribute('tabindex', '0');
+    pill.addEventListener('click', function(e) {
+      e.stopPropagation();
+      if (activePill === this) {
+        this.classList.remove('tip-open');
+        pillDetail.classList.remove('visible');
+        pillDetail.textContent = '';
+        activePill = null;
+      } else {
+        if (activePill) activePill.classList.remove('tip-open');
+        this.classList.add('tip-open');
+        pillDetail.textContent = this.dataset.tip;
+        pillDetail.classList.add('visible');
+        activePill = this;
+      }
+    });
+    pill.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); this.click(); }
+    });
+  });
+
+  document.addEventListener('click', () => {
+    if (activePill) {
+      activePill.classList.remove('tip-open');
+      pillDetail.classList.remove('visible');
+      pillDetail.textContent = '';
+      activePill = null;
+    }
   });
 </script>
 </body>

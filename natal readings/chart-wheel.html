@@ -225,7 +225,7 @@ html.embed body {
 html.embed .chart-label,
 html.embed .chart-sub { display: none; }
 html.embed .chart-wrap { width: 100%; height: min(100vw, 680px); }
-html.embed .key-btn { bottom: 12px; right: 12px; width: 42px; height: 42px; font-size: 1.1rem; }
+html.embed .key-btn { display: none; }
 
 /* ── TABLET (≤768px) ── */
 @media (max-width: 768px) {
@@ -1010,6 +1010,12 @@ overlay.addEventListener('touchstart', e => { _swipeX = e.touches[0].clientX; },
 overlay.addEventListener('touchend', e => {
   if (e.changedTouches[0].clientX - _swipeX > 80) closeKey();
 }, { passive: true });
+
+// postMessage bridge — allows parent page to toggle key when embedded
+window.addEventListener('message', e => {
+  if (e.data === 'toggle-key')
+    overlay.classList.contains('open') ? closeKey() : openKey();
+});
 </script>
 </body>
 </html>
