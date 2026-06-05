@@ -39,7 +39,7 @@
 - Sun in Gemini, 7th house: identity through connection
 - North Node Sagittarius, 1st house: soul path toward embodied self-direction
 - Mars conjunct Chiron in Leo (9th), square Pluto (0.44°): drive and wound are linked
-- Jupiter on the MC: built for visible public recognition
+- Jupiter in the 10th house: built for visible public recognition
 
 ---
 
