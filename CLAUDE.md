@@ -50,7 +50,7 @@ After processing, clear the entries from capture.md (keep the header, remove the
 
 **Write-only files — never read, never load (except as noted):**
 - `daily readings/2026-04/*.html` — legacy HTML readings from April. Ignore; the `.md` is the source of truth.
-- `natal readings/*.html` — visual output for natal/special readings. **Exception: read `carina.html` (v2 canonical template, June 2026) at the start of any new natal chart reading or chart wheel build session.** This is the design-complete template — all whimsy CSS, glassmorphism, site-wide constellation background, celestial columns, watercolor effects, collapsible dives, planet pills are already built in. Reading it produces dramatically better first drafts. Do not read older templates (iza.html, dasha.html) for new builds — they are v1 and outdated. Do not read for any other purpose (e.g., checking a past reading — read the `.md` instead).
+- `natal readings/*.html` — visual output for natal/special readings. **Exception: read `mimi.html` (v3 canonical template, June 2026) at the start of any new natal chart reading or chart wheel build session.** This is the design-complete v3 template — inline SVG chart wheel, bottom sheet key, archetype card, free verse poem, full mobile optimization. Reading it produces dramatically better first drafts. `carina.html` is now also a full v3 build (ported June 2026) — functionally equivalent to `mimi.html`. Either file can serve as a template. Do not read older templates (iza.html, dasha.html, jordan-natal.html) for new builds. Do not read for any other purpose (e.g., checking a past reading — read the `.md` instead).
 - `_archive/_template.html` — only read if explicitly rebuilding the reading HTML template.
 - All images in `_archive/images/` (`*.jpg`, `*.png`) — visual references, not needed for calculation.
 
@@ -480,19 +480,21 @@ Lightened deep indigo background (`--bg: #090b1f`), lighter surface cards (`--su
 
 ## Birth Chart Readings — Natal Readings Folder
 
-Natal chart readings live in `natal readings/` (not `daily readings/`). **`natal readings/carina.html`** is the canonical v2 template (June 2026) — use this for all new builds. `jordan-natal.html` is the v1 original (April 2026) and is kept as historical reference only. The v2 template includes all of the following built in:
+Natal chart readings live in `natal readings/` (not `daily readings/`). **`natal readings/mimi.html`** is the canonical v3 template (June 2026) — use this for all new builds. Previous versions: `carina.html` (v2, valid design reference), `jordan-natal.html` (v1, historical only). The v3 template includes all of the following:
 - **Identity Trio** — 3-column Sun / Moon / Rising summary cards at the top
 - **Chart Signature panel** — chart ruler, stelliums, anaretic degree, 7th house notes
-- **Natal Planets strip** — all placements at a glance
+- **Natal Planets strip** — all placements at a glance, click-to-key on mobile
 - **Key Natal Aspects strip** — tightest natal aspects with orb bars
-- **Theme tags** — inside each collapsible section (e.g., IDENTITY = SOUL PATH)
-- **Collapsible sections per planet/axis** — same v2 collapse/reveal mechanics as transit readings
+- **Collapsible deep-dive sections** — per planet/axis, collapse/reveal with Read more
+- **Inline SVG chart wheel** — no iframe; generated directly in the page; bottom sheet key with tabs (Placements / Aspects / Houses); planet glyphs are tappable and open to the correct key row
+- **Archetype card** — tarot-proportioned flip card, Gothic gate SVG illustration, jewel-tone watercolor CSS background, 3D flip reveals interpretation on back (full SOP below)
+- **Free verse poem** — 4 stanzas written specifically for this person's chart (full SOP below)
 
-When building a friend's natal chart: use `natal readings/carina.html` as the template (v2 canonical). Design is fully inherited — only update content. Full SOP in `natal readings/README.md`. Birth data needed: date, time, location.
+When building a friend's natal chart: use `natal readings/mimi.html` as the template (v3 canonical). Copy the file, update the `CHART` constant, the `HOUSES` array, all content sections, the archetype card, and the poem. Birth data needed: date, time, location.
 
-**Chart Wheel — `natal readings/chart-wheel.html`** (built June 4, 2026): A separate, self-contained HTML file that generates a visual circular natal chart wheel from Swiss Ephemeris data. Carina's chart is baked in as the first build. For any new chart: copy the file, replace the `CHART` constant with the new person's data, update the title. Full SOP in `natal readings/README.md`. Aesthetic: Whimsigoth Sacred Geometry — jewel navy + warm gold + element arcs + watercolor house fills + sacred geometry sunburst center. Fully mobile-audited. Embed via `?embed=1` for iframe integration into natal reading HTML pages.
+**Chart Wheel** — the v3 build embeds the chart wheel inline (no separate file needed). The inline wheel uses renamed SVG helpers (`wEl`, `wTx`, `glTx`) to avoid conflicts with existing page scripts. If a standalone wheel is needed, use `mimi-wheel.html` as the template.
 
-**Token rule exception for chart wheel builds:** Read `natal readings/chart-wheel.html` (or another recent wheel) at the start of any new chart wheel session — it is the live template and must be read to produce a correct build. Do not read it for any other purpose.
+**Token rule exception:** Read `natal readings/mimi.html` at the start of any new natal chart build session — it is the live v3 template. Do not read it for any other purpose.
 
 ---
 
@@ -695,7 +697,57 @@ One sentence, or two at most if the sky genuinely has two distinct energies. The
 
 **Write to this specific person, not the archetype.** Every person has the same Scorpio Moon archetype in the books. This person has *their* Scorpio Moon — write to what that means for who they specifically are, drawing on what you know about them.
 
-**Through-Line synthesizes, it doesn't list.** Three short paragraphs. No new placements introduced — just the pattern that holds all the pieces together. Always close with: *"The chart doesn't predict what happens. It describes the terrain and the nature of the person walking it."*
+**The closing section is an Archetype Card + a free verse poem.** The old "Through-Line" section is retired. Every v3 natal chart closes with these two elements in sequence. Full SOP for each:
+
+---
+
+#### Archetype Card SOP
+
+**What it is:** A tarot-proportioned interactive card (300×510px) with a 3D flip. Front = illustration + name. Back = interpretation. Built in `mimi.html` — copy the entire `.card-wrap` section and update the four things below.
+
+**The four things to update for each person:**
+1. **Archetype name** — derive from the chart's central tension, not a planet name. Poetic, specific, tarot-sounding. Examples: "The Threshold Keeper" (Scorpio Rising + fire grand trine), "The Lantern Bearer," "The Tide Caller." Name what the person *does* or *holds*, not what they *are*.
+2. **Roman numeral** — choose one with thematic resonance. XIII = transformation (Scorpio). XI = strength/courage (Leo). XII = the hidden/spiritual (12th house emphasis). IX = the seeker (Sagittarius). Use judgment.
+3. **Subtitle** — "Sun Sign · Moon Sign · Rising Sign" exactly as in `mimi.html`.
+4. **Back copy** — two short paragraphs in Cormorant Garamond italic. Plain language. No planet names, no house numbers. Explain what the archetype holds and what it asks of the person. Written for the person to read, not the astrologer.
+
+**The Gothic arch is the canonical visual motif.** Every card uses the Gothic pointed arch — three concentric tracery layers, decorated posts, diamond ornaments at apex and crossbar, flame or other element inside. What changes per person is what's *inside* the arch and the *character* of the flame. Do not replace the arch with a different structure — iterate on it. The watercolor background CSS (`card-wc`) uses 7 radial gradients; adjust the colors to suit the person's chart (fire emphasis = warm reds/ambers; water emphasis = deep teals/blues; etc.).
+
+**No zodiac glyphs, no planet symbols on the card.** The illustration speaks in imagery — fire, water, doorways, light. Never technical.
+
+**Card tap affordance:** The front face has a `.card-hint` containing a `.card-hint-pill` — a pulsing bordered pill (mirrors planet pill aesthetic) that says "tap to reveal 🗝". The 🗝 skeleton key icon also appears on the Chart Key button. Both were intentional design choices — do not revert to ✦.
+
+**OG social preview:** Each natal chart HTML has Open Graph + Twitter Card meta tags pointing to an `og-[name].jpg` image file (1200×630, hero screenshot). Add these when building any new chart so the link preview looks beautiful when shared. Image lives at `natal readings/og-[name].jpg`, URL is `https://jordanb1993.github.io/astro-readings/natal%20readings/og-[name].jpg`.
+
+---
+
+#### Free Verse Poem SOP
+
+**What it is:** 4 stanzas, ~3 lines each. Written specifically for this person's natal chart. Closes the reading. Jordan (MFA, Trinity College Dublin) treats this as a real literary artifact — it must hold up as a poem, not just as astrology writing.
+
+**The arc:** Each stanza corresponds to one layer of the chart's truth:
+1. The gift — what came naturally, the ease or the fire (grand trines, dominant element, what was already running at birth)
+2. The gate — how they protect it, their Rising sign's role as threshold
+3. The love / relational truth — Venus/Moon placement, how they connect
+4. The open question — the unresolved thing, the place where they're still deciding. End here. Do not resolve it.
+
+**Rules — non-negotiable:**
+- **All present tense.** No past tense anywhere. "You arrive," not "you arrived." "The door knows," not "the door has always known."
+- **No em dashes.** Use commas, periods, or line breaks instead.
+- **No technical language.** No planet names, sign names, house numbers. Speak in images: fire, door, ocean, light, dark, gate, threshold.
+- **End stanzas on the strongest word.** Never end on a weak word ("there," "it," "me," "why" when it's a trailing word).
+- **Do not explain.** If a stanza needs a line to explain what the previous line meant, cut one of them.
+- **Cut negations.** "This is not a contradiction" tells the reader what something isn't. Assert what it is instead.
+- **Cut hedging.** "Some part of you," "perhaps," "in a way" — remove all of it. The poem commits.
+- **End on an open question, not a resolution.** The last stanza should leave something alive and unresolved — that's where the person actually is.
+
+**Proofreading pass — always do this before finalizing:**
+1. Read every line: what is this actually saying in plain everyday language? If you can't say it plainly, the line isn't working.
+2. Check every verb: is it present tense?
+3. Check every line ending: is it the strongest word available?
+4. Check for redundancy: do two lines say the same thing? Cut one.
+5. Check for explanation: does any line explain what the poem just showed? Cut it.
+6. Read the whole poem aloud. If any line stops the breath awkwardly, revise it.
 
 **No section eyebrow/title above deep-dive cards** (creates double title). No emojis in any section title.
 
