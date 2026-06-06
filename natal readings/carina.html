@@ -536,69 +536,6 @@
     }
     .syn-body { font-size: 0.91rem; color: var(--muted); line-height: 1.75; }
 
-    /* ── THROUGH-LINE ── */
-    .thread-wrap { padding: 44px 44px 0; }
-
-    .thread {
-      position: relative;
-      overflow: hidden;
-      border: 1px solid rgba(62, 130, 185, 0.22);
-      border-radius: 12px;
-      padding: 52px 52px 48px;
-      text-align: center;
-      background: radial-gradient(ellipse at 50% 10%, #142040 0%, #0d1832 45%, #09102a 100%);
-    }
-
-    .thread-stars { position: absolute; inset: 0; pointer-events: none; }
-
-    .thread-border {
-      position: absolute;
-      top: 16px; left: 16px; right: 16px; bottom: 16px;
-      border: 1px solid rgba(62, 130, 185, 0.10);
-      pointer-events: none;
-    }
-
-    .thread-ornament {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.4rem;
-      letter-spacing: 0.55em;
-      color: var(--gold);
-      opacity: 0.52;
-      display: block;
-      margin-bottom: 28px;
-      padding-left: 0.55em;
-      position: relative;
-    }
-
-    .thread-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2rem;
-      font-weight: 300;
-      color: var(--text);
-      letter-spacing: 0.04em;
-      margin-bottom: 28px;
-      position: relative;
-    }
-
-    .thread p {
-      max-width: 620px;
-      margin: 0 auto 18px;
-      font-size: 0.94rem;
-      line-height: 1.85;
-      color: var(--muted);
-      position: relative;
-    }
-
-    .thread-close {
-      margin-top: 36px;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.62rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--muted-2);
-      position: relative;
-    }
-
     /* ── FOOTER ── */
     .footer {
       text-align: center;
@@ -610,39 +547,11 @@
       line-height: 1.9;
     }
 
-    /* ── PDF BUTTON ── */
-    .save-btn {
-      position: fixed;
-      bottom: 32px; right: 32px;
-      z-index: 999;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 12px 22px;
-      background: radial-gradient(ellipse at 30% 50%, #121e36 0%, #0d1c38 100%);
-      border: 1px solid rgba(201, 168, 76, 0.45);
-      border-radius: 40px;
-      cursor: pointer;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.72rem;
-      font-weight: 500;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--gold);
-      box-shadow: 0 4px 24px rgba(0,0,0,0.5), 0 0 0 1px rgba(201,168,76,0.10);
-      transition: border-color 0.2s, box-shadow 0.2s;
-    }
-    .save-btn:hover {
-      border-color: rgba(201, 168, 76, 0.75);
-      box-shadow: 0 4px 32px rgba(0,0,0,0.6), 0 0 20px rgba(201,168,76,0.12);
-    }
-    .save-btn-icon { font-size: 1rem; opacity: 0.85; }
 
     /* ── PRINT ── */
     @media print {
       html, body { background: var(--bg) !important; }
       * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
-      .save-btn { display: none !important; }
       .fade-in { opacity: 1 !important; transform: none !important; }
       .dive-expanded { max-height: none !important; opacity: 1 !important; overflow: visible !important; }
       @page { margin: 0; size: 900px var(--doc-height, 9999px); }
@@ -672,12 +581,7 @@
       .dive-body { padding: 20px 18px 18px; gap: 16px; }
       .dive-body p { font-size: 1rem; }
       .pull { font-size: 1rem; padding: 10px 18px; }
-      .thread-wrap { padding: 32px 18px 0; }
-      .thread { padding: 36px 22px 32px; }
-      .thread-title { font-size: 1.65rem; }
-      .thread p { font-size: 1rem; }
       .footer { padding: 32px 18px 44px; font-size: 0.72rem; }
-      .save-btn { bottom: 0; right: 0; left: 0; width: 100%; border-radius: 0; border-left: none; border-right: none; border-bottom: none; border-top: 1px solid rgba(201,168,76,0.35); justify-content: center; font-size: 0.70rem; padding: 13px 16px; background: rgba(9,14,34,0.97); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); box-shadow: 0 -2px 20px rgba(0,0,0,0.5); }
     }
 
 
@@ -854,22 +758,6 @@
       filter: blur(60px); pointer-events: none;
     }
 
-    .thread-wrap { position: relative; overflow: visible; }
-    .thread-wrap::before {
-      content: ''; position: absolute;
-      top: -80px; right: -60px;
-      width: 300px; height: 300px;
-      background: radial-gradient(ellipse, rgba(208,168,64,0.09) 0%, transparent 65%);
-      filter: blur(50px); pointer-events: none; border-radius: 50%;
-    }
-    .thread-wrap::after {
-      content: ''; position: absolute;
-      bottom: -60px; left: -80px;
-      width: 280px; height: 280px;
-      background: radial-gradient(ellipse, rgba(74,159,212,0.08) 0%, transparent 65%);
-      filter: blur(45px); pointer-events: none; border-radius: 50%;
-    }
-
     /* ── Planet strip ── */
     .planet-strip-wrap { position: relative; }
 
@@ -929,18 +817,6 @@
       opacity: 1;
     }
 
-    /* ── CHART WHEEL EMBED ── */
-    .wheel-embed-wrap { padding: 52px 44px 0; }
-    .wheel-iframe {
-      display: block; width: 100%; height: 680px;
-      border: none; border-radius: 12px;
-      outline: 1px solid var(--border);
-      background: var(--bg);
-    }
-    @media (max-width: 680px) {
-      .wheel-embed-wrap { padding: 36px 0 0; }
-      .wheel-iframe { height: 100vw; border-radius: 0; outline: none; }
-    }
 
     /* ── PLANET PILL TOOLTIPS (desktop hover) ── */
     .planet-pill { position: relative; }
@@ -996,12 +872,7 @@
     .planet-pill.tip-open.outer    { background: rgba(90,184,168,0.16);  border-color: rgba(90,184,168,0.52); }
     .planet-pill.tip-open.point    { background: rgba(240,228,200,0.12); border-color: rgba(240,228,200,0.35); }
 
-    /* ── CHART KEY OUTER BUTTON ── */
-    .key-outer-btn {
-      bottom: 90px;
-    }
     @media (max-width: 680px) {
-      .key-outer-btn { display: none !important; }
       /* Mobile edge-to-edge app feel */
       .trio-wrap { padding: 32px 0 0; }
       .trio { gap: 8px; padding: 0 12px; }
@@ -1013,8 +884,6 @@
       .data-wrap { padding: 28px 12px 0; }
       .dive-wrap { padding: 24px 0 0; }
       .dive-section { border-radius: 0; border-left: none; border-right: none; margin-bottom: 20px; }
-      .thread-wrap { padding: 28px 0 0; }
-      .thread { border-radius: 0; border-left: none; border-right: none; }
       .cel-divider { margin: 28px 12px 0; }
     }
 
@@ -1063,6 +932,422 @@
       .hero-big-three { display: flex; }
       .hero-data { display: none; }
     }
+  /* ── INLINE CHART WHEEL ── */
+  .wheel-section {
+    display: flex; justify-content: center;
+    padding: 40px 0 24px;
+  }
+  .wheel-svg {
+    width: min(560px, 92vw); height: min(560px, 92vw);
+    display: block; overflow: visible;
+    user-select: none; -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    font-variant-emoji: text;
+    filter: drop-shadow(0 0 48px rgba(10,22,58,0.90));
+  }
+  .wheel-svg text { font-variant-emoji: text; }
+  @media (max-width: 600px) {
+    .wheel-section { padding: 24px 0 16px; }
+  }
+
+  /* ── KEY TOGGLE BUTTON ── */
+  .key-btn {
+    position: fixed;
+    bottom: 32px; right: 32px;
+    height: 40px;
+    padding: 0 18px 0 14px;
+    border-radius: 40px;
+    background: radial-gradient(ellipse at 30% 50%, #121e36 0%, #0d1c38 100%);
+    border: 1px solid rgba(212,180,80,0.45);
+    color: rgba(212,180,80,0.90);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.68rem; font-weight: 500;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    cursor: pointer;
+    display: flex; align-items: center; gap: 8px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.50), 0 0 0 1px rgba(212,180,80,0.08);
+    transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
+    z-index: 100; touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+    white-space: nowrap;
+  }
+  .key-btn-icon { font-size: 0.90rem; font-family: 'Cormorant Garamond', serif; opacity: 0.88; }
+  .key-btn:hover  { border-color:rgba(212,180,80,0.75); box-shadow:0 4px 32px rgba(0,0,0,0.60),0 0 20px rgba(212,180,80,0.12); }
+  .key-btn:active { transform:scale(0.97); }
+  @media (max-width: 600px) {
+    .key-btn { bottom: 16px; right: 16px; height: 38px; padding: 0 14px 0 12px; font-size: 0.64rem; }
+  }
+  @media print { .key-btn { display: none !important; } }
+
+  /* ── KEY DIM OVERLAY ── */
+  .key-dimmer {
+    position: fixed; inset: 0; z-index: 498;
+    background: rgba(8,22,46,0.30);
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.32s ease;
+  }
+  .key-dimmer.open { opacity: 1; pointer-events: auto; }
+  @media print { .key-dimmer { display: none !important; } }
+
+  /* ── KEY TABS ── */
+  .key-tabs {
+    display: flex; padding: 0 16px;
+    border-bottom: 1px solid rgba(212,180,80,0.10);
+    flex-shrink: 0; gap: 0;
+  }
+  .key-tab {
+    background: none; border: none; cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.60rem; font-weight: 500;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: rgba(240,228,200,0.30);
+    padding: 10px 14px 8px;
+    min-height: 44px;
+    border-bottom: 2px solid transparent; margin-bottom: -1px;
+    transition: color 0.15s, border-color 0.15s;
+    white-space: nowrap; touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .key-tab.active { color: rgba(212,180,80,0.88); border-bottom-color: rgba(212,180,80,0.55); }
+  .key-panel { display: none; }
+  .key-panel.active { display: block; }
+
+  @keyframes ki-pulse {
+    0%   { background: rgba(212,180,80,0.20); border-color: rgba(212,180,80,0.40); }
+    100% { background: rgba(240,228,200,0.022); border-color: rgba(212,180,80,0.07); }
+  }
+  .ki-highlight { animation: ki-pulse 1.1s ease-out forwards; }
+
+  /* ── BOTTOM SHEET KEY ── */
+  .key-overlay {
+    position: fixed; bottom: 0; left: 0; right: 0;
+    height: auto; max-height: 46vh; z-index: 500;
+    background: linear-gradient(180deg,rgba(14,20,54,0.99) 0%,rgba(9,16,42,0.99) 100%);
+    border-top: 1px solid rgba(212,180,80,0.22);
+    border-radius: 18px 18px 0 0;
+    box-shadow: 0 -8px 56px rgba(0,0,0,0.65);
+    display: flex; flex-direction: column;
+    transform: translateY(100%);
+    transition: transform 0.34s cubic-bezier(0.32,0,0.18,1);
+    will-change: transform;
+    backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  }
+  .key-overlay.open { transform: translateY(0); }
+  body.key-open { overflow: hidden; }
+  @media print { .key-overlay { display: none !important; } }
+
+  .key-handle {
+    width: 38px; height: 4px;
+    background: rgba(212,180,80,0.28); border-radius: 2px;
+    margin: 12px auto 0; flex-shrink: 0;
+  }
+  .key-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 10px 22px 12px;
+    border-bottom: 1px solid rgba(212,180,80,0.10); flex-shrink: 0;
+  }
+  .key-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem; font-weight: 300;
+    color: rgba(212,180,80,0.88); letter-spacing: 0.10em; margin: 0;
+  }
+  .key-close {
+    background: none; border: none;
+    color: rgba(240,228,200,0.40); cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    min-width: 44px; min-height: 44px;
+    display: flex; align-items: center; justify-content: center;
+    padding: 4px 8px; transition: color 0.15s; flex-shrink: 0;
+    touch-action: manipulation; -webkit-tap-highlight-color: transparent;
+    font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.08em;
+  }
+  .key-close:hover  { color: rgba(240,228,200,0.80); }
+  .key-close:active { color: rgba(240,228,200,1.00); }
+  .key-content {
+    overflow-y: auto; -webkit-overflow-scrolling: touch;
+    overscroll-behavior-y: contain; flex: 1; min-height: 0;
+    padding: 16px 20px;
+    padding-bottom: max(28px, calc(env(safe-area-inset-bottom) + 16px));
+    scrollbar-width: thin;
+    scrollbar-color: rgba(212,180,80,0.28) transparent;
+  }
+  .key-content::-webkit-scrollbar { width: 4px; }
+  .key-content::-webkit-scrollbar-track { background: transparent; }
+  .key-content::-webkit-scrollbar-thumb { background: rgba(212,180,80,0.28); border-radius: 4px; }
+  .key-content::-webkit-scrollbar-thumb:hover { background: rgba(212,180,80,0.52); }
+  .key-section { margin-bottom: 20px; }
+  .key-sh {
+    font-size: 0.54rem; letter-spacing: 0.26em; text-transform: uppercase;
+    color: rgba(212,180,80,0.45); margin-bottom: 10px;
+    padding-bottom: 6px; border-bottom: 1px solid rgba(212,180,80,0.09);
+  }
+  .key-grid { display: flex; flex-direction: column; gap: 3px; }
+  .ki {
+    display: grid; grid-template-columns: 22px 1fr auto;
+    align-items: center; gap: 0 10px; padding: 8px 10px;
+    background: rgba(240,228,200,0.022); border: 1px solid rgba(212,180,80,0.07);
+    border-radius: 7px; transition: background 0.15s;
+  }
+  .ki:hover { background: rgba(240,228,200,0.045); }
+  .ki-gl {
+    font-size: 16px; font-family: 'Apple Symbols','Segoe UI Symbol','Noto Sans Symbols',serif;
+    flex-shrink: 0; line-height: 1; font-variant-emoji: text; text-align: center;
+  }
+  .ki-main { display: flex; flex-direction: column; gap: 1px; min-width: 0; }
+  .ki-name {
+    font-size: 0.80rem; font-family: 'Cormorant Garamond', serif;
+    color: rgba(240,228,200,0.88);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis; line-height: 1.2;
+  }
+  .ki-note {
+    font-size: 0.60rem; font-family: 'Inter', sans-serif;
+    color: rgba(240,228,200,0.36); letter-spacing: 0.04em; white-space: nowrap;
+  }
+  .ki-house {
+    font-size: 0.62rem; font-family: 'Inter', sans-serif;
+    color: rgba(212,180,80,0.50); letter-spacing: 0.06em;
+    white-space: nowrap; text-align: right;
+  }
+  .ki-asp {
+    display: grid; grid-template-columns: 36px 1fr;
+    align-items: center; gap: 0 10px; padding: 6px 10px;
+    background: rgba(240,228,200,0.018); border: 1px solid rgba(212,180,80,0.06);
+    border-radius: 7px;
+  }
+  .ki-el {
+    display: grid; grid-template-columns: 10px 1fr;
+    align-items: center; gap: 0 10px; padding: 6px 10px;
+    background: rgba(240,228,200,0.018); border: 1px solid rgba(212,180,80,0.06);
+    border-radius: 7px;
+  }
+  .ki-sw { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+
+  /* ── ARCHETYPE CARD ── */
+  .card-wrap {
+    padding: 80px 24px 56px;
+    display: flex; flex-direction: column; align-items: center;
+    position: relative;
+  }
+  .card-wrap-rule {
+    width: 80px; height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(208,168,64,0.30), transparent);
+    margin: 0 auto 56px;
+  }
+  .card-wrap-eyebrow {
+    font-family: 'Inter', sans-serif; font-size: 0.58rem;
+    letter-spacing: 0.28em; text-transform: uppercase;
+    color: rgba(208,168,64,0.38); margin-bottom: 40px; text-align: center;
+  }
+  .archetype-card {
+    width: 300px; height: 510px;
+    perspective: 1200px; cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+  .card-inner {
+    position: relative; width: 100%; height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97);
+  }
+  .archetype-card.flipped .card-inner { transform: rotateY(180deg); }
+  .card-front, .card-back {
+    position: absolute; inset: 0;
+    backface-visibility: hidden; -webkit-backface-visibility: hidden;
+    border-radius: 20px; overflow: hidden;
+    border: 1.5px solid rgba(208,168,64,0.28);
+    box-shadow: 0 8px 48px rgba(0,0,0,0.55), 0 0 0 1px rgba(208,168,64,0.06);
+  }
+  .card-back { transform: rotateY(180deg); }
+
+  /* watercolor base */
+  .card-bg {
+    position: absolute; inset: 0;
+    background: #0e051e;
+  }
+  .card-wc {
+    position: absolute; inset: -20px;
+    background:
+      radial-gradient(ellipse at 15% 20%, rgba(20,60,160,0.72) 0%, transparent 42%),
+      radial-gradient(ellipse at 82% 15%, rgba(60,130,200,0.65) 0%, transparent 40%),
+      radial-gradient(ellipse at 88% 75%, rgba(80,40,180,0.62) 0%, transparent 44%),
+      radial-gradient(ellipse at 18% 85%, rgba(30,100,140,0.68) 0%, transparent 46%),
+      radial-gradient(ellipse at 55% 48%, rgba(100,40,160,0.42) 0%, transparent 40%),
+      radial-gradient(ellipse at 68% 90%, rgba(40,80,160,0.50) 0%, transparent 40%),
+      radial-gradient(ellipse at 40% 5%,  rgba(120,160,220,0.38) 0%, transparent 38%);
+    animation: wc-drift 10s ease-in-out infinite alternate;
+  }
+  @keyframes wc-drift {
+    0%   { opacity: 0.82; transform: scale(1.00) rotate(0deg); }
+    100% { opacity: 1.00; transform: scale(1.04) rotate(0.6deg); }
+  }
+  /* grain overlay via SVG noise */
+  .card-grain {
+    position: absolute; inset: 0; pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.055; mix-blend-mode: overlay;
+  }
+  /* vignette */
+  .card-vignette {
+    position: absolute; inset: 0; pointer-events: none;
+    background: radial-gradient(ellipse at 50% 50%, transparent 40%, rgba(0,0,0,0.55) 100%);
+  }
+  /* double tarot border */
+  .card-border-outer {
+    position: absolute; top: 10px; left: 10px; right: 10px; bottom: 10px;
+    border: 1px solid rgba(208,168,64,0.22); border-radius: 12px; pointer-events: none;
+  }
+  .card-border-inner-line {
+    position: absolute; top: 14px; left: 14px; right: 14px; bottom: 14px;
+    border: 0.5px solid rgba(208,168,64,0.10); border-radius: 9px; pointer-events: none;
+  }
+  /* numeral */
+  .card-numeral {
+    position: absolute; top: 22px; left: 0; right: 0;
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.72rem; letter-spacing: 0.32em;
+    color: rgba(208,168,64,0.68); font-weight: 300;
+  }
+  /* sigil */
+  .card-sigil-wrap {
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -52%);
+    width: 270px; height: 270px;
+  }
+  /* bottom label area */
+  .card-label {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    height: 76px;
+    background: linear-gradient(0deg, rgba(0,0,0,0.72) 0%, transparent 100%);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: flex-end;
+    padding-bottom: 18px;
+  }
+  .card-name-front {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.82rem; letter-spacing: 0.30em;
+    color: rgba(240,228,200,0.92); font-weight: 300; text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+  .card-sub-front {
+    font-family: 'Inter', sans-serif; font-size: 0.50rem;
+    letter-spacing: 0.22em; color: rgba(208,168,64,0.52); text-transform: uppercase;
+  }
+  .card-hint {
+    position: absolute; bottom: 6px; left: 0; right: 0; text-align: center;
+    font-family: 'Inter', sans-serif; font-size: 0.44rem;
+    letter-spacing: 0.16em; color: rgba(240,228,200,0.20); text-transform: uppercase;
+  }
+
+  /* ── CARD BACK ── */
+  .card-back-bg {
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 50% 28%, #1c0e3a 0%, #0a0620 100%);
+  }
+  .card-back-wc {
+    position: absolute; inset: -20px;
+    background:
+      radial-gradient(ellipse at 20% 75%, rgba(30,60,160,0.38) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 22%, rgba(40,100,180,0.32) 0%, transparent 46%),
+      radial-gradient(ellipse at 50% 50%, rgba(60,80,200,0.22) 0%, transparent 55%);
+    animation: wc-drift 12s ease-in-out infinite alternate-reverse;
+  }
+  .card-back-grain { position: absolute; inset: 0; pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.045; mix-blend-mode: overlay;
+  }
+  .card-back-border-outer {
+    position: absolute; top: 10px; left: 10px; right: 10px; bottom: 10px;
+    border: 1px solid rgba(208,168,64,0.18); border-radius: 12px; pointer-events: none;
+  }
+  .card-back-border-inner {
+    position: absolute; top: 14px; left: 14px; right: 14px; bottom: 14px;
+    border: 0.5px solid rgba(208,168,64,0.08); border-radius: 9px; pointer-events: none;
+  }
+  .card-back-content {
+    position: absolute; inset: 0; display: flex;
+    flex-direction: column; align-items: center; justify-content: center;
+    padding: 40px 32px; text-align: center; gap: 0;
+  }
+  .card-back-numeral {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.70rem; letter-spacing: 0.34em;
+    color: rgba(208,168,64,0.50); margin-bottom: 18px;
+  }
+  .card-back-sigil-mini {
+    width: 44px; height: 44px; margin-bottom: 16px; opacity: 0.55;
+  }
+  .card-back-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.38rem; font-weight: 300; letter-spacing: 0.16em;
+    color: rgba(240,228,200,0.94); text-transform: uppercase; line-height: 1.25;
+    margin-bottom: 7px;
+  }
+  .card-back-sub {
+    font-family: 'Inter', sans-serif; font-size: 0.53rem;
+    letter-spacing: 0.22em; color: rgba(208,168,64,0.44); text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  .card-back-rule {
+    width: 36px; height: 1px;
+    background: rgba(208,168,64,0.28); margin-bottom: 22px;
+  }
+  .card-back-body {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.90rem; font-style: italic;
+    color: rgba(240,228,200,0.65); line-height: 1.82;
+  }
+  .card-back-body p { margin-bottom: 10px; }
+  .card-back-body p:last-child { margin-bottom: 0; }
+  .card-back-tap {
+    margin-top: 24px; font-family: 'Inter', sans-serif;
+    font-size: 0.46rem; letter-spacing: 0.18em;
+    color: rgba(240,228,200,0.18); text-transform: uppercase;
+  }
+
+  /* ── POEM ── */
+  .poem-wrap {
+    max-width: 620px; margin: 0 auto;
+    padding: 64px 44px 96px;
+  }
+  .poem-eyebrow {
+    font-family: 'Inter', sans-serif; font-size: 0.58rem;
+    letter-spacing: 0.28em; text-transform: uppercase;
+    color: rgba(208,168,64,0.38); margin-bottom: 52px; display: block;
+  }
+  .verse {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.06rem; font-style: italic;
+    line-height: 2.08; color: rgba(240,228,200,0.68);
+    margin: 0;
+  }
+  .verse em { font-style: normal; color: rgba(240,228,200,0.90); }
+  .poem-sep {
+    display: block; color: rgba(208,168,64,0.28);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.80rem; margin: 30px 0;
+    letter-spacing: 0.5em; padding-left: 0.5em;
+  }
+  .poem-final {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.06rem; font-style: italic;
+    line-height: 2.08; color: rgba(240,228,200,0.68);
+    margin: 0;
+  }
+  .poem-final em { font-style: normal; color: rgba(240,228,200,0.88); }
+  .poem-close-line {
+    display: block; margin-top: 52px;
+    font-family: 'Inter', sans-serif; font-size: 0.58rem;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: rgba(240,228,200,0.16);
+  }
+  @media (max-width: 680px) {
+    .card-wrap { padding: 60px 16px 40px; }
+    .archetype-card { width: 272px; height: 462px; }
+    .poem-wrap { padding: 52px 22px 80px; }
+    .verse, .poem-final { font-size: 1.02rem; line-height: 2.0; }
+  }
+
   </style>
 </head>
 <body>
@@ -1354,6 +1639,7 @@
   <div class="s-dot" data-sec="4"></div>
   <div class="s-dot" data-sec="5"></div>
   <div class="s-dot" data-sec="6"></div>
+  <div class="s-dot" data-sec="7"></div>
 </nav>
 
 <!-- ── HERO ── -->
@@ -1507,13 +1793,47 @@
 <!-- ── Thin gold accent line separating header from content ── -->
 <div style="width:100%;height:1px;background:linear-gradient(90deg,transparent,rgba(232,192,64,0.30),rgba(232,192,64,0.55),rgba(232,192,64,0.30),transparent);margin:0;"></div>
 
-<!-- ── CHART WHEEL ── -->
-<div class="wheel-embed-wrap fade-in" data-section="0">
-  <iframe class="wheel-iframe"
-          src="chart-wheel.html?embed=1"
-          frameborder="0"
-          scrolling="no"
-          title="Carina — Natal Chart Wheel"></iframe>
+<!-- ── CHART WHEEL (inline) ── -->
+<div class="wheel-section fade-in" data-section="0">
+  <svg class="wheel-svg" id="chart-svg" viewBox="-22 -22 764 764" xmlns="http://www.w3.org/2000/svg" style="overflow:visible"></svg>
+</div>
+
+<!-- Key toggle — fixed bottom-right -->
+<button class="key-btn" id="keyBtn" title="Open Chart Key">
+  <span class="key-btn-icon">✦</span>Chart Key
+</button>
+
+<!-- Dim overlay + bottom sheet key -->
+<div class="key-dimmer" id="keyDimmer"></div>
+<div class="key-overlay" id="keyOverlay" role="complementary" aria-label="Chart Key">
+  <div class="key-handle"></div>
+  <div class="key-header">
+    <div class="key-title">Carina's Chart</div>
+    <button class="key-close" id="keyClose" aria-label="Close key">Done</button>
+  </div>
+  <div class="key-tabs">
+    <button class="key-tab active" data-panel="placements">Placements</button>
+    <button class="key-tab" data-panel="aspects">Aspects</button>
+    <button class="key-tab" data-panel="houses">Houses</button>
+  </div>
+  <div class="key-content">
+    <div class="key-panel active" id="panel-placements">
+      <div class="key-grid" id="kP"></div>
+    </div>
+    <div class="key-panel" id="panel-aspects">
+      <div class="key-section">
+        <div class="key-sh">Aspect Lines</div>
+        <div class="key-grid" id="kA"></div>
+      </div>
+      <div class="key-section">
+        <div class="key-sh">Elements</div>
+        <div class="key-grid" id="kE"></div>
+      </div>
+    </div>
+    <div class="key-panel" id="panel-houses">
+      <div class="key-grid" id="kH"></div>
+    </div>
+  </div>
 </div>
 
 <!-- ── IDENTITY TRIO ── -->
@@ -1861,45 +2181,235 @@
 
 </div>
 
-<!-- ── THROUGH-LINE ── -->
-<div class="thread-wrap fade-in" data-section="6">
-  <div class="thread">
+<!-- ── ARCHETYPE CARD ── -->
+<div class="card-wrap fade-in" data-section="6">
+  <div class="card-wrap-rule"></div>
+  <div class="card-wrap-eyebrow">Archetype</div>
 
-    <svg class="thread-stars" viewBox="0 0 900 340" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="58"  cy="68"  r="1.1" fill="#f0e4cc" opacity="0.40"/>
-      <circle cx="198" cy="38"  r="0.8" fill="#d0a840" opacity="0.42"/>
-      <circle cx="355" cy="58"  r="1.3" fill="#f0e4cc" opacity="0.34"/>
-      <circle cx="512" cy="24"  r="0.7" fill="#d4a0b5" opacity="0.40"/>
-      <circle cx="664" cy="50"  r="1.0" fill="#f0e4cc" opacity="0.34"/>
-      <circle cx="814" cy="74"  r="1.1" fill="#d0a840" opacity="0.38"/>
-      <circle cx="870" cy="36"  r="0.8" fill="#f0e4cc" opacity="0.36"/>
-      <circle cx="28"  cy="252" r="0.9" fill="#d0a840" opacity="0.28"/>
-      <circle cx="872" cy="234" r="0.8" fill="#f0e4cc" opacity="0.30"/>
-      <circle cx="450" cy="308" r="0.7" fill="#d4a0b5" opacity="0.26"/>
-      <text x="128" y="118" font-size="11" fill="#d0a840" opacity="0.50" text-anchor="middle" font-family="serif">✦</text>
-      <text x="766" y="136" font-size="8"  fill="#f0e4cc" opacity="0.34" text-anchor="middle" font-family="serif">✧</text>
-      <text x="455" y="18"  font-size="7"  fill="#d0a840" opacity="0.44" text-anchor="middle" font-family="serif">✦</text>
-      <circle cx="800" cy="110" r="80" fill="#d0a840" opacity="0.04"/>
-      <circle cx="800" cy="110" r="40" fill="#d0a840" opacity="0.05"/>
-      <circle cx="88"  cy="240" r="70" fill="#5bb8a8" opacity="0.05"/>
-    </svg>
+  <div class="archetype-card" id="archetypeCard">
+    <div class="card-inner">
 
-    <div class="thread-border"></div>
+      <!-- ── FRONT ── -->
+      <div class="card-front">
+        <div class="card-bg"></div>
+        <div class="card-wc"></div>
+        <div class="card-grain"></div>
+        <div class="card-vignette"></div>
+        <div class="card-border-outer"></div>
+        <div class="card-border-inner-line"></div>
 
-    <span class="thread-ornament">✦ ✦ ✦</span>
-    <h2 class="thread-title">The Through-Line</h2>
+        <div class="card-numeral">XVIII</div>
 
-    <p>A Scorpio rising keeps the full power private. The Gemini Sun in the 7th finds itself most clearly in connection.</p>
-    <p>The intensity and the relatability coexist. They don't always know how to introduce themselves at the same time.</p>
+        <!-- Gothic arch with water ripples + crescent moon -->
+        <div class="card-sigil-wrap">
+          <svg viewBox="0 0 210 220" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
+            <defs>
+              <radialGradient id="fGC" cx="50%" cy="75%" r="60%">
+                <stop offset="0%"   stop-color="#a0c8ff" stop-opacity="0.90"/>
+                <stop offset="35%"  stop-color="#3060c0" stop-opacity="0.80"/>
+                <stop offset="75%"  stop-color="#200880" stop-opacity="0.55"/>
+                <stop offset="100%" stop-color="#080030" stop-opacity="0.00"/>
+              </radialGradient>
+              <radialGradient id="archGlowC" cx="50%" cy="62%" r="45%">
+                <stop offset="0%"   stop-color="#4080e0" stop-opacity="0.30"/>
+                <stop offset="60%"  stop-color="#1030a0" stop-opacity="0.10"/>
+                <stop offset="100%" stop-color="#040060" stop-opacity="0.00"/>
+              </radialGradient>
+              <filter id="fglowC" x="-80%" y="-80%" width="260%" height="260%">
+                <feGaussianBlur stdDeviation="5" result="b"/>
+                <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+              <filter id="softgC" x="-40%" y="-40%" width="180%" height="180%">
+                <feGaussianBlur stdDeviation="2.5" result="b"/>
+                <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+            </defs>
 
-    <p>The North Node in Sagittarius in the 1st is the thread that ties it together. The growth is toward self-direction: believing fully in your own frame, without waiting for someone else's response to tell you whether the belief is worth having.</p>
-    <p>Jupiter in the 10th house says the world will meet you there. The professional recognition — the visibility, the acknowledgment of what you bring — is built into the chart. The question is whether it arrives through relationship, the familiar path, or through your own directed motion. The North Node knows which one is the growth.</p>
+            <!-- ambient glow inside arch -->
+            <ellipse cx="105" cy="148" rx="32" ry="50" fill="url(#archGlowC)"/>
 
-    <p>The chart doesn't predict what happens. It describes the terrain and the nature of the person walking it.</p>
+            <!-- ── OUTER DECORATIVE CIRCLES ── -->
+            <circle cx="105" cy="110" r="88" stroke="rgba(208,168,64,0.07)" stroke-width="0.5"/>
+            <circle cx="105" cy="110" r="80" stroke="rgba(208,168,64,0.05)" stroke-width="0.4" stroke-dasharray="1.5 5"/>
 
-    <div class="thread-close">✦ &nbsp; Reading prepared June 2026 · Placidus · Tropical · Carina</div>
+            <!-- ── LEFT POST ── -->
+            <rect x="66" y="106" width="12" height="98" stroke="rgba(180,210,255,0.42)" stroke-width="0.9" fill="none"/>
+            <line x1="69" y1="106" x2="69" y2="204" stroke="rgba(180,210,255,0.10)" stroke-width="0.4"/>
+            <line x1="75" y1="106" x2="75" y2="204" stroke="rgba(180,210,255,0.10)" stroke-width="0.4"/>
+            <line x1="67" y1="118" x2="77" y2="118" stroke="rgba(180,210,255,0.18)" stroke-width="0.5"/>
+            <line x1="67" y1="130" x2="77" y2="130" stroke="rgba(180,210,255,0.18)" stroke-width="0.5"/>
+            <line x1="67" y1="142" x2="77" y2="142" stroke="rgba(180,210,255,0.18)" stroke-width="0.5"/>
+            <line x1="67" y1="154" x2="77" y2="154" stroke="rgba(180,210,255,0.18)" stroke-width="0.5"/>
+            <line x1="67" y1="166" x2="77" y2="166" stroke="rgba(180,210,255,0.18)" stroke-width="0.5"/>
+            <line x1="67" y1="178" x2="77" y2="178" stroke="rgba(180,210,255,0.18)" stroke-width="0.5"/>
+            <line x1="67" y1="190" x2="77" y2="190" stroke="rgba(180,210,255,0.18)" stroke-width="0.5"/>
 
+            <!-- ── RIGHT POST ── -->
+            <rect x="132" y="106" width="12" height="98" stroke="rgba(180,210,255,0.42)" stroke-width="0.9" fill="none"/>
+            <line x1="135" y1="106" x2="135" y2="204" stroke="rgba(180,210,255,0.10)" stroke-width="0.4"/>
+            <line x1="141" y1="106" x2="141" y2="204" stroke="rgba(180,210,255,0.10)" stroke-width="0.4"/>
+            <line x1="133" y1="118" x2="143" y2="118" stroke="rgba(180,210,255,0.18)" stroke-width="0.5"/>
+            <line x1="133" y1="130" x2="143" y2="130" stroke="rgba(180,210,255,0.18)" stroke-width="0.5"/>
+            <line x1="133" y1="142" x2="143" y2="142" stroke="rgba(180,210,255,0.18)" stroke-width="0.5"/>
+            <line x1="133" y1="154" x2="143" y2="154" stroke="rgba(180,210,255,0.18)" stroke-width="0.5"/>
+            <line x1="133" y1="166" x2="143" y2="166" stroke="rgba(180,210,255,0.18)" stroke-width="0.5"/>
+            <line x1="133" y1="178" x2="143" y2="178" stroke="rgba(180,210,255,0.18)" stroke-width="0.5"/>
+            <line x1="133" y1="190" x2="143" y2="190" stroke="rgba(180,210,255,0.18)" stroke-width="0.5"/>
+
+            <!-- ── GROUND / BASE ── -->
+            <line x1="55" y1="204" x2="155" y2="204" stroke="rgba(180,210,255,0.35)" stroke-width="0.9"/>
+            <line x1="60" y1="207" x2="150" y2="207" stroke="rgba(180,210,255,0.12)" stroke-width="0.5"/>
+
+            <!-- ── GOTHIC POINTED ARCH ── -->
+            <path d="M 66,106 C 66,58 92,30 105,26 C 118,30 144,58 144,106"
+              stroke="rgba(180,210,255,0.44)" stroke-width="0.9" fill="none"/>
+            <path d="M 72,106 C 72,63 94,38 105,34 C 116,38 138,63 138,106"
+              stroke="rgba(180,210,255,0.22)" stroke-width="0.6" fill="none"/>
+            <path d="M 80,106 C 80,70 96,48 105,44 C 114,48 130,70 130,106"
+              stroke="rgba(180,210,255,0.11)" stroke-width="0.5" fill="none"/>
+
+            <!-- ── CROSSBAR / LINTEL ── -->
+            <line x1="66" y1="160" x2="144" y2="160" stroke="rgba(180,210,255,0.22)" stroke-width="0.7"/>
+            <line x1="72" y1="163" x2="138" y2="163" stroke="rgba(180,210,255,0.10)" stroke-width="0.4"/>
+            <g transform="translate(105,161.5)">
+              <rect x="-4" y="-4" width="8" height="8" transform="rotate(45)"
+                stroke="rgba(208,168,64,0.55)" stroke-width="0.7" fill="rgba(208,168,64,0.06)"/>
+              <circle r="1.2" fill="rgba(208,168,64,0.60)"/>
+            </g>
+
+            <!-- ── APEX ORNAMENT — crescent moon ── -->
+            <circle cx="105" cy="26" r="5.5" stroke="rgba(208,168,64,0.65)" stroke-width="0.8" fill="rgba(208,168,64,0.05)"/>
+            <circle cx="105" cy="26" r="2.2" fill="rgba(208,168,64,0.80)" filter="url(#softgC)"/>
+            <line x1="105" y1="17" x2="105" y2="13" stroke="rgba(208,168,64,0.38)" stroke-width="0.7"/>
+            <line x1="113" y1="21" x2="117" y2="18" stroke="rgba(208,168,64,0.28)" stroke-width="0.6"/>
+            <line x1="97"  y1="21" x2="93"  y2="18" stroke="rgba(208,168,64,0.28)" stroke-width="0.6"/>
+            <path d="M 99,18 C 101,14 109,14 111,18" stroke="rgba(208,168,64,0.28)" stroke-width="0.6" fill="none"/>
+
+            <!-- POST DIAMONDS -->
+            <g transform="translate(72,106)">
+              <rect x="-5" y="-5" width="10" height="10" transform="rotate(45)"
+                stroke="rgba(208,168,64,0.58)" stroke-width="0.7" fill="rgba(208,168,64,0.07)"/>
+            </g>
+            <g transform="translate(138,106)">
+              <rect x="-5" y="-5" width="10" height="10" transform="rotate(45)"
+                stroke="rgba(208,168,64,0.58)" stroke-width="0.7" fill="rgba(208,168,64,0.07)"/>
+            </g>
+
+            <!-- ── WATER RIPPLES (replaces flame) ── -->
+            <!-- outermost ripple glow -->
+            <ellipse cx="105" cy="172" rx="28" ry="10" fill="rgba(60,120,220,0.18)" filter="url(#fglowC)"/>
+            <!-- ripple 1 -->
+            <path d="M 80,175 C 87,168 98,166 105,167 C 112,166 123,168 130,175"
+              stroke="rgba(120,180,255,0.52)" stroke-width="0.9" fill="none"/>
+            <!-- ripple 2 -->
+            <path d="M 84,183 C 91,175 100,172 105,173 C 110,172 119,175 126,183"
+              stroke="rgba(100,160,240,0.40)" stroke-width="0.7" fill="none"/>
+            <!-- ripple 3 -->
+            <path d="M 88,191 C 93,184 101,181 105,182 C 109,181 117,184 122,191"
+              stroke="rgba(80,140,220,0.30)" stroke-width="0.6" fill="none"/>
+            <!-- crescent moon inside arch -->
+            <path d="M 105,138 C 96,138 90,145 90,154 C 90,163 96,170 105,170 C 99,165 96,159 96,154 C 96,149 99,143 105,138Z"
+              fill="rgba(160,200,255,0.72)"/>
+            <circle cx="105" cy="154" r="11.5" stroke="rgba(180,210,255,0.38)" stroke-width="0.7" fill="none"/>
+
+            <!-- ── SIDE FLOURISHES ── -->
+            <path d="M 66,170 C 56,168 48,158 52,148 C 54,140 62,138 60,128"
+              stroke="rgba(180,210,255,0.18)" stroke-width="0.7" fill="none"/>
+            <circle cx="60" cy="126" r="2" stroke="rgba(180,210,255,0.20)" stroke-width="0.5" fill="none"/>
+            <path d="M 66,185 C 54,183 46,172 50,162"
+              stroke="rgba(180,210,255,0.12)" stroke-width="0.5" fill="none"/>
+            <path d="M 144,170 C 154,168 162,158 158,148 C 156,140 148,138 150,128"
+              stroke="rgba(180,210,255,0.18)" stroke-width="0.7" fill="none"/>
+            <circle cx="150" cy="126" r="2" stroke="rgba(180,210,255,0.20)" stroke-width="0.5" fill="none"/>
+            <path d="M 144,185 C 156,183 164,172 160,162"
+              stroke="rgba(180,210,255,0.12)" stroke-width="0.5" fill="none"/>
+
+            <!-- ── CORNER ORNAMENTS ── -->
+            <g fill="rgba(208,168,64,0.28)">
+              <path d="M18,18 L19.3,16 L20.6,18 L22.6,19.3 L20.6,20.6 L19.3,22.6 L18,20.6 L16,19.3Z"/>
+              <path d="M188,18 L189.3,16 L190.6,18 L192.6,19.3 L190.6,20.6 L189.3,22.6 L188,20.6 L186,19.3Z"/>
+              <path d="M18,200 L19.3,198 L20.6,200 L22.6,201.3 L20.6,202.6 L19.3,204.6 L18,202.6 L16,201.3Z"/>
+              <path d="M188,200 L189.3,198 L190.6,200 L192.6,201.3 L190.6,202.6 L189.3,204.6 L188,202.6 L186,201.3Z"/>
+            </g>
+            <circle cx="16"  cy="110" r="1.3" fill="rgba(208,168,64,0.28)"/>
+            <circle cx="194" cy="110" r="1.3" fill="rgba(208,168,64,0.28)"/>
+          </svg>
+        </div>
+
+        <div class="card-label">
+          <div class="card-name-front">The Unseen Tide</div>
+          <div class="card-sub-front">Gemini · Pisces · Scorpio</div>
+        </div>
+        <div class="card-hint">tap to reveal ✦</div>
+      </div>
+
+      <!-- ── BACK ── -->
+      <div class="card-back">
+        <div class="card-back-bg"></div>
+        <div class="card-back-wc"></div>
+        <div class="card-back-grain"></div>
+        <div class="card-back-border-outer"></div>
+        <div class="card-back-border-inner"></div>
+
+        <div class="card-back-content">
+          <div class="card-back-numeral">XVIII</div>
+
+          <!-- mini crescent sigil on back -->
+          <svg class="card-back-sigil-mini" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="22" cy="22" r="18" stroke="rgba(208,168,64,0.35)" stroke-width="0.8" fill="none"/>
+            <path d="M 22,8 C 14,8 8,14 8,22 C 8,30 14,36 22,36 C 17,31 14,27 14,22 C 14,17 17,13 22,8Z"
+              fill="rgba(160,200,255,0.80)"/>
+          </svg>
+
+          <div class="card-back-name">The Unseen<br>Tide</div>
+          <div class="card-back-sub">Gemini Sun · Pisces Moon · Scorpio Rising</div>
+          <div class="card-back-rule"></div>
+          <div class="card-back-body">
+            <p>The room is read before the words arrive. Not a skill you developed — a field you carry. The depth is native, the knowing is quiet, and neither of them announces itself.</p>
+            <p>The archetype is not the stillness. It is the current underneath it — moving in its own direction, shaping everything it touches, always arriving.</p>
+          </div>
+          <div class="card-back-tap">✦ &nbsp; tap to return</div>
+        </div>
+      </div>
+
+    </div>
   </div>
+</div>
+
+<!-- ── POEM ── -->
+<div class="poem-wrap fade-in" data-section="7">
+  <span class="poem-eyebrow">A Reading in Verse · Carina</span>
+
+  <div class="verse fade-in">
+    you arrive before the words do,<br>
+    already reading the room.
+  </div>
+
+  <span class="poem-sep">✦</span>
+
+  <div class="verse fade-in">
+    the gate holds its knowledge close.<br>
+    you choose what crosses.<br>
+    you always know when.
+  </div>
+
+  <span class="poem-sep">✦</span>
+
+  <div class="verse fade-in">
+    you locate yourself in contact.<br>
+    in the presence of another<br>
+    you find your own edges.
+  </div>
+
+  <span class="poem-sep">✦</span>
+
+  <div class="poem-final fade-in">
+    the current runs its own direction.<br>
+    you are still learning<br>
+    to trust it without asking.
+  </div>
+
+  <span class="poem-close-line">✦ &nbsp; Reading prepared June 2026 · Carina</span>
 </div>
 
 <!-- ── FOOTER ── -->
@@ -1908,40 +2418,6 @@
   Gemini Sun · Pisces Moon · Scorpio Rising · Placidus House System
 </div>
 
-<button class="save-btn key-outer-btn" onclick="toggleChartKey()">
-  <span class="save-btn-icon">◈</span>
-  Chart Key
-</button>
-
-<button class="save-btn" onclick="savePDF()">
-  <span class="save-btn-icon">✦</span>
-  Save as PDF
-</button>
-
-<script>
-  // ── CHART KEY — postMessage to embedded wheel iframe ────────────────────
-  function toggleChartKey() {
-    const iframe = document.querySelector('.wheel-iframe');
-    if (iframe) iframe.contentWindow.postMessage('toggle-key', '*');
-  }
-</script>
-
-<script>
-  function savePDF() {
-    // Force all fade-in sections visible and all collapsibles open before printing
-    document.querySelectorAll('.fade-in').forEach(el => el.classList.add('visible'));
-    document.querySelectorAll('.dive-expanded').forEach(el => el.classList.add('open'));
-    document.querySelectorAll('.read-more').forEach(btn => { btn.classList.add('open'); btn.innerHTML = 'Read less <span class="chev">▾</span>'; });
-
-    const h = document.body.scrollHeight;
-    const style = document.createElement('style');
-    style.id = 'pdf-page-size';
-    style.textContent = `@media print { @page { size: 900px ${h}px; margin: 0; } html, body { height: ${h}px !important; } }`;
-    document.head.appendChild(style);
-    window.print();
-    setTimeout(() => { const s = document.getElementById('pdf-page-size'); if (s) s.remove(); }, 2000);
-  }
-</script>
 
 
 <script>
@@ -2035,5 +2511,401 @@
     sections.forEach(s => secObs.observe(s));
   }
 </script>
+
+
+<script>
+// ─── CARINA'S NATAL CHART WHEEL ──────────────────────────────────────────────
+const T = '︎'; // text variation selector — prevents emoji rendering
+
+const CHART = {
+  asc: 236.87, mc: 161.65,
+  cusps: [236.87,267.99,304.70,341.65,12.59,36.91,56.87,87.99,124.70,161.65,192.59,216.91],
+  planets: [
+    {id:'sun',     gl:'☉'+T, deg: 80.07, retro:false, grp:'luminary', si:2,  sd:20},
+    {id:'moon',    gl:'☽'+T, deg:336.30, retro:false, grp:'luminary', si:11, sd: 6},
+    {id:'mercury', gl:'☿'+T, deg:103.50, retro:false, grp:'personal', si:3,  sd:13},
+    {id:'venus',   gl:'♀'+T, deg: 34.31, retro:false, grp:'personal', si:1,  sd: 4},
+    {id:'mars',    gl:'♂'+T, deg:142.99, retro:false, grp:'personal', si:4,  sd:22},
+    {id:'jupiter', gl:'♃'+T, deg:184.90, retro:false, grp:'social',   si:6,  sd: 4},
+    {id:'saturn',  gl:'♄'+T, deg:330.33, retro:true,  grp:'social',   si:11, sd: 0},
+    {id:'uranus',  gl:'♅'+T, deg:291.39, retro:true,  grp:'outer',    si:9,  sd:21},
+    {id:'neptune', gl:'♆'+T, deg:290.56, retro:true,  grp:'outer',    si:9,  sd:20},
+    {id:'pluto',   gl:'♇'+T, deg:233.42, retro:true,  grp:'outer',    si:7,  sd:23},
+    {id:'chiron',  gl:'⚷'+T, deg:139.76, retro:false, grp:'point',    si:4,  sd:19},
+    {id:'nnode',   gl:'☊'+T, deg:251.90, retro:true,  grp:'point',    si:8,  sd:11},
+  ],
+  aspects:[
+    {p1:'nnode',   p2:'mc',      type:'square',      orb:0.25},
+    {p1:'sun',     p2:'chiron',  type:'sextile',     orb:0.32},
+    {p1:'mars',    p2:'pluto',   type:'square',      orb:0.44},
+    {p1:'venus',   p2:'jupiter', type:'inconjunct',  orb:0.60},
+    {p1:'neptune', p2:'chiron',  type:'inconjunct',  orb:0.80},
+    {p1:'uranus',  p2:'neptune', type:'conjunction', orb:0.84},
+    {p1:'moon',    p2:'venus',   type:'sextile',     orb:1.98},
+  ],
+};
+
+const CX=360,CY=360;
+const R={rim3:354,elArc:347,rim1:340,zodOut:328,zodMid:302,zodIn:276,cuspLbl:265,hNum:162,sepRing:240,pGlyph:244,pLbl:258,asp:218,cRing:18,cDot:11};
+
+const C={
+  gold:'#d0a840',goldM:'rgba(208,168,64,0.28)',goldBrt:'rgba(208,168,64,0.58)',goldF:'rgba(208,168,64,0.07)',
+  ivory:'#f0e4cc',ivoryM:'rgba(240,228,200,0.55)',ivoryDim:'rgba(240,228,200,0.28)',ivoryDimmer:'rgba(240,228,200,0.14)',
+  cerulean:'#3e8fc0',ceruleanM:'rgba(62,143,192,0.60)',ceruleanF:'rgba(62,143,192,0.10)',sky:'#6abce0',moonSilver:'#b0c8e0',
+  teal:'#5ab8a8',tealM:'rgba(90,184,168,0.60)',rose:'#c89898',roseM:'rgba(200,152,152,0.65)',
+  fire:'rgba(210,130,48,0.26)',earth:'rgba(80,142,68,0.19)',air:'rgba(80,112,200,0.20)',water:'rgba(40,128,188,0.28)',
+  fireArc:'#c87840',earthArc:'#58925a',airArc:'#5878c8',waterArc:'#3880b8',
+  axis:'rgba(208,168,64,0.72)',hLine:'rgba(208,168,64,0.15)',
+};
+const PLANET_COLOR={luminary:'#d8b850',personal:'#c8a0a0',social:'#7ab0d0',outer:'#5ab8a8',point:'rgba(240,228,200,0.70)'};
+const ASP_STYLE={
+  conjunction:{color:'#d0a840',dash:'',w:1.2,op:0.82},sextile:{color:'#3e8fc0',dash:'',w:0.9,op:0.70},
+  trine:{color:'#5ab8a8',dash:'',w:0.9,op:0.65},square:{color:'#c89898',dash:'5,3',w:0.9,op:0.75},
+  opposition:{color:'#c89898',dash:'',w:0.9,op:0.68},inconjunct:{color:'rgba(240,228,200,0.38)',dash:'2,4',w:0.7,op:0.65},
+};
+const SIGNS=[
+  {gl:'♈'+T,el:'fire', name:'Aries',      abbr:'Ar',color:'#d4a050'},
+  {gl:'♉'+T,el:'earth',name:'Taurus',     abbr:'Ta',color:'#80c070'},
+  {gl:'♊'+T,el:'air',  name:'Gemini',     abbr:'Ge',color:'#8090d8'},
+  {gl:'♋'+T,el:'water',name:'Cancer',     abbr:'Cn',color:'#50b8d0'},
+  {gl:'♌'+T,el:'fire', name:'Leo',        abbr:'Le',color:'#d4a050'},
+  {gl:'♍'+T,el:'earth',name:'Virgo',      abbr:'Vi',color:'#80c070'},
+  {gl:'♎'+T,el:'air',  name:'Libra',      abbr:'Li',color:'#8090d8'},
+  {gl:'♏'+T,el:'water',name:'Scorpio',    abbr:'Sc',color:'#50b8d0'},
+  {gl:'♐'+T,el:'fire', name:'Sagittarius',abbr:'Sg',color:'#d4a050'},
+  {gl:'♑'+T,el:'earth',name:'Capricorn',  abbr:'Cp',color:'#80c070'},
+  {gl:'♒'+T,el:'air',  name:'Aquarius',   abbr:'Aq',color:'#8090d8'},
+  {gl:'♓'+T,el:'water',name:'Pisces',     abbr:'Pi',color:'#50b8d0'},
+];
+const GLYPH_FONT="'Apple Symbols','Segoe UI Symbol','Noto Sans Symbols',serif";
+const MODALITY={Ar:'Cardinal',Ta:'Fixed',Ge:'Mutable',Cn:'Cardinal',Le:'Fixed',Vi:'Mutable',Li:'Cardinal',Sc:'Fixed',Sg:'Mutable',Cp:'Cardinal',Aq:'Fixed',Pi:'Mutable'};
+
+const norm=a=>((a%360)+360)%360;
+const rad=d=>d*Math.PI/180;
+const f=n=>n.toFixed(2);
+const svgA=(ecl,asc)=>norm(180-(ecl-asc));
+function pt(a,r){return{x:CX+r*Math.cos(rad(a)),y:CY+r*Math.sin(rad(a))};}
+function ept(ecl,r,asc){return pt(svgA(ecl,asc),r);}
+function sector(s,e,ro,ri,asc){
+  const a1=svgA(s,asc),a2=svgA(e,asc);
+  const p1=pt(a1,ro),p2=pt(a2,ro),p3=pt(a2,ri),p4=pt(a1,ri);
+  const lg=(norm(e-s)>180)?1:0;
+  return `M${f(p1.x)} ${f(p1.y)} A${ro} ${ro} 0 ${lg} 0 ${f(p2.x)} ${f(p2.y)} L${f(p3.x)} ${f(p3.y)} A${ri} ${ri} 0 ${lg} 1 ${f(p4.x)} ${f(p4.y)} Z`;
+}
+function arcStroke(s,e,r,asc){
+  const a1=svgA(s,asc),a2=svgA(e,asc);
+  const p1=pt(a1,r),p2=pt(a2,r);
+  return `M${f(p1.x)} ${f(p1.y)} A${r} ${r} 0 0 0 ${f(p2.x)} ${f(p2.y)}`;
+}
+function eclSD(ecl){const idx=Math.floor(ecl/30)%12;return{idx,deg:Math.floor(ecl%30),sign:SIGNS[idx]};}
+function spread(planets){
+  const sorted=[...planets].sort((a,b)=>a.deg-b.deg);
+  const out=[];let i=0;
+  while(i<sorted.length){
+    let j=i+1;
+    while(j<sorted.length&&sorted[j].deg-sorted[i].deg<8)j++;
+    const cl=sorted.slice(i,j);
+    if(cl.length===1){out.push({...cl[0],disp:cl[0].deg});}
+    else{const mean=cl.reduce((s,p)=>s+p.deg,0)/cl.length;const step=cl.length===2?14:11;const off=-(cl.length-1)*step/2;cl.forEach((p,k)=>out.push({...p,disp:mean+off+k*step}));}
+    i=j;
+  }
+  return out;
+}
+const NS='http://www.w3.org/2000/svg';
+function wEl(tag,attrs){const e=document.createElementNS(NS,tag);for(const[k,v]of Object.entries(attrs))e.setAttribute(k,String(v));return e;}
+function wTx(content,attrs){const t=wEl('text',attrs);t.textContent=content;return t;}
+function glTx(content,x,y,size,color,opacity,extra={}){
+  return wTx(content,{x:f(x),y:f(y),fill:color,opacity,'font-size':size,'font-family':GLYPH_FONT,'font-variant-emoji':'text','text-anchor':'middle','dominant-baseline':'central',...extra});
+}
+
+function drawDefs(svg){
+  const defs=wEl('defs',{});
+  const g1=wEl('radialGradient',{id:'bgG',cx:'50%',cy:'50%',r:'50%'});
+  g1.appendChild(wEl('stop',{offset:'0%','stop-color':'#1a3060','stop-opacity':'0.80'}));
+  g1.appendChild(wEl('stop',{offset:'55%','stop-color':'#0e1030','stop-opacity':'0.45'}));
+  g1.appendChild(wEl('stop',{offset:'100%','stop-color':'#09102a','stop-opacity':'0'}));
+  defs.appendChild(g1);
+  const g2=wEl('linearGradient',{id:'amberRib',x1:'0%',y1:'0%',x2:'100%',y2:'100%'});
+  g2.appendChild(wEl('stop',{offset:'0%','stop-color':'#c89040','stop-opacity':'0'}));
+  g2.appendChild(wEl('stop',{offset:'35%','stop-color':'#c89040','stop-opacity':'0.06'}));
+  g2.appendChild(wEl('stop',{offset:'65%','stop-color':'#d4a848','stop-opacity':'0.05'}));
+  g2.appendChild(wEl('stop',{offset:'100%','stop-color':'#c89040','stop-opacity':'0'}));
+  defs.appendChild(g2);
+  const g3=wEl('linearGradient',{id:'cyanRib',x1:'100%',y1:'0%',x2:'0%',y2:'100%'});
+  g3.appendChild(wEl('stop',{offset:'0%','stop-color':'#3880b8','stop-opacity':'0'}));
+  g3.appendChild(wEl('stop',{offset:'40%','stop-color':'#3880b8','stop-opacity':'0.08'}));
+  g3.appendChild(wEl('stop',{offset:'70%','stop-color':'#50a0c8','stop-opacity':'0.06'}));
+  g3.appendChild(wEl('stop',{offset:'100%','stop-color':'#3880b8','stop-opacity':'0'}));
+  defs.appendChild(g3);
+  const fWC=wEl('filter',{id:'wcM',x:'-30%',y:'-30%',width:'160%',height:'160%'});
+  fWC.appendChild(wEl('feGaussianBlur',{stdDeviation:'12'}));
+  defs.appendChild(fWC);
+  const fG=wEl('filter',{id:'glowM',x:'-20%',y:'-20%',width:'140%',height:'140%'});
+  fG.appendChild(wEl('feGaussianBlur',{in:'SourceGraphic',stdDeviation:'3',result:'b'}));
+  const m=wEl('feMerge',{});['b','SourceGraphic'].forEach(s=>{const n=wEl('feMergeNode',{});n.setAttribute('in',s);m.appendChild(n);});
+  fG.appendChild(m);defs.appendChild(fG);
+  const cp=wEl('clipPath',{id:'chartClipM'});
+  cp.appendChild(wEl('circle',{cx:CX,cy:CY,r:358}));
+  defs.appendChild(cp);
+  svg.appendChild(defs);
+}
+
+function drawBackground(svg){
+  const g=wEl('g',{id:'bg'});
+  const chartG=wEl('g',{'clip-path':'url(#chartClipM)'});
+  chartG.appendChild(wEl('circle',{cx:CX,cy:CY,r:358,fill:'#0d1535'}));
+  chartG.appendChild(wEl('circle',{cx:CX,cy:CY,r:358,fill:'url(#bgG)'}));
+  chartG.appendChild(wEl('ellipse',{cx:CX+60,cy:CY-80,rx:300,ry:100,fill:'rgba(200,144,64,0.07)',transform:`rotate(-38,${CX},${CY})`}));
+  chartG.appendChild(wEl('ellipse',{cx:CX-60,cy:CY+80,rx:300,ry:110,fill:'rgba(38,110,180,0.08)',transform:`rotate(-38,${CX},${CY})`}));
+  chartG.appendChild(wEl('ellipse',{cx:CX+120,cy:CY-120,rx:180,ry:70,fill:'rgba(180,120,40,0.05)',transform:`rotate(-20,${CX},${CY})`}));
+  const blooms=[
+    {ecl:135,color:'rgba(200,120,40,0.12)'},{ecl:15,color:'rgba(200,120,40,0.10)'},{ecl:255,color:'rgba(200,120,40,0.10)'},
+    {ecl:105,color:'rgba(30,120,180,0.13)'},{ecl:225,color:'rgba(30,120,180,0.11)'},{ecl:345,color:'rgba(30,120,180,0.11)'},
+    {ecl:75, color:'rgba(70,100,200,0.09)'},{ecl:195,color:'rgba(70,100,200,0.09)'},{ecl:315,color:'rgba(70,100,200,0.09)'},
+    {ecl:45, color:'rgba(70,130,60,0.08)'}, {ecl:165,color:'rgba(70,130,60,0.08)'}, {ecl:285,color:'rgba(70,130,60,0.08)'},
+  ];
+  for(const b of blooms){const p=ept(b.ecl,302,CHART.asc);chartG.appendChild(wEl('circle',{cx:f(p.x),cy:f(p.y),r:62,fill:b.color,filter:'url(#wcM)'}));}
+  const stars=[[38,72,1.1,0.38,'#f0e8d0'],[152,44,0.8,0.30,'#e8f0f8'],[300,32,1.2,0.34,'#f0e8d0'],[460,50,0.9,0.32,'#d8e8f0'],[616,40,1.0,0.36,'#f0e8d0'],[668,88,0.8,0.30,'#e8d8b8'],[690,220,0.9,0.24,'#e8f0f8'],[678,400,1.0,0.22,'#f0e8d0'],[660,548,0.8,0.26,'#d8e8f0'],[596,640,1.1,0.30,'#f0e8d0'],[448,672,0.9,0.24,'#e8f0f8'],[272,676,0.8,0.22,'#f0e8d0'],[106,652,1.0,0.26,'#e8d8b8'],[34,556,0.9,0.24,'#f0e8d0'],[20,408,0.8,0.22,'#e8f0f8'],[32,252,1.0,0.28,'#f0e8d0'],[80,156,0.7,0.18,'#e8d8b8'],[580,156,0.7,0.18,'#d8e8f0'],[590,528,0.8,0.20,'#f0e8d0'],[108,520,0.7,0.17,'#e8f0f8'],[196,60,0.6,0.16,'#f0e8d0'],[508,68,0.7,0.18,'#e8d8b8'],[360,14,0.8,0.20,'#f0e8d0'],[710,360,0.7,0.16,'#e8f0f8'],[8,360,0.7,0.16,'#f0e8d0'],[360,710,0.8,0.18,'#e8d8b8'],[240,90,1.4,0.28,'#f8e8b0'],[480,650,1.3,0.26,'#f8e8b0'],[620,200,1.2,0.24,'#d8f0f8'],[100,520,1.2,0.22,'#f8e8b0']];
+  for(const[sx,sy,sr,so,sc]of stars)chartG.appendChild(wEl('circle',{cx:sx,cy:sy,r:sr,fill:sc,opacity:so}));
+  for(const[sx,sy,s,fs,op,c]of[[90,110,'✦',11,0.28,'#f0e8d0'],[638,132,'✧',9,0.24,'#d8e8f0'],[74,562,'✦',9,0.22,'#f0e8d0'],[628,562,'✧',11,0.26,'#e8d8b8']])
+    chartG.appendChild(wTx(s,{x:sx,y:sy,fill:c,opacity:op,'font-size':fs,'text-anchor':'middle','font-family':'serif'}));
+  g.appendChild(wEl('circle',{cx:CX,cy:CY,r:360,fill:'none',stroke:'rgba(208,168,64,0.14)','stroke-width':'3'}));
+  g.appendChild(wEl('circle',{cx:CX,cy:CY,r:358,fill:'none',stroke:'rgba(62,143,192,0.12)','stroke-width':'2'}));
+  g.appendChild(chartG);svg.appendChild(g);
+}
+
+function drawRims(svg){
+  const g=wEl('g',{id:'rims'});
+  for(let i=0;i<12;i++){const s=SIGNS[i];g.appendChild(wEl('path',{d:arcStroke(i*30,i*30+30,R.elArc,CHART.asc),fill:'none',stroke:C[s.el+'Arc'],'stroke-width':'7',opacity:'0.72','stroke-linecap':'butt'}));}
+  for(const[r,op]of[[R.rim3,0.32],[R.rim1,0.18]])g.appendChild(wEl('circle',{cx:CX,cy:CY,r,fill:'none',stroke:C.gold,'stroke-width':'0.5',opacity:op}));
+  for(let i=0;i<12;i++){const p=ept(i*30,R.rim3+5,CHART.asc);g.appendChild(wEl('circle',{cx:f(p.x),cy:f(p.y),r:2.0,fill:C.gold,opacity:'0.55'}));}
+  for(let i=0;i<36;i++){if(i%3===0)continue;const p=ept(i*10,R.rim1,CHART.asc);g.appendChild(wEl('circle',{cx:f(p.x),cy:f(p.y),r:0.9,fill:C.gold,opacity:'0.28'}));}
+  svg.appendChild(g);
+}
+
+function drawZodiac(svg){
+  const g=wEl('g',{id:'zodiac'});
+  for(let i=0;i<12;i++){
+    const s=SIGNS[i];const startEcl=i*30,endEcl=startEcl+30;
+    g.appendChild(wEl('path',{d:sector(startEcl,endEcl,R.zodOut,R.zodIn,CHART.asc),fill:C[s.el],stroke:C.goldM,'stroke-width':'0.6'}));
+    for(const off of[10,20]){const a=svgA(startEcl+off,CHART.asc);const oT=pt(a,R.zodIn+14),iT=pt(a,R.zodIn+2);g.appendChild(wEl('line',{x1:f(oT.x),y1:f(oT.y),x2:f(iT.x),y2:f(iT.y),stroke:C.goldBrt,'stroke-width':'0.6'}));}
+    const gp=ept(startEcl+15,R.zodMid,CHART.asc);g.appendChild(glTx(s.gl,gp.x,gp.y,21,s.color,'0.93'));
+  }
+  g.appendChild(wEl('circle',{cx:CX,cy:CY,r:R.zodOut,fill:'none',stroke:C.goldBrt,'stroke-width':'0.9'}));
+  g.appendChild(wEl('circle',{cx:CX,cy:CY,r:R.zodIn, fill:'none',stroke:C.goldM,  'stroke-width':'0.7'}));
+  svg.appendChild(g);
+}
+
+function drawHouses(svg){
+  const g=wEl('g',{id:'houses'});
+  g.appendChild(wEl('circle',{cx:CX,cy:CY,r:R.zodIn,fill:'#0d1535'}));
+  const ig=wEl('radialGradient',{id:'innerGM',cx:'50%',cy:'50%',r:'50%'});
+  ig.appendChild(wEl('stop',{offset:'0%','stop-color':'#122040','stop-opacity':'0.6'}));
+  ig.appendChild(wEl('stop',{offset:'100%','stop-color':'#09102a','stop-opacity':'0'}));
+  const innerDefs=svg.querySelector('defs')||wEl('defs',{});innerDefs.appendChild(ig);
+  g.appendChild(wEl('circle',{cx:CX,cy:CY,r:R.zodIn,fill:'url(#innerGM)'}));
+  const EL_WC={fire:'rgba(205,125,45,',earth:'rgba(75,138,65,',air:'rgba(75,108,195,',water:'rgba(38,118,178,'};
+  const EL_BY_SIGN=['fire','earth','air','water','fire','earth','air','water','fire','earth','air','water'];
+  for(let i=0;i<12;i++){
+    if(i%2===0)continue;
+    const c1=CHART.cusps[i],c2=CHART.cusps[(i+1)%12];
+    g.appendChild(wEl('path',{d:sector(c1,c2,R.zodIn,R.cDot+6,CHART.asc),fill:'rgba(240,228,200,0.04)',stroke:'none'}));
+    const mid=c2>c1?(c1+c2)/2:norm((c1+c2+360)/2);
+    const signIdx=Math.floor(CHART.cusps[i]/30)%12;const wcColor=EL_WC[EL_BY_SIGN[signIdx]];
+    const blobP=ept(mid,125,CHART.asc);g.appendChild(wEl('circle',{cx:f(blobP.x),cy:f(blobP.y),r:70,fill:wcColor+'0.14)',filter:'url(#wcM)'}));
+    const blobP2=ept(mid,200,CHART.asc);g.appendChild(wEl('circle',{cx:f(blobP2.x),cy:f(blobP2.y),r:45,fill:wcColor+'0.09)',filter:'url(#wcM)'}));
+  }
+  for(let i=0;i<12;i++){
+    const cusp=CHART.cusps[i];const isAngle=(i%3===0);
+    const oP=ept(cusp,R.zodIn,CHART.asc);const iP=ept(cusp,R.cDot+6,CHART.asc);
+    g.appendChild(wEl('line',{x1:f(oP.x),y1:f(oP.y),x2:f(iP.x),y2:f(iP.y),stroke:isAngle?C.axis:'rgba(208,168,64,0.42)','stroke-width':isAngle?1.4:0.9}));
+    g.appendChild(wEl('circle',{cx:f(oP.x),cy:f(oP.y),r:isAngle?2.2:1.6,fill:isAngle?C.gold:C.goldM,opacity:isAngle?'0.85':'0.55'}));
+    const sp=ept(cusp,R.sepRing,CHART.asc);g.appendChild(wEl('circle',{cx:f(sp.x),cy:f(sp.y),r:isAngle?2.4:1.5,fill:isAngle?C.gold:C.goldM,opacity:isAngle?'0.80':'0.48'}));
+    const{deg,sign}=eclSD(cusp);const lp=ept(cusp,R.cuspLbl,CHART.asc);
+    g.appendChild(wEl('circle',{cx:f(lp.x),cy:f(lp.y),r:12,fill:'rgba(8,22,46,0.85)'}));
+    g.appendChild(wTx(`${deg}°`,{x:f(lp.x),y:f(lp.y-4.5),fill:isAngle?C.gold:C.ivory,opacity:isAngle?'0.90':'0.72','font-size':isAngle?8.5:7.5,'font-family':"'Inter',sans-serif",'text-anchor':'middle','dominant-baseline':'central'}));
+    g.appendChild(glTx(sign.gl,lp.x,lp.y+5.2,isAngle?8.5:7.5,isAngle?C.gold:C.ivory,isAngle?'0.90':'0.68'));
+  }
+  for(let i=0;i<12;i++){
+    const c1=CHART.cusps[i],c2=CHART.cusps[(i+1)%12];const mid=c2>c1?(c1+c2)/2:norm((c1+c2+360)/2);const np=ept(mid,R.hNum,CHART.asc);
+    g.appendChild(wEl('circle',{cx:f(np.x),cy:f(np.y),r:11,fill:'rgba(8,22,46,0.75)'}));
+    g.appendChild(wTx(String(i+1),{x:f(np.x),y:f(np.y),fill:C.ivory,opacity:'0.72','font-size':12.5,'font-family':"'Cormorant Garamond',serif",'font-weight':'400','font-style':'italic','text-anchor':'middle','dominant-baseline':'central'}));
+  }
+  g.appendChild(wEl('circle',{cx:CX,cy:CY,r:R.sepRing,fill:'none',stroke:C.goldM,'stroke-width':'0.35'}));
+  g.appendChild(wEl('circle',{cx:CX,cy:CY,r:R.asp,fill:'rgba(8,12,30,0.45)',stroke:'rgba(62,143,192,0.28)','stroke-width':'0.9'}));
+  svg.appendChild(g);
+}
+
+function drawCenter(svg){
+  const g=wEl('g',{id:'center'});
+  for(let i=0;i<16;i++){const angle=i*(360/16);const inner=14,outer=i%2===0?42:30;const p1=pt(angle,inner),p2=pt(angle,outer);g.appendChild(wEl('line',{x1:f(p1.x),y1:f(p1.y),x2:f(p2.x),y2:f(p2.y),stroke:C.gold,'stroke-width':i%2===0?'0.8':'0.4',opacity:i%2===0?'0.30':'0.14'}));}
+  for(const[r,op]of[[32,0.06],[25,0.07],[19,0.08]])g.appendChild(wEl('circle',{cx:CX,cy:CY,r,fill:'none',stroke:C.gold,'stroke-width':'0.5',opacity:op}));
+  g.appendChild(wEl('circle',{cx:CX,cy:CY,r:R.cRing,fill:'none',stroke:C.goldM,'stroke-width':'0.7'}));
+  g.appendChild(wEl('circle',{cx:CX,cy:CY,r:R.cDot,fill:'#0c1030',stroke:C.gold,'stroke-width':'0.9',opacity:'0.85'}));
+  g.appendChild(wTx('✦',{x:CX,y:CY,fill:C.gold,opacity:'0.92','font-size':8,'font-family':'serif','text-anchor':'middle','dominant-baseline':'central'}));
+  svg.appendChild(g);
+}
+
+function drawAspects(svg){
+  const g=wEl('g',{id:'aspects'});const dMap={};
+  CHART.planets.forEach(p=>dMap[p.id]=p.deg);dMap.mc=CHART.mc;dMap.asc=CHART.asc;
+  for(const asp of CHART.aspects){
+    const st=ASP_STYLE[asp.type];if(!st)continue;
+    const d1=dMap[asp.p1],d2=dMap[asp.p2];if(d1==null||d2==null)continue;
+    const p1=ept(d1,R.asp,CHART.asc),p2=ept(d2,R.asp,CHART.asc);
+    const ln=wEl('line',{x1:f(p1.x),y1:f(p1.y),x2:f(p2.x),y2:f(p2.y),stroke:st.color,'stroke-width':st.w,opacity:st.op});
+    if(st.dash)ln.setAttribute('stroke-dasharray',st.dash);g.appendChild(ln);
+  }
+  svg.appendChild(g);
+}
+
+function drawAxes(svg){
+  const g=wEl('g',{id:'axes'});
+  for(const[ecl,label]of[[CHART.asc,'ASC'],[CHART.mc,'MC']]){
+    const p1=ept(ecl,R.zodOut+4,CHART.asc),p2=ept(ecl+180,R.zodOut+4,CHART.asc);
+    g.appendChild(wEl('line',{x1:f(p1.x),y1:f(p1.y),x2:f(p2.x),y2:f(p2.y),stroke:C.gold,'stroke-width':'1.1',opacity:'0.55'}));
+    const lp=ept(ecl,R.zodOut+28,CHART.asc);
+    g.appendChild(wTx(label,{x:f(lp.x),y:f(lp.y),fill:C.gold,opacity:'0.85','font-size':8.5,'font-family':"'Inter',sans-serif",'font-weight':'500','letter-spacing':'0.12em','text-anchor':'middle','dominant-baseline':'central'}));
+  }
+  svg.appendChild(g);
+}
+
+function drawPlanets(svg){
+  const g=wEl('g',{id:'planets'});const sp=spread(CHART.planets);
+  for(const p of sp){
+    const color=PLANET_COLOR[p.grp];const sign=SIGNS[p.si];
+    const tP=ept(p.deg,R.asp,CHART.asc);g.appendChild(wEl('circle',{cx:f(tP.x),cy:f(tP.y),r:2.8,fill:color,opacity:'0.88'}));
+    if(Math.abs(p.disp-p.deg)>2.5){const lA=ept(p.deg,R.asp+5,CHART.asc),lB=ept(p.disp,R.pGlyph-14,CHART.asc);g.appendChild(wEl('line',{x1:f(lA.x),y1:f(lA.y),x2:f(lB.x),y2:f(lB.y),stroke:color,'stroke-width':'0.5',opacity:'0.42'}));}
+    const lp=ept(p.disp,R.pLbl,CHART.asc);
+    g.appendChild(wTx(`${p.sd}°`,{x:f(lp.x),y:f(lp.y-4.2),fill:color,opacity:'0.72','font-size':8,'font-family':"'Inter',sans-serif",'text-anchor':'middle','dominant-baseline':'central'}));
+    g.appendChild(glTx(sign.gl,lp.x,lp.y+5.2,8.5,color,'0.68'));
+    const gp=ept(p.disp,R.pGlyph,CHART.asc);
+    g.appendChild(wEl('circle',{cx:f(gp.x),cy:f(gp.y),r:13,fill:color,opacity:'0.05'}));
+    g.appendChild(glTx(p.gl,gp.x,gp.y,21,color,'0.97'));
+    if(p.retro){const rxA=svgA(p.disp,CHART.asc)+9;const rxP=pt(rxA,R.pGlyph-10);g.appendChild(wTx('Rx',{x:f(rxP.x),y:f(rxP.y),fill:color,opacity:'0.68','font-size':7.5,'font-family':"'Inter',sans-serif",'font-style':'italic','text-anchor':'middle','dominant-baseline':'central'}));}
+    const hit=wEl('circle',{cx:f(gp.x),cy:f(gp.y),r:18,fill:'transparent',style:'cursor:pointer'});
+    hit.addEventListener('click',()=>openKeyToPlanet(p.id));
+    g.appendChild(hit);
+  }
+  svg.appendChild(g);
+}
+
+(function renderWheel(){
+  const svg=document.getElementById('chart-svg');
+  drawDefs(svg);drawBackground(svg);drawRims(svg);drawZodiac(svg);
+  drawHouses(svg);drawAspects(svg);drawAxes(svg);drawPlanets(svg);drawCenter(svg);
+})();
+
+// ─── KEY DATA ─────────────────────────────────────────────────────────────────
+const KA=[
+  {color:'#d0a840',dash:false,name:'Conjunction', note:'0° · unity, intensity, merger'},
+  {color:'#3e8fc0',dash:false,name:'Sextile',     note:'60° · opportunity, ease, flow'},
+  {color:'#5ab8a8',dash:false,name:'Trine',       note:'120° · natural talent, grace'},
+  {color:'#c89898',dash:true, name:'Square',      note:'90° · friction, growth pressure'},
+  {color:'#c89898',dash:false,name:'Opposition',  note:'180° · tension, polarity, awareness'},
+  {color:'rgba(240,228,200,0.38)',dash:true,name:'Inconjunct',note:'150° · adjustment, redirection'},
+];
+const KE=[
+  {color:'#c87840',name:'Fire', note:'Aries · Leo · Sagittarius'},
+  {color:'#58925a',name:'Earth',note:'Taurus · Virgo · Capricorn'},
+  {color:'#5878c8',name:'Air',  note:'Gemini · Libra · Aquarius'},
+  {color:'#3880b8',name:'Water',note:'Cancer · Scorpio · Pisces'},
+];
+const HOUSES=[
+  {n:1,  theme:'Self & Identity',       note:'Scorpio rising; Pluto rules from the 12th'},
+  {n:2,  theme:'Resources & Values',    note:'expansive sense of what you value; Sagittarius cusp'},
+  {n:3,  theme:'Mind & Communication',  note:'Moon and Saturn here; feeling becomes language'},
+  {n:4,  theme:'Home & Roots',          note:'Aquarius cusp; home requires freedom'},
+  {n:5,  theme:'Creativity & Joy',      note:'Aries cusp; creative energy leads'},
+  {n:6,  theme:'Work & Body',           note:'Venus here; steady, sensory, reliable rhythm'},
+  {n:7,  theme:'Partnership & Others',  note:'Sun here; you locate yourself in relationship'},
+  {n:8,  theme:'Depth & Transformation',note:'intuitive approach to shared resources and change'},
+  {n:9,  theme:'Belief & Expansion',    note:'Mars and Chiron here; drive and wound share a house'},
+  {n:10, theme:'Career & Visibility',   note:'Jupiter here; recognition builds; MC at 11° Virgo'},
+  {n:11, theme:'Community & Vision',    note:'partnership extends into broader belonging'},
+  {n:12, theme:'Hidden Self & Spirit',  note:'Pluto here; the full power is private'},
+];
+const PLANET_LABEL={sun:'Sun',moon:'Moon',mercury:'Mercury',venus:'Venus',mars:'Mars',jupiter:'Jupiter',saturn:'Saturn',uranus:'Uranus',neptune:'Neptune',pluto:'Pluto',chiron:'Chiron',nnode:'North Node'};
+const PLANET_KEYWORD={sun:'core identity',moon:'emotional body',mercury:'mind',venus:'love & values',mars:'drive',jupiter:'expansion',saturn:'discipline',uranus:'disruption',neptune:'dissolution',pluto:'transformation',chiron:'the wound',nnode:'soul path'};
+
+function houseOf(deg){
+  const c=CHART.cusps;
+  for(let i=0;i<12;i++){const start=c[i],end=c[(i+1)%12];if(((deg-start+360)%360)<((end-start+360)%360))return i+1;}
+  return 1;
+}
+
+function buildKey(){
+  const pg=document.getElementById('kP');
+  for(const p of CHART.planets){
+    const sign=SIGNS[p.si],house=houseOf(p.deg),col=PLANET_COLOR[p.grp],retro=p.retro?' ℞':'';
+    const d=document.createElement('div');
+    d.className='ki';d.style.borderColor=`${col}20`;
+    d.setAttribute('data-planet-id',p.id);
+    d.innerHTML=`<span class="ki-gl" style="color:${col}">${p.gl}</span><span class="ki-main"><span class="ki-name">${PLANET_LABEL[p.id]}${retro}</span><span class="ki-note">${p.sd}° ${sign.name}&ensp;·&ensp;${PLANET_KEYWORD[p.id]}</span></span><span class="ki-house">H${house}</span>`;
+    pg.appendChild(d);
+  }
+  const ag=document.getElementById('kA');
+  for(const a of KA){
+    const d=document.createElement('div');d.className='ki ki-asp';d.style.borderColor=`${a.color}15`;
+    d.innerHTML=`<svg width="30" height="14" style="display:block;margin:0 auto;flex-shrink:0"><line x1="2" y1="7" x2="28" y2="7" stroke="${a.color}" stroke-width="1.5" ${a.dash?'stroke-dasharray="5,3"':''} opacity="0.88"/></svg><span><span class="ki-name">${a.name}</span><span class="ki-note">${a.note}</span></span>`;
+    ag.appendChild(d);
+  }
+  const eg=document.getElementById('kE');
+  for(const e of KE){
+    const d=document.createElement('div');d.className='ki ki-el';d.style.borderColor=`${e.color}18`;
+    d.innerHTML=`<span class="ki-sw" style="background:${e.color};box-shadow:0 0 7px ${e.color}55"></span><span><span class="ki-name">${e.name}</span><span class="ki-note">${e.note}</span></span>`;
+    eg.appendChild(d);
+  }
+  const hg=document.getElementById('kH');
+  for(const h of HOUSES){
+    const d=document.createElement('div');d.className='ki';d.style.cssText='display:grid;grid-template-columns:24px 1fr;gap:0 10px;';
+    d.innerHTML=`<span style="font-family:'Cormorant Garamond',serif;font-size:0.82rem;color:rgba(212,180,80,0.58);text-align:center;line-height:1;">${h.n}</span><span><span class="ki-name">${h.theme}</span><span class="ki-note">${h.note}</span></span>`;
+    hg.appendChild(d);
+  }
+}
+buildKey();
+
+// ─── KEY TOGGLE + TABS ────────────────────────────────────────────────────────
+const keyOverlay=document.getElementById('keyOverlay');
+const keyDimmer=document.getElementById('keyDimmer');
+const keyBtn=document.getElementById('keyBtn');
+
+function openKey(){keyOverlay.classList.add('open');keyDimmer.classList.add('open');document.body.classList.add('key-open');keyBtn.title='Close Chart Key';}
+function closeKey(){keyOverlay.classList.remove('open');keyDimmer.classList.remove('open');document.body.classList.remove('key-open');keyBtn.title='Open Chart Key';}
+
+function switchTab(panelId){
+  document.querySelectorAll('.key-tab').forEach(t=>t.classList.toggle('active',t.dataset.panel===panelId));
+  document.querySelectorAll('.key-panel').forEach(p=>p.classList.toggle('active',p.id==='panel-'+panelId));
+  document.querySelector('.key-content').scrollTop=0;
+}
+document.querySelectorAll('.key-tab').forEach(tab=>tab.addEventListener('click',()=>switchTab(tab.dataset.panel)));
+
+function openKeyToPlanet(planetId){
+  openKey();
+  switchTab('placements');
+  setTimeout(()=>{
+    const row=document.querySelector(`[data-planet-id="${planetId}"]`);
+    if(row){row.scrollIntoView({block:'nearest',behavior:'smooth'});row.classList.add('ki-highlight');setTimeout(()=>row.classList.remove('ki-highlight'),1100);}
+  },360);
+}
+
+keyBtn.addEventListener('click',()=>keyOverlay.classList.contains('open')?closeKey():openKey());
+document.getElementById('keyClose').addEventListener('click',closeKey);
+keyDimmer.addEventListener('click',closeKey);
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeKey();});
+
+let _swipeY=0;
+keyOverlay.addEventListener('touchstart',e=>{_swipeY=e.touches[0].clientY;},{passive:true});
+keyOverlay.addEventListener('touchend',e=>{if(e.changedTouches[0].clientY-_swipeY>80)closeKey();},{passive:true});
+
+// ── ARCHETYPE CARD FLIP ──
+const archetypeCard = document.getElementById('archetypeCard');
+if (archetypeCard) {
+  archetypeCard.addEventListener('click', () => {
+    archetypeCard.classList.toggle('flipped');
+  });
+}
+</script>
+
 </body>
 </html>
