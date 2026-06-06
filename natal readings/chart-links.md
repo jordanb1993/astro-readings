@@ -49,19 +49,15 @@ Cancer Sun · Libra Moon · Sagittarius Rising · coworker
 
 **Carina**
 [carina.html](https://jordanb1993.github.io/astro-readings/natal%20readings/carina.html)
-Gemini Sun · Pisces Moon · Scorpio Rising · Jupiter on MC · v2 design (June 2026)
-
-**Carina — Chart Wheel**
-[chart-wheel.html](https://jordanb1993.github.io/astro-readings/natal%20readings/chart-wheel.html)
-Interactive natal chart wheel · Whimsigoth Sacred Geometry · floating key ✦
+Gemini Sun · Pisces Moon · Scorpio Rising · Jupiter on MC · v3 build (June 2026) · THE UNSEEN TIDE · XVIII
 
 **Mimi**
 [mimi.html](https://jordanb1993.github.io/astro-readings/natal%20readings/mimi.html)
-Aries Sun · Leo Moon · Scorpio Rising · Fire Grand Trine · NNode exact sextile MC
+Aries Sun · Leo Moon · Scorpio Rising · Fire Grand Trine · NNode exact sextile MC · v3 build (June 2026) · THE THRESHOLD KEEPER · XIII
 
-**Mimi — Chart Wheel**
+**Mimi — Chart Wheel (standalone)**
 [mimi-wheel.html](https://jordanb1993.github.io/astro-readings/natal%20readings/mimi-wheel.html)
-Interactive natal chart wheel · April 9, 1995 · Chicago
+Standalone chart wheel · v3 wheel is embedded inline in mimi.html
 
 ---
 
