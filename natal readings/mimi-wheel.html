@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#09102a">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<title>Mimi — Natal Chart Wheel</title>
+<title>Miriam — Natal Chart Wheel</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 /* ── RESET ── */
@@ -31,7 +31,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Lock body scroll when drawer open */
+/* Lock body scroll when sheet open */
 body.drawer-open { overflow: hidden; }
 
 /* ── PAGE CHROME ── */
@@ -75,28 +75,27 @@ body.drawer-open { overflow: hidden; }
   position: fixed;
   bottom: max(24px, calc(env(safe-area-inset-bottom) + 14px));
   right:  max(24px, calc(env(safe-area-inset-right)  + 14px));
-  width: 48px; height: 48px;
-  min-width: 44px; min-height: 44px;
-  border-radius: 50%;
-  background: radial-gradient(ellipse at 40% 35%, #1a2d50, #091830);
-  border: 1px solid rgba(212,180,80,0.50);
+  height: 40px;
+  padding: 0 18px 0 14px;
+  border-radius: 40px;
+  background: radial-gradient(ellipse at 30% 50%, #121e36 0%, #0d1c38 100%);
+  border: 1px solid rgba(212,180,80,0.45);
   color: rgba(212,180,80,0.90);
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.3rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.68rem; font-weight: 500;
+  letter-spacing: 0.14em; text-transform: uppercase;
   cursor: pointer;
-  display: flex; align-items: center; justify-content: center;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.50), 0 0 14px rgba(212,180,80,0.08);
+  display: flex; align-items: center; gap: 8px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.50), 0 0 0 1px rgba(212,180,80,0.08);
   transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
   z-index: 100;
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
+  white-space: nowrap;
 }
-.key-btn:hover {
-  border-color: rgba(212,180,80,0.80);
-  box-shadow: 0 4px 28px rgba(0,0,0,0.60), 0 0 22px rgba(212,180,80,0.16);
-  transform: scale(1.06);
-}
-.key-btn:active { transform: scale(0.96); }
+.key-btn-icon { font-size: 0.90rem; font-family: 'Cormorant Garamond', serif; opacity: 0.88; }
+.key-btn:hover  { border-color: rgba(212,180,80,0.75); box-shadow: 0 4px 32px rgba(0,0,0,0.60), 0 0 20px rgba(212,180,80,0.12); }
+.key-btn:active { transform: scale(0.97); }
 
 /* ── DIM OVERLAY ── */
 .key-dimmer {
@@ -107,111 +106,199 @@ body.drawer-open { overflow: hidden; }
 }
 .key-dimmer.open { opacity: 1; pointer-events: auto; }
 
-/* ── SIDE DRAWER ── */
+/* ── KEY TABS ── */
+.key-tabs {
+  display: flex; padding: 0 16px;
+  border-bottom: 1px solid rgba(212,180,80,0.10);
+  flex-shrink: 0; gap: 0;
+}
+.key-tab {
+  background: none; border: none; cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.60rem; font-weight: 500;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: rgba(240,228,200,0.30);
+  padding: 10px 14px 8px;
+  min-height: 44px;
+  border-bottom: 2px solid transparent; margin-bottom: -1px;
+  transition: color 0.15s, border-color 0.15s;
+  white-space: nowrap; touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+.key-tab.active { color: rgba(212,180,80,0.88); border-bottom-color: rgba(212,180,80,0.55); }
+.key-panel { display: none; }
+.key-panel.active { display: block; }
+
+@keyframes ki-pulse {
+  0%   { background: rgba(212,180,80,0.20); border-color: rgba(212,180,80,0.40); }
+  100% { background: rgba(240,228,200,0.022); border-color: rgba(212,180,80,0.07); }
+}
+.ki-highlight { animation: ki-pulse 1.1s ease-out forwards; }
+
+/* ── BOTTOM SHEET ── */
 .key-overlay {
   position: fixed;
-  top: 0; right: 0; bottom: 0;
-  width: min(380px, 92vw);
+  bottom: 0; left: 0; right: 0;
+  height: auto;
+  max-height: 46vh;
   z-index: 500;
-  background: linear-gradient(180deg, #0e1436 0%, #09102a 60%);
-  border-left: 1px solid rgba(212,180,80,0.20);
-  box-shadow: -8px 0 48px rgba(0,0,0,0.60), -1px 0 0 rgba(212,180,80,0.08);
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-  overscroll-behavior-y: contain;
-  padding: 0;
-  transform: translateX(100%);
+  background: linear-gradient(180deg, rgba(14,20,54,0.99) 0%, rgba(9,16,42,0.99) 100%);
+  border-top: 1px solid rgba(212,180,80,0.22);
+  border-radius: 18px 18px 0 0;
+  box-shadow: 0 -8px 56px rgba(0,0,0,0.65);
+  display: flex;
+  flex-direction: column;
+  transform: translateY(100%);
   transition: transform 0.34s cubic-bezier(0.32,0,0.18,1);
   will-change: transform;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 }
-.key-overlay.open { transform: translateX(0); }
+.key-overlay.open { transform: translateY(0); }
 
-/* ── DRAWER HEADER (sticky) ── */
+/* drag handle */
+.key-handle {
+  width: 38px; height: 4px;
+  background: rgba(212,180,80,0.28);
+  border-radius: 2px;
+  margin: 12px auto 0;
+  flex-shrink: 0;
+  cursor: grab;
+}
+
+/* ── SHEET HEADER ── */
 .key-header {
-  position: sticky; top: 0; z-index: 2;
   display: flex; align-items: center; justify-content: space-between;
-  padding: 20px 22px 16px;
-  background: rgba(8,12,32,0.96);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border-bottom: 1px solid rgba(212,180,80,0.12);
+  padding: 10px 22px 12px;
+  border-bottom: 1px solid rgba(212,180,80,0.10);
+  flex-shrink: 0;
 }
 
 .key-title {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.25rem; font-weight: 300;
-  color: rgba(212,180,80,0.90);
-  letter-spacing: 0.08em;
+  font-size: 1.05rem; font-weight: 300;
+  color: rgba(212,180,80,0.88);
+  letter-spacing: 0.10em;
   margin: 0;
 }
 
 .key-close {
   background: none; border: none;
-  color: rgba(240,228,200,0.45);
-  font-size: 1.4rem; cursor: pointer;
-  font-family: 'Cormorant Garamond', serif;
+  color: rgba(240,228,200,0.40);
+  font-size: 1.0rem; cursor: pointer;
+  font-family: 'Inter', sans-serif;
   min-width: 44px; min-height: 44px;
   display: flex; align-items: center; justify-content: center;
-  padding: 4px 10px;
+  padding: 4px 8px;
   transition: color 0.15s;
   flex-shrink: 0;
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
+  letter-spacing: 0.08em;
+  font-size: 0.62rem; text-transform: uppercase;
 }
-.key-close:hover  { color: rgba(240,228,200,0.88); }
+.key-close:hover  { color: rgba(240,228,200,0.80); }
 .key-close:active { color: rgba(240,228,200,1.00); }
 
-/* ── DRAWER CONTENT ── */
+/* ── SHEET CONTENT (scrollable) ── */
 .key-content {
-  padding: 22px 18px;
-  padding-bottom: max(48px, calc(env(safe-area-inset-bottom) + 24px));
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: contain;
+  flex: 1; min-height: 0;
+  padding: 16px 20px;
+  padding-bottom: max(28px, calc(env(safe-area-inset-bottom) + 16px));
+  scrollbar-width: thin;
+  scrollbar-color: rgba(212,180,80,0.28) transparent;
 }
+.key-content::-webkit-scrollbar { width: 4px; }
+.key-content::-webkit-scrollbar-track { background: transparent; }
+.key-content::-webkit-scrollbar-thumb { background: rgba(212,180,80,0.28); border-radius: 4px; }
+.key-content::-webkit-scrollbar-thumb:hover { background: rgba(212,180,80,0.52); }
 
-.key-section { margin-bottom: 26px; }
+.key-section { margin-bottom: 20px; }
 
 .key-sh {
-  font-size: 0.55rem; letter-spacing: 0.26em;
+  font-size: 0.54rem; letter-spacing: 0.26em;
   text-transform: uppercase;
-  color: rgba(212,180,80,0.48);
-  margin-bottom: 11px;
-  padding-bottom: 7px;
-  border-bottom: 1px solid rgba(212,180,80,0.10);
+  color: rgba(212,180,80,0.45);
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(212,180,80,0.09);
 }
 
-/* ── KEY GRIDS ── */
-.key-grid { display: grid; gap: 6px 5px; }
-.g6 { grid-template-columns: repeat(2,1fr); }
-.g4 { grid-template-columns: repeat(2,1fr); }
-.g3 { grid-template-columns: 1fr; }
+/* ── PLACEMENT ROWS ── */
+.key-grid { display: flex; flex-direction: column; gap: 3px; }
 
-/* ── KEY ITEMS ── */
 .ki {
-  display: flex; align-items: center; gap: 8px;
-  padding: 7px 9px;
-  background: rgba(240,228,200,0.025);
-  border: 1px solid rgba(212,180,80,0.08);
-  border-radius: 6px;
+  display: grid;
+  grid-template-columns: 22px 1fr auto;
+  align-items: center;
+  gap: 0 10px;
+  padding: 8px 10px;
+  background: rgba(240,228,200,0.022);
+  border: 1px solid rgba(212,180,80,0.07);
+  border-radius: 7px;
   touch-action: manipulation;
+  transition: background 0.15s;
 }
+.ki:hover { background: rgba(240,228,200,0.045); }
+
 .ki-gl {
-  font-size: 15px;
+  font-size: 16px;
   font-family: 'Apple Symbols','Segoe UI Symbol','Noto Sans Symbols',serif;
   flex-shrink: 0; line-height: 1;
   font-variant-emoji: text;
+  text-align: center;
+}
+.ki-main {
+  display: flex; flex-direction: column; gap: 1px; min-width: 0;
 }
 .ki-name {
-  font-size: 0.67rem;
+  font-size: 0.80rem;
   font-family: 'Cormorant Garamond', serif;
-  color: rgba(240,228,200,0.80);
-  display: block;
+  color: rgba(240,228,200,0.88);
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  line-height: 1.2;
 }
 .ki-note {
-  font-size: 0.53rem;
+  font-size: 0.60rem;
   font-family: 'Inter', sans-serif;
-  color: rgba(240,228,200,0.32);
-  letter-spacing: 0.05em;
-  display: block; margin-top: 1px;
+  color: rgba(240,228,200,0.36);
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+.ki-house {
+  font-size: 0.62rem;
+  font-family: 'Inter', sans-serif;
+  color: rgba(212,180,80,0.50);
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+  text-align: right;
+}
+
+/* aspect legend rows */
+.ki-asp {
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  align-items: center;
+  gap: 0 10px;
+  padding: 6px 10px;
+  background: rgba(240,228,200,0.018);
+  border: 1px solid rgba(212,180,80,0.06);
+  border-radius: 7px;
+}
+
+/* element legend */
+.ki-el {
+  display: grid;
+  grid-template-columns: 10px 1fr;
+  align-items: center;
+  gap: 0 10px;
+  padding: 6px 10px;
+  background: rgba(240,228,200,0.018);
+  border: 1px solid rgba(212,180,80,0.06);
+  border-radius: 7px;
 }
 .ki-sw { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
 
@@ -231,7 +318,6 @@ html.embed .key-btn { display: none; }
 @media (max-width: 768px) {
   body { padding: 32px 16px 88px; }
   .chart-label { letter-spacing: 0.20em; margin-bottom: 20px; }
-  .key-overlay { width: min(400px, 94vw); }
 }
 
 /* ── MOBILE (≤600px) ── */
@@ -240,15 +326,10 @@ html.embed .key-btn { display: none; }
   .chart-label { font-size: 0.58rem; letter-spacing: 0.14em; margin-bottom: 14px; }
   .chart-sub   { font-size: 0.54rem; letter-spacing: 0.11em; margin-top: 12px; }
   .chart-wrap  { width: min(720px, 98vw); height: min(720px, 98vw); }
-  .key-overlay { width: 100vw; border-left: none; }
-  .key-header  { padding: 16px 18px 13px; }
-  .key-title   { font-size: 1.1rem; }
-  .key-content { padding: 16px 14px; }
-  .ki          { padding: 6px 8px; gap: 7px; }
-  .ki-name     { font-size: 0.64rem; }
-  .ki-note     { font-size: 0.50rem; }
-  .g6, .g4    { grid-template-columns: 1fr; }
-  .key-btn    { width: 52px; height: 52px; font-size: 1.45rem; }
+  .key-overlay { max-height: 65vh; }
+  .key-header  { padding: 8px 16px 10px; }
+  .key-content { padding: 12px 14px; }
+  .key-btn     { width: 52px; height: 52px; font-size: 1.45rem; }
 }
 
 /* ── LANDSCAPE MOBILE (short + wide) ── */
@@ -262,42 +343,50 @@ html.embed .key-btn { display: none; }
 </head>
 <body>
 
-<div class="chart-label">Natal Chart &nbsp;·&nbsp; Mimi</div>
+<div class="chart-label">Natal Chart &nbsp;·&nbsp; Miriam</div>
 <div class="chart-wrap">
   <svg id="chart-svg" viewBox="-22 -22 764 764" xmlns="http://www.w3.org/2000/svg" style="overflow:visible"></svg>
 </div>
 <div class="chart-sub">April 9, 1995 &nbsp;·&nbsp; 10:12 PM CDT &nbsp;·&nbsp; Chicago, Illinois &nbsp;·&nbsp; Placidus</div>
 
 <!-- Floating key toggle button -->
-<button class="key-btn" id="keyBtn" title="Open Chart Key">✦</button>
+<button class="key-btn" id="keyBtn" title="Open Chart Key">
+  <span class="key-btn-icon">✦</span>Chart Key
+</button>
 
 <!-- Dim overlay (click to close) -->
 <div class="key-dimmer" id="keyDimmer"></div>
 
-<!-- Side drawer — slides in from right, chart stays visible -->
+<!-- Bottom sheet key -->
 <div class="key-overlay" id="keyOverlay" role="complementary" aria-label="Chart Key">
 
-  <div class="key-header">
-    <div class="key-title">Chart Key</div>
-    <button class="key-close" id="keyClose" aria-label="Close key">←</button>
-  </div>
+  <div class="key-handle" id="keyHandle"></div>
 
+  <div class="key-header">
+    <div class="key-title">Miriam's Chart</div>
+    <button class="key-close" id="keyClose" aria-label="Close key">Done</button>
+  </div>
+  <div class="key-tabs">
+    <button class="key-tab active" data-panel="placements">Placements</button>
+    <button class="key-tab" data-panel="aspects">Aspects</button>
+    <button class="key-tab" data-panel="houses">Houses</button>
+  </div>
   <div class="key-content">
-    <div class="key-section">
-      <div class="key-sh">Zodiac Signs</div>
-      <div class="key-grid g6" id="kS"></div>
+    <div class="key-panel active" id="panel-placements">
+      <div class="key-grid" id="kP"></div>
     </div>
-    <div class="key-section">
-      <div class="key-sh">Planets &amp; Points</div>
-      <div class="key-grid g6" id="kP"></div>
+    <div class="key-panel" id="panel-aspects">
+      <div class="key-section">
+        <div class="key-sh">Aspect Lines</div>
+        <div class="key-grid" id="kA"></div>
+      </div>
+      <div class="key-section">
+        <div class="key-sh">Elements</div>
+        <div class="key-grid" id="kE"></div>
+      </div>
     </div>
-    <div class="key-section">
-      <div class="key-sh">Aspect Lines</div>
-      <div class="key-grid g3" id="kA"></div>
-    </div>
-    <div class="key-section">
-      <div class="key-sh">Elements</div>
-      <div class="key-grid g4" id="kE"></div>
+    <div class="key-panel" id="panel-houses">
+      <div class="key-grid" id="kH"></div>
     </div>
   </div>
 
@@ -884,6 +973,10 @@ function drawPlanets(svg){
         'font-size':7.5,'font-family':"'Inter',sans-serif",'font-style':'italic',
         'text-anchor':'middle','dominant-baseline':'central'}));
     }
+    // Invisible hit target — click opens key to this planet
+    const hit=el('circle',{cx:f(gp.x),cy:f(gp.y),r:18,fill:'transparent',style:'cursor:pointer'});
+    hit.addEventListener('click',()=>openKeyToPlanet(p.id));
+    g.appendChild(hit);
   }
   svg.appendChild(g);
 }
@@ -938,35 +1031,105 @@ const KE=[
   {color:'#3880b8',name:'Water',note:'Cancer · Scorpio · Pisces'},
 ];
 
-function ki(html,bc){
-  const d=document.createElement('div');
-  d.className='ki';d.style.borderColor=`${bc}18`;
-  d.innerHTML=html;return d;
+// Returns 1-based house number for an ecliptic degree
+function houseOf(deg) {
+  const c = CHART.cusps;
+  for (let i = 0; i < 12; i++) {
+    const start = c[i];
+    const end   = c[(i + 1) % 12];
+    const d     = ((deg - start + 360) % 360);
+    const span  = ((end  - start + 360) % 360);
+    if (d < span) return i + 1;
+  }
+  return 1;
 }
 
-function buildKey(){
-  const sg=document.getElementById('kS');
-  for(const s of KS) sg.appendChild(ki(
-    `<span class="ki-gl" style="color:${s.color}">${s.gl}</span>
-     <span><span class="ki-name">${s.name}</span><span class="ki-note">${s.note}</span></span>`,s.color));
+const PLANET_LABEL = {
+  sun:'Sun', moon:'Moon', mercury:'Mercury', venus:'Venus', mars:'Mars',
+  jupiter:'Jupiter', saturn:'Saturn', uranus:'Uranus', neptune:'Neptune',
+  pluto:'Pluto', chiron:'Chiron', nnode:'North Node',
+};
+const PLANET_KEYWORD = {
+  sun:'core identity', moon:'emotional body', mercury:'mind',
+  venus:'love & values', mars:'drive', jupiter:'expansion',
+  saturn:'discipline', uranus:'disruption', neptune:'dissolution',
+  pluto:'transformation', chiron:'the wound', nnode:'soul path',
+};
 
-  const pg=document.getElementById('kP');
-  for(const p of KP) pg.appendChild(ki(
-    `<span class="ki-gl" style="color:${p.c}">${p.gl}</span>
-     <span><span class="ki-name">${p.name}</span><span class="ki-note">${p.note}</span></span>`,p.c));
-
-  const ag=document.getElementById('kA');
-  for(const a of KA){
-    const ln=`<svg width="30" height="14" style="flex-shrink:0">
-      <line x1="2" y1="7" x2="28" y2="7" stroke="${a.color}" stroke-width="1.5"
-        ${a.dash?'stroke-dasharray="5,3"':''} opacity="0.88"/></svg>`;
-    ag.appendChild(ki(`${ln}<span><span class="ki-name">${a.name}</span><span class="ki-note">${a.note}</span></span>`,a.color));
+function buildKey() {
+  // ── PLACEMENTS — Miriam's actual chart
+  const pg = document.getElementById('kP');
+  for (const p of CHART.planets) {
+    const sign  = SIGNS[p.si];
+    const house = houseOf(p.deg);
+    const col   = PLANET_COLOR[p.grp];
+    const retro = p.retro ? ' ℞' : '';
+    const d = document.createElement('div');
+    d.className = 'ki';
+    d.style.borderColor = `${col}20`;
+    d.setAttribute('data-planet-id', p.id);
+    d.innerHTML =
+      `<span class="ki-gl" style="color:${col}">${p.gl}</span>
+       <span class="ki-main">
+         <span class="ki-name">${PLANET_LABEL[p.id]}${retro}</span>
+         <span class="ki-note">${p.sd}° ${sign.name}&ensp;·&ensp;${PLANET_KEYWORD[p.id]}</span>
+       </span>
+       <span class="ki-house">H${house}</span>`;
+    pg.appendChild(d);
   }
 
-  const eg=document.getElementById('kE');
-  for(const e of KE) eg.appendChild(ki(
-    `<span class="ki-sw" style="background:${e.color};box-shadow:0 0 7px ${e.color}55"></span>
-     <span><span class="ki-name">${e.name}</span><span class="ki-note">${e.note}</span></span>`,e.color));
+  // ── ASPECT LINES
+  const ag = document.getElementById('kA');
+  for (const a of KA) {
+    const d = document.createElement('div');
+    d.className = 'ki ki-asp';
+    d.style.borderColor = `${a.color}15`;
+    d.innerHTML =
+      `<svg width="30" height="14" style="display:block;margin:0 auto;flex-shrink:0">
+         <line x1="2" y1="7" x2="28" y2="7" stroke="${a.color}" stroke-width="1.5"
+           ${a.dash ? 'stroke-dasharray="5,3"' : ''} opacity="0.88"/>
+       </svg>
+       <span><span class="ki-name">${a.name}</span><span class="ki-note">${a.note}</span></span>`;
+    ag.appendChild(d);
+  }
+
+  // ── ELEMENTS
+  const eg = document.getElementById('kE');
+  for (const e of KE) {
+    const d = document.createElement('div');
+    d.className = 'ki ki-el';
+    d.style.borderColor = `${e.color}18`;
+    d.innerHTML =
+      `<span class="ki-sw" style="background:${e.color};box-shadow:0 0 7px ${e.color}55"></span>
+       <span><span class="ki-name">${e.name}</span><span class="ki-note">${e.note}</span></span>`;
+    eg.appendChild(d);
+  }
+
+  // ── HOUSES
+    const HOUSES = [
+    {n:1, theme:'Self & Identity',         note:'How you show up; the mask and the truth behind it'},
+    {n:2, theme:'Value & Resources',        note:'Money, self-worth, what you build and hold'},
+    {n:3, theme:'Mind & Communication',     note:'Thinking, speaking, learning, nearby world'},
+    {n:4, theme:'Roots & Home',             note:'Foundation, ancestry, private self, belonging'},
+    {n:5, theme:'Creativity & Joy',         note:'Expression, play, romance, children, art'},
+    {n:6, theme:'Work & Body',              note:'Daily practice, health, service, craft'},
+    {n:7, theme:'Relationships',            note:'Partnerships, contracts, how you meet the other'},
+    {n:8, theme:'Depth & Transformation',   note:'Power, shared resources, endings, what changes you'},
+    {n:9, theme:'Belief & Expansion',       note:'Philosophy, travel, higher learning, meaning'},
+    {n:10,theme:'Career & Legacy',          note:'Public life, vocation, reputation, what you leave'},
+    {n:11,theme:'Community & Vision',       note:'Collective, friendships, ideals, the future'},
+    {n:12,theme:'Soul & Solitude',          note:'Hidden self, retreat, dissolution, the deep unconscious'},
+  ];
+  const hg = document.getElementById('kH');
+  for (const h of HOUSES) {
+    const d = document.createElement('div');
+    d.className = 'ki';
+    d.style.cssText = 'display:grid;grid-template-columns:24px 1fr;gap:0 10px;';
+    d.innerHTML =
+      `<span style="font-family:'Cormorant Garamond',serif;font-size:0.82rem;color:rgba(212,180,80,0.58);text-align:center;line-height:1;">${h.n}</span>
+       <span><span class="ki-name">${h.theme}</span><span class="ki-note">${h.note}</span></span>`;
+    hg.appendChild(d);
+  }
 }
 buildKey();
 
@@ -975,7 +1138,7 @@ buildKey();
 if (new URLSearchParams(location.search).has('embed'))
   document.documentElement.classList.add('embed');
 
-// ── SIDE DRAWER ──────────────────────────────────────────────────────────────
+// ── KEY TOGGLE + TABS ────────────────────────────────────────────────────────
 const overlay = document.getElementById('keyOverlay');
 const dimmer  = document.getElementById('keyDimmer');
 const btn     = document.getElementById('keyBtn');
@@ -984,37 +1147,47 @@ function openKey() {
   overlay.classList.add('open');
   dimmer.classList.add('open');
   document.body.classList.add('drawer-open');
-  btn.textContent = '×';
   btn.title = 'Close Chart Key';
 }
-
 function closeKey() {
   overlay.classList.remove('open');
   dimmer.classList.remove('open');
   document.body.classList.remove('drawer-open');
-  btn.textContent = '✦';
   btn.title = 'Open Chart Key';
 }
+function switchTab(panelId) {
+  document.querySelectorAll('.key-tab').forEach(t => t.classList.toggle('active', t.dataset.panel === panelId));
+  document.querySelectorAll('.key-panel').forEach(p => p.classList.toggle('active', p.id === 'panel-' + panelId));
+  document.querySelector('.key-content').scrollTop = 0;
+}
+document.querySelectorAll('.key-tab').forEach(tab => tab.addEventListener('click', () => switchTab(tab.dataset.panel)));
 
-btn.addEventListener('click', () =>
-  overlay.classList.contains('open') ? closeKey() : openKey());
+function openKeyToPlanet(planetId) {
+  openKey();
+  switchTab('placements');
+  setTimeout(() => {
+    const row = document.querySelector(`[data-planet-id="${planetId}"]`);
+    if (row) {
+      row.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+      row.classList.add('ki-highlight');
+      setTimeout(() => row.classList.remove('ki-highlight'), 1100);
+    }
+  }, 360);
+}
+
+btn.addEventListener('click', () => overlay.classList.contains('open') ? closeKey() : openKey());
 document.getElementById('keyClose').addEventListener('click', closeKey);
 dimmer.addEventListener('click', closeKey);
-
-// Keyboard — Escape to close
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeKey(); });
 
-// Touch — swipe right on drawer to close
-let _swipeX = 0;
-overlay.addEventListener('touchstart', e => { _swipeX = e.touches[0].clientX; }, { passive: true });
+let _swipeY = 0;
+overlay.addEventListener('touchstart', e => { _swipeY = e.touches[0].clientY; }, { passive: true });
 overlay.addEventListener('touchend', e => {
-  if (e.changedTouches[0].clientX - _swipeX > 80) closeKey();
+  if (e.changedTouches[0].clientY - _swipeY > 80) closeKey();
 }, { passive: true });
 
-// postMessage bridge — allows parent page to toggle key when embedded
 window.addEventListener('message', e => {
-  if (e.data === 'toggle-key')
-    overlay.classList.contains('open') ? closeKey() : openKey();
+  if (e.data === 'toggle-key') overlay.classList.contains('open') ? closeKey() : openKey();
 });
 </script>
 </body>
