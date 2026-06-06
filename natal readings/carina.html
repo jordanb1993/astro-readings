@@ -4,6 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Carina — Natal Chart Reading</title>
+  <!-- Social preview -->
+  <meta property="og:title" content="Carina · Natal Chart Reading">
+  <meta property="og:description" content="A personal natal chart reading — Gemini Sun · Pisces Moon · Scorpio Rising. Built with care.">
+  <meta property="og:image" content="https://jordanb1993.github.io/astro-readings/natal%20readings/og-carina.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Carina · Natal Chart Reading">
+  <meta name="twitter:description" content="A personal natal chart reading — Gemini Sun · Pisces Moon · Scorpio Rising. Built with care.">
+  <meta name="twitter:image" content="https://jordanb1993.github.io/astro-readings/natal%20readings/og-carina.jpg">
   <!-- PWA -->
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#09102a">
@@ -1234,9 +1245,20 @@
     letter-spacing: 0.22em; color: rgba(208,168,64,0.52); text-transform: uppercase;
   }
   .card-hint {
-    position: absolute; bottom: 6px; left: 0; right: 0; text-align: center;
-    font-family: 'Inter', sans-serif; font-size: 0.44rem;
-    letter-spacing: 0.16em; color: rgba(240,228,200,0.20); text-transform: uppercase;
+    position: absolute; bottom: 10px; left: 0; right: 0; text-align: center;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .card-hint-pill {
+    display: inline-flex; align-items: center; gap: 5px;
+    font-family: 'Inter', sans-serif; font-size: 0.56rem;
+    letter-spacing: 0.18em; color: rgba(240,228,200,0.72); text-transform: uppercase;
+    border: 1px solid rgba(240,228,200,0.28); border-radius: 20px;
+    padding: 4px 12px; background: rgba(240,228,200,0.05);
+    animation: hint-pulse 2.4s ease-in-out infinite;
+  }
+  @keyframes hint-pulse {
+    0%, 100% { opacity: 0.60; border-color: rgba(240,228,200,0.20); }
+    50%       { opacity: 1.00; border-color: rgba(240,228,200,0.52); }
   }
 
   /* ── CARD BACK ── */
@@ -1800,7 +1822,7 @@
 
 <!-- Key toggle — fixed bottom-right -->
 <button class="key-btn" id="keyBtn" title="Open Chart Key">
-  <span class="key-btn-icon">✦</span>Chart Key
+  <span class="key-btn-icon">🗝</span>Chart Key
 </button>
 
 <!-- Dim overlay + bottom sheet key -->
@@ -2016,7 +2038,7 @@
     <div class="dive-body">
       <p>The first thing people sense about you isn't what you've said. It's what you're not saying. Scorpio rising is atmospheric: watchful, precise, already reading the room before you've decided to.</p>
       <p>Pluto, your chart ruler, sits at 23°25' Scorpio in the 12th house, 3°27' from your Ascendant. Close enough to color everything that crosses the threshold of a first impression.</p>
-    <p>The most transformative power in your chart operates below what's immediately visible — and sometimes below what you can fully see in yourself. There's a well that doesn't advertise its depth. The ones you let close enough to register it tend to feel its weight for a long time.</p>
+    <p>The most transformative power in your chart operates below what's immediately visible, sometimes below what you can fully see in yourself. There's a well that doesn't advertise its depth. The ones you let close enough to register it tend to feel its weight for a long time.</p>
       <div class="pull">The well doesn't announce its depth. It just holds what's been brought to it.</div>
     </div>
   </div>
@@ -2081,8 +2103,8 @@
     <div class="dive-body">
       <p>Mars at 22° Leo and Chiron at 19° Leo sit 3° apart in your 9th house. Drive and wound share a sign, a house, and a decade of degree.</p>
     <p>Every time you act with full Leo boldness, the part of you that fears not being seen activates at the same moment. The wound doesn't stop the drive. But it colors it.</p>
-      <p>The tight square to Pluto (0.44°) adds intensity that doesn't release easily. When you assert a belief, take a creative risk, or step into visibility, the interior weight of that action feels far larger than what's legible from the outside. Pluto in Scorpio in the 12th doesn't do surface-level — even partially below your own visibility, something is registering this as significant.</p>
-    <p>This also builds extraordinary staying power. Once committed, you don't quit. The wound is the price of that power — and the power is real.</p>
+      <p>The tight square to Pluto (0.44°) adds intensity that doesn't release easily. When you assert a belief, take a creative risk, or step into visibility, the interior weight of that action feels far larger than what's legible from the outside. Pluto in Scorpio in the 12th doesn't do surface-level; even partially below your own visibility, something is registering this as significant.</p>
+    <p>This also builds extraordinary staying power. Once committed, you don't quit. The wound is the price of that power. And the power is real.</p>
       <div class="pull plum-pull">The wound doesn't make the fire smaller. It makes every flame feel like it has to prove something. It doesn't.</div>
     </div>
   </div>
@@ -2148,7 +2170,7 @@
       <div class="synastry-contact">
         <div class="syn-label">Contact 1 · 0.07° orb · nearly exact opposition</div>
         <div class="syn-aspect">Your Jupiter (4°54' Libra) opposite her Moon (4°58' Aries)</div>
-        <div class="syn-body">Your Jupiter opposes Jordan's Moon at 0.07° — as close to exact as synastry gets. Your expansiveness lands directly on her emotional core. When you're around, she feels more possible. More capable of holding what she's carrying. Jupiter doesn't heal the way Chiron does; it doesn't go into the wound. It makes the room larger. That's what you do for her emotionally, and it's not small.</div>
+        <div class="syn-body">Your Jupiter opposes Jordan's Moon at 0.07°, as close to exact as synastry gets. Your expansiveness lands directly on her emotional core. When you're around, she feels more possible. More capable of holding what she's carrying. Jupiter doesn't heal the way Chiron does; it doesn't go into the wound. It makes the room larger. That's what you do for her emotionally, and it's not small.</div>
       </div>
 
       <div class="synastry-contact">
@@ -2340,7 +2362,7 @@
           <div class="card-name-front">The Unseen Tide</div>
           <div class="card-sub-front">Gemini · Pisces · Scorpio</div>
         </div>
-        <div class="card-hint">tap to reveal ✦</div>
+        <div class="card-hint"><span class="card-hint-pill">tap to reveal 🗝</span></div>
       </div>
 
       <!-- ── BACK ── -->
@@ -2365,8 +2387,8 @@
           <div class="card-back-sub">Gemini Sun · Pisces Moon · Scorpio Rising</div>
           <div class="card-back-rule"></div>
           <div class="card-back-body">
-            <p>The room is read before the words arrive. Not a skill you developed — a field you carry. The depth is native, the knowing is quiet, and neither of them announces itself.</p>
-            <p>The archetype is not the stillness. It is the current underneath it — moving in its own direction, shaping everything it touches, always arriving.</p>
+            <p>The room is read before the words arrive. Not a skill you developed. A field you carry. The depth is native, the knowing is quiet, and neither of them announces itself.</p>
+            <p>The archetype is not the stillness. It is the current underneath it, moving in its own direction, shaping everything it touches, always arriving.</p>
           </div>
           <div class="card-back-tap">✦ &nbsp; tap to return</div>
         </div>

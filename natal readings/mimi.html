@@ -4,6 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Miriam — Natal Chart Reading</title>
+  <!-- Social preview -->
+  <meta property="og:title" content="Miriam · Natal Chart Reading">
+  <meta property="og:description" content="A personal natal chart reading — Aries Sun · Leo Moon · Scorpio Rising. Built with care.">
+  <meta property="og:image" content="https://jordanb1993.github.io/astro-readings/natal%20readings/og-mimi.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Miriam · Natal Chart Reading">
+  <meta name="twitter:description" content="A personal natal chart reading — Aries Sun · Leo Moon · Scorpio Rising. Built with care.">
+  <meta name="twitter:image" content="https://jordanb1993.github.io/astro-readings/natal%20readings/og-mimi.jpg">
   <!-- PWA -->
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#09102a">
@@ -1177,9 +1188,20 @@
     letter-spacing: 0.22em; color: rgba(208,168,64,0.52); text-transform: uppercase;
   }
   .card-hint {
-    position: absolute; bottom: 6px; left: 0; right: 0; text-align: center;
-    font-family: 'Inter', sans-serif; font-size: 0.44rem;
-    letter-spacing: 0.16em; color: rgba(240,228,200,0.20); text-transform: uppercase;
+    position: absolute; bottom: 10px; left: 0; right: 0; text-align: center;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .card-hint-pill {
+    display: inline-flex; align-items: center; gap: 5px;
+    font-family: 'Inter', sans-serif; font-size: 0.56rem;
+    letter-spacing: 0.18em; color: rgba(240,228,200,0.72); text-transform: uppercase;
+    border: 1px solid rgba(240,228,200,0.28); border-radius: 20px;
+    padding: 4px 12px; background: rgba(240,228,200,0.05);
+    animation: hint-pulse 2.4s ease-in-out infinite;
+  }
+  @keyframes hint-pulse {
+    0%, 100% { opacity: 0.60; border-color: rgba(240,228,200,0.20); }
+    50%       { opacity: 1.00; border-color: rgba(240,228,200,0.52); }
   }
 
   /* ── CARD BACK ── */
@@ -1584,7 +1606,7 @@
 
 <!-- Key toggle — fixed bottom-right -->
 <button class="key-btn" id="keyBtn" title="Open Chart Key">
-  <span class="key-btn-icon">✦</span>Chart Key
+  <span class="key-btn-icon">🗝</span>Chart Key
 </button>
 
 <!-- Dim overlay + bottom sheet key -->
@@ -1686,7 +1708,7 @@
       </li>
       <li class="sig-item">
         <span class="sig-glyph">⚷</span>
-        <span class="sig-text"><strong>Chiron Rx in Virgo, 10th house.</strong> The wound lives in professional visibility — not in being unseen, but in being seen for what you appear to do rather than what you actually are. The exactness of your work, and the gap between that and how it registers publicly.</span>
+        <span class="sig-text"><strong>Chiron Rx in Virgo, 10th house.</strong> The wound lives in professional visibility, not in being unseen, but in being seen for what you appear to do rather than what you actually are. The exactness of your work, and the gap between that and how it registers publicly.</span>
       </li>
     </ul>
   </div>
@@ -1714,7 +1736,7 @@
     <span class="planet-pill outer" data-tip="Neptune · 25°28' Capricorn · 2nd house · idealism woven into the relationship with resources and worth"><span class="pp-gl">♆︎</span> 25° Cap · 2nd</span>
     <span class="planet-pill outer" data-tip="Pluto ℞ · 0°14' Sagittarius · 1st house · transformative gravity in the first impression; just over the ASC threshold"><span class="pp-gl">♇︎</span> 0° Sag ℞ · 1st</span>
     <span class="planet-pill point" data-tip="Chiron ℞ · 21°17' Virgo · 10th house · wound around professional visibility and being seen accurately"><span class="pp-gl">⚷︎</span> 21° Vir ℞ · 10th</span>
-    <span class="planet-pill point" data-tip="North Node ℞ · 6°31' Scorpio · 12th house · soul path toward depth, the hidden, and what lies beneath the surface — exact sextile MC"><span class="pp-gl">☊︎</span> 6° Sco ℞ · 12th</span>
+    <span class="planet-pill point" data-tip="North Node ℞ · 6°31' Scorpio · 12th house · soul path toward depth, the hidden, and what lies beneath the surface; exact sextile MC"><span class="pp-gl">☊︎</span> 6° Sco ℞ · 12th</span>
   </div>
   <div class="pill-detail" id="pillDetail"></div>
 </div>
@@ -1796,9 +1818,9 @@
     </div>
     <div class="dive-body">
       <p>Scorpio Rising means the most powerful parts of you arrive before you do. People sense something before you've introduced yourself. Not because you're performing intensity. It's structural. It's the threshold you carry.</p>
-      <p>Pluto at 0°14' Sagittarius sits barely over the Ascendant threshold into the 1st house, so close to Scorpio that the depth reads as native. This is not the fire and expansion of Sagittarius — this is the weight of Scorpio, now moving as a first house force. Jupiter at 15°16' Sagittarius is also in the 1st. Jupiter adds scale: your presence is large, even when you're quiet. Even when you're not trying.</p>
+      <p>Pluto at 0°14' Sagittarius sits barely over the Ascendant threshold into the 1st house, so close to Scorpio that the depth reads as native. This is not the fire and expansion of Sagittarius. This is the weight of Scorpio, now moving as a first house force. Jupiter at 15°16' Sagittarius is also in the 1st. Jupiter adds scale: your presence is large, even when you're quiet. Even when you're not trying.</p>
       <p>The apparent paradox is that all the fire in your chart (Aries Sun, Leo Moon, the grand trine) is held behind a Scorpio threshold. People sense the depth before the warmth. Once they're in, they find the warmth. But you decide when they're in. That isn't coldness. It's discernment that runs below the surface of even your own awareness.</p>
-      <div class="pull">You make things matter. Not as a choice — as a condition of presence.</div>
+      <div class="pull">You make things matter. Not as a choice. A condition of presence.</div>
     </div>
   </div>
 
@@ -1828,8 +1850,8 @@
     <div class="dive-body">
       <p>Three planets, three fire signs, within a degree of each other at the tightest point. Mercury trine Mars trine Jupiter: the most precise grand trine in this chart, with orbs of 0.20°, 0.37°, and 0.57°.</p>
       <p>Mercury trine Mars (0.37°): your mind and your drive operate on the same frequency. You don't think slowly and then act. The thought and the motion are close enough to be simultaneous. When your frustration arrives, it usually means the pace you naturally operate at has outrun the structure around you.</p>
-      <p>Mercury trine Jupiter (0.20°): your thinking is naturally expansive. You hold many threads at once without losing the through-line. Connections come fast. The issue is rarely comprehension — it's patience with the process when you've already arrived at the conclusion.</p>
-      <p>Mars trine Jupiter (0.57°): when you go for something, you go with belief. Not recklessness — the trine is fluid, not explosive. Real conviction. Mars in Leo in the 9th and Jupiter in Sagittarius in the 1st were always going to find each other. Drive and belief share the same native tongue here.</p>
+      <p>Mercury trine Jupiter (0.20°): your thinking is naturally expansive. You hold many threads at once without losing the through-line. Connections come fast. The issue is rarely comprehension: it's patience with the process when you've already arrived at the conclusion.</p>
+      <p>Mars trine Jupiter (0.57°): when you go for something, you go with belief. Not recklessness: the trine is fluid, not explosive. Real conviction. Mars in Leo in the 9th and Jupiter in Sagittarius in the 1st were always going to find each other. Drive and belief share the same native tongue here.</p>
       <div class="pull rose-pull">The grand trine's shadow: ease can become assumption. What moves naturally in you can stop you from noticing when the structure around you needs tending.</div>
     </div>
   </div>
@@ -1859,7 +1881,7 @@
     </div>
     <div class="dive-body">
       <p>Soul path and life's work were already oriented toward the same thing before you had language for it. Zero-point-zero-one degrees: as exact as an aspect gets. The depth you carry privately and the precision of your public work aren't in tension. They were built for each other.</p>
-      <p>The 12th house is the house of what's hidden — the private interior, the invisible, the beneath-the-surface. North Node in Scorpio in the 12th: the soul path is toward depth. Not the performance of depth, not the Scorpio posture. The real thing. The willingness to go into the unseen, the unnamed, the underneath — your own and others'.</p>
+      <p>The 12th house is the house of what's hidden — the private interior, the invisible, the beneath-the-surface. North Node in Scorpio in the 12th: the soul path is toward depth. Not the performance of depth, not the Scorpio posture. The real thing. The willingness to go into the unseen, the unnamed, the underneath: your own and others'.</p>
       <p>Virgo MC: what you're known for, what the world registers as your work, is Virgoan. Precise. Discerning. Service-oriented. In service of something larger than the self. The vocation involves craft, exactness, and the capacity to see what others miss.</p>
       <p>The sextile at 0.01° means these aren't in tension. The hidden depth you carry and the visible work you do are already pointing at the same thing. When you bring your Scorpio 12th-house interiority through into the Virgo public work, it becomes extraordinary. The question is only whether you trust the depth enough to let it show.</p>
       <div class="pull plum-pull">The hidden and the visible work are the same conversation. The only variable is how much of the depth you let through.</div>
@@ -1893,7 +1915,7 @@
       <p>Venus at 15°30' Pisces and Saturn at 19°11' Pisces, both in the 4th house. Love and structure in the same sign and the same house of foundations, home, and the interior self.</p>
       <p>Venus in Pisces is one of its dignities. Love that is porous, expansive, oceanic. The capacity for total merger, for feeling someone fully. Saturn in Pisces is the weight that structure places on the boundless. It asks: what persists? What's real enough to build on? What survives the dissolution?</p>
       <p>Together in the 4th house: your foundation is shaped by love as something serious. You don't do shallow. When you open to someone, you open all the way. The discernment about who earns that is quiet and non-negotiable, usually operating below your own conscious thought.</p>
-      <p>You've probably been drawn to people who feel like a kind of homecoming — who already seem to know you. The risk with Venus-Saturn in Pisces is the dissolution threshold: Saturn is there to keep something structurally sound, but Pisces makes that harder than it looks from the outside.</p>
+      <p>You've probably been drawn to people who feel like a kind of homecoming, who already seem to know you. The risk with Venus-Saturn in Pisces is the dissolution threshold: Saturn is there to keep something structurally sound, but Pisces makes that harder than it looks from the outside.</p>
       <div class="pull">You don't do love lightly. Saturn is there to make sure it can hold. The hard part is knowing, in the early porous stages, which ones actually will.</div>
     </div>
   </div>
@@ -1932,13 +1954,13 @@
       <div class="synastry-contact">
         <div class="syn-label">Contact 2 · 0.68° orb · trine</div>
         <div class="syn-aspect">Your Moon (11°26' Leo) trine Jordan's Mars (10°46' Sagittarius)</div>
-        <div class="syn-body">Your emotional warmth activates her drive, and vice versa. The trine is frictionless — this support just exists, without either of you having to construct it. She probably makes you feel genuinely seen and alive. You probably make her feel like the work matters, like she's moving in the right direction. That kind of contact isn't built; it's recognized.</div>
+        <div class="syn-body">Your emotional warmth activates her drive, and vice versa. The trine is frictionless: this support just exists, without either of you having to construct it. She probably makes you feel genuinely seen and alive. You probably make her feel like the work matters, like she's moving in the right direction. That kind of contact isn't built; it's recognized.</div>
       </div>
 
       <div class="synastry-contact">
         <div class="syn-label">Contact 3 · 1.59° orb · conjunction</div>
         <div class="syn-aspect">Your Pluto (0°14' Sagittarius) conjunct Jordan's Sun (29°55' Sagittarius)</div>
-        <div class="syn-body">Your Pluto lands on her Sun. This is the contact that makes a friendship feel formative. Your presence has probably changed her — not in a heavy way, but in the way that certain people catalyze becoming. She may not always be able to explain why you matter to her in the specific language of what you do; she just feels it clearly. This contact runs both directions: her Sun activates your Pluto too. The growth is mutual.</div>
+        <div class="syn-body">Your Pluto lands on her Sun. This is the contact that makes a friendship feel formative. Your presence has probably changed her, not in a heavy way, but in the way that certain people catalyze becoming. She may not always be able to explain why you matter to her in the specific language of what you do; she just feels it clearly. This contact runs both directions: her Sun activates your Pluto too. The growth is mutual.</div>
       </div>
 
       <div class="synastry-contact">
@@ -1950,7 +1972,7 @@
       <div class="synastry-contact">
         <div class="syn-label">Contact 5 · 2.53° orb · conjunction</div>
         <div class="syn-aspect">Your ASC (23°08' Scorpio) conjunct Jordan's Pluto (25°40' Scorpio)</div>
-        <div class="syn-body">Her Pluto is on your rising. Pluto on someone's Ascendant means they see you at the threshold — not only the surface presentation, but who you actually are in the moments of transition. She's probably been there at key chapters of your becoming. Not by accident. This contact creates depth and recognition of the kind that doesn't require explanation. She knows you at the level that matters, and you probably knew that early.</div>
+        <div class="syn-body">Her Pluto is on your rising. Pluto on someone's Ascendant means they see you at the threshold, not only the surface presentation, but who you actually are in the moments of transition. She's probably been there at key chapters of your becoming. Not by accident. This contact creates depth and recognition of the kind that doesn't require explanation. She knows you at the level that matters, and you probably knew that early.</div>
       </div>
 
       <div class="pull teal-pull">Five contacts. The charts were already oriented toward each other.</div>
@@ -2133,7 +2155,7 @@
           <div class="card-name-front">The Threshold Keeper</div>
           <div class="card-sub-front">Aries · Leo · Scorpio</div>
         </div>
-        <div class="card-hint">tap to reveal ✦</div>
+        <div class="card-hint"><span class="card-hint-pill">tap to reveal 🗝</span></div>
       </div>
 
       <!-- ── BACK ── -->
@@ -2166,7 +2188,7 @@
           <div class="card-back-sub">Aries Sun · Leo Moon · Scorpio Rising</div>
           <div class="card-back-rule"></div>
           <div class="card-back-body">
-            <p>Fire in trine across all three fire signs. The intelligence, the drive, the belief — already in circuit, already at home in themselves. You did not arrive needing to be convinced.</p>
+            <p>Fire in trine across all three fire signs. The intelligence, the drive, the belief: already in circuit, already at home in themselves. You did not arrive needing to be convinced.</p>
             <p>Scorpio holds the gate. It has always known who it opens for. The archetype isn't the fire. It is the one who decides what the fire is for.</p>
           </div>
           <div class="card-back-tap">✦ &nbsp; tap to return</div>
