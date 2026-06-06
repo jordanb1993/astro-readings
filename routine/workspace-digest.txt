@@ -1,10 +1,10 @@
-# The Stars:Daily Digest | 2026-06-05
+# The Stars:Daily Digest | 2026-06-06
 
-**Moon:** 9.74° Aquarius | Waning Gibbous
+**Moon:** 21.93° Aquarius | Waning Gibbous
 
 **Top active transits (tight orb):**
-- Chiron ✶ natal Ascendant (1st):0.03° separating
-- NNode □ natal NorthNode (6th):0.07° separating
-- NNode □ natal SouthNode (12th):0.07° separating
+- NNode △ natal Jupiter (5th):0.06° applying
+- Chiron ✶ natal Ascendant (1st):0.07° separating
+- NNode □ natal NorthNode (6th):0.1° separating
 
-*Full reading: the stars/daily readings/2026-06/2026-06-05.md*
+*Full reading: the stars/daily readings/2026-06/2026-06-06.md*
