@@ -630,14 +630,19 @@
       font-size: 0.58rem; font-weight: 600;
       letter-spacing: 0.26em; text-transform: uppercase;
       color: var(--gold); opacity: 0.50;
-      margin-bottom: 14px;
+      margin-bottom: 5px;
+    }
+    .planet-strip-hint {
+      font-family: 'Inter', sans-serif; font-size: 0.49rem;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: rgba(240,228,200,0.25); margin-bottom: 14px;
     }
     .planet-pill {
       display: inline-flex; align-items: center; gap: 6px;
       padding: 5px 13px; border-radius: 20px;
       font-family: 'Inter', sans-serif; font-size: 0.70rem; font-weight: 400;
       letter-spacing: 0.04em; border: 1px solid; white-space: nowrap;
-      cursor: default;
+      cursor: pointer;
     }
     .pp-gl { font-family: 'Apple Symbols','Segoe UI Symbol','Noto Sans Symbols',serif; font-size: 0.78rem; font-variant-emoji: text; }
     .planet-pill.luminary { color: var(--gold);     border-color: rgba(208,168,64,0.28);  background: rgba(208,168,64,0.06); }
@@ -1228,11 +1233,11 @@
   /* bottom label area */
   .card-label {
     position: absolute; bottom: 0; left: 0; right: 0;
-    height: 76px;
+    height: 96px;
     background: linear-gradient(0deg, rgba(0,0,0,0.72) 0%, transparent 100%);
     display: flex; flex-direction: column;
     align-items: center; justify-content: flex-end;
-    padding-bottom: 18px;
+    padding-bottom: 14px;
   }
   .card-name-front {
     font-family: 'Cormorant Garamond', serif;
@@ -1245,15 +1250,15 @@
     letter-spacing: 0.22em; color: rgba(208,168,64,0.52); text-transform: uppercase;
   }
   .card-hint {
-    position: absolute; bottom: 10px; left: 0; right: 0; text-align: center;
-    display: flex; align-items: center; justify-content: center;
+    margin-top: 13px;
   }
   .card-hint-pill {
-    display: inline-flex; align-items: center; gap: 5px;
-    font-family: 'Inter', sans-serif; font-size: 0.56rem;
-    letter-spacing: 0.18em; color: rgba(240,228,200,0.72); text-transform: uppercase;
-    border: 1px solid rgba(240,228,200,0.28); border-radius: 20px;
-    padding: 4px 12px; background: rgba(240,228,200,0.05);
+    display: inline-flex; align-items: center; gap: 6px;
+    font-family: 'Inter', sans-serif; font-size: 0.60rem;
+    letter-spacing: 0.14em; color: rgba(240,228,200,0.80); text-transform: uppercase;
+    border: 1px solid rgba(240,228,200,0.32); border-radius: 20px;
+    padding: 5px 14px; background: rgba(10,6,32,0.50);
+    backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
     animation: hint-pulse 2.4s ease-in-out infinite;
   }
   @keyframes hint-pulse {
@@ -1940,6 +1945,7 @@
 
 <div class="planet-strip-wrap fade-in">
   <div class="planet-strip-label">At a Glance</div>
+  <div class="planet-strip-hint">tap each to expand</div>
   <div class="planet-strip" id="planetStrip">
       <span class="planet-pill luminary" data-tip="Sun · 20° Gemini · 7th house · identity forms through connection and conversation"><span class="pp-gl">☉︎</span> 20° Gem · 7th</span>
       <span class="planet-pill luminary" data-tip="Moon · 6° Pisces · 3rd house · feeling naturally flows into language"><span class="pp-gl">☽︎</span> 6° Pis · 3rd</span>
@@ -2361,8 +2367,8 @@
         <div class="card-label">
           <div class="card-name-front">The Unseen Tide</div>
           <div class="card-sub-front">Gemini · Pisces · Scorpio</div>
+          <div class="card-hint"><span class="card-hint-pill">tap to reveal</span></div>
         </div>
-        <div class="card-hint"><span class="card-hint-pill">tap to reveal 🗝</span></div>
       </div>
 
       <!-- ── BACK ── -->
