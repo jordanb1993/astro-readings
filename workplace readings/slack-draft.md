@@ -1,15 +1,18 @@
-*☿ sky at work · week of June 1* ✦
+*☿ sky at work · week of June 8* ✦
 
-☉ Sun ☍ ☽ Moon creates friction this week (0.18° orb).
+☽ Moon ⚺ ♆ Neptune creates friction this week (0.19° orb).
 
 *at a glance*
-> ☉ *Mon* · Sun ☍ Moon · opposition
-> 🌊 *Mon–Fri* · Neptune ⚺ NNode · semi-sextile
-> ☉ *Tue* · Sun ⚺ Mars · semi-sextile
-> 🌙 *All week* · Moon ⚻ Mars · inconjunct
+> 🌙 *Mon* · Moon ⚺ Neptune · semi-sextile
+> ⚡ *Mon–Fri* · Uranus □ NNode · square
+> 🌙 *Tue* · Moon ⚺ Pluto · semi-sextile
+> 🌊 *All week* · Neptune ✶ Pluto · sextile
+
+*for communication*
+Miscommunication risk: slow down and verify before deciding. (Mercury □ Saturn, 3.61°)
 
 *watch for*
-• Sun ☍ Moon (0.18°): opposition
+• Uranus □ NNode (0.49°): square
 
 — _transit-to-transit weather only. no birth charts required. just the sky we're all in._ ✦
 
