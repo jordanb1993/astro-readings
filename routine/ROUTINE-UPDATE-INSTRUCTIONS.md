@@ -29,14 +29,21 @@ Go to `claude.ai/code/routines` → find routine `trig_01Rtm1xSST2GbdCZh896F2vP`
                                 READ THIS before writing the reading — ground Practical Application
                                 in what's actually happening in her life right now
 
-4. Write "daily readings/YYYY-MM/YYYY-MM-DD.md" using positions-today.json data.
-   CRITICAL: The reading title format is "[Weekday], [Month] [Day], [Year]".
-   Use the "weekday" field from positions-today.json exactly — do NOT compute or guess
-   the day name from the date. The JSON field is always correct; LLM date arithmetic is not.
+4. Before writing, read two files from the cloned repo:
+   - READING-FORMAT.md → the daily reading format spec (sky-responsive format, transit board table,
+     length tiers, prose body, today block). Follow this exactly. The format changed June 8, 2026 —
+     CLAUDE.md no longer contains the format spec; READING-FORMAT.md is the source of truth.
+   - transit library/INDEX.md → the active long-term transit list with breakdown file slugs.
+     Use wikilinks in the transit board for any transit that has a breakdown file:
+     format: → [[transit-file-slug]]  (e.g. → [[neptune-conjunct-moon]])
+
+   Write "daily readings/YYYY-MM/YYYY-MM-DD.md" using positions-today.json data.
+   CRITICAL: The reading title format is one evocative phrase written fresh each day — NOT
+   "[Weekday], [Month] [Day], [Year]". Use the date in the frontmatter (date: YYYY-MM-DD).
+   The file name is the date. The H1 title is a fresh phrase that captures the sky's quality.
    Create the directory first:
      mkdir -p "daily readings/YYYY-MM"
-   (substitute real year-month, e.g. "daily readings/2026-05")
-   Follow the format in CLAUDE.md exactly.
+   (substitute real year-month, e.g. "daily readings/2026-06")
    Transit-to-natal aspects from positions-today.json → transit_to_natal array.
    Transit-to-transit observations from transit_to_transit array.
    Chiron is calculated precisely — no estimates needed.
@@ -59,19 +66,18 @@ Go to `claude.ai/code/routines` → find routine `trig_01Rtm1xSST2GbdCZh896F2vP`
    different facet of the meaning, different house emphasis, different practical hook.
    Do not open consecutive readings with the same transit or the same framing.
 
-   CORRELATIONS TO TRACK — no-repeat rule:
-   The "Correlations to Track" section must NOT re-list correlations that already appeared
-   in the previous reading unchanged. Rules:
-     - If a correlation was listed yesterday and nothing has changed (same orb band, same
-       theme), skip it or upgrade it: name what has changed, what's been observed, or
-       what the next marker to watch for is.
-     - Ongoing slow transits (Neptune-Moon, Uranus-Sun) should generate AT MOST one
-       correlation entry per week, not one per day. If it was listed yesterday, drop it
-       today unless the orb crossed a meaningful threshold or something happened.
-     - Correlations should be FORWARD-LOOKING and SPECIFIC to today: what exactly to
-       watch for IN THE NEXT 24 HOURS, not a standing order to "track over weeks."
-     - If there's nothing new to track for a given transit today, omit it rather than
-       repeating the same prompt with slightly different wording.
+   LONG-TERM TRANSIT HANDLING — no-repeat rule:
+   Long-term transits (Neptune-Moon, Uranus-Sun, Chiron-Ascendant, etc.) appear in the
+   transit board as a single row with a wikilink → [[breakdown-file]]. They do NOT get
+   re-explained in the prose body — the breakdown file holds the depth. Rules:
+     - Transit board row: planet + aspect + natal point + orb + one-phrase essence + wikilink.
+       Nothing more in the board.
+     - Prose body should NOT re-explain what the breakdown file covers. Interpret what today's
+       specific orb/sky adds — a new angle, a specific moment, what today brings that
+       yesterday didn't. Not a standing description.
+     - If a long-term transit's orb hasn't moved meaningfully (< 0.1° change) and nothing
+       in life context connects to it today, put it in the board and leave it out of the prose.
+     - Prose earns long-term transit presence by having something genuinely new to say about it today.
 
 5. Write "weekly readings/YYYY-MM-DD-week-ahead.md" using positions-week.json.
    Use the date of the COMING Monday as the filename date (e.g. "weekly readings/2026-06-01-week-ahead.md").
@@ -82,7 +88,36 @@ Go to `claude.ai/code/routines` → find routine `trig_01Rtm1xSST2GbdCZh896F2vP`
    Replace the line beginning with "Active transits as of" in CLAUDE.md with the
    content of active-transits.txt. The line is inside the "Current Situation Snapshot" section.
 
-7. Commit and push:
+7. SELF-CHECK before committing — read your completed reading and verify every item:
+
+   ACCURACY:
+   □ Every slow-planet aspect (Saturn/Uranus/Neptune/Pluto/Chiron) has applying/separating
+     verified against orb trend — NOT just from the JSON label. If orb is wider than
+     yesterday: separating. If narrower: applying. Correct any mismatch.
+   □ No separating transit >5° appears in the transit board.
+   □ All orb values match positions-today.json — no eyeballed or approximate figures.
+   □ Transit-to-transit aspects are labeled "(transit-to-transit)" and derived from Planets
+     list — not from the Aspects tab which only shows transit-to-natal.
+
+   FORMAT:
+   □ Title (H1) is a fresh evocative phrase, NOT a date string like "Monday, June 9, 2026".
+   □ Frontmatter contains: date, cssclasses, tags, moon.
+   □ Transit board is a markdown table with columns: transit | orb | [essence/link].
+   □ Long-term transits in the board have a wikilink → [[breakdown-slug]], not a full description.
+   □ Prose body has no section headers — flowing paragraphs only.
+   □ Today block has ≤3 items, each is one line, each has a category label.
+   □ Pull quote (if present) is a > blockquote and is genuinely earned — not routine.
+
+   VOICE:
+   □ No phrase or framing that appeared in yesterday's reading is repeated today.
+   □ Long-term transits in the prose have a NEW angle today — not a re-explanation of the
+     breakdown file content.
+   □ No "you may feel" / "this might bring" hedging language.
+   □ No generic horoscope phrases disconnected from Jordan's specific natal chart.
+
+   If any item fails: fix it before proceeding to the commit.
+
+8. Commit and push:
    git add -A && git commit -m "reading + week-ahead + patches YYYY-MM-DD" && git push origin main
 ```
 
