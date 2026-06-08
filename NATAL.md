@@ -62,6 +62,94 @@ Emotional life and public/career identity are the same organ. Career recognition
 
 ---
 
+## House Color Guide — Jordan's Chart
+
+Houses are the departments of life a transit activates. The same planet doing the same aspect reads completely differently depending on which house is involved. Always name the house in the transit board, and let the house color the prose interpretation.
+
+**Known house cusps (verified from natal placements):**
+- 1st: Gemini 29°22' (ASC — anaretic)
+- 4th: Virgo ~1° (IC — opposite Pisces MC)
+- 5th: ~Libra 7° (Scorpio stellium begins just after)
+- 6th: ~Scorpio 10° (Sun/Mars/NNode in Sagittarius live here)
+- 7th: Sagittarius ~29° (DSC — opposite ASC)
+- 10th: Pisces 0°59' (MC)
+- 11th: ~Aries 10–15° (Chiron currently transiting this house)
+
+*Full cusp table to be added to natal-chart.json — use natal planet positions as landmarks until then.*
+
+**Transiting planet house identification:**
+- Moon/Neptune at 4°11'–4°58' Aries → **10th house** (confirmed — Moon natal placement)
+- Saturn/Chiron at 12°–29° Aries → **11th house** (Chiron confirmed in KNOWLEDGE.md)
+- Pluto at 5° Aquarius → **9th house** (Saturn natal at 1°15' Aquarius is 9th, Pluto just past it)
+- Uranus at 2°31' Gemini → **12th house** (South Node at 3° Gemini is 12th)
+- Jupiter/Venus at 24°–25° Cancer → **2nd house** (rough estimate — Cancer spans 2nd–3rd)
+
+---
+
+### House-by-House: How Each Department Reads in Jordan's Chart
+
+**1st house — Gemini 29° (ASC)**
+*Identity, appearance, first impressions, how you meet the world*
+The threshold degree. Transit through here = something about how Jordan presents, how she's perceived, whether what's visible matches what's internal. Transits here often activate the South Node mirroring question: whose frequency is she broadcasting? When a planet conjuncts the Ascendant, it literally shows up on the face and in the room.
+
+**2nd house — ~Cancer (cusp)**
+*Money, values, resources, what you own, self-worth through material form*
+The 2nd house in Cancer: finances are tied to emotional security, not just logic. Money decisions feel personal. The savings milestone ($3,209) is emotionally significant, not just practical. Transits here activate the relationship between emotional safety and financial ground.
+
+**3rd house — ~Leo (cusp)**
+*Communication, local environment, writing, learning, daily mental activity*
+Leo-colored communication: the writing has a performative, expressive quality when working well. Transits here affect how Jordan communicates — the newsletters, Slack messages, the reading delivery. Mercury retrograde through this house = the writing voice goes inward.
+
+**4th house — Virgo ~1° (IC) · Chiron 8°08' Virgo**
+*Home, body, the private self, roots, what was inherited*
+The 4th is where the Chiron wound lives — perfectionism, enoughness, the home as the site of earliest conditioning. Transits to this house or to natal Chiron here activate the foundational "am I enough" question. It's the most private part of the chart. What happens in the 4th doesn't announce itself publicly — it lands in the body and in the sleep.
+
+**5th house — ~Libra cusp · Scorpio stellium (Mercury, Venus, Jupiter, Pluto)**
+*Creativity, romance, passion projects, joy, what you do because it matters*
+The most privately held, most intensely felt house. The Scorpio stellium means creativity here is never casual — it goes all the way in or not at all. The astrology business, the natal chart readings, the writing that's genuinely hers: all 5th house. Transits here activate the creative engine. When the 5th house is lit, the work feels necessary rather than performed.
+
+**6th house — ~Scorpio cusp · Sun, Mars, North Node in Sagittarius**
+*Daily work, craft, health, routines, service, the body in action*
+The soul path lives in the house of daily work. The North Node here means the task is not to find some separate higher purpose — it IS the daily work, done with full authenticity. Mars conjunct Sun conjunct North Node in the 6th: the drive, the identity, and the direction are all one thing in operation. Transits here affect: work pace, health routines, the walking pad, the craft quality of everything Jordan produces. The body and the work are not separate.
+
+**7th house — Sagittarius ~29° (DSC) · Uranus, Neptune in Capricorn**
+*Partnership, collaboration, one-on-one relationships, open contracts*
+The Capricorn cluster of Uranus and Neptune in the 7th means partnerships can feel both fated and destabilizing. The idealization risk (Neptune) and the sudden-disconnection risk (Uranus) are natal architecture here — not a pattern to judge, a pattern to know. Transits to the 7th or to Uranus/Neptune activate the relational field: who Jordan is working with, dating, or collaborating with. The South Node mirroring pattern (Gemini ASC) feeds directly into 7th house dynamics.
+
+**8th house — ~Capricorn (cusp)**
+*Transformation, shared resources, depth, what's exchanged with others*
+Jordan has no natal planets here (generational planets are in 7th, not 8th). Transits through this house activate the exchange layer — what's owed, what's shared, what transforms through contact with others. Less personally prominent than 5th, 6th, 10th.
+
+**9th house — ~Aquarius (cusp) · Saturn 1°15' Aquarius**
+*Worldview, philosophy, higher learning, travel, teaching, belief systems*
+Saturn in the 9th colors belief systems with structure and discipline — but discipline that needs meaning to function. The 9th house Saturn is why arbitrary constraint creates freeze rather than action: the body won't move toward something that doesn't make philosophical sense. The student loan avoidance has this signature. Transits here (including Pluto currently in Aquarius) touch the belief system layer, the teaching and publishing identity, the long-distance and expansive vision of life.
+
+**10th house — Pisces 0°59' (MC) · Moon 4°58' Aries**
+*Career, public identity, reputation, what you're known for*
+The MC in Pisces: the public identity has a Neptunian, dissolving quality — what Jordan is "known for" keeps evolving, resisting a single fixed container. The Moon in Aries just after the MC means career and emotional life run on the same circuit. Planetary transits here are simultaneously professional and deeply personal. Saturn transiting here was a grey sky month. Neptune transiting here is vision and porosity. Pluto transiting here (future — many years out) will be total transformation of public identity.
+
+**11th house — ~Aries 10°+ (cusp) · Chiron currently transiting**
+*Community, networks, technology, future visions, collective belonging*
+The 11th house in Aries: the community Jordan builds is driven by initiative and courage rather than consensus. She starts things. #astroflow-weekly, the app, the transit library: all 11th house expressions. Chiron transiting here (Spring–Fall 2026) means the wound is working through the technology-and-community domain — the app itself is Chiron's gift made visible.
+
+**12th house — ~Taurus/Gemini (cusp) · South Node 3°02' Gemini**
+*The hidden life, unconscious patterns, solitude, what lives behind the scenes*
+The South Node in the 12th house: the mirroring-adaptation survival pattern lives at the unconscious level, behind the scenes even from Jordan herself. When the South Node is activated by transit, the old default behavior runs quietly before it's noticed. Uranus will conjunct the South Node here (~2027) — disruption of the deepest habit layer.
+
+---
+
+### How to Apply House Color in Readings
+
+**In the transit board:** Always include the house — `♆ Neptune ☌ ☽ natal Moon (10th)` not just `Neptune ☌ natal Moon`
+
+**In the prose:** Lead with what department of life is being activated before interpreting what the planet is doing. *"In the 10th house — career and emotional life as one organ — Neptune is..."* is more grounded than *"Neptune conjunct the Moon means..."*
+
+**When a transit changes houses:** Note it. Saturn at 12°52' Aries has moved from the 10th house (where the Moon is) into the 11th (community/technology) — the quality of its effect has shifted. The grey-sky career weight is transitioning toward structural pressure on the networks Jordan is building.
+
+**Long-term transits:** Identify the house transit arc. Neptune spends ~14 years in a sign — it's in Aries now but will eventually move through the 10th/11th/12th houses fully. The house journey is the life-arc of the transit.
+
+---
+
 ## Aspect Calculation Rules — CRITICAL
 
 **Step 1 — Absolute degree formula:**

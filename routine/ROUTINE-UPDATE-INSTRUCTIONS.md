@@ -29,13 +29,17 @@ Go to `claude.ai/code/routines` → find routine `trig_01Rtm1xSST2GbdCZh896F2vP`
                                 READ THIS before writing the reading — ground Practical Application
                                 in what's actually happening in her life right now
 
-4. Before writing, read two files from the cloned repo:
+4. Before writing, read three files from the cloned repo:
    - READING-FORMAT.md → the daily reading format spec (sky-responsive format, transit board table,
      length tiers, prose body, today block). Follow this exactly. The format changed June 8, 2026 —
      CLAUDE.md no longer contains the format spec; READING-FORMAT.md is the source of truth.
    - transit library/INDEX.md → the active long-term transit list with breakdown file slugs.
      Use wikilinks in the transit board for any transit that has a breakdown file:
      format: → [[transit-file-slug]]  (e.g. → [[neptune-conjunct-moon]])
+   - "the build/voice-canon.md" → Jordan's accumulated reading quality standards and voice rules.
+     Read this before writing every reading. It contains the Voice DNA, sentence rhythm rules,
+     earned metaphor standards, and all refinements logged from previous readings.
+     The reading quality standard is set here — match it.
 
    Write "daily readings/YYYY-MM/YYYY-MM-DD.md" using positions-today.json data.
    CRITICAL: The reading title format is one evocative phrase written fresh each day — NOT
@@ -105,6 +109,22 @@ Go to `claude.ai/code/routines` → find routine `trig_01Rtm1xSST2GbdCZh896F2vP`
    e. If all transits within 2° already have files: skip this step.
 
    This step ensures the transit library never falls behind the sky.
+
+6. PATCH transit library/INDEX.md orb values — run this after step 5, before writing the reading:
+
+   For every row in the "Active Long-Term Transits" table in INDEX.md:
+   a. Find the matching transit in positions-today.json → transit_to_natal
+   b. Read today's orb from the JSON (field: "orb_degrees")
+   c. Determine applying/separating by comparing today's orb to the PREVIOUS reading's orb
+      (not the JSON "applying" field — verify by trend as in step 4)
+   d. Update the INDEX.md row: replace the Orb column value with today's orb + applying/separating
+      Example: **0.78° applying** → **0.51° applying**  (or → 0.91° separating if trend reversed)
+   e. Update the "(June 8)" or similar date label in the column header to today's date
+   f. If a transit's orb has grown past 5° separating: move it to "Recently Completed"
+   g. If a transit previously in "Upcoming" has entered 2° orb: move it to "Active"
+
+   The INDEX.md is always-loaded — stale orbs degrade every session's accuracy.
+   This patch should take 2–3 minutes and must happen before the reading is written.
 
 7. Write "weekly readings/YYYY-MM-DD-week-ahead.md" using positions-week.json.
    Use the date of the COMING Monday as the filename date (e.g. "weekly readings/2026-06-01-week-ahead.md").

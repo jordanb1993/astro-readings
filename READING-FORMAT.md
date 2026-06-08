@@ -263,6 +263,63 @@ Only long-term transits — outer planets (Saturn, Uranus, Neptune, Pluto, Chiro
 
 ---
 
+## House Interpretation — Required in Every Reading
+
+**The house names the department of life. The planet describes the weather. Both are required.**
+
+A transit without its house is a weather report with no address. Always name the house — in the transit board (parenthetical after the natal point), and in the prose when the interpretation deepens.
+
+### In the Transit Board
+
+Always include the natal point's house number:
+- `♆ Neptune ☌ ☽ natal Moon (10th)` — not just `Neptune ☌ natal Moon`
+- `☊ NNode △ ♃ natal Jupiter (5th)` — not just `NNode △ natal Jupiter`
+- `⚷ Chiron ✶ ↑ Ascendant (1st, threshold)` — not just `Chiron ✶ Ascendant`
+
+For transiting planets, add their house when it adds interpretive weight:
+- `♃ Jupiter ☌ ♀ Venus (2nd house, t-t)` — Jupiter and Venus both transiting through Jordan's 2nd house
+
+### In the Prose
+
+**Lead with the department before interpreting the planet.** These are not equivalent:
+
+> *"Neptune conjunct the Moon means vision and dissolution..."* — generic
+
+> *"In the 10th house, where career and emotional life run on the same circuit, Neptune is dissolving the boundary between what Jordan does for work and what she feels is genuinely hers..."* — specific
+
+The house grounds the transit in Jordan's actual life. Not "Neptune is making things unclear" but "the 10th house lens: professional identity is the thing being dissolved and reformed."
+
+**Required reads for Jordan's houses in transit interpretations:**
+
+| House | Life domain | Reading lens |
+|-------|-------------|-------------|
+| 1st (Gemini 29°) | Self-presentation, threshold, first impressions | Transits here = who shows up, what's visible |
+| 2nd (~Cancer) | Money, values, self-worth | Transits here = financial safety and emotional security are the same nerve |
+| 3rd (~Leo) | Writing, communication, local movement | Transits here = voice, craft, the newsletter, daily communication |
+| 4th (Virgo, Chiron natal) | Home, body, private self, the wound | Transits here = perfectionism, enoughness, what was inherited |
+| 5th (~Libra cusp / Scorpio stellium) | Creativity, romance, passion projects | Transits here = full-weight engagement or nothing; the business lives here |
+| 6th (~Scorpio cusp / Sag Sun-Mars-NNode) | Daily work, craft, health, body in motion | Transits here = the soul path is operational; identity through the daily |
+| 7th (Sag ~29° / Cap Uranus-Neptune) | Partnership, collaboration | Transits here = relational field; disruption and dissolution woven in at natal |
+| 8th (~Cap) | Transformation, shared resources | Transits here = exchange layer; less personally prominent |
+| 9th (~Aquarius, Saturn natal) | Worldview, belief systems, teaching | Transits here = belief structure; Saturn's discipline needs philosophical grounding |
+| 10th (Pisces MC / Aries Moon) | Career, public identity, reputation | Transits here hit career AND emotional life simultaneously — same circuit |
+| 11th (~Aries, Chiron transiting) | Community, technology, future visions | Transits here = networks, the app, #astroflow-weekly; where the wound becomes gift |
+| 12th (~Gemini, South Node) | Unconscious patterns, hidden life | Transits here = the adaptation loop running below awareness |
+
+### When a Transit Changes Houses
+
+When a long-term transit planet moves from one house to another, name the shift. Saturn spent months in the 10th house (career/emotional weight) and has now moved into the 11th (community/technology). The quality of the pressure has changed. Mark it in the prose.
+
+### House Emphasis in the Prose — Proportion Rule
+
+Not every transit needs a full house paragraph. Match depth to intensity:
+- **Exact or applying < 0.3°:** full house lens in the prose — what department is being activated and how
+- **Applying 0.3°–1.0°:** one sentence naming the house domain
+- **Applying 1.0°–2.0° or separating:** house number in the transit board; optional one phrase in prose
+- **Separating > 2°:** house number in transit board only; skip in prose unless Jordan asks
+
+---
+
 ## Universal Writing Rules
 
 - Present tense unless the transit has already separated (>5°)
