@@ -1,0 +1,326 @@
+# correlations.yaml
+# Structured companion to KNOWLEDGE.md — machine-parseable correlation log
+# Schema: id, date, transit (transiting planet + aspect + natal point), event, category, strength, notes
+# Strength: exact (0-0.25°), tight (0.25-1°), building (1-2°)
+# Last updated: 2026-06-08
+
+correlations:
+
+  # ─── MARCH 2026 ───────────────────────────────────────────────
+
+  - id: "2026-MAR-01"
+    date: "2026-03-10"
+    transit:
+      transiting_planet: "Jupiter"
+      aspect: "station direct"
+      natal_planet: null
+      natal_house: null
+      orb: "0°"
+    event: "Jupiter stationed direct; Megan resurfaced; dating forward motion resumed after months of stagnation"
+    category: "dating"
+    strength: "exact"
+    notes: "One of the most precise correlations found. Jupiter retrograde = dating stagnation; Jupiter direct = dating flow. Correlation was exact in both direction changes."
+
+  - id: "2026-MAR-02"
+    date: "2026-03-17"
+    transit:
+      transiting_planet: "Mercury Rx"
+      aspect: "opposition"
+      natal_planet: "Chiron"
+      natal_sign: "Virgo"
+      natal_degree: 8.13
+      natal_house: 4
+      orb: "0.01°"
+    event: "Megan's closure message arrived — apology, said she needs to take a step back"
+    category: "relationships"
+    strength: "exact"
+    notes: "Mercury retrograde chose Jordan's Chiron as its literal turning point. The communication that activated the wound arrived on the day the sky most precisely activated that wound."
+
+  - id: "2026-MAR-03"
+    date: "2026-03-18"
+    transit:
+      transiting_planet: "Moon"
+      aspect: "balsamic phase"
+      natal_planet: null
+      natal_house: null
+      orb: null
+    event: "Day 28 of menstrual cycle coincided with balsamic dark moon"
+    category: "body_cycle"
+    strength: "exact"
+    notes: "Two natural cycles at their lowest point simultaneously — body and cosmos in synchrony."
+
+  - id: "2026-MAR-04"
+    date: "2026-03-19"
+    transit:
+      transiting_planet: "Moon"
+      aspect: "conjunction"
+      natal_planet: "Moon"
+      natal_sign: "Aries"
+      natal_degree: 4.97
+      natal_house: 10
+      orb: "0°"
+    event: "Lunar return (Moon conjunct natal Moon) coincided with Day 1 of period"
+    category: "body_cycle"
+    strength: "exact"
+    notes: "Body and cosmos in synchrony — lunar return and menstrual cycle aligned."
+
+  - id: "2026-MAR-05"
+    date: "2026-03-27"
+    transit:
+      transiting_planet: "Saturn"
+      aspect: "conjunction"
+      natal_planet: "Moon"
+      natal_sign: "Aries"
+      natal_degree: 4.97
+      natal_house: 10
+      orb: "0.02°"
+    event: "Peak of Saturn-Moon transit — emotional heaviness maximum; inner critic loudest"
+    category: "inner_state"
+    strength: "exact"
+    notes: "Saturn at exactly 5°00' Aries, natal Moon 4°58'. The peak of the transit. Inner critic running at maximum."
+
+  # ─── APRIL 2026 ───────────────────────────────────────────────
+
+  - id: "2026-APR-01"
+    date: "2026-04-07"
+    transit:
+      transiting_planet: "Mars"
+      aspect: "square"
+      natal_planet: "Ascendant"
+      natal_sign: "Gemini"
+      natal_degree: 89.37
+      natal_house: 1
+      orb: "0.05°"
+    event: "Tony workplace confrontation threshold — Kristen escalated to Michael Cole; Tony apologized"
+    category: "workplace"
+    strength: "exact"
+    notes: "Months of building workplace tension arrived at the head on the exact day Mars completed the square to the Ascendant."
+
+  - id: "2026-APR-02"
+    date: "2026-04-07"
+    transit:
+      transiting_planet: "Moon"
+      aspect: "sextile"
+      natal_planet: "Saturn"
+      natal_sign: "Aquarius"
+      natal_degree: 301.25
+      natal_house: 9
+      orb: null
+    event: "Jordan and Dasha were emotionally grounded during the confrontation — calm when typically anxious"
+    category: "inner_state"
+    strength: "tight"
+    notes: "Moon sextile natal Saturn = emotional groundedness under pressure. Explains the regulated response."
+
+  - id: "2026-APR-03"
+    date: "2026-04-07"
+    transit:
+      transiting_planet: "Saturn"
+      aspect: "conjunction"
+      natal_planet: "Moon"
+      natal_sign: "Aries"
+      natal_degree: 4.97
+      natal_house: 10
+      orb: "0.18°"
+    event: "Tony confrontation landed harder than it otherwise would have — still within Saturn-Moon orb"
+    category: "workplace"
+    strength: "tight"
+    notes: "Saturn conjunct Moon still active (0.18° orb) — emotional weight of the workplace situation amplified by transit."
+
+  - id: "2026-APR-04"
+    date: "2026-04-09"
+    transit:
+      transiting_planet: "Mars"
+      aspect: "anaretic degree 29° Pisces"
+      natal_planet: "Ascendant"
+      natal_sign: "Gemini"
+      natal_degree: 89.37
+      natal_house: 1
+      orb: "0.38°"
+    event: "NAGA case study aftershock — Tony escalated again about urgent publishing during Webflow outage"
+    category: "workplace"
+    strength: "tight"
+    notes: "Mars at the anaretic degree = urgent, culminating energy that hadn't fully discharged. The confrontation continued because the Mars energy was still live."
+
+  - id: "2026-APR-05"
+    date: "2026-04-09"
+    transit:
+      transiting_planet: "Sun"
+      aspect: "square"
+      natal_planet: "Uranus"
+      natal_sign: "Capricorn"
+      natal_degree: 289.57
+      natal_house: 7
+      orb: "0.03°"
+    event: "Peak inner critic spiral about relationship uncertainty + Tony situation"
+    category: "inner_state"
+    strength: "exact"
+    notes: "Sun squaring natal Uranus AND natal Neptune simultaneously (both at ~19° Capricorn, 7th house). Double hit — fog and restlessness at maximum. Not accurate perception days."
+
+  - id: "2026-APR-06"
+    date: "2026-04-09"
+    transit:
+      transiting_planet: "Mars"
+      aspect: "ingress"
+      natal_planet: null
+      natal_house: null
+      orb: "0°"
+    event: "Professional energy shifted — Pisces murk cleared into something more direct and legible"
+    category: "workplace"
+    strength: "exact"
+    notes: "Mars entering Aries. The murky emotional professional dynamic cleared. The shift was felt."
+
+  # ─── MAY 2026 ─────────────────────────────────────────────────
+
+  - id: "2026-MAY-01"
+    date: "2026-05-14"
+    transit:
+      transiting_planet: "Uranus"
+      aspect: "opposition"
+      natal_planet: "Sun"
+      natal_sign: "Sagittarius"
+      natal_degree: 241.82
+      natal_house: 6
+      orb: "0.01°"
+    event: "#astroflow-weekly launched; Krista endorsed within 24 minutes; multi-person organic adoption same day"
+    category: "career_identity"
+    strength: "exact"
+    notes: "Uranus opposition Sun exact first pass. The private astrology work broke into the visible professional sphere without planning. Uranus doing exactly what it does: what was internal goes external. Most precise single-day Uranus correlation on record."
+
+  - id: "2026-MAY-02"
+    date: "2026-05-18"
+    transit:
+      transiting_planet: "Uranus"
+      aspect: "opposition"
+      natal_planet: "Sun"
+      natal_sign: "Sagittarius"
+      natal_degree: 241.82
+      natal_house: 6
+      orb: "0.24°"
+    event: "Eleanor chapter closed with a kind, clean phone call; South Node dating pattern named"
+    category: "dating"
+    strength: "exact"
+    notes: "Separation at 2 dates (not years in) = measurable North Node growth. Pattern named: South Node Gemini = seeking mirrors. Two of Cups as tuning fork going forward."
+
+  - id: "2026-MAY-03"
+    date: "2026-05-18"
+    transit:
+      transiting_planet: "Uranus"
+      aspect: "opposition"
+      natal_planet: "Sun"
+      natal_sign: "Sagittarius"
+      natal_degree: 241.82
+      natal_house: 6
+      orb: "0.24°"
+    event: "Astrology business Phase 1 scoped; LinkedIn headline updated; new professional identity pathway opened"
+    category: "career_identity"
+    strength: "exact"
+    notes: "Business plan + professional identity renovation both happening in same week as first Uranus-Sun exact opposition. The old container being renovated = new container taking shape simultaneously."
+
+  - id: "2026-MAY-04"
+    date: "2026-05-27"
+    transit:
+      transiting_planet: "Neptune"
+      aspect: "conjunction"
+      natal_planet: "Moon"
+      natal_sign: "Aries"
+      natal_degree: 4.97
+      natal_house: 10
+      orb: "0.03°"
+    event: "Workplace erasure incident — being uncredited after 30 hours of exceptional output landed at body level, not just mind level"
+    category: "workplace"
+    strength: "exact"
+    notes: "Neptune at 0.03° on 10th house Moon = zero filtering between accurate sensing and emotional impact. The read was correct AND the cost was high. Career visibility and emotional life are the same organ. Confirmed Neptune-Moon mechanism with precision."
+
+  - id: "2026-MAY-05"
+    date: "2026-05-21"
+    transit:
+      transiting_planet: "Jupiter"
+      aspect: "trine"
+      natal_planet: "Jupiter"
+      natal_sign: "Scorpio"
+      natal_degree: 212.87
+      natal_house: 5
+      orb: "0.28°"
+    event: "#astroflow-weekly first post published; organic Slack adoption began"
+    category: "career_identity"
+    strength: "exact"
+    notes: "Jupiter in Cancer trining natal Jupiter in Scorpio (5th house) — the creative work expanding publicly. Part of the Venus-Jupiter-Cancer-Scorpio stellium trine sequence."
+
+  # ─── JUNE 2026 ────────────────────────────────────────────────
+
+  - id: "2026-JUN-01"
+    date: "2026-06-07"
+    transit:
+      transiting_planet: "Chiron"
+      aspect: "sextile"
+      natal_planet: "Ascendant"
+      natal_sign: "Gemini"
+      natal_degree: 89.37
+      natal_house: 1
+      orb: "0.01°"
+    event: "Chiron sextile Ascendant exact first pass (two anaretic degrees in sextile)"
+    category: "identity"
+    strength: "exact"
+    notes: "Chiron at 29° Aries sextile Ascendant at 29° Gemini — both at threshold degrees simultaneously. Rare configuration. The wound completing its Aries chapter making a cooperative opening to self-presentation. Build context: app is the 11th house wound's gift made visible."
+
+  - id: "2026-JUN-02"
+    date: "2026-06-08"
+    transit:
+      transiting_planet: "Jupiter"
+      aspect: "trine"
+      natal_planet: "Pluto"
+      natal_sign: "Scorpio"
+      natal_degree: 235.67
+      natal_house: 5
+      orb: "0.18°"
+    event: "Venus-Jupiter conjunction in Cancer approaching exact (June 9); Scorpio 5th house stellium trine window peak"
+    category: "creative"
+    strength: "tight"
+    notes: "Jupiter △ natal Pluto applying — expansion of creative magnetism. Venus △ natal Pluto follows June 10-11. The most personally activated creative transit of 2026."
+
+  # ─── BUILD CORRELATIONS (June 2026) ──────────────────────────
+
+  - id: "2026-BUILD-01"
+    date: "2026-06-05"
+    transit:
+      transiting_planet: "Chiron"
+      aspect: "transit through 11th house"
+      natal_planet: "Ascendant"
+      natal_sign: "Gemini"
+      natal_degree: 89.37
+      natal_house: 1
+      orb: "0.02°"
+    event: "App architecture recognized as expression of Chiron 11th house transit — wound working through technology/networks domain"
+    category: "build"
+    strength: "exact"
+    notes: "11th house rules: networks, technology, future visions, collective communities. The app IS the transit expressed as a product. The wound becoming a gift to others through technology."
+
+  - id: "2026-BUILD-02"
+    date: "2026-06-05"
+    transit:
+      transiting_planet: "Neptune"
+      aspect: "conjunction"
+      natal_planet: "Moon"
+      natal_sign: "Aries"
+      natal_degree: 4.97
+      natal_house: 10
+      orb: "0.45°"
+    event: "Recognized: Neptune-Moon's emotional sensing precision as UX research tool for app design"
+    category: "build"
+    strength: "tight"
+    notes: "Neptune on 10th house Moon gives unusually precise read on what people feel when receiving a reading. Marina's 'felt very affirming' response is Neptune-Moon UX data. The hands-on Phase 1 readings are happening during the most precise access window."
+
+  - id: "2026-BUILD-03"
+    date: "2026-06-05"
+    transit:
+      transiting_planet: "NNode"
+      aspect: "trine"
+      natal_planet: "Jupiter"
+      natal_sign: "Scorpio"
+      natal_degree: 212.87
+      natal_house: 5
+      orb: "0.09°"
+    event: "Creative initiation window recognized — easiest point of the build cycle to begin"
+    category: "build"
+    strength: "exact"
+    notes: "NNode (soul path direction) in cooperative flow with natal Jupiter (5th house creative expansion). Creative work begun now reaches fuller expression. The ease itself is the signal."

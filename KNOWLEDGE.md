@@ -15,7 +15,7 @@ This document captures the accumulated wisdom, real-time correlations, personal 
 - Connect new transits to established patterns
 - Reference verified correlations between sky events and life events
 
-This document is the experiential layer. INSTRUCTIONS.md holds the operational rules and natal chart. Together they form the complete system.
+This document is the experiential layer. NATAL.md holds the natal chart, calculation rules, and orb table. CLAUDE.md holds the session SOPs and routing. Together they form the complete always-loaded context.
 
 ---
 
