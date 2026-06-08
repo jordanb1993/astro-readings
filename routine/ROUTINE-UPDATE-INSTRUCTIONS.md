@@ -79,16 +79,43 @@ Go to `claude.ai/code/routines` → find routine `trig_01Rtm1xSST2GbdCZh896F2vP`
        in life context connects to it today, put it in the board and leave it out of the prose.
      - Prose earns long-term transit presence by having something genuinely new to say about it today.
 
-5. Write "weekly readings/YYYY-MM-DD-week-ahead.md" using positions-week.json.
+5. TRANSIT LIBRARY AUTO-DETECTION — run this before writing the reading:
+
+   a. List all existing breakdown files:
+      ls "transit library/"
+      This gives you the slugs of what already exists.
+
+   b. From positions-today.json → transit_to_natal array, find every aspect where:
+      - transiting planet is one of: Saturn, Uranus, Neptune, Pluto, Chiron, North Node
+      - orb ≤ 2.0°
+
+   c. For each such aspect, check if a corresponding file exists in transit library/.
+      Naming convention: [transiting-planet-lowercase]-[aspect-word]-[natal-point-lowercase].md
+      Examples: neptune-conjunct-moon.md, saturn-conjunct-moon.md, uranus-opposition-sun.md
+
+   d. If a transit meets the 2° threshold AND no file exists:
+      - Create the file using transit library/_template.md as the base
+      - Fill in all frontmatter fields from the JSON data (transiting planet, natal planet,
+        natal house, aspect type, current orb, whether applying/separating)
+      - Write a Signal section (1 sentence: what this transit is doing to this natal point)
+      - Leave the remaining sections as template stubs — Jordan will flesh them out
+      - Add a row to transit library/INDEX.md under "Active Long-Term Transits"
+      - Note: the stub file is better than no file — daily readings can wikilink to it immediately
+
+   e. If all transits within 2° already have files: skip this step.
+
+   This step ensures the transit library never falls behind the sky.
+
+7. Write "weekly readings/YYYY-MM-DD-week-ahead.md" using positions-week.json.
    Use the date of the COMING Monday as the filename date (e.g. "weekly readings/2026-06-01-week-ahead.md").
    Only write this file on Sundays — skip on other days.
    Format: see template below.
 
-6. Patch CLAUDE.md active transits line:
+8. Patch CLAUDE.md active transits line:
    Replace the line beginning with "Active transits as of" in CLAUDE.md with the
    content of active-transits.txt. The line is inside the "Current Situation Snapshot" section.
 
-7. SELF-CHECK before committing — read your completed reading and verify every item:
+9. SELF-CHECK before committing — read your completed reading and verify every item:
 
    ACCURACY:
    □ Every slow-planet aspect (Saturn/Uranus/Neptune/Pluto/Chiron) has applying/separating
@@ -117,7 +144,7 @@ Go to `claude.ai/code/routines` → find routine `trig_01Rtm1xSST2GbdCZh896F2vP`
 
    If any item fails: fix it before proceeding to the commit.
 
-8. Commit and push:
+10. Commit and push:
    git add -A && git commit -m "reading + week-ahead + patches YYYY-MM-DD" && git push origin main
 ```
 

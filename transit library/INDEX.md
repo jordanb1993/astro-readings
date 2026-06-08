@@ -10,7 +10,7 @@
 |---------|---------------|-------------|--------|---------------------|
 | ☊ NNode △ ♃ natal Jupiter (5th) | — | **0.06° applying** | Exact NOW | June 8 peak |
 | ♀ ☌ ♃ Venus-Jupiter △ Scorpio stellium | [[venus-jupiter-cancer-scorpio]] | 0.18° (Jup △ Pluto applying) | Peak window | Venus △ Pluto exact June 10–11 |
-| ♇ Pluto Rx ✶ ☽ natal Moon (10th) | — | **0.31° applying** | Active | Slow build through 2026 |
+| ♇ Pluto Rx ✶ ☽ natal Moon (10th) | [[pluto-sextile-moon]] | **0.30° applying** | Exact ~June 28–July 1 | Simultaneous with Neptune exact |
 | ⚷ Chiron ✶ ↑ Ascendant (29°) | [[chiron-sextile-ascendant]] | 0.16° separating | Just past exact | Retrograde 2nd pass ~Aug 2026 |
 | ♆ Neptune ☌ ☽ natal Moon (10th) | [[neptune-conjunct-moon]] | **0.78° applying** | Building | First exact late June/early July 2026 |
 | ♅ Uranus ☍ ☉ natal Sun (6th) | [[uranus-opposition-sun]] | 1.03° separating | Past first exact | 2nd exact (retrograde) Oct 2026 |
@@ -21,7 +21,7 @@
 
 | Transit | Notes |
 |---------|-------|
-| Saturn conjunct natal Moon | Left 2° orb ~April 12, 2026; the handoff to Neptune |
+| Saturn conjunct natal Moon (1st pass) | Left 2° orb ~April 12, 2026; file exists [[saturn-conjunct-moon]]; 2nd pass enters orb ~Oct 2026 |
 
 ---
 
@@ -49,9 +49,11 @@
 | File | Transit |
 |------|---------|
 | [[neptune-conjunct-moon]] | Neptune ☌ natal Moon (Aries, 10th) |
+| [[pluto-sextile-moon]] | Pluto ✶ natal Moon (Aries, 10th) |
 | [[uranus-opposition-sun]] | Uranus ☍ natal Sun (Sagittarius, 6th) |
 | [[chiron-sextile-ascendant]] | Chiron ✶ natal Ascendant (Gemini 29°) |
 | [[venus-jupiter-cancer-scorpio]] | Venus ☌ Jupiter in Cancer △ Scorpio 5th stellium |
+| [[saturn-conjunct-moon]] | Saturn ☌ natal Moon (Aries, 10th) — 2nd pass ~Oct 2026 |
 
 ---
 
