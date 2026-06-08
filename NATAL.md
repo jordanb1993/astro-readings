@@ -102,15 +102,15 @@ The 2nd house in Cancer: finances are tied to emotional security, not just logic
 *Communication, local environment, writing, learning, daily mental activity*
 Leo-colored communication: the writing has a performative, expressive quality when working well. Transits here affect how Jordan communicates — the newsletters, Slack messages, the reading delivery. Mercury retrograde through this house = the writing voice goes inward.
 
-**4th house — Virgo ~1° (IC) · Chiron 8°08' Virgo**
+**4th house — Virgo 8°17' (IC) · Chiron 8°29' Virgo (0.2° past IC)**
 *Home, body, the private self, roots, what was inherited*
-The 4th is where the Chiron wound lives — perfectionism, enoughness, the home as the site of earliest conditioning. Transits to this house or to natal Chiron here activate the foundational "am I enough" question. It's the most private part of the chart. What happens in the 4th doesn't announce itself publicly — it lands in the body and in the sleep.
+The 4th is where the Chiron wound lives — perfectionism, enoughness, the home as the site of earliest conditioning. Chiron conjunct the IC means the wound is at the literal root of the chart. Transits here land in the body and in the sleep before they surface in the mind.
 
-**5th house — ~Libra cusp · Scorpio stellium (Mercury, Venus, Jupiter, Pluto)**
+**5th house — Libra 12°07' cusp · Scorpio stellium (Mercury 12°17', Jupiter 2°52', Venus 18°50')**
 *Creativity, romance, passion projects, joy, what you do because it matters*
-The most privately held, most intensely felt house. The Scorpio stellium means creativity here is never casual — it goes all the way in or not at all. The astrology business, the natal chart readings, the writing that's genuinely hers: all 5th house. Transits here activate the creative engine. When the 5th house is lit, the work feels necessary rather than performed.
+The most privately held, most intensely felt house. The Scorpio stellium means creativity here is never casual — it goes all the way in or not at all. The astrology business, the natal chart readings, the writing that's genuinely hers: all 5th house. Transits here activate the creative engine. When the 5th house is lit, the work feels necessary rather than performed. Note: Pluto at Scorpio 25°41' has crossed into the 6th house (cusp: Scorpio 22°07').
 
-**6th house — ~Scorpio cusp · Sun, Mars, North Node in Sagittarius**
+**6th house — Scorpio 22°07' cusp · Sun 1°50', North Node 3°03', Mars 10°46' in Sagittarius · Pluto 25°41' Scorpio**
 *Daily work, craft, health, routines, service, the body in action*
 The soul path lives in the house of daily work. The North Node here means the task is not to find some separate higher purpose — it IS the daily work, done with full authenticity. Mars conjunct Sun conjunct North Node in the 6th: the drive, the identity, and the direction are all one thing in operation. Transits here affect: work pace, health routines, the walking pad, the craft quality of everything Jordan produces. The body and the work are not separate.
 
