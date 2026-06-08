@@ -70,21 +70,23 @@ Houses are the departments of life a transit activates. The same planet doing th
 
 **Known house cusps (verified from natal placements):**
 - 1st: Gemini 29°22' (ASC — anaretic)
-- 4th: Virgo ~1° (IC — opposite Pisces MC)
-- 5th: ~Libra 7° (Scorpio stellium begins just after)
-- 6th: ~Scorpio 10° (Sun/Mars/NNode in Sagittarius live here)
-- 7th: Sagittarius ~29° (DSC — opposite ASC)
-- 10th: Pisces 0°59' (MC)
-- 11th: ~Aries 10–15° (Chiron currently transiting this house)
+- 4th: Virgo 8°17' (IC — opposite Pisces 8°17' MC)
+- 5th: Libra 12°07'
+- 6th: Scorpio 22°07'
+- 7th: Sagittarius 29°22' (DSC — opposite ASC)
+- 9th: Aquarius 12°01'
+- 10th: Pisces 8°17' (MC)
+- 11th: Aries 12°07'
+- 12th: Taurus 22°07'
 
-*Full cusp table to be added to natal-chart.json — use natal planet positions as landmarks until then.*
+*Full cusp table now in natal-chart.json (added June 8 2026). All 12 cusps verified via Swiss Ephemeris.*
 
-**Transiting planet house identification:**
-- Moon/Neptune at 4°11'–4°58' Aries → **10th house** (confirmed — Moon natal placement)
-- Saturn/Chiron at 12°–29° Aries → **11th house** (Chiron confirmed in KNOWLEDGE.md)
-- Pluto at 5° Aquarius → **9th house** (Saturn natal at 1°15' Aquarius is 9th, Pluto just past it)
-- Uranus at 2°31' Gemini → **12th house** (South Node at 3° Gemini is 12th)
-- Jupiter/Venus at 24°–25° Cancer → **2nd house** (rough estimate — Cancer spans 2nd–3rd)
+**Transiting planet house identification (current as of June 2026):**
+- Neptune at ~4° Aries → **10th house** (10th spans Pisces 8°17' through Aries 12°07')
+- Transiting Saturn/Chiron at 12°–29° Aries → **11th house** (11th spans Aries 12°07' through Taurus 22°07')
+- Transiting Pluto at ~5° Aquarius → **9th house** (9th spans Aquarius 12°01'... wait, 5° < 12°01', so Pluto is in **8th house** — 8th spans Capricorn 20°14' through Aquarius 12°01')
+- Uranus at ~2°–3° Gemini → **12th house** (12th spans Taurus 22°07' through Gemini 29°22')
+- Jupiter/Venus in Cancer → house depends on exact degree; Cancer spans roughly 2nd–3rd (2nd: Cancer 20°14' cusp)
 
 ---
 
@@ -122,11 +124,11 @@ The Capricorn cluster of Uranus and Neptune in the 7th means partnerships can fe
 *Transformation, shared resources, depth, what's exchanged with others*
 Jordan has no natal planets here (generational planets are in 7th, not 8th). Transits through this house activate the exchange layer — what's owed, what's shared, what transforms through contact with others. Less personally prominent than 5th, 6th, 10th.
 
-**9th house — ~Aquarius (cusp) · Saturn 1°15' Aquarius**
+**9th house — Aquarius 12°01' (cusp) · Saturn 24°15' Aquarius · Lot of Fortune 26°13' Aquarius**
 *Worldview, philosophy, higher learning, travel, teaching, belief systems*
-Saturn in the 9th colors belief systems with structure and discipline — but discipline that needs meaning to function. The 9th house Saturn is why arbitrary constraint creates freeze rather than action: the body won't move toward something that doesn't make philosophical sense. The student loan avoidance has this signature. Transits here (including Pluto currently in Aquarius) touch the belief system layer, the teaching and publishing identity, the long-distance and expansive vision of life.
+Saturn in the 9th colors belief systems with structure and discipline — but discipline that needs meaning to function. Arbitrary constraint creates freeze; the body won't move toward something that doesn't make philosophical sense. The Lot of Fortune conjunct Saturn (1°58') means fortune operates through the same 9th house register: the long, philosophically grounded build. Transits here touch the belief system layer, the teaching and publishing identity, the expansive vision. Note: transiting Pluto at ~5° Aquarius is in the **8th house** (8th spans Capricorn 20°14' to Aquarius 12°01') — it enters the 9th when it crosses 12°01' Aquarius.
 
-**10th house — Pisces 0°59' (MC) · Moon 4°58' Aries**
+**10th house — Pisces 8°17' (MC) · Moon 4°59' Aries**
 *Career, public identity, reputation, what you're known for*
 The MC in Pisces: the public identity has a Neptunian, dissolving quality — what Jordan is "known for" keeps evolving, resisting a single fixed container. The Moon in Aries just after the MC means career and emotional life run on the same circuit. Planetary transits here are simultaneously professional and deeply personal. Saturn transiting here was a grey sky month. Neptune transiting here is vision and porosity. Pluto transiting here (future — many years out) will be total transformation of public identity.
 

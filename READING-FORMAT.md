@@ -73,7 +73,7 @@ Markdown table. Only include aspects currently in orb (applying OR separating �
 ```
 | ☊ NNode △ ♃ natal Jupiter (5th) | **0.06°** applying | soul path × creative depth |
 | ⚷ Chiron ✶ ↑ Ascendant | 0.16° separating | → [[chiron-sextile-ascendant]] |
-| ♃ Jupiter △ ♇ natal Pluto (5th) | **0.18°** applying | → [[venus-jupiter-cancer-scorpio]] |
+| ♃ Jupiter △ ♇ natal Pluto (6th) | **0.18°** applying | → [[venus-jupiter-cancer-scorpio]] |
 | ♆ Neptune ☌ ☽ natal Moon (10th) | **0.78°** applying | → [[neptune-conjunct-moon]] |
 | ♇ Pluto Rx ✶ ☽ natal Moon (10th) | **0.31°** applying | depth becoming authority |
 | ♀ Venus ☌ ♃ Jupiter (transit) | 1.42° | exact [day] — → [[link]] |
