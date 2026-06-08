@@ -1,10 +1,10 @@
-# The Stars:Daily Digest | 2026-06-07
+# The Stars:Daily Digest | 2026-06-08
 
-**Moon:** 4.37° Pisces | Waning Gibbous
+**Moon:** 17.14° Pisces | Waning Gibbous
 
 **Top active transits (tight orb):**
-- NNode △ natal Jupiter (5th):0.06° separating
-- Mars ∠ natal Ascendant (1st):0.1° separating
-- Mercury □/ natal Saturn (9th):0.11° separating
+- NNode △ natal Jupiter (5th):0.06° applying
+- NNode □ natal NorthNode (6th):0.11° separating
+- NNode □ natal SouthNode (12th):0.11° separating
 
-*Full reading: the stars/daily readings/2026-06/2026-06-07.md*
+*Full reading: the stars/daily readings/2026-06/2026-06-08.md*
