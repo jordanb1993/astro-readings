@@ -112,6 +112,21 @@ Default to a comma, colon, or new sentence in almost every case. Reserve the em 
 
 ---
 
+## Cross-Reading-Type Application Protocol
+
+*Added June 8, 2026. Jordan's explicit standard: every refinement made for one reading type gets evaluated for all other types. If it applies, it ships to all of them.*
+
+When a refinement is logged here:
+1. **Tag its scope** — which reading types it applies to: Daily / Natal / Weekly / Workplace / Synastry / All
+2. **Push to all applicable types** in CLAUDE.md simultaneously, not just the one where the problem surfaced
+3. **Flag in the refinement log** whether cross-application was done or is pending
+
+The logic: a precision problem in workplace readings almost always exists in daily and weekly too. A voice problem in natal prose almost always shows up in synastry. Writing improvements are not reading-type-specific. Only format and context rules are.
+
+**Default assumption: any writing rule applies to all types.** Only override this for rules that are genuinely format-specific (e.g., "no degrees in the Pulse" is daily-only; "remove stale separating transits from the signal board" is workplace but the underlying principle — don't feature background noise as active weather — applies to daily and weekly too).
+
+---
+
 ## The Reading Quality Standards
 
 *Calibrated as of June 2026. These are accumulated from real reading sessions and deliberate refinement. Each section reflects an actual problem identified and solved.*
@@ -208,21 +223,29 @@ The problem this fixed: The same tracking prompts ("track emotional permeability
 
 *Dated entries. Each one is a documented step in the product's development.*
 
-| Date | What Changed | Why |
-|------|-------------|-----|
-| 2026-06-04 | Sentence rhythm rule added: vary length, favor short; break anything past 3 clauses | Long-sentence accumulation makes everything feel equally weighted; short sentences land harder |
-| 2026-06-04 | Em dash rule reinforced in Voice DNA: rare, 0–1 per piece, `word—word` no spaces | Already in Tone section but not visible enough in the core voice spec; no-spaces rule re-emphasized |
-| 2026-06-04 | Voice DNA section added — 9 personality principles behind all craft rules | Characterization session surfaced that the rules were protecting implicit things worth making explicit: warm-precise, implication-first, economy, specific-over-archetype, light vocabulary, earned metaphor, reader trust, specificity-as-warmth, register range |
-| 2026-06-04 | Writing Style Guide expanded to all reading types — natal, workplace, weekly, synastry now have explicit style guidance | Rules were labeled "Daily Readings" only; other reading types had no style spec |
-| 2026-06-02 | `is_applying()` bug fixed — wrong applying/separating for all non-conjunction aspects | Readings were labeling separating transits as applying, with contradictions ("wider than yesterday, still tightening") |
-| 2026-06-02 | Routine instructions: added orb cross-check requirement | Agent was trusting buggy JSON labels without independent verification |
-| 2026-06-02 | Routine instructions: Correlations no-repeat rule added | Same tracking prompts ("track emotional permeability week over week") appearing verbatim in consecutive readings |
-| 2026-06-02 | Routine instructions: language variety guidance added | Ongoing transits being described with the same phrases day after day |
-| 2026-06-02 | Morning Pulse: no degrees, no orb notation, one sentence | Too clinical — opened with position data instead of felt sense |
-| 2026-06-02 | Deep-dive: vary opening move, optional pull-quotes, short minors, specific not archetypal | Formulaic structure, manufactured pull-quotes, padded secondary aspects |
-| 2026-06-02 | Practical Application: drop unused categories, name real projects, no affirmations, body texture | Generic to-do list that could apply to anyone; inner critic lines felt produced |
-| 2026-06-02 | Tone: plain over poetic, tracks weather, no gravity on light days, no performing | Voice inconsistent; defaulted to archetype register instead of specific present |
-| 2026-06-02 | Em dash rule tightened: 0–1 per reading, no spaces | Overused as clause separator; making prose breathless |
+| Date | What Changed | Why | Applies To |
+|------|-------------|-----|------------|
+| 2026-06-08 | **Cross-reading-type evaluation protocol added** — every refinement tagged with scope and pushed to all applicable types in CLAUDE.md | Refinements were being applied only to the reading type where the problem surfaced, leaving the same problem in other reading types | All |
+| 2026-06-08 | **Stale transit discipline** — >5° separating orb = remove from any featured position; don't headline a transit that peaked before the reading period | Mercury-Neptune appeared in the signal board at 6.67° separating — the exact moment had passed; featuring it as active weather was misleading | All (daily: >5° separating = no headline; weekly/workplace: no signal board placement) |
+| 2026-06-08 | **Velocity-based timing precision** — calculate exact day by daily speed, not by eyeballing; document the math when timing is part of the reading | Venus-Jupiter was written as "Thu-Fri peak" when calculation (1.16° gap ÷ ~1.1°/day net gain) gave Tuesday. Eyeballing orb is imprecise | All |
+| 2026-06-08 | **Late-period applying scan** — always explicitly check for aspects building toward the end of the reading period, not just what's closest now | Venus-Chiron (5.18° applying, exact Friday) was initially missed because it wasn't the tightest aspect; anaretic-degree aspects deserve surface even at 5° | Workplace / Weekly / Daily |
+| 2026-06-08 | **Em dash scope extended to HTML** — the 0–1 rule applies to all HTML text: `.trio-tagline`, `.dive-subtitle`, signal board notes, hero subtitle | Em dash rule existed for prose but HTML builds were inheriting them unchecked | All |
+| 2026-06-08 | **Implication-first in collective readings** — lead with what the transit means for the week, not what it is; the planet names and degrees can arrive second | Workplace collective readings were opening on transit description; the reader doesn't need to be told Venus conjuncts Jupiter, they need to know Tuesday is the relationship capital | Workplace / Weekly (variant of the daily implication rule, applied to collective voice) |
+| 2026-06-08 | **Pull-quote discipline confirmed cross-type** — optional, earned only; one manufactured pull-quote degrades everything around it | Previously called out for daily deep-dives; now explicit for workplace and weekly builds too | All |
+| 2026-06-08 | **Amber signal row for Chiron aspects** — Chiron aspects in signal board get amber border (`.signal-row.amber`), not the default gold, to signal tenderness not obstruction | Chiron is a wound/healing function — coloring it the same as Saturn or outer-planet squares conflates energy types | Workplace HTML specifically |
+| 2026-06-04 | Sentence rhythm rule added: vary length, favor short; break anything past 3 clauses | Long-sentence accumulation makes everything feel equally weighted; short sentences land harder | All |
+| 2026-06-04 | Em dash rule reinforced in Voice DNA: rare, 0–1 per piece, `word—word` no spaces | Already in Tone section but not visible enough in the core voice spec; no-spaces rule re-emphasized | All |
+| 2026-06-04 | Voice DNA section added — 9 personality principles behind all craft rules | Characterization session surfaced that the rules were protecting implicit things worth making explicit: warm-precise, implication-first, economy, specific-over-archetype, light vocabulary, earned metaphor, reader trust, specificity-as-warmth, register range | All |
+| 2026-06-04 | Writing Style Guide expanded to all reading types — natal, workplace, weekly, synastry now have explicit style guidance | Rules were labeled "Daily Readings" only; other reading types had no style spec | All |
+| 2026-06-02 | `is_applying()` bug fixed — wrong applying/separating for all non-conjunction aspects | Readings were labeling separating transits as applying, with contradictions ("wider than yesterday, still tightening") | All |
+| 2026-06-02 | Routine instructions: added orb cross-check requirement | Agent was trusting buggy JSON labels without independent verification | All |
+| 2026-06-02 | Routine instructions: Correlations no-repeat rule added | Same tracking prompts ("track emotional permeability week over week") appearing verbatim in consecutive readings | Daily |
+| 2026-06-02 | Routine instructions: language variety guidance added | Ongoing transits being described with the same phrases day after day | All |
+| 2026-06-02 | Morning Pulse: no degrees, no orb notation, one sentence | Too clinical — opened with position data instead of felt sense | Daily |
+| 2026-06-02 | Deep-dive: vary opening move, optional pull-quotes, short minors, specific not archetypal | Formulaic structure, manufactured pull-quotes, padded secondary aspects | All |
+| 2026-06-02 | Practical Application: drop unused categories, name real projects, no affirmations, body texture | Generic to-do list that could apply to anyone; inner critic lines felt produced | Daily / Weekly |
+| 2026-06-02 | Tone: plain over poetic, tracks weather, no gravity on light days, no performing | Voice inconsistent; defaulted to archetype register instead of specific present | All |
+| 2026-06-02 | Em dash rule tightened: 0–1 per reading, no spaces | Overused as clause separator; making prose breathless | All |
 
 ---
 
