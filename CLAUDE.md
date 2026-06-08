@@ -231,38 +231,146 @@ moon: [Moon phase + sign] OR season: [Sabbat name]
 - `workplace readings/YYYY-MM-DD-week.md` — full reading (includes Slack draft embedded at bottom)
 - `workplace readings/YYYY-MM-DD-week-slack.md` — Slack post only, copy-paste ready
 - `workplace readings/sky-at-work.html` — public interactive HTML, overwritten each week (same URL always)
+- `workplace readings/og-sky-at-work.jpg` — OG preview image (1200×630 Playwright screenshot of hero), updated each week
 
-**Note on sky-at-work.html:** The 4am Sunday routine auto-generates a static skeleton. The full interactive build (sticky status bar, week progress bar, clickable signal board with detail panels, rising sign personalization, read-more dropdowns, scroll fade-in, first-visit hint tooltip) must be written in the session. Do not leave the skeleton — replace it with the full build.
+**Note on sky-at-work.html:** The 4am Sunday routine auto-generates a static skeleton. Replace it with the full v2 interactive build every session. Do not leave the skeleton.
 
-**After writing all three:** Commit and push to GitHub so GitHub Pages updates:
+**After writing all three + OG image:** Commit and push to GitHub:
 ```
 cd "/Users/jordanashleybarney/Library/Mobile Documents/iCloud~md~obsidian/Documents/the stars"
-git add "workplace readings/sky-at-work.html" "workplace readings/YYYY-MM-DD-week.md" "workplace readings/YYYY-MM-DD-week-slack.md"
+git add "workplace readings/sky-at-work.html" "workplace readings/YYYY-MM-DD-week.md" "workplace readings/YYYY-MM-DD-week-slack.md" "workplace readings/og-sky-at-work.jpg"
 git commit -m "sky at work: week of [date]"
 git push origin main
 ```
 
+**Then:** `open "workplace readings/sky-at-work.html"` + `pbcopy` the slack draft.
+
 **Live URL:** `https://jordanb1993.github.io/astro-readings/workplace%20readings/sky-at-work.html`
-(The space in the folder name URL-encodes to `%20`. This is the only correct URL — `readings/sky-at-work.html` without the folder prefix does not exist.)
 
-**Workplace reading format:**
-```
-# [Week dates] · Workplace Transit Digest
+---
 
-## The Sky This Week
-[Planet positions + headline transits]
+#### Transit Selection Rules (signal board)
 
-## For Your Work
-[Lead with what's most relevant to career, focus, communication, strategy]
+- **Include:** Any applying transit ≤6° orb. Any separating transit still ≤3° orb. Moon phase if relevant.
+- **Exclude:** Any separating transit beyond 5° orb — it's stale background noise, not active weather.
+- **Don't miss:** Check for late-week applying aspects explicitly (Venus-Chiron, outer planet squares, Moon conjunctions). These are easy to overlook when Venus is fast-moving through Cancer or a slow planet is near an exact degree.
+- **Timing:** Calculate exactness by daily planetary velocity, not by eyeballing orb. Example: Venus gains ~1.1°/day on Jupiter in Cancer — a 1.16° gap = exact in ~1 day, not "Thursday–Friday." Do the math.
+- **Sort signal board by exactness** (tightest orb first, regardless of planet importance).
+- **Color coding:** gold = Venus/Jupiter warmth, rose = Mercury/Saturn friction, cerulean = Uranus/Nodes, teal = Neptune/Pluto generational, amber = Chiron/wound, muted = Moon phase/background.
+
+---
+
+#### .md Reading Format
+
+```markdown
+---
+cssclasses:
+  - stars-reading
+date: YYYY-MM-DD
+type: workplace-transit
+week: [Month D–D]
+---
+
+# [Headline Transit] · Sky at Work — Week of [Month D]
+*[One evocative subtitle]*
+
+---
+
+> [!quote] The Week
+> [2–3 sentence overview: dominant transit, counter-energy, moon phase. Plain language, no jargon.]
+
+---
+
+## At a Glance
+
+| Aspect | Peaks | Theme |
+|--------|-------|-------|
+[sorted by exactness — tightest first. Remove any separating >5°. Include applying late-week aspects.]
+
+---
+
+## For Communication
+[Mercury aspects, tone, timing. One-on-ones vs group. Best and worst days. Pull quote.]
+
+## For Collaboration
+[Venus/Jupiter aspects, social sky, partnership asks, warmth windows. Pull quote.]
+
+## For Decisions & Momentum
+[Uranus, moon phase, completion vs launch. Best days for each. Pull quote.]
 
 ## Watch For
-[Timing notes — when to push, when to hold, any friction days]
+[Bullet list: day-specific friction points, tender spots, timing cautions. Include Venus-Chiron if applying.]
 
 ## The Bigger Picture
-[Optional: longer outer planet narrative if relevant — AI disruption, market cycles tied to outer planet movements]
+[Outer planet arc — Saturn/Neptune, Pluto, generational context. 1–2 paragraphs + read-more.]
+
+---
+
+## Slack Draft — #astroflow-weekly
+*Copy the block below and paste on Monday morning*
+
+[embedded slack draft]
 ```
 
-**Slack post format:** Casual, professional-friendly, 150–250 words. No jargon. Written so a non-astrologer colleague finds it compelling. Save separately as `-week-slack.md` so it can be copied directly into #astroflow-weekly.
+---
+
+#### Slack Draft Format
+
+- 4–6 emoji bullet "at a glance" rows max
+- Each row: `> [emoji] *[Day or window]* — [Transit] — [plain-language implication]`
+- One sentence intro, one sentence close, link to HTML
+- `pbcopy` immediately after writing
+- No jargon, no degree notation, no house numbers
+- Under 150 words in the code block
+
+---
+
+#### sky-at-work.html — Full v2 Design Spec
+
+The HTML is a standalone app-like build using the same design language as the v3 natal charts (mimi.html, carina.html). Reference those for design decisions. The canonical current build is `workplace readings/sky-at-work.html` — use it as the template each week, updating content while preserving all design infrastructure.
+
+**Palette (same as natal v3):**
+```css
+--bg: #09102a; --surface: #0d1c38; --surface-2: #121e36;
+--gold: #d0a840; --rose: #d4a0b5; --cerulean: #4a9fd4;
+--teal: #5ab8a8; --amber: #d48040; --text: #f0e4cc;
+```
+
+**Fixed backgrounds — all three required:**
+1. `<canvas id="star-canvas">` — JS pulsing star field (gold/rose/cerulean/white stars)
+2. `<svg id="sg-scatter">` — sacred geometry scatter: watercolor ribbon paths (blurred gradient strokes crossing diagonally), concentric circle mandalas at 4 corners in palette colors, faint giant planet glyphs for the week's key transits (0.022–0.026 opacity), diamond accent polygons, constellation dot-and-line network
+3. `<div id="atm-blobs">` — 4 inline-style blobs: gold top-right, cerulean mid-left (28% top), rose bottom-center (transform: translateX(-50%)), teal mid-right (55% top)
+
+**Celestial side columns:** Fixed left+right SVG strips using ☽ ☉ ☾ ✦ ✧ with `stroke="#3e6fa0"` line. Hidden on mobile.
+
+**Sticky week progress bar:** `#week-bar` — day ticks, today highlighted in cerulean, day label. `today` index = 0 for Monday, update each week.
+
+**Hero:**
+- `<svg class="hero-stars">` — constellation lines connecting named star coordinates forming a geometric frame around the title. Gold lines at 0.40 opacity, cerulean cross-lines at 0.40 opacity. Watercolor ellipse glow top-right. Corner ✦ ✧ marks at the constellation nodes.
+- `.hero-geo` — Seed of Life SVG at opacity 0.055 (7 overlapping circles + outer ring + inner hexagon + axis lines)
+- Hero background: `radial-gradient(ellipse at 50% 30%, #132040 0%, #0d1832 42%, #09102a 100%)`
+
+**Signal Trio cards** (`.trio-card`): Three cards — t-gold (Venus/Jupiter warmth), t-rose (Mercury/Saturn friction), t-cerulean (moon phase or third key transit). Each has: floating glyph with `@keyframes floatUp`, LABEL, placement title, orb line, rule, italic tagline. No em dashes in taglines — use periods or colons.
+
+**Rising sign picker:** `<select id="rs-select">` dropdown after trio-wrap, before first cel-divider. 12 options. `onchange="applyRising(this.value)"`. JS object `RS_COMM`, `RS_COLLAB`, `RS_MOMENTUM` each with 12 keys (aries through pisces). Each value is one sentence tailored to that rising sign's relationship to the week's dominant transit. Saves to `localStorage('sky-rising')` and restores on reload. `.rs-note` elements inside each dive section body, `display:none` until a sign is selected.
+
+**Signal board** (`.signal-board`): Clickable rows sorted by exactness. Each row: `.sig-aspect` (monospace), `.sig-orb` (gold), `.sig-note`, `.sig-arrow`. Expanding `.sig-detail` panel. Color classes: `.gold`, `.rose`, `.cerulean`, `.teal`, `.amber`, `.muted`. Click toggles open/close, closes others.
+
+**Dive sections** (`.dive-section`): Five sections standard — Communication (rose), Collaboration (gold), Decisions & Momentum (cerulean), Watch For (amber), The Bigger Picture (teal). Each has: accent bar top, triple radial gradient `.dive-head`, `.dive-icon`, `.dive-eyebrow`, `.dive-title`, `.dive-subtitle`, `.dive-tags`, `.dive-body` with paragraphs, a `.pull` quote, `.rs-note` placeholder, `.dive-expanded` read-more, `.read-more` button.
+
+**Pull quotes:** One per dive section — gold (communication/collaboration), rose-pull, cerulean-pull, teal-pull. Only write one when the sentence genuinely distills the section. Don't manufacture them.
+
+**Fade-in:** `.fade-in` defaults to `opacity: 1; transform: none`. IntersectionObserver adds `.animate-in` class which triggers `@keyframes fadeUp`. Never use `opacity: 0` as the default state — it breaks Playwright screenshots and no-JS environments.
+
+**Planet strip:** All planets as `.planet-pill` chips with `data-tip` hover tooltips. Groups: luminary (gold), personal (rose), social (cerulean), outer (teal), point (muted). Include Chiron and North Node.
+
+**Bottom sheet glossary:** `.key-overlay` with aspect symbols and plain-language descriptions. `.key-btn` fixed bottom-right. Drag handle, close button, keyboard Escape support.
+
+**OG meta tags:** Always include `og:image` pointing to `https://jordanb1993.github.io/astro-readings/workplace%20readings/og-sky-at-work.jpg`. Take the Playwright screenshot at 1200×630 viewport, save to `workplace readings/og-sky-at-work.jpg`, commit alongside the HTML.
+
+**PWA tags:** `theme-color`, `apple-mobile-web-app-capable`, `apple-mobile-web-app-status-bar-style`. Use `mobile-web-app-capable` not `apple-mobile-web-app-capable` for the non-Apple tag (avoids deprecation warning).
+
+**Em dashes in HTML:** Follow the workspace rule — aim for 0–1 per section. Use `&mdash;` in HTML, never spaced. In practice: replace most with commas, colons, or new sentences. Trio taglines and dive subtitles should never have em dashes.
 
 ---
 
@@ -757,9 +865,23 @@ One sentence, or two at most if the sky genuinely has two distinct energies. The
 
 **Accessible to non-astrologers.** #astroflow-weekly is read by colleagues who aren't fluent. The Slack version especially: no jargon, no house numbers, no orb notation. The full `.md` version can be more specific, but not dense.
 
-**Name the actual team context, not generic career archetypes.** "Mercury-Saturn favors the AI repo copy editing over the newsletter brainstorm this week" over "think before you speak." Translate to the real work wherever possible.
+**Collective sky, not personal transits.** The workplace reading is transit-to-transit only. Never use natal chart aspects here. These are the aspects everyone is in.
 
-**Collective sky, not personal transits.** The workplace reading applies to multiple people in multiple roles — keep it general enough to resonate beyond Jordan's own chart.
+**Name the actual team context, not generic career archetypes.** "Mercury-Saturn favors precision over volume — write the draft Tuesday, send Wednesday" not "think before you speak." Translate to real work behavior wherever possible.
+
+**Lead with implication, not planet description.** "Tuesday is the week's relationship capital" not "Venus conjuncts Jupiter exact Tuesday." The sky is the reason, not the subject.
+
+**Timing accuracy is non-negotiable.** Calculate exactness by daily velocity. Venus at ~1.2°/day in Cancer, Mercury at ~1.2°/day in Cancer, Jupiter at ~0.1°/day. Verify: if the gap is 1.16° and Venus gains 1.1°/day, that's Tuesday, not Thursday. Always verify before writing "peaks [day]."
+
+**Remove stale transits.** Separating aspects beyond 5° orb are background noise. Cut them from the signal board. If something peaked last week, it gets at most a one-line "clearing" mention in the pulse card — not a full signal row.
+
+**Always scan for late-week applying aspects.** Venus-Chiron, outer planet ingresses, Moon conjunctions mid-week. These are the easiest to miss and the most useful for precise timing guidance.
+
+**Signal board sorted by exactness, not by planet hierarchy.** Uranus at 0.43° goes above Venus-Jupiter at 1.16° even though Venus-Jupiter is more important narratively. The board is a scanner — let exactness govern the order.
+
+**One pull quote per dive section, earned not produced.** If you're writing it to complete the format, cut it. An absence is better than a manufactured one.
+
+**Rising sign personalization:** One sentence per section (communication, collaboration, momentum) tailored to how that rising sign relates to the week's key transit. Practical and specific, not generic astrology. Saves to localStorage.
 
 ---
 
