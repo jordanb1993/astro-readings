@@ -79,6 +79,12 @@
       width: 100vw; height: 100vh;
       pointer-events: none; z-index: 0;
     }
+    #sg-scatter {
+      position: fixed; inset: 0;
+      pointer-events: none; z-index: 0;
+      width: 100vw; height: 100vh;
+      opacity: 1;
+    }
     #atm-blobs {
       position: fixed; inset: 0;
       width: 100vw; height: 100vh;
@@ -88,10 +94,10 @@
       position: absolute; border-radius: 50%;
       filter: blur(100px); pointer-events: none;
     }
-    .blob-gold    { width: 560px; height: 420px; top: -80px; right: -120px; background: radial-gradient(ellipse, rgba(208,168,64,0.18) 0%, transparent 65%); }
-    .blob-cerulean { width: 480px; height: 480px; top: 40vh; left: -140px; background: radial-gradient(ellipse, rgba(74,159,212,0.14) 0%, transparent 65%); }
-    .blob-rose    { width: 420px; height: 340px; bottom: 10vh; right: -80px; background: radial-gradient(ellipse, rgba(212,160,181,0.12) 0%, transparent 65%); }
-    .blob-teal    { width: 360px; height: 360px; bottom: 30vh; left: -60px; background: radial-gradient(ellipse, rgba(90,184,168,0.10) 0%, transparent 65%); }
+    .blob-gold    { width: 620px; height: 440px; top: -80px; right: -120px; background: radial-gradient(ellipse, rgba(208,168,64,0.16) 0%, transparent 68%); }
+    .blob-cerulean { width: 520px; height: 520px; top: 28%; left: -180px; background: radial-gradient(ellipse, rgba(74,159,212,0.13) 0%, transparent 70%); }
+    .blob-rose    { width: 680px; height: 300px; bottom: -60px; left: 50%; transform: translateX(-50%); background: radial-gradient(ellipse, rgba(212,160,181,0.08) 0%, transparent 70%); }
+    .blob-teal    { width: 320px; height: 320px; top: 55%; right: -60px; background: radial-gradient(ellipse, rgba(90,184,168,0.08) 0%, transparent 70%); }
 
     /* ── CELESTIAL SIDE COLUMNS ── */
     .cel-col {
@@ -792,46 +798,176 @@
 
 <!-- ── FIXED BACKGROUNDS ── -->
 <canvas id="star-canvas"></canvas>
+
+<!-- ── SACRED GEOMETRY SCATTER ── -->
+<svg id="sg-scatter" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="wcBlurHeavy" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="38"/>
+    </filter>
+    <filter id="wcBlurMed" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+    <linearGradient id="rib1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="rgba(74,159,212,0)"/>
+      <stop offset="35%"  stop-color="rgba(74,159,212,0.10)"/>
+      <stop offset="65%"  stop-color="rgba(74,159,212,0.07)"/>
+      <stop offset="100%" stop-color="rgba(74,159,212,0)"/>
+    </linearGradient>
+    <linearGradient id="rib2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="rgba(208,168,64,0)"/>
+      <stop offset="40%"  stop-color="rgba(208,168,64,0.09)"/>
+      <stop offset="70%"  stop-color="rgba(208,168,64,0.06)"/>
+      <stop offset="100%" stop-color="rgba(208,168,64,0)"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Watercolor ribbon paths -->
+  <path d="M 950 -80 C 780 80, 640 280, 420 460 C 200 640, 80 780, -80 940"
+        fill="none" stroke="url(#rib1)" stroke-width="200" opacity="0.95" filter="url(#wcBlurHeavy)"/>
+  <path d="M -120 380 C 80 320, 280 430, 500 360 C 720 290, 880 390, 1120 330"
+        fill="none" stroke="url(#rib2)" stroke-width="160" opacity="0.90" filter="url(#wcBlurHeavy)"/>
+  <path d="M 1060 640 C 860 610, 700 680, 490 625 C 280 570, 140 640, -60 600"
+        fill="none" stroke="rgba(74,159,212,0.050)" stroke-width="90" filter="url(#wcBlurMed)"/>
+  <path d="M -80 160 C 100 220, 340 140, 560 200 C 780 260, 900 170, 1080 230"
+        fill="none" stroke="rgba(212,160,181,0.040)" stroke-width="70" filter="url(#wcBlurMed)"/>
+
+  <!-- Concentric circle mandalas -->
+  <circle cx="500" cy="500" r="570" fill="none" stroke="#d0a840" stroke-width="0.4" opacity="0.034"/>
+  <circle cx="500" cy="500" r="455" fill="none" stroke="#4a9fd4" stroke-width="0.3" opacity="0.030"/>
+  <circle cx="500" cy="500" r="350" fill="none" stroke="#d0a840" stroke-width="0.3" opacity="0.026"/>
+  <circle cx="180" cy="760" r="400" fill="none" stroke="#d4a0b5" stroke-width="0.35" opacity="0.040"/>
+  <circle cx="840" cy="230" r="310" fill="none" stroke="#d0a840" stroke-width="0.3" opacity="0.038"/>
+  <circle cx="720" cy="820" r="250" fill="none" stroke="#5bb8a8" stroke-width="0.28" opacity="0.036"/>
+
+  <!-- Planet glyphs — this week's key transits, very faint -->
+  <text x="780" y="370" font-size="280" fill="#d0a840" opacity="0.024" text-anchor="middle" font-family="Cormorant Garamond,serif" font-style="italic">♀</text>
+  <text x="120" y="640" font-size="220" fill="#d0a840" opacity="0.026" text-anchor="middle" font-family="Cormorant Garamond,serif" font-style="italic">♃</text>
+  <text x="480" y="880" font-size="190" fill="#d4a0b5" opacity="0.022" text-anchor="middle" font-family="Cormorant Garamond,serif" font-style="italic">☿</text>
+  <text x="170" y="210" font-size="165" fill="#5bb8a8" opacity="0.024" text-anchor="middle" font-family="Cormorant Garamond,serif" font-style="italic">♅</text>
+  <text x="870" y="660" font-size="150" fill="#4a9fd4" opacity="0.026" text-anchor="middle" font-family="Cormorant Garamond,serif" font-style="italic">♄</text>
+  <text x="580" y="110" font-size="105" fill="#d0a840" opacity="0.020" text-anchor="middle" font-family="Cormorant Garamond,serif">☽</text>
+
+  <!-- Mandala groups at corners -->
+  <g transform="translate(842, 138)" opacity="0.11">
+    <circle r="62" fill="none" stroke="#d0a840" stroke-width="0.65"/>
+    <circle r="44" fill="none" stroke="#d0a840" stroke-width="0.45"/>
+    <circle r="24" fill="none" stroke="#d0a840" stroke-width="0.45"/>
+    <line x1="-62" y1="0" x2="62" y2="0" stroke="#d0a840" stroke-width="0.45"/>
+    <line x1="0" y1="-62" x2="0" y2="62" stroke="#d0a840" stroke-width="0.45"/>
+    <line x1="-44" y1="-44" x2="44" y2="44" stroke="#d0a840" stroke-width="0.32"/>
+    <line x1="44" y1="-44" x2="-44" y2="44" stroke="#d0a840" stroke-width="0.32"/>
+  </g>
+  <g transform="translate(132, 792)" opacity="0.09">
+    <circle r="78" fill="none" stroke="#4a9fd4" stroke-width="0.60"/>
+    <circle r="55" fill="none" stroke="#4a9fd4" stroke-width="0.40"/>
+    <circle r="32" fill="none" stroke="#4a9fd4" stroke-width="0.40"/>
+    <line x1="-78" y1="0" x2="78" y2="0" stroke="#4a9fd4" stroke-width="0.40"/>
+    <line x1="0" y1="-78" x2="0" y2="78" stroke="#4a9fd4" stroke-width="0.40"/>
+    <line x1="-55" y1="-55" x2="55" y2="55" stroke="#4a9fd4" stroke-width="0.30"/>
+    <line x1="55" y1="-55" x2="-55" y2="55" stroke="#4a9fd4" stroke-width="0.30"/>
+  </g>
+  <g transform="translate(295, 180)" opacity="0.13">
+    <circle r="36" fill="none" stroke="#d4a0b5" stroke-width="0.55"/>
+    <circle r="24" fill="none" stroke="#d4a0b5" stroke-width="0.40"/>
+    <line x1="-36" y1="0" x2="36" y2="0" stroke="#d4a0b5" stroke-width="0.38"/>
+    <line x1="0" y1="-36" x2="0" y2="36" stroke="#d4a0b5" stroke-width="0.38"/>
+    <line x1="-25" y1="-25" x2="25" y2="25" stroke="#d4a0b5" stroke-width="0.28"/>
+    <line x1="25" y1="-25" x2="-25" y2="25" stroke="#d4a0b5" stroke-width="0.28"/>
+  </g>
+  <g transform="translate(680, 740)" opacity="0.12">
+    <circle r="42" fill="none" stroke="#5bb8a8" stroke-width="0.52"/>
+    <circle r="28" fill="none" stroke="#5bb8a8" stroke-width="0.38"/>
+    <line x1="-42" y1="0" x2="42" y2="0" stroke="#5bb8a8" stroke-width="0.36"/>
+    <line x1="0" y1="-42" x2="0" y2="42" stroke="#5bb8a8" stroke-width="0.36"/>
+    <line x1="-30" y1="-30" x2="30" y2="30" stroke="#5bb8a8" stroke-width="0.26"/>
+    <line x1="30" y1="-30" x2="-30" y2="30" stroke="#5bb8a8" stroke-width="0.26"/>
+  </g>
+
+  <!-- Diamond accents -->
+  <g opacity="0.15" fill="none" stroke="#d0a840" stroke-width="0.52">
+    <polygon points="304,244 313,258 304,272 295,258"/>
+    <polygon points="654,324 664,340 654,356 644,340"/>
+    <polygon points="176,584 185,600 176,616 167,600"/>
+    <polygon points="784,684 794,702 784,720 774,702"/>
+  </g>
+
+  <!-- Constellation dot + line network -->
+  <g opacity="0.088">
+    <circle cx="118" cy="78"  r="2.2" fill="#d0a840"/>
+    <circle cx="348" cy="148" r="1.9" fill="#d0a840"/>
+    <circle cx="615" cy="88"  r="2.0" fill="#4a9fd4"/>
+    <circle cx="882" cy="172" r="1.7" fill="#d0a840"/>
+    <circle cx="52"  cy="418" r="2.0" fill="#d4a0b5"/>
+    <circle cx="214" cy="558" r="1.8" fill="#d0a840"/>
+    <circle cx="478" cy="486" r="2.2" fill="#4a9fd4"/>
+    <circle cx="738" cy="442" r="1.7" fill="#5bb8a8"/>
+    <circle cx="924" cy="518" r="1.8" fill="#d0a840"/>
+    <circle cx="155" cy="718" r="2.0" fill="#4a9fd4"/>
+    <circle cx="376" cy="808" r="1.8" fill="#d0a840"/>
+    <circle cx="604" cy="752" r="2.2" fill="#d4a0b5"/>
+    <circle cx="824" cy="874" r="1.6" fill="#d0a840"/>
+    <line x1="118" y1="78"  x2="348" y2="148" stroke="#d0a840" stroke-width="0.40"/>
+    <line x1="348" y1="148" x2="615" y2="88"  stroke="#d0a840" stroke-width="0.36"/>
+    <line x1="615" y1="88"  x2="882" y2="172" stroke="#4a9fd4" stroke-width="0.36"/>
+    <line x1="118" y1="78"  x2="52"  y2="418" stroke="#d0a840" stroke-width="0.38"/>
+    <line x1="52"  y1="418" x2="214" y2="558" stroke="#d0a840" stroke-width="0.34"/>
+    <line x1="214" y1="558" x2="478" y2="486" stroke="#4a9fd4" stroke-width="0.34"/>
+    <line x1="478" y1="486" x2="738" y2="442" stroke="#4a9fd4" stroke-width="0.38"/>
+    <line x1="738" y1="442" x2="924" y2="518" stroke="#d0a840" stroke-width="0.34"/>
+    <line x1="882" y1="172" x2="924" y2="518" stroke="#d0a840" stroke-width="0.32"/>
+    <line x1="155" y1="718" x2="376" y2="808" stroke="#d0a840" stroke-width="0.34"/>
+    <line x1="376" y1="808" x2="604" y2="752" stroke="#d4a0b5" stroke-width="0.30"/>
+    <line x1="604" y1="752" x2="824" y2="874" stroke="#d0a840" stroke-width="0.34"/>
+    <line x1="118" y1="78"  x2="824" y2="874" stroke="#4a9fd4" stroke-width="0.20" opacity="0.6"/>
+    <line x1="882" y1="172" x2="155" y2="718" stroke="#d0a840" stroke-width="0.20" opacity="0.6"/>
+  </g>
+</svg>
+
 <div id="atm-blobs">
-  <div class="blob blob-gold"></div>
-  <div class="blob blob-cerulean"></div>
-  <div class="blob blob-rose"></div>
-  <div class="blob blob-teal"></div>
+  <div style="position:absolute;width:580px;height:380px;top:-80px;right:-120px;background:radial-gradient(ellipse,rgba(208,168,64,0.14) 0%,transparent 70%);filter:blur(90px);border-radius:50%;"></div>
+  <div style="position:absolute;width:520px;height:560px;top:28%;left:-180px;background:radial-gradient(ellipse,rgba(74,159,212,0.11) 0%,transparent 70%);filter:blur(100px);border-radius:50%;"></div>
+  <div style="position:absolute;width:680px;height:300px;bottom:-60px;left:50%;transform:translateX(-50%);background:radial-gradient(ellipse,rgba(212,160,181,0.07) 0%,transparent 70%);filter:blur(130px);border-radius:50%;"></div>
+  <div style="position:absolute;width:320px;height:320px;top:55%;right:-60px;background:radial-gradient(ellipse,rgba(90,184,168,0.07) 0%,transparent 70%);filter:blur(80px);border-radius:50%;"></div>
 </div>
 
 <!-- ── CELESTIAL SIDE COLUMNS ── -->
 <div class="cel-col cel-col-left">
-  <svg viewBox="0 0 22 800" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
-    <line x1="11" y1="0" x2="11" y2="800" stroke="#4a9fd4" stroke-width="0.7" opacity="0.18"/>
-    <text x="11" y="60"  text-anchor="middle" font-size="12" fill="#d0a840" opacity="0.58" font-family="serif">&#9789;</text>
-    <text x="11" y="120" text-anchor="middle" font-size="8"  fill="#f0e4cc" opacity="0.38" font-family="serif">&#10022;</text>
-    <text x="11" y="188" text-anchor="middle" font-size="11" fill="#d0a840" opacity="0.48" font-family="serif">&#9737;</text>
-    <circle cx="11" cy="240" r="1.2" fill="#d4a0b5" opacity="0.36"/>
-    <text x="11" y="300" text-anchor="middle" font-size="8"  fill="#d4a0b5" opacity="0.44" font-family="serif">&#10023;</text>
-    <text x="11" y="360" text-anchor="middle" font-size="12" fill="#f0e4cc" opacity="0.24" font-family="serif">&#9790;</text>
-    <text x="11" y="420" text-anchor="middle" font-size="8"  fill="#d0a840" opacity="0.38" font-family="serif">&#10022;</text>
-    <circle cx="11" cy="480" r="1.0" fill="#4a9fd4" opacity="0.30"/>
-    <text x="11" y="540" text-anchor="middle" font-size="11" fill="#d0a840" opacity="0.44" font-family="serif">&#9737;</text>
-    <text x="11" y="600" text-anchor="middle" font-size="8"  fill="#f0e4cc" opacity="0.32" font-family="serif">&#10022;</text>
-    <text x="11" y="660" text-anchor="middle" font-size="12" fill="#d0a840" opacity="0.50" font-family="serif">&#9789;</text>
-    <text x="11" y="730" text-anchor="middle" font-size="8"  fill="#d4a0b5" opacity="0.38" font-family="serif">&#10023;</text>
+  <svg viewBox="0 0 26 900" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+    <line x1="13" y1="0" x2="13" y2="900" stroke="#3e6fa0" stroke-width="0.8" opacity="0.22"/>
+    <text x="13" y="52"  text-anchor="middle" font-size="15" fill="#d0a840" opacity="0.66" font-family="serif">☽</text>
+    <text x="13" y="112" text-anchor="middle" font-size="10" fill="#f0e4cc" opacity="0.44" font-family="serif">✦</text>
+    <text x="13" y="180" text-anchor="middle" font-size="14" fill="#d4a0b5" opacity="0.56" font-family="serif">☉</text>
+    <circle cx="13" cy="240" r="1.5" fill="#d0a840" opacity="0.42"/>
+    <text x="13" y="300" text-anchor="middle" font-size="10" fill="#d4a0b5" opacity="0.48" font-family="serif">✧</text>
+    <text x="13" y="368" text-anchor="middle" font-size="15" fill="#f0e4cc" opacity="0.28" font-family="serif">☾</text>
+    <circle cx="13" cy="432" r="1.2" fill="#f0e4cc" opacity="0.32"/>
+    <text x="13" y="498" text-anchor="middle" font-size="10" fill="#d0a840" opacity="0.42" font-family="serif">✦</text>
+    <text x="13" y="564" text-anchor="middle" font-size="14" fill="#d0a840" opacity="0.38" font-family="serif">☉</text>
+    <text x="13" y="634" text-anchor="middle" font-size="15" fill="#d4a0b5" opacity="0.46" font-family="serif">☽</text>
+    <circle cx="13" cy="698" r="1.5" fill="#d0a840" opacity="0.34"/>
+    <text x="13" y="762" text-anchor="middle" font-size="10" fill="#f0e4cc" opacity="0.36" font-family="serif">✧</text>
+    <text x="13" y="830" text-anchor="middle" font-size="15" fill="#d0a840" opacity="0.30" font-family="serif">☾</text>
+    <circle cx="13" cy="882" r="1.2" fill="#d4a0b5" opacity="0.26"/>
   </svg>
 </div>
 <div class="cel-col cel-col-right">
-  <svg viewBox="0 0 22 800" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
-    <line x1="11" y1="0" x2="11" y2="800" stroke="#4a9fd4" stroke-width="0.7" opacity="0.18"/>
-    <text x="11" y="60"  text-anchor="middle" font-size="8"  fill="#f0e4cc" opacity="0.38" font-family="serif">&#10022;</text>
-    <text x="11" y="120" text-anchor="middle" font-size="12" fill="#d0a840" opacity="0.52" font-family="serif">&#9790;</text>
-    <text x="11" y="188" text-anchor="middle" font-size="8"  fill="#d4a0b5" opacity="0.44" font-family="serif">&#10023;</text>
-    <circle cx="11" cy="240" r="1.2" fill="#d0a840" opacity="0.32"/>
-    <text x="11" y="300" text-anchor="middle" font-size="11" fill="#d0a840" opacity="0.48" font-family="serif">&#9737;</text>
-    <text x="11" y="360" text-anchor="middle" font-size="12" fill="#f0e4cc" opacity="0.22" font-family="serif">&#9789;</text>
-    <text x="11" y="420" text-anchor="middle" font-size="8"  fill="#d0a840" opacity="0.44" font-family="serif">&#10022;</text>
-    <circle cx="11" cy="480" r="1.0" fill="#d4a0b5" opacity="0.36"/>
-    <text x="11" y="540" text-anchor="middle" font-size="8"  fill="#4a9fd4" opacity="0.48" font-family="serif">&#10023;</text>
-    <text x="11" y="600" text-anchor="middle" font-size="11" fill="#d0a840" opacity="0.46" font-family="serif">&#9737;</text>
-    <text x="11" y="660" text-anchor="middle" font-size="8"  fill="#f0e4cc" opacity="0.34" font-family="serif">&#10022;</text>
-    <text x="11" y="730" text-anchor="middle" font-size="12" fill="#d0a840" opacity="0.44" font-family="serif">&#9790;</text>
+  <svg viewBox="0 0 26 900" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+    <line x1="13" y1="0" x2="13" y2="900" stroke="#3e6fa0" stroke-width="0.8" opacity="0.22"/>
+    <text x="13" y="52"  text-anchor="middle" font-size="10" fill="#f0e4cc" opacity="0.44" font-family="serif">✦</text>
+    <text x="13" y="112" text-anchor="middle" font-size="15" fill="#d0a840" opacity="0.58" font-family="serif">☾</text>
+    <text x="13" y="180" text-anchor="middle" font-size="10" fill="#d4a0b5" opacity="0.48" font-family="serif">✧</text>
+    <circle cx="13" cy="240" r="1.5" fill="#d0a840" opacity="0.36"/>
+    <text x="13" y="300" text-anchor="middle" font-size="14" fill="#d0a840" opacity="0.52" font-family="serif">☉</text>
+    <text x="13" y="368" text-anchor="middle" font-size="15" fill="#f0e4cc" opacity="0.26" font-family="serif">☽</text>
+    <circle cx="13" cy="432" r="1.2" fill="#d4a0b5" opacity="0.40"/>
+    <text x="13" y="498" text-anchor="middle" font-size="10" fill="#d0a840" opacity="0.48" font-family="serif">✦</text>
+    <text x="13" y="564" text-anchor="middle" font-size="14" fill="#f0e4cc" opacity="0.34" font-family="serif">☉</text>
+    <text x="13" y="634" text-anchor="middle" font-size="15" fill="#d0a840" opacity="0.38" font-family="serif">☾</text>
+    <circle cx="13" cy="698" r="1.5" fill="#d4a0b5" opacity="0.32"/>
+    <text x="13" y="762" text-anchor="middle" font-size="10" fill="#d0a840" opacity="0.34" font-family="serif">✦</text>
+    <text x="13" y="830" text-anchor="middle" font-size="15" fill="#f0e4cc" opacity="0.26" font-family="serif">☽</text>
+    <circle cx="13" cy="882" r="1.2" fill="#d0a840" opacity="0.24"/>
   </svg>
 </div>
 
@@ -849,6 +985,48 @@
 
 <!-- ── HERO ── -->
 <div class="hero">
+  <!-- Hero constellation + star field -->
+  <svg class="hero-stars" viewBox="0 0 900 480" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;" aria-hidden="true">
+    <defs>
+      <filter id="heroWC" x="-50%" y="-50%" width="200%" height="200%">
+        <feGaussianBlur stdDeviation="22"/>
+      </filter>
+    </defs>
+    <!-- Stars -->
+    <circle cx="74"   cy="68"   r="1.2" fill="#f0e4cc" opacity="0.46"/>
+    <circle cx="210"  cy="42"   r="0.9" fill="#d0a840" opacity="0.40"/>
+    <circle cx="368"  cy="60"   r="1.3" fill="#f0e4cc" opacity="0.38"/>
+    <circle cx="522"  cy="28"   r="0.8" fill="#d4a0b5" opacity="0.48"/>
+    <circle cx="676"  cy="52"   r="1.1" fill="#f0e4cc" opacity="0.36"/>
+    <circle cx="820"  cy="82"   r="1.3" fill="#d0a840" opacity="0.42"/>
+    <circle cx="866"  cy="36"   r="0.9" fill="#f0e4cc" opacity="0.34"/>
+    <circle cx="32"   cy="290"  r="0.9" fill="#d0a840" opacity="0.32"/>
+    <circle cx="874"  cy="262"  r="0.8" fill="#f0e4cc" opacity="0.34"/>
+    <circle cx="442"  cy="452"  r="0.8" fill="#f0e4cc" opacity="0.30"/>
+    <!-- Constellation frame lines connecting stars -->
+    <g opacity="0.40">
+      <line x1="134" y1="122" x2="460" y2="20"  stroke="#d0a840" stroke-width="0.5"/>
+      <line x1="460" y1="20"  x2="762" y2="142" stroke="#d0a840" stroke-width="0.7"/>
+      <line x1="762" y1="142" x2="840" y2="340" stroke="#d0a840" stroke-width="0.7"/>
+      <line x1="134" y1="122" x2="70"  y2="356" stroke="#d0a840" stroke-width="0.7"/>
+      <line x1="70"  y1="356" x2="454" y2="462" stroke="#d0a840" stroke-width="0.7"/>
+      <line x1="454" y1="462" x2="840" y2="340" stroke="#d0a840" stroke-width="0.7"/>
+      <line x1="134" y1="122" x2="762" y2="142" stroke="#d0a840" stroke-width="0.4"/>
+      <line x1="460" y1="20"  x2="70"  y2="356" stroke="#4ab8e8" stroke-width="0.4"/>
+      <line x1="762" y1="142" x2="454" y2="462" stroke="#4ab8e8" stroke-width="0.4"/>
+    </g>
+    <!-- Watercolor glow at top-right -->
+    <ellipse cx="800" cy="80" rx="190" ry="110" fill="rgba(200,145,60,0.06)" filter="url(#heroWC)"/>
+    <circle cx="450" cy="240" r="220" fill="none" stroke="#d0a840" stroke-width="0.4" opacity="0.06"/>
+    <circle cx="450" cy="240" r="168" fill="none" stroke="#4a9fd4" stroke-width="0.3" opacity="0.05"/>
+    <!-- Corner star marks -->
+    <text x="134" y="126" font-size="12" fill="#d0a840" opacity="0.55" text-anchor="middle" font-family="serif">✦</text>
+    <text x="762" y="146" font-size="8"  fill="#f0e4cc" opacity="0.38" text-anchor="middle" font-family="serif">✧</text>
+    <text x="460" y="24"  font-size="7"  fill="#d4a0b5" opacity="0.48" text-anchor="middle" font-family="serif">✦</text>
+    <text x="840" y="344" font-size="7"  fill="#d0a840" opacity="0.40" text-anchor="middle" font-family="serif">✧</text>
+    <text x="454" y="466" font-size="8"  fill="#f0e4cc" opacity="0.30" text-anchor="middle" font-family="serif">✦</text>
+  </svg>
+
   <!-- Sacred Geometry: Seed of Life -->
   <div class="hero-geo" aria-hidden="true">
     <svg width="420" height="420" viewBox="-210 -210 420 420" xmlns="http://www.w3.org/2000/svg">
