@@ -2,268 +2,1408 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Sky at Work &middot; Week of June 8</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Inter:wght@300;400;500&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Social Preview -->
+  <meta property="og:title" content="Sky at Work &middot; Week of June 8, 2026">
+  <meta property="og:description" content="Venus meets Jupiter. The week&rsquo;s collective transit weather &mdash; warmth, precision, and a release phase. No birth charts needed.">
+  <meta property="og:image" content="https://jordanb1993.github.io/astro-readings/workplace%20readings/og-sky-at-work.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Sky at Work &middot; Week of June 8, 2026">
+  <meta name="twitter:description" content="Venus meets Jupiter. Collective transit weather &mdash; warmth, precision, release phase.">
+  <meta name="twitter:image" content="https://jordanb1993.github.io/astro-readings/workplace%20readings/og-sky-at-work.jpg">
+
+  <!-- PWA -->
+  <meta name="theme-color" content="#09102a">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Sky at Work">
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body { padding-top: env(safe-area-inset-top); padding-bottom: env(safe-area-inset-bottom); }
+
     :root {
-      --bg: #0a0614; --surface: #150a25; --surface-2: #1e1038;
-      --gold: #c9a84c; --gold-dim: rgba(201,168,76,0.11); --gold-mid: rgba(201,168,76,0.28);
-      --rose: #d4a0b5; --rose-dim: rgba(212,160,181,0.11); --rose-mid: rgba(212,160,181,0.28);
-      --plum: #7b4fa6; --plum-dim: rgba(123,79,166,0.20); --plum-bright: #b482d2;
-      --teal: #5bb8a8; --teal-dim: rgba(91,184,168,0.11); --teal-bright: #7ecfc2;
-      --text: #fdf6e8; --muted: rgba(253,246,232,0.58); --muted-2: rgba(253,246,232,0.30);
-      --muted-3: rgba(253,246,232,0.12); --border: rgba(180,130,210,0.18);
+      --bg:           #09102a;
+      --surface:      #0d1c38;
+      --surface-2:    #121e36;
+      --gold:         #d0a840;
+      --gold-dim:     rgba(208,168,64,0.11);
+      --gold-mid:     rgba(208,168,64,0.28);
+      --gold-brt:     rgba(208,168,64,0.65);
+      --rose:         #d4a0b5;
+      --rose-dim:     rgba(212,160,181,0.11);
+      --rose-mid:     rgba(212,160,181,0.28);
+      --cerulean:     #4a9fd4;
+      --cerulean-dim: rgba(74,159,212,0.13);
+      --cerulean-mid: rgba(74,159,212,0.30);
+      --cerulean-brt: #6ab8d4;
+      --teal:         #5ab8a8;
+      --teal-dim:     rgba(90,184,168,0.11);
+      --teal-mid:     rgba(90,184,168,0.28);
+      --teal-brt:     #7ecfc2;
+      --amber:        #d48040;
+      --amber-dim:    rgba(212,128,64,0.11);
+      --amber-mid:    rgba(212,128,64,0.28);
+      --text:         #f0e4cc;
+      --muted:        rgba(240,228,200,0.58);
+      --muted-2:      rgba(240,228,200,0.30);
+      --muted-3:      rgba(240,228,200,0.12);
+      --border:       rgba(74,159,212,0.16);
     }
-    html { background: var(--bg); color: var(--text); }
-    body { background: var(--bg); font-family: 'Inter', sans-serif; line-height: 1.6;
-           max-width: 720px; margin: 0 auto; padding: 0 0 60px; }
-    p { color: var(--muted); font-size: 0.90rem; line-height: 1.75; margin: 0; }
+
+    html { background: var(--bg); color: var(--text); -webkit-font-smoothing: antialiased; }
+
+    body {
+      max-width: 900px; margin: 0 auto;
+      background: transparent;
+      font-family: 'Inter', sans-serif;
+      position: relative; z-index: 1;
+      padding-bottom: 80px;
+    }
+
+    p { line-height: 1.82; color: var(--muted); font-size: 0.93rem; }
     strong { color: var(--rose); font-weight: 600; }
-    .hero { position: relative; width: 100%; padding: 72px 56px 64px; text-align: center;
-            overflow: hidden;
-            background: radial-gradient(ellipse at 38% 28%, #2a1245 0%, #150a25 42%, #0a0614 100%); }
-    .hero-stars { position: absolute; inset: 0; pointer-events: none; }
-    .hero-border-outer { position: absolute; top: 18px; left: 18px; right: 18px; bottom: 18px;
-                         border: 1px solid rgba(180,130,210,0.30); pointer-events: none; }
-    .hero-border-inner { position: absolute; top: 28px; left: 28px; right: 28px; bottom: 28px;
-                         border: 1px solid rgba(180,130,210,0.13); pointer-events: none; }
-    .corner { position: absolute; font-family: 'Cormorant Garamond', serif; font-size: 15px;
-              color: var(--gold); opacity: 0.78; }
-    .corner.tl { top: 10px; left: 10px; } .corner.tr { top: 10px; right: 10px; }
-    .corner.bl { bottom: 10px; left: 10px; } .corner.br { bottom: 10px; right: 10px; }
-    .hero-col { position: absolute; top: 50%; transform: translateY(-50%); pointer-events: none; }
-    .hero-col.left { left: 36px; } .hero-col.right { right: 36px; }
-    .hero-label { font-family: 'Inter', sans-serif; font-size: 0.62rem; font-weight: 600;
-                  letter-spacing: 0.32em; text-transform: uppercase; color: var(--rose);
-                  opacity: 0.72; margin-bottom: 22px; position: relative; }
-    .hero-name { font-family: 'Cormorant Garamond', serif; font-size: clamp(36px,7vw,72px);
-                 font-weight: 300; line-height: 1.0; color: var(--text); letter-spacing: 0.05em;
-                 margin-bottom: 16px; position: relative; }
-    .hero-ornament { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem;
-                     letter-spacing: 0.55em; color: var(--gold); opacity: 0.55;
-                     margin-bottom: 28px; position: relative; padding-left: 0.55em; }
-    .hero-data { display: flex; justify-content: center; gap: 28px; flex-wrap: wrap; position: relative; }
-    .hero-datum-label { font-family: 'Inter', sans-serif; font-size: 0.58rem; letter-spacing: 0.22em;
-                        text-transform: uppercase; color: var(--muted-2); margin-bottom: 4px; }
-    .hero-datum-value { font-family: 'Cormorant Garamond', serif; font-size: 1.0rem;
-                        color: var(--gold); letter-spacing: 0.06em; }
-    .cel-divider { display: flex; align-items: center; gap: 12px; margin: 36px 44px 0; }
-    .cel-rule { flex: 1; height: 1px; }
-    .cel-rule.left { background: linear-gradient(90deg, transparent, var(--gold-mid)); }
-    .cel-rule.right { background: linear-gradient(90deg, var(--gold-mid), transparent); }
-    .cel-mark { font-family: 'Cormorant Garamond', serif; font-size: 0.80rem; letter-spacing: 0.55em;
-                color: var(--gold); opacity: 0.50; padding-left: 0.55em; }
-    .section-wrap { padding: 32px 44px 0; }
-    .section-eyebrow { font-family: 'Inter', sans-serif; font-size: 0.60rem; font-weight: 600;
-                       letter-spacing: 0.28em; text-transform: uppercase; color: var(--plum-bright);
-                       margin-bottom: 6px; }
-    .section-title { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 400;
-                     color: var(--gold); letter-spacing: 0.04em; margin-bottom: 18px; }
-    .pulse-card { background: radial-gradient(ellipse at 0% 50%, rgba(201,168,76,0.14) 0%, rgba(21,10,37,0.85) 60%);
-                  border: 1px solid rgba(201,168,76,0.22); border-radius: 10px; padding: 22px 26px; }
-    .pulse-card p { font-family: 'Cormorant Garamond', serif; font-style: italic;
-                    font-size: 1.08rem; color: var(--text); line-height: 1.75; }
-    .signal-board { display: flex; flex-direction: column; gap: 6px; }
-    .signal-row { display: flex; align-items: baseline; gap: 10px; background: var(--surface);
-                  padding: 10px 14px; border-radius: 6px; border-left: 2px solid; }
-    .signal-row.gold { border-color: var(--gold); }
-    .signal-row.rose { border-color: var(--rose); }
-    .signal-row.plum { border-color: var(--plum-bright); }
-    .signal-row.teal { border-color: var(--teal-bright); }
-    .signal-row.muted { border-color: rgba(253,246,232,0.20); }
-    .sig-aspect { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--text); min-width: 150px; }
-    .sig-orb { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--gold); min-width: 36px; }
-    .sig-note { font-size: 12px; color: var(--muted); flex: 1; }
-    .dive-section { margin-bottom: 14px; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
-    .dive-section::before { content: ''; display: block; height: 2px; width: 100%; }
-    .dive-section.accent-gold::before { background: linear-gradient(90deg, transparent 0%, var(--gold) 40%, var(--gold) 60%, transparent 100%); }
-    .dive-section.accent-rose::before { background: linear-gradient(90deg, transparent 0%, var(--rose) 40%, var(--rose) 60%, transparent 100%); }
-    .dive-section.accent-plum::before { background: linear-gradient(90deg, transparent 0%, var(--plum-bright) 40%, var(--plum-bright) 60%, transparent 100%); }
-    .dive-section.accent-teal::before { background: linear-gradient(90deg, transparent 0%, var(--teal-bright) 40%, var(--teal-bright) 60%, transparent 100%); }
-    .dive-head { padding: 18px 22px 14px; display: flex; align-items: flex-start; gap: 14px; }
-    .dive-head.gold-head { background: radial-gradient(ellipse at 20% 50%, rgba(201,168,76,0.18) 0%, rgba(42,18,69,0.80) 55%, #0a0614 100%);
-                           border-bottom: 1px solid rgba(201,168,76,0.14); }
-    .dive-head.rose-head { background: radial-gradient(ellipse at 20% 50%, rgba(212,160,181,0.16) 0%, rgba(42,18,69,0.80) 55%, #0a0614 100%);
-                           border-bottom: 1px solid rgba(212,160,181,0.14); }
-    .dive-head.plum-head { background: radial-gradient(ellipse at 20% 50%, rgba(123,79,166,0.22) 0%, rgba(42,18,69,0.80) 55%, #0a0614 100%);
-                           border-bottom: 1px solid rgba(123,79,166,0.16); }
-    .dive-head.teal-head { background: radial-gradient(ellipse at 20% 50%, rgba(91,184,168,0.18) 0%, rgba(42,18,69,0.80) 55%, #0a0614 100%);
-                           border-bottom: 1px solid rgba(91,184,168,0.14); }
-    .dive-icon { font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; flex-shrink: 0; line-height: 1; margin-top: 2px; }
-    .accent-gold .dive-icon { color: var(--gold); }
-    .accent-rose .dive-icon { color: var(--rose); }
-    .accent-plum .dive-icon { color: var(--plum-bright); }
-    .accent-teal .dive-icon { color: var(--teal-bright); }
-    .dive-eyebrow { font-family: 'Inter', sans-serif; font-size: 0.58rem; font-weight: 600;
-                    letter-spacing: 0.26em; text-transform: uppercase; margin-bottom: 5px; }
-    .accent-gold .dive-eyebrow { color: rgba(201,168,76,0.65); }
-    .accent-rose .dive-eyebrow { color: rgba(212,160,181,0.65); }
-    .accent-plum .dive-eyebrow { color: rgba(180,130,210,0.65); }
-    .accent-teal .dive-eyebrow { color: rgba(91,184,168,0.65); }
-    .dive-title { font-family: 'Cormorant Garamond', serif; font-size: 1.28rem; font-weight: 400;
-                  line-height: 1.2; letter-spacing: 0.03em; }
-    .accent-gold .dive-title { color: var(--gold); }
-    .accent-rose .dive-title { color: var(--rose); }
-    .accent-plum .dive-title { color: var(--plum-bright); }
-    .accent-teal .dive-title { color: var(--teal-bright); }
-    .dive-body { padding: 18px 22px 16px; background: rgba(10,6,20,0.55);
-                 display: flex; flex-direction: column; gap: 8px; }
-    .dive-body p { font-size: 0.88rem; line-height: 1.80; color: var(--muted); }
-    .dive-body strong { color: var(--rose); }
-    .watch-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 6px; }
-    .watch-list li { font-size: 0.88rem; color: var(--muted); line-height: 1.65;
-                     padding-left: 16px; position: relative; }
-    .watch-list li::before { content: "\2022"; color: var(--rose); position: absolute; left: 0; }
-    .planet-strip { display: flex; flex-wrap: wrap; gap: 8px; }
-    .planet-pill { background: var(--surface); border: 1px solid var(--border); border-radius: 20px;
-                   padding: 5px 12px; font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--muted); }
-    .planet-pill .glyph { color: var(--gold); margin-right: 4px; }
-    .planet-pill .retro { color: var(--rose); margin-left: 3px; font-size: 9px; }
-    .day-block { background: var(--surface); border: 1px solid var(--border); border-radius: 8px;
-                 padding: 14px 18px; margin-bottom: 10px; }
-    .day-block:last-child { margin-bottom: 0; }
-    .day-label { font-family: 'Inter', sans-serif; font-size: 0.60rem; font-weight: 600;
-                 letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold);
-                 opacity: 0.85; margin-bottom: 10px; }
-    .day-aspect { font-size: 0.88rem; color: var(--text); margin-bottom: 5px; line-height: 1.5; }
-    .day-aspect:last-child { margin-bottom: 0; }
-    .day-aspect span { color: var(--muted); font-style: italic; font-size: 0.82rem; }
-    .page-footer { margin: 40px 44px 0; padding-top: 18px; border-top: 1px solid var(--border);
-                   font-family: 'Inter', sans-serif; font-size: 0.62rem; color: var(--muted-2);
-                   letter-spacing: 0.10em; line-height: 1.8; text-align: center; }
-    @media (max-width: 680px) {
-      .hero { padding: 48px 20px 42px; }
-      .hero-col { display: none; }
-      .hero-border-outer { top: 12px; left: 12px; right: 12px; bottom: 12px; }
-      .hero-border-inner { top: 20px; left: 20px; right: 20px; bottom: 20px; }
-      .hero-name { font-size: clamp(28px,9vw,44px); }
-      .cel-divider { margin: 26px 18px 0; }
-      .section-wrap { padding: 22px 18px 0; }
-      .dive-head { padding: 14px 16px 12px; }
-      .dive-body { padding: 14px 16px 12px; }
-      .page-footer { margin: 28px 18px 0; }
-      .sig-aspect { min-width: 110px; font-size: 10px; }
+    em { color: rgba(240,228,200,0.82); font-style: italic; }
+
+    /* ── FIXED BACKGROUNDS ── */
+    #star-canvas {
+      position: fixed; inset: 0;
+      width: 100vw; height: 100vh;
+      pointer-events: none; z-index: 0;
     }
-</style>
+    #atm-blobs {
+      position: fixed; inset: 0;
+      width: 100vw; height: 100vh;
+      pointer-events: none; z-index: 0; overflow: hidden;
+    }
+    .blob {
+      position: absolute; border-radius: 50%;
+      filter: blur(100px); pointer-events: none;
+    }
+    .blob-gold    { width: 560px; height: 420px; top: -80px; right: -120px; background: radial-gradient(ellipse, rgba(208,168,64,0.18) 0%, transparent 65%); }
+    .blob-cerulean { width: 480px; height: 480px; top: 40vh; left: -140px; background: radial-gradient(ellipse, rgba(74,159,212,0.14) 0%, transparent 65%); }
+    .blob-rose    { width: 420px; height: 340px; bottom: 10vh; right: -80px; background: radial-gradient(ellipse, rgba(212,160,181,0.12) 0%, transparent 65%); }
+    .blob-teal    { width: 360px; height: 360px; bottom: 30vh; left: -60px; background: radial-gradient(ellipse, rgba(90,184,168,0.10) 0%, transparent 65%); }
+
+    /* ── CELESTIAL SIDE COLUMNS ── */
+    .cel-col {
+      position: fixed; top: 0; bottom: 0;
+      pointer-events: none; z-index: 1;
+      display: flex; align-items: stretch;
+    }
+    .cel-col-left  { left: 14px; }
+    .cel-col-right { right: 14px; }
+    .cel-col svg   { height: 100vh; width: 22px; }
+    @media (max-width: 680px) { .cel-col { display: none; } }
+
+    /* ── STICKY WEEK PROGRESS BAR ── */
+    #week-bar {
+      position: sticky; top: 0; z-index: 80;
+      background: linear-gradient(180deg, rgba(9,16,42,0.97) 0%, rgba(9,16,42,0.90) 100%);
+      border-bottom: 1px solid rgba(74,159,212,0.12);
+      backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+      padding: 8px 44px;
+    }
+    .wbar-inner {
+      display: flex; align-items: center; gap: 12px;
+      max-width: 900px; margin: 0 auto;
+    }
+    .wbar-label {
+      font-family: 'Inter', sans-serif; font-size: 0.55rem; font-weight: 600;
+      letter-spacing: 0.26em; text-transform: uppercase; color: var(--muted-2);
+      flex-shrink: 0;
+    }
+    .wbar-track {
+      flex: 1; height: 2px;
+      background: rgba(74,159,212,0.12); border-radius: 1px;
+      position: relative; overflow: visible;
+    }
+    .wbar-fill {
+      height: 100%; background: linear-gradient(90deg, var(--cerulean), rgba(74,159,212,0.40));
+      border-radius: 1px; transition: width 0.6s ease;
+    }
+    .wbar-days {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      left: 0; right: 0; display: flex; justify-content: space-between;
+    }
+    .wbar-tick {
+      width: 4px; height: 4px; border-radius: 2px;
+      background: rgba(74,159,212,0.22); margin-top: -1px;
+      transition: background 0.3s;
+    }
+    .wbar-tick.today { background: var(--cerulean); box-shadow: 0 0 6px rgba(74,159,212,0.60); }
+    .wbar-day-label {
+      font-family: 'Inter', sans-serif; font-size: 0.55rem;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--cerulean); flex-shrink: 0;
+    }
+    @media (max-width: 680px) {
+      #week-bar { padding: 7px 16px; }
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative; width: 100%;
+      padding: 88px 70px 80px;
+      text-align: center; overflow: hidden;
+      background: radial-gradient(ellipse at 50% 30%, #132040 0%, #0d1832 42%, #09102a 100%);
+    }
+    .hero-geo {
+      position: absolute; inset: 0; pointer-events: none;
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0.055;
+    }
+    .hero-label {
+      position: relative; z-index: 2;
+      font-family: 'Inter', sans-serif; font-size: 0.66rem; font-weight: 500;
+      letter-spacing: 0.36em; text-transform: uppercase;
+      color: rgba(240,228,200,0.50); margin-bottom: 26px;
+    }
+    .hero-name {
+      position: relative; z-index: 2;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(60px, 9vw, 106px);
+      font-weight: 300; line-height: 0.96;
+      color: var(--text); letter-spacing: 0.05em;
+      margin-bottom: 22px;
+      text-shadow: 0 2px 40px rgba(9,14,38,0.60);
+    }
+    .hero-ornament {
+      position: relative; z-index: 2;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem; letter-spacing: 0.55em;
+      color: var(--gold); opacity: 0.52;
+      margin-bottom: 32px; padding-left: 0.55em;
+    }
+    .hero-data {
+      display: flex; justify-content: center;
+      gap: 32px; flex-wrap: wrap; position: relative; z-index: 2;
+    }
+    .hero-datum-label {
+      font-family: 'Inter', sans-serif; font-size: 0.57rem;
+      letter-spacing: 0.22em; text-transform: uppercase;
+      color: rgba(240,228,200,0.36); margin-bottom: 5px;
+    }
+    .hero-datum-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem; color: rgba(208,168,64,0.88);
+      letter-spacing: 0.06em;
+    }
+    .hero-big-three {
+      display: none; justify-content: center;
+      gap: 9px; flex-wrap: wrap;
+      margin-top: 16px; position: relative; z-index: 2;
+    }
+    .hbt-pill {
+      font-family: 'Inter', sans-serif; font-size: 0.65rem; font-weight: 500;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      padding: 4px 12px; border-radius: 20px; border: 1px solid;
+    }
+    .hbt-pill.warm { color: var(--gold);     border-color: rgba(208,168,64,0.32);  background: rgba(208,168,64,0.07); }
+    .hbt-pill.cool { color: var(--cerulean); border-color: rgba(74,159,212,0.32); background: rgba(74,159,212,0.07); }
+    .hbt-pill.soft { color: var(--rose);     border-color: rgba(212,160,181,0.32); background: rgba(212,160,181,0.07); }
+    @media (max-width: 680px) {
+      .hero-big-three { display: flex; }
+      .hero-data { display: none; }
+      .hero { padding: 60px 22px 52px; }
+      .hero-name { font-size: clamp(40px, 10vw, 56px); }
+    }
+
+    /* ── SIGNAL TRIO ── */
+    .trio-wrap { padding: 48px 44px 0; }
+    .trio { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .trio-card {
+      background: radial-gradient(ellipse at 50% 0%, rgba(12,22,52,0.85) 0%, var(--surface) 60%);
+      border: 1px solid var(--border);
+      border-radius: 10px; padding: 28px 18px 24px;
+      text-align: center; position: relative; overflow: hidden;
+      transition: transform 0.30s ease, box-shadow 0.30s ease;
+    }
+    .trio-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.40), 0 0 24px rgba(208,168,64,0.07);
+    }
+    .trio-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; }
+    .trio-card.t-gold::before   { background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+    .trio-card.t-rose::before   { background: linear-gradient(90deg, transparent, var(--rose), transparent); }
+    .trio-card.t-cerulean::before { background: linear-gradient(90deg, transparent, var(--cerulean), transparent); }
+    .trio-card::after {
+      content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+      width: 60%; height: 55px; border-radius: 50%; opacity: 0.12; filter: blur(18px);
+    }
+    .trio-card.t-gold::after     { background: var(--gold); }
+    .trio-card.t-rose::after     { background: var(--rose); }
+    .trio-card.t-cerulean::after { background: var(--cerulean); }
+    .trio-glyph {
+      display: block; font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem; margin-bottom: 8px; position: relative;
+      animation: floatUp 4s ease-in-out infinite; line-height: 1;
+    }
+    .trio-card.t-gold     .trio-glyph { color: var(--gold);     animation-delay: 0s; }
+    .trio-card.t-rose     .trio-glyph { color: var(--rose);     animation-delay: 1.4s; }
+    .trio-card.t-cerulean .trio-glyph { color: var(--cerulean); animation-delay: 2.8s; }
+    .trio-label {
+      font-family: 'Inter', sans-serif; font-size: 0.57rem; font-weight: 600;
+      letter-spacing: 0.26em; text-transform: uppercase; color: var(--muted-2);
+      margin-bottom: 8px; position: relative;
+    }
+    .trio-placement {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.42rem; font-weight: 400; line-height: 1.15;
+      margin-bottom: 5px; position: relative;
+    }
+    .trio-card.t-gold     .trio-placement { color: var(--gold); }
+    .trio-card.t-rose     .trio-placement { color: var(--rose); }
+    .trio-card.t-cerulean .trio-placement { color: var(--cerulean); }
+    .trio-orb {
+      font-size: 0.62rem; color: var(--muted-2); margin-bottom: 14px;
+      letter-spacing: 0.06em; font-family: 'IBM Plex Mono', monospace; position: relative;
+    }
+    .trio-rule { width: 32px; height: 1px; margin: 0 auto 12px; position: relative; }
+    .trio-card.t-gold     .trio-rule { background: var(--gold-mid); }
+    .trio-card.t-rose     .trio-rule { background: var(--rose-mid); }
+    .trio-card.t-cerulean .trio-rule { background: var(--cerulean-mid); }
+    .trio-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.90rem; font-style: italic;
+      color: var(--muted); line-height: 1.50; position: relative;
+    }
+    @media (max-width: 680px) {
+      .trio-wrap { padding: 28px 0 0; }
+      .trio { grid-template-columns: 1fr; gap: 10px; padding: 0 12px; }
+      .trio-card { padding: 20px 16px 18px; }
+    }
+
+    /* ── CEL DIVIDER ── */
+    .cel-divider { display: flex; align-items: center; gap: 14px; margin: 46px 44px 0; }
+    .cel-rule { flex: 1; height: 1px; }
+    .cel-rule.left  { background: linear-gradient(90deg, transparent, var(--gold-mid)); }
+    .cel-rule.right { background: linear-gradient(90deg, var(--gold-mid), transparent); }
+    .cel-mark {
+      font-family: 'Cormorant Garamond', serif; font-size: 0.82rem;
+      letter-spacing: 0.55em; color: var(--gold); opacity: 0.48;
+      padding-left: 0.55em; position: relative;
+    }
+    .cel-mark::before, .cel-mark::after {
+      content: '&middot; &middot; &middot;'; position: absolute; top: 50%; transform: translateY(-50%);
+      font-size: 0.44rem; letter-spacing: 0.36em; color: var(--gold);
+      opacity: 0.20; white-space: nowrap;
+    }
+    .cel-mark::before { right: 100%; padding-right: 9px; }
+    .cel-mark::after  { left: 100%; padding-left: 9px; }
+    @media (max-width: 680px) { .cel-divider { margin: 28px 12px 0; } }
+
+    /* ── SECTION WRAP ── */
+    .section-wrap { padding: 36px 44px 0; position: relative; overflow: visible; }
+    .section-eyebrow {
+      font-family: 'Inter', sans-serif; font-size: 0.60rem; font-weight: 600;
+      letter-spacing: 0.28em; text-transform: uppercase; color: var(--cerulean);
+      margin-bottom: 8px;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif; font-size: 1.60rem; font-weight: 400;
+      color: var(--gold); letter-spacing: 0.04em; margin-bottom: 18px;
+    }
+    @media (max-width: 680px) { .section-wrap { padding: 24px 12px 0; } }
+
+    /* ── PULSE CARD ── */
+    .pulse-card {
+      background: radial-gradient(ellipse at 0% 50%, rgba(208,168,64,0.14) 0%, rgba(13,28,56,0.85) 60%);
+      border: 1px solid rgba(208,168,64,0.22); border-radius: 10px; padding: 24px 28px;
+      backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+    }
+    .pulse-card p {
+      font-family: 'Cormorant Garamond', serif; font-style: italic;
+      font-size: 1.08rem; color: var(--text); line-height: 1.78;
+    }
+
+    /* ── SIGNAL BOARD ── */
+    .signal-board { display: flex; flex-direction: column; gap: 5px; }
+    .signal-row {
+      display: flex; align-items: baseline; gap: 10px;
+      background: var(--surface); padding: 10px 14px;
+      border-radius: 6px; border-left: 2px solid;
+      cursor: pointer; position: relative;
+      transition: background 0.18s;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .signal-row:hover { background: var(--surface-2); }
+    .signal-row.gold    { border-color: var(--gold); }
+    .signal-row.rose    { border-color: var(--rose); }
+    .signal-row.cerulean { border-color: var(--cerulean); }
+    .signal-row.teal    { border-color: var(--teal-brt); }
+    .signal-row.muted   { border-color: rgba(240,228,200,0.18); }
+    .sig-aspect {
+      font-family: 'IBM Plex Mono', monospace; font-size: 11px;
+      color: var(--text); min-width: 160px; flex-shrink: 0;
+    }
+    .sig-orb {
+      font-family: 'IBM Plex Mono', monospace; font-size: 10px;
+      color: var(--gold); min-width: 38px; flex-shrink: 0;
+    }
+    .sig-note { font-size: 11.5px; color: var(--muted); flex: 1; }
+    .sig-arrow {
+      font-size: 9px; color: var(--muted-2); flex-shrink: 0; margin-left: auto;
+      transition: transform 0.22s;
+    }
+    .signal-row.open .sig-arrow { transform: rotate(180deg); }
+    .sig-detail {
+      max-height: 0; overflow: hidden; opacity: 0;
+      transition: max-height 0.32s ease, opacity 0.22s ease 0.04s;
+      background: rgba(9,14,36,0.85); margin-top: 0;
+      border-radius: 0 0 6px 6px; margin-left: -14px; margin-right: -14px;
+      padding: 0 14px;
+    }
+    .sig-detail.open { max-height: 120px; opacity: 1; padding: 10px 14px 12px; }
+    .sig-detail p { font-size: 0.82rem; color: var(--muted); line-height: 1.65; }
+    @media (max-width: 680px) {
+      .sig-aspect { min-width: 120px; font-size: 10px; }
+      .sig-note { font-size: 11px; }
+    }
+
+    /* ── DIVE SECTIONS ── */
+    .dive-wrap {
+      padding: 36px 44px 0; position: relative; overflow: visible;
+    }
+    .dive-wrap::before {
+      content: ''; position: absolute;
+      top: -60px; left: -90px;
+      width: 320px; height: 600px;
+      background: radial-gradient(ellipse, rgba(212,160,181,0.07) 0%, transparent 65%);
+      filter: blur(70px); pointer-events: none;
+    }
+    .dive-wrap::after {
+      content: ''; position: absolute;
+      top: 400px; right: -80px;
+      width: 280px; height: 380px;
+      background: radial-gradient(ellipse, rgba(74,159,212,0.07) 0%, transparent 65%);
+      filter: blur(60px); pointer-events: none;
+    }
+    @media (max-width: 680px) { .dive-wrap { padding: 20px 0 0; } }
+
+    .dive-section {
+      margin-bottom: 32px;
+      border: 1px solid var(--border);
+      border-radius: 12px; overflow: hidden;
+    }
+    .dive-section::before { content: ''; display: block; height: 3px; width: 100%; }
+    .dive-section.accent-gold::before    { background: linear-gradient(90deg, transparent 0%, var(--gold) 20%, rgba(212,160,181,0.70) 70%, transparent 100%); }
+    .dive-section.accent-rose::before    { background: linear-gradient(90deg, transparent 0%, var(--rose) 20%, rgba(74,159,212,0.70) 70%, transparent 100%); }
+    .dive-section.accent-cerulean::before { background: linear-gradient(90deg, transparent 0%, var(--cerulean) 20%, rgba(90,184,168,0.70) 70%, transparent 100%); }
+    .dive-section.accent-teal::before    { background: linear-gradient(90deg, transparent 0%, var(--teal) 20%, rgba(208,168,64,0.70) 70%, transparent 100%); }
+    .dive-section.accent-amber::before   { background: linear-gradient(90deg, transparent 0%, var(--amber) 20%, rgba(212,160,181,0.70) 70%, transparent 100%); }
+    @media (max-width: 680px) {
+      .dive-section { border-radius: 0; border-left: none; border-right: none; margin-bottom: 20px; }
+    }
+
+    .dive-head {
+      position: relative; padding: 30px 34px 26px;
+      overflow: hidden; display: flex; align-items: flex-start; gap: 18px;
+    }
+    .dive-head.gold-head {
+      background:
+        radial-gradient(circle at 4% 50%, rgba(208,168,64,0.30) 0%, transparent 50%),
+        radial-gradient(circle at 96% 15%, rgba(212,160,181,0.11) 0%, transparent 40%),
+        radial-gradient(circle at 50% 100%, rgba(74,159,212,0.06) 0%, transparent 50%),
+        linear-gradient(135deg, rgba(16,28,56,0.92) 0%, rgba(10,16,38,0.96) 100%);
+      border-bottom: 1px solid rgba(208,168,64,0.22);
+    }
+    .dive-head.rose-head {
+      background:
+        radial-gradient(circle at 4% 50%, rgba(212,160,181,0.28) 0%, transparent 50%),
+        radial-gradient(circle at 96% 15%, rgba(208,168,64,0.10) 0%, transparent 40%),
+        radial-gradient(circle at 50% 100%, rgba(90,184,168,0.06) 0%, transparent 50%),
+        linear-gradient(135deg, rgba(16,24,52,0.92) 0%, rgba(10,16,38,0.96) 100%);
+      border-bottom: 1px solid rgba(212,160,181,0.20);
+    }
+    .dive-head.cerulean-head {
+      background:
+        radial-gradient(circle at 4% 50%, rgba(74,159,212,0.28) 0%, transparent 50%),
+        radial-gradient(circle at 96% 15%, rgba(90,184,168,0.10) 0%, transparent 40%),
+        radial-gradient(circle at 50% 100%, rgba(208,168,64,0.06) 0%, transparent 50%),
+        linear-gradient(135deg, rgba(12,20,52,0.92) 0%, rgba(9,15,38,0.96) 100%);
+      border-bottom: 1px solid rgba(74,159,212,0.22);
+    }
+    .dive-head.teal-head {
+      background:
+        radial-gradient(circle at 4% 50%, rgba(90,184,168,0.28) 0%, transparent 50%),
+        radial-gradient(circle at 96% 15%, rgba(208,168,64,0.10) 0%, transparent 40%),
+        radial-gradient(circle at 50% 100%, rgba(74,159,212,0.06) 0%, transparent 50%),
+        linear-gradient(135deg, rgba(10,22,50,0.92) 0%, rgba(9,16,40,0.96) 100%);
+      border-bottom: 1px solid rgba(90,184,168,0.20);
+    }
+    .dive-head.amber-head {
+      background:
+        radial-gradient(circle at 4% 50%, rgba(212,128,64,0.26) 0%, transparent 50%),
+        radial-gradient(circle at 96% 15%, rgba(212,160,181,0.10) 0%, transparent 40%),
+        radial-gradient(circle at 50% 100%, rgba(90,184,168,0.06) 0%, transparent 50%),
+        linear-gradient(135deg, rgba(18,22,48,0.92) 0%, rgba(10,14,38,0.96) 100%);
+      border-bottom: 1px solid rgba(212,128,64,0.20);
+    }
+    @media (max-width: 680px) { .dive-head { padding: 22px 18px 18px; gap: 12px; } }
+
+    .dive-head-stars { position: absolute; inset: 0; pointer-events: none; }
+    .dive-icon {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.4rem; flex-shrink: 0; margin-top: 2px;
+      position: relative; line-height: 1;
+    }
+    .accent-gold .dive-icon     { color: var(--gold); }
+    .accent-rose .dive-icon     { color: var(--rose); }
+    .accent-cerulean .dive-icon { color: var(--cerulean); }
+    .accent-teal .dive-icon     { color: var(--teal-brt); }
+    .accent-amber .dive-icon    { color: var(--amber); }
+
+    .dive-head-text { flex: 1; position: relative; }
+    .dive-eyebrow {
+      font-family: 'Inter', sans-serif; font-size: 0.58rem; font-weight: 600;
+      letter-spacing: 0.28em; text-transform: uppercase; margin-bottom: 7px;
+    }
+    .accent-gold .dive-eyebrow     { color: rgba(208,168,64,0.62); }
+    .accent-rose .dive-eyebrow     { color: rgba(212,160,181,0.62); }
+    .accent-cerulean .dive-eyebrow { color: rgba(74,159,212,0.62); }
+    .accent-teal .dive-eyebrow     { color: rgba(90,184,168,0.62); }
+    .accent-amber .dive-eyebrow    { color: rgba(212,128,64,0.62); }
+
+    .dive-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.68rem; font-weight: 400;
+      line-height: 1.15; letter-spacing: 0.03em; margin-bottom: 9px;
+    }
+    .accent-gold .dive-title     { color: var(--gold); }
+    .accent-rose .dive-title     { color: var(--rose); }
+    .accent-cerulean .dive-title { color: var(--cerulean); }
+    .accent-teal .dive-title     { color: var(--teal-brt); }
+    .accent-amber .dive-title    { color: var(--amber); }
+
+    .dive-subtitle {
+      font-family: 'Cormorant Garamond', serif; font-size: 0.98rem;
+      font-style: italic; color: var(--muted); line-height: 1.5;
+    }
+
+    .dive-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+    .dtag {
+      font-family: 'Inter', sans-serif; font-size: 0.60rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      padding: 3px 10px; border-radius: 20px; border: 1px solid;
+    }
+    .accent-gold .dtag     { color: var(--gold);     border-color: rgba(208,168,64,0.28);  background: rgba(208,168,64,0.07); }
+    .accent-rose .dtag     { color: var(--rose);     border-color: rgba(212,160,181,0.26); background: rgba(212,160,181,0.07); }
+    .accent-cerulean .dtag { color: var(--cerulean); border-color: rgba(74,159,212,0.28);  background: rgba(74,159,212,0.07); }
+    .accent-teal .dtag     { color: var(--teal-brt); border-color: rgba(90,184,168,0.28);  background: rgba(90,184,168,0.07); }
+    .accent-amber .dtag    { color: var(--amber);    border-color: rgba(212,128,64,0.26);  background: rgba(212,128,64,0.07); }
+
+    .dive-body {
+      padding: 28px 34px 24px;
+      background: rgba(9,14,36,0.42) !important;
+      backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+      border-top: 1px solid rgba(240,228,200,0.03);
+      display: flex; flex-direction: column; gap: 16px;
+    }
+    .dive-body p { font-size: 0.92rem; line-height: 1.84; color: var(--muted); }
+    @media (max-width: 680px) { .dive-body { padding: 20px 18px 18px; gap: 14px; } }
+
+    .pull {
+      border-left: 2px solid var(--gold); padding: 10px 20px;
+      background: var(--gold-dim); border-radius: 0 8px 8px 0;
+      font-family: 'Cormorant Garamond', serif; font-style: italic;
+      font-size: 1.14rem; color: var(--gold); line-height: 1.62;
+    }
+    .pull.rose-pull  { border-color: var(--rose); background: linear-gradient(135deg, rgba(212,160,181,0.11) 0%, rgba(74,159,212,0.05) 100%); color: var(--rose); }
+    .pull.cerulean-pull { border-color: var(--cerulean); background: linear-gradient(135deg, rgba(74,159,212,0.11) 0%, rgba(90,184,168,0.05) 100%); color: var(--cerulean); }
+    .pull.teal-pull  { border-color: var(--teal-brt); background: linear-gradient(135deg, rgba(90,184,168,0.11) 0%, rgba(208,168,64,0.05) 100%); color: var(--teal-brt); }
+
+    .watch-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+    .watch-list li {
+      font-size: 0.90rem; color: var(--muted); line-height: 1.65;
+      padding-left: 16px; position: relative;
+    }
+    .watch-list li::before { content: "\2022"; color: var(--rose); position: absolute; left: 0; }
+
+    /* ── READ MORE ── */
+    .dive-expanded {
+      max-height: 0; opacity: 0; overflow: hidden;
+      transition: max-height 0.44s ease, opacity 0.28s ease 0.06s;
+    }
+    .dive-expanded.open { max-height: 2400px; opacity: 1; }
+    .dive-expanded-inner { display: flex; flex-direction: column; gap: 16px; padding-top: 4px; }
+
+    .read-more {
+      display: inline-flex; align-items: center; gap: 7px; margin-top: 16px;
+      background: rgba(208,168,64,0.06); border: 1px solid rgba(208,168,64,0.22);
+      border-radius: 20px; cursor: pointer; padding: 6px 15px;
+      font-family: 'Cormorant Garamond', serif; font-size: 0.86rem; font-style: italic;
+      color: var(--gold); opacity: 0.82; letter-spacing: 0.04em;
+      transition: opacity 0.15s, background 0.15s, border-color 0.15s;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .read-more:hover { opacity: 1; background: rgba(208,168,64,0.11); border-color: rgba(208,168,64,0.38); }
+    .read-more .chev { font-size: 0.60rem; transition: transform 0.22s; display: inline-block; font-style: normal; }
+    .read-more.open .chev { transform: rotate(180deg); }
+
+    /* ── PLANET STRIP ── */
+    .planet-strip-wrap { padding: 36px 44px 0; position: relative; }
+    .planet-strip-eyebrow {
+      font-family: 'Inter', sans-serif; font-size: 0.58rem; font-weight: 600;
+      letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold);
+      opacity: 0.50; margin-bottom: 4px;
+    }
+    .planet-strip-hint {
+      font-family: 'Inter', sans-serif; font-size: 0.48rem;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: rgba(240,228,200,0.22); margin-bottom: 12px;
+    }
+    .planet-strip { display: flex; flex-wrap: wrap; gap: 7px; }
+    .planet-pill {
+      display: inline-flex; align-items: center; gap: 5px;
+      padding: 4px 12px; border-radius: 20px;
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.68rem;
+      border: 1px solid; white-space: nowrap; cursor: pointer;
+      transition: border-color 0.20s, background 0.20s, transform 0.20s;
+      position: relative;
+    }
+    .planet-pill:hover { transform: translateY(-2px); }
+    .planet-pill.luminary { color: var(--gold);     border-color: rgba(208,168,64,0.26); background: rgba(208,168,64,0.06); }
+    .planet-pill.personal { color: var(--rose);     border-color: rgba(212,160,181,0.24); background: rgba(212,160,181,0.06); }
+    .planet-pill.social   { color: var(--cerulean); border-color: rgba(74,159,212,0.26); background: rgba(74,159,212,0.06); }
+    .planet-pill.outer    { color: var(--teal);     border-color: rgba(90,184,168,0.24); background: rgba(90,184,168,0.06); }
+    .planet-pill.point    { color: var(--muted);    border-color: rgba(240,228,200,0.14); background: rgba(240,228,200,0.04); }
+    .planet-pill.rx-tag   { font-size: 0.56rem; color: var(--rose); margin-left: 2px; }
+    .planet-pill[data-tip]::after {
+      content: attr(data-tip);
+      position: absolute; bottom: calc(100% + 9px); left: 50%; transform: translateX(-50%);
+      background: rgba(8,14,36,0.97); border: 1px solid rgba(208,168,64,0.26);
+      border-radius: 8px; padding: 8px 12px;
+      font-family: 'Inter', sans-serif; font-size: 0.65rem;
+      color: var(--text); line-height: 1.52; white-space: nowrap;
+      pointer-events: none; opacity: 0; transition: opacity 0.18s;
+      z-index: 200; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 8px 28px rgba(0,0,0,0.44);
+    }
+    @media (hover: hover) { .planet-pill[data-tip]:hover::after { opacity: 1; } }
+    @media (max-width: 680px) {
+      .planet-pill[data-tip]::after { display: none; }
+      .planet-strip-wrap { padding: 24px 12px 0; }
+      .planet-strip { gap: 5px; }
+      .planet-pill { font-size: 0.62rem; padding: 4px 9px; }
+    }
+
+    /* ── FOOTER ── */
+    .page-footer {
+      margin: 40px 44px 0; padding-top: 18px;
+      border-top: 1px solid var(--border);
+      font-family: 'Inter', sans-serif; font-size: 0.62rem;
+      color: var(--muted-2); letter-spacing: 0.10em;
+      line-height: 1.9; text-align: center;
+    }
+    .footer-link {
+      color: rgba(74,159,212,0.65); text-decoration: none; letter-spacing: 0.04em;
+    }
+    .footer-link:hover { color: var(--cerulean); }
+    @media (max-width: 680px) { .page-footer { margin: 28px 12px 0; } }
+
+    /* ── BOTTOM SHEET GLOSSARY ── */
+    .key-btn {
+      position: fixed; bottom: 32px; right: 32px; z-index: 100;
+      display: flex; align-items: center; gap: 9px; padding: 10px 20px;
+      background: radial-gradient(ellipse at 30% 50%, #121e36 0%, #0d1c38 100%);
+      border: 1px solid rgba(208,168,64,0.42); border-radius: 40px;
+      cursor: pointer; font-family: 'Inter', sans-serif; font-size: 0.68rem;
+      font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--gold);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.50), 0 0 0 1px rgba(208,168,64,0.09);
+      transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
+      touch-action: manipulation; -webkit-tap-highlight-color: transparent;
+    }
+    .key-btn:hover { border-color: rgba(208,168,64,0.72); box-shadow: 0 4px 32px rgba(0,0,0,0.60), 0 0 20px rgba(208,168,64,0.12); }
+    .key-btn:active { transform: scale(0.97); }
+    .key-btn-icon { font-size: 0.88rem; opacity: 0.88; }
+    @media (max-width: 680px) { .key-btn { bottom: 18px; right: 18px; font-size: 0.62rem; padding: 9px 16px; } }
+    @media print { .key-btn { display: none !important; } }
+
+    .key-dimmer {
+      position: fixed; inset: 0; z-index: 498;
+      background: rgba(8,22,46,0.32); opacity: 0; pointer-events: none;
+      transition: opacity 0.32s ease;
+    }
+    .key-dimmer.open { opacity: 1; pointer-events: auto; }
+
+    .key-overlay {
+      position: fixed; bottom: 0; left: 0; right: 0;
+      max-height: 48vh; z-index: 500;
+      background: linear-gradient(180deg, rgba(14,20,54,0.99) 0%, rgba(9,16,42,0.99) 100%);
+      border-top: 1px solid rgba(208,168,64,0.20);
+      border-radius: 18px 18px 0 0;
+      box-shadow: 0 -8px 56px rgba(0,0,0,0.65);
+      display: flex; flex-direction: column;
+      transform: translateY(100%);
+      transition: transform 0.34s cubic-bezier(0.32,0,0.18,1);
+      will-change: transform;
+      backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+    }
+    .key-overlay.open { transform: translateY(0); }
+    body.key-open { overflow: hidden; }
+
+    .key-handle {
+      width: 36px; height: 4px;
+      background: rgba(208,168,64,0.26); border-radius: 2px;
+      margin: 12px auto 0; flex-shrink: 0;
+    }
+    .key-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 10px 22px 11px;
+      border-bottom: 1px solid rgba(208,168,64,0.09); flex-shrink: 0;
+    }
+    .key-title {
+      font-family: 'Cormorant Garamond', serif; font-size: 1.04rem; font-weight: 300;
+      color: rgba(208,168,64,0.86); letter-spacing: 0.10em; margin: 0;
+    }
+    .key-close {
+      background: none; border: none; color: rgba(240,228,200,0.38); cursor: pointer;
+      min-width: 44px; min-height: 44px; display: flex; align-items: center; justify-content: center;
+      font-family: 'Inter', sans-serif; font-size: 0.60rem; text-transform: uppercase;
+      letter-spacing: 0.08em; transition: color 0.15s;
+      touch-action: manipulation; -webkit-tap-highlight-color: transparent;
+    }
+    .key-close:hover { color: rgba(240,228,200,0.80); }
+    .key-content {
+      overflow-y: auto; -webkit-overflow-scrolling: touch;
+      overscroll-behavior-y: contain; flex: 1; min-height: 0;
+      padding: 16px 22px; padding-bottom: max(28px, calc(env(safe-area-inset-bottom) + 16px));
+      scrollbar-width: thin; scrollbar-color: rgba(208,168,64,0.26) transparent;
+    }
+    .glos-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+    .glos-item {
+      display: flex; align-items: flex-start; gap: 10px;
+      background: rgba(13,28,56,0.60); border: 1px solid var(--border);
+      border-radius: 8px; padding: 10px 12px;
+    }
+    .glos-sym {
+      font-family: 'Cormorant Garamond', serif; font-size: 1.20rem;
+      color: var(--gold); flex-shrink: 0; min-width: 22px; text-align: center;
+      line-height: 1.2;
+    }
+    .glos-text { display: flex; flex-direction: column; gap: 2px; }
+    .glos-name {
+      font-family: 'Inter', sans-serif; font-size: 0.62rem; font-weight: 600;
+      letter-spacing: 0.10em; text-transform: uppercase; color: var(--text);
+    }
+    .glos-desc { font-family: 'Inter', sans-serif; font-size: 0.72rem; color: var(--muted); line-height: 1.45; }
+    @media (max-width: 520px) { .glos-grid { grid-template-columns: 1fr; } }
+
+    /* ── SECTION NAV DOTS (mobile) ── */
+    #section-nav {
+      position: fixed; right: 9px; top: 50%; transform: translateY(-50%);
+      display: none; flex-direction: column; gap: 6px;
+      z-index: 50; pointer-events: none;
+    }
+    .s-dot {
+      width: 3px; height: 3px; border-radius: 2px;
+      background: var(--gold); opacity: 0.16;
+      transition: opacity 0.35s ease, height 0.35s ease; flex-shrink: 0;
+    }
+    .s-dot.active { opacity: 0.68; height: 14px; }
+    @media (max-width: 680px) { #section-nav { display: flex; } }
+
+    /* ── FIRST VISIT HINT ── */
+    #hint-tooltip {
+      position: fixed; bottom: 88px; right: 50%; transform: translateX(50%);
+      background: rgba(8,14,36,0.94); border: 1px solid rgba(208,168,64,0.28);
+      border-radius: 22px; padding: 7px 18px;
+      font-family: 'Inter', sans-serif; font-size: 0.66rem; font-weight: 400;
+      letter-spacing: 0.10em; text-transform: uppercase; color: rgba(208,168,64,0.80);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      pointer-events: none; opacity: 0;
+      transition: opacity 0.4s ease;
+      z-index: 90; white-space: nowrap;
+    }
+    #hint-tooltip.visible { opacity: 1; }
+
+    /* ── FADE IN ── */
+    .fade-in { opacity: 0; transform: translateY(16px); transition: opacity 0.52s ease, transform 0.52s ease; }
+    .fade-in.visible { opacity: 1; transform: none; }
+
+    /* ── ANIMATIONS ── */
+    @keyframes floatUp {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(-4px); }
+    }
+    @keyframes aurora {
+      0%, 100% { opacity: 0.68; }
+      50%       { opacity: 1.00; }
+    }
+    @keyframes hintFade {
+      0%   { opacity: 0; }
+      15%  { opacity: 1; }
+      75%  { opacity: 1; }
+      100% { opacity: 0; }
+    }
+
+    /* ── PRINT ── */
+    @media print {
+      html, body { background: var(--bg) !important; }
+      * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+      .key-btn, #section-nav, #hint-tooltip, #week-bar { display: none !important; }
+      .fade-in { opacity: 1 !important; transform: none !important; }
+      .dive-expanded { max-height: none !important; opacity: 1 !important; overflow: visible !important; }
+    }
+  </style>
 </head>
 <body>
 
+<!-- ── FIXED BACKGROUNDS ── -->
+<canvas id="star-canvas"></canvas>
+<div id="atm-blobs">
+  <div class="blob blob-gold"></div>
+  <div class="blob blob-cerulean"></div>
+  <div class="blob blob-rose"></div>
+  <div class="blob blob-teal"></div>
+</div>
+
+<!-- ── CELESTIAL SIDE COLUMNS ── -->
+<div class="cel-col cel-col-left">
+  <svg viewBox="0 0 22 800" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+    <line x1="11" y1="0" x2="11" y2="800" stroke="#4a9fd4" stroke-width="0.7" opacity="0.18"/>
+    <text x="11" y="60"  text-anchor="middle" font-size="12" fill="#d0a840" opacity="0.58" font-family="serif">&#9789;</text>
+    <text x="11" y="120" text-anchor="middle" font-size="8"  fill="#f0e4cc" opacity="0.38" font-family="serif">&#10022;</text>
+    <text x="11" y="188" text-anchor="middle" font-size="11" fill="#d0a840" opacity="0.48" font-family="serif">&#9737;</text>
+    <circle cx="11" cy="240" r="1.2" fill="#d4a0b5" opacity="0.36"/>
+    <text x="11" y="300" text-anchor="middle" font-size="8"  fill="#d4a0b5" opacity="0.44" font-family="serif">&#10023;</text>
+    <text x="11" y="360" text-anchor="middle" font-size="12" fill="#f0e4cc" opacity="0.24" font-family="serif">&#9790;</text>
+    <text x="11" y="420" text-anchor="middle" font-size="8"  fill="#d0a840" opacity="0.38" font-family="serif">&#10022;</text>
+    <circle cx="11" cy="480" r="1.0" fill="#4a9fd4" opacity="0.30"/>
+    <text x="11" y="540" text-anchor="middle" font-size="11" fill="#d0a840" opacity="0.44" font-family="serif">&#9737;</text>
+    <text x="11" y="600" text-anchor="middle" font-size="8"  fill="#f0e4cc" opacity="0.32" font-family="serif">&#10022;</text>
+    <text x="11" y="660" text-anchor="middle" font-size="12" fill="#d0a840" opacity="0.50" font-family="serif">&#9789;</text>
+    <text x="11" y="730" text-anchor="middle" font-size="8"  fill="#d4a0b5" opacity="0.38" font-family="serif">&#10023;</text>
+  </svg>
+</div>
+<div class="cel-col cel-col-right">
+  <svg viewBox="0 0 22 800" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+    <line x1="11" y1="0" x2="11" y2="800" stroke="#4a9fd4" stroke-width="0.7" opacity="0.18"/>
+    <text x="11" y="60"  text-anchor="middle" font-size="8"  fill="#f0e4cc" opacity="0.38" font-family="serif">&#10022;</text>
+    <text x="11" y="120" text-anchor="middle" font-size="12" fill="#d0a840" opacity="0.52" font-family="serif">&#9790;</text>
+    <text x="11" y="188" text-anchor="middle" font-size="8"  fill="#d4a0b5" opacity="0.44" font-family="serif">&#10023;</text>
+    <circle cx="11" cy="240" r="1.2" fill="#d0a840" opacity="0.32"/>
+    <text x="11" y="300" text-anchor="middle" font-size="11" fill="#d0a840" opacity="0.48" font-family="serif">&#9737;</text>
+    <text x="11" y="360" text-anchor="middle" font-size="12" fill="#f0e4cc" opacity="0.22" font-family="serif">&#9789;</text>
+    <text x="11" y="420" text-anchor="middle" font-size="8"  fill="#d0a840" opacity="0.44" font-family="serif">&#10022;</text>
+    <circle cx="11" cy="480" r="1.0" fill="#d4a0b5" opacity="0.36"/>
+    <text x="11" y="540" text-anchor="middle" font-size="8"  fill="#4a9fd4" opacity="0.48" font-family="serif">&#10023;</text>
+    <text x="11" y="600" text-anchor="middle" font-size="11" fill="#d0a840" opacity="0.46" font-family="serif">&#9737;</text>
+    <text x="11" y="660" text-anchor="middle" font-size="8"  fill="#f0e4cc" opacity="0.34" font-family="serif">&#10022;</text>
+    <text x="11" y="730" text-anchor="middle" font-size="12" fill="#d0a840" opacity="0.44" font-family="serif">&#9790;</text>
+  </svg>
+</div>
+
+<!-- ── STICKY WEEK PROGRESS BAR ── -->
+<div id="week-bar">
+  <div class="wbar-inner">
+    <span class="wbar-label">Week</span>
+    <div class="wbar-track">
+      <div class="wbar-fill" id="wbar-fill" style="width:7.1%"></div>
+      <div class="wbar-days" id="wbar-days"></div>
+    </div>
+    <span class="wbar-day-label" id="wbar-today">Mon</span>
+  </div>
+</div>
+
+<!-- ── HERO ── -->
 <div class="hero">
-  <svg class="hero-stars" viewBox="0 0 720 440" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="52"  cy="62"  r="1.1" fill="#fff8ee" opacity="0.48"/>
-    <circle cx="168" cy="38"  r="0.9" fill="#fff8ee" opacity="0.36"/>
-    <circle cx="290" cy="55"  r="1.2" fill="#c9a84c" opacity="0.42"/>
-    <circle cx="420" cy="24"  r="0.8" fill="#fff8ee" opacity="0.36"/>
-    <circle cx="542" cy="50"  r="1.0" fill="#fff8ee" opacity="0.38"/>
-    <circle cx="654" cy="72"  r="1.1" fill="#c9a84c" opacity="0.44"/>
-    <circle cx="700" cy="32"  r="0.8" fill="#d4a0b5" opacity="0.38"/>
-    <circle cx="22"  cy="240" r="0.8" fill="#c9a84c" opacity="0.32"/>
-    <circle cx="698" cy="224" r="0.7" fill="#fff8ee" opacity="0.34"/>
-    <circle cx="360" cy="408" r="0.7" fill="#d4a0b5" opacity="0.28"/>
-    <text x="100" y="108" font-size="10" fill="#c9a84c" opacity="0.55" text-anchor="middle" font-family="serif">&#10022;</text>
-    <text x="612" y="126" font-size="7"  fill="#fff8ee" opacity="0.38" text-anchor="middle" font-family="serif">&#10023;</text>
-    <text x="364" y="18"  font-size="7"  fill="#c9a84c" opacity="0.48" text-anchor="middle" font-family="serif">&#10022;</text>
-    <circle cx="640" cy="90"  r="70" fill="#c9a84c" opacity="0.04"/>
-    <circle cx="70"  cy="340" r="80" fill="#9b59b6" opacity="0.05"/>
-  </svg>
-  <div class="hero-border-outer"></div>
-  <div class="hero-border-inner"></div>
-  <div class="corner tl">&#10022;</div>
-  <div class="corner tr">&#10022;</div>
-  <div class="corner bl">&#10022;</div>
-  <div class="corner br">&#10022;</div>
-  <svg class="hero-col left" width="22" height="380" viewBox="0 0 22 380" xmlns="http://www.w3.org/2000/svg">
-    <line x1="11" y1="0" x2="11" y2="380" stroke="#b482d2" stroke-width="0.8" opacity="0.22"/>
-    <text x="11" y="44"  text-anchor="middle" font-size="13" fill="#c9a84c" opacity="0.62" font-family="serif">&#9789;</text>
-    <text x="11" y="90"  text-anchor="middle" font-size="9"  fill="#fff8ee" opacity="0.42" font-family="serif">&#10022;</text>
-    <text x="11" y="140" text-anchor="middle" font-size="12" fill="#c9a84c" opacity="0.52" font-family="serif">&#9737;</text>
-    <circle cx="11" cy="180" r="1.3" fill="#d4a0b5" opacity="0.40"/>
-    <text x="11" y="228" text-anchor="middle" font-size="9"  fill="#d4a0b5" opacity="0.48" font-family="serif">&#10023;</text>
-    <text x="11" y="276" text-anchor="middle" font-size="13" fill="#fff8ee" opacity="0.28" font-family="serif">&#9790;</text>
-    <text x="11" y="330" text-anchor="middle" font-size="9"  fill="#c9a84c" opacity="0.42" font-family="serif">&#10022;</text>
-  </svg>
-  <svg class="hero-col right" width="22" height="380" viewBox="0 0 22 380" xmlns="http://www.w3.org/2000/svg">
-    <line x1="11" y1="0" x2="11" y2="380" stroke="#b482d2" stroke-width="0.8" opacity="0.22"/>
-    <text x="11" y="44"  text-anchor="middle" font-size="9"  fill="#fff8ee" opacity="0.42" font-family="serif">&#10022;</text>
-    <text x="11" y="90"  text-anchor="middle" font-size="13" fill="#c9a84c" opacity="0.58" font-family="serif">&#9790;</text>
-    <text x="11" y="140" text-anchor="middle" font-size="9"  fill="#d4a0b5" opacity="0.48" font-family="serif">&#10023;</text>
-    <circle cx="11" cy="180" r="1.3" fill="#c9a84c" opacity="0.36"/>
-    <text x="11" y="228" text-anchor="middle" font-size="12" fill="#c9a84c" opacity="0.52" font-family="serif">&#9737;</text>
-    <text x="11" y="276" text-anchor="middle" font-size="13" fill="#fff8ee" opacity="0.26" font-family="serif">&#9789;</text>
-    <text x="11" y="330" text-anchor="middle" font-size="9"  fill="#c9a84c" opacity="0.48" font-family="serif">&#10022;</text>
-  </svg>
+  <!-- Sacred Geometry: Seed of Life -->
+  <div class="hero-geo" aria-hidden="true">
+    <svg width="420" height="420" viewBox="-210 -210 420 420" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="geoGrad" cx="50%" cy="50%" r="50%">
+          <stop offset="0%"   stop-color="#d0a840" stop-opacity="0.85"/>
+          <stop offset="100%" stop-color="#d0a840" stop-opacity="0.10"/>
+        </radialGradient>
+      </defs>
+      <!-- Seed of Life: center + 6 petals at R=80 -->
+      <g stroke="url(#geoGrad)" stroke-width="0.7" fill="none" opacity="0.9">
+        <circle cx="0"   cy="0"    r="80"/>
+        <circle cx="80"  cy="0"    r="80"/>
+        <circle cx="40"  cy="69.3" r="80"/>
+        <circle cx="-40" cy="69.3" r="80"/>
+        <circle cx="-80" cy="0"    r="80"/>
+        <circle cx="-40" cy="-69.3" r="80"/>
+        <circle cx="40"  cy="-69.3" r="80"/>
+        <!-- Outer ring -->
+        <circle cx="0"   cy="0"    r="160"/>
+        <!-- Axis lines -->
+        <line x1="-160" y1="0"    x2="160"  y2="0"    stroke-opacity="0.35"/>
+        <line x1="-80"  y1="138.6" x2="80"  y2="-138.6" stroke-opacity="0.35"/>
+        <line x1="80"   y1="138.6" x2="-80" y2="-138.6" stroke-opacity="0.35"/>
+        <!-- Inner hexagon -->
+        <polygon points="80,0 40,69.3 -40,69.3 -80,0 -40,-69.3 40,-69.3" stroke-opacity="0.50"/>
+        <!-- Center dot -->
+        <circle cx="0" cy="0" r="3" fill="url(#geoGrad)" stroke="none"/>
+        <!-- Outer decorative points -->
+        <circle cx="160"  cy="0"     r="2.5" fill="#d0a840" fill-opacity="0.70" stroke="none"/>
+        <circle cx="-160" cy="0"     r="2.5" fill="#d0a840" fill-opacity="0.70" stroke="none"/>
+        <circle cx="80"   cy="138.6" r="2.5" fill="#d0a840" fill-opacity="0.70" stroke="none"/>
+        <circle cx="-80"  cy="138.6" r="2.5" fill="#d0a840" fill-opacity="0.70" stroke="none"/>
+        <circle cx="80"   cy="-138.6" r="2.5" fill="#d0a840" fill-opacity="0.70" stroke="none"/>
+        <circle cx="-80"  cy="-138.6" r="2.5" fill="#d0a840" fill-opacity="0.70" stroke="none"/>
+      </g>
+    </svg>
+  </div>
+
   <div class="hero-label">Transit-to-Transit &middot; Collective Sky</div>
   <h1 class="hero-name">Sky at Work</h1>
   <div class="hero-ornament">&#9789; &#10022; &#9737; &#10022; &#9790;</div>
   <div class="hero-data">
     <div>
       <div class="hero-datum-label">Week of</div>
-      <div class="hero-datum-value">June 8</div>
+      <div class="hero-datum-value">June 8&ndash;14</div>
     </div>
     <div>
-      <div class="hero-datum-label">Aspects</div>
-      <div class="hero-datum-value">Transit &middot; Transit</div>
+      <div class="hero-datum-label">Moon</div>
+      <div class="hero-datum-value">Last Quarter &rarr; Balsamic</div>
+    </div>
+    <div>
+      <div class="hero-datum-label">Dominant</div>
+      <div class="hero-datum-value">Venus &sdot; Jupiter</div>
+    </div>
+  </div>
+  <div class="hero-big-three">
+    <span class="hbt-pill warm">Venus ☌ Jupiter</span>
+    <span class="hbt-pill soft">Mercury □ Saturn</span>
+    <span class="hbt-pill cool">Last Quarter ↓</span>
+  </div>
+</div>
+
+<!-- ── SIGNAL TRIO ── -->
+<div class="trio-wrap fade-in" data-section="trio">
+  <div class="trio">
+    <div class="trio-card t-gold">
+      <span class="trio-glyph">♀ ☌ ♃</span>
+      <div class="trio-label">Venus &amp; Jupiter</div>
+      <div class="trio-placement">Warmth Opens</div>
+      <div class="trio-orb">1.16&deg; &middot; Cancer &middot; Thu&ndash;Fri peak</div>
+      <div class="trio-rule"></div>
+      <div class="trio-tagline">The collaborative ask that lands&mdash;warmest sky of the month</div>
+    </div>
+    <div class="trio-card t-rose">
+      <span class="trio-glyph">☿ □ ♄</span>
+      <div class="trio-label">Mercury &amp; Saturn</div>
+      <div class="trio-placement">Write It Right</div>
+      <div class="trio-orb">1.98&deg; &middot; Cancer/Aries &middot; exact Tue</div>
+      <div class="trio-rule"></div>
+      <div class="trio-tagline">Precision before warmth&mdash;draft today, send Wednesday</div>
+    </div>
+    <div class="trio-card t-cerulean">
+      <span class="trio-glyph">&#9790; &#8595;</span>
+      <div class="trio-label">Last Quarter Moon</div>
+      <div class="trio-placement">Release Phase</div>
+      <div class="trio-orb">peaked Mon AM &middot; New Moon Jun 14&ndash;15</div>
+      <div class="trio-rule"></div>
+      <div class="trio-tagline">Close what&rsquo;s in motion&mdash;not the week to launch</div>
     </div>
   </div>
 </div>
 
-<div class="cel-divider"><div class="cel-rule left"></div><div class="cel-mark">&#10022; &#10022; &#10022;</div><div class="cel-rule right"></div></div>
+<div class="cel-divider fade-in"><div class="cel-rule left"></div><div class="cel-mark">&#10022; &#10022; &#10022;</div><div class="cel-rule right"></div></div>
 
-<div class="section-wrap">
+<!-- ── THE PULSE ── -->
+<div class="section-wrap fade-in" data-section="pulse">
   <div class="section-eyebrow">The Weather This Week</div>
   <div class="section-title">The Pulse</div>
-  <div class="pulse-card"><p>☽ Moon ⚺ ♆ Neptune creates friction this week (0.19° orb).</p></div>
-</div>
-
-<div class="cel-divider"><div class="cel-rule left"></div><div class="cel-mark">&#10022; &#10022; &#10022;</div><div class="cel-rule right"></div></div>
-
-<div class="section-wrap">
-  <div class="section-eyebrow">Sorted by Exactness</div>
-  <div class="section-title">At a Glance</div>
-  <div class="signal-board">
-        <div class="signal-row muted">
-          <span class="sig-aspect">☽ Moon ⚺ ♆ Neptune</span>
-          <span class="sig-orb">0.19&deg;</span>
-          <span class="sig-note">semi-sextile</span>
-        </div>
-        <div class="signal-row rose">
-          <span class="sig-aspect">♅ Uranus □ ☊ NNode</span>
-          <span class="sig-orb">0.49&deg;</span>
-          <span class="sig-note">square</span>
-        </div>
-        <div class="signal-row muted">
-          <span class="sig-aspect">☽ Moon ⚺ ♇ Pluto Rx</span>
-          <span class="sig-orb">0.92&deg;</span>
-          <span class="sig-note">semi-sextile</span>
-        </div>
-        <div class="signal-row teal">
-          <span class="sig-aspect">♆ Neptune ✶ ♇ Pluto Rx</span>
-          <span class="sig-orb">1.11&deg;</span>
-          <span class="sig-note">sextile</span>
-        </div>
-        <div class="signal-row muted">
-          <span class="sig-aspect">♆ Neptune ⚺ ☊ NNode</span>
-          <span class="sig-orb">1.25&deg;</span>
-          <span class="sig-note">semi-sextile</span>
-        </div>
+  <div class="pulse-card">
+    <p>Venus conjuncts Jupiter in Cancer this week&mdash;the most socially generous sky of the month. Warmth lands, collaboration opens, relationship asks go further than they would on any other week. Counter that with Mercury squaring Saturn exact Tuesday: communications need to be deliberate before they&rsquo;re warm. Write it, check it, then send it. Last Quarter Moon says completion energy, not launch energy. Close out what&rsquo;s in motion before you start something new.</p>
   </div>
 </div>
 
-<div class="cel-divider"><div class="cel-rule left"></div><div class="cel-mark">&#10022; &#10022; &#10022;</div><div class="cel-rule right"></div></div>
+<div class="cel-divider fade-in"><div class="cel-rule left"></div><div class="cel-mark">&#10022; &#10022; &#10022;</div><div class="cel-rule right"></div></div>
 
-<div class="section-wrap">
-  <div class="dive-section accent-gold"><div class="dive-head gold-head"><div class="dive-icon">&#9791;</div><div><div class="dive-eyebrow">Mercury &middot; communication</div><div class="dive-title">For Communication</div></div></div><div class="dive-body"><p><strong>☿ Mercury □ ♄ Saturn</strong> (3.61&deg;) &mdash; miscommunication risk: slow down and verify before deciding</p><p><strong>☽ Moon △ ☿ Mercury</strong> (4.78&deg;) &mdash; trine active this week</p><p><strong>☿ Mercury □ ♆ Neptune</strong> (4.97&deg;) &mdash; fog in communication: re-read before sending, verify plans</p></div></div>
-  <div class="dive-section accent-rose"><div class="dive-head rose-head"><div class="dive-icon">&#9794;</div><div><div class="dive-eyebrow">Mars &middot; Sun &middot; action</div><div class="dive-title">For Momentum</div></div></div><div class="dive-body"><p><strong>♂ Mars ⚺ ♄ Saturn</strong> (1.71&deg;) &mdash; semi-sextile active this week</p><p><strong>☉ Sun ∠ ⚷ Chiron</strong> (2.16&deg;) &mdash; semi-square active this week</p><p><strong>☉ Sun ✶ ♄ Saturn</strong> (3.89&deg;) &mdash; credibility supports action: trust the track record</p></div></div>
-  <div class="dive-section accent-teal"><div class="dive-head teal-head"><div class="dive-icon">&#9792;</div><div><div class="dive-eyebrow">Venus &middot; Jupiter &middot; connection</div><div class="dive-title">For Collaboration</div></div></div><div class="dive-body"><p><strong>♀ Venus ☌ ♃ Jupiter</strong> (2.39&deg;) &mdash; generosity and goodwill: strong for partnership asks and collaborations</p><p><strong>♃ Jupiter □ ⚷ Chiron</strong> (4.19&deg;) &mdash; square active this week</p></div></div>
-  <div class="dive-section accent-plum"><div class="dive-head plum-head"><div class="dive-icon">&#9812;</div><div><div class="dive-eyebrow">friction &middot; tension &middot; pressure</div><div class="dive-title">Watch For</div></div></div><div class="dive-body"><ul class="watch-list"><li><strong>♅ Uranus □ ☊ NNode</strong> (0.49&deg;): square</li><li><strong>☽ Moon □ ♅ Uranus</strong> (1.94&deg;): square</li></ul></div></div>
+<!-- ── SIGNAL BOARD ── -->
+<div class="section-wrap fade-in" data-section="glance">
+  <div class="section-eyebrow">Sorted by Exactness</div>
+  <div class="section-title">At a Glance</div>
+  <div class="signal-board" id="signal-board">
+
+    <div class="signal-row cerulean" data-detail="uranus-node">
+      <span class="sig-aspect">&#9799; Uranus &#9744; &#9738; NNode</span>
+      <span class="sig-orb">0.43&deg;</span>
+      <span class="sig-note">square &middot; nearly exact &middot; unexpected pivots</span>
+      <span class="sig-arrow">&#9660;</span>
+    </div>
+    <div class="sig-detail" id="uranus-node"><p>Uranus at 2°30&prime; Gemini squares the North Node at 2°56&prime; Pisces Rx. Plans that felt locked can pivot&mdash;not from failure, but from new information. Hold the goal; stay flexible on the route. This is active all week.</p></div>
+
+    <div class="signal-row gold" data-detail="venus-jupiter">
+      <span class="sig-aspect">&#9794;&#9792; Venus &#9791; Jupiter</span>
+      <span class="sig-orb">1.16&deg;</span>
+      <span class="sig-note">conjunction &middot; Cancer &middot; peaks Thu&ndash;Fri</span>
+      <span class="sig-arrow">&#9660;</span>
+    </div>
+    <div class="sig-detail" id="venus-jupiter"><p>Venus at 24°22&prime; Cancer conjunct Jupiter at 25°32&prime; Cancer. Warmth amplified&mdash;generosity, goodwill, genuine connection. The collaborative ask that&rsquo;s been waiting has its best window Thursday into Friday.</p></div>
+
+    <div class="signal-row teal" data-detail="neptune-pluto">
+      <span class="sig-aspect">&#9798; Neptune &#10023; &#9800; Pluto Rx</span>
+      <span class="sig-orb">1.07&deg;</span>
+      <span class="sig-note">sextile &middot; Aries/Aquarius &middot; generational</span>
+      <span class="sig-arrow">&#9660;</span>
+    </div>
+    <div class="sig-detail" id="neptune-pluto"><p>Neptune at 4°12&prime; Aries sextile Pluto Rx at 5°16&prime; Aquarius. A slow generational undercurrent&mdash;the dissolution of old power structures and the emergence of new ones. Background context for 2026&rsquo;s collective arc.</p></div>
+
+    <div class="signal-row rose" data-detail="mercury-saturn">
+      <span class="sig-aspect">&#9791; Mercury &#9744; &#9799; Saturn</span>
+      <span class="sig-orb">1.98&deg;</span>
+      <span class="sig-note">square &middot; Cancer/Aries &middot; exact Tue</span>
+      <span class="sig-arrow">&#9660;</span>
+    </div>
+    <div class="sig-detail" id="mercury-saturn"><p>Mercury at 10°52&prime; Cancer squares Saturn at 12°51&prime; Aries, exact Tuesday. Communication under precision pressure&mdash;what goes out this week should be worth sending. Quality beats volume. Write Tuesday; send Wednesday.</p></div>
+
+    <div class="signal-row muted" data-detail="mercury-neptune">
+      <span class="sig-aspect">&#9791; Mercury &#9744; &#9798; Neptune</span>
+      <span class="sig-orb">6.67&deg;</span>
+      <span class="sig-note">square &middot; separating &middot; fog lifting</span>
+      <span class="sig-arrow">&#9660;</span>
+    </div>
+    <div class="sig-detail" id="mercury-neptune"><p>Mercury square Neptune is separating from last week&rsquo;s peak, but still 6.67&deg; orb through Monday&ndash;Tuesday. Inspired communication that skips the evidence step is still a risk early in the week. Verify before committing.</p></div>
+
+    <div class="signal-row muted" data-detail="last-quarter">
+      <span class="sig-aspect">&#9790; Last Quarter Moon</span>
+      <span class="sig-orb">&#8595;</span>
+      <span class="sig-note">peaked Mon AM &middot; waning to balsamic</span>
+      <span class="sig-arrow">&#9660;</span>
+    </div>
+    <div class="sig-detail" id="last-quarter"><p>Last Quarter Moon peaked Monday morning (Sun 17°50&prime; Gemini square Moon 20°22&prime; Pisces). The lunar cycle now wanes toward New Moon June 14&ndash;15. Release energy all week&mdash;completions land better than launches under this phase.</p></div>
+
+  </div>
 </div>
 
-<div class="page-footer">
-  transit-to-transit aspects only &middot; no natal charts used &middot; everyone's in this weather<br>
-  generated via pyswisseph &middot; swiss ephemeris
+<div class="cel-divider fade-in"><div class="cel-rule left"></div><div class="cel-mark">&#10022; &#10022; &#10022;</div><div class="cel-rule right"></div></div>
+
+<!-- ── DIVE SECTIONS ── -->
+<div class="dive-wrap">
+
+  <!-- Communication -->
+  <div class="dive-section accent-rose fade-in" data-section="communication">
+    <div class="dive-head rose-head">
+      <svg class="dive-head-stars" viewBox="0 0 500 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="420" cy="28" r="1.1" fill="#d4a0b5" opacity="0.38"/>
+        <circle cx="460" cy="60" r="0.8" fill="#d0a840" opacity="0.30"/>
+        <circle cx="480" cy="18" r="0.9" fill="#f0e4cc" opacity="0.22"/>
+        <circle cx="440" cy="90" r="0.7" fill="#d4a0b5" opacity="0.28"/>
+      </svg>
+      <div class="dive-icon">&#9791;</div>
+      <div class="dive-head-text">
+        <div class="dive-eyebrow">Mercury &middot; Communication</div>
+        <div class="dive-title">Write It Twice This Week</div>
+        <div class="dive-subtitle">Mercury squares Saturn exact Tuesday&mdash;quality beats volume</div>
+        <div class="dive-tags">
+          <span class="dtag">Mercury in Cancer</span>
+          <span class="dtag">Mercury □ Saturn</span>
+          <span class="dtag">one-on-ones beat groups</span>
+        </div>
+      </div>
+    </div>
+    <div class="dive-body">
+      <p>Mercury in Cancer squares Saturn in Aries exact Tuesday. Cancer Mercury leads with feeling; Saturn demands accountability. The combination doesn&rsquo;t block communication&mdash;it asks for quality. What goes out this week should be worth sending.</p>
+      <p>The fog from last week&rsquo;s Mercury-Neptune square is separating but still present through Monday&ndash;Tuesday. Inspired communication that skips the evidence step is the specific risk. Write the email. Don&rsquo;t send it until Wednesday. That discipline is what Mercury-Saturn is actually asking for.</p>
+      <div class="pull rose-pull">The message that holds up is the one you wrote twice.</div>
+      <div class="dive-expanded" id="comm-expand">
+        <div class="dive-expanded-inner">
+          <p>One-on-ones beat group threads all week. Cancer Mercury means the direct conversation goes further than the all-hands&mdash;people say more of what they actually think when it&rsquo;s personal rather than performed. If something needs to land, deliver it in person or one-to-one before it goes to the room.</p>
+          <p><strong>Best days for communication:</strong> Wednesday&ndash;Thursday, once Saturn&rsquo;s rigor has landed. <strong>Watch:</strong> Tuesday&mdash;the warm instinct is to send the kind message; the discipline is to make it accurate first.</p>
+        </div>
+      </div>
+      <button class="read-more" onclick="toggleExpand('comm-expand', this)">
+        <span>Read more</span><span class="chev">&#9660;</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Collaboration -->
+  <div class="dive-section accent-gold fade-in" data-section="collaboration">
+    <div class="dive-head gold-head">
+      <svg class="dive-head-stars" viewBox="0 0 500 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="410" cy="22" r="1.2" fill="#d0a840" opacity="0.42"/>
+        <circle cx="455" cy="55" r="0.9" fill="#d4a0b5" opacity="0.32"/>
+        <circle cx="476" cy="88" r="0.8" fill="#f0e4cc" opacity="0.24"/>
+        <circle cx="430" cy="95" r="1.0" fill="#d0a840" opacity="0.30"/>
+      </svg>
+      <div class="dive-icon">&#9792;</div>
+      <div class="dive-head-text">
+        <div class="dive-eyebrow">Venus &middot; Jupiter &middot; Connection</div>
+        <div class="dive-title">The Week&rsquo;s Open Door</div>
+        <div class="dive-subtitle">Most generous collaborative sky of the month&mdash;Thursday peaks</div>
+        <div class="dive-tags">
+          <span class="dtag">Venus ☌ Jupiter</span>
+          <span class="dtag">Cancer</span>
+          <span class="dtag">goodwill flows</span>
+        </div>
+      </div>
+    </div>
+    <div class="dive-body">
+      <p>Venus and Jupiter are both in Cancer, closing to conjunction&mdash;peaks Thursday into Friday. Cancer is the sign of genuine care and connection; Venus and Jupiter amplifying each other here means goodwill flows freely. Partnership asks land. The difficult conversation has a warmer container. The stakeholder who&rsquo;s been resistant is more receptive.</p>
+      <div class="pull">Ask for the thing this week. The sky says yes before you do.</div>
+      <div class="dive-expanded" id="collab-expand">
+        <div class="dive-expanded-inner">
+          <p>Genuine appreciation&mdash;the kind that names the specific thing someone did&mdash;goes unusually far under this sky. The ask that requires buy-in rather than just sign-off has its best window Thursday. Don&rsquo;t let Thursday fill up with logistics; this is the week&rsquo;s relationship capital.</p>
+          <p><strong>Best for:</strong> New partnership conversations, feedback sessions, difficult conversations that need warmth to land, creative collaboration, any ask that requires a yes from someone who&rsquo;s been on the fence. <strong>Watch:</strong> Don&rsquo;t let Friday afternoon absorb what Thursday could have done&mdash;Balsamic Moon approaching means energy dips end-of-week.</p>
+        </div>
+      </div>
+      <button class="read-more" onclick="toggleExpand('collab-expand', this)">
+        <span>Read more</span><span class="chev">&#9660;</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Decisions & Momentum -->
+  <div class="dive-section accent-cerulean fade-in" data-section="momentum">
+    <div class="dive-head cerulean-head">
+      <svg class="dive-head-stars" viewBox="0 0 500 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="425" cy="30" r="1.0" fill="#4a9fd4" opacity="0.40"/>
+        <circle cx="462" cy="68" r="0.8" fill="#d0a840" opacity="0.28"/>
+        <circle cx="482" cy="20" r="0.9" fill="#f0e4cc" opacity="0.22"/>
+      </svg>
+      <div class="dive-icon">&#9799;</div>
+      <div class="dive-head-text">
+        <div class="dive-eyebrow">Uranus &middot; Moon Phase &middot; Momentum</div>
+        <div class="dive-title">Complete First, Launch After</div>
+        <div class="dive-subtitle">Uranus pivots the path &middot; Last Quarter says finish what&rsquo;s moving</div>
+        <div class="dive-tags">
+          <span class="dtag">Last Quarter Moon</span>
+          <span class="dtag">Uranus □ North Node</span>
+          <span class="dtag">stay flexible</span>
+        </div>
+      </div>
+    </div>
+    <div class="dive-body">
+      <p>Uranus squares the North Node this week at 0.43&deg; orb&mdash;nearly exact as the week opens. Uranus doesn&rsquo;t slow things down; it reroutes them. Plans that felt stable can pivot, not because anything went wrong, but because new information has a way of surfacing. Hold the goal; stay flexible on the route.</p>
+      <p>The Last Quarter Moon peaked Monday morning, beginning the waning arc toward New Moon (June 14&ndash;15). Completion energy. The most useful decisions this week close out what&rsquo;s already been decided. Launches planned for this week will land better if held until after the New Moon.</p>
+      <div class="pull cerulean-pull">The work that finishes this week lays the foundation. The work that starts this week struggles to find its footing.</div>
+      <div class="dive-expanded" id="momentum-expand">
+        <div class="dive-expanded-inner">
+          <p><strong>Best for:</strong> Finishing in-progress work, closing decision loops, editing rather than drafting, cleaning up what&rsquo;s already in motion.</p>
+          <p><strong>Uranus watch:</strong> Build flexibility into Monday and Tuesday&rsquo;s agenda. Something in the external environment may shift team direction unexpectedly&mdash;this isn&rsquo;t crisis, it&rsquo;s information. Treat it that way.</p>
+        </div>
+      </div>
+      <button class="read-more" onclick="toggleExpand('momentum-expand', this)">
+        <span>Read more</span><span class="chev">&#9660;</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Watch For -->
+  <div class="dive-section accent-amber fade-in" data-section="watch">
+    <div class="dive-head amber-head">
+      <svg class="dive-head-stars" viewBox="0 0 500 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="415" cy="25" r="1.1" fill="#d48040" opacity="0.38"/>
+        <circle cx="458" cy="72" r="0.8" fill="#d0a840" opacity="0.26"/>
+        <circle cx="478" cy="42" r="0.9" fill="#f0e4cc" opacity="0.20"/>
+      </svg>
+      <div class="dive-icon">&#9812;</div>
+      <div class="dive-head-text">
+        <div class="dive-eyebrow">Friction &middot; Timing &middot; Watch For</div>
+        <div class="dive-title">Four Things to Know</div>
+        <div class="dive-subtitle">The week&rsquo;s friction points and timing notes</div>
+        <div class="dive-tags">
+          <span class="dtag">timing</span>
+          <span class="dtag">communication</span>
+          <span class="dtag">end-of-week</span>
+        </div>
+      </div>
+    </div>
+    <div class="dive-body">
+      <ul class="watch-list">
+        <li><strong>Mercury-Saturn through Tuesday:</strong> The warm instinct is to send the kind message. The discipline is to make it accurate first. Both can be true; do them in the right order.</li>
+        <li><strong>Uranus square North Node all week:</strong> Team direction that felt set can shift Monday. One piece of unexpected news can reorient the week&rsquo;s priorities. Build in flexibility before you lock the agenda.</li>
+        <li><strong>Venus-Jupiter window Thursday&ndash;Friday:</strong> Don&rsquo;t let Thursday fill up with logistics. This is the week&rsquo;s relationship capital. Spend it on people, not process.</li>
+        <li><strong>End-of-week energy drop:</strong> Balsamic Moon approaching means Friday afternoon gets quieter and more reflective. Schedule the important conversation for Thursday, not Friday at 4.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Bigger Picture -->
+  <div class="dive-section accent-teal fade-in" data-section="bigger">
+    <div class="dive-head teal-head">
+      <svg class="dive-head-stars" viewBox="0 0 500 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="418" cy="28" r="1.1" fill="#5ab8a8" opacity="0.38"/>
+        <circle cx="460" cy="65" r="0.8" fill="#d0a840" opacity="0.26"/>
+        <circle cx="480" cy="18" r="0.9" fill="#f0e4cc" opacity="0.20"/>
+      </svg>
+      <div class="dive-icon">&#9793;</div>
+      <div class="dive-head-text">
+        <div class="dive-eyebrow">Saturn &middot; Neptune &middot; 2026 Arc</div>
+        <div class="dive-title">The Longer Story</div>
+        <div class="dive-subtitle">The structural arc under this entire year</div>
+        <div class="dive-tags">
+          <span class="dtag">Saturn approaching Neptune</span>
+          <span class="dtag">Aries</span>
+          <span class="dtag">vision meets reality</span>
+        </div>
+      </div>
+    </div>
+    <div class="dive-body">
+      <p>Saturn and Neptune are both in Aries and 8.65&deg; apart&mdash;close enough that their conjunction is already shaping 2026. The theme: big vision being asked to prove itself in material form. Ideas that sounded compelling in theory are encountering the concrete work required to build them.</p>
+      <div class="dive-expanded" id="bigger-expand">
+        <div class="dive-expanded-inner">
+          <p>Mercury squaring Saturn this week is the weekly-scale version of that pressure: where is the plan actually solid, and where does it need more work before it goes anywhere external? Venus and Jupiter in Cancer are the emotional counterbalance. The people, the warmth, the genuine connection&mdash;that&rsquo;s what the Saturn-Neptune rigor is actually building toward. The hard work is worth it when you know who it&rsquo;s with.</p>
+          <p><strong>Saturn conjunct Neptune</strong> will be exact later in 2026. We&rsquo;re in the approach phase now. The pressure to ground vision in reality is building. This week&rsquo;s Mercury-Saturn asks the same question at a smaller scale: is this plan as solid as it sounds?</p>
+        </div>
+      </div>
+      <button class="read-more" onclick="toggleExpand('bigger-expand', this)">
+        <span>Read more</span><span class="chev">&#9660;</span>
+      </button>
+    </div>
+  </div>
+
 </div>
 
+<!-- ── PLANET STRIP ── -->
+<div class="planet-strip-wrap fade-in">
+  <div class="planet-strip-eyebrow">Planets This Week</div>
+  <div class="planet-strip-hint">tap each to expand</div>
+  <div class="planet-strip">
+    <span class="planet-pill luminary" data-tip="Sun · 17°50′ Gemini · information, adaptability, quick thinking">&#9737; Sun <span style="color:var(--muted-2);margin:0 2px">&middot;</span> 17°50&prime; &#9802;</span>
+    <span class="planet-pill luminary" data-tip="Moon · 20°22′ Pisces · waning, release, reflection">&#9790; Moon <span style="color:var(--muted-2);margin:0 2px">&middot;</span> 20°22&prime; &#9811;</span>
+    <span class="planet-pill personal" data-tip="Mercury · 10°52′ Cancer · feeling-first communication, care before data">&#9791; Mercury <span style="color:var(--muted-2);margin:0 2px">&middot;</span> 10°52&prime; &#9803;</span>
+    <span class="planet-pill personal" data-tip="Venus · 24°22′ Cancer · warmth, nurturing connection, collaborative energy">&#9792; Venus <span style="color:var(--muted-2);margin:0 2px">&middot;</span> 24°22&prime; &#9803;</span>
+    <span class="planet-pill personal" data-tip="Mars · 15°23′ Taurus · patient drive, persistent effort, slow build">&#9794; Mars <span style="color:var(--muted-2);margin:0 2px">&middot;</span> 15°23&prime; &#9801;</span>
+    <span class="planet-pill social" data-tip="Jupiter · 25°32′ Cancer · expansion through care, generous momentum">&#9795; Jupiter <span style="color:var(--muted-2);margin:0 2px">&middot;</span> 25°32&prime; &#9803;</span>
+    <span class="planet-pill social" data-tip="Saturn · 12°51′ Aries · structural demand, accountability, earned authority">&#9796; Saturn <span style="color:var(--muted-2);margin:0 2px">&middot;</span> 12°51&prime; &#9800;</span>
+    <span class="planet-pill outer" data-tip="Uranus · 2°30′ Gemini · disruption of fixed patterns, sudden pivots, new pathways">&#9797; Uranus <span style="color:var(--muted-2);margin:0 2px">&middot;</span> 2°30&prime; &#9802;</span>
+    <span class="planet-pill outer" data-tip="Neptune · 4°12′ Aries · vision testing against reality, 2026 structural arc">&#9798; Neptune <span style="color:var(--muted-2);margin:0 2px">&middot;</span> 4°12&prime; &#9800;</span>
+    <span class="planet-pill outer" data-tip="Pluto Rx · 5°16′ Aquarius · collective transformation, power structures shifting">&#9800; Pluto <span class="rx-tag">Rx</span> <span style="color:var(--muted-2);margin:0 2px">&middot;</span> 5°16&prime; &#9810;</span>
+    <span class="planet-pill point" data-tip="Chiron · 29°53′ Aries (anaretic) · wound completing its Aries chapter">&#9767; Chiron <span style="color:var(--muted-2);margin:0 2px">&middot;</span> 29°53&prime; &#9800;</span>
+    <span class="planet-pill point" data-tip="North Node Rx · 2°55′ Pisces · collective evolutionary direction, soul-path pressure">&#9738; NNode <span class="rx-tag">Rx</span> <span style="color:var(--muted-2);margin:0 2px">&middot;</span> 2°55&prime; &#9811;</span>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<div class="page-footer fade-in">
+  transit-to-transit aspects only &middot; no natal charts used &middot; everyone&rsquo;s in this weather<br>
+  positions via swiss ephemeris (pyswisseph) &middot; week of june 8&ndash;14, 2026<br>
+  <a class="footer-link" href="https://jordanb1993.github.io/astro-readings/workplace%20readings/sky-at-work.html">live link</a>
+  &middot; <a class="footer-link" href="https://jordanb1993.github.io/astro-readings/natal%20readings/jordan-natal.html">natal chart</a>
+</div>
+
+<!-- ── ASPECT KEY BUTTON ── -->
+<button class="key-btn" onclick="openGlossary()" aria-label="Open aspect key">
+  <span class="key-btn-icon">&#128477;</span>
+  <span>Aspect Key</span>
+</button>
+
+<!-- ── GLOSSARY OVERLAY ── -->
+<div class="key-dimmer" id="key-dimmer" onclick="closeGlossary()"></div>
+<div class="key-overlay" id="key-overlay" role="dialog" aria-modal="true" aria-label="Aspect Symbol Key">
+  <div class="key-handle"></div>
+  <div class="key-header">
+    <h3 class="key-title">Aspect Symbol Key</h3>
+    <button class="key-close" onclick="closeGlossary()" aria-label="Close">Close</button>
+  </div>
+  <div class="key-content">
+    <div class="glos-grid">
+      <div class="glos-item">
+        <span class="glos-sym">&#9791;</span>
+        <div class="glos-text"><div class="glos-name">Conjunction ☌</div><div class="glos-desc">Planets in the same place&mdash;energies fuse and amplify</div></div>
+      </div>
+      <div class="glos-item">
+        <span class="glos-sym" style="color:var(--teal-brt)">&#9651;</span>
+        <div class="glos-text"><div class="glos-name">Trine △</div><div class="glos-desc">120&deg; apart&mdash;flow and ease, natural support</div></div>
+      </div>
+      <div class="glos-item">
+        <span class="glos-sym" style="color:var(--cerulean)">&#10023;</span>
+        <div class="glos-text"><div class="glos-name">Sextile ✶</div><div class="glos-desc">60&deg; apart&mdash;opportunity, helpful if you act on it</div></div>
+      </div>
+      <div class="glos-item">
+        <span class="glos-sym" style="color:var(--rose)">&#9744;</span>
+        <div class="glos-text"><div class="glos-name">Square □</div><div class="glos-desc">90&deg; apart&mdash;friction, pressure, demands action</div></div>
+      </div>
+      <div class="glos-item">
+        <span class="glos-sym" style="color:var(--rose)">&#9741;</span>
+        <div class="glos-text"><div class="glos-name">Opposition ☍</div><div class="glos-desc">180&deg; apart&mdash;tension between two forces, awareness needed</div></div>
+      </div>
+      <div class="glos-item">
+        <span class="glos-sym" style="color:var(--muted-2)">&#9739;</span>
+        <div class="glos-text"><div class="glos-name">Inconjunct ⚻</div><div class="glos-desc">150&deg; apart&mdash;adjustment required, awkward angle</div></div>
+      </div>
+      <div class="glos-item">
+        <span class="glos-sym" style="color:var(--amber)">Rx</span>
+        <div class="glos-text"><div class="glos-name">Retrograde</div><div class="glos-desc">Planet appears to move backward&mdash;internalized, review energy</div></div>
+      </div>
+      <div class="glos-item">
+        <span class="glos-sym" style="color:var(--cerulean)">&#9660;</span>
+        <div class="glos-text"><div class="glos-name">Applying</div><div class="glos-desc">Moving toward exact&mdash;building pressure, increasingly felt</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── SECTION NAV DOTS ── -->
+<div id="section-nav" aria-hidden="true">
+  <div class="s-dot" data-sec="trio"></div>
+  <div class="s-dot" data-sec="pulse"></div>
+  <div class="s-dot" data-sec="glance"></div>
+  <div class="s-dot" data-sec="communication"></div>
+  <div class="s-dot" data-sec="collaboration"></div>
+  <div class="s-dot" data-sec="momentum"></div>
+  <div class="s-dot" data-sec="watch"></div>
+  <div class="s-dot" data-sec="bigger"></div>
+</div>
+
+<!-- ── FIRST VISIT HINT ── -->
+<div id="hint-tooltip">tap a transit row to expand &#9660;</div>
+
+<script>
+  /* ── STAR FIELD ── */
+  (function() {
+    const canvas = document.getElementById('star-canvas');
+    const ctx = canvas.getContext('2d');
+    let stars = [];
+    function resize() {
+      canvas.width  = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    function initStars() {
+      stars = [];
+      const n = Math.min(200, Math.floor(canvas.width * canvas.height / 8000));
+      for (let i = 0; i < n; i++) {
+        stars.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          r: Math.random() * 1.2 + 0.3,
+          a: Math.random() * 0.55 + 0.08,
+          c: ['#fff8ee','#d0a840','#d4a0b5','#4a9fd4'][Math.floor(Math.random()*4)],
+          sp: Math.random() * 0.008 + 0.002,
+          phase: Math.random() * Math.PI * 2
+        });
+      }
+    }
+    let t = 0;
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      t += 0.008;
+      stars.forEach(s => {
+        const pulse = s.a * (0.7 + 0.3 * Math.sin(t * s.sp * 60 + s.phase));
+        ctx.beginPath();
+        ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+        ctx.fillStyle = s.c;
+        ctx.globalAlpha = pulse;
+        ctx.fill();
+      });
+      ctx.globalAlpha = 1;
+      requestAnimationFrame(draw);
+    }
+    resize(); initStars(); draw();
+    window.addEventListener('resize', () => { resize(); initStars(); });
+  })();
+
+  /* ── WEEK PROGRESS BAR ── */
+  (function() {
+    const days  = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+    const today = 0; // Monday = index 0
+    const fill  = document.getElementById('wbar-fill');
+    const daysEl = document.getElementById('wbar-days');
+    const todayEl = document.getElementById('wbar-today');
+    fill.style.width = ((today + 0.5) / 7 * 100) + '%';
+    todayEl.textContent = days[today];
+    days.forEach((d, i) => {
+      const tick = document.createElement('div');
+      tick.className = 'wbar-tick' + (i === today ? ' today' : '');
+      tick.title = d;
+      daysEl.appendChild(tick);
+    });
+  })();
+
+  /* ── SCROLL FADE-IN ── */
+  const fadeEls = document.querySelectorAll('.fade-in');
+  const fadeObs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); fadeObs.unobserve(e.target); } });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+  fadeEls.forEach(el => fadeObs.observe(el));
+
+  /* ── SIGNAL BOARD EXPAND ── */
+  document.querySelectorAll('.signal-row').forEach(row => {
+    row.addEventListener('click', () => {
+      const id = row.getAttribute('data-detail');
+      const detail = document.getElementById(id);
+      if (!detail) return;
+      const isOpen = detail.classList.contains('open');
+      // close all
+      document.querySelectorAll('.sig-detail.open').forEach(d => { d.classList.remove('open'); d.previousElementSibling.classList.remove('open'); });
+      if (!isOpen) {
+        detail.classList.add('open');
+        row.classList.add('open');
+      }
+    });
+  });
+
+  /* ── READ MORE TOGGLE ── */
+  function toggleExpand(id, btn) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const isOpen = el.classList.contains('open');
+    el.classList.toggle('open', !isOpen);
+    btn.classList.toggle('open', !isOpen);
+    btn.querySelector('span:first-child').textContent = isOpen ? 'Read more' : 'Show less';
+  }
+
+  /* ── GLOSSARY BOTTOM SHEET ── */
+  function openGlossary() {
+    document.getElementById('key-overlay').classList.add('open');
+    document.getElementById('key-dimmer').classList.add('open');
+    document.body.classList.add('key-open');
+  }
+  function closeGlossary() {
+    document.getElementById('key-overlay').classList.remove('open');
+    document.getElementById('key-dimmer').classList.remove('open');
+    document.body.classList.remove('key-open');
+  }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeGlossary(); });
+
+  /* ── SECTION NAV DOTS ── */
+  const sections = document.querySelectorAll('[data-section]');
+  const dots = document.querySelectorAll('.s-dot');
+  const navObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const sec = e.target.getAttribute('data-section');
+        dots.forEach(d => { d.classList.toggle('active', d.getAttribute('data-sec') === sec); });
+      }
+    });
+  }, { threshold: 0.5 });
+  sections.forEach(s => navObs.observe(s));
+
+  /* ── PLANET PILL MOBILE TAP TOOLTIPS ── */
+  if ('ontouchstart' in window) {
+    const pills = document.querySelectorAll('.planet-pill[data-tip]');
+    pills.forEach(p => {
+      let detail = null;
+      p.addEventListener('click', () => {
+        pills.forEach(other => { if (other !== p && other._detail) { other._detail.classList.remove('visible'); } });
+        if (!p._detail) {
+          detail = document.createElement('div');
+          detail.className = 'pill-detail';
+          detail.textContent = p.getAttribute('data-tip');
+          p.parentNode.insertBefore(detail, p.nextSibling);
+          p._detail = detail;
+        }
+        p._detail.classList.toggle('visible');
+      });
+    });
+  }
+
+  /* ── FIRST VISIT HINT ── */
+  const hintKey = 'saw-sky-hint-v2';
+  if (!localStorage.getItem(hintKey)) {
+    const hint = document.getElementById('hint-tooltip');
+    hint.style.animation = 'hintFade 4.2s ease forwards';
+    hint.style.pointerEvents = 'none';
+    setTimeout(() => { hint.style.display = 'none'; }, 4400);
+    localStorage.setItem(hintKey, '1');
+  }
+</script>
 </body>
 </html>
