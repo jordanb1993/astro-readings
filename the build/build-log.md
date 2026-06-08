@@ -145,6 +145,45 @@ GitHub Pages URLs updated: spaces encode as `%20`.
 
 ---
 
+## 2026-06-04 — Carina's Chart v2 + Chart Wheel + Voice DNA
+
+**The headline:** Full visual design system locked. The chart wheel is a real IP asset. Voice DNA codified.
+
+### Carina's Natal Reading v2
+`natal readings/carina.html` — canonical v2 Whimsigoth template. Design system locked: constellation background fixed full-page, celestial side columns (☽ ☾ ☉ ✦) framing full viewport height, glassmorphism cards, watercolor section blooms, sacred geometry scatter, collapsible dive sections, scroll fade-in, planet pill strip, aspect row color coding. Palette: jewel cosmic indigo, vibrant gold (#e8c040), cerulean, warm ivory — no purple.
+
+### Chart Wheel Built from Scratch
+`natal readings/chart-wheel.html` — full SVG natal wheel procedurally generated from Swiss Ephemeris data. Features: element-colored zodiac ring, watercolor house blooms, 16-ray sunburst center, floating key overlay, collision-spread planet placement algorithm, all glyphs and degree labels. Whimsigoth Sacred Geometry aesthetic. This is a real IP asset — no competitor is doing this visual.
+
+**Next build steps for the wheel:** degree tick marks, hover tooltips, aspect line animation, biwheel mode for transits, embed in natal reading pages.
+
+### Writing Style Guide + Voice DNA
+Writing style guide expanded from daily readings to all reading types (natal, workplace, weekly, synastry). Voice DNA codified — 11 personality principles behind every craft rule. `voice-canon.md` begins taking shape as the product brief.
+
+### Dasha Tips Ingested (June 4 → June 5)
+- Playwright MCP for competitive intelligence (Agent 4 added to architecture spec)
+- PWA delivery: any hosted URL can be a home-screen app — GitHub Pages natal charts are halfway there
+- Competitor target list built: Co-Star, The Pattern, CHANI, Sanctuary, Time Passages, Astro.com
+
+---
+
+## 2026-05-22 — Voice Differentiator + Round Chart Concept
+
+**The headline:** The reading voice is the product's biggest moat. Documented and scoped.
+
+### Voice Differentiator Captured
+The training corpus plan: old TCD MFA creative writing, this workspace's accumulated readings, short written interviews ("How do I talk about Chiron?"), voice notes for rhythm and speech patterns. The goal is a proprietary reading voice that can't be replicated by a competitor starting from scratch.
+
+**The pitch in one sentence:** Every astrology app sounds the same. This one sounds like someone who got an MFA, worked through her religious trauma, and actually uses astrology to navigate her career and love life.
+
+### Round Natal Chart Concept Seeded
+The visual chart wheel concept originated here. Built June 4. First in the Whimsigoth aesthetic with no competitor analog.
+
+### Marina Testimonial
+First external validation logged in KNOWLEDGE.md. Marina's natal chart reading as Phase 1 proof of concept.
+
+---
+
 ## 2026-05-21 — #astroflow-weekly Launch
 
 **The headline:** Workplace transit channel went live. Proof of concept for "cyclical intelligence in corporate."
@@ -159,6 +198,20 @@ GitHub Pages URLs updated: spaces encode as `%20`.
 
 ### Significance for the Product
 The channel is a live proof of concept: non-astrologers engaging with transit readings in a professional context. User feedback from colleagues is early beta data.
+
+---
+
+## 2026-05-19 — App Vision Expanded
+
+Phase structure written out in full. Cross-workspace links between `the stars/` and `the bones/Money/` established. Business scope and 90-day tactical plan documented in `the bones/Money/astrology-business-scope.md` and `astrology-business-plan.md`.
+
+---
+
+## 2026-05-18 — Phase 1 Scoped
+
+**The headline:** Etsy plan dropped. This is a full subscription app.
+
+The manual reading service is the path, not a detour — every friend chart is a beta product, every morning reading is user research. Phase structure locked: Build+Beta → Closed Cohort ($20-35/mo) → Public App. Full operational plan written. The app is the destination.
 
 ---
 

@@ -361,6 +361,7 @@ The chart wheel and sky-at-work.html are halfway there already. A manifest and i
 ---
 
 ## Session log
+*Migrated to `the build/build-log.md` as of June 8, 2026. Add new entries there. Entries below kept for reference.*
 
 - **May 18, 2026** — Phase 1 scoped in full. Full operational plan written in the bones/Money/. App vision reframed as the destination, not a separate dream.
 - **May 19, 2026** — app-vision.md expanded with full Phase 1 details. Cross-workspace links established.
