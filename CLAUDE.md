@@ -528,55 +528,98 @@ Daily transit readings are saved as a **single `.md` file** in `daily readings/`
 
 **HTML builds are reserved for:** natal chart readings (`natal readings/`) and any special one-off reading Jordan explicitly requests as HTML. The V3 HTML spec is preserved below for those cases.
 
-### Daily Reading .md Structure (Obsidian format)
+### Daily Reading — New Format (June 2026)
 
+The daily reading is **sky-responsive** — its length and structure match what the sky is actually doing, not a fixed template. A quiet day is short. A peak Neptune day runs longer. Never pad to fill a format.
+
+**Pre-writing verification (required before drafting):**
+1. Fetch live positions from astrolibrary.org
+2. Run aspect table — sort by orb, confirm applying vs. separating with the corrected algorithm
+3. Filter: is each transit actually activated in Jordan's chart today? (applying, or separating within 3° max for personal planets)
+4. Ask: "what's the one transit that most personally matters today?" — lead with that
+5. Long-term transits (Neptune-Moon, Uranus-Sun, etc.): one line + Obsidian link only — do NOT rewrite the full breakdown. Full breakdowns live in `transit library/`
+
+---
+
+**The format:**
+
+```markdown
+---
+date: YYYY-MM-DD
+cssclasses:
+  - stars-reading
+tags:
+  - transit-reading
+moon: [Moon phase · sign degree]
+---
+
+# [Month Day] ✦ [3-6 word title — names the day's dominant energy, not its transits]
+
+*[signal stamp — 2-4 evocative words or phrases separated by · ]*
+
+---
+
+| transit | orb | |
+|---------|-----|--|
+| [Transiting Planet] [aspect] [natal Planet/Point] | [x]° [applying/separating] | [brief vibe phrase OR → [[transit-library-link]] for long-term] |
+[4–6 rows max. Applying only, unless separating is within 3° and still meaningfully live.
+Long-term transits always get a library link — no prose.]
+
+---
+
+[Body — flowing prose, no section headers. 2–5 paragraphs depending on sky density.
+Organize by what matters most today, not by what section comes next.
+Fast-moving/short-duration transits: full treatment here.
+Long-term transits: one sentence of today's specific status + → [[link]].
+Pull quote only if a sentence genuinely earns it — not every reading needs one.]
+
+> *[pull quote — only if earned]*
+
+---
+
+**today**
+- [category]: [one specific line]
+- [category]: [one specific line]
+- [category]: [one specific line — max 4 bullets total]
 ```
-# [Weekday, Month Day, Year] ✦ Transit Reading
 
-> [Morning Pulse — 2-3 sentences max. The answer before the detail. Italic blockquote.]
+**Length tiers:**
+- **Light day** (1–2 minor transits, quiet sky): 80–150 words prose, 3 table rows, 2 bullets
+- **Standard day** (2–4 active transits): 200–300 words prose, 4–5 table rows, 3 bullets
+- **Dense/peak day** (major exact transit, rare configuration): 350–500 words prose, 5–6 rows, 4 bullets
 
----
-
-## Planets
-| Planet | Position |
-|---|---|
-[table of transiting positions]
-
----
-
-## At a Glance — Top Aspects
-| Aspect | Orb | Type |
-|---|---|---|
-[top 8-10 aspects sorted by exactness]
+**What has been removed from the format (intentionally):**
+- Full planets table — degrees appear in prose where needed
+- "Rest of the Sky" as a separate callout — minor transits get one sentence in the body or nothing
+- "Transit-to-Transit" as its own section — folds into the table or one body sentence
+- "Correlations to Track" as a standing daily section — only when something new worth tracking emerges; otherwise omit
 
 ---
 
-## [Headline transit title]
-[1-2 tight paragraphs. Lead with implication. Always state transiting degree + natal point being aspected.]
+### Transit Library — `transit library/`
 
-> *[Pull quote — the one sentence that holds the whole thing]*
+Long-term transits (3+ month duration) get their own breakdown file, written once, updated as the transit progresses. The daily reading links to these rather than repeating the full interpretation.
 
----
+**Currently in the library:**
+- `[[neptune-conjunct-moon]]` — Neptune conjunct natal Moon (10th) · 2026–2027
+- `[[uranus-opposition-sun]]` — Uranus opposition natal Sun (6th) · 2026–2027
+- `[[chiron-sextile-ascendant]]` — Chiron sextile natal Ascendant · Spring–Fall 2026
+- `[[venus-jupiter-cancer-scorpio]]` — Venus-Jupiter in Cancer trine Scorpio stellium · May–July 2026
 
-## Rest of the Sky
-**[Transit name]** — [2-3 sentences]
-**[Transit name]** — [2-3 sentences]
-[up to 6 secondary aspects]
+**When to add a new breakdown file:**
+- Any transit with 2+ months of remaining orb that will appear in readings repeatedly
+- Any major outer-planet transit (Saturn, Uranus, Neptune, Pluto, Chiron) to a personal point
+- File naming: `[transiting-planet]-[aspect]-[natal-planet].md` (e.g., `saturn-square-mercury.md`)
+- Use `transit library/_template.md` as the starting point
+- After writing: add to the library list above, commit to GitHub
 
----
-
-## Practical Application
-**For work:** [specific guidance]
-**For communication:** [specific guidance]
-**For the inner critic:** [specific language for when the wound activates]
-**For [relevant area]:** [specific guidance]
-**For energy:** [pacing guidance]
-
----
-
-## Correlations to Track
-- [bullet list of what to watch for]
-```
+**Breakdown file sections:**
+1. Signal (1 sentence — what this transit is at the highest level of meaning)
+2. What This Is (3–5 paragraphs — full interpretation for Jordan's specific chart and life)
+3. The Arc (phase table — entering, exact, retrograde passes, leaving)
+4. In Real Time (dated correlations table — updated as transit progresses)
+5. Working With It (practical guidance specific to Jordan, not generic)
+6. Current Status (one paragraph — where we are now, updated each session)
 
 **Writing style:** Straight-shooter. Lead with the implication. Trust Jordan to fill in the rest. Cut any sentence that re-explains a concept she already knows.
 
