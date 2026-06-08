@@ -340,6 +340,7 @@
     .signal-row.rose    { border-color: var(--rose); }
     .signal-row.cerulean { border-color: var(--cerulean); }
     .signal-row.teal    { border-color: var(--teal-brt); }
+    .signal-row.amber   { border-color: var(--amber); }
     .signal-row.muted   { border-color: rgba(240,228,200,0.18); }
     .sig-aspect {
       font-family: 'IBM Plex Mono', monospace; font-size: 11px;
@@ -596,6 +597,35 @@
       .planet-pill { font-size: 0.62rem; padding: 4px 9px; }
     }
 
+    /* ── RISING SIGN PICKER ── */
+    .rs-picker-wrap {
+      padding: 28px 44px 0; display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+    }
+    .rs-picker-label {
+      font-family: 'Inter', sans-serif; font-size: 0.60rem; font-weight: 600;
+      letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted-2); flex-shrink: 0;
+    }
+    .rs-select {
+      background: var(--surface); border: 1px solid rgba(208,168,64,0.28);
+      border-radius: 22px; color: var(--gold);
+      font-family: 'Cormorant Garamond', serif; font-size: 0.92rem;
+      padding: 6px 18px; cursor: pointer; outline: none;
+      transition: border-color 0.18s, box-shadow 0.18s;
+      -webkit-appearance: none; appearance: none;
+    }
+    .rs-select:focus { border-color: rgba(208,168,64,0.55); box-shadow: 0 0 0 2px rgba(208,168,64,0.10); }
+    .rs-note {
+      margin: 0; padding: 10px 16px;
+      background: rgba(208,168,64,0.06); border-left: 2px solid var(--gold);
+      border-radius: 0 8px 8px 0;
+      font-family: 'Cormorant Garamond', serif; font-style: italic;
+      font-size: 0.96rem; color: rgba(208,168,64,0.88); line-height: 1.60;
+      display: none;
+    }
+    @media (max-width: 680px) {
+      .rs-picker-wrap { padding: 18px 12px 0; }
+    }
+
     /* ── FOOTER ── */
     .page-footer {
       margin: 40px 44px 0; padding-top: 18px;
@@ -728,8 +758,9 @@
     #hint-tooltip.visible { opacity: 1; }
 
     /* ── FADE IN ── */
-    .fade-in { opacity: 0; transform: translateY(16px); transition: opacity 0.52s ease, transform 0.52s ease; }
-    .fade-in.visible { opacity: 1; transform: none; }
+    .fade-in { opacity: 1; transform: none; }
+    .fade-in.animate-in { animation: fadeUp 0.52s ease; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
 
     /* ── ANIMATIONS ── */
     @keyframes floatUp {
@@ -752,7 +783,7 @@
       html, body { background: var(--bg) !important; }
       * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
       .key-btn, #section-nav, #hint-tooltip, #week-bar { display: none !important; }
-      .fade-in { opacity: 1 !important; transform: none !important; }
+      .fade-in, .fade-in.animate-in { opacity: 1 !important; transform: none !important; animation: none !important; }
       .dive-expanded { max-height: none !important; opacity: 1 !important; overflow: visible !important; }
     }
   </style>
@@ -888,9 +919,9 @@
       <span class="trio-glyph">♀ ☌ ♃</span>
       <div class="trio-label">Venus &amp; Jupiter</div>
       <div class="trio-placement">Warmth Opens</div>
-      <div class="trio-orb">1.16&deg; &middot; Cancer &middot; Thu&ndash;Fri peak</div>
+      <div class="trio-orb">1.16&deg; &middot; Cancer &middot; exact Tue</div>
       <div class="trio-rule"></div>
-      <div class="trio-tagline">The collaborative ask that lands&mdash;warmest sky of the month</div>
+      <div class="trio-tagline">The collaborative ask that lands. Warmest sky of the month.</div>
     </div>
     <div class="trio-card t-rose">
       <span class="trio-glyph">☿ □ ♄</span>
@@ -898,7 +929,7 @@
       <div class="trio-placement">Write It Right</div>
       <div class="trio-orb">1.98&deg; &middot; Cancer/Aries &middot; exact Tue</div>
       <div class="trio-rule"></div>
-      <div class="trio-tagline">Precision before warmth&mdash;draft today, send Wednesday</div>
+      <div class="trio-tagline">Precision before warmth: draft today, send Wednesday</div>
     </div>
     <div class="trio-card t-cerulean">
       <span class="trio-glyph">&#9790; &#8595;</span>
@@ -906,9 +937,29 @@
       <div class="trio-placement">Release Phase</div>
       <div class="trio-orb">peaked Mon AM &middot; New Moon Jun 14&ndash;15</div>
       <div class="trio-rule"></div>
-      <div class="trio-tagline">Close what&rsquo;s in motion&mdash;not the week to launch</div>
+      <div class="trio-tagline">Close what&rsquo;s in motion. Not the week to launch.</div>
     </div>
   </div>
+</div>
+
+<!-- ── RISING SIGN PICKER ── -->
+<div class="rs-picker-wrap fade-in">
+  <span class="rs-picker-label">Your rising sign</span>
+  <select id="rs-select" class="rs-select" onchange="applyRising(this.value)">
+    <option value="">Select for a personalized note &darr;</option>
+    <option value="aries">Aries ♈</option>
+    <option value="taurus">Taurus ♉</option>
+    <option value="gemini">Gemini ♊</option>
+    <option value="cancer">Cancer ♋</option>
+    <option value="leo">Leo ♌</option>
+    <option value="virgo">Virgo ♍</option>
+    <option value="libra">Libra ♎</option>
+    <option value="scorpio">Scorpio ♏</option>
+    <option value="sagittarius">Sagittarius ♐</option>
+    <option value="capricorn">Capricorn ♑</option>
+    <option value="aquarius">Aquarius ♒</option>
+    <option value="pisces">Pisces ♓</option>
+  </select>
 </div>
 
 <div class="cel-divider fade-in"><div class="cel-rule left"></div><div class="cel-mark">&#10022; &#10022; &#10022;</div><div class="cel-rule right"></div></div>
@@ -918,7 +969,7 @@
   <div class="section-eyebrow">The Weather This Week</div>
   <div class="section-title">The Pulse</div>
   <div class="pulse-card">
-    <p>Venus conjuncts Jupiter in Cancer this week&mdash;the most socially generous sky of the month. Warmth lands, collaboration opens, relationship asks go further than they would on any other week. Counter that with Mercury squaring Saturn exact Tuesday: communications need to be deliberate before they&rsquo;re warm. Write it, check it, then send it. Last Quarter Moon says completion energy, not launch energy. Close out what&rsquo;s in motion before you start something new.</p>
+    <p>Venus conjuncts Jupiter in Cancer this week, the most socially generous sky of the month. Warmth lands, collaboration opens, relationship asks go further than they would on any other week. Counter that with Mercury squaring Saturn exact Tuesday: communications need to be deliberate before they&rsquo;re warm. Write it, check it, then send it. Last Quarter Moon says completion energy, not launch energy. Close out what&rsquo;s in motion before you start something new.</p>
   </div>
 </div>
 
@@ -936,15 +987,15 @@
       <span class="sig-note">square &middot; nearly exact &middot; unexpected pivots</span>
       <span class="sig-arrow">&#9660;</span>
     </div>
-    <div class="sig-detail" id="uranus-node"><p>Uranus at 2°30&prime; Gemini squares the North Node at 2°56&prime; Pisces Rx. Plans that felt locked can pivot&mdash;not from failure, but from new information. Hold the goal; stay flexible on the route. This is active all week.</p></div>
+    <div class="sig-detail" id="uranus-node"><p>Uranus at 2°30&prime; Gemini squares the North Node at 2°56&prime; Pisces Rx. Plans that felt locked can pivot, not from failure but from new information. Hold the goal; stay flexible on the route. Active all week.</p></div>
 
     <div class="signal-row gold" data-detail="venus-jupiter">
       <span class="sig-aspect">&#9794;&#9792; Venus &#9791; Jupiter</span>
       <span class="sig-orb">1.16&deg;</span>
-      <span class="sig-note">conjunction &middot; Cancer &middot; peaks Thu&ndash;Fri</span>
+      <span class="sig-note">conjunction &middot; Cancer &middot; exact Tue</span>
       <span class="sig-arrow">&#9660;</span>
     </div>
-    <div class="sig-detail" id="venus-jupiter"><p>Venus at 24°22&prime; Cancer conjunct Jupiter at 25°32&prime; Cancer. Warmth amplified&mdash;generosity, goodwill, genuine connection. The collaborative ask that&rsquo;s been waiting has its best window Thursday into Friday.</p></div>
+    <div class="sig-detail" id="venus-jupiter"><p>Venus at 24°22&prime; Cancer conjunct Jupiter at 25°32&prime; Cancer. Warmth amplified: generosity, goodwill, genuine connection. Exact Tuesday. Use that window for any ask that requires buy-in, not just sign-off.</p></div>
 
     <div class="signal-row teal" data-detail="neptune-pluto">
       <span class="sig-aspect">&#9798; Neptune &#10023; &#9800; Pluto Rx</span>
@@ -962,13 +1013,13 @@
     </div>
     <div class="sig-detail" id="mercury-saturn"><p>Mercury at 10°52&prime; Cancer squares Saturn at 12°51&prime; Aries, exact Tuesday. Communication under precision pressure&mdash;what goes out this week should be worth sending. Quality beats volume. Write Tuesday; send Wednesday.</p></div>
 
-    <div class="signal-row muted" data-detail="mercury-neptune">
-      <span class="sig-aspect">&#9791; Mercury &#9744; &#9798; Neptune</span>
-      <span class="sig-orb">6.67&deg;</span>
-      <span class="sig-note">square &middot; separating &middot; fog lifting</span>
+    <div class="signal-row amber" data-detail="venus-chiron">
+      <span class="sig-aspect">&#9792; Venus &#9744; &#9767; Chiron</span>
+      <span class="sig-orb">5.18&deg;</span>
+      <span class="sig-note">square &middot; applying &middot; exact Fri</span>
       <span class="sig-arrow">&#9660;</span>
     </div>
-    <div class="sig-detail" id="mercury-neptune"><p>Mercury square Neptune is separating from last week&rsquo;s peak, but still 6.67&deg; orb through Monday&ndash;Tuesday. Inspired communication that skips the evidence step is still a risk early in the week. Verify before committing.</p></div>
+    <div class="sig-detail" id="venus-chiron"><p>Venus at 24°22&prime; Cancer squares Chiron at 29°55&prime; Aries (anaretic degree). Both at threshold degrees. A tender spot in a collaboration or relationship may surface by Friday. Don&rsquo;t schedule the most vulnerable conversation for Friday afternoon.</p></div>
 
     <div class="signal-row muted" data-detail="last-quarter">
       <span class="sig-aspect">&#9790; Last Quarter Moon</span>
@@ -999,7 +1050,7 @@
       <div class="dive-head-text">
         <div class="dive-eyebrow">Mercury &middot; Communication</div>
         <div class="dive-title">Write It Twice This Week</div>
-        <div class="dive-subtitle">Mercury squares Saturn exact Tuesday&mdash;quality beats volume</div>
+        <div class="dive-subtitle">Mercury squares Saturn exact Tuesday: quality beats volume</div>
         <div class="dive-tags">
           <span class="dtag">Mercury in Cancer</span>
           <span class="dtag">Mercury □ Saturn</span>
@@ -1008,13 +1059,14 @@
       </div>
     </div>
     <div class="dive-body">
-      <p>Mercury in Cancer squares Saturn in Aries exact Tuesday. Cancer Mercury leads with feeling; Saturn demands accountability. The combination doesn&rsquo;t block communication&mdash;it asks for quality. What goes out this week should be worth sending.</p>
-      <p>The fog from last week&rsquo;s Mercury-Neptune square is separating but still present through Monday&ndash;Tuesday. Inspired communication that skips the evidence step is the specific risk. Write the email. Don&rsquo;t send it until Wednesday. That discipline is what Mercury-Saturn is actually asking for.</p>
+      <p>Mercury in Cancer squares Saturn in Aries exact Tuesday. Cancer Mercury leads with feeling; Saturn demands accountability. The combination doesn&rsquo;t block communication. It asks for quality. What goes out this week should be worth sending.</p>
+      <p>Write the email on Tuesday. Don&rsquo;t send it until Wednesday. That discipline is what Mercury-Saturn is actually asking for.</p>
       <div class="pull rose-pull">The message that holds up is the one you wrote twice.</div>
+      <p class="rs-note" id="rs-comm"></p>
       <div class="dive-expanded" id="comm-expand">
         <div class="dive-expanded-inner">
-          <p>One-on-ones beat group threads all week. Cancer Mercury means the direct conversation goes further than the all-hands&mdash;people say more of what they actually think when it&rsquo;s personal rather than performed. If something needs to land, deliver it in person or one-to-one before it goes to the room.</p>
-          <p><strong>Best days for communication:</strong> Wednesday&ndash;Thursday, once Saturn&rsquo;s rigor has landed. <strong>Watch:</strong> Tuesday&mdash;the warm instinct is to send the kind message; the discipline is to make it accurate first.</p>
+          <p>One-on-ones beat group threads all week. Cancer Mercury means the direct conversation goes further than the all-hands: people say more of what they actually think when it&rsquo;s personal rather than performed. If something needs to land, deliver it one-to-one before it goes to the room.</p>
+          <p><strong>Best days:</strong> Wednesday&ndash;Thursday, once Saturn&rsquo;s rigor has landed. <strong>Watch Tuesday:</strong> the warm instinct is to send the kind message; the discipline is to make it accurate first.</p>
         </div>
       </div>
       <button class="read-more" onclick="toggleExpand('comm-expand', this)">
@@ -1036,7 +1088,7 @@
       <div class="dive-head-text">
         <div class="dive-eyebrow">Venus &middot; Jupiter &middot; Connection</div>
         <div class="dive-title">The Week&rsquo;s Open Door</div>
-        <div class="dive-subtitle">Most generous collaborative sky of the month&mdash;Thursday peaks</div>
+        <div class="dive-subtitle">Most generous collaborative sky of the month, exact Tuesday</div>
         <div class="dive-tags">
           <span class="dtag">Venus ☌ Jupiter</span>
           <span class="dtag">Cancer</span>
@@ -1045,12 +1097,13 @@
       </div>
     </div>
     <div class="dive-body">
-      <p>Venus and Jupiter are both in Cancer, closing to conjunction&mdash;peaks Thursday into Friday. Cancer is the sign of genuine care and connection; Venus and Jupiter amplifying each other here means goodwill flows freely. Partnership asks land. The difficult conversation has a warmer container. The stakeholder who&rsquo;s been resistant is more receptive.</p>
+      <p>Venus and Jupiter are both in Cancer, closing to conjunction exact Tuesday. Cancer is the sign of genuine care and connection; Venus and Jupiter amplifying each other here means goodwill flows freely. Partnership asks land. The difficult conversation has a warmer container. The stakeholder who&rsquo;s been resistant is more receptive.</p>
       <div class="pull">Ask for the thing this week. The sky says yes before you do.</div>
+      <p class="rs-note" id="rs-collab"></p>
       <div class="dive-expanded" id="collab-expand">
         <div class="dive-expanded-inner">
-          <p>Genuine appreciation&mdash;the kind that names the specific thing someone did&mdash;goes unusually far under this sky. The ask that requires buy-in rather than just sign-off has its best window Thursday. Don&rsquo;t let Thursday fill up with logistics; this is the week&rsquo;s relationship capital.</p>
-          <p><strong>Best for:</strong> New partnership conversations, feedback sessions, difficult conversations that need warmth to land, creative collaboration, any ask that requires a yes from someone who&rsquo;s been on the fence. <strong>Watch:</strong> Don&rsquo;t let Friday afternoon absorb what Thursday could have done&mdash;Balsamic Moon approaching means energy dips end-of-week.</p>
+          <p>Genuine appreciation, the kind that names the specific thing someone did, goes unusually far under this sky. The ask that requires buy-in rather than just sign-off has its best window Tuesday. Don&rsquo;t let Tuesday fill up with logistics; this is the week&rsquo;s relationship capital.</p>
+          <p><strong>Best for:</strong> New partnership conversations, feedback sessions, difficult conversations that need warmth to land, creative collaboration, any ask that requires a yes from someone who&rsquo;s been on the fence. <strong>Watch Friday:</strong> Venus squares Chiron at the end of the week. A tender spot can surface; don&rsquo;t schedule the most vulnerable conversation for Friday afternoon.</p>
         </div>
       </div>
       <button class="read-more" onclick="toggleExpand('collab-expand', this)">
@@ -1080,13 +1133,14 @@
       </div>
     </div>
     <div class="dive-body">
-      <p>Uranus squares the North Node this week at 0.43&deg; orb&mdash;nearly exact as the week opens. Uranus doesn&rsquo;t slow things down; it reroutes them. Plans that felt stable can pivot, not because anything went wrong, but because new information has a way of surfacing. Hold the goal; stay flexible on the route.</p>
+      <p>Uranus squares the North Node this week at 0.43&deg; orb, nearly exact as the week opens. Uranus doesn&rsquo;t slow things down; it reroutes them. Plans that felt stable can pivot, not because anything went wrong, but because new information has a way of surfacing. Hold the goal; stay flexible on the route.</p>
       <p>The Last Quarter Moon peaked Monday morning, beginning the waning arc toward New Moon (June 14&ndash;15). Completion energy. The most useful decisions this week close out what&rsquo;s already been decided. Launches planned for this week will land better if held until after the New Moon.</p>
       <div class="pull cerulean-pull">The work that finishes this week lays the foundation. The work that starts this week struggles to find its footing.</div>
+      <p class="rs-note" id="rs-momentum"></p>
       <div class="dive-expanded" id="momentum-expand">
         <div class="dive-expanded-inner">
           <p><strong>Best for:</strong> Finishing in-progress work, closing decision loops, editing rather than drafting, cleaning up what&rsquo;s already in motion.</p>
-          <p><strong>Uranus watch:</strong> Build flexibility into Monday and Tuesday&rsquo;s agenda. Something in the external environment may shift team direction unexpectedly&mdash;this isn&rsquo;t crisis, it&rsquo;s information. Treat it that way.</p>
+          <p><strong>Uranus watch:</strong> Build flexibility into Monday and Tuesday&rsquo;s agenda. Something in the external environment may shift team direction unexpectedly. This isn&rsquo;t crisis; it&rsquo;s information. Treat it that way.</p>
         </div>
       </div>
       <button class="read-more" onclick="toggleExpand('momentum-expand', this)">
@@ -1119,8 +1173,9 @@
       <ul class="watch-list">
         <li><strong>Mercury-Saturn through Tuesday:</strong> The warm instinct is to send the kind message. The discipline is to make it accurate first. Both can be true; do them in the right order.</li>
         <li><strong>Uranus square North Node all week:</strong> Team direction that felt set can shift Monday. One piece of unexpected news can reorient the week&rsquo;s priorities. Build in flexibility before you lock the agenda.</li>
-        <li><strong>Venus-Jupiter window Thursday&ndash;Friday:</strong> Don&rsquo;t let Thursday fill up with logistics. This is the week&rsquo;s relationship capital. Spend it on people, not process.</li>
-        <li><strong>End-of-week energy drop:</strong> Balsamic Moon approaching means Friday afternoon gets quieter and more reflective. Schedule the important conversation for Thursday, not Friday at 4.</li>
+        <li><strong>Venus-Jupiter window on Tuesday:</strong> This is the week&rsquo;s relationship capital. Use Tuesday for the ask that needs buy-in. Don&rsquo;t let the morning fill up with logistics.</li>
+        <li><strong>Venus square Chiron exact Friday:</strong> End-of-week tender spot. A vulnerability in a collaboration or relationship can surface. Schedule the important conversation for Tuesday or Thursday, not Friday at 4.</li>
+        <li><strong>End-of-week quiet:</strong> Balsamic Moon approaching means Friday afternoon gets reflective, not generative. Good for processing; not good for launching.</li>
       </ul>
     </div>
   </div>
@@ -1146,10 +1201,10 @@
       </div>
     </div>
     <div class="dive-body">
-      <p>Saturn and Neptune are both in Aries and 8.65&deg; apart&mdash;close enough that their conjunction is already shaping 2026. The theme: big vision being asked to prove itself in material form. Ideas that sounded compelling in theory are encountering the concrete work required to build them.</p>
+      <p>Saturn and Neptune are both in Aries, 8.65&deg; apart and close enough that their conjunction is already shaping 2026. The theme: big vision being asked to prove itself in material form. Ideas that sounded compelling in theory are encountering the concrete work required to build them.</p>
       <div class="dive-expanded" id="bigger-expand">
         <div class="dive-expanded-inner">
-          <p>Mercury squaring Saturn this week is the weekly-scale version of that pressure: where is the plan actually solid, and where does it need more work before it goes anywhere external? Venus and Jupiter in Cancer are the emotional counterbalance. The people, the warmth, the genuine connection&mdash;that&rsquo;s what the Saturn-Neptune rigor is actually building toward. The hard work is worth it when you know who it&rsquo;s with.</p>
+          <p>Mercury squaring Saturn this week is the weekly-scale version of that pressure: where is the plan actually solid, and where does it need more work before it goes anywhere external? Venus and Jupiter in Cancer are the emotional counterbalance. The people, the warmth, the genuine connection. That&rsquo;s what the Saturn-Neptune rigor is actually building toward. The hard work is worth it when you know who it&rsquo;s with.</p>
           <p><strong>Saturn conjunct Neptune</strong> will be exact later in 2026. We&rsquo;re in the approach phase now. The pressure to ground vision in reality is building. This week&rsquo;s Mercury-Saturn asks the same question at a smaller scale: is this plan as solid as it sounds?</p>
         </div>
       </div>
@@ -1320,7 +1375,7 @@
   /* ── SCROLL FADE-IN ── */
   const fadeEls = document.querySelectorAll('.fade-in');
   const fadeObs = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); fadeObs.unobserve(e.target); } });
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('animate-in'); fadeObs.unobserve(e.target); } });
   }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
   fadeEls.forEach(el => fadeObs.observe(el));
 
@@ -1362,6 +1417,62 @@
     document.body.classList.remove('key-open');
   }
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeGlossary(); });
+
+  /* ── RISING SIGN PERSONALIZATION ── */
+  const RS_COMM = {
+    aries:       'Your directness is an asset this week; the pushback you expect from Saturn won\'t come if you front-load your reasoning.',
+    taurus:      'Slow your send finger on Tuesday. The deliberate email beats the fast one every time this week.',
+    gemini:      'Your natural Mercury agility helps, but Saturn wants depth, not speed. One thorough message beats three quick ones.',
+    cancer:      'This transit speaks your language: feeling-first with evidence behind it is exactly right.',
+    leo:         'The authoritative voice lands well this week, but only if it comes with the receipts.',
+    virgo:       'You\'re built for Mercury-Saturn discipline. Trust your instinct to review before sending.',
+    libra:       'Diplomacy is your default and it works here. Just make sure the substance is there, not only the tone.',
+    scorpio:     'Your precision serves you. Resist the urge to over-explain and let the quality speak.',
+    sagittarius: 'The instinct to skip to the punchline will cost you this week. Build the case first.',
+    capricorn:   'Saturn is your home planet. This pressure is familiar and you know how to use it.',
+    aquarius:    'The big-picture framing lands, but Saturn wants the detail layer. Add it before you send.',
+    pisces:      'The fog risk is real for you this week. Write twice, verify once before hitting send.'
+  };
+  const RS_COLLAB = {
+    aries:       'You may need to slow down to receive the warmth available this week. Let people come to you too.',
+    taurus:      'Venus in Cancer speaks to your sensibilities. This is your week to ask for what you want.',
+    gemini:      'Your social ease is amplified. The offhand comment you make Tuesday could open a door.',
+    cancer:      'This is your sky. Venus and Jupiter are both in your sign, and your natural care lands as leadership.',
+    leo:         'Others are genuinely receptive this week. The ask that felt risky a month ago is worth trying now.',
+    virgo:       'The detail-oriented care you bring is recognized under this sky. Let yourself be thanked.',
+    libra:       'Partnership and Venus are your domain. Use Tuesday for the relationship work you\'ve been deferring.',
+    scorpio:     'The depth you bring to connection is welcome this week. Don\'t hold back the honest appreciation.',
+    sagittarius: 'Your enthusiasm amplifies. The pitch that needs a warm room to land has one this week.',
+    capricorn:   'Warmth from you lands as authority this week. Use it deliberately on the asks that need buy-in.',
+    aquarius:    'The team dynamic benefits from your perspective. Put the collaborative idea into the room.',
+    pisces:      'Your empathy is at full signal. Use it to bridge the gap with the person who\'s been harder to reach.'
+  };
+  const RS_MOMENTUM = {
+    aries:       'The unexpected pivot on Monday is an invitation, not a setback. Your instinct to move is right.',
+    taurus:      'The Last Quarter pressure to close is real. Resist the urge to start something new until after the New Moon.',
+    gemini:      'Uranus in your sign is personal this week. Unexpected information may reorganize your entire week\'s priorities.',
+    cancer:      'The completion energy supports wrapping up work that\'s been running in the background. Close it out.',
+    leo:         'The plan that shifts isn\'t broken, just updated. Your natural confidence in the new direction is the right read.',
+    virgo:       'Your instinct to finish before launching is exactly right this week. Trust it.',
+    libra:       'Decision loops that have been open too long want to close. This is the week to give them a clear answer.',
+    scorpio:     'The release energy asks you to let go of something that\'s been occupying space. It\'s time.',
+    sagittarius: 'Hold your launch instinct until after the New Moon. The work done this week makes that launch better.',
+    capricorn:   'Closing out is your strength. Use this phase to put final form on what\'s already in motion.',
+    aquarius:    'The Uranus pivot may feel disruptive, but it\'s pointing toward something more aligned. Follow it.',
+    pisces:      'The waning moon supports your naturally reflective mode. Use the quiet of this phase intentionally.'
+  };
+  function applyRising(sign) {
+    ['comm','collab','momentum'].forEach(function(sec) {
+      var el = document.getElementById('rs-' + sec);
+      if (!el) return;
+      var map = sec === 'comm' ? RS_COMM : sec === 'collab' ? RS_COLLAB : RS_MOMENTUM;
+      if (sign && map[sign]) { el.textContent = map[sign]; el.style.display = 'block'; }
+      else { el.style.display = 'none'; }
+    });
+    if (sign) localStorage.setItem('sky-rising', sign);
+  }
+  var savedRising = localStorage.getItem('sky-rising');
+  if (savedRising) { var rsSel = document.getElementById('rs-select'); if (rsSel) { rsSel.value = savedRising; applyRising(savedRising); } }
 
   /* ── SECTION NAV DOTS ── */
   const sections = document.querySelectorAll('[data-section]');
