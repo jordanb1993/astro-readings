@@ -1,262 +1,191 @@
 {
-  "subject": "Jordan Ashley Barney",
-  "birth": {
-    "date": "1993-11-23",
-    "time": "18:36:00",
-    "timezone": "America/Los_Angeles",
-    "location": {
-      "city": "Palo Alto",
-      "state": "CA",
-      "country": "US",
-      "latitude": 37.4419,
-      "longitude": -122.143
+  "meta": {
+    "name": "Jordan Ashley Barney",
+    "birth_date": "1993-11-23",
+    "birth_time": "18:36:00",
+    "birth_timezone": "America/Los_Angeles",
+    "birth_utc": "1993-11-24T02:36:00Z",
+    "location": "Palo Alto, CA, USA",
+    "lat": 37.4419,
+    "lon": -122.1430,
+    "house_system": "Placidus",
+    "ephemeris": "Swiss Ephemeris (pyswisseph)",
+    "verified_against": "Time Passages spot-check June 8 2026 — Mercury, Venus, Mars, Jupiter, Saturn, Pluto, Chiron, MC all confirmed",
+    "corrected": "2026-06-08 — prior manual entry had significant errors in inner planets and Saturn; all values now authoritative"
+  },
+
+  "angles": {
+    "asc": {
+      "symbol": "↑", "name": "Ascendant",
+      "sign": "Gemini", "sign_number": 2,
+      "degree": 29, "minute": 22, "absolute_degree": 89.3709,
+      "house": 1, "notes": "Anaretic degree — Gemini at maximum concentration; threshold quality"
+    },
+    "mc": {
+      "symbol": "MC", "name": "Midheaven",
+      "sign": "Pisces", "sign_number": 11,
+      "degree": 8, "minute": 17, "absolute_degree": 338.2840,
+      "house": 10, "notes": "Pisces MC — public identity dissolving and reforming; career identity resists fixed container"
+    },
+    "ic": {
+      "symbol": "IC", "name": "Imum Coeli",
+      "sign": "Virgo", "sign_number": 5,
+      "degree": 8, "minute": 17, "absolute_degree": 158.2840,
+      "house": 4, "notes": "Chiron conjunct IC (0.2°) — wound at the root/foundation"
+    },
+    "dsc": {
+      "symbol": "DSC", "name": "Descendant",
+      "sign": "Sagittarius", "sign_number": 8,
+      "degree": 29, "minute": 22, "absolute_degree": 269.3709,
+      "house": 7
     }
   },
-  "house_system": "Placidus",
-  "zodiac": "tropical",
-  "placements": [
+
+  "house_cusps": [
+    {"house": 1,  "sign": "Gemini",      "degree": 29, "minute": 22, "absolute_degree": 89.3709,  "label": "ASC"},
+    {"house": 2,  "sign": "Cancer",      "degree": 20, "minute": 14, "absolute_degree": 110.2341},
+    {"house": 3,  "sign": "Leo",         "degree": 12, "minute":  1, "absolute_degree": 132.0315},
+    {"house": 4,  "sign": "Virgo",       "degree":  8, "minute": 17, "absolute_degree": 158.2840, "label": "IC"},
+    {"house": 5,  "sign": "Libra",       "degree": 12, "minute":  7, "absolute_degree": 192.1293},
+    {"house": 6,  "sign": "Scorpio",     "degree": 22, "minute":  7, "absolute_degree": 232.1194},
+    {"house": 7,  "sign": "Sagittarius", "degree": 29, "minute": 22, "absolute_degree": 269.3709, "label": "DSC"},
+    {"house": 8,  "sign": "Capricorn",   "degree": 20, "minute": 14, "absolute_degree": 290.2341},
+    {"house": 9,  "sign": "Aquarius",    "degree": 12, "minute":  1, "absolute_degree": 312.0315},
+    {"house": 10, "sign": "Pisces",      "degree":  8, "minute": 17, "absolute_degree": 338.2840, "label": "MC"},
+    {"house": 11, "sign": "Aries",       "degree": 12, "minute":  7, "absolute_degree": 12.1293},
+    {"house": 12, "sign": "Taurus",      "degree": 22, "minute":  7, "absolute_degree": 52.1194}
+  ],
+
+  "planets": [
     {
-      "id": "sun",
-      "symbol": "☉",
-      "name": "Sun",
-      "sign": "Sagittarius",
-      "sign_number": 8,
-      "degree": 1,
-      "minute": 49,
-      "absolute_degree": 241.82,
-      "house": 6,
-      "retrograde": false,
-      "notes": "Conjunct North Node and Mars — core identity IS soul path and daily work"
+      "id": "sun", "symbol": "☉", "name": "Sun",
+      "sign": "Sagittarius", "sign_number": 8,
+      "degree": 1, "minute": 50, "absolute_degree": 241.8311,
+      "house": 6, "retrograde": false,
+      "notes": "Conjunct North Node (1.2°) — identity and soul path fused in daily work"
     },
     {
-      "id": "moon",
-      "symbol": "☽",
-      "name": "Moon",
-      "sign": "Aries",
-      "sign_number": 0,
-      "degree": 4,
-      "minute": 58,
-      "absolute_degree": 4.97,
-      "house": 10,
-      "retrograde": false,
-      "notes": "10th house — career and emotional life are the same organ"
+      "id": "moon", "symbol": "☽", "name": "Moon",
+      "sign": "Aries", "sign_number": 0,
+      "degree": 4, "minute": 59, "absolute_degree": 4.9796,
+      "house": 10, "retrograde": false,
+      "notes": "Aries Moon in 10th — career and emotional life run on the same circuit"
     },
     {
-      "id": "mercury",
-      "symbol": "☿",
-      "name": "Mercury",
-      "sign": "Scorpio",
-      "sign_number": 7,
-      "degree": 12,
-      "minute": 17,
-      "absolute_degree": 222.28,
-      "house": 5,
-      "retrograde": false,
-      "notes": "Scorpio stellium — investigative, goes all the way in"
+      "id": "mercury", "symbol": "☿", "name": "Mercury",
+      "sign": "Scorpio", "sign_number": 7,
+      "degree": 12, "minute": 17, "absolute_degree": 222.2947,
+      "house": 5, "retrograde": false,
+      "notes": "Scorpio 5th stellium — investigative mind, depth communication"
     },
     {
-      "id": "venus",
-      "symbol": "♀",
-      "name": "Venus",
-      "sign": "Scorpio",
-      "sign_number": 7,
-      "degree": 18,
-      "minute": 50,
-      "absolute_degree": 228.83,
-      "house": 5,
-      "retrograde": false,
-      "notes": "Scorpio stellium — deep loyalty, full presence"
+      "id": "venus", "symbol": "♀", "name": "Venus",
+      "sign": "Scorpio", "sign_number": 7,
+      "degree": 18, "minute": 50, "absolute_degree": 228.8348,
+      "house": 5, "retrograde": false,
+      "notes": "Scorpio 5th stellium — deep loyalty, full presence; 6.5° from Pluto"
     },
     {
-      "id": "mars",
-      "symbol": "♂",
-      "name": "Mars",
-      "sign": "Sagittarius",
-      "sign_number": 8,
-      "degree": 6,
-      "minute": 15,
-      "absolute_degree": 246.25,
-      "house": 6,
-      "retrograde": false,
-      "notes": "Conjunct Sun and North Node — drive and identity are the same signal"
+      "id": "mars", "symbol": "♂", "name": "Mars",
+      "sign": "Sagittarius", "sign_number": 8,
+      "degree": 10, "minute": 46, "absolute_degree": 250.7698,
+      "house": 6, "retrograde": false,
+      "notes": "6th house — drive channeled through daily craft; 7.7° from N.Node, 8.9° from Sun"
     },
     {
-      "id": "jupiter",
-      "symbol": "♃",
-      "name": "Jupiter",
-      "sign": "Scorpio",
-      "sign_number": 7,
-      "degree": 2,
-      "minute": 52,
-      "absolute_degree": 212.87,
-      "house": 5,
-      "retrograde": false,
-      "notes": "Scorpio stellium — expands creative depth; first to be trined by transiting Cancer planets"
+      "id": "jupiter", "symbol": "♃", "name": "Jupiter",
+      "sign": "Scorpio", "sign_number": 7,
+      "degree": 2, "minute": 52, "absolute_degree": 212.8672,
+      "house": 5, "retrograde": false,
+      "notes": "Scorpio 5th stellium anchor — expands creative and romantic depth"
     },
     {
-      "id": "saturn",
-      "symbol": "♄",
-      "name": "Saturn",
-      "sign": "Aquarius",
-      "sign_number": 10,
-      "degree": 1,
-      "minute": 15,
-      "absolute_degree": 301.25,
-      "house": 9,
-      "retrograde": false,
-      "notes": "Structure via ideology and belief systems; 9th house = the long arc"
+      "id": "saturn", "symbol": "♄", "name": "Saturn",
+      "sign": "Aquarius", "sign_number": 10,
+      "degree": 24, "minute": 15, "absolute_degree": 324.2549,
+      "house": 9, "retrograde": false,
+      "notes": "9th house — belief systems require philosophical meaning; structure through ideology"
     },
     {
-      "id": "uranus",
-      "symbol": "♅",
-      "name": "Uranus",
-      "sign": "Capricorn",
-      "sign_number": 9,
-      "degree": 19,
-      "minute": 34,
-      "absolute_degree": 289.57,
-      "house": 7,
-      "retrograde": false,
-      "notes": "Generational; 7th house = disruption through partnership; conjunct natal Neptune"
+      "id": "uranus", "symbol": "♅", "name": "Uranus",
+      "sign": "Capricorn", "sign_number": 9,
+      "degree": 19, "minute": 35, "absolute_degree": 289.5802,
+      "house": 7, "retrograde": false,
+      "notes": "7th house; conjunct Neptune (0.4°) — disruption woven into partnership architecture"
     },
     {
-      "id": "neptune",
-      "symbol": "♆",
-      "name": "Neptune",
-      "sign": "Capricorn",
-      "sign_number": 9,
-      "degree": 20,
-      "minute": 48,
-      "absolute_degree": 290.8,
-      "house": 7,
-      "retrograde": false,
-      "notes": "Generational; 7th house = idealization in relationships; conjunct natal Uranus"
+      "id": "neptune", "symbol": "♆", "name": "Neptune",
+      "sign": "Capricorn", "sign_number": 9,
+      "degree": 19, "minute": 11, "absolute_degree": 289.1846,
+      "house": 7, "retrograde": false,
+      "notes": "7th house; conjunct Uranus (0.4°) — idealization and dissolution in relationships"
     },
     {
-      "id": "pluto",
-      "symbol": "♇",
-      "name": "Pluto",
-      "sign": "Scorpio",
-      "sign_number": 7,
-      "degree": 25,
-      "minute": 40,
-      "absolute_degree": 235.67,
-      "house": 5,
-      "retrograde": false,
-      "notes": "Scorpio stellium deepest point — transformation as creative power; generational but personally prominent in 5th"
+      "id": "pluto", "symbol": "♇", "name": "Pluto",
+      "sign": "Scorpio", "sign_number": 7,
+      "degree": 25, "minute": 41, "absolute_degree": 235.6816,
+      "house": 6, "retrograde": false,
+      "notes": "6th house — crosses 6th cusp (Scorpio 22°07'); transformation through daily work, not only creative depth"
     },
     {
-      "id": "north_node",
-      "symbol": "☊",
-      "name": "North Node",
-      "sign": "Sagittarius",
-      "sign_number": 8,
-      "degree": 3,
-      "minute": 2,
-      "absolute_degree": 243.03,
-      "house": 6,
-      "retrograde": true,
-      "notes": "Conjunct Sun + Mars — authentic direction IS the soul path; 6th house = daily work is the vehicle"
+      "id": "chiron", "symbol": "⚷", "name": "Chiron",
+      "sign": "Virgo", "sign_number": 5,
+      "degree": 8, "minute": 29, "absolute_degree": 158.4833,
+      "house": 4, "retrograde": false,
+      "notes": "0.2° past IC — wound at the root/foundation; perfectionism and enoughness in the private self"
     },
     {
-      "id": "south_node",
-      "symbol": "☋",
-      "name": "South Node",
-      "sign": "Gemini",
-      "sign_number": 2,
-      "degree": 3,
-      "minute": 2,
-      "absolute_degree": 63.03,
-      "house": 12,
-      "retrograde": true,
-      "notes": "Mirroring survival pattern; adapting to others' frequencies before finding one's own"
+      "id": "north_node", "symbol": "☊", "name": "North Node",
+      "sign": "Sagittarius", "sign_number": 8,
+      "degree": 3, "minute": 3, "absolute_degree": 243.0475,
+      "house": 6, "retrograde": true,
+      "notes": "True Node; conjunct Sun (1.2°) — soul path and identity fused; authentic direction over mirroring"
     },
     {
-      "id": "chiron",
-      "symbol": "⚷",
-      "name": "Chiron",
-      "sign": "Virgo",
-      "sign_number": 5,
-      "degree": 8,
-      "minute": 8,
-      "absolute_degree": 158.13,
-      "house": 4,
-      "retrograde": false,
-      "notes": "Wound: perfectionism, enoughness, home/body. 4th house = private self"
-    },
-    {
-      "id": "ascendant",
-      "symbol": "↑",
-      "name": "Ascendant",
-      "sign": "Gemini",
-      "sign_number": 2,
-      "degree": 29,
-      "minute": 22,
-      "absolute_degree": 89.37,
-      "house": 1,
-      "retrograde": false,
-      "notes": "ANARETIC DEGREE — 29° Gemini, threshold degree; Gemini at maximum concentration; South Node close by"
-    },
-    {
-      "id": "mc",
-      "symbol": "MC",
-      "name": "Midheaven",
-      "sign": "Pisces",
-      "sign_number": 11,
-      "degree": 0,
-      "minute": 59,
-      "absolute_degree": 0.98,
-      "house": 10,
-      "retrograde": false,
-      "notes": "Pisces MC — public identity has Neptunian, dissolving quality; public and private harder to separate"
+      "id": "south_node", "symbol": "☋", "name": "South Node",
+      "sign": "Gemini", "sign_number": 2,
+      "degree": 3, "minute": 3, "absolute_degree": 63.0475,
+      "house": 12, "retrograde": true,
+      "notes": "12th house — unconscious mirroring/adaptation survival pattern"
     }
   ],
-  "stelliums": [
-    {
-      "id": "scorpio_5th",
-      "name": "Scorpio 5th House Stellium",
-      "planets": ["mercury", "venus", "jupiter", "pluto"],
+
+  "stelliums": {
+    "scorpio_5th": {
+      "planets": ["mercury", "venus", "jupiter"],
       "house": 5,
       "sign": "Scorpio",
-      "theme": "The privately held, most intensely felt part of the chart. Romance, creative work, passion projects. All the way in or not at all."
+      "note": "Mercury 12°17', Jupiter 2°52', Venus 18°50' — Pluto at 25°41' has crossed into 6th house (cusp: Scorpio 22°07')"
     },
-    {
-      "id": "sagittarius_6th",
-      "name": "Sagittarius 6th House Stellium",
-      "planets": ["sun", "mars", "north_node"],
+    "sagittarius_6th": {
+      "planets": ["sun", "north_node", "mars", "pluto"],
       "house": 6,
-      "sign": "Sagittarius",
-      "theme": "Daily work IS identity expression and soul path. The task is to go toward authentic direction over adaptive mirroring."
+      "sign": "Sagittarius and Scorpio",
+      "note": "Sun 1°50' + N.Node 3°03' tightly conjunct (1.2°); Mars 10°46' wider (7-9° from Sun/NNode); Pluto 25°41' also in 6th via Scorpio"
     }
-  ],
-  "key_axes": [
-    {
-      "id": "gemini_sagittarius",
-      "name": "Gemini–Sagittarius Axis",
-      "points": [
-        {"id": "south_node", "degree": 63.03, "notes": "South Node 3° Gemini — mirroring habit"},
-        {"id": "ascendant", "degree": 89.37, "notes": "29° Gemini — anaretic threshold"},
-        {"id": "north_node", "degree": 243.03, "notes": "North Node 3° Sagittarius — soul direction"},
-        {"id": "sun", "degree": 241.82, "notes": "Sun 1°49' Sagittarius — core identity"}
-      ],
-      "notes": "Most loaded axis in the chart. Uranus transiting Gemini will aspect all of these over 2026–2034."
+  },
+
+  "key_axes": {
+    "gemini_sagittarius": {
+      "points": ["asc", "south_node", "north_node", "sun"],
+      "note": "Primary axis; Gemini ASC (29°) + S.Node (3°) in 12th; Sag N.Node (3°) + Sun (1°50') in 6th"
     },
-    {
-      "id": "capricorn_7th",
-      "name": "7th House Capricorn Cluster",
-      "points": [
-        {"id": "uranus", "degree": 289.57},
-        {"id": "neptune", "degree": 290.8}
-      ],
-      "notes": "Generational planets in the house of partnership — disruption and dissolution through relationship"
+    "virgo_pisces": {
+      "points": ["ic", "mc", "chiron"],
+      "note": "IC/MC axis Virgo-Pisces; Chiron conjunct IC (0.2°) — wound at the root, vocation at the Pisces MC"
+    },
+    "capricorn_7th": {
+      "points": ["uranus", "neptune"],
+      "note": "Uranus-Neptune conjunction (0.4°) in 7th house Capricorn"
     }
-  ],
+  },
+
   "pattern_notes": {
-    "south_node_mirroring": "South Node 3° Gemini (12th) + Ascendant 29° Gemini: the mirroring pattern is both natal character and soul-level habit. Tendency to adapt to others' frequencies before finding own register.",
-    "aries_moon_10th": "Moon in Aries in the 10th: career recognition is emotionally personal. Professional slights hit the nervous system directly. Not a weakness — the chart's architecture.",
-    "anaretic_ascendant": "29° Gemini Ascendant: threshold degree. Gemini has finished its learning and is at the graduation point. The presentation self is more concentrated, more intentional than a typical Gemini rising.",
-    "5th_house_depth": "Scorpio stellium in the 5th: joy is never surface. Creative work and romance both operate at full depth. The passion is real but it's not casual."
-  },
-  "last_verified": "2026-06-08",
-  "source": "Time Passages + manual calculation via Placidus, Palo Alto CA 1993-11-23 18:36 PST"
+    "pluto_in_6th": "Pluto at Scorpio 25°41' is in the 6th house (cusp: Scorpio 22°07'). Transformation operates through daily work and craft. Prior data incorrectly placed Pluto in 5th.",
+    "sun_nnode_conjunction": "Sun (1°50') and North Node (3°03') are 1.2° apart — tight conjunction. Mars (10°46') is 7-9° from both. Soul path and identity are fused; the drive supports but is a separate instrument.",
+    "chiron_conjunct_ic": "Chiron (Virgo 8°29') is 0.2° past the IC (Virgo 8°17'). The wound is literally at the foundation. Transit aspects to Chiron activate root-level perfectionism/enoughness.",
+    "uranus_neptune_7th": "Uranus (19°35') conjunct Neptune (19°11') — 0.4° — in 7th house Capricorn. Generational conjunction made personal: disruption and dissolution are natal architecture in partnership.",
+    "anaretic_ascendant": "ASC at Gemini 29°22' — threshold degree. The Gemini identity question is maximally concentrated.",
+    "saturn_9th_corrected": "Saturn at Aquarius 24°15' — late degree 9th house. Prior data showed 1°15' (wrong by 23°). All Saturn transit timing calculations should be re-verified."
+  }
 }

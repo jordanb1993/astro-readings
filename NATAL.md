@@ -19,39 +19,41 @@
 
 | Planet / Point | Sign | Degree | Absolute Degree | House | Notes |
 |----------------|------|--------|-----------------|-------|-------|
-| ☉ Sun | Sagittarius | 1°49' | 241.82° | 6th | North Node conjunct — soul path IS daily work |
-| ☽ Moon | Aries | 4°58' | 4.97° | 10th | Career and emotional life are same organ |
-| ☿ Mercury | Scorpio | 12°17' | 222.28° | 5th | Scorpio stellium anchor — investigative mind |
-| ♀ Venus | Scorpio | 18°50' | 228.83° | 5th | Scorpio stellium — deep loyalty, full presence |
-| ♂ Mars | Sagittarius | 6°15' | 246.25° | 6th | Conjunct Sun and North Node — drive = identity |
-| ♃ Jupiter | Scorpio | 2°52' | 212.87° | 5th | Scorpio stellium — expands creative depth |
-| ♄ Saturn | Aquarius | 1°15' | 301.25° | 9th | Structure via ideology, long-form belief systems |
-| ♅ Uranus | Capricorn | 19°34' | 289.57° | 7th | 7th house — disruption through partnership |
-| ♆ Neptune | Capricorn | 20°48' | 290.8° | 7th | 7th house — idealization in relationships |
-| ♇ Pluto | Scorpio | 25°40' | 235.67° | 5th | Scorpio stellium deepest — transformation = creative power |
-| ☊ North Node | Sagittarius | 3°02' | 243.03° | 6th | Conjunct Sun + Mars — authentic direction over mirroring |
-| ☋ South Node | Gemini | 3°02' | 63.03° | 12th | Mirroring survival pattern — what's being released |
-| ⚷ Chiron | Virgo | 8°08' | 158.13° | 4th | Wound: perfectionism/enough-ness in the home/body |
+| ☉ Sun | Sagittarius | 1°50' | 241.83° | 6th | Conjunct North Node (1.2°) — identity and soul path fused |
+| ☽ Moon | Aries | 4°59' | 4.98° | 10th | Career and emotional life are same organ |
+| ☿ Mercury | Scorpio | 12°17' | 222.29° | 5th | Scorpio 5th stellium — investigative mind, depth communication |
+| ♀ Venus | Scorpio | 18°50' | 228.83° | 5th | Scorpio 5th stellium — deep loyalty, full presence |
+| ♂ Mars | Sagittarius | 10°46' | 250.77° | 6th | 6th house drive; 7.7° from N.Node, 8.9° from Sun |
+| ♃ Jupiter | Scorpio | 2°52' | 212.87° | 5th | Scorpio 5th stellium anchor — expands creative depth |
+| ♄ Saturn | Aquarius | 24°15' | 324.25° | 9th | 9th house — structure through ideology and meaning |
+| ♅ Uranus | Capricorn | 19°35' | 289.58° | 7th | Conjunct Neptune (0.4°) — disruption in partnership |
+| ♆ Neptune | Capricorn | 19°11' | 289.18° | 7th | Conjunct Uranus (0.4°) — idealization in relationships |
+| ♇ Pluto | Scorpio | 25°41' | 235.68° | **6th** | Past 6th cusp (Scorpio 22°07') — transformation through daily work |
+| ☊ North Node | Sagittarius | 3°03' | 243.05° | 6th | Conjunct Sun (1.2°) — soul path and identity fused |
+| ☋ South Node | Gemini | 3°03' | 63.05° | 12th | Unconscious mirroring/adaptation pattern |
+| ⚷ Chiron | Virgo | 8°29' | 158.48° | 4th | 0.2° past IC — wound at the root/foundation |
 | ↑ Ascendant | Gemini | 29°22' | 89.37° | 1st | **Anaretic degree** — Gemini at maximum concentration |
-| MC | Pisces | 0°59' | 360.98° → 0.98° | 10th | Public identity dissolving and reforming — Pisces MC |
+| MC | Pisces | 8°17' | 338.28° | 10th | Public identity dissolving and reforming — Pisces MC |
 
-**Scorpio 5th house stellium (Mercury + Venus + Jupiter + Pluto):** This is the most privately held, most intensely felt part of the chart. Romance, creative work, passion projects, and the things done purely because they matter. Scorpio rules all of it — fully in or not at all. The joy is never surface; the love is never casual.
+*All values Swiss Ephemeris, verified against Time Passages June 8 2026. Prior data had significant errors — Mars, Saturn, Neptune, Pluto house, MC were all wrong.*
 
-**Sagittarius 6th house stellium (Sun + Mars + North Node):** Daily work is identity expression and soul path. The North Node being here means the task is to go toward authentic Sagittarian direction (knowing, teaching, direct) and away from the South Node Gemini adaptation mode.
+**Scorpio 5th house stellium (Mercury + Venus + Jupiter):** The most privately held, most intensely felt part of the chart. Romance, creative work, passion projects — fully in or not at all. The joy is never surface; the love is never casual. **Pluto is in the 6th house** (Scorpio 25°41', past the 6th cusp at Scorpio 22°07') — transformation lives in the daily work, not only the creative realm.
+
+**Sagittarius 6th house (Sun + North Node + Mars + Pluto):** Daily work is identity expression and soul path. Sun and North Node are tightly conjunct (1.2°) — identity IS the direction. Mars at 10°46' is in the same house but wider (7-9° away). Pluto in Scorpio adds transformation to the 6th house mix. The North Node here means authentic Sagittarian direction over the South Node Gemini adaptation mode.
 
 ---
 
 ## Key Natal Patterns
 
 **The Gemini-Sagittarius axis is the most loaded in the chart:**
-- South Node 3° Gemini (12th house) — mirroring habit, survival-mode adaptation
-- Ascendant 29° Gemini (anaretic) — threshold Gemini, full weight of sign's lesson
-- North Node 3° Sagittarius (6th house) — authentic direction, embodied knowing
-- Sun 1°49' Sagittarius (6th house) — core identity IS the path
+- South Node 3°03' Gemini (12th house) — mirroring habit, survival-mode adaptation
+- Ascendant 29°22' Gemini (anaretic) — threshold Gemini, full weight of sign's lesson
+- North Node 3°03' Sagittarius (6th house) — authentic direction, embodied knowing
+- Sun 1°50' Sagittarius (6th house) — core identity IS the path; conjunct North Node (1.2°)
 
 Uranus is transiting through Gemini and will aspect everything on this axis. Current focus: Uranus opposition natal Sun. Future: Uranus conjunct South Node (~2027), Uranus conjunct Ascendant (~2033–2034).
 
-**7th house Capricorn cluster (Uranus 19°34' + Neptune 20°48'):**
+**7th house Capricorn cluster (Uranus 19°35' + Neptune 19°11'):**
 These are generational planets, but in the 7th house their themes are personal: disruption and dissolution operating through partnership, collaboration, and relationship. Jordan's 7th house pulls can idealize or disrupt relationships before they're fully formed (Neptune) or create sudden disconnections (Uranus). The South Node mirroring pattern feeds into this.
 
 **Chiron in Virgo 4th house:**
