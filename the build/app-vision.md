@@ -361,6 +361,55 @@ The chart wheel and sky-at-work.html are halfway there already. A manifest and i
 
 ---
 
+## Chart-Centric Hub Architecture — The Connected Library Vision
+*Seeded June 9, 2026 — Jordan's vision for what the mobile nav shell becomes*
+
+**The core idea:** The natal chart HTML is not a standalone reading. It is the **root node** of a personal astrology library. Every other content type — daily readings, long-term transit breakdowns, weekly forecasts, moon rituals, synastry — branches off the same hub, navigable from the same URL.
+
+One URL per person. Everything about their chart, their transits, their sky, accessible from one place. When Jordan sends someone their chart URL, they're not getting a PDF. They're getting their astrology home.
+
+**The hub model:**
+```
+[person].html — the root
+├── Chart tab         → SVG natal wheel, key drawer, Big Three (static, already built)
+├── Natal tabs        → Identity / Depth / Roots / Soul (static content, already built)
+├── Transits tab      → Active long-term transits, fetched from transits.json (Phase 2)
+├── Daily tab         → Today's reading, fetched from daily.json rebuilt by routine (Phase 2)
+├── Moon tab          → Current lunar phase, next ritual, fetched from moon.json (Phase 3)
+└── [people chip]     → Switch between saved charts (Jordan → Mimi → Carina) (Phase 3)
+```
+
+**What makes this achievable without a backend:**
+The routine already writes JSON every morning (`positions-today.json`, `active-transits.txt`). The HTML just needs to fetch those files on load. GitHub Pages can serve them. No server, no database, no login — until Phase 3 requires it.
+
+**The JSON contract (Phase 2 target):**
+Each person's chart gets a companion `[name]-live.json` rebuilt nightly by the routine:
+```json
+{
+  "date": "2026-06-09",
+  "daily_reading": "...",
+  "active_transits": [...],
+  "moon_phase": "waxing crescent",
+  "next_exact": { "transit": "Pluto sextile Moon", "date": "2026-06-28" }
+}
+```
+The HTML fetches this on load, renders the Transits and Daily tabs with live data. If the fetch fails (offline, old URL), the natal reading tabs still work — they're always baked in.
+
+**For friends:** When Jordan is ready to extend this to others, each friend's `[name].html` needs:
+1. Their natal data hardcoded (already done for mimi, carina)
+2. A companion `[name]-live.json` that the routine generates for their chart
+3. The same hub shell — no new code, just new data
+
+**The build order:**
+- Phase 1 now: Perfect the shell so it can hold this content without rebuilding (this session)
+- Phase 2: Add Transits tab + routine writes `jordan-live.json`
+- Phase 2: Add Daily tab reads from that same JSON
+- Phase 3: People switcher, multi-chart support, login
+
+**Shell build brief:** `the build/natal-shell-v2-brief.md`
+
+---
+
 ## Workplace Synastry / Compatibility Matching
 *Seeded June 9, 2026 — Dasha's explicit feature request*
 
