@@ -4,6 +4,20 @@
 
 ---
 
+## 2026-06-09 — Mobile Polish: Fluid Layout + Scroll Fix
+
+**The headline:** Chart fills edge-to-edge on all iPhone sizes. Accidental horizontal scroll drift on reading panels eliminated. Shell confirmed beautiful on SE, 11, 14 Pro Max.
+
+### What Changed
+
+**Fluid chart layout:** Chart side padding reduced from 10px to 4px, size formula updated to `min(calc(100dvh - 190px), calc(100dvw - 8px))`. Chart fills 98% of screen width on iPhone 11 (was 95%). Big Three cards: removed `max-width:120px` cap so they stretch to fill full width on any phone. Responsive breakpoints added for small phones (<380px) and large phones (>414px).
+
+**Horizontal scroll drift fix:** Added `overflow-x:hidden`, `overscroll-behavior-x:none`, and `touch-action:pan-y` to `.panel`. Accidental thumb drift no longer shifts reading content sideways. Chart panel keeps `touch-action:none` to preserve pinch-to-zoom.
+
+**PWA icon fix:** iOS ignores SVG for apple-touch-icon. Rasterized icon to `apple-touch-icon.png` (512×512 PNG, gold compass rose on navy), linked in jordan.html head.
+
+---
+
 ## 2026-06-09 — Natal Shell v2: Tier 3 Complete + Netlify Hosting
 
 **The headline:** Shell is now fully installable as a home-screen web app (PWA). Transits and Daily tabs unlocked with real content — 4 live transit data cards + a date-wired daily reading slot. Hosting permanently migrated from GitHub Pages to Netlify (`astrologyos.netlify.app`) with HTTP-level cache headers. The shell is ready to port to friends' charts.
