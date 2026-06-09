@@ -95,8 +95,16 @@ body.drawer-open{overflow:hidden}
 
 /* ── PANELS ── */
 .app-body{flex:1;overflow:hidden;position:relative;min-height:0}
-.panel{position:absolute;inset:0;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior-y:contain;display:none}
-.panel.active{display:block}
+
+/* ── T2-F: TAB CROSSFADE ── */
+.panel{
+  position:absolute;inset:0;
+  overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior-y:contain;
+  display:block;
+  opacity:0;visibility:hidden;pointer-events:none;
+  transition:opacity 0.22s ease, visibility 0.22s ease;
+}
+.panel.active{opacity:1;visibility:visible;pointer-events:auto;display:block}
 
 /* ── SACRED GEOMETRY BACKGROUND ── */
 .geo-bg{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;overflow:hidden}
@@ -136,6 +144,21 @@ body.drawer-open{overflow:hidden}
 .reading-panel{background:var(--bg)}
 .reading-inner{position:relative;z-index:1;padding:28px 18px 90px;max-width:680px;margin:0 auto}
 
+/* ══ T2-C: WATERCOLOR SECTION BLOOMS ═══════════════════════════════════════ */
+.reading-inner::before,.reading-inner::after{
+  content:'';position:absolute;border-radius:50%;pointer-events:none;z-index:0;
+}
+.reading-inner::before{
+  width:380px;height:380px;top:5%;left:-18%;
+  background:radial-gradient(ellipse, rgba(var(--accent-alpha),0.20) 0%, transparent 68%);
+  filter:blur(72px);
+}
+.reading-inner::after{
+  width:300px;height:300px;bottom:12%;right:-14%;
+  background:radial-gradient(ellipse, rgba(var(--accent-alpha),0.13) 0%, transparent 65%);
+  filter:blur(65px);
+}
+
 /* ── PANEL HEADING ── */
 .panel-heading{margin-bottom:28px;text-align:center;position:relative;z-index:1}
 .panel-eyebrow-sm{font-size:0.46rem;letter-spacing:0.30em;text-transform:uppercase;color:rgba(var(--accent-alpha),0.42);margin-bottom:5px}
@@ -170,12 +193,13 @@ body.drawer-open{overflow:hidden}
   border-bottom:1px solid rgba(var(--accent-alpha),0.08);
   position:relative;overflow:hidden;
 }
-/* left radial glow on card head */
+/* ══ T2-B: 3-LAYER CARD HEADER GRADIENT ════════════════════════════════════ */
 .sec-head::before{
   content:'';position:absolute;inset:0;
   background:
-    radial-gradient(circle at 0% 50%,rgba(var(--accent-alpha),0.18) 0%,transparent 55%),
-    radial-gradient(circle at 95% 10%,rgba(var(--accent-alpha),0.06) 0%,transparent 40%);
+    radial-gradient(ellipse 70% 130% at 0% 50%,  rgba(var(--accent-alpha),0.30) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 80%  at 95% 8%,  rgba(var(--accent-alpha),0.10) 0%, transparent 50%),
+    radial-gradient(ellipse 55% 50%  at 45% 115%,rgba(var(--accent-alpha),0.06) 0%, transparent 50%);
   pointer-events:none;
 }
 .sec-sign-glyph{
@@ -198,6 +222,19 @@ body.drawer-open{overflow:hidden}
   border:1px solid rgba(var(--accent-alpha),0.22);
   background:rgba(var(--accent-alpha),0.06);
   font-family:'Inter',sans-serif;white-space:nowrap;
+}
+
+/* ══ T2-A: PULL QUOTES ══════════════════════════════════════════════════════ */
+.pull{
+  border-left:2px solid rgba(var(--accent-alpha),0.55);
+  margin:18px 0 18px 2px;
+  padding:3px 0 3px 18px;
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.10rem;font-style:italic;font-weight:300;
+  line-height:1.72;
+  color:var(--accent);
+  opacity:0.88;
+  display:block;
 }
 
 /* ── SECTION BODY ── */
@@ -504,6 +541,7 @@ body.drawer-open{overflow:hidden}
         <p>The anaretic Ascendant means Jordan meets the world carrying the full concentrated weight of Gemini's question: <em>who is speaking right now?</em> Not a casual question. The 29th degree has cycled through everything the sign offers. The social fluency, the shape-shifting, the ability to speak in anyone's register. And underneath: the tiredness of not always knowing which voice is the original one.</p>
         <p>The South Node at 3°03' Gemini is in the 12th house, sitting just behind the Ascendant in the house of what runs below awareness. The adaptation pattern is not conscious. It was learned before it could be examined.</p>
         <p>The work of this chart is to let the Sagittarius self be the one who shows up at the Gemini door.</p>
+        <span class="pull">29° is not a flaw in the design. It is the design.</span>
       </div>
     </div>
 
@@ -524,6 +562,7 @@ body.drawer-open{overflow:hidden}
       <div class="sec-body">
         <p>The Sun and North Node are 1.2° apart. The core identity and the soul's direction are the same instrument. There is no separate purpose to locate.</p>
         <p>The Sun is in the 6th house. Not the 1st house of performance, not the 9th house of philosophy, not the 10th house of visibility. The 6th house of daily work, craft, health, and the body in motion. The Sagittarius 6th says: the teaching is the practice, the knowing is the doing, the fire is in the routine. The soul purpose is not somewhere ahead. It is in the thing Jordan shows up and does.</p>
+        <span class="pull">The soul purpose is not somewhere ahead. It is in the thing Jordan shows up and does.</span>
       </div>
     </div>
 
@@ -629,6 +668,7 @@ body.drawer-open{overflow:hidden}
         <p>Three planets in Scorpio in the 5th house: creativity, romance, joy, the things done purely because they matter. The 5th house is where Jordan's most privately held life is. The work that is genuinely hers. The love that is fully meant. The passion projects with no performance layer.</p>
         <p>Mercury in Scorpio reads beneath what is said, finds the thing being withheld, holds information the way Scorpio holds everything: completely, and for a long time. Venus in Scorpio loves with full presence or not at all. Jupiter in Scorpio expands by going deeper rather than wider, into the places most people avoid.</p>
         <p>The 5th house in Libra cusp moving into Scorpio creates a specific tension: the door to this house looks diplomatic, balanced, social. What lives inside is Scorpio. Joy here is not light. It is compressed, total, and real.</p>
+        <span class="pull">The door looks diplomatic. What lives inside is Scorpio.</span>
       </div>
     </div>
 
@@ -733,6 +773,7 @@ body.drawer-open{overflow:hidden}
         <p>Chiron is 0.2° past the IC. The wound is at the literal root of the chart: the 4th house of home, body, private self, and what was inherited from the earliest conditions of life.</p>
         <p>Virgo Chiron: the wound is perfectionism. The question of enough-ness. The body as the site of judgment. <em>Am I doing this correctly. Is this good enough. Would a person without this wound have done better.</em> This question is not always triggered by an event. Sometimes it is just the private weather, running at low volume below everything else.</p>
         <p>The IC/MC axis is Virgo-Pisces. The wound at the IC, held in precision and self-critique, becomes the Pisces public identity at the MC: the one that dissolves the fixed form, sees beneath the surface, offers something harder to categorize than to recognize when you're inside it. The wound and the vocation are on the same axis. They were always the same thing.</p>
+        <span class="pull">The wound and the vocation are on the same axis. They were always the same thing.</span>
       </div>
     </div>
 
@@ -820,6 +861,7 @@ body.drawer-open{overflow:hidden}
       <p>The 5th house Scorpio depth is the fuel. The 6th house is where it operates. The Pisces MC is what it looks like from the outside: not a fixed shape, but a recognizable presence.</p>
       <p>Chiron at the IC says the wound is the instrument. Pluto in the 6th says the transformation is in the work. Saturn conjunct Fortune in the 9th says the abundance is in the long, philosophically grounded build.</p>
       <p>The chart is not asking Jordan to become something she is not. It never was.</p>
+      <span class="pull">The chart is not asking Jordan to become something she is not. It never was.</span>
     </div>
 
     <div class="sep"><span class="sep-inner">Archetype</span></div>
