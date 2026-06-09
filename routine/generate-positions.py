@@ -1036,7 +1036,7 @@ def generate_slack_draft(t2t_aspects, week_start_str, today_positions):
         note = meaning if meaning else a["aspect"]
         watch_text = f"• {a['planet1']} {a['symbol']} {a['planet2']} ({a['orb']}°): {note}"
 
-    url = "https://jordanb1993.github.io/astro-readings/workplace%20readings/sky-at-work.html"
+    url = "https://astrologyos.netlify.app/workplace%20readings/sky-at-work.html"
 
     sections = [f"*☿ sky at work · week of {week_start_str}* ✦\n",
                 f"{pulse}\n",
