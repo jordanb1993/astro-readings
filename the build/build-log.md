@@ -4,6 +4,37 @@
 
 ---
 
+## 2026-06-09 — Jordan's Natal Chart HTML v2 (Whimsigoth Visual Upgrade)
+
+**The headline:** Full visual upgrade of jordan.html — mimi.html's Whimsigoth design language adapted to the mobile-nav architecture. New system now sets the bar for all future nav-format charts.
+
+### What Changed
+Complete rewrite of `natal readings/jordan.html` preserving all reading content verbatim.
+
+**Sacred geometry constellation backdrop:** Custom SVG polygon networks (8-node outer ring + inner nodes, dot vertices) behind every panel. Chart panel uses the jewel-navy palette; reading panels use deep plum `#0a0614` with tailored geometry per panel (Scorpio cluster dots on Depth panel, IC root lines on Roots panel, triple nested polygon on Soul panel).
+
+**Big Three strip:** Replaced dead whitespace below the chart wheel with a 3-card strip showing Sun 1°50' Sag / Moon 4°59' Aries / ASC 29°22' Gemini. Each card: role label, glyph, degree, sign + house.
+
+**Enhanced section cards (`sec-card`):** Replaced flat `.read-card` glassmorphism cards. New structure: large sign glyph left + dot-separated eyebrow chain (`ASCENDANT · GEMINI 29°22' · ANARETIC DEGREE · 1ST HOUSE`) + section title + italic degree tagline + keyword pills + body text. Radial gradient on card head.
+
+**Keyword pills (`.kw`):** Small-caps pills on every card — [THRESHOLD], [29TH DEGREE], [SOUL PATH], [LONG BUILD], [STELLIUM], etc.
+
+**Section separators:** Named separators with flanking rules between major section groups.
+
+**Tarot archetype card (SVG gothic arch):** Full gothic arch path + column lines + keystone ornament. 8-point compass rose SVG (custom vector, no emoji). "The Cartographer at the Seam" — Sagittarius · Scorpio · Gemini.
+
+**Poem:** Centered treatment, `text-align:center`, 2.0 line-height, generous breathing room, gold close on the open question.
+
+**Nav active dot indicator:** `::before` pseudo-element — 4px gold dot above active tab.
+
+**Scroll fade-in:** IntersectionObserver on every `.sec-card`, `.dive-wrap`, `.throughline`, `.tarot-outer`, `.poem-outer`. Sibling stagger (`transitionDelay` set dynamically).
+
+**Planet glyph font stack hardened:** `'Apple Symbols','Segoe UI Symbol','Noto Sans Symbols',serif` on all glyph elements, `font-variant-emoji:text` enforced.
+
+Committed + pushed to GitHub. ✓
+
+---
+
 ## 2026-06-09 — Jordan's Natal Chart HTML (Mobile-Nav Build)
 
 **The headline:** Jordan's personal natal chart built in a new mobile-nav format — the first chart to use the 5-tab bottom nav architecture that will define Phase 2.

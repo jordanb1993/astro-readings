@@ -9,969 +9,943 @@
 <title>Jordan — Natal Chart</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-/* ── RESET ── */
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-html, body {
-  height: 100%;
-  overflow: hidden;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-body {
-  font-family: 'Inter', sans-serif;
-  background: #09102a;
-  color: #f0e4cc;
-  overscroll-behavior: none;
-}
-
-body.drawer-open { overflow: hidden; }
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;overflow:hidden;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+body{font-family:'Inter',sans-serif;background:#09102a;color:#f0e4cc;overscroll-behavior:none}
+body.drawer-open{overflow:hidden}
 
 /* ── APP SHELL ── */
-.app {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  height: 100dvh;
-}
+.app{display:flex;flex-direction:column;height:100vh;height:100dvh}
 
 /* ── HEADER ── */
-.app-header {
-  flex-shrink: 0;
-  height: 56px;
-  background: rgba(8,12,32,0.96);
-  border-bottom: 1px solid rgba(201,168,76,0.14);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 18px 0 18px;
-  padding-top: env(safe-area-inset-top);
-  position: relative;
-  z-index: 50;
+.app-header{
+  flex-shrink:0;height:60px;
+  background:rgba(6,10,26,0.97);
+  border-bottom:1px solid rgba(201,168,76,0.16);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 18px;
+  padding-top:env(safe-area-inset-top);
+  position:relative;z-index:50;
 }
-
-.header-info { display: flex; flex-direction: column; gap: 1px; }
-
-.header-name {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.05rem;
-  font-weight: 300;
-  letter-spacing: 0.12em;
-  color: rgba(201,168,76,0.92);
-  line-height: 1;
+.header-left{display:flex;flex-direction:column;gap:2px}
+.header-eyebrow{
+  font-size:0.44rem;letter-spacing:0.30em;text-transform:uppercase;
+  color:rgba(201,168,76,0.45);line-height:1;
 }
-
-.header-meta {
-  font-size: 0.50rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: rgba(240,228,200,0.30);
-  line-height: 1;
+.header-name{
+  font-family:'Cormorant Garamond',serif;font-size:1.10rem;font-weight:300;
+  letter-spacing:0.10em;color:rgba(201,168,76,0.92);line-height:1;
+  font-style:italic;
 }
-
-/* Key button — header right, only shown on chart tab */
-.key-btn {
-  width: 36px; height: 36px;
-  border-radius: 50%;
-  background: radial-gradient(ellipse at 40% 35%, #1a2d50, #091830);
-  border: 1px solid rgba(201,168,76,0.40);
-  color: rgba(201,168,76,0.88);
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.1rem;
-  cursor: pointer;
-  display: flex; align-items: center; justify-content: center;
-  transition: border-color 0.2s, transform 0.15s;
-  flex-shrink: 0;
-  touch-action: manipulation;
-  -webkit-tap-highlight-color: transparent;
-  opacity: 1;
-  transition: opacity 0.2s, border-color 0.2s, transform 0.15s;
+.header-meta{
+  font-size:0.44rem;letter-spacing:0.14em;text-transform:uppercase;
+  color:rgba(240,228,200,0.25);line-height:1;margin-top:1px;
 }
-.key-btn.hidden { opacity: 0; pointer-events: none; }
-.key-btn:active { transform: scale(0.93); }
-
-/* ── BODY / PANELS ── */
-.app-body {
-  flex: 1;
-  overflow: hidden;
-  position: relative;
-  min-height: 0;
+.key-btn{
+  width:36px;height:36px;border-radius:50%;
+  background:radial-gradient(ellipse at 40% 35%,#1a2d50,#091830);
+  border:1px solid rgba(201,168,76,0.38);color:rgba(201,168,76,0.88);
+  font-family:'Cormorant Garamond',serif;font-size:1.1rem;
+  cursor:pointer;display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;touch-action:manipulation;-webkit-tap-highlight-color:transparent;
+  transition:opacity 0.2s,transform 0.15s,border-color 0.2s;
 }
+.key-btn.hidden{opacity:0;pointer-events:none}
+.key-btn:active{transform:scale(0.92)}
 
-.panel {
-  position: absolute;
-  inset: 0;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-  overscroll-behavior-y: contain;
-  display: none;
+/* ── PANELS ── */
+.app-body{flex:1;overflow:hidden;position:relative;min-height:0}
+.panel{position:absolute;inset:0;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior-y:contain;display:none}
+.panel.active{display:block}
+
+/* ── SACRED GEOMETRY BACKGROUND ── */
+.geo-bg{
+  position:absolute;top:0;left:0;width:100%;height:100%;
+  pointer-events:none;z-index:0;overflow:hidden;
 }
-.panel.active { display: block; }
 
 /* ── CHART PANEL ── */
-#panel-chart {
-  background: #09102a;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 12px 12px;
+#panel-chart{background:#09102a;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:10px 10px 0;overflow:hidden}
+#panel-chart.active{display:flex}
+.chart-wrap{
+  position:relative;z-index:1;
+  width:min(calc(100dvh - 160px), calc(100dvw - 20px));
+  height:min(calc(100dvh - 160px), calc(100dvw - 20px));
+  touch-action:pan-x pan-y pinch-zoom;
+  flex-shrink:0;
 }
-#panel-chart.active { display: flex; }
+#chart-svg{display:block;width:100%;height:100%;overflow:visible;user-select:none;-webkit-user-select:none;-webkit-tap-highlight-color:transparent;font-variant-emoji:text}
+#chart-svg text{font-variant-emoji:text}
 
-.chart-wrap {
-  width: min(calc(100dvh - 136px), calc(100dvw - 24px));
-  height: min(calc(100dvh - 136px), calc(100dvw - 24px));
-  touch-action: pan-x pan-y pinch-zoom;
+/* ── BIG THREE STRIP ── */
+.big-three{
+  position:relative;z-index:2;
+  width:100%;display:flex;gap:8px;justify-content:center;
+  padding:10px 16px 12px;flex-shrink:0;
 }
-
-#chart-svg {
-  display: block;
-  width: 100%; height: 100%;
-  overflow: visible;
-  user-select: none;
-  -webkit-user-select: none;
-  -webkit-tap-highlight-color: transparent;
-  font-variant-emoji: text;
+.big-three-card{
+  flex:1;max-width:120px;
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(201,168,76,0.18);
+  border-radius:10px;padding:10px 8px;
+  display:flex;flex-direction:column;align-items:center;gap:3px;
+  position:relative;overflow:hidden;
 }
-#chart-svg text { font-variant-emoji: text; }
+.big-three-card::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(201,168,76,0.06),transparent);
+  pointer-events:none;
+}
+.b3-role{font-size:0.41rem;letter-spacing:0.22em;text-transform:uppercase;color:rgba(201,168,76,0.50);line-height:1}
+.b3-glyph{
+  font-family:'Apple Symbols','Segoe UI Symbol','Noto Sans Symbols',serif;
+  font-variant-emoji:text;font-size:18px;line-height:1;
+  color:rgba(201,168,76,0.80);margin:1px 0;
+}
+.b3-deg{font-family:'Cormorant Garamond',serif;font-size:0.95rem;font-weight:300;color:rgba(240,228,200,0.90);line-height:1}
+.b3-sign{font-size:0.45rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(240,228,200,0.45);line-height:1}
 
 /* ── READING PANELS ── */
-.reading-panel {
-  background: #0a0614;
-  min-height: 100%;
+.reading-panel{background:#0a0614;min-height:100%;position:relative}
+.reading-inner{position:relative;z-index:1;padding:28px 18px 90px;max-width:680px;margin:0 auto}
+
+/* ── PANEL HEADING ── */
+.panel-heading{margin-bottom:28px;text-align:center;position:relative;z-index:1}
+.panel-eyebrow-sm{font-size:0.46rem;letter-spacing:0.30em;text-transform:uppercase;color:rgba(201,168,76,0.40);margin-bottom:5px}
+.panel-title-lg{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:300;font-style:italic;color:rgba(201,168,76,0.88);letter-spacing:0.04em;line-height:1.25}
+
+/* ── SECTION SEPARATOR ── */
+.sep{display:flex;align-items:center;gap:10px;margin:28px 0 20px}
+.sep::before,.sep::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,76,0.20),transparent)}
+.sep-inner{font-size:0.44rem;letter-spacing:0.28em;text-transform:uppercase;color:rgba(201,168,76,0.38);white-space:nowrap}
+.sep-stars{display:flex;justify-content:center;gap:12px;margin:32px 0;color:rgba(201,168,76,0.30);font-size:0.7rem;letter-spacing:0.2em}
+
+/* ── SECTION CARDS (enhanced) ── */
+.sec-card{
+  background:rgba(255,255,255,0.025);
+  border:1px solid rgba(201,168,76,0.12);
+  border-radius:14px;margin-bottom:14px;
+  overflow:hidden;
+  opacity:0;transform:translateY(18px);
+  transition:opacity 0.55s ease,transform 0.55s ease;
+}
+.sec-card.visible{opacity:1;transform:translateY(0)}
+
+.sec-head{
+  display:flex;align-items:flex-start;gap:14px;
+  padding:18px 20px 14px;
+  border-bottom:1px solid rgba(201,168,76,0.08);
+  position:relative;overflow:hidden;
+}
+.sec-head::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 80% 100% at 0% 0%,rgba(201,168,76,0.05),transparent 70%);
+  pointer-events:none;
+}
+.sec-sign-glyph{
+  font-family:'Apple Symbols','Segoe UI Symbol','Noto Sans Symbols',serif;
+  font-variant-emoji:text;font-size:28px;line-height:1;
+  color:rgba(201,168,76,0.55);flex-shrink:0;margin-top:2px;
+}
+.sec-meta{flex:1;min-width:0}
+.sec-eyebrow{
+  font-size:0.44rem;letter-spacing:0.20em;text-transform:uppercase;
+  color:rgba(201,168,76,0.48);line-height:1.5;margin-bottom:5px;
+  word-break:break-word;
+}
+.sec-title{
+  font-family:'Cormorant Garamond',serif;font-size:1.18rem;font-weight:300;
+  color:rgba(240,228,200,0.95);line-height:1.25;margin-bottom:4px;
+}
+.sec-tagline{
+  font-family:'Cormorant Garamond',serif;font-style:italic;font-size:0.82rem;
+  color:rgba(240,228,200,0.42);line-height:1.4;
 }
 
-.reading-panel::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background:
-    radial-gradient(ellipse 60% 40% at 25% 20%, rgba(100,60,160,0.10) 0%, transparent 70%),
-    radial-gradient(ellipse 50% 35% at 75% 70%, rgba(40,80,160,0.08) 0%, transparent 65%);
-  pointer-events: none;
-  z-index: 0;
+/* ── KEYWORD PILLS ── */
+.kw-row{display:flex;flex-wrap:wrap;gap:5px;padding:11px 20px;border-bottom:1px solid rgba(201,168,76,0.06)}
+.kw{
+  font-size:0.42rem;letter-spacing:0.14em;text-transform:uppercase;
+  color:rgba(201,168,76,0.58);
+  padding:3px 8px;border-radius:20px;
+  border:1px solid rgba(201,168,76,0.18);
+  background:rgba(201,168,76,0.05);
+  font-family:'Inter',sans-serif;white-space:nowrap;
 }
 
-.reading-inner {
-  position: relative;
-  z-index: 1;
-  padding: 28px 20px 80px;
-  max-width: 680px;
-  margin: 0 auto;
+/* ── SECTION BODY ── */
+.sec-body{padding:18px 20px 20px}
+.sec-body p{
+  font-family:'Cormorant Garamond',serif;font-size:1.03rem;font-weight:300;
+  line-height:1.84;color:rgba(240,228,200,0.88);margin-bottom:1.1em;
 }
+.sec-body p:last-child{margin-bottom:0}
+.sec-body em{font-style:italic;color:rgba(240,228,200,0.65)}
 
-/* Panel heading */
-.panel-heading {
-  margin-bottom: 28px;
-  text-align: center;
+/* ── COLLAPSIBLE DIVE ── */
+.dive-wrap{margin-bottom:14px;opacity:0;transform:translateY(14px);transition:opacity 0.5s ease,transform 0.5s ease}
+.dive-wrap.visible{opacity:1;transform:translateY(0)}
+.dive-toggle{width:100%;background:none;border:none;cursor:pointer;text-align:left;padding:0;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.dive-hd{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:12px 20px;
+  background:rgba(201,168,76,0.04);border:1px solid rgba(201,168,76,0.10);border-radius:10px;
+  transition:background 0.2s;
 }
+.dive-toggle:active .dive-hd{background:rgba(201,168,76,0.08)}
+.dive-lbl{
+  font-size:0.46rem;letter-spacing:0.20em;text-transform:uppercase;
+  color:rgba(201,168,76,0.52);display:flex;align-items:center;gap:8px;
+}
+.dive-lbl-glyph{font-family:'Apple Symbols','Segoe UI Symbol','Noto Sans Symbols',serif;font-variant-emoji:text;font-size:13px;color:rgba(201,168,76,0.48)}
+.dive-arrow{font-size:0.65rem;color:rgba(201,168,76,0.38);transition:transform 0.25s;font-family:'Inter',sans-serif}
+.dive-toggle[aria-expanded="true"] .dive-arrow{transform:rotate(180deg)}
+.dive-body{overflow:hidden;max-height:0;transition:max-height 0.38s cubic-bezier(0.4,0,0.2,1)}
+.dive-body.open{max-height:2000px}
+.dive-content{
+  padding:16px 20px 18px;
+  border:1px solid rgba(201,168,76,0.10);border-top:none;
+  border-radius:0 0 10px 10px;background:rgba(255,255,255,0.018);
+  margin-bottom:0;
+}
+.dive-content p{
+  font-family:'Cormorant Garamond',serif;font-size:1.02rem;font-weight:300;
+  line-height:1.84;color:rgba(240,228,200,0.84);margin-bottom:1em;
+}
+.dive-content p:last-child{margin-bottom:0}
 
-.panel-eyebrow {
-  font-size: 0.50rem;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: rgba(201,168,76,0.45);
-  margin-bottom: 6px;
+/* ── THROUGH-LINE CARD ── */
+.throughline{
+  background:rgba(255,255,255,0.020);border:1px solid rgba(201,168,76,0.10);
+  border-radius:14px;padding:24px 22px;margin-bottom:24px;
+  opacity:0;transform:translateY(14px);transition:opacity 0.55s ease,transform 0.55s ease;
 }
+.throughline.visible{opacity:1;transform:translateY(0)}
+.throughline p{font-family:'Cormorant Garamond',serif;font-size:1.03rem;font-weight:300;line-height:1.86;color:rgba(240,228,200,0.85);margin-bottom:1em}
+.throughline p:last-child{margin-bottom:0}
 
-.panel-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.35rem;
-  font-weight: 300;
-  font-style: italic;
-  color: rgba(201,168,76,0.85);
-  letter-spacing: 0.04em;
-  line-height: 1.3;
+/* ── TAROT ARCHETYPE CARD ── */
+.tarot-outer{
+  display:flex;justify-content:center;margin:8px 0 28px;
+  opacity:0;transform:translateY(20px);transition:opacity 0.65s ease,transform 0.65s ease;
 }
-
-/* Planet pills strip */
-.planet-strip {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  justify-content: center;
-  margin-bottom: 26px;
+.tarot-outer.visible{opacity:1;transform:translateY(0)}
+.tarot-card{
+  position:relative;width:min(280px,85vw);
+  background:linear-gradient(170deg,#0e0820 0%,#06101e 55%,#0a0c24 100%);
+  border-radius:16px;overflow:hidden;
+  box-shadow:0 8px 48px rgba(0,0,0,0.70),0 0 0 1px rgba(201,168,76,0.22),0 0 60px rgba(100,60,160,0.12);
 }
-
-.planet-pill {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  padding: 4px 10px;
-  border-radius: 20px;
-  border: 1px solid rgba(201,168,76,0.18);
-  background: rgba(201,168,76,0.05);
-  font-size: 0.60rem;
-  letter-spacing: 0.10em;
-  color: rgba(240,228,200,0.60);
-  font-family: 'Inter', sans-serif;
+/* Arch border overlay */
+.tarot-arch-svg{
+  position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;
 }
-.planet-pill .pglyph {
-  font-family: 'Apple Symbols','Segoe UI Symbol','Noto Sans Symbols',serif;
-  font-variant-emoji: text;
-  font-size: 13px;
-  line-height: 1;
+.tarot-content{
+  position:relative;z-index:1;
+  padding:30px 24px 28px;
+  display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;
 }
-
-/* Section divider */
-.section-divider {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin: 32px 0 18px;
+.tarot-ornament{
+  font-family:'Cormorant Garamond',serif;font-size:1.0rem;
+  color:rgba(201,168,76,0.35);letter-spacing:0.28em;
 }
-.section-divider::before,
-.section-divider::after {
-  content: '';
-  flex: 1;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(201,168,76,0.25), transparent);
+.compass-svg{width:56px;height:56px;flex-shrink:0}
+.tarot-name{
+  font-family:'Cormorant Garamond',serif;font-size:0.95rem;font-weight:600;
+  letter-spacing:0.20em;text-transform:uppercase;
+  color:rgba(201,168,76,0.90);line-height:1.4;
 }
-.section-divider-text {
-  font-size: 0.48rem;
-  letter-spacing: 0.26em;
-  text-transform: uppercase;
-  color: rgba(201,168,76,0.45);
-  white-space: nowrap;
+.tarot-elements{
+  font-size:0.44rem;letter-spacing:0.28em;text-transform:uppercase;
+  color:rgba(201,168,76,0.42);
 }
-
-/* Reading card */
-.read-card {
-  background: rgba(255,255,255,0.025);
-  border: 1px solid rgba(201,168,76,0.12);
-  border-radius: 12px;
-  padding: 22px 22px 20px;
-  margin-bottom: 16px;
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-}
-
-.card-label {
-  font-size: 0.52rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: rgba(201,168,76,0.60);
-  margin-bottom: 13px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.card-label-glyph {
-  font-family: 'Apple Symbols','Segoe UI Symbol','Noto Sans Symbols',serif;
-  font-variant-emoji: text;
-  font-size: 14px;
-  color: rgba(201,168,76,0.55);
-  line-height: 1;
-}
-.card-hint {
-  font-size: 0.46rem;
-  letter-spacing: 0.08em;
-  text-transform: none;
-  color: rgba(240,228,200,0.22);
-  margin-left: auto;
-  font-family: 'Inter', sans-serif;
-  backdrop-filter: blur(4px);
-  padding: 2px 7px;
-  border-radius: 10px;
-  border: 1px solid rgba(240,228,200,0.08);
-}
-
-.read-card p {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.02rem;
-  font-weight: 300;
-  line-height: 1.82;
-  color: rgba(240,228,200,0.88);
-  margin-bottom: 1em;
-}
-.read-card p:last-child { margin-bottom: 0; }
-
-.read-card p em {
-  font-style: italic;
-  color: rgba(240,228,200,0.70);
-}
-
-.read-card strong {
-  font-weight: 400;
-  color: rgba(201,168,76,0.80);
-  font-style: normal;
-}
-
-/* Collapsible dive */
-.dive-toggle {
-  width: 100%;
-  background: none;
-  border: none;
-  cursor: pointer;
-  text-align: left;
-  padding: 0;
-  -webkit-tap-highlight-color: transparent;
-  touch-action: manipulation;
-}
-
-.dive-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 14px 22px;
-  border-radius: 10px;
-  border: 1px solid rgba(201,168,76,0.10);
-  background: rgba(201,168,76,0.04);
-  margin-bottom: 0;
-  transition: background 0.2s;
-}
-.dive-toggle:active .dive-header { background: rgba(201,168,76,0.07); }
-
-.dive-label {
-  font-size: 0.52rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: rgba(201,168,76,0.55);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.dive-arrow {
-  font-size: 0.70rem;
-  color: rgba(201,168,76,0.40);
-  transition: transform 0.25s;
-  font-family: 'Inter', sans-serif;
-}
-.dive-toggle[aria-expanded="true"] .dive-arrow { transform: rotate(180deg); }
-
-.dive-body {
-  overflow: hidden;
-  max-height: 0;
-  transition: max-height 0.35s cubic-bezier(0.4,0,0.2,1);
-}
-.dive-body.open {
-  max-height: 2000px;
-}
-
-.dive-content {
-  padding: 18px 22px 20px;
-  border: 1px solid rgba(201,168,76,0.10);
-  border-top: none;
-  border-radius: 0 0 10px 10px;
-  background: rgba(255,255,255,0.018);
-  margin-bottom: 16px;
-}
-.dive-content p {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.02rem;
-  font-weight: 300;
-  line-height: 1.82;
-  color: rgba(240,228,200,0.85);
-  margin-bottom: 1em;
-}
-.dive-content p:last-child { margin-bottom: 0; }
-
-/* ── ARCHETYPE CARD ── */
-.archetype-card {
-  background: linear-gradient(135deg, rgba(201,168,76,0.08) 0%, rgba(100,60,160,0.08) 100%);
-  border: 1px solid rgba(201,168,76,0.30);
-  border-radius: 16px;
-  padding: 30px 26px;
-  margin: 8px 0 16px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-.archetype-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse 70% 60% at 50% 30%, rgba(201,168,76,0.06) 0%, transparent 70%);
-  pointer-events: none;
-}
-.archetype-ornament {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.4rem;
-  color: rgba(201,168,76,0.45);
-  margin-bottom: 14px;
-  letter-spacing: 0.2em;
-}
-.archetype-name {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.45rem;
-  font-weight: 300;
-  font-style: italic;
-  color: rgba(201,168,76,0.92);
-  letter-spacing: 0.05em;
-  line-height: 1.3;
-  margin-bottom: 18px;
-}
-.archetype-body {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 0.97rem;
-  font-weight: 300;
-  line-height: 1.85;
-  color: rgba(240,228,200,0.75);
-  max-width: 480px;
-  margin: 0 auto;
+.tarot-divider{width:40px;height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,76,0.35),transparent)}
+.tarot-body{
+  font-family:'Cormorant Garamond',serif;font-size:0.96rem;font-weight:300;font-style:italic;
+  line-height:1.78;color:rgba(240,228,200,0.72);max-width:240px;
 }
 
 /* ── POEM ── */
-.poem-wrap {
-  margin: 8px 0 16px;
-  padding: 28px 24px;
-  border-left: 2px solid rgba(201,168,76,0.25);
-  background: rgba(255,255,255,0.018);
-  border-radius: 0 10px 10px 0;
+.poem-outer{
+  margin:8px 0 16px;
+  opacity:0;transform:translateY(16px);transition:opacity 0.65s ease 0.1s,transform 0.65s ease 0.1s;
 }
-.poem-wrap p {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.05rem;
-  font-weight: 300;
-  font-style: italic;
-  line-height: 1.90;
-  color: rgba(240,228,200,0.82);
-  margin-bottom: 1.4em;
+.poem-outer.visible{opacity:1;transform:translateY(0)}
+.poem-byline{
+  text-align:center;font-size:0.44rem;letter-spacing:0.28em;text-transform:uppercase;
+  color:rgba(201,168,76,0.30);margin-bottom:24px;
 }
-.poem-wrap p:last-child {
-  margin-bottom: 0;
-  color: rgba(201,168,76,0.75);
+.poem-wrap{padding:0 8px}
+.poem-wrap p{
+  font-family:'Cormorant Garamond',serif;font-size:1.08rem;font-weight:300;font-style:italic;
+  line-height:2.0;color:rgba(240,228,200,0.80);
+  text-align:center;margin-bottom:1.6em;
 }
-
-/* ── THROUGH LINE ── */
-.throughline-card {
-  background: rgba(255,255,255,0.018);
-  border: 1px solid rgba(201,168,76,0.10);
-  border-radius: 12px;
-  padding: 24px 22px;
-  margin-bottom: 16px;
-}
-.throughline-card p {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.02rem;
-  font-weight: 300;
-  line-height: 1.85;
-  color: rgba(240,228,200,0.85);
-  margin-bottom: 1em;
-}
-.throughline-card p:last-child { margin-bottom: 0; }
+.poem-wrap p:last-child{margin-bottom:0;color:rgba(201,168,76,0.72);font-size:1.0rem}
 
 /* ── BOTTOM NAV ── */
-.app-nav {
-  flex-shrink: 0;
-  background: rgba(8,12,32,0.97);
-  border-top: 1px solid rgba(201,168,76,0.14);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  display: flex;
-  align-items: stretch;
-  padding-bottom: env(safe-area-inset-bottom);
-  height: calc(60px + env(safe-area-inset-bottom));
-  position: relative;
-  z-index: 50;
+.app-nav{
+  flex-shrink:0;background:rgba(6,10,26,0.97);
+  border-top:1px solid rgba(201,168,76,0.14);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  display:flex;align-items:stretch;
+  padding-bottom:env(safe-area-inset-bottom);
+  height:calc(60px + env(safe-area-inset-bottom));
+  position:relative;z-index:50;
 }
+.nav-tab{
+  flex:1;background:none;border:none;cursor:pointer;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:3px;padding:0 4px;
+  color:rgba(240,228,200,0.28);
+  transition:color 0.2s;
+  touch-action:manipulation;-webkit-tap-highlight-color:transparent;
+  min-height:44px;position:relative;
+}
+.nav-tab.active{color:rgba(201,168,76,0.92)}
+.nav-tab.active::before{
+  content:'';position:absolute;top:6px;left:50%;transform:translateX(-50%);
+  width:4px;height:4px;border-radius:50%;
+  background:rgba(201,168,76,0.80);
+}
+.nav-tab:active{opacity:0.70}
+.nav-icon{
+  font-family:'Apple Symbols','Segoe UI Symbol','Noto Sans Symbols',serif;
+  font-variant-emoji:text;font-size:18px;line-height:1;
+}
+.nav-icon-t{font-family:'Cormorant Garamond',serif;font-size:18px;line-height:1}
+.nav-label{font-size:0.44rem;letter-spacing:0.12em;text-transform:uppercase;font-family:'Inter',sans-serif;font-weight:400;line-height:1}
 
-.nav-tab {
-  flex: 1;
-  background: none;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 3px;
-  padding: 0 4px;
-  color: rgba(240,228,200,0.30);
-  transition: color 0.2s;
-  touch-action: manipulation;
-  -webkit-tap-highlight-color: transparent;
-  min-height: 44px;
+/* ── KEY DRAWER ── */
+.key-dimmer{position:fixed;inset:0;z-index:498;background:rgba(8,22,46,0.40);opacity:0;pointer-events:none;transition:opacity 0.32s ease}
+.key-dimmer.open{opacity:1;pointer-events:auto}
+.key-overlay{
+  position:fixed;top:0;right:0;bottom:0;width:min(380px,92vw);z-index:500;
+  background:linear-gradient(180deg,#0e1436 0%,#09102a 60%);
+  border-left:1px solid rgba(201,168,76,0.20);
+  box-shadow:-8px 0 48px rgba(0,0,0,0.60);
+  overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior-y:contain;
+  transform:translateX(100%);transition:transform 0.34s cubic-bezier(0.32,0,0.18,1);will-change:transform;
 }
-.nav-tab.active { color: rgba(201,168,76,0.92); }
-.nav-tab:active { opacity: 0.75; }
+.key-overlay.open{transform:translateX(0)}
+.key-header{
+  position:sticky;top:0;z-index:2;display:flex;align-items:center;justify-content:space-between;
+  padding:20px 22px 16px;background:rgba(8,12,32,0.96);
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  border-bottom:1px solid rgba(201,168,76,0.12);
+}
+.key-title{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:300;color:rgba(201,168,76,0.90);letter-spacing:0.08em}
+.key-close{
+  background:none;border:none;color:rgba(240,228,200,0.45);font-size:1.4rem;cursor:pointer;
+  font-family:'Cormorant Garamond',serif;min-width:44px;min-height:44px;
+  display:flex;align-items:center;justify-content:center;
+  touch-action:manipulation;-webkit-tap-highlight-color:transparent;transition:color 0.15s;
+}
+.key-close:hover{color:rgba(240,228,200,0.88)}
+.key-content{padding:22px 18px;padding-bottom:max(48px,calc(env(safe-area-inset-bottom) + 24px))}
+.key-section{margin-bottom:26px}
+.key-sh{font-size:0.55rem;letter-spacing:0.26em;text-transform:uppercase;color:rgba(201,168,76,0.48);margin-bottom:11px;padding-bottom:7px;border-bottom:1px solid rgba(201,168,76,0.10)}
+.key-grid{display:grid;gap:6px 5px}
+.g6,.g4{grid-template-columns:repeat(2,1fr)}
+.g3{grid-template-columns:1fr}
+.ki{display:flex;align-items:center;gap:8px;padding:7px 9px;background:rgba(240,228,200,0.025);border:1px solid rgba(201,168,76,0.08);border-radius:6px}
+.ki-gl{font-size:15px;font-family:'Apple Symbols','Segoe UI Symbol','Noto Sans Symbols',serif;flex-shrink:0;line-height:1;font-variant-emoji:text}
+.ki-name{font-size:0.67rem;font-family:'Cormorant Garamond',serif;color:rgba(240,228,200,0.80);display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ki-note{font-size:0.53rem;font-family:'Inter',sans-serif;color:rgba(240,228,200,0.32);letter-spacing:0.05em;display:block;margin-top:1px}
+.ki-sw{width:10px;height:10px;border-radius:50%;flex-shrink:0}
 
-.nav-icon {
-  font-family: 'Apple Symbols','Segoe UI Symbol','Noto Sans Symbols',serif;
-  font-variant-emoji: text;
-  font-size: 17px;
-  line-height: 1;
+/* ── DESKTOP ── */
+@media(min-width:769px){
+  .reading-inner{padding:36px 32px 90px}
+  .sec-body p,.dive-content p{font-size:1.08rem}
+  .chart-wrap{width:min(calc(100dvh - 180px),calc(100dvw - 120px));height:min(calc(100dvh - 180px),calc(100dvw - 120px))}
 }
-.nav-icon-text {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 17px;
-  line-height: 1;
-}
-.nav-label {
-  font-size: 0.47rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  font-family: 'Inter', sans-serif;
-  font-weight: 400;
-  line-height: 1;
-}
-
-/* ── KEY DRAWER SYSTEM ── */
-.key-dimmer {
-  position: fixed; inset: 0; z-index: 498;
-  background: rgba(8,22,46,0.35);
-  opacity: 0; pointer-events: none;
-  transition: opacity 0.32s ease;
-}
-.key-dimmer.open { opacity: 1; pointer-events: auto; }
-
-.key-overlay {
-  position: fixed;
-  top: 0; right: 0; bottom: 0;
-  width: min(380px, 92vw);
-  z-index: 500;
-  background: linear-gradient(180deg, #0e1436 0%, #09102a 60%);
-  border-left: 1px solid rgba(201,168,76,0.20);
-  box-shadow: -8px 0 48px rgba(0,0,0,0.60);
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-  overscroll-behavior-y: contain;
-  padding: 0;
-  transform: translateX(100%);
-  transition: transform 0.34s cubic-bezier(0.32,0,0.18,1);
-  will-change: transform;
-}
-.key-overlay.open { transform: translateX(0); }
-
-.key-header {
-  position: sticky; top: 0; z-index: 2;
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 20px 22px 16px;
-  background: rgba(8,12,32,0.96);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border-bottom: 1px solid rgba(201,168,76,0.12);
-}
-.key-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.25rem; font-weight: 300;
-  color: rgba(201,168,76,0.90);
-  letter-spacing: 0.08em;
-}
-.key-close {
-  background: none; border: none;
-  color: rgba(240,228,200,0.45);
-  font-size: 1.4rem; cursor: pointer;
-  font-family: 'Cormorant Garamond', serif;
-  min-width: 44px; min-height: 44px;
-  display: flex; align-items: center; justify-content: center;
-  touch-action: manipulation;
-  -webkit-tap-highlight-color: transparent;
-}
-.key-close:hover { color: rgba(240,228,200,0.88); }
-
-.key-content {
-  padding: 22px 18px;
-  padding-bottom: max(48px, calc(env(safe-area-inset-bottom) + 24px));
-}
-.key-section { margin-bottom: 26px; }
-.key-sh {
-  font-size: 0.55rem; letter-spacing: 0.26em;
-  text-transform: uppercase;
-  color: rgba(201,168,76,0.48);
-  margin-bottom: 11px;
-  padding-bottom: 7px;
-  border-bottom: 1px solid rgba(201,168,76,0.10);
-}
-.key-grid { display: grid; gap: 6px 5px; }
-.g6, .g4 { grid-template-columns: repeat(2,1fr); }
-.g3 { grid-template-columns: 1fr; }
-.ki {
-  display: flex; align-items: center; gap: 8px;
-  padding: 7px 9px;
-  background: rgba(240,228,200,0.025);
-  border: 1px solid rgba(201,168,76,0.08);
-  border-radius: 6px;
-}
-.ki-gl {
-  font-size: 15px;
-  font-family: 'Apple Symbols','Segoe UI Symbol','Noto Sans Symbols',serif;
-  flex-shrink: 0; line-height: 1;
-  font-variant-emoji: text;
-}
-.ki-name {
-  font-size: 0.67rem;
-  font-family: 'Cormorant Garamond', serif;
-  color: rgba(240,228,200,0.80);
-  display: block;
-  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-}
-.ki-note {
-  font-size: 0.53rem;
-  font-family: 'Inter', sans-serif;
-  color: rgba(240,228,200,0.32);
-  letter-spacing: 0.05em;
-  display: block; margin-top: 1px;
-}
-.ki-sw { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
-
-/* ── DESKTOP ADJUSTMENTS ── */
-@media (min-width: 769px) {
-  .reading-inner { padding: 36px 32px 80px; }
-  .read-card p { font-size: 1.08rem; }
-  .chart-wrap {
-    width: min(calc(100dvh - 160px), calc(100dvw - 120px));
-    height: min(calc(100dvh - 160px), calc(100dvw - 120px));
-  }
-}
-
-@media (max-width: 380px) {
-  .nav-label { display: none; }
-  .app-nav { height: calc(52px + env(safe-area-inset-bottom)); }
-  .read-card { padding: 18px 16px 16px; }
-  .reading-inner { padding: 20px 14px 70px; }
+@media(max-width:380px){
+  .nav-label{display:none}
+  .reading-inner{padding:20px 14px 80px}
+  .sec-head{padding:14px 14px 12px}
+  .sec-body{padding:14px 14px 16px}
+  .kw-row{padding:9px 14px}
 }
 </style>
 </head>
 <body>
-
 <div class="app">
 
-  <!-- ── HEADER ── -->
-  <header class="app-header">
-    <div class="header-info">
-      <div class="header-name">born into the threshold</div>
-      <div class="header-meta">Nov 23, 1993 &nbsp;·&nbsp; 6:36 PM PST &nbsp;·&nbsp; Palo Alto &nbsp;·&nbsp; Placidus</div>
+<!-- HEADER -->
+<header class="app-header">
+  <div class="header-left">
+    <div class="header-eyebrow">natal chart · jordan ashley barney</div>
+    <div class="header-name">born into the threshold</div>
+    <div class="header-meta">Nov 23 1993 &nbsp;·&nbsp; 6:36 PM PST &nbsp;·&nbsp; Palo Alto &nbsp;·&nbsp; Placidus</div>
+  </div>
+  <button class="key-btn" id="keyBtn" title="Open Chart Key">✦</button>
+</header>
+
+<div class="app-body">
+
+<!-- ══ PANEL 1 — CHART ══════════════════════════════════════════════════════ -->
+<div class="panel" id="panel-chart">
+
+  <!-- Sacred geometry background for chart panel -->
+  <svg class="geo-bg" viewBox="0 0 375 700" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <polygon points="188,18 318,80 355,230 300,400 188,450 76,400 20,230 57,80" fill="none" stroke="rgba(201,168,76,0.09)" stroke-width="0.7"/>
+    <polygon points="188,72 280,130 308,240 258,340 188,365 118,340 68,240 96,130" fill="none" stroke="rgba(201,168,76,0.06)" stroke-width="0.5"/>
+    <line x1="188" y1="18" x2="188" y2="450" stroke="rgba(201,168,76,0.05)" stroke-width="0.4"/>
+    <line x1="20" y1="230" x2="355" y2="230" stroke="rgba(201,168,76,0.05)" stroke-width="0.4"/>
+    <line x1="57" y1="80" x2="300" y2="400" stroke="rgba(201,168,76,0.04)" stroke-width="0.3"/>
+    <line x1="318" y1="80" x2="76" y2="400" stroke="rgba(201,168,76,0.04)" stroke-width="0.3"/>
+    <circle cx="188" cy="18" r="2.2" fill="rgba(201,168,76,0.40)"/>
+    <circle cx="318" cy="80" r="1.6" fill="rgba(201,168,76,0.28)"/>
+    <circle cx="355" cy="230" r="1.4" fill="rgba(201,168,76,0.22)"/>
+    <circle cx="300" cy="400" r="1.6" fill="rgba(201,168,76,0.25)"/>
+    <circle cx="188" cy="450" r="2.0" fill="rgba(201,168,76,0.32)"/>
+    <circle cx="76" cy="400" r="1.6" fill="rgba(201,168,76,0.25)"/>
+    <circle cx="20" cy="230" r="1.4" fill="rgba(201,168,76,0.22)"/>
+    <circle cx="57" cy="80" r="1.6" fill="rgba(201,168,76,0.28)"/>
+    <circle cx="188" cy="230" r="2.5" fill="rgba(201,168,76,0.22)"/>
+    <circle cx="65" cy="155" r="0.9" fill="rgba(201,168,76,0.18)"/>
+    <circle cx="310" cy="155" r="0.9" fill="rgba(201,168,76,0.16)"/>
+    <circle cx="320" cy="310" r="0.8" fill="rgba(201,168,76,0.15)"/>
+    <circle cx="55" cy="310" r="0.8" fill="rgba(201,168,76,0.15)"/>
+  </svg>
+
+  <div class="chart-wrap">
+    <svg id="chart-svg" viewBox="-22 -22 764 764" xmlns="http://www.w3.org/2000/svg" style="overflow:visible"></svg>
+  </div>
+
+  <!-- Big Three strip -->
+  <div class="big-three">
+    <div class="big-three-card">
+      <div class="b3-role">Sun</div>
+      <div class="b3-glyph">☉</div>
+      <div class="b3-deg">1°50'</div>
+      <div class="b3-sign">Sagittarius · H6</div>
     </div>
-    <button class="key-btn" id="keyBtn" title="Open Chart Key">✦</button>
-  </header>
+    <div class="big-three-card">
+      <div class="b3-role">Moon</div>
+      <div class="b3-glyph">☽</div>
+      <div class="b3-deg">4°59'</div>
+      <div class="b3-sign">Aries · H10</div>
+    </div>
+    <div class="big-three-card">
+      <div class="b3-role">Rising</div>
+      <div class="b3-glyph">♊</div>
+      <div class="b3-deg">29°22'</div>
+      <div class="b3-sign">Gemini · Anaretic</div>
+    </div>
+  </div>
 
-  <!-- ── PANELS ── -->
-  <div class="app-body">
+</div><!-- /panel-chart -->
 
-    <!-- PANEL 1 — CHART ── -->
-    <div class="panel" id="panel-chart">
-      <div class="chart-wrap">
-        <svg id="chart-svg" viewBox="-22 -22 764 764" xmlns="http://www.w3.org/2000/svg" style="overflow:visible"></svg>
+<!-- ══ PANEL 2 — IDENTITY ════════════════════════════════════════════════════ -->
+<div class="panel reading-panel" id="panel-identity">
+
+  <svg class="geo-bg" viewBox="0 0 375 812" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <polygon points="188,30 320,110 362,310 295,540 188,590 81,540 13,310 56,110" fill="none" stroke="rgba(201,168,76,0.07)" stroke-width="0.6"/>
+    <polygon points="188,100 278,175 305,310 258,440 188,465 118,440 71,310 98,175" fill="none" stroke="rgba(201,168,76,0.05)" stroke-width="0.4"/>
+    <line x1="56" y1="110" x2="295" y2="540" stroke="rgba(201,168,76,0.04)" stroke-width="0.35"/>
+    <line x1="320" y1="110" x2="81" y2="540" stroke="rgba(201,168,76,0.04)" stroke-width="0.35"/>
+    <line x1="188" y1="30" x2="188" y2="590" stroke="rgba(201,168,76,0.035)" stroke-width="0.3"/>
+    <circle cx="188" cy="30" r="2.0" fill="rgba(201,168,76,0.35)"/>
+    <circle cx="320" cy="110" r="1.4" fill="rgba(201,168,76,0.24)"/>
+    <circle cx="362" cy="310" r="1.2" fill="rgba(201,168,76,0.18)"/>
+    <circle cx="295" cy="540" r="1.4" fill="rgba(201,168,76,0.22)"/>
+    <circle cx="188" cy="590" r="1.8" fill="rgba(201,168,76,0.28)"/>
+    <circle cx="81" cy="540" r="1.4" fill="rgba(201,168,76,0.22)"/>
+    <circle cx="13" cy="310" r="1.2" fill="rgba(201,168,76,0.18)"/>
+    <circle cx="56" cy="110" r="1.4" fill="rgba(201,168,76,0.24)"/>
+    <!-- Stars scattered in lower half for long panel -->
+    <circle cx="40" cy="650" r="0.8" fill="rgba(201,168,76,0.14)"/>
+    <circle cx="330" cy="680" r="0.7" fill="rgba(201,168,76,0.12)"/>
+    <circle cx="200" cy="720" r="0.9" fill="rgba(201,168,76,0.16)"/>
+    <line x1="13" y1="310" x2="362" y2="310" stroke="rgba(201,168,76,0.04)" stroke-width="0.3"/>
+  </svg>
+
+  <div class="reading-inner">
+
+    <div class="panel-heading">
+      <div class="panel-eyebrow-sm">natal reading</div>
+      <div class="panel-title-lg">The Essential Signature</div>
+    </div>
+
+    <div class="sec-card">
+      <div class="sec-head">
+        <div class="sec-sign-glyph">✦</div>
+        <div class="sec-meta">
+          <div class="sec-eyebrow">NATAL OVERVIEW · GEMINI ASC · SAGITTARIUS SUN · PISCES MC</div>
+          <div class="sec-title">Before the planets</div>
+          <div class="sec-tagline">a chart built at the edge of forms</div>
+        </div>
+      </div>
+      <div class="kw-row">
+        <span class="kw">THRESHOLD</span><span class="kw">ANARETIC ASC</span><span class="kw">SAG SUN</span><span class="kw">PISCES MC</span>
+      </div>
+      <div class="sec-body">
+        <p>Before the planets and before the houses, there is a tone. Jordan's chart is built at the edge of forms. The Gemini Ascendant at 29°22' is the anaretic degree, the last breath of a sign before it transforms. The Sagittarius Sun is at 1°50', among the first degrees of its sign. The Pisces Midheaven dissolves the public identity before it can calcify. Chiron sits 0.2° past the IC, literally at the root. Nothing here is fixed. Nothing is supposed to be.</p>
+        <p>This is a specific kind of precision: the kind that sees the seam between things, that lives in the transitional space because that is where the real work is. Not instability. The threshold is the position.</p>
       </div>
     </div>
 
-    <!-- PANEL 2 — IDENTITY ── -->
-    <div class="panel reading-panel" id="panel-identity">
-      <div class="reading-inner">
+    <div class="sep"><span class="sep-inner">Ascendant</span></div>
 
-        <div class="panel-heading">
-          <div class="panel-eyebrow">natal reading</div>
-          <div class="panel-title">The Essential Signature</div>
+    <div class="sec-card">
+      <div class="sec-head">
+        <div class="sec-sign-glyph">♊</div>
+        <div class="sec-meta">
+          <div class="sec-eyebrow">ASCENDANT · GEMINI 29°22' · ANARETIC DEGREE · 1ST HOUSE</div>
+          <div class="sec-title">The Threshold Gemini</div>
+          <div class="sec-tagline">29°22' · concentrated weight of the sign's question</div>
         </div>
-
-        <div class="planet-strip">
-          <div class="planet-pill"><span class="pglyph">♊</span>ASC 29°22'</div>
-          <div class="planet-pill"><span class="pglyph">☉</span>Sag 1°50'</div>
-          <div class="planet-pill"><span class="pglyph">☊</span>NNode 3°03'</div>
-          <div class="planet-pill"><span class="pglyph">♂</span>Sag 10°46'</div>
-          <div class="planet-pill"><span class="pglyph">☽</span>Aries 4°59'</div>
-        </div>
-
-        <div class="read-card">
-          <div class="card-label">
-            <span class="card-label-glyph">✦</span>
-            The Essential Signature
-          </div>
-          <p>Before the planets and before the houses, there is a tone. Jordan's chart is built at the edge of forms. The Gemini Ascendant at 29°22' is the anaretic degree, the last breath of a sign before it transforms. The Sagittarius Sun is at 1°50', among the first degrees of its sign. The Pisces Midheaven dissolves the public identity before it can calcify. Chiron sits 0.2° past the IC, literally at the root. Nothing here is fixed. Nothing is supposed to be.</p>
-          <p>This is a specific kind of precision: the kind that sees the seam between things, that lives in the transitional space because that is where the real work is. Not instability. The threshold is the position.</p>
-        </div>
-
-        <div class="section-divider"><span class="section-divider-text">Ascendant</span></div>
-
-        <div class="read-card">
-          <div class="card-label">
-            <span class="card-label-glyph">♊</span>
-            The Threshold Gemini
-            <span class="card-hint">Gemini 29°22' · 1st house</span>
-          </div>
-          <p>The anaretic Ascendant means Jordan meets the world carrying the full concentrated weight of Gemini's question: <em>who is speaking right now?</em> Not a casual question. The 29th degree has cycled through everything the sign offers. The social fluency, the shape-shifting, the ability to speak in anyone's register. And underneath: the tiredness of not always knowing which voice is the original one.</p>
-          <p>The South Node at 3°03' Gemini is in the 12th house, sitting just behind the Ascendant in the house of what runs below awareness. The adaptation pattern is not conscious. It was learned before it could be examined. What Jordan presents at the Gemini threshold has been calibrated, and usually well, and sometimes before she noticed she was doing it.</p>
-          <p>The work of this chart is to let the Sagittarius self be the one who shows up at the Gemini door.</p>
-        </div>
-
-        <div class="section-divider"><span class="section-divider-text">Sun · North Node · Mars</span></div>
-
-        <div class="read-card">
-          <div class="card-label">
-            <span class="card-label-glyph">☉</span>
-            The Sagittarius Soul
-            <span class="card-hint">Sun conj NNode · 6th house</span>
-          </div>
-          <p>The Sun and North Node are 1.2° apart. The core identity and the soul's direction are the same instrument. There is no separate purpose to locate.</p>
-          <p>The Sun is in the 6th house. Not the 1st house of performance, not the 9th house of philosophy, not the 10th house of visibility. The 6th house of daily work, craft, health, and the body in motion. The Sagittarius 6th says: the teaching is the practice, the knowing is the doing, the fire is in the routine. The soul purpose is not somewhere ahead. It is in the thing Jordan shows up and does.</p>
-          <p>The North Node here is directional: the task is to move toward the Sun's natural mode (direct, embodied, knowing, honest) and away from the South Node default (adaptive, shape-shifting, performing competence over expressing it). The direction is the self, already operating.</p>
-        </div>
-
-        <button class="dive-toggle" aria-expanded="false" onclick="toggleDive(this)">
-          <div class="dive-header">
-            <div class="dive-label">
-              <span class="card-label-glyph">♂</span>
-              Mars in Sagittarius
-            </div>
-            <span class="dive-arrow">▾</span>
-          </div>
-        </button>
-        <div class="dive-body">
-          <div class="dive-content">
-            <p>Mars is in the same house, wider: 8.9° from the Sun, 7.7° from the North Node. The drive and the soul path are allies, not the same organ. Mars in Sagittarius in the 6th needs forward motion and meaning. It channels into craft, into physical output, into the work itself. When the work is meaningful, Mars runs clean. When the work loses meaning, the body signals first.</p>
-          </div>
-        </div>
-
-        <div class="section-divider"><span class="section-divider-text">Moon · Lilith · 10th House</span></div>
-
-        <div class="read-card">
-          <div class="card-label">
-            <span class="card-label-glyph">☽</span>
-            The 10th House as One Organ
-            <span class="card-hint">Aries 4°59' · 10th house</span>
-          </div>
-          <p>The Moon in Aries in the 10th house means Jordan's emotional life and professional life are not two separate systems. They run on the same circuit. What happens at work lands in the body. What is unresolved in the emotional field shows up in the quality of the work.</p>
-          <p>The 10th house holds both the career and the public identity. Having the Moon there means neither is emotionally neutral. Recognition matters. Visibility matters. Being seen as capable and in motion is not vanity; it is a genuine emotional need written into the chart's architecture. The inner critic that activates under Saturn transits is loudest in the space where career and feeling meet, because there is only one space.</p>
-          <p>When work is stalled, the emotional field goes grey and tight. When it moves — the walking pad, the writing, the strategy — the Moon settles. The Aries recovery is faster than it appears from outside.</p>
-        </div>
-
-        <button class="dive-toggle" aria-expanded="false" onclick="toggleDive(this)">
-          <div class="dive-header">
-            <div class="dive-label">
-              <span class="card-label-glyph">♈</span>
-              Black Moon Lilith
-            </div>
-            <span class="dive-arrow">▾</span>
-          </div>
-        </button>
-        <div class="dive-body">
-          <div class="dive-content">
-            <p>Lilith in Aries in the 11th house (Mean, 15°07') is the undomesticated nature in the domain of community, networks, technology, and collective belonging. Jordan does not soften herself into groups. The #astroflow-weekly channel, the app build, the transit library: all 11th house, all Lilith. The refusal to perform palatability for community acceptance is not a wound or a defense. It is this placement, doing its job.</p>
-            <p>True Lilith at 9°49' Aries is in the 10th, 4°50' from the Moon. That proximity means the raw, unedited self is not separate from the professional-emotional circuit. It does not stay behind the scenes. It shows up in the room.</p>
-          </div>
-        </div>
-
       </div>
-    </div><!-- end panel-identity -->
-
-    <!-- PANEL 3 — DEPTH ── -->
-    <div class="panel reading-panel" id="panel-depth">
-      <div class="reading-inner">
-
-        <div class="panel-heading">
-          <div class="panel-eyebrow">inner life</div>
-          <div class="panel-title">The Scorpio Field</div>
-        </div>
-
-        <div class="planet-strip">
-          <div class="planet-pill"><span class="pglyph">☿</span>Scorpio 12°17'</div>
-          <div class="planet-pill"><span class="pglyph">♀</span>Scorpio 18°50'</div>
-          <div class="planet-pill"><span class="pglyph">♃</span>Scorpio 2°52'</div>
-          <div class="planet-pill"><span class="pglyph">♇</span>Scorpio 25°41'</div>
-          <div class="planet-pill"><span class="pglyph">♅</span>Cap 19°35'</div>
-          <div class="planet-pill"><span class="pglyph">♆</span>Cap 19°11'</div>
-        </div>
-
-        <div class="section-divider"><span class="section-divider-text">5th House Stellium</span></div>
-
-        <div class="read-card">
-          <div class="card-label">
-            <span class="card-label-glyph">♏</span>
-            The Scorpio Inner Life
-            <span class="card-hint">Mercury · Venus · Jupiter · 5th house</span>
-          </div>
-          <p>Three planets in Scorpio in the 5th house: creativity, romance, joy, the things done purely because they matter. The 5th house is where Jordan's most privately held life is. The work that is genuinely hers. The love that is fully meant. The passion projects with no performance layer.</p>
-          <p>The Scorpio stellium means nothing here is casual. Mercury in Scorpio reads beneath what is said, finds the thing being withheld, holds information the way Scorpio holds everything: completely, and for a long time. Venus in Scorpio loves with full presence or not at all. Jupiter in Scorpio expands by going deeper rather than wider, into the places most people avoid.</p>
-          <p>The 5th house in Libra cusp moving into Scorpio creates a specific tension: the door to this house looks diplomatic, balanced, social. What lives inside is Scorpio. The gap between how this part of Jordan presents to the world and what it actually contains is part of the chart's design. Joy here is not light. It is compressed, total, and real.</p>
-        </div>
-
-        <button class="dive-toggle" aria-expanded="false" onclick="toggleDive(this)">
-          <div class="dive-header">
-            <div class="dive-label">
-              <span class="card-label-glyph">♇</span>
-              Pluto in the 6th House
-            </div>
-            <span class="dive-arrow">▾</span>
-          </div>
-        </button>
-        <div class="dive-body">
-          <div class="dive-content">
-            <p>Pluto has crossed the 6th house cusp at Scorpio 22°07'. The most transformative force in the chart is not confined to the creative and romantic realm. It is in the house of daily work and craft.</p>
-            <p>This means the writing carries Pluto's weight. The astrological system, the AI tools, the transit library: not professional outputs. Transformation made operational. The 6th house is also the house of the body and health, and Pluto in the 6th adds the dimension of deep, biological change to Jordan's relationship with her physical life. What the body goes through is never just physical. It is the transformation that the conscious self has not yet named.</p>
-          </div>
-        </div>
-
-        <div class="section-divider"><span class="section-divider-text">7th House Architecture</span></div>
-
-        <div class="read-card">
-          <div class="card-label">
-            <span class="card-label-glyph">♅</span>
-            The Partnership Field
-            <span class="card-hint">Uranus conj Neptune · 0.4° · 7th house</span>
-          </div>
-          <p>Uranus and Neptune are 0.4° apart, a near-exact generational conjunction. Both are in Jordan's 7th house of partnership, collaboration, and one-on-one relationship. This is natal architecture: disruption and dissolution are not things that happen to Jordan's relationships. They are built into how the relational field is wired.</p>
-          <p>The idealization risk is Neptune. The sudden-disconnection pattern is Uranus. They are not problems to solve; they are the texture of the 7th house as Jordan experiences it. Partnerships feel fated. They can also end with an abruptness Uranus has no apology for. Or a person can dissolve, Neptune-style, becoming harder to hold the longer the relationship continues.</p>
-          <p>The Capricorn placement grounds this somewhat: the 7th house disruption runs through the register of structure, achievement, and long-term investment. The relationships that pull hardest at Jordan are ones with Capricornian stakes: career adjacency, shared ambition, the sense that something real is being built together.</p>
-        </div>
-
-        <button class="dive-toggle" aria-expanded="false" onclick="toggleDive(this)">
-          <div class="dive-header">
-            <div class="dive-label">
-              <span class="card-label-glyph">♑</span>
-              The Descendant at 29° Sagittarius
-            </div>
-            <span class="dive-arrow">▾</span>
-          </div>
-        </button>
-        <div class="dive-body">
-          <div class="dive-content">
-            <p>The South Node mirroring pattern (Gemini, 12th house) feeds directly into the 7th house. The unconscious adaptation shapes who arrives at the Descendant before the question of compatibility is asked. The North Node Sun in the 6th is the corrective: the daily-life self, operating without the mirror, draws different people.</p>
-            <p>The Sagittarius DSC at 29°22' mirrors the anaretic Ascendant exactly. The partnership threshold carries the same concentrated urgency as the identity threshold. Both are at the last degree, both pressing toward something not yet fully crossed.</p>
-          </div>
-        </div>
-
+      <div class="kw-row">
+        <span class="kw">29TH DEGREE</span><span class="kw">ANARETIC</span><span class="kw">SHAPE-SHIFTER</span><span class="kw">SOUTH NODE 12TH</span>
       </div>
-    </div><!-- end panel-depth -->
-
-    <!-- PANEL 4 — ROOTS ── -->
-    <div class="panel reading-panel" id="panel-roots">
-      <div class="reading-inner">
-
-        <div class="panel-heading">
-          <div class="panel-eyebrow">foundation</div>
-          <div class="panel-title">The Root System</div>
-        </div>
-
-        <div class="planet-strip">
-          <div class="planet-pill"><span class="pglyph">⚷</span>Virgo 8°29'</div>
-          <div class="planet-pill"><span class="pglyph">♄</span>Aquarius 24°15'</div>
-          <div class="planet-pill"><span class="pglyph">⊕</span>Fortune 26°13'</div>
-          <div class="planet-pill"><span class="pglyph">♓</span>MC 8°17'</div>
-        </div>
-
-        <div class="section-divider"><span class="section-divider-text">Chiron · IC · 4th House</span></div>
-
-        <div class="read-card">
-          <div class="card-label">
-            <span class="card-label-glyph">⚷</span>
-            The Wound and the Foundation
-            <span class="card-hint">Virgo 8°29' · 0.2° past IC</span>
-          </div>
-          <p>Chiron is 0.2° past the IC. The wound is at the literal root of the chart: the 4th house of home, body, private self, and what was inherited from the earliest conditions of life.</p>
-          <p>The 4th house is the most private part of the chart. Planets here are not on display. They operate in the interior, in what is felt but not always spoken, in the physical body, in the home, in the sleep. Chiron here means the wound does not announce itself. It lives in the body before it appears in the mind.</p>
-          <p>Virgo Chiron: the wound is perfectionism. The question of enough-ness. The body as the site of judgment. <em>Am I doing this correctly. Is this good enough. Would a person without this wound have done better.</em> This question is not always triggered by an event. Sometimes it is just the private weather, running at low volume below everything else.</p>
-          <p>The IC/MC axis is Virgo-Pisces. The wound at the IC, held in precision and self-critique, becomes the Pisces public identity at the MC: the one that dissolves the fixed form, sees beneath the surface, offers something harder to categorize than to recognize when you're inside it. The wound and the vocation are on the same axis. They were always the same thing.</p>
-        </div>
-
-        <div class="section-divider"><span class="section-divider-text">Saturn · Lot of Fortune · 9th House</span></div>
-
-        <div class="read-card">
-          <div class="card-label">
-            <span class="card-label-glyph">♄</span>
-            Structure and Fortune
-            <span class="card-hint">Saturn conj Fortune · 1°58' · 9th house</span>
-          </div>
-          <p>The Lot of Fortune is 1°58' from natal Saturn. Fortune and discipline are conjunct.</p>
-          <p>The 9th house is belief systems, worldview, long-form learning, teaching, and the vision of life that makes sustained effort feel worth it. Saturn in the 9th means structure that requires philosophical grounding to function. Arbitrary constraint produces freeze. Rules disconnected from meaning produce resistance. But when Jordan understands why something matters — its place in the larger architecture she is building — Saturn does its best work.</p>
-          <p>The Lot of Fortune living here says: the abundance comes through the thing built over time, the thing with philosophical stakes, the thing that has meaning before it has money. What Jordan builds for more than herself — the astrology system, the subscription app, the work that teaches — is where the Fortune point operates.</p>
-          <p>Saturn at 24°15' is a late degree. Late-degree placements carry the urgency of completion: the work of the sign is done, the time is now to transmit it. The 9th house Aquarius Saturn wants to build systems that outlast the individual effort.</p>
-        </div>
-
-        <div class="section-divider"><span class="section-divider-text">MC · 10th House</span></div>
-
-        <div class="read-card">
-          <div class="card-label">
-            <span class="card-label-glyph">♓</span>
-            The Public Identity
-            <span class="card-hint">Pisces 8°17' · Midheaven</span>
-          </div>
-          <p>The Pisces MC means the public identity will not stay fixed. What Jordan is known for keeps evolving. The career container keeps changing shape. This is the Pisces MC's natural mode, not a problem with focus.</p>
-          <p>The 10th house at Pisces holds the Moon and the Midheaven both — career, emotional life, and public identity all operating in Pisces' register: porous, spiritually attuned, resistant to a single form. What people receive from Jordan is harder to categorize than to recognize when they encounter it. That is by design.</p>
-          <p>The wound at the IC (Virgo, precision, enough-ness) arrives at the MC as Pisces: as the willingness to dissolve the form, as the vocation that knows what lives beneath the surface, as the career that keeps refusing to be just one thing. The axis holds both. The precision at the root becomes porousness at the peak.</p>
-        </div>
-
+      <div class="sec-body">
+        <p>The anaretic Ascendant means Jordan meets the world carrying the full concentrated weight of Gemini's question: <em>who is speaking right now?</em> Not a casual question. The 29th degree has cycled through everything the sign offers. The social fluency, the shape-shifting, the ability to speak in anyone's register. And underneath: the tiredness of not always knowing which voice is the original one.</p>
+        <p>The South Node at 3°03' Gemini is in the 12th house, sitting just behind the Ascendant in the house of what runs below awareness. The adaptation pattern is not conscious. It was learned before it could be examined.</p>
+        <p>The work of this chart is to let the Sagittarius self be the one who shows up at the Gemini door.</p>
       </div>
-    </div><!-- end panel-roots -->
+    </div>
 
-    <!-- PANEL 5 — SOUL ── -->
-    <div class="panel reading-panel" id="panel-soul">
-      <div class="reading-inner">
+    <div class="sep"><span class="sep-inner">Sun · North Node · Mars</span></div>
 
-        <div class="panel-heading">
-          <div class="panel-eyebrow">the through-line</div>
-          <div class="panel-title">The Cartographer at the Seam</div>
+    <div class="sec-card">
+      <div class="sec-head">
+        <div class="sec-sign-glyph">♐</div>
+        <div class="sec-meta">
+          <div class="sec-eyebrow">SUN · SAGITTARIUS 1°50' · 6TH HOUSE · CONJUNCT NORTH NODE 1.2°</div>
+          <div class="sec-title">The Sagittarius Soul</div>
+          <div class="sec-tagline">soul path and identity are the same instrument</div>
         </div>
-
-        <div class="throughline-card">
-          <p>The Gemini-Sagittarius line runs through everything: from the unconscious mirroring habit (South Node, 12th house) through the concentrated identity threshold (Ascendant, 29° Gemini) to the soul purpose fused with daily work (Sun conjunct North Node, 6th house Sagittarius).</p>
-          <p>The 5th house Scorpio depth is the fuel. The 6th house is where it operates. The Pisces MC is what it looks like from the outside: not a fixed shape, but a recognizable presence.</p>
-          <p>Chiron at the IC says the wound is the instrument. Pluto in the 6th says the transformation is in the work. Saturn conjunct Fortune in the 9th says the abundance is in the long, philosophically grounded build.</p>
-          <p>The chart is not asking Jordan to become something she is not. It never was.</p>
-        </div>
-
-        <div class="section-divider"><span class="section-divider-text">Archetype</span></div>
-
-        <div class="archetype-card">
-          <div class="archetype-ornament">✦ ✧ ✦</div>
-          <div class="archetype-name">The Cartographer at the Seam</div>
-          <div class="archetype-body">Someone who stands where the visible meets the invisible, who maps the territory not from a safe distance but from inside it. The wound shows where the seam is. The daily work makes it legible. The Fortune point lives in the long tradition of this labor.</div>
-        </div>
-
-        <div class="section-divider"><span class="section-divider-text">Poem</span></div>
-
-        <div class="poem-wrap">
-          <p>The threshold you were born at is still the one you stand on.<br>
-          The voice has always known the shape of the room<br>
-          before the door opens.</p>
-
-          <p>Beneath the fluency, something heavier is awake.<br>
-          It knows what it wants.<br>
-          It stays with things longer than anyone expects,<br>
-          turning them in the dark until they give.</p>
-
-          <p>The wound at the root keeps pointing.<br>
-          Here. This is where the seam is.<br>
-          You have learned to work the seam.</p>
-
-          <p>Abundance lives in the long build,<br>
-          the one that accumulates meaning before anything else.<br>
-          The daily practice holds the whole of it.<br>
-          The path does not arrive somewhere.<br>
-          It is already what you are walking.</p>
-
-          <p>What is the thing you are building<br>
-          that only the wound could have known to make?</p>
-        </div>
-
-        <div style="height:8px"></div>
-
       </div>
-    </div><!-- end panel-soul -->
+      <div class="kw-row">
+        <span class="kw">SOUL PATH</span><span class="kw">6TH HOUSE</span><span class="kw">DAILY WORK</span><span class="kw">NORTH NODE</span><span class="kw">FIRE</span>
+      </div>
+      <div class="sec-body">
+        <p>The Sun and North Node are 1.2° apart. The core identity and the soul's direction are the same instrument. There is no separate purpose to locate.</p>
+        <p>The Sun is in the 6th house. Not the 1st house of performance, not the 9th house of philosophy, not the 10th house of visibility. The 6th house of daily work, craft, health, and the body in motion. The Sagittarius 6th says: the teaching is the practice, the knowing is the doing, the fire is in the routine. The soul purpose is not somewhere ahead. It is in the thing Jordan shows up and does.</p>
+      </div>
+    </div>
 
-  </div><!-- end app-body -->
+    <div class="dive-wrap">
+      <button class="dive-toggle" aria-expanded="false" onclick="toggleDive(this)">
+        <div class="dive-hd">
+          <div class="dive-lbl"><span class="dive-lbl-glyph">♂</span>Mars in Sagittarius · 10°46' · 6th House</div>
+          <span class="dive-arrow">▾</span>
+        </div>
+      </button>
+      <div class="dive-body">
+        <div class="dive-content">
+          <p>Mars is in the same house, wider: 8.9° from the Sun, 7.7° from the North Node. The drive and the soul path are allies, not the same organ. Mars in Sagittarius in the 6th needs forward motion and meaning. It channels into craft, into physical output, into the work itself. When the work is meaningful, Mars runs clean. When the work loses meaning, the body signals first.</p>
+        </div>
+      </div>
+    </div>
 
-  <!-- ── BOTTOM NAV ── -->
-  <nav class="app-nav" role="navigation" aria-label="Chart sections">
-    <button class="nav-tab active" data-target="chart" onclick="switchPanel('chart',this)">
-      <span class="nav-icon-text">✦</span>
-      <span class="nav-label">Chart</span>
-    </button>
-    <button class="nav-tab" data-target="identity" onclick="switchPanel('identity',this)">
-      <span class="nav-icon">☉</span>
-      <span class="nav-label">Identity</span>
-    </button>
-    <button class="nav-tab" data-target="depth" onclick="switchPanel('depth',this)">
-      <span class="nav-icon">♏</span>
-      <span class="nav-label">Depth</span>
-    </button>
-    <button class="nav-tab" data-target="roots" onclick="switchPanel('roots',this)">
-      <span class="nav-icon">⚷</span>
-      <span class="nav-label">Roots</span>
-    </button>
-    <button class="nav-tab" data-target="soul" onclick="switchPanel('soul',this)">
-      <span class="nav-icon">☊</span>
-      <span class="nav-label">Soul</span>
-    </button>
-  </nav>
+    <div class="sep"><span class="sep-inner">Moon · Lilith · 10th House</span></div>
 
-</div><!-- end app -->
+    <div class="sec-card">
+      <div class="sec-head">
+        <div class="sec-sign-glyph">♈</div>
+        <div class="sec-meta">
+          <div class="sec-eyebrow">MOON · ARIES 4°59' · 10TH HOUSE · CAREER CIRCUIT</div>
+          <div class="sec-title">The 10th House as One Organ</div>
+          <div class="sec-tagline">feeling and work run on the same circuit</div>
+        </div>
+      </div>
+      <div class="kw-row">
+        <span class="kw">ARIES MOON</span><span class="kw">10TH HOUSE</span><span class="kw">CAREER-FEELING</span><span class="kw">RECOGNITION</span>
+      </div>
+      <div class="sec-body">
+        <p>The Moon in Aries in the 10th house means Jordan's emotional life and professional life are not two separate systems. They run on the same circuit. What happens at work lands in the body. What is unresolved in the emotional field shows up in the quality of the work.</p>
+        <p>Recognition matters. Visibility matters. Being seen as capable and in motion is not vanity; it is a genuine emotional need written into the chart's architecture. When work is stalled, the emotional field goes grey and tight. When it moves — the walking pad, the writing, the strategy — the Moon settles. The Aries recovery is faster than it appears from outside.</p>
+      </div>
+    </div>
 
-<!-- ── KEY DRAWER ── -->
+    <div class="dive-wrap">
+      <button class="dive-toggle" aria-expanded="false" onclick="toggleDive(this)">
+        <div class="dive-hd">
+          <div class="dive-lbl"><span class="dive-lbl-glyph">♈</span>Black Moon Lilith · Aries · H10 + H11</div>
+          <span class="dive-arrow">▾</span>
+        </div>
+      </button>
+      <div class="dive-body">
+        <div class="dive-content">
+          <p>Lilith in Aries in the 11th house (Mean, 15°07') is the undomesticated nature in the domain of community, networks, technology, and collective belonging. Jordan does not soften herself into groups. The #astroflow-weekly channel, the app build, the transit library: all 11th house, all Lilith. The refusal to perform palatability for community acceptance is not a wound or a defense. It is this placement, doing its job.</p>
+          <p>True Lilith at 9°49' Aries is in the 10th, 4°50' from the Moon. The raw, unedited self is not separate from the professional-emotional circuit. It shows up in the room.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="sep-stars">✦ &nbsp; ✧ &nbsp; ✦</div>
+
+  </div>
+</div><!-- /panel-identity -->
+
+<!-- ══ PANEL 3 — DEPTH ═══════════════════════════════════════════════════════ -->
+<div class="panel reading-panel" id="panel-depth">
+
+  <svg class="geo-bg" viewBox="0 0 375 812" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <polygon points="188,50 340,140 375,340 305,560 188,610 71,560 0,340 35,140" fill="none" stroke="rgba(201,168,76,0.065)" stroke-width="0.55"/>
+    <line x1="35" y1="140" x2="305" y2="560" stroke="rgba(201,168,76,0.04)" stroke-width="0.35"/>
+    <line x1="340" y1="140" x2="71" y2="560" stroke="rgba(201,168,76,0.04)" stroke-width="0.35"/>
+    <!-- Scorpio cluster dots — echoes 5th house stellium -->
+    <circle cx="188" cy="300" r="3.0" fill="none" stroke="rgba(62,143,192,0.12)" stroke-width="0.6"/>
+    <circle cx="188" cy="300" r="1.8" fill="rgba(62,143,192,0.16)"/>
+    <circle cx="210" cy="285" r="1.2" fill="rgba(62,143,192,0.12)"/>
+    <circle cx="168" cy="285" r="1.2" fill="rgba(62,143,192,0.12)"/>
+    <circle cx="220" cy="310" r="0.9" fill="rgba(62,143,192,0.10)"/>
+    <line x1="188" y1="300" x2="210" y2="285" stroke="rgba(62,143,192,0.10)" stroke-width="0.5"/>
+    <line x1="188" y1="300" x2="168" y2="285" stroke="rgba(62,143,192,0.10)" stroke-width="0.5"/>
+    <line x1="188" y1="300" x2="220" y2="310" stroke="rgba(62,143,192,0.08)" stroke-width="0.4"/>
+    <circle cx="188" cy="50" r="1.8" fill="rgba(201,168,76,0.32)"/>
+    <circle cx="340" cy="140" r="1.3" fill="rgba(201,168,76,0.22)"/>
+    <circle cx="375" cy="340" r="1.1" fill="rgba(201,168,76,0.18)"/>
+    <circle cx="305" cy="560" r="1.3" fill="rgba(201,168,76,0.22)"/>
+    <circle cx="71" cy="560" r="1.3" fill="rgba(201,168,76,0.22)"/>
+    <circle cx="0" cy="340" r="1.1" fill="rgba(201,168,76,0.18)"/>
+    <circle cx="35" cy="140" r="1.3" fill="rgba(201,168,76,0.22)"/>
+  </svg>
+
+  <div class="reading-inner">
+
+    <div class="panel-heading">
+      <div class="panel-eyebrow-sm">inner life</div>
+      <div class="panel-title-lg">The Scorpio Field</div>
+    </div>
+
+    <div class="sec-card">
+      <div class="sec-head">
+        <div class="sec-sign-glyph">♏</div>
+        <div class="sec-meta">
+          <div class="sec-eyebrow">MERCURY · VENUS · JUPITER · SCORPIO · 5TH HOUSE · STELLIUM</div>
+          <div class="sec-title">The Scorpio Inner Life</div>
+          <div class="sec-tagline">nothing in the 5th house is casual</div>
+        </div>
+      </div>
+      <div class="kw-row">
+        <span class="kw">STELLIUM</span><span class="kw">5TH HOUSE</span><span class="kw">COMPRESSION</span><span class="kw">TOTAL LOVE</span><span class="kw">PRIVATE JOY</span>
+      </div>
+      <div class="sec-body">
+        <p>Three planets in Scorpio in the 5th house: creativity, romance, joy, the things done purely because they matter. The 5th house is where Jordan's most privately held life is. The work that is genuinely hers. The love that is fully meant. The passion projects with no performance layer.</p>
+        <p>Mercury in Scorpio reads beneath what is said, finds the thing being withheld, holds information the way Scorpio holds everything: completely, and for a long time. Venus in Scorpio loves with full presence or not at all. Jupiter in Scorpio expands by going deeper rather than wider, into the places most people avoid.</p>
+        <p>The 5th house in Libra cusp moving into Scorpio creates a specific tension: the door to this house looks diplomatic, balanced, social. What lives inside is Scorpio. Joy here is not light. It is compressed, total, and real.</p>
+      </div>
+    </div>
+
+    <div class="dive-wrap">
+      <button class="dive-toggle" aria-expanded="false" onclick="toggleDive(this)">
+        <div class="dive-hd">
+          <div class="dive-lbl"><span class="dive-lbl-glyph">♇</span>Pluto · Scorpio 25°41' · 6th House · Transformation in Work</div>
+          <span class="dive-arrow">▾</span>
+        </div>
+      </button>
+      <div class="dive-body">
+        <div class="dive-content">
+          <p>Pluto has crossed the 6th house cusp at Scorpio 22°07'. The most transformative force in the chart is not confined to the creative and romantic realm. It is in the house of daily work and craft.</p>
+          <p>This means the writing carries Pluto's weight. The astrological system, the AI tools, the transit library: not professional outputs. Transformation made operational. The 6th house is also the house of the body and health, and Pluto in the 6th adds the dimension of deep, biological change to Jordan's relationship with her physical life. What the body goes through is never just physical.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="sep"><span class="sep-inner">7th House Architecture</span></div>
+
+    <div class="sec-card">
+      <div class="sec-head">
+        <div class="sec-sign-glyph">♑</div>
+        <div class="sec-meta">
+          <div class="sec-eyebrow">URANUS · NEPTUNE · CAPRICORN · 7TH HOUSE · 0.4° CONJUNCTION</div>
+          <div class="sec-title">The Partnership Field</div>
+          <div class="sec-tagline">disruption and dissolution are natal architecture</div>
+        </div>
+      </div>
+      <div class="kw-row">
+        <span class="kw">URANUS ♅</span><span class="kw">NEPTUNE ♆</span><span class="kw">0.4° APART</span><span class="kw">7TH HOUSE</span><span class="kw">FATED</span>
+      </div>
+      <div class="sec-body">
+        <p>Uranus and Neptune are 0.4° apart, a near-exact generational conjunction. Both are in Jordan's 7th house of partnership, collaboration, and one-on-one relationship. This is natal architecture: disruption and dissolution are not things that happen to Jordan's relationships. They are built into how the relational field is wired.</p>
+        <p>The idealization risk is Neptune. The sudden-disconnection pattern is Uranus. They are not problems to solve; they are the texture of the 7th house as Jordan experiences it. Partnerships feel fated. They can also end with an abruptness Uranus has no apology for.</p>
+        <p>The Capricorn placement grounds this somewhat: the 7th house disruption runs through the register of structure, achievement, and long-term investment. The relationships that pull hardest are ones with Capricornian stakes: career adjacency, shared ambition, the sense that something real is being built together.</p>
+      </div>
+    </div>
+
+    <div class="dive-wrap">
+      <button class="dive-toggle" aria-expanded="false" onclick="toggleDive(this)">
+        <div class="dive-hd">
+          <div class="dive-lbl"><span class="dive-lbl-glyph">♐</span>Sagittarius DSC 29°22' · the partnership threshold</div>
+          <span class="dive-arrow">▾</span>
+        </div>
+      </button>
+      <div class="dive-body">
+        <div class="dive-content">
+          <p>The South Node mirroring pattern (Gemini, 12th house) feeds directly into the 7th house. The unconscious adaptation shapes who arrives at the Descendant before the question of compatibility is asked. The North Node Sun in the 6th is the corrective: the daily-life self, operating without the mirror, draws different people.</p>
+          <p>The Sagittarius DSC at 29°22' mirrors the anaretic Ascendant exactly. The partnership threshold carries the same concentrated urgency as the identity threshold. Both are at the last degree, both pressing toward something not yet fully crossed.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="sep-stars">✦ &nbsp; ✧ &nbsp; ✦</div>
+
+  </div>
+</div><!-- /panel-depth -->
+
+<!-- ══ PANEL 4 — ROOTS ═══════════════════════════════════════════════════════ -->
+<div class="panel reading-panel" id="panel-roots">
+
+  <svg class="geo-bg" viewBox="0 0 375 812" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <polygon points="188,40 310,120 345,300 290,510 188,555 86,510 30,300 65,120" fill="none" stroke="rgba(201,168,76,0.065)" stroke-width="0.55"/>
+    <!-- IC/root motif — lines converging downward -->
+    <line x1="188" y1="40" x2="188" y2="555" stroke="rgba(201,168,76,0.04)" stroke-width="0.35"/>
+    <line x1="188" y1="300" x2="130" y2="460" stroke="rgba(80,142,68,0.09)" stroke-width="0.4"/>
+    <line x1="188" y1="300" x2="246" y2="460" stroke="rgba(80,142,68,0.09)" stroke-width="0.4"/>
+    <line x1="130" y1="460" x2="246" y2="460" stroke="rgba(80,142,68,0.07)" stroke-width="0.35"/>
+    <circle cx="188" cy="300" r="2.0" fill="rgba(80,142,68,0.20)"/>
+    <circle cx="130" cy="460" r="1.4" fill="rgba(80,142,68,0.16)"/>
+    <circle cx="246" cy="460" r="1.4" fill="rgba(80,142,68,0.16)"/>
+    <circle cx="188" cy="40" r="1.8" fill="rgba(201,168,76,0.32)"/>
+    <circle cx="310" cy="120" r="1.3" fill="rgba(201,168,76,0.22)"/>
+    <circle cx="345" cy="300" r="1.1" fill="rgba(201,168,76,0.18)"/>
+    <circle cx="290" cy="510" r="1.3" fill="rgba(201,168,76,0.20)"/>
+    <circle cx="86" cy="510" r="1.3" fill="rgba(201,168,76,0.20)"/>
+    <circle cx="30" cy="300" r="1.1" fill="rgba(201,168,76,0.18)"/>
+    <circle cx="65" cy="120" r="1.3" fill="rgba(201,168,76,0.22)"/>
+  </svg>
+
+  <div class="reading-inner">
+
+    <div class="panel-heading">
+      <div class="panel-eyebrow-sm">foundation</div>
+      <div class="panel-title-lg">The Root System</div>
+    </div>
+
+    <div class="sec-card">
+      <div class="sec-head">
+        <div class="sec-sign-glyph">♍</div>
+        <div class="sec-meta">
+          <div class="sec-eyebrow">CHIRON · VIRGO 8°29' · 4TH HOUSE · 0.2° PAST IC</div>
+          <div class="sec-title">The Wound and the Foundation</div>
+          <div class="sec-tagline">the wound does not announce itself — it lives in the body first</div>
+        </div>
+      </div>
+      <div class="kw-row">
+        <span class="kw">IC CONJUNCTION</span><span class="kw">THE WOUND</span><span class="kw">PERFECTIONISM</span><span class="kw">ENOUGH-NESS</span><span class="kw">VIRGO</span>
+      </div>
+      <div class="sec-body">
+        <p>Chiron is 0.2° past the IC. The wound is at the literal root of the chart: the 4th house of home, body, private self, and what was inherited from the earliest conditions of life.</p>
+        <p>Virgo Chiron: the wound is perfectionism. The question of enough-ness. The body as the site of judgment. <em>Am I doing this correctly. Is this good enough. Would a person without this wound have done better.</em> This question is not always triggered by an event. Sometimes it is just the private weather, running at low volume below everything else.</p>
+        <p>The IC/MC axis is Virgo-Pisces. The wound at the IC, held in precision and self-critique, becomes the Pisces public identity at the MC: the one that dissolves the fixed form, sees beneath the surface, offers something harder to categorize than to recognize when you're inside it. The wound and the vocation are on the same axis. They were always the same thing.</p>
+      </div>
+    </div>
+
+    <div class="sep"><span class="sep-inner">Saturn · Lot of Fortune · 9th House</span></div>
+
+    <div class="sec-card">
+      <div class="sec-head">
+        <div class="sec-sign-glyph">♒</div>
+        <div class="sec-meta">
+          <div class="sec-eyebrow">SATURN · AQUARIUS 24°15' · 9TH HOUSE · FORTUNE CONJUNCT 1°58'</div>
+          <div class="sec-title">Structure and Fortune</div>
+          <div class="sec-tagline">fortune and discipline are conjunct — abundance lives in the long build</div>
+        </div>
+      </div>
+      <div class="kw-row">
+        <span class="kw">LONG BUILD</span><span class="kw">9TH HOUSE</span><span class="kw">PHILOSOPHY</span><span class="kw">FORTUNE CONJUNCT</span><span class="kw">AQUARIUS</span>
+      </div>
+      <div class="sec-body">
+        <p>The Lot of Fortune is 1°58' from natal Saturn. Fortune and discipline are conjunct.</p>
+        <p>The 9th house is belief systems, worldview, long-form learning, teaching, and the vision of life that makes sustained effort feel worth it. Saturn in the 9th means structure that requires philosophical grounding to function. Arbitrary constraint produces freeze. Rules disconnected from meaning produce resistance. But when Jordan understands why something matters — its place in the larger architecture she is building — Saturn does its best work.</p>
+        <p>The Lot of Fortune living here says: the abundance comes through the thing built over time, the thing with philosophical stakes, the thing that has meaning before it has money. What Jordan builds for more than herself — the astrology system, the subscription app, the work that teaches — is where the Fortune point operates.</p>
+      </div>
+    </div>
+
+    <div class="sep"><span class="sep-inner">Midheaven · 10th House</span></div>
+
+    <div class="sec-card">
+      <div class="sec-head">
+        <div class="sec-sign-glyph">♓</div>
+        <div class="sec-meta">
+          <div class="sec-eyebrow">MIDHEAVEN · PISCES 8°17' · PUBLIC IDENTITY · EVOLVING FORM</div>
+          <div class="sec-title">The Public Identity</div>
+          <div class="sec-tagline">the career container keeps changing shape — that is its nature</div>
+        </div>
+      </div>
+      <div class="kw-row">
+        <span class="kw">PISCES MC</span><span class="kw">DISSOLUTION</span><span class="kw">EVOLVING FORM</span><span class="kw">ARIES MOON</span>
+      </div>
+      <div class="sec-body">
+        <p>The Pisces MC means the public identity will not stay fixed. What Jordan is known for keeps evolving. The career container keeps changing shape. This is the Pisces MC's natural mode, not a problem with focus.</p>
+        <p>The 10th house at Pisces holds the Moon and the Midheaven both — career, emotional life, and public identity all operating in Pisces' register: porous, spiritually attuned, resistant to a single form. What people receive from Jordan is harder to categorize than to recognize when they encounter it. That is by design.</p>
+        <p>The wound at the IC (Virgo, precision, enough-ness) arrives at the MC as Pisces: as the willingness to dissolve the form, as the vocation that knows what lives beneath the surface, as the career that keeps refusing to be just one thing.</p>
+      </div>
+    </div>
+
+    <div class="sep-stars">✦ &nbsp; ✧ &nbsp; ✦</div>
+
+  </div>
+</div><!-- /panel-roots -->
+
+<!-- ══ PANEL 5 — SOUL ════════════════════════════════════════════════════════ -->
+<div class="panel reading-panel" id="panel-soul">
+
+  <svg class="geo-bg" viewBox="0 0 375 812" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <!-- More elaborate geometry for the closing panel -->
+    <polygon points="188,28 332,108 370,290 310,500 188,548 66,500 5,290 44,108" fill="none" stroke="rgba(201,168,76,0.08)" stroke-width="0.6"/>
+    <polygon points="188,90 295,162 325,290 278,410 188,440 98,410 51,290 81,162" fill="none" stroke="rgba(201,168,76,0.055)" stroke-width="0.45"/>
+    <polygon points="188,160 258,210 278,290 248,365 188,385 128,365 98,290 118,210" fill="none" stroke="rgba(201,168,76,0.04)" stroke-width="0.35"/>
+    <line x1="188" y1="28" x2="188" y2="548" stroke="rgba(201,168,76,0.04)" stroke-width="0.3"/>
+    <line x1="5" y1="290" x2="370" y2="290" stroke="rgba(201,168,76,0.04)" stroke-width="0.3"/>
+    <line x1="44" y1="108" x2="310" y2="500" stroke="rgba(201,168,76,0.035)" stroke-width="0.28"/>
+    <line x1="332" y1="108" x2="66" y2="500" stroke="rgba(201,168,76,0.035)" stroke-width="0.28"/>
+    <!-- Center point -->
+    <circle cx="188" cy="290" r="3.5" fill="none" stroke="rgba(201,168,76,0.15)" stroke-width="0.6"/>
+    <circle cx="188" cy="290" r="1.5" fill="rgba(201,168,76,0.25)"/>
+    <circle cx="188" cy="28" r="2.0" fill="rgba(201,168,76,0.38)"/>
+    <circle cx="332" cy="108" r="1.4" fill="rgba(201,168,76,0.25)"/>
+    <circle cx="370" cy="290" r="1.2" fill="rgba(201,168,76,0.20)"/>
+    <circle cx="310" cy="500" r="1.4" fill="rgba(201,168,76,0.25)"/>
+    <circle cx="188" cy="548" r="2.0" fill="rgba(201,168,76,0.32)"/>
+    <circle cx="66" cy="500" r="1.4" fill="rgba(201,168,76,0.25)"/>
+    <circle cx="5" cy="290" r="1.2" fill="rgba(201,168,76,0.20)"/>
+    <circle cx="44" cy="108" r="1.4" fill="rgba(201,168,76,0.25)"/>
+  </svg>
+
+  <div class="reading-inner">
+
+    <div class="panel-heading">
+      <div class="panel-eyebrow-sm">synthesis</div>
+      <div class="panel-title-lg">The Through-Line</div>
+    </div>
+
+    <div class="throughline">
+      <p>The Gemini-Sagittarius line runs through everything: from the unconscious mirroring habit (South Node, 12th house) through the concentrated identity threshold (Ascendant, 29° Gemini) to the soul purpose fused with daily work (Sun conjunct North Node, 6th house Sagittarius).</p>
+      <p>The 5th house Scorpio depth is the fuel. The 6th house is where it operates. The Pisces MC is what it looks like from the outside: not a fixed shape, but a recognizable presence.</p>
+      <p>Chiron at the IC says the wound is the instrument. Pluto in the 6th says the transformation is in the work. Saturn conjunct Fortune in the 9th says the abundance is in the long, philosophically grounded build.</p>
+      <p>The chart is not asking Jordan to become something she is not. It never was.</p>
+    </div>
+
+    <div class="sep"><span class="sep-inner">Archetype</span></div>
+
+    <!-- TAROT ARCHETYPE CARD -->
+    <div class="tarot-outer">
+      <div class="tarot-card">
+        <!-- Gothic arch SVG overlay -->
+        <svg class="tarot-arch-svg" viewBox="0 0 260 360" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Outer gothic arch -->
+          <path d="M18,356 L18,140 Q18,18 130,18 Q242,18 242,140 L242,356" fill="none" stroke="rgba(201,168,76,0.45)" stroke-width="1.2" stroke-linecap="round"/>
+          <!-- Inner arch -->
+          <path d="M32,356 L32,145 Q32,35 130,35 Q228,35 228,145 L228,356" fill="none" stroke="rgba(201,168,76,0.18)" stroke-width="0.6"/>
+          <!-- Keystone ornament at arch apex -->
+          <circle cx="130" cy="18" r="4" fill="rgba(201,168,76,0.50)"/>
+          <circle cx="130" cy="18" r="7" fill="none" stroke="rgba(201,168,76,0.25)" stroke-width="0.8"/>
+          <!-- Corner ornaments -->
+          <circle cx="18" cy="356" r="3" fill="rgba(201,168,76,0.35)"/>
+          <circle cx="242" cy="356" r="3" fill="rgba(201,168,76,0.35)"/>
+          <!-- Horizontal rule near bottom -->
+          <line x1="35" y1="310" x2="225" y2="310" stroke="rgba(201,168,76,0.22)" stroke-width="0.6"/>
+          <line x1="35" y1="314" x2="225" y2="314" stroke="rgba(201,168,76,0.10)" stroke-width="0.4"/>
+          <!-- Side column lines -->
+          <line x1="18" y1="200" x2="32" y2="200" stroke="rgba(201,168,76,0.20)" stroke-width="0.5"/>
+          <line x1="228" y1="200" x2="242" y2="200" stroke="rgba(201,168,76,0.20)" stroke-width="0.5"/>
+        </svg>
+
+        <div class="tarot-content">
+          <div class="tarot-ornament">✦ ✧ ✦</div>
+
+          <!-- Compass Rose SVG -->
+          <svg class="compass-svg" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+            <!-- 8-point compass / star -->
+            <circle cx="40" cy="40" r="30" fill="none" stroke="rgba(201,168,76,0.18)" stroke-width="0.6"/>
+            <circle cx="40" cy="40" r="20" fill="none" stroke="rgba(201,168,76,0.12)" stroke-width="0.5"/>
+            <circle cx="40" cy="40" r="4" fill="rgba(201,168,76,0.30)"/>
+            <!-- 8 points: N,NE,E,SE,S,SW,W,NW -->
+            <polygon points="40,10 43,37 40,40 37,37" fill="rgba(201,168,76,0.65)"/>
+            <polygon points="40,70 43,43 40,40 37,43" fill="rgba(201,168,76,0.40)"/>
+            <polygon points="10,40 37,37 40,40 37,43" fill="rgba(201,168,76,0.40)"/>
+            <polygon points="70,40 43,37 40,40 43,43" fill="rgba(201,168,76,0.55)"/>
+            <!-- Diagonal points (smaller) -->
+            <polygon points="61,19 43,38 40,40 42,43" fill="rgba(201,168,76,0.22)"/>
+            <polygon points="19,19 38,38 40,40 37,42" fill="rgba(201,168,76,0.22)"/>
+            <polygon points="19,61 38,42 40,40 37,38" fill="rgba(201,168,76,0.22)"/>
+            <polygon points="61,61 42,42 40,40 43,38" fill="rgba(201,168,76,0.22)"/>
+            <!-- Tick marks on outer ring -->
+            <line x1="40" y1="10" x2="40" y2="14" stroke="rgba(201,168,76,0.35)" stroke-width="0.8"/>
+            <line x1="40" y1="66" x2="40" y2="70" stroke="rgba(201,168,76,0.25)" stroke-width="0.8"/>
+            <line x1="10" y1="40" x2="14" y2="40" stroke="rgba(201,168,76,0.25)" stroke-width="0.8"/>
+            <line x1="66" y1="40" x2="70" y2="40" stroke="rgba(201,168,76,0.30)" stroke-width="0.8"/>
+          </svg>
+
+          <div class="tarot-name">The Cartographer<br>at the Seam</div>
+          <div class="tarot-elements">Sagittarius · Scorpio · Gemini</div>
+          <div class="tarot-divider"></div>
+          <div class="tarot-body">Someone who stands where the visible meets the invisible, who maps the territory not from a safe distance but from inside it. The wound shows where the seam is. The daily work makes it legible. The Fortune point lives in the long tradition of this labor.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sep"><span class="sep-inner">A Reading in Verse</span></div>
+
+    <!-- POEM -->
+    <div class="poem-outer">
+      <div class="poem-byline">A Reading in Verse &nbsp;·&nbsp; Jordan</div>
+      <div class="poem-wrap">
+        <p>The threshold you were born at is still the one you stand on.<br>
+        The voice has always known the shape of the room<br>
+        before the door opens.</p>
+
+        <p>Beneath the fluency, something heavier is awake.<br>
+        It knows what it wants.<br>
+        It stays with things longer than anyone expects,<br>
+        turning them in the dark until they give.</p>
+
+        <p>The wound at the root keeps pointing.<br>
+        Here. This is where the seam is.<br>
+        You have learned to work the seam.</p>
+
+        <p>Abundance lives in the long build,<br>
+        the one that accumulates meaning before anything else.<br>
+        The daily practice holds the whole of it.<br>
+        The path does not arrive somewhere.<br>
+        It is already what you are walking.</p>
+
+        <p>What is the thing you are building<br>
+        that only the wound could have known to make?</p>
+      </div>
+    </div>
+
+    <div style="height:16px"></div>
+  </div>
+</div><!-- /panel-soul -->
+
+</div><!-- /app-body -->
+
+<!-- BOTTOM NAV -->
+<nav class="app-nav" role="navigation" aria-label="Chart sections">
+  <button class="nav-tab active" data-target="chart" onclick="switchPanel('chart',this)">
+    <span class="nav-icon-t">✦</span>
+    <span class="nav-label">Chart</span>
+  </button>
+  <button class="nav-tab" data-target="identity" onclick="switchPanel('identity',this)">
+    <span class="nav-icon">☉</span>
+    <span class="nav-label">Identity</span>
+  </button>
+  <button class="nav-tab" data-target="depth" onclick="switchPanel('depth',this)">
+    <span class="nav-icon">♏</span>
+    <span class="nav-label">Depth</span>
+  </button>
+  <button class="nav-tab" data-target="roots" onclick="switchPanel('roots',this)">
+    <span class="nav-icon">⚷</span>
+    <span class="nav-label">Roots</span>
+  </button>
+  <button class="nav-tab" data-target="soul" onclick="switchPanel('soul',this)">
+    <span class="nav-icon">☊</span>
+    <span class="nav-label">Soul</span>
+  </button>
+</nav>
+
+</div><!-- /app -->
+
+<!-- KEY DRAWER -->
 <div class="key-dimmer" id="keyDimmer"></div>
 <div class="key-overlay" id="keyOverlay" role="complementary" aria-label="Chart Key">
   <div class="key-header">
@@ -979,144 +953,69 @@ body.drawer-open { overflow: hidden; }
     <button class="key-close" id="keyClose" aria-label="Close key">←</button>
   </div>
   <div class="key-content">
-    <div class="key-section">
-      <div class="key-sh">Zodiac Signs</div>
-      <div class="key-grid g6" id="kS"></div>
-    </div>
-    <div class="key-section">
-      <div class="key-sh">Planets &amp; Points</div>
-      <div class="key-grid g6" id="kP"></div>
-    </div>
-    <div class="key-section">
-      <div class="key-sh">Aspect Lines</div>
-      <div class="key-grid g3" id="kA"></div>
-    </div>
-    <div class="key-section">
-      <div class="key-sh">Elements</div>
-      <div class="key-grid g4" id="kE"></div>
-    </div>
+    <div class="key-section"><div class="key-sh">Zodiac Signs</div><div class="key-grid g6" id="kS"></div></div>
+    <div class="key-section"><div class="key-sh">Planets &amp; Points</div><div class="key-grid g6" id="kP"></div></div>
+    <div class="key-section"><div class="key-sh">Aspect Lines</div><div class="key-grid g3" id="kA"></div></div>
+    <div class="key-section"><div class="key-sh">Elements</div><div class="key-grid g4" id="kE"></div></div>
   </div>
 </div>
 
 <script>
-const T = '︎'; // text variation selector
+const T='︎';
 
-// ─── JORDAN'S NATAL CHART DATA (Swiss Ephemeris, verified June 8 2026) ────────
-const CHART = {
-  asc: 89.3709,
-  mc:  338.2840,
-  cusps: [89.3709,110.2341,132.0315,158.2840,192.1293,232.1194,
-          269.3709,290.2341,312.0315,338.2840,12.1293,52.1194],
-  planets: [
-    {id:'sun',     gl:'☉'+T, deg:241.8311, retro:false, grp:'luminary', si:8,  sd:1},
-    {id:'moon',    gl:'☽'+T, deg:4.9796,   retro:false, grp:'luminary', si:0,  sd:4},
-    {id:'mercury', gl:'☿'+T, deg:222.2947, retro:false, grp:'personal', si:7,  sd:12},
-    {id:'venus',   gl:'♀'+T, deg:228.8348, retro:false, grp:'personal', si:7,  sd:18},
-    {id:'mars',    gl:'♂'+T, deg:250.7698, retro:false, grp:'personal', si:8,  sd:10},
-    {id:'jupiter', gl:'♃'+T, deg:212.8672, retro:false, grp:'social',   si:7,  sd:2},
-    {id:'saturn',  gl:'♄'+T, deg:324.2549, retro:false, grp:'social',   si:10, sd:24},
-    {id:'uranus',  gl:'♅'+T, deg:289.5802, retro:false, grp:'outer',    si:9,  sd:19},
-    {id:'neptune', gl:'♆'+T, deg:289.1846, retro:false, grp:'outer',    si:9,  sd:19},
-    {id:'pluto',   gl:'♇'+T, deg:235.6816, retro:false, grp:'outer',    si:7,  sd:25},
-    {id:'chiron',  gl:'⚷'+T, deg:158.4833, retro:false, grp:'point',    si:5,  sd:8},
-    {id:'nnode',   gl:'☊'+T, deg:243.0475, retro:true,  grp:'point',    si:8,  sd:3},
-    {id:'snode',   gl:'☋'+T, deg:63.0475,  retro:true,  grp:'point',    si:2,  sd:3},
+// ─── CHART DATA ───────────────────────────────────────────────────────────────
+const CHART={
+  asc:89.3709,mc:338.2840,
+  cusps:[89.3709,110.2341,132.0315,158.2840,192.1293,232.1194,269.3709,290.2341,312.0315,338.2840,12.1293,52.1194],
+  planets:[
+    {id:'sun',    gl:'☉'+T,deg:241.8311,retro:false,grp:'luminary',si:8, sd:1},
+    {id:'moon',   gl:'☽'+T,deg:4.9796,  retro:false,grp:'luminary',si:0, sd:4},
+    {id:'mercury',gl:'☿'+T,deg:222.2947,retro:false,grp:'personal',si:7, sd:12},
+    {id:'venus',  gl:'♀'+T,deg:228.8348,retro:false,grp:'personal',si:7, sd:18},
+    {id:'mars',   gl:'♂'+T,deg:250.7698,retro:false,grp:'personal',si:8, sd:10},
+    {id:'jupiter',gl:'♃'+T,deg:212.8672,retro:false,grp:'social',  si:7, sd:2},
+    {id:'saturn', gl:'♄'+T,deg:324.2549,retro:false,grp:'social',  si:10,sd:24},
+    {id:'uranus', gl:'♅'+T,deg:289.5802,retro:false,grp:'outer',   si:9, sd:19},
+    {id:'neptune',gl:'♆'+T,deg:289.1846,retro:false,grp:'outer',   si:9, sd:19},
+    {id:'pluto',  gl:'♇'+T,deg:235.6816,retro:false,grp:'outer',   si:7, sd:25},
+    {id:'chiron', gl:'⚷'+T,deg:158.4833,retro:false,grp:'point',   si:5, sd:8},
+    {id:'nnode',  gl:'☊'+T,deg:243.0475,retro:true, grp:'point',   si:8, sd:3},
+    {id:'snode',  gl:'☋'+T,deg:63.0475, retro:true, grp:'point',   si:2, sd:3},
   ],
   aspects:[
-    {p1:'sun',     p2:'nnode',   type:'conjunction', orb:1.22},
-    {p1:'uranus',  p2:'neptune', type:'conjunction', orb:0.40},
-    {p1:'pluto',   p2:'saturn',  type:'square',      orb:1.43},
-    {p1:'sun',     p2:'moon',    type:'trine',       orb:3.15},
-    {p1:'sun',     p2:'pluto',   type:'conjunction', orb:6.15},
-    {p1:'mercury', p2:'venus',   type:'conjunction', orb:6.54},
-    {p1:'venus',   p2:'pluto',   type:'conjunction', orb:6.85},
-    {p1:'jupiter', p2:'chiron',  type:'sextile',     orb:5.62},
+    {p1:'sun',    p2:'nnode',  type:'conjunction',orb:1.22},
+    {p1:'uranus', p2:'neptune',type:'conjunction',orb:0.40},
+    {p1:'pluto',  p2:'saturn', type:'square',     orb:1.43},
+    {p1:'sun',    p2:'moon',   type:'trine',      orb:3.15},
+    {p1:'sun',    p2:'pluto',  type:'conjunction',orb:6.15},
+    {p1:'mercury',p2:'venus',  type:'conjunction',orb:6.54},
+    {p1:'venus',  p2:'pluto',  type:'conjunction',orb:6.85},
+    {p1:'jupiter',p2:'chiron', type:'sextile',    orb:5.62},
   ],
 };
 
 // ─── GEOMETRY ─────────────────────────────────────────────────────────────────
-const CX=360, CY=360;
-const R = {
-  rim3:354, elArc:347, rim1:340,
-  zodOut:328, zodMid:302, zodIn:276,
-  cuspLbl:265, hNum:162, sepRing:240,
-  pGlyph:244, pLbl:258,
-  asp:218, cRing:18, cDot:11,
-};
-
-// ─── PALETTE ──────────────────────────────────────────────────────────────────
-const C = {
-  gold:'#d0a840', goldM:'rgba(208,168,64,0.28)', goldBrt:'rgba(208,168,64,0.58)',
-  goldF:'rgba(208,168,64,0.07)',
-  ivory:'#f0e4cc', ivoryM:'rgba(240,228,200,0.55)',
-  ivoryDim:'rgba(240,228,200,0.28)', ivoryDimmer:'rgba(240,228,200,0.14)',
-  cerulean:'#3e8fc0', ceruleanM:'rgba(62,143,192,0.60)', ceruleanF:'rgba(62,143,192,0.10)',
-  sky:'#6abce0', moonSilver:'#b0c8e0',
-  teal:'#5ab8a8', tealM:'rgba(90,184,168,0.60)',
-  rose:'#c89898', roseM:'rgba(200,152,152,0.65)',
-  fire:'rgba(210,130,48,0.26)', earth:'rgba(80,142,68,0.19)',
-  air:'rgba(80,112,200,0.20)', water:'rgba(40,128,188,0.28)',
-  fireArc:'#c87840', earthArc:'#58925a', airArc:'#5878c8', waterArc:'#3880b8',
-  axis:'rgba(208,168,64,0.72)', hLine:'rgba(208,168,64,0.15)',
-};
-
-const PLANET_COLOR = {
-  luminary:'#d8b850', personal:'#c8a0a0', social:'#7ab0d0',
-  outer:'#5ab8a8', point:'rgba(240,228,200,0.70)',
-};
-
-const ASP_STYLE = {
-  conjunction:{color:'#d0a840', dash:'',    w:1.2, op:0.82},
-  sextile:    {color:'#3e8fc0', dash:'',    w:0.9, op:0.70},
-  trine:      {color:'#5ab8a8', dash:'',    w:0.9, op:0.65},
-  square:     {color:'#c89898', dash:'5,3', w:0.9, op:0.75},
-  opposition: {color:'#c89898', dash:'',    w:0.9, op:0.68},
-  inconjunct: {color:'rgba(240,228,200,0.38)', dash:'2,4', w:0.7, op:0.65},
-};
-
-const SIGNS = [
-  {gl:'♈'+T,el:'fire', name:'Aries',       abbr:'Ar',color:'#d4a050'},
-  {gl:'♉'+T,el:'earth',name:'Taurus',      abbr:'Ta',color:'#80c070'},
-  {gl:'♊'+T,el:'air',  name:'Gemini',      abbr:'Ge',color:'#8090d8'},
-  {gl:'♋'+T,el:'water',name:'Cancer',      abbr:'Cn',color:'#50b8d0'},
-  {gl:'♌'+T,el:'fire', name:'Leo',         abbr:'Le',color:'#d4a050'},
-  {gl:'♍'+T,el:'earth',name:'Virgo',       abbr:'Vi',color:'#80c070'},
-  {gl:'♎'+T,el:'air',  name:'Libra',       abbr:'Li',color:'#8090d8'},
-  {gl:'♏'+T,el:'water',name:'Scorpio',     abbr:'Sc',color:'#50b8d0'},
-  {gl:'♐'+T,el:'fire', name:'Sagittarius', abbr:'Sg',color:'#d4a050'},
-  {gl:'♑'+T,el:'earth',name:'Capricorn',   abbr:'Cp',color:'#80c070'},
-  {gl:'♒'+T,el:'air',  name:'Aquarius',    abbr:'Aq',color:'#8090d8'},
-  {gl:'♓'+T,el:'water',name:'Pisces',      abbr:'Pi',color:'#50b8d0'},
-];
-
-const GLYPH_FONT = "'Apple Symbols','Segoe UI Symbol','Noto Sans Symbols',serif";
-const MODALITY = {Ar:'Cardinal',Ta:'Fixed',Ge:'Mutable',Cn:'Cardinal',Le:'Fixed',Vi:'Mutable',
-  Li:'Cardinal',Sc:'Fixed',Sg:'Mutable',Cp:'Cardinal',Aq:'Fixed',Pi:'Mutable'};
+const CX=360,CY=360;
+const R={rim3:354,elArc:347,rim1:340,zodOut:328,zodMid:302,zodIn:276,cuspLbl:265,hNum:162,sepRing:240,pGlyph:244,pLbl:258,asp:218,cRing:18,cDot:11};
+const C={gold:'#d0a840',goldM:'rgba(208,168,64,0.28)',goldBrt:'rgba(208,168,64,0.58)',goldF:'rgba(208,168,64,0.07)',ivory:'#f0e4cc',ivoryM:'rgba(240,228,200,0.55)',ivoryDim:'rgba(240,228,200,0.28)',ivoryDimmer:'rgba(240,228,200,0.14)',cerulean:'#3e8fc0',ceruleanM:'rgba(62,143,192,0.60)',teal:'#5ab8a8',tealM:'rgba(90,184,168,0.60)',rose:'#c89898',roseM:'rgba(200,152,152,0.65)',fire:'rgba(210,130,48,0.26)',earth:'rgba(80,142,68,0.19)',air:'rgba(80,112,200,0.20)',water:'rgba(40,128,188,0.28)',fireArc:'#c87840',earthArc:'#58925a',airArc:'#5878c8',waterArc:'#3880b8',axis:'rgba(208,168,64,0.72)'};
+const PLANET_COLOR={luminary:'#d8b850',personal:'#c8a0a0',social:'#7ab0d0',outer:'#5ab8a8',point:'rgba(240,228,200,0.70)'};
+const ASP_STYLE={conjunction:{color:'#d0a840',dash:'',w:1.2,op:0.82},sextile:{color:'#3e8fc0',dash:'',w:0.9,op:0.70},trine:{color:'#5ab8a8',dash:'',w:0.9,op:0.65},square:{color:'#c89898',dash:'5,3',w:0.9,op:0.75},opposition:{color:'#c89898',dash:'',w:0.9,op:0.68},inconjunct:{color:'rgba(240,228,200,0.38)',dash:'2,4',w:0.7,op:0.65}};
+const SIGNS=[{gl:'♈'+T,el:'fire',name:'Aries',abbr:'Ar',color:'#d4a050'},{gl:'♉'+T,el:'earth',name:'Taurus',abbr:'Ta',color:'#80c070'},{gl:'♊'+T,el:'air',name:'Gemini',abbr:'Ge',color:'#8090d8'},{gl:'♋'+T,el:'water',name:'Cancer',abbr:'Cn',color:'#50b8d0'},{gl:'♌'+T,el:'fire',name:'Leo',abbr:'Le',color:'#d4a050'},{gl:'♍'+T,el:'earth',name:'Virgo',abbr:'Vi',color:'#80c070'},{gl:'♎'+T,el:'air',name:'Libra',abbr:'Li',color:'#8090d8'},{gl:'♏'+T,el:'water',name:'Scorpio',abbr:'Sc',color:'#50b8d0'},{gl:'♐'+T,el:'fire',name:'Sagittarius',abbr:'Sg',color:'#d4a050'},{gl:'♑'+T,el:'earth',name:'Capricorn',abbr:'Cp',color:'#80c070'},{gl:'♒'+T,el:'air',name:'Aquarius',abbr:'Aq',color:'#8090d8'},{gl:'♓'+T,el:'water',name:'Pisces',abbr:'Pi',color:'#50b8d0'}];
+const GLYPH_FONT="'Apple Symbols','Segoe UI Symbol','Noto Sans Symbols',serif";
+const MODALITY={Ar:'Cardinal',Ta:'Fixed',Ge:'Mutable',Cn:'Cardinal',Le:'Fixed',Vi:'Mutable',Li:'Cardinal',Sc:'Fixed',Sg:'Mutable',Cp:'Cardinal',Aq:'Fixed',Pi:'Mutable'};
 
 // ─── MATH ─────────────────────────────────────────────────────────────────────
-const norm = a=>((a%360)+360)%360;
-const rad  = d=>d*Math.PI/180;
-const f    = n=>n.toFixed(2);
-const svgA = (ecl,asc)=>norm(180-(ecl-asc));
-const pt   = (a,r)=>({x:CX+r*Math.cos(rad(a)),y:CY+r*Math.sin(rad(a))});
-const ept  = (ecl,r,asc)=>pt(svgA(ecl,asc),r);
+const norm=a=>((a%360)+360)%360;
+const rad=d=>d*Math.PI/180;
+const f=n=>n.toFixed(2);
+const svgA=(ecl,asc)=>norm(180-(ecl-asc));
+const pt=(a,r)=>({x:CX+r*Math.cos(rad(a)),y:CY+r*Math.sin(rad(a))});
+const ept=(ecl,r,asc)=>pt(svgA(ecl,asc),r);
+function sector(s,e,rO,rI,asc){const a1=svgA(s,asc),a2=svgA(e,asc);const o1=pt(a1,rO),o2=pt(a2,rO),i1=pt(a1,rI),i2=pt(a2,rI);return `M${f(o1.x)} ${f(o1.y)} A${rO} ${rO} 0 0 0 ${f(o2.x)} ${f(o2.y)} L${f(i2.x)} ${f(i2.y)} A${rI} ${rI} 0 0 1 ${f(i1.x)} ${f(i1.y)}Z`}
+function arcStroke(s,e,r,asc){const a1=svgA(s,asc),a2=svgA(e,asc);const p1=pt(a1,r),p2=pt(a2,r);return `M${f(p1.x)} ${f(p1.y)} A${r} ${r} 0 0 0 ${f(p2.x)} ${f(p2.y)}`}
+function eclSD(ecl){const idx=Math.floor(ecl/30)%12;return{idx,deg:Math.floor(ecl%30),sign:SIGNS[idx]}}
 
-function sector(s,e,rO,rI,asc){
-  const a1=svgA(s,asc),a2=svgA(e,asc);
-  const o1=pt(a1,rO),o2=pt(a2,rO),i1=pt(a1,rI),i2=pt(a2,rI);
-  return `M${f(o1.x)} ${f(o1.y)} A${rO} ${rO} 0 0 0 ${f(o2.x)} ${f(o2.y)} L${f(i2.x)} ${f(i2.y)} A${rI} ${rI} 0 0 1 ${f(i1.x)} ${f(i1.y)}Z`;
-}
-function arcStroke(s,e,r,asc){
-  const a1=svgA(s,asc),a2=svgA(e,asc);
-  const p1=pt(a1,r),p2=pt(a2,r);
-  return `M${f(p1.x)} ${f(p1.y)} A${r} ${r} 0 0 0 ${f(p2.x)} ${f(p2.y)}`;
-}
-function eclSD(ecl){
-  const idx=Math.floor(ecl/30)%12;
-  return {idx,deg:Math.floor(ecl%30),sign:SIGNS[idx]};
-}
-
-// ─── SPREAD + MIN-GAP POST-PROCESS ───────────────────────────────────────────
+// ─── SPREAD + MIN-GAP ─────────────────────────────────────────────────────────
 function spread(planets){
   const sorted=[...planets].sort((a,b)=>a.deg-b.deg);
   const out=[];let i=0;
@@ -1125,195 +1024,98 @@ function spread(planets){
     while(j<sorted.length&&sorted[j].deg-sorted[i].deg<8)j++;
     const cl=sorted.slice(i,j);
     if(cl.length===1){out.push({...cl[0],disp:cl[0].deg});}
-    else{
-      const mean=cl.reduce((s,p)=>s+p.deg,0)/cl.length;
-      const step=cl.length===2?14:11;
-      const off=-(cl.length-1)*step/2;
-      cl.forEach((p,k)=>out.push({...p,disp:mean+off+k*step}));
-    }
+    else{const mean=cl.reduce((s,p)=>s+p.deg,0)/cl.length;const step=cl.length===2?14:11;const off=-(cl.length-1)*step/2;cl.forEach((p,k)=>out.push({...p,disp:mean+off+k*step}));}
     i=j;
   }
-  return enforceMinGap(out, 10);
+  return enforceMinGap(out,10);
 }
-
-function enforceMinGap(planets, minGap){
+function enforceMinGap(planets,minGap){
   const sp=[...planets].sort((a,b)=>a.disp-b.disp);
-  let changed=true, iter=0;
+  let changed=true,iter=0;
   while(changed&&iter<60){
-    changed=false; iter++;
-    for(let i=0;i<sp.length-1;i++){
-      const gap=sp[i+1].disp-sp[i].disp;
-      if(gap<minGap){
-        const push=(minGap-gap)/2;
-        sp[i].disp-=push; sp[i+1].disp+=push; changed=true;
-      }
-    }
-    // wrap-around gap check
+    changed=false;iter++;
+    for(let i=0;i<sp.length-1;i++){const gap=sp[i+1].disp-sp[i].disp;if(gap<minGap){const push=(minGap-gap)/2;sp[i].disp-=push;sp[i+1].disp+=push;changed=true;}}
     const wGap=(sp[0].disp+360)-sp[sp.length-1].disp;
-    if(wGap<minGap){
-      const push=(minGap-wGap)/2;
-      sp[sp.length-1].disp-=push; sp[0].disp+=push; changed=true;
-    }
+    if(wGap<minGap){const push=(minGap-wGap)/2;sp[sp.length-1].disp-=push;sp[0].disp+=push;changed=true;}
   }
   return sp.map(p=>({...p,disp:norm(p.disp)}));
 }
 
 // ─── SVG HELPERS ──────────────────────────────────────────────────────────────
 const NS='http://www.w3.org/2000/svg';
-function el(tag,attrs){
-  const e=document.createElementNS(NS,tag);
-  for(const[k,v]of Object.entries(attrs))e.setAttribute(k,String(v));
-  return e;
-}
-function tx(content,attrs){const t=el('text',attrs);t.textContent=content;return t;}
-function glTx(content,x,y,size,color,opacity,extra={}){
-  return tx(content,{x:f(x),y:f(y),fill:color,opacity,
-    'font-size':size,'font-family':GLYPH_FONT,'font-variant-emoji':'text',
-    'text-anchor':'middle','dominant-baseline':'central',...extra});
-}
+function el(tag,attrs){const e=document.createElementNS(NS,tag);for(const[k,v]of Object.entries(attrs))e.setAttribute(k,String(v));return e}
+function tx(content,attrs){const t=el('text',attrs);t.textContent=content;return t}
+function glTx(content,x,y,size,color,opacity,extra={}){return tx(content,{x:f(x),y:f(y),fill:color,opacity,'font-size':size,'font-family':GLYPH_FONT,'font-variant-emoji':'text','text-anchor':'middle','dominant-baseline':'central',...extra})}
 
-// ─── DRAW FUNCTIONS ───────────────────────────────────────────────────────────
 function drawDefs(svg){
   const defs=el('defs',{});
-
   const g1=el('radialGradient',{id:'bgG',cx:'50%',cy:'50%',r:'50%'});
-  g1.appendChild(el('stop',{offset:'0%',  'stop-color':'#1a3060','stop-opacity':'0.80'}));
-  g1.appendChild(el('stop',{offset:'55%', 'stop-color':'#0e1030','stop-opacity':'0.45'}));
+  g1.appendChild(el('stop',{offset:'0%','stop-color':'#1a3060','stop-opacity':'0.80'}));
+  g1.appendChild(el('stop',{offset:'55%','stop-color':'#0e1030','stop-opacity':'0.45'}));
   g1.appendChild(el('stop',{offset:'100%','stop-color':'#09102a','stop-opacity':'0'}));
   defs.appendChild(g1);
-
   const fWC=el('filter',{id:'wc',x:'-30%',y:'-30%',width:'160%',height:'160%'});
   fWC.appendChild(el('feGaussianBlur',{stdDeviation:'12'}));
   defs.appendChild(fWC);
-
   const fG=el('filter',{id:'glow',x:'-20%',y:'-20%',width:'140%',height:'140%'});
   fG.appendChild(el('feGaussianBlur',{in:'SourceGraphic',stdDeviation:'3',result:'b'}));
-  const m=el('feMerge',{});
-  ['b','SourceGraphic'].forEach(s=>{const n=el('feMergeNode',{});n.setAttribute('in',s);m.appendChild(n);});
-  fG.appendChild(m);
-  defs.appendChild(fG);
-
-  svg.appendChild(defs);
+  const m=el('feMerge',{});['b','SourceGraphic'].forEach(s=>{const n=el('feMergeNode',{});n.setAttribute('in',s);m.appendChild(n);});
+  fG.appendChild(m);defs.appendChild(fG);svg.appendChild(defs);
 }
 
 function drawBackground(svg){
   const g=el('g',{id:'bg'});
   const clipDefs=svg.querySelector('defs')||el('defs',{});
-  const cp=el('clipPath',{id:'chartClip'});
-  cp.appendChild(el('circle',{cx:CX,cy:CY,r:358}));
-  clipDefs.appendChild(cp);
-
+  const cp=el('clipPath',{id:'chartClip'});cp.appendChild(el('circle',{cx:CX,cy:CY,r:358}));clipDefs.appendChild(cp);
   g.appendChild(el('rect',{x:0,y:0,width:720,height:720,fill:'#09102a'}));
   g.appendChild(el('circle',{cx:CX,cy:CY,r:360,fill:'none',stroke:'rgba(208,168,64,0.12)','stroke-width':'3'}));
   g.appendChild(el('circle',{cx:CX,cy:CY,r:358,fill:'none',stroke:'rgba(62,143,192,0.10)','stroke-width':'2'}));
-
   const chartG=el('g',{'clip-path':'url(#chartClip)'});
   chartG.appendChild(el('circle',{cx:CX,cy:CY,r:358,fill:'#09102a'}));
   chartG.appendChild(el('circle',{cx:CX,cy:CY,r:358,fill:'url(#bgG)'}));
-
-  // Organic ribbon sweeps
   chartG.appendChild(el('ellipse',{cx:CX+60,cy:CY-80,rx:300,ry:100,fill:'rgba(200,144,64,0.06)',transform:`rotate(-38,${CX},${CY})`}));
   chartG.appendChild(el('ellipse',{cx:CX-60,cy:CY+80,rx:300,ry:110,fill:'rgba(38,110,180,0.07)',transform:`rotate(-38,${CX},${CY})`}));
   chartG.appendChild(el('ellipse',{cx:CX+120,cy:CY-120,rx:180,ry:70,fill:'rgba(180,120,40,0.05)',transform:`rotate(-20,${CX},${CY})`}));
-
-  // Watercolor element blooms
-  const blooms=[
-    {ecl:135,color:'rgba(200,120,40,0.09)'},{ecl:15,color:'rgba(200,120,40,0.07)'},
-    {ecl:255,color:'rgba(200,120,40,0.07)'},{ecl:105,color:'rgba(30,120,180,0.10)'},
-    {ecl:225,color:'rgba(30,120,180,0.09)'},{ecl:345,color:'rgba(30,120,180,0.09)'},
-    {ecl:75, color:'rgba(70,100,200,0.07)'},{ecl:195,color:'rgba(70,100,200,0.07)'},
-    {ecl:315,color:'rgba(70,100,200,0.07)'},{ecl:45, color:'rgba(70,130,60,0.06)'},
-    {ecl:165,color:'rgba(70,130,60,0.06)'},{ecl:285,color:'rgba(70,130,60,0.06)'},
-  ];
-  for(const b of blooms){
-    const p=ept(b.ecl,302,CHART.asc);
-    chartG.appendChild(el('circle',{cx:f(p.x),cy:f(p.y),r:62,fill:b.color,filter:'url(#wc)'}));
-  }
-
-  // Stars
-  const stars=[
-    [38,72,1.1,0.38,'#f0e8d0'],[152,44,0.8,0.30,'#e8f0f8'],[300,32,1.2,0.34,'#f0e8d0'],
-    [460,50,0.9,0.32,'#d8e8f0'],[616,40,1.0,0.36,'#f0e8d0'],[668,88,0.8,0.30,'#e8d8b8'],
-    [690,220,0.9,0.24,'#e8f0f8'],[678,400,1.0,0.22,'#f0e8d0'],[660,548,0.8,0.26,'#d8e8f0'],
-    [596,640,1.1,0.30,'#f0e8d0'],[448,672,0.9,0.24,'#e8f0f8'],[272,676,0.8,0.22,'#f0e8d0'],
-    [106,652,1.0,0.26,'#e8d8b8'],[34,556,0.9,0.24,'#f0e8d0'],[20,408,0.8,0.22,'#e8f0f8'],
-    [32,252,1.0,0.28,'#f0e8d0'],[80,156,0.7,0.18,'#e8d8b8'],[580,156,0.7,0.18,'#d8e8f0'],
-    [590,528,0.8,0.20,'#f0e8d0'],[108,520,0.7,0.17,'#e8f0f8'],[196,60,0.6,0.16,'#f0e8d0'],
-    [508,68,0.7,0.18,'#e8d8b8'],[360,14,0.8,0.20,'#f0e8d0'],[710,360,0.7,0.16,'#e8f0f8'],
-    [8,360,0.7,0.16,'#f0e8d0'],[360,710,0.8,0.18,'#e8d8b8'],
-    [240,90,1.4,0.28,'#f8e8b0'],[480,650,1.3,0.26,'#f8e8b0'],
-    [620,200,1.2,0.24,'#d8f0f8'],[100,520,1.2,0.22,'#f8e8b0'],
-  ];
-  for(const[sx,sy,sr,so,sc]of stars)
-    chartG.appendChild(el('circle',{cx:sx,cy:sy,r:sr,fill:sc,opacity:so}));
-
-  for(const[sx,sy,s,fs,op,c]of[
-    [90,110,'✦',11,0.28,'#f0e8d0'],[638,132,'✧',9,0.24,'#d8e8f0'],
-    [74,562,'✦',9,0.22,'#f0e8d0'],[628,562,'✧',11,0.26,'#e8d8b8'],
-  ])chartG.appendChild(tx(s,{x:sx,y:sy,fill:c,opacity:op,'font-size':fs,'text-anchor':'middle','font-family':'serif'}));
-
-  g.appendChild(chartG);
-  svg.appendChild(g);
+  const blooms=[{ecl:135,color:'rgba(200,120,40,0.09)'},{ecl:15,color:'rgba(200,120,40,0.07)'},{ecl:255,color:'rgba(200,120,40,0.07)'},{ecl:105,color:'rgba(30,120,180,0.10)'},{ecl:225,color:'rgba(30,120,180,0.09)'},{ecl:345,color:'rgba(30,120,180,0.09)'},{ecl:75,color:'rgba(70,100,200,0.07)'},{ecl:195,color:'rgba(70,100,200,0.07)'},{ecl:315,color:'rgba(70,100,200,0.07)'},{ecl:45,color:'rgba(70,130,60,0.06)'},{ecl:165,color:'rgba(70,130,60,0.06)'},{ecl:285,color:'rgba(70,130,60,0.06)'}];
+  for(const b of blooms){const p=ept(b.ecl,302,CHART.asc);chartG.appendChild(el('circle',{cx:f(p.x),cy:f(p.y),r:62,fill:b.color,filter:'url(#wc)'}))}
+  const stars=[[38,72,1.1,0.38,'#f0e8d0'],[152,44,0.8,0.30,'#e8f0f8'],[300,32,1.2,0.34,'#f0e8d0'],[460,50,0.9,0.32,'#d8e8f0'],[616,40,1.0,0.36,'#f0e8d0'],[668,88,0.8,0.30,'#e8d8b8'],[690,220,0.9,0.24,'#e8f0f8'],[678,400,1.0,0.22,'#f0e8d0'],[660,548,0.8,0.26,'#d8e8f0'],[596,640,1.1,0.30,'#f0e8d0'],[448,672,0.9,0.24,'#e8f0f8'],[272,676,0.8,0.22,'#f0e8d0'],[106,652,1.0,0.26,'#e8d8b8'],[34,556,0.9,0.24,'#f0e8d0'],[20,408,0.8,0.22,'#e8f0f8'],[32,252,1.0,0.28,'#f0e8d0'],[80,156,0.7,0.18,'#e8d8b8'],[580,156,0.7,0.18,'#d8e8f0'],[590,528,0.8,0.20,'#f0e8d0'],[108,520,0.7,0.17,'#e8f0f8'],[196,60,0.6,0.16,'#f0e8d0'],[508,68,0.7,0.18,'#e8d8b8'],[360,14,0.8,0.20,'#f0e8d0'],[710,360,0.7,0.16,'#e8f0f8'],[8,360,0.7,0.16,'#f0e8d0'],[360,710,0.8,0.18,'#e8d8b8'],[240,90,1.4,0.28,'#f8e8b0'],[480,650,1.3,0.26,'#f8e8b0'],[620,200,1.2,0.24,'#d8f0f8'],[100,520,1.2,0.22,'#f8e8b0']];
+  for(const[sx,sy,sr,so,sc]of stars)chartG.appendChild(el('circle',{cx:sx,cy:sy,r:sr,fill:sc,opacity:so}));
+  for(const[sx,sy,s,fs,op,c]of[[90,110,'✦',11,0.28,'#f0e8d0'],[638,132,'✧',9,0.24,'#d8e8f0'],[74,562,'✦',9,0.22,'#f0e8d0'],[628,562,'✧',11,0.26,'#e8d8b8']])chartG.appendChild(tx(s,{x:sx,y:sy,fill:c,opacity:op,'font-size':fs,'text-anchor':'middle','font-family':'serif'}));
+  g.appendChild(chartG);svg.appendChild(g);
 }
 
 function drawRims(svg){
   const g=el('g',{id:'rims'});
-  for(let i=0;i<12;i++){
-    const s=SIGNS[i];
-    g.appendChild(el('path',{
-      d:arcStroke(i*30,i*30+30,R.elArc,CHART.asc),
-      fill:'none',stroke:C[s.el+'Arc'],'stroke-width':'7',opacity:'0.68','stroke-linecap':'butt',
-    }));
-  }
-  for(const[r,op]of[[R.rim3,0.32],[R.rim1,0.18]])
-    g.appendChild(el('circle',{cx:CX,cy:CY,r,fill:'none',stroke:C.gold,'stroke-width':'0.5',opacity:op}));
-  for(let i=0;i<12;i++){
-    const p=ept(i*30,R.rim3+5,CHART.asc);
-    g.appendChild(el('circle',{cx:f(p.x),cy:f(p.y),r:2.0,fill:C.gold,opacity:'0.55'}));
-  }
-  for(let i=0;i<36;i++){
-    if(i%3===0)continue;
-    const p=ept(i*10,R.rim1,CHART.asc);
-    g.appendChild(el('circle',{cx:f(p.x),cy:f(p.y),r:0.9,fill:C.gold,opacity:'0.28'}));
-  }
+  for(let i=0;i<12;i++){const s=SIGNS[i];g.appendChild(el('path',{d:arcStroke(i*30,i*30+30,R.elArc,CHART.asc),fill:'none',stroke:C[s.el+'Arc'],'stroke-width':'7',opacity:'0.68','stroke-linecap':'butt'}))}
+  for(const[r,op]of[[R.rim3,0.32],[R.rim1,0.18]])g.appendChild(el('circle',{cx:CX,cy:CY,r,fill:'none',stroke:C.gold,'stroke-width':'0.5',opacity:op}));
+  for(let i=0;i<12;i++){const p=ept(i*30,R.rim3+5,CHART.asc);g.appendChild(el('circle',{cx:f(p.x),cy:f(p.y),r:2.0,fill:C.gold,opacity:'0.55'}))}
+  for(let i=0;i<36;i++){if(i%3===0)continue;const p=ept(i*10,R.rim1,CHART.asc);g.appendChild(el('circle',{cx:f(p.x),cy:f(p.y),r:0.9,fill:C.gold,opacity:'0.28'}))}
   svg.appendChild(g);
 }
 
 function drawZodiac(svg){
   const g=el('g',{id:'zodiac'});
   for(let i=0;i<12;i++){
-    const s=SIGNS[i];
-    const startEcl=i*30,endEcl=startEcl+30;
-    g.appendChild(el('path',{
-      d:sector(startEcl,endEcl,R.zodOut,R.zodIn,CHART.asc),
-      fill:C[s.el],stroke:C.goldM,'stroke-width':'0.6',
-    }));
-    for(const off of[10,20]){
-      const a=svgA(startEcl+off,CHART.asc);
-      const oT=pt(a,R.zodIn+14),iT=pt(a,R.zodIn+2);
-      g.appendChild(el('line',{x1:f(oT.x),y1:f(oT.y),x2:f(iT.x),y2:f(iT.y),stroke:C.goldBrt,'stroke-width':'0.6'}));
-    }
-    const gp=ept(startEcl+15,R.zodMid,CHART.asc);
-    g.appendChild(glTx(s.gl,gp.x,gp.y,21,s.color,'0.93'));
+    const s=SIGNS[i];const startEcl=i*30,endEcl=startEcl+30;
+    g.appendChild(el('path',{d:sector(startEcl,endEcl,R.zodOut,R.zodIn,CHART.asc),fill:C[s.el],stroke:C.goldM,'stroke-width':'0.6'}));
+    for(const off of[10,20]){const a=svgA(startEcl+off,CHART.asc);const oT=pt(a,R.zodIn+14),iT=pt(a,R.zodIn+2);g.appendChild(el('line',{x1:f(oT.x),y1:f(oT.y),x2:f(iT.x),y2:f(iT.y),stroke:C.goldBrt,'stroke-width':'0.6'}))}
+    const gp=ept(startEcl+15,R.zodMid,CHART.asc);g.appendChild(glTx(s.gl,gp.x,gp.y,21,s.color,'0.93'));
   }
   g.appendChild(el('circle',{cx:CX,cy:CY,r:R.zodOut,fill:'none',stroke:C.goldBrt,'stroke-width':'0.9'}));
-  g.appendChild(el('circle',{cx:CX,cy:CY,r:R.zodIn, fill:'none',stroke:C.goldM,  'stroke-width':'0.7'}));
+  g.appendChild(el('circle',{cx:CX,cy:CY,r:R.zodIn,fill:'none',stroke:C.goldM,'stroke-width':'0.7'}));
   svg.appendChild(g);
 }
 
 function drawHouses(svg){
   const g=el('g',{id:'houses'});
   g.appendChild(el('circle',{cx:CX,cy:CY,r:R.zodIn,fill:'#09102a'}));
-
   const ig=el('radialGradient',{id:'innerG',cx:'50%',cy:'50%',r:'50%'});
-  ig.appendChild(el('stop',{offset:'0%', 'stop-color':'#122040','stop-opacity':'0.6'}));
+  ig.appendChild(el('stop',{offset:'0%','stop-color':'#122040','stop-opacity':'0.6'}));
   ig.appendChild(el('stop',{offset:'100%','stop-color':'#09102a','stop-opacity':'0'}));
   svg.querySelector('defs').appendChild(ig);
   g.appendChild(el('circle',{cx:CX,cy:CY,r:R.zodIn,fill:'url(#innerG)'}));
-
   const EL_WC={fire:'rgba(205,125,45,',earth:'rgba(75,138,65,',air:'rgba(75,108,195,',water:'rgba(38,118,178,'};
   const EL_BY_SIGN=['fire','earth','air','water','fire','earth','air','water','fire','earth','air','water'];
-
   for(let i=0;i<12;i++){
     if(i%2===0)continue;
     const c1=CHART.cusps[i],c2=CHART.cusps[(i+1)%12];
@@ -1321,62 +1123,35 @@ function drawHouses(svg){
     const mid=c2>c1?(c1+c2)/2:norm((c1+c2+360)/2);
     const signIdx=Math.floor(CHART.cusps[i]/30)%12;
     const wcColor=EL_WC[EL_BY_SIGN[signIdx]];
-    const blobP=ept(mid,125,CHART.asc);
-    g.appendChild(el('circle',{cx:f(blobP.x),cy:f(blobP.y),r:70,fill:wcColor+'0.11)',filter:'url(#wc)'}));
-    const blobP2=ept(mid,200,CHART.asc);
-    g.appendChild(el('circle',{cx:f(blobP2.x),cy:f(blobP2.y),r:45,fill:wcColor+'0.07)',filter:'url(#wc)'}));
+    const blobP=ept(mid,125,CHART.asc);g.appendChild(el('circle',{cx:f(blobP.x),cy:f(blobP.y),r:70,fill:wcColor+'0.11)',filter:'url(#wc)'}));
+    const blobP2=ept(mid,200,CHART.asc);g.appendChild(el('circle',{cx:f(blobP2.x),cy:f(blobP2.y),r:45,fill:wcColor+'0.07)',filter:'url(#wc)'}));
   }
-
   for(let i=0;i<12;i++){
-    const cusp=CHART.cusps[i];
-    const isAngle=(i%3===0);
+    const cusp=CHART.cusps[i];const isAngle=(i%3===0);
     const oP=ept(cusp,R.zodIn,CHART.asc),iP=ept(cusp,R.cDot+6,CHART.asc);
-    g.appendChild(el('line',{x1:f(oP.x),y1:f(oP.y),x2:f(iP.x),y2:f(iP.y),
-      stroke:isAngle?C.axis:'rgba(208,168,64,0.42)','stroke-width':isAngle?1.4:0.9}));
-    g.appendChild(el('circle',{cx:f(oP.x),cy:f(oP.y),r:isAngle?2.2:1.6,
-      fill:isAngle?C.gold:C.goldM,opacity:isAngle?'0.85':'0.55'}));
-    const sp=ept(cusp,R.sepRing,CHART.asc);
-    g.appendChild(el('circle',{cx:f(sp.x),cy:f(sp.y),r:isAngle?2.4:1.5,
-      fill:isAngle?C.gold:C.goldM,opacity:isAngle?'0.80':'0.48'}));
-    const{deg,sign}=eclSD(cusp);
-    const lp=ept(cusp,R.cuspLbl,CHART.asc);
+    g.appendChild(el('line',{x1:f(oP.x),y1:f(oP.y),x2:f(iP.x),y2:f(iP.y),stroke:isAngle?C.axis:'rgba(208,168,64,0.42)','stroke-width':isAngle?1.4:0.9}));
+    g.appendChild(el('circle',{cx:f(oP.x),cy:f(oP.y),r:isAngle?2.2:1.6,fill:isAngle?C.gold:C.goldM,opacity:isAngle?'0.85':'0.55'}));
+    const sp=ept(cusp,R.sepRing,CHART.asc);g.appendChild(el('circle',{cx:f(sp.x),cy:f(sp.y),r:isAngle?2.4:1.5,fill:isAngle?C.gold:C.goldM,opacity:isAngle?'0.80':'0.48'}));
+    const{deg,sign}=eclSD(cusp);const lp=ept(cusp,R.cuspLbl,CHART.asc);
     g.appendChild(el('circle',{cx:f(lp.x),cy:f(lp.y),r:12,fill:'rgba(8,22,46,0.85)'}));
-    g.appendChild(tx(`${deg}°`,{x:f(lp.x),y:f(lp.y-4.5),
-      fill:isAngle?C.gold:C.ivory,opacity:isAngle?'0.90':'0.72',
-      'font-size':isAngle?8.5:7.5,'font-family':"'Inter',sans-serif",
-      'text-anchor':'middle','dominant-baseline':'central'}));
-    g.appendChild(glTx(sign.gl,lp.x,lp.y+5.2,isAngle?8.5:7.5,
-      isAngle?C.gold:C.ivory,isAngle?'0.90':'0.68'));
+    g.appendChild(tx(`${deg}°`,{x:f(lp.x),y:f(lp.y-4.5),fill:isAngle?C.gold:C.ivory,opacity:isAngle?'0.90':'0.72','font-size':isAngle?8.5:7.5,'font-family':"'Inter',sans-serif",'text-anchor':'middle','dominant-baseline':'central'}));
+    g.appendChild(glTx(sign.gl,lp.x,lp.y+5.2,isAngle?8.5:7.5,isAngle?C.gold:C.ivory,isAngle?'0.90':'0.68'));
   }
-
   for(let i=0;i<12;i++){
     const c1=CHART.cusps[i],c2=CHART.cusps[(i+1)%12];
-    const mid=c2>c1?(c1+c2)/2:norm((c1+c2+360)/2);
-    const np=ept(mid,R.hNum,CHART.asc);
+    const mid=c2>c1?(c1+c2)/2:norm((c1+c2+360)/2);const np=ept(mid,R.hNum,CHART.asc);
     g.appendChild(el('circle',{cx:f(np.x),cy:f(np.y),r:11,fill:'rgba(8,22,46,0.75)'}));
-    g.appendChild(tx(String(i+1),{x:f(np.x),y:f(np.y),
-      fill:C.ivory,opacity:'0.72','font-size':12.5,
-      'font-family':"'Cormorant Garamond',serif",'font-weight':'400','font-style':'italic',
-      'text-anchor':'middle','dominant-baseline':'central'}));
+    g.appendChild(tx(String(i+1),{x:f(np.x),y:f(np.y),fill:C.ivory,opacity:'0.72','font-size':12.5,'font-family':"'Cormorant Garamond',serif",'font-weight':'400','font-style':'italic','text-anchor':'middle','dominant-baseline':'central'}));
   }
-
   g.appendChild(el('circle',{cx:CX,cy:CY,r:R.sepRing,fill:'none',stroke:C.goldM,'stroke-width':'0.35'}));
-  g.appendChild(el('circle',{cx:CX,cy:CY,r:R.asp,
-    fill:'rgba(8,12,30,0.45)',stroke:'rgba(62,143,192,0.28)','stroke-width':'0.9'}));
+  g.appendChild(el('circle',{cx:CX,cy:CY,r:R.asp,fill:'rgba(8,12,30,0.45)',stroke:'rgba(62,143,192,0.28)','stroke-width':'0.9'}));
   svg.appendChild(g);
 }
 
 function drawCenter(svg){
   const g=el('g',{id:'center'});
-  for(let i=0;i<16;i++){
-    const angle=i*(360/16);
-    const inner=14,outer=i%2===0?42:30;
-    const p1=pt(angle,inner),p2=pt(angle,outer);
-    g.appendChild(el('line',{x1:f(p1.x),y1:f(p1.y),x2:f(p2.x),y2:f(p2.y),
-      stroke:C.gold,'stroke-width':i%2===0?'0.8':'0.4',opacity:i%2===0?'0.30':'0.14'}));
-  }
-  for(const[r,op]of[[32,0.06],[25,0.07],[19,0.08]])
-    g.appendChild(el('circle',{cx:CX,cy:CY,r,fill:'none',stroke:C.gold,'stroke-width':'0.5',opacity:op}));
+  for(let i=0;i<16;i++){const angle=i*(360/16);const inner=14,outer=i%2===0?42:30;const p1=pt(angle,inner),p2=pt(angle,outer);g.appendChild(el('line',{x1:f(p1.x),y1:f(p1.y),x2:f(p2.x),y2:f(p2.y),stroke:C.gold,'stroke-width':i%2===0?'0.8':'0.4',opacity:i%2===0?'0.30':'0.14'}))}
+  for(const[r,op]of[[32,0.06],[25,0.07],[19,0.08]])g.appendChild(el('circle',{cx:CX,cy:CY,r,fill:'none',stroke:C.gold,'stroke-width':'0.5',opacity:op}));
   g.appendChild(el('circle',{cx:CX,cy:CY,r:R.cRing,fill:'none',stroke:C.goldM,'stroke-width':'0.7'}));
   g.appendChild(el('circle',{cx:CX,cy:CY,r:R.cDot,fill:'#0c1030',stroke:C.gold,'stroke-width':'0.9',opacity:'0.85'}));
   g.appendChild(tx('✦',{x:CX,y:CY,fill:C.gold,opacity:'0.92','font-size':8,'font-family':'serif','text-anchor':'middle','dominant-baseline':'central'}));
@@ -1385,15 +1160,12 @@ function drawCenter(svg){
 
 function drawAspects(svg){
   const g=el('g',{id:'aspects'});
-  const dMap={};
-  CHART.planets.forEach(p=>dMap[p.id]=p.deg);
-  dMap.mc=CHART.mc; dMap.asc=CHART.asc;
+  const dMap={};CHART.planets.forEach(p=>dMap[p.id]=p.deg);dMap.mc=CHART.mc;dMap.asc=CHART.asc;
   for(const asp of CHART.aspects){
-    const st=ASP_STYLE[asp.type]; if(!st)continue;
-    const d1=dMap[asp.p1],d2=dMap[asp.p2]; if(d1==null||d2==null)continue;
+    const st=ASP_STYLE[asp.type];if(!st)continue;
+    const d1=dMap[asp.p1],d2=dMap[asp.p2];if(d1==null||d2==null)continue;
     const p1=ept(d1,R.asp,CHART.asc),p2=ept(d2,R.asp,CHART.asc);
-    const ln=el('line',{x1:f(p1.x),y1:f(p1.y),x2:f(p2.x),y2:f(p2.y),
-      stroke:st.color,'stroke-width':st.w,opacity:st.op});
+    const ln=el('line',{x1:f(p1.x),y1:f(p1.y),x2:f(p2.x),y2:f(p2.y),stroke:st.color,'stroke-width':st.w,opacity:st.op});
     if(st.dash)ln.setAttribute('stroke-dasharray',st.dash);
     g.appendChild(ln);
   }
@@ -1404,12 +1176,9 @@ function drawAxes(svg){
   const g=el('g',{id:'axes'});
   for(const[ecl,label]of[[CHART.asc,'ASC'],[CHART.mc,'MC']]){
     const p1=ept(ecl,R.zodOut+4,CHART.asc),p2=ept(ecl+180,R.zodOut+4,CHART.asc);
-    g.appendChild(el('line',{x1:f(p1.x),y1:f(p1.y),x2:f(p2.x),y2:f(p2.y),
-      stroke:C.gold,'stroke-width':'1.1',opacity:'0.55'}));
+    g.appendChild(el('line',{x1:f(p1.x),y1:f(p1.y),x2:f(p2.x),y2:f(p2.y),stroke:C.gold,'stroke-width':'1.1',opacity:'0.55'}));
     const lp=ept(ecl,R.zodOut+28,CHART.asc);
-    g.appendChild(tx(label,{x:f(lp.x),y:f(lp.y),fill:C.gold,opacity:'0.85',
-      'font-size':8.5,'font-family':"'Inter',sans-serif",'font-weight':'500',
-      'letter-spacing':'0.12em','text-anchor':'middle','dominant-baseline':'central'}));
+    g.appendChild(tx(label,{x:f(lp.x),y:f(lp.y),fill:C.gold,opacity:'0.85','font-size':8.5,'font-family':"'Inter',sans-serif",'font-weight':'500','letter-spacing':'0.12em','text-anchor':'middle','dominant-baseline':'central'}));
   }
   svg.appendChild(g);
 }
@@ -1418,173 +1187,88 @@ function drawPlanets(svg){
   const g=el('g',{id:'planets'});
   const sp=spread(CHART.planets);
   for(const p of sp){
-    const color=PLANET_COLOR[p.grp];
-    const sign=SIGNS[p.si];
-    const tP=ept(p.deg,R.asp,CHART.asc);
-    g.appendChild(el('circle',{cx:f(tP.x),cy:f(tP.y),r:2.8,fill:color,opacity:'0.88'}));
-    if(Math.abs(p.disp-p.deg)>2.5){
-      const lA=ept(p.deg,R.asp+5,CHART.asc),lB=ept(p.disp,R.pGlyph-14,CHART.asc);
-      g.appendChild(el('line',{x1:f(lA.x),y1:f(lA.y),x2:f(lB.x),y2:f(lB.y),
-        stroke:color,'stroke-width':'0.5',opacity:'0.42'}));
-    }
+    const color=PLANET_COLOR[p.grp];const sign=SIGNS[p.si];
+    const tP=ept(p.deg,R.asp,CHART.asc);g.appendChild(el('circle',{cx:f(tP.x),cy:f(tP.y),r:2.8,fill:color,opacity:'0.88'}));
+    if(Math.abs(p.disp-p.deg)>2.5){const lA=ept(p.deg,R.asp+5,CHART.asc),lB=ept(p.disp,R.pGlyph-14,CHART.asc);g.appendChild(el('line',{x1:f(lA.x),y1:f(lA.y),x2:f(lB.x),y2:f(lB.y),stroke:color,'stroke-width':'0.5',opacity:'0.42'}))}
     const lp=ept(p.disp,R.pLbl,CHART.asc);
-    g.appendChild(tx(`${p.sd}°`,{x:f(lp.x),y:f(lp.y-4.2),fill:color,opacity:'0.72',
-      'font-size':8,'font-family':"'Inter',sans-serif",'text-anchor':'middle','dominant-baseline':'central'}));
+    g.appendChild(tx(`${p.sd}°`,{x:f(lp.x),y:f(lp.y-4.2),fill:color,opacity:'0.72','font-size':8,'font-family':"'Inter',sans-serif",'text-anchor':'middle','dominant-baseline':'central'}));
     g.appendChild(glTx(sign.gl,lp.x,lp.y+5.2,8.5,color,'0.68'));
     const gp=ept(p.disp,R.pGlyph,CHART.asc);
     g.appendChild(el('circle',{cx:f(gp.x),cy:f(gp.y),r:13,fill:color,opacity:'0.05'}));
     g.appendChild(glTx(p.gl,gp.x,gp.y,21,color,'0.97'));
-    if(p.retro){
-      const rxA=svgA(p.disp,CHART.asc)+9;
-      const rxP=pt(rxA,R.pGlyph-10);
-      g.appendChild(tx('Rx',{x:f(rxP.x),y:f(rxP.y),fill:color,opacity:'0.68',
-        'font-size':7.5,'font-family':"'Inter',sans-serif",'font-style':'italic',
-        'text-anchor':'middle','dominant-baseline':'central'}));
-    }
+    if(p.retro){const rxA=svgA(p.disp,CHART.asc)+9;const rxP=pt(rxA,R.pGlyph-10);g.appendChild(tx('Rx',{x:f(rxP.x),y:f(rxP.y),fill:color,opacity:'0.68','font-size':7.5,'font-family':"'Inter',sans-serif",'font-style':'italic','text-anchor':'middle','dominant-baseline':'central'}))}
   }
   svg.appendChild(g);
 }
 
 function render(){
   const svg=document.getElementById('chart-svg');
-  drawDefs(svg); drawBackground(svg); drawRims(svg); drawZodiac(svg);
-  drawHouses(svg); drawAspects(svg); drawAxes(svg); drawPlanets(svg); drawCenter(svg);
+  drawDefs(svg);drawBackground(svg);drawRims(svg);drawZodiac(svg);
+  drawHouses(svg);drawAspects(svg);drawAxes(svg);drawPlanets(svg);drawCenter(svg);
 }
 render();
 
 // ─── NAVIGATION ───────────────────────────────────────────────────────────────
-const panels = {
-  chart:    document.getElementById('panel-chart'),
-  identity: document.getElementById('panel-identity'),
-  depth:    document.getElementById('panel-depth'),
-  roots:    document.getElementById('panel-roots'),
-  soul:     document.getElementById('panel-soul'),
-};
+const panels={chart:document.getElementById('panel-chart'),identity:document.getElementById('panel-identity'),depth:document.getElementById('panel-depth'),roots:document.getElementById('panel-roots'),soul:document.getElementById('panel-soul')};
+let activePanel='chart';
+panels.chart.classList.add('active');
 
-let activePanel = 'chart';
-
-function switchPanel(id, btn) {
-  if (id === activePanel) return;
+function switchPanel(id,btn){
+  if(id===activePanel)return;
   panels[activePanel].classList.remove('active');
   document.querySelectorAll('.nav-tab').forEach(t=>t.classList.remove('active'));
   panels[id].classList.add('active');
   btn.classList.add('active');
-  activePanel = id;
-  // Show key button only on chart panel
-  document.getElementById('keyBtn').classList.toggle('hidden', id !== 'chart');
-  // Close key drawer if open when leaving chart
-  if (id !== 'chart') closeKey();
-  // Reset panel scroll to top when switching
-  panels[id].scrollTop = 0;
+  activePanel=id;
+  document.getElementById('keyBtn').classList.toggle('hidden',id!=='chart');
+  if(id!=='chart')closeKey();
+  panels[id].scrollTop=0;
 }
 
-// Initialize chart panel
-panels.chart.classList.add('active');
+// ─── SCROLL FADE-IN ───────────────────────────────────────────────────────────
+const fadeObserver=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');fadeObserver.unobserve(e.target);}});
+},{threshold:0.08,rootMargin:'0px 0px -20px 0px'});
 
-// ─── COLLAPSIBLE DIVES ────────────────────────────────────────────────────────
-function toggleDive(btn) {
-  const expanded = btn.getAttribute('aria-expanded') === 'true';
-  btn.setAttribute('aria-expanded', !expanded);
-  const body = btn.nextElementSibling;
-  body.classList.toggle('open', !expanded);
+document.querySelectorAll('.sec-card,.dive-wrap,.throughline,.tarot-outer,.poem-outer').forEach(el=>{
+  // Stagger siblings slightly
+  const siblings=[...el.parentElement.children].filter(c=>c.classList.contains(el.className.split(' ')[0]));
+  const idx=siblings.indexOf(el);
+  el.style.transitionDelay=`${idx*0.06}s`;
+  fadeObserver.observe(el);
+});
+
+// ─── DIVE TOGGLES ─────────────────────────────────────────────────────────────
+function toggleDive(btn){
+  const expanded=btn.getAttribute('aria-expanded')==='true';
+  btn.setAttribute('aria-expanded',!expanded);
+  btn.nextElementSibling.classList.toggle('open',!expanded);
 }
 
 // ─── KEY DRAWER ───────────────────────────────────────────────────────────────
-const KS=SIGNS.map(s=>({gl:s.gl,color:s.color,name:s.name,
-  note:({fire:'Fire',earth:'Earth',air:'Air',water:'Water'})[s.el]+' · '+MODALITY[s.abbr]}));
-
-const KP=[
-  {gl:'☉'+T,c:'#d8b850',name:'Sun',      note:'Vitality · core identity'},
-  {gl:'☽'+T,c:'#d8b850',name:'Moon',     note:'Emotion · instinct · needs'},
-  {gl:'☿'+T,c:'#c8a0a0',name:'Mercury',  note:'Mind · communication'},
-  {gl:'♀'+T,c:'#c8a0a0',name:'Venus',    note:'Love · beauty · values'},
-  {gl:'♂'+T,c:'#c8a0a0',name:'Mars',     note:'Drive · assertion · will'},
-  {gl:'♃'+T,c:'#7ab0d0',name:'Jupiter',  note:'Expansion · wisdom · luck'},
-  {gl:'♄'+T,c:'#7ab0d0',name:'Saturn',   note:'Structure · discipline · time'},
-  {gl:'♅'+T,c:'#5ab8a8',name:'Uranus',   note:'Innovation · disruption'},
-  {gl:'♆'+T,c:'#5ab8a8',name:'Neptune',  note:'Dreams · dissolution · vision'},
-  {gl:'♇'+T,c:'#5ab8a8',name:'Pluto',    note:'Transformation · depth · power'},
-  {gl:'⚷'+T,c:'rgba(240,228,200,0.70)',name:'Chiron',    note:'The wound · the healer'},
-  {gl:'☊'+T,c:'rgba(240,228,200,0.70)',name:'North Node',note:'Soul path · growth edge'},
-  {gl:'☋'+T,c:'rgba(240,228,200,0.70)',name:'South Node',note:'Karmic origin · past pattern'},
-];
-
-const KA=[
-  {color:'#d0a840',dash:false,name:'Conjunction', note:'0° · unity, intensity, merger'},
-  {color:'#3e8fc0',dash:false,name:'Sextile',     note:'60° · opportunity, ease, flow'},
-  {color:'#5ab8a8',dash:false,name:'Trine',       note:'120° · natural talent, grace'},
-  {color:'#c89898',dash:true, name:'Square',      note:'90° · friction, growth pressure'},
-  {color:'#c89898',dash:false,name:'Opposition',  note:'180° · tension, polarity, awareness'},
-  {color:'rgba(240,228,200,0.38)',dash:true,name:'Inconjunct',note:'150° · adjustment, redirection'},
-];
-
-const KE=[
-  {color:'#c87840',name:'Fire', note:'Aries · Leo · Sagittarius'},
-  {color:'#58925a',name:'Earth',note:'Taurus · Virgo · Capricorn'},
-  {color:'#5878c8',name:'Air',  note:'Gemini · Libra · Aquarius'},
-  {color:'#3880b8',name:'Water',note:'Cancer · Scorpio · Pisces'},
-];
-
-function ki(html,bc){
-  const d=document.createElement('div');
-  d.className='ki'; d.style.borderColor=`${bc}18`;
-  d.innerHTML=html; return d;
-}
-
+const KS=SIGNS.map(s=>({gl:s.gl,color:s.color,name:s.name,note:({fire:'Fire',earth:'Earth',air:'Air',water:'Water'})[s.el]+' · '+MODALITY[s.abbr]}));
+const KP=[{gl:'☉'+T,c:'#d8b850',name:'Sun',note:'Vitality · core identity'},{gl:'☽'+T,c:'#d8b850',name:'Moon',note:'Emotion · instinct · needs'},{gl:'☿'+T,c:'#c8a0a0',name:'Mercury',note:'Mind · communication'},{gl:'♀'+T,c:'#c8a0a0',name:'Venus',note:'Love · beauty · values'},{gl:'♂'+T,c:'#c8a0a0',name:'Mars',note:'Drive · assertion · will'},{gl:'♃'+T,c:'#7ab0d0',name:'Jupiter',note:'Expansion · wisdom · luck'},{gl:'♄'+T,c:'#7ab0d0',name:'Saturn',note:'Structure · discipline · time'},{gl:'♅'+T,c:'#5ab8a8',name:'Uranus',note:'Innovation · disruption'},{gl:'♆'+T,c:'#5ab8a8',name:'Neptune',note:'Dreams · dissolution · vision'},{gl:'♇'+T,c:'#5ab8a8',name:'Pluto',note:'Transformation · depth · power'},{gl:'⚷'+T,c:'rgba(240,228,200,0.70)',name:'Chiron',note:'The wound · the healer'},{gl:'☊'+T,c:'rgba(240,228,200,0.70)',name:'North Node',note:'Soul path · growth edge'},{gl:'☋'+T,c:'rgba(240,228,200,0.70)',name:'South Node',note:'Karmic origin · past pattern'}];
+const KA=[{color:'#d0a840',dash:false,name:'Conjunction',note:'0° · unity, intensity, merger'},{color:'#3e8fc0',dash:false,name:'Sextile',note:'60° · opportunity, ease, flow'},{color:'#5ab8a8',dash:false,name:'Trine',note:'120° · natural talent, grace'},{color:'#c89898',dash:true,name:'Square',note:'90° · friction, growth pressure'},{color:'#c89898',dash:false,name:'Opposition',note:'180° · tension, polarity, awareness'},{color:'rgba(240,228,200,0.38)',dash:true,name:'Inconjunct',note:'150° · adjustment, redirection'}];
+const KE=[{color:'#c87840',name:'Fire',note:'Aries · Leo · Sagittarius'},{color:'#58925a',name:'Earth',note:'Taurus · Virgo · Capricorn'},{color:'#5878c8',name:'Air',note:'Gemini · Libra · Aquarius'},{color:'#3880b8',name:'Water',note:'Cancer · Scorpio · Pisces'}];
+function ki(html,bc){const d=document.createElement('div');d.className='ki';d.style.borderColor=`${bc}18`;d.innerHTML=html;return d}
 function buildKey(){
-  const sg=document.getElementById('kS');
-  for(const s of KS) sg.appendChild(ki(
-    `<span class="ki-gl" style="color:${s.color}">${s.gl}</span>
-     <span><span class="ki-name">${s.name}</span><span class="ki-note">${s.note}</span></span>`,s.color));
-
-  const pg=document.getElementById('kP');
-  for(const p of KP) pg.appendChild(ki(
-    `<span class="ki-gl" style="color:${p.c}">${p.gl}</span>
-     <span><span class="ki-name">${p.name}</span><span class="ki-note">${p.note}</span></span>`,p.c));
-
-  const ag=document.getElementById('kA');
-  for(const a of KA){
-    const ln=`<svg width="30" height="14" style="flex-shrink:0">
-      <line x1="2" y1="7" x2="28" y2="7" stroke="${a.color}" stroke-width="1.5"
-        ${a.dash?'stroke-dasharray="5,3"':''} opacity="0.88"/></svg>`;
-    ag.appendChild(ki(`${ln}<span><span class="ki-name">${a.name}</span><span class="ki-note">${a.note}</span></span>`,a.color));
-  }
-
-  const eg=document.getElementById('kE');
-  for(const e of KE) eg.appendChild(ki(
-    `<span class="ki-sw" style="background:${e.color};box-shadow:0 0 7px ${e.color}55"></span>
-     <span><span class="ki-name">${e.name}</span><span class="ki-note">${e.note}</span></span>`,e.color));
+  const sg=document.getElementById('kS');for(const s of KS)sg.appendChild(ki(`<span class="ki-gl" style="color:${s.color}">${s.gl}</span><span><span class="ki-name">${s.name}</span><span class="ki-note">${s.note}</span></span>`,s.color));
+  const pg=document.getElementById('kP');for(const p of KP)pg.appendChild(ki(`<span class="ki-gl" style="color:${p.c}">${p.gl}</span><span><span class="ki-name">${p.name}</span><span class="ki-note">${p.note}</span></span>`,p.c));
+  const ag=document.getElementById('kA');for(const a of KA){const ln=`<svg width="30" height="14" style="flex-shrink:0"><line x1="2" y1="7" x2="28" y2="7" stroke="${a.color}" stroke-width="1.5" ${a.dash?'stroke-dasharray="5,3"':''} opacity="0.88"/></svg>`;ag.appendChild(ki(`${ln}<span><span class="ki-name">${a.name}</span><span class="ki-note">${a.note}</span></span>`,a.color));}
+  const eg=document.getElementById('kE');for(const e of KE)eg.appendChild(ki(`<span class="ki-sw" style="background:${e.color};box-shadow:0 0 7px ${e.color}55"></span><span><span class="ki-name">${e.name}</span><span class="ki-note">${e.note}</span></span>`,e.color));
 }
 buildKey();
 
-const overlay = document.getElementById('keyOverlay');
-const dimmer  = document.getElementById('keyDimmer');
-const btn     = document.getElementById('keyBtn');
-
-function openKey() {
-  overlay.classList.add('open');
-  dimmer.classList.add('open');
-  document.body.classList.add('drawer-open');
-  btn.textContent = '×';
-}
-function closeKey() {
-  overlay.classList.remove('open');
-  dimmer.classList.remove('open');
-  document.body.classList.remove('drawer-open');
-  btn.textContent = '✦';
-}
-
-btn.addEventListener('click', () =>
-  overlay.classList.contains('open') ? closeKey() : openKey());
-document.getElementById('keyClose').addEventListener('click', closeKey);
-dimmer.addEventListener('click', closeKey);
-document.addEventListener('keydown', e => { if(e.key==='Escape') closeKey(); });
-
-let _swipeX=0;
-overlay.addEventListener('touchstart', e=>{_swipeX=e.touches[0].clientX;},{passive:true});
-overlay.addEventListener('touchend', e=>{
-  if(e.changedTouches[0].clientX-_swipeX>80) closeKey();
-},{passive:true});
+const overlay=document.getElementById('keyOverlay'),dimmer=document.getElementById('keyDimmer'),keyBtn=document.getElementById('keyBtn');
+function openKey(){overlay.classList.add('open');dimmer.classList.add('open');document.body.classList.add('drawer-open');keyBtn.textContent='×'}
+function closeKey(){overlay.classList.remove('open');dimmer.classList.remove('open');document.body.classList.remove('drawer-open');keyBtn.textContent='✦'}
+keyBtn.addEventListener('click',()=>overlay.classList.contains('open')?closeKey():openKey());
+document.getElementById('keyClose').addEventListener('click',closeKey);
+dimmer.addEventListener('click',closeKey);
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeKey()});
+let _sx=0;
+overlay.addEventListener('touchstart',e=>{_sx=e.touches[0].clientX},{passive:true});
+overlay.addEventListener('touchend',e=>{if(e.changedTouches[0].clientX-_sx>80)closeKey()},{passive:true});
 </script>
 </body>
 </html>
