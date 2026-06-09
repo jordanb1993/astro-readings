@@ -121,9 +121,11 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overs
   position:relative;z-index:1;
   width:min(calc(100dvh - 190px),calc(100dvw - 8px));
   height:min(calc(100dvh - 190px),calc(100dvw - 8px));
-  touch-action:pan-x pan-y pinch-zoom;flex-shrink:0;
+  touch-action:none;flex-shrink:0;
+  overflow:hidden;border-radius:50%;
 }
-#chart-svg{display:block;width:100%;height:100%;overflow:visible;user-select:none;-webkit-user-select:none;-webkit-tap-highlight-color:transparent;font-variant-emoji:text}
+#chart-svg{display:block;width:100%;height:100%;overflow:visible;user-select:none;-webkit-user-select:none;-webkit-tap-highlight-color:transparent;font-variant-emoji:text;transform-origin:50% 50%;will-change:transform}
+.zoom-badge{position:absolute;bottom:10px;left:50%;transform:translateX(-50%);background:rgba(9,16,42,0.78);border:1px solid rgba(208,168,64,0.40);color:rgba(208,168,64,0.92);font-family:'Inter',sans-serif;font-size:0.52rem;letter-spacing:0.14em;padding:3px 10px;border-radius:20px;pointer-events:none;opacity:0;transition:opacity 0.22s;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);white-space:nowrap;z-index:5}
 #chart-svg text{font-variant-emoji:text}
 
 /* ── BIG THREE STRIP ── */
@@ -463,6 +465,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overs
 
   <div class="chart-wrap">
     <svg id="chart-svg" viewBox="-22 -22 764 764" xmlns="http://www.w3.org/2000/svg" style="overflow:visible"></svg>
+    <div class="zoom-badge" id="zoom-badge">1×</div>
   </div>
 
   <!-- Big Three strip -->
@@ -1483,6 +1486,105 @@ document.querySelectorAll('.sec-card,.dive-wrap,.throughline,.tarot-outer,.poem-
   function setAppH(){document.documentElement.style.setProperty('--app-h',window.innerHeight+'px');}
   setAppH();
   window.addEventListener('resize',setAppH,{passive:true});
+})();
+
+// ─── CHART PINCH-TO-ZOOM ─────────────────────────────────────────────────────
+(function(){
+  const wrap  = document.querySelector('.chart-wrap');
+  const svg   = document.getElementById('chart-svg');
+  const badge = document.getElementById('zoom-badge');
+  if(!wrap || !svg || !badge) return;
+
+  const MIN=1, MAX=4;
+  let s=1, tx=0, ty=0;
+  let pinching=false, lastDist=0, lastMid={x:0,y:0};
+  let panStart={x:0,y:0}, panBase={x:0,y:0};
+  let lastTap=0;
+
+  function clamp(v,lo,hi){return Math.max(lo,Math.min(hi,v));}
+
+  function constrain(){
+    const mx=(wrap.offsetWidth*(s-1))/2;
+    const my=(wrap.offsetHeight*(s-1))/2;
+    tx=clamp(tx,-mx,mx); ty=clamp(ty,-my,my);
+  }
+
+  function apply(animated){
+    constrain();
+    svg.style.transition=animated?'transform 0.22s ease':'none';
+    svg.style.transform=`translate(${tx}px,${ty}px) scale(${s})`;
+    const pct=Math.round(s*10)/10;
+    badge.textContent=`${pct}×  ↺`;
+    badge.style.opacity=s>1.02?'1':'0';
+  }
+
+  function reset(animated){s=1;tx=0;ty=0;apply(animated!==false);}
+
+  // reset when leaving chart panel
+  document.querySelector('.app-nav').addEventListener('click',function(e){
+    const btn=e.target.closest('.nav-tab');
+    if(btn&&btn.dataset.target!=='chart') reset(false);
+  },{passive:true});
+
+  // tap badge to reset
+  badge.style.pointerEvents='auto';
+  badge.addEventListener('click',()=>reset(true));
+
+  function dist2(t){
+    const dx=t[0].clientX-t[1].clientX, dy=t[0].clientY-t[1].clientY;
+    return Math.sqrt(dx*dx+dy*dy);
+  }
+  function mid2(t,el){
+    const r=el.getBoundingClientRect();
+    return{x:((t[0].clientX+t[1].clientX)/2)-r.left-r.width/2,
+           y:((t[0].clientY+t[1].clientY)/2)-r.top-r.height/2};
+  }
+  function mid1(t,el){
+    const r=el.getBoundingClientRect();
+    return{x:t[0].clientX-r.left-r.width/2, y:t[0].clientY-r.top-r.height/2};
+  }
+
+  wrap.addEventListener('touchstart',function(e){
+    if(e.touches.length===2){
+      pinching=true;
+      lastDist=dist2(e.touches);
+      lastMid=mid2(e.touches,wrap);
+      e.preventDefault();
+    } else if(e.touches.length===1){
+      const now=Date.now();
+      if(now-lastTap<280){
+        reset(true); lastTap=0; e.preventDefault(); return;
+      }
+      lastTap=now;
+      if(s>1){
+        panStart=mid1(e.touches,wrap);
+        panBase={x:tx,y:ty};
+      }
+      pinching=false;
+    }
+  },{passive:false});
+
+  wrap.addEventListener('touchmove',function(e){
+    if(e.touches.length===2&&pinching){
+      const d=dist2(e.touches), m=mid2(e.touches,wrap);
+      const ns=clamp(s*(d/lastDist),MIN,MAX);
+      // keep focal point stationary
+      tx=m.x+(tx-lastMid.x)*(ns/s);
+      ty=m.y+(ty-lastMid.y)*(ns/s);
+      s=ns; lastDist=d; lastMid=m;
+      apply(false); e.preventDefault();
+    } else if(e.touches.length===1&&s>1&&!pinching){
+      const m=mid1(e.touches,wrap);
+      tx=panBase.x+(m.x-panStart.x);
+      ty=panBase.y+(m.y-panStart.y);
+      apply(false); e.preventDefault();
+    }
+  },{passive:false});
+
+  wrap.addEventListener('touchend',function(e){
+    if(e.touches.length<2) pinching=false;
+    if(s<1.02) reset(true);
+  },{passive:true});
 })();
 
 // ─── DAILY DATE WIRING ────────────────────────────────────────────────────────
