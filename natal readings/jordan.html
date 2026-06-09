@@ -67,7 +67,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overs
 body.drawer-open{overflow:hidden}
 
 /* ── APP SHELL ── */
-.app{display:flex;flex-direction:column;height:100vh;height:100dvh}
+.app{display:flex;flex-direction:column;height:100vh;height:100dvh;height:var(--app-h,100dvh)}
 
 /* ── HEADER ── */
 .app-header{
@@ -1474,6 +1474,13 @@ document.querySelectorAll('.sec-card,.dive-wrap,.throughline,.tarot-outer,.poem-
   el.style.transitionDelay=`${idx*0.06}s`;
   fadeObserver.observe(el);
 });
+
+// ─── iOS PWA VIEWPORT HEIGHT FIX ─────────────────────────────────────────────
+(function(){
+  function setAppH(){document.documentElement.style.setProperty('--app-h',window.innerHeight+'px');}
+  setAppH();
+  window.addEventListener('resize',setAppH,{passive:true});
+})();
 
 // ─── DAILY DATE WIRING ────────────────────────────────────────────────────────
 (function(){
