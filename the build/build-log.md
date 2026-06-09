@@ -4,6 +4,36 @@
 
 ---
 
+## 2026-06-09 — Jordan's Natal Chart HTML (Mobile-Nav Build)
+
+**The headline:** Jordan's personal natal chart built in a new mobile-nav format — the first chart to use the 5-tab bottom nav architecture that will define Phase 2.
+
+### What Was Built
+`natal readings/jordan.html` — Jordan's natal chart with her corrected June 8 Swiss Ephemeris data.
+
+**Architecture:** Fixed 56px header + 5-tab bottom nav + absolute panels with internal scrolling. First departure from the scroll-format natal charts (mimi.html, carina.html). Mobile-native from the ground up.
+
+**Tabs:**
+- ✦ Chart — full SVG natal wheel, chart key drawer
+- ☉ Identity — Essential Signature, ASC, Sun/NNode/Mars, Moon/Lilith
+- ♏ Depth — Scorpio 5th stellium, 7th house Uranus/Neptune architecture
+- ⚷ Roots — Chiron/IC wound, Saturn/Fortune 9th, Pisces MC
+- ☊ Soul — Through-Line, Archetype Card, free verse poem
+
+**Chart wheel:** Jordan's CHART data (all 13 planets incl. SNode), aspects from the corrected natal data. Spread algorithm upgraded with `enforceMinGap()` post-processing (10° minimum) to fix NNode/Mars display overlap (only 0.42° apart after initial spread).
+
+**Archetype card:** "The Cartographer at the Seam" — someone who stands where visible meets invisible, maps the territory from inside it, wound shows the seam, Fortune lives in the long tradition of this labor.
+
+**Poem:** Present tense, no em dashes, ends on open question ("What is the thing you are building / that only the wound could have known to make?"). Workshop standards met.
+
+**Reading content:** All prose from jordan-natal-reading.md (June 8 2026), voice-canon audited, used verbatim in reading panels. Collapsible dive sections for Mars, Pluto 6th, Lilith, Sagittarius DSC sections.
+
+**Design:** Chart panel uses jewel navy `#09102a`; reading panels use deep plum `#0a0614`. Planet strips at top of each reading panel. Glassmorphism cards throughout.
+
+Committed + pushed to GitHub. ✓
+
+---
+
 ## 2026-06-09 — Dasha Work Call Intake + Inbox Processing
 
 **The headline:** New product features seeded from Dasha's live reaction to the v2 natal chart demo. Tech stack recommendations landed. Inbox cleared.
