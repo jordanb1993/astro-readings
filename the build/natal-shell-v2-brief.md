@@ -182,4 +182,4 @@ When this shell is ready to port to mimi, carina, and eventually subscribers:
 
 ---
 
-*Brief written June 9, 2026. **Tier 1 complete June 9, 2026.** Begin Tier 2 next build session.*
+*Brief written June 9, 2026. **Tier 1 complete June 9, 2026. Tier 2 complete June 9, 2026.** Begin Tier 3 next build session.*

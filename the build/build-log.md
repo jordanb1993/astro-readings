@@ -4,6 +4,26 @@
 
 ---
 
+## 2026-06-09 — Natal Shell v2: Tier 2 Complete
+
+**The headline:** Visual depth layer fully matched to mimi.html quality bar. Watercolor blooms, 3-layer card gradients, pull quotes, and crossfade transitions all live. Shell now visually complete and ready to port.
+
+### What Changed (4 items)
+
+**T2-C — Watercolor section blooms:** `reading-inner::before` and `::after` pseudo-elements — large radial gradient blobs, `filter:blur(65-72px)`, accent-colored and positioned top-left + bottom-right. Each panel has its own ambient color atmosphere.
+
+**T2-B — 3-layer card header gradient:** Upgraded `sec-head::before` from a single radial gradient to three overlapping ones — strong bloom from the left edge (0.30 opacity), faint one from top-right, trace from below. Cards now feel lit from within rather than flat.
+
+**T2-A — Pull quotes:** `.pull` CSS class (accent-colored left border, 2px, Cormorant Garamond italic, accent-matched text). 5 quotes placed across all 4 panels: Identity has two (anaretic degree + soul purpose), Depth has one (the Scorpio door), Roots has one (wound and vocation), Soul has one (chart not asking).
+
+**T2-F — Tab crossfade:** Replaced `display:none`/`display:block` toggle with `opacity` + `visibility` + `pointer-events` — 0.22s ease transition. Panels now fade in/out instead of snapping.
+
+### Files Changed
+- `natal readings/jordan.html` — Tier 2 implementation
+- `the build/natal-shell-v2-brief.md` — Tier 2 marked complete
+
+---
+
 ## 2026-06-09 — Natal Shell v2: Tier 1 Complete
 
 **The headline:** Tier 1 of the natal-shell-v2-brief.md fully implemented on jordan.html. CSS token system, per-panel accent color signatures, scrollable 7-tab nav, and panel slot architecture are all live. Shell is now structurally ready to port to other charts.
