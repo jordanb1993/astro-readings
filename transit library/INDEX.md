@@ -1,19 +1,22 @@
 # Transit Library — Active Index
 *Lightweight session-start index. Always loaded. For depth, follow the links.*
-*Last updated: June 8, 2026 — update orbs and status at each session start.*
+*Last updated: June 9, 2026 — update orbs and status at each session start.*
 
 ---
 
 ## Active Long-Term Transits
 
-| Transit | Breakdown File | Orb (June 8) | Status | Peak / Next Contact |
+| Transit | Breakdown File | Orb (June 9) | Status | Peak / Next Contact |
 |---------|---------------|-------------|--------|---------------------|
-| ☊ NNode △ ♃ natal Jupiter (5th) | — | **0.06° applying** | Exact NOW | June 8 peak |
-| ♀ ☌ ♃ Venus-Jupiter △ Scorpio stellium | [[venus-jupiter-cancer-scorpio]] | 0.18° (Jup △ Pluto applying) | Peak window | Venus △ Pluto exact June 10–11 |
-| ♇ Pluto Rx ✶ ☽ natal Moon (10th) | [[pluto-sextile-moon]] | **0.30° applying** | Exact ~June 28–July 1 | Simultaneous with Neptune exact |
-| ⚷ Chiron ✶ ↑ Ascendant (29°) | [[chiron-sextile-ascendant]] | 0.16° separating | Just past exact | Retrograde 2nd pass ~Aug 2026 |
-| ♆ Neptune ☌ ☽ natal Moon (10th) | [[neptune-conjunct-moon]] | **0.78° applying** | Building | First exact late June/early July 2026 |
-| ♅ Uranus ☍ ☉ natal Sun (6th) | [[uranus-opposition-sun]] | 1.03° separating | Past first exact | 2nd exact (retrograde) Oct 2026 |
+| ☊ NNode △ ♃ natal Jupiter (5th) | [[nnode-trine-jupiter]] | **0.05° applying** | Exact ~June 12 | Peak this week |
+| ♀ ☌ ♃ Venus-Jupiter △ Scorpio stellium | [[venus-jupiter-cancer-scorpio]] | **0.02°** (Jup △ Pluto applying) | Peak contact | Venus △ Pluto exact June 9–10 |
+| ♇ Pluto Rx ✶ ☽ natal Moon (10th) | [[pluto-sextile-moon]] | **0.29° applying** | Exact ~June 28–July 1 | Simultaneous with Neptune exact |
+| ⚷ Chiron ✶ ↑ Ascendant (29°) | [[chiron-sextile-ascendant]] | 0.21° separating | Just past exact | Retrograde 2nd pass ~Aug 2026 |
+| ♆ Neptune ☌ ☽ natal Moon (10th) | [[neptune-conjunct-moon]] | **0.76° applying** | Building | First exact late June/early July 2026 |
+| ♅ Uranus ☍ ☉ natal Sun (6th) | [[uranus-opposition-sun]] | 0.73° separating | Past first exact | 2nd exact (retrograde) Oct 2026 |
+| ♅ Uranus ⚻ ♃ natal Jupiter (5th) | [[uranus-inconjunct-jupiter]] | **0.32° applying** | Building | Exact ~June 14–15 |
+| ♅ Uranus ☍ ☊ natal NNode (6th) / ☌ SNode (12th) | [[uranus-opposition-northnode]] | **0.49° applying** | Building | Exact ~June 16 |
+| ♆ Neptune □/ ♀ natal Venus (5th) | [[neptune-sesquiquadrate-venus]] | 0.37° separating | Past exact (~May 15) | Separating; retrograde 2nd pass possible |
 
 ---
 
@@ -30,7 +33,6 @@
 | Transit | Expected Entry | Notes |
 |---------|---------------|-------|
 | Neptune ☌ natal Moon — first exact | Late June 2026 | Most acute point of the first pass |
-| Venus △ natal Pluto — exact | June 10–11, 2026 | Peak of Venus-Jupiter Cancer trine window |
 
 ---
 
@@ -54,6 +56,10 @@
 | [[chiron-sextile-ascendant]] | Chiron ✶ natal Ascendant (Gemini 29°) |
 | [[venus-jupiter-cancer-scorpio]] | Venus ☌ Jupiter in Cancer △ Scorpio 5th stellium |
 | [[saturn-conjunct-moon]] | Saturn ☌ natal Moon (Aries, 10th) — 2nd pass ~Oct 2026 |
+| [[nnode-trine-jupiter]] | NNode △ natal Jupiter (Scorpio, 5th) |
+| [[uranus-inconjunct-jupiter]] | Uranus ⚻ natal Jupiter (Scorpio, 5th) |
+| [[neptune-sesquiquadrate-venus]] | Neptune □/ natal Venus (Scorpio, 5th) |
+| [[uranus-opposition-northnode]] | Uranus ☍ natal NNode (Sagittarius, 6th) / ☌ SNode (Gemini, 12th) |
 
 ---
 
