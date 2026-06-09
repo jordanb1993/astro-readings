@@ -182,4 +182,4 @@ When this shell is ready to port to mimi, carina, and eventually subscribers:
 
 ---
 
-*Brief written June 9, 2026. Status: Tier 1 not yet started. Begin with T1-A (CSS vars) before any visual work.*
+*Brief written June 9, 2026. **Tier 1 complete June 9, 2026.** Begin Tier 2 next build session.*

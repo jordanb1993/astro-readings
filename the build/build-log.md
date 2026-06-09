@@ -4,6 +4,26 @@
 
 ---
 
+## 2026-06-09 — Natal Shell v2: Tier 1 Complete
+
+**The headline:** Tier 1 of the natal-shell-v2-brief.md fully implemented on jordan.html. CSS token system, per-panel accent color signatures, scrollable 7-tab nav, and panel slot architecture are all live. Shell is now structurally ready to port to other charts.
+
+### What Changed (4 items)
+
+**T1-A — CSS custom properties:** Full `:root` token system introduced. 22 variables covering `--bg`, `--gold/rose/cerulean/teal/amber` (each with `-dim`/`-mid`/`-brt`/`-alpha` variants), `--text`, `--muted`, `--muted-2`, `--muted-3`, `--surface`, `--border`. Every hardcoded `rgba(201,168,76,...)` string replaced with `var(--accent-alpha)` references.
+
+**T1-B — Accent color system:** 5 accent classes (`.accent-gold`, `.accent-cerulean`, `.accent-teal`, `.accent-rose`, `.accent-amber`). Each overrides the `--accent` family via CSS cascade. Applied: Identity → gold, Depth → cerulean, Roots → teal, Soul → rose. Accent drives: 3px gradient top strip on every sec-card, left radial glow on sec-head, colored eyebrow/glyph/pills/sep lines/dive toggles/panel title — all panels have a distinct visual identity.
+
+**T1-C — Scrollable nav:** Nav is now `overflow-x:auto; scroll-snap-type:x mandatory`. Each tab is `min-width:72px; flex:none`. Two new locked tabs added — Transits (♄, amber-locked) and Daily (☽, locked) — visible but ghosted with "soon" badge. Nav holds 7 tabs cleanly at 390px width with scroll.
+
+**T1-D — Panel slot architecture:** Consistent inner template introduced: `.panel-slot > .panel-slot-head + .panel-slot-body + .panel-slot-empty`. Two new placeholder panels (`panel-transits`, `panel-daily`) built with this structure — each has geo-bg, accent class, panel-slot, and a visible `.panel-slot-empty` state card.
+
+### Files Changed
+- `natal readings/jordan.html` — Tier 1 implementation
+- `the build/natal-shell-v2-brief.md` — Tier 1 marked complete (see brief)
+
+---
+
 ## 2026-06-09 — Jordan's Natal Chart HTML v2 (Whimsigoth Visual Upgrade)
 
 **The headline:** Full visual upgrade of jordan.html — mimi.html's Whimsigoth design language adapted to the mobile-nav architecture. New system now sets the bar for all future nav-format charts.
