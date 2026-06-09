@@ -1,21 +1,22 @@
 # natal readings/ — Birth Chart Readings
 
-This folder contains full natal chart reading HTMLs in the whimsigoth aesthetic. Each chart is also hosted live on GitHub Pages at `jordanb1993.github.io/astro-readings/natal%20readings/[name].html`.
+This folder contains full natal chart reading HTMLs in the whimsigoth aesthetic. Each chart is hosted live on Netlify at `astrologyos.netlify.app/natal%20readings/[name].html` — always fresh, no cache issues.
 
 ## Completed charts
 
 | Name | File | Live URL | Notes |
 |------|------|----------|-------|
-| Jordan | `jordan-natal.html` | `jordanb1993.github.io/astro-readings/natal%20readings/jordan-natal.html` | Canonical visual template (original build) |
-| Dasha | `dasha.html` | `jordanb1993.github.io/astro-readings/natal%20readings/dasha.html` | Noon chart, time unconfirmed |
-| Iza | `iza.html` | `jordanb1993.github.io/astro-readings/natal%20readings/iza.html` | Confirmed birth time |
-| Su | `su.html` | `jordanb1993.github.io/astro-readings/natal%20readings/su.html` | Confirmed birth time |
-| Marina | `marina.html` | `jordanb1993.github.io/astro-readings/natal%20readings/marina.html` | Leo Sun · Sagittarius Moon · Libra Rising |
-| Kate | `kate.html` | `jordanb1993.github.io/astro-readings/natal%20readings/kate.html` | Libra Sun · Scorpio Moon · Libra Rising |
-| Hazel | `hazel.html` | `jordanb1993.github.io/astro-readings/natal%20readings/hazel.html` | Taurus Sun · Virgo Moon · 29° Aquarius Rising |
-| Yvonne | `yvonne.html` | `jordanb1993.github.io/astro-readings/natal%20readings/yvonne.html` | Cancer Sun · Libra Moon · Sagittarius Rising · coworker |
-| Carina | `carina.html` | `jordanb1993.github.io/astro-readings/natal%20readings/carina.html` | Gemini Sun · Pisces Moon · Scorpio Rising · Jupiter in 10th · **v2 canonical template** |
-| Mimi | `mimi.html` | `jordanb1993.github.io/astro-readings/natal%20readings/mimi.html` | Aries Sun · Leo Moon · Scorpio Rising · fire grand trine · NNode exact sextile MC |
+| Jordan | `jordan.html` | `astrologyos.netlify.app/natal%20readings/jordan.html` | **v3 shell — current canonical template** (Tier 1: CSS tokens, accent colors, scrollable nav) |
+| Jordan | `jordan-natal.html` | `astrologyos.netlify.app/natal%20readings/jordan-natal.html` | v1 — kept for reference only |
+| Dasha | `dasha.html` | `astrologyos.netlify.app/natal%20readings/dasha.html` | Noon chart, time unconfirmed |
+| Iza | `iza.html` | `astrologyos.netlify.app/natal%20readings/iza.html` | Confirmed birth time |
+| Su | `su.html` | `astrologyos.netlify.app/natal%20readings/su.html` | Confirmed birth time |
+| Marina | `marina.html` | `astrologyos.netlify.app/natal%20readings/marina.html` | Leo Sun · Sagittarius Moon · Libra Rising |
+| Kate | `kate.html` | `astrologyos.netlify.app/natal%20readings/kate.html` | Libra Sun · Scorpio Moon · Libra Rising |
+| Hazel | `hazel.html` | `astrologyos.netlify.app/natal%20readings/hazel.html` | Taurus Sun · Virgo Moon · 29° Aquarius Rising |
+| Yvonne | `yvonne.html` | `astrologyos.netlify.app/natal%20readings/yvonne.html` | Cancer Sun · Libra Moon · Sagittarius Rising · coworker |
+| Carina | `carina.html` | `astrologyos.netlify.app/natal%20readings/carina.html` | Gemini Sun · Pisces Moon · Scorpio Rising · Jupiter in 10th |
+| Mimi | `mimi.html` | `astrologyos.netlify.app/natal%20readings/mimi.html` | Aries Sun · Leo Moon · Scorpio Rising · fire grand trine · NNode exact sextile MC |
 
 ---
 
@@ -53,9 +54,9 @@ Identify:
 - 4-5 deep dive topics: choose the aspects/placements with the most psychological richness, not just the most exact
 - Synastry: calculate aspects between their chart and Jordan's natal (see INSTRUCTIONS.md for her degrees)
 
-### ⚠️ Design direction update — June 4, 2026
+### ⚠️ Design direction update — June 9, 2026
 
-**`carina.html` is now the canonical v2 template.** Supersedes `dasha.html` / `iza.html` for all new builds.
+**`jordan.html` is now the canonical v3 shell template.** Supersedes `carina.html` (v2) for all new builds.
 
 **v2 design system (locked):**
 - **Site-wide fixed background:** `hero-stars` SVG is `position: fixed; inset: 0` — covers the entire reading, not just the hero
@@ -69,7 +70,7 @@ Identify:
 - **Aspect rows:** Color-coded left border per type
 - **Palette:** Cosmic indigo `#09102a`, gold `#e8c040`, cerulean `#4ab8e8`, ivory `#f0e4cc` — NO purple
 
-**For all new readings:** copy `carina.html`, update CHART constant, update title/subtitle/name, swap in fresh interpretive content.
+**For all new readings:** copy `jordan.html` (v3 shell), update CHART constant, update header name/dates, assign accent colors per panel, swap in fresh interpretive content. See `natal-shell-v2-brief.md` for the full portability spec.
 
 ---
 
@@ -130,7 +131,7 @@ The full style guide lives in `CLAUDE.md → Writing Style Guide: All Reading Ty
 
 1. Run `open "[filepath]"` to open in browser and check visually
 2. Commit to GitHub: `git add "natal readings/[name].html" && git commit -m "Add [Name] natal chart" && git push origin main`
-3. Share the live URL: `jordanb1993.github.io/astro-readings/natal%20readings/[name].html`
+3. Share the live URL: `astrologyos.netlify.app/natal%20readings/[name].html`
 4. GitHub Pages goes live within ~2 minutes of push
 
 ---
@@ -331,8 +332,8 @@ git commit -m "Add [Name] natal chart wheel"
 git push origin main
 ```
 
-**Live URL:** `https://jordanb1993.github.io/astro-readings/natal%20readings/[name]-wheel.html`
-GitHub Pages goes live within ~2 minutes of push.
+**Live URL:** `https://astrologyos.netlify.app/natal%20readings/[name]-wheel.html`
+Netlify deploys within ~30 seconds of push, always fresh.
 
 ---
 
@@ -424,7 +425,7 @@ Run the Python/swisseph script from the Chart Wheel SOP (see below) to get:
 
 **Step 2 — Copy the template**
 ```bash
-cp "natal readings/carina.html" "natal readings/[name].html"
+cp "natal readings/jordan.html" "natal readings/[name].html"
 ```
 
 **Step 3 — Update identifying information**
@@ -494,7 +495,7 @@ git commit -m "Add [Name] natal reading v2"
 git push origin main
 ```
 
-Live URL: `https://jordanb1993.github.io/astro-readings/natal%20readings/[name].html`
+Live URL: `https://astrologyos.netlify.app/natal%20readings/[name].html`
 
 ---
 
