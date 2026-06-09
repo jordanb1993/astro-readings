@@ -4,6 +4,30 @@
 
 ---
 
+## 2026-06-09 — Natal Shell v2: Tier 3 Complete + Netlify Hosting
+
+**The headline:** Shell is now fully installable as a home-screen web app (PWA). Transits and Daily tabs unlocked with real content — 4 live transit data cards + a date-wired daily reading slot. Hosting permanently migrated from GitHub Pages to Netlify (`astrologyos.netlify.app`) with HTTP-level cache headers. The shell is ready to port to friends' charts.
+
+### What Changed
+
+**T3-A — PWA manifest:** `manifest.json` and `icon.svg` (8-pointed compass rose, gold/navy) already in `natal readings/`. Updated manifest to Jordan-specific name and `start_url`. Added `<link rel="manifest">` + `<link rel="apple-touch-icon">` to jordan.html head.
+
+**T3-B — Transits panel live data:** Replaced blank empty state with 4 real active transit cards (Jupiter trine Pluto 0.02° separating, Pluto sextile Moon 0.29° applying, Uranus inconjunct Jupiter 0.32° applying, Jupiter sesquiquadrate Mars 0.08° applying). Real planet glyphs, real degrees, real orbs and directions, real keyword pills. "reading · phase 2" pill as body — intentional product preview, not broken placeholder.
+
+**T3-C — Daily panel skeleton:** Date-card + reading body slot replace empty state. JS populates full date string (e.g. "Tuesday, June 9, 2026") into eyebrow on load. Ghosted italic placeholder prose shows the exact reading architecture phase 2 will fill.
+
+**Nav tabs unlocked:** Transits and Daily were locked (`pointer-events:none`). Removed lock — both tabs now fully navigable.
+
+**Netlify migration:** GitHub Pages forces `cache-control: max-age=600`, unoverridable, breaking mobile Safari updates. Netlify with `netlify.toml` sets `no-cache, no-store, must-revalidate` at HTTP level. Deploy time ~30s on push.
+
+### Files Changed
+- `natal readings/jordan.html` — T3 implementation, manifest links, nav unlock
+- `natal readings/manifest.json` — Jordan-specific name + start_url
+- `netlify.toml` — cache headers
+- All live-links.md / chart-links.md / README.md → Netlify URLs
+
+---
+
 ## 2026-06-09 — Natal Shell v2: Tier 2 Complete
 
 **The headline:** Visual depth layer fully matched to mimi.html quality bar. Watercolor blooms, 3-layer card gradients, pull quotes, and crossfade transitions all live. Shell now visually complete and ready to port.
