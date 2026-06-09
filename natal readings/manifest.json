@@ -1,8 +1,8 @@
 {
-  "name": "Natal Chart Reading",
-  "short_name": "Natal Chart",
-  "description": "Your personalized natal chart reading — placements, aspects, and the through-line of your chart.",
-  "start_url": ".",
+  "name": "Jordan — Natal Chart",
+  "short_name": "Jordan ✦",
+  "description": "Jordan's personal natal chart & live transit readings.",
+  "start_url": "./jordan.html",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#09102a",
