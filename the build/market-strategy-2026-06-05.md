@@ -174,6 +174,33 @@ This is not a feature to add later. It is the subscription model's entire justif
 
 ---
 
+## SEO / AEO / Passive Content Income
+*Seeded June 9, 2026 — from inbox capture*
+
+**The question:** Could the vast library of transit breakdowns, natal interpretation content, and workplace astrology writing become a passive income stream through SEO, AEO (Answer Engine Optimization), or similar?
+
+**The short answer:** Yes. And it may be a smarter acquisition channel than social media.
+
+**The case:**
+- The transit library alone (every possible transit-to-natal + transit-to-transit aspect with Jordan's interpretation layer) represents hundreds of long-tail keyword targets. "What does Saturn conjunct Moon mean?" gets searched constantly. Most answers are shallow.
+- The natal chart interpretation pages, area-specific readings, and ritual guides all have the same SEO surface area.
+- AEO (showing up in AI-generated answers from Claude, Perplexity, ChatGPT) is emerging as a parallel channel — structured, high-quality content with clear authorship gets cited.
+- The blog/library format scales independently of the subscription product. Someone lands on the content → gets the product pitch → converts to subscriber.
+
+**What makes this different from generic astrology SEO:**
+- Jordan's voice and interpretive precision are recognizable. The content has a point of view, not keyword stuffing.
+- The workplace astrology angle is almost completely uncrowded in SEO terms. Nobody is writing "what does Mars conjunct Saturn mean for your career timeline" at any depth.
+- The transit-to-transit societal layer (what does Venus square Pluto mean for collective dynamics right now) maps to a different audience — broader, trend-aware, shares on social.
+
+**Phase relevance:**
+- Phase 1–2: The content is being produced anyway (transit library breakdowns, natal interpretation blocks). Structuring it for web publication costs almost nothing additional.
+- Phase 2: A public astrology content blog can feed the subscription funnel without requiring a social media presence.
+- Phase 3: Full SEO architecture as a paid acquisition channel alongside word-of-mouth.
+
+**Open question:** Does this live under the main product brand, or as a separate content property that feeds into it? Answer depends on name decision and corporate product brand question.
+
+---
+
 ## The One-Sentence Brand Position (Updated)
 
 "Your AI astrologer who lives with your chart — daily readings, rituals, synastry, and the full turning year, all written to you."

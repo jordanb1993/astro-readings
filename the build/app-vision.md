@@ -343,6 +343,86 @@ The chart wheel and sky-at-work.html are halfway there already. A manifest and i
 
 ---
 
+## Interface Skins / Theming System
+*Seeded June 9, 2026 — Jordan's idea, confirmed by Dasha*
+
+**The concept:** User-selectable visual skins for the astrology interface. Like old MySpace or Tumblr where you could apply a skin and the whole look changes — the same data, a completely different feel.
+
+**Proposed skin options:**
+- Whimsigoth (default — the current sacred geometry palette)
+- Hot pink / Y2K
+- Retro / earth tones
+- Clean minimal (for the corporate product angle)
+- Seasonal (auto-shifts with the wheel of the year)
+
+**Why it fits:** The 12th house design principle says the machinery should be invisible — but the surface can be endlessly customizable. Skins are purely presentational, the data layer doesn't change. This also creates a personalization signal: which skin a user picks tells you something about how they want to engage with astrology.
+
+**Phase relevance:** Phase 3 endgame feature. Phase 1 and 2 use Whimsigoth only. Don't build this early — note it so the architecture doesn't preclude it (i.e., avoid hardcoding colors as statics; use CSS variables from the start).
+
+---
+
+## Workplace Synastry / Compatibility Matching
+*Seeded June 9, 2026 — Dasha's explicit feature request*
+
+**Dasha's words:** "You can have the matching feature where you select yourself and someone else and it gives tips on how you can work better together — where you line, where you don't line, I should be trying to do better because Tony does this because of his zodiac sign."
+
+**The feature:** Within the workplace product or as a standalone feature, a user can select two charts and get practical guidance: where the connection flows, where friction lives, and concrete tips for navigating the dynamic. Not generic sun-sign compatibility — natal-to-natal synastry, interpreted through the lens of working together.
+
+**Jordan's current capability:** She can run this manually now. The full synastry system is built. What's missing is the automation and the interface (pressing a button instead of Jordan calculating it).
+
+**Priority:** Medium. Build the manual version first (Jordan runs synastry for friends/colleagues on request). The automation and self-serve interface comes at Phase 2.
+
+**Live test case:** Dasha wants hers. Tony's birth time is still pending (ask his mom).
+
+---
+
+## Transit-to-Transit Library
+*Seeded June 9, 2026 — from inbox capture*
+
+**The idea:** The existing transit library covers transiting planets aspecting natal placements. A parallel library covering transit-to-transit aspects — planets making aspects to each other in the sky — would serve two purposes:
+
+1. **Personal:** What does Venus conjunct Jupiter in the sky mean experientially, independent of any natal chart? What's the collective weather?
+2. **Societal:** The broader mundane astrology layer — what is this transit meaning for the world, the culture, the zeitgeist?
+3. **Workplace-specific:** A curated subset of transit-to-transit aspects that are specifically relevant to professional/organizational dynamics. Builds on the `#astroflow-weekly` proof of concept.
+
+**Architecture:** Same pattern as the existing transit library — one file per transit, frontmatter schema, links from INDEX.md. This is an expansion of the same architecture, not a new system. Consistent with the "transit library is the app backend seed" principle.
+
+**Phase relevance:** The workplace-specific variant is Phase 1/2 material — it powers the `sky-at-work.html` and the #astroflow-weekly format. The societal layer is Phase 3 content SEO fodder (see market-strategy SEO/AEO section).
+
+---
+
+## Tech Stack — Recommended Infrastructure (Dasha June 9)
+
+| Tool | Purpose | Cost | Notes |
+|------|---------|------|-------|
+| **Render** | Hosting / backend | Free tier → paid | Already noted; Dasha uses it |
+| **Supabase** | Database + storage | Free (1–2 projects/org), then $10–20/mo | Can't store subscriber data locally at scale — Supabase is the answer for Phase 2 chart vault |
+| **Resend** | Email delivery | Free tier available | Newsletter + subscriber emails, API-accessible, vibe-codeable. Dasha's "R" service (distinct from Render). Use for Phase 2 subscriber email delivery |
+| **Xcode** | Mobile dev preview | Free | Shows real phone UI live while coding; test mobile layouts without deploying |
+
+**Supabase note:** 1–2 free projects per org. Start with one free project in Phase 1. At Phase 2 scale, $10–20/mo per project is trivial against subscription revenue. This is the natural home for: subscriber birth data, chart cache, reading history, delivery records. **Confirmation from work context:** Dasha uses Supabase (`vznjfxfugammbqgbwydl`) for the AI Playbook at Everflow — it's production-grade and already familiar to Jordan.
+
+**Render note:** Dasha hosts the AI Playbook's geo map interactive tool at `ai-playbook-assets.onrender.com`. Same pattern works for astrology app backend tools and the Swiss Ephemeris calculation layer.
+
+**Resend note:** Free tier supports subscriber/newsletter emails (not cold outreach). API means vibe-coding the email layer is feasible. Dasha hasn't paid for it yet on her free tier. Start there for Phase 2 delivery infrastructure.
+
+**AEO/llms.txt note:** The AI Playbook has a `llms.txt` at root with all recipe content structured for LLM citation. The same pattern applies to the astrology content site — a `llms.txt` with all transit interpretations, reading formats, and natal methodology means the content gets cited by AI assistants as a primary source. Jordan and Dasha built this system together and it's proven.
+
+---
+
+## Mobile-Forward Navigation
+*Confirmed direction June 9, 2026*
+
+**Current state:** The natal reading scroll format is intentionally immersive and non-interactive (confirmed contemplative artifact design decision). But the broader app interface — the home, the nav, the "what do you want today" layer — needs to be mobile-first navigation, not a scroll dashboard.
+
+**Jordan's words:** "I need to get it to switch over to that thing where it's like, it's not like a scroll sort of dashboard... I want it to be more like a navigation sort of a build. Mobile forward."
+
+**Direction:** The reading itself stays as a scroll. The app wrapper (home screen, nav, chart vault, reading type selection) should be designed mobile-first with a navigation model. Think: bottom nav tabs, card-based reading type selection, chart as persistent anchor accessible from any screen.
+
+**Phase relevance:** Phase 2 delivery infrastructure question. Phase 1 can stay as individual HTML files. Phase 2 needs the nav wrapper.
+
+---
+
 ## Open Questions
 
 - Name decision (let one land — top three: Thin Place · The 29th · Solas)

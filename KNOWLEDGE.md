@@ -101,6 +101,23 @@ Both outer planets in the house of partnership. Relationships have an inherent q
 
 Structure and discipline in belief systems, higher learning, and worldview-building. Discipline that needs meaning to function — arbitrary constraint creates anxiety and avoidance. Financial avoidance (student loans) has this signature: the freeze response happens not from irresponsibility but from Saturn in the 9th requiring meaning before it can move into action.
 
+### Black Moon Lilith — True (9°49' Aries, 10th house) + Mean (15°07' Aries, 11th house)
+*Placements confirmed June 8, 2026 via Swiss Ephemeris recalculation. Interpretive context added June 9, 2026.*
+
+**True BML at 9°49' Aries in the 10th house:**
+Intensely independent, rebellious public identity. Refusal to be boxed in or managed. The career and public-facing self carries an energy that authority figures find simultaneously magnetic and threatening — Aries Lilith in the house of career legacy. The "spotlight effect": even when Jordan wants to lay low, her competence, boldness, and refusal to follow arbitrary rules gets noticed.
+
+Key pattern: there is a history of hiding ambitions or letting others take credit to stay safe. The healing arc is shedding the shame around the competitive edge and stepping into work that actually matters rather than performing safe mediocrity. The Tony dynamic has this signature — Lilith in the 10th will not perform deference to weak leadership.
+
+**Note on True vs. Mean:** The True BML (H10) and the Mean BML (H11) are 5.18° apart, straddling the house cusp at 12°07' Aries. Both are active. True BML holds more weight for natal interpretation.
+
+**Mean BML at 15°07' Aries in the 11th house:**
+The "wound of the tribe" — an intense desire to belong to a collective combined with fierce refusal to conform to group expectations. Pioneer-outcast pattern: trailblazing energy that doesn't fit cookie-cutter molds. Push-pull in social circles: either leading the group or feeling like the scapegoat within it.
+
+This is the second signal of the "true tribe" theme: the people who will embrace Jordan's full, unmanaged self (rather than requiring suppression of her boldness) are the community she is building toward, not managing around.
+
+**Combined reading:** Both Liliths in Aries point to the same core theme — the public identity and the communal identity are both sites of reclaimed power. The career and the chosen community are where the Chiron-adjacent raw material lives. Building the astrology business is not incidental to this; it is the direct integration of both placements: building something in public (H10), for a community that chose to gather around it (H11), that cannot be managed down into acceptability.
+
 ---
 
 ## PART TWO: MAJOR TRANSITS TRACKED IN REAL TIME

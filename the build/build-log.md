@@ -4,6 +4,33 @@
 
 ---
 
+## 2026-06-09 — Dasha Work Call Intake + Inbox Processing
+
+**The headline:** New product features seeded from Dasha's live reaction to the v2 natal chart demo. Tech stack recommendations landed. Inbox cleared.
+
+### Dasha Transcript — AI Repository Call (44 min)
+Jordan demoed the v2 natal chart (Mimi's) live to Dasha. Dasha saw the chart wheel, collapsible pop-outs, archetype card, and poem closing. Her reaction: "It looks really, really good, especially the artistic touches."
+
+**New features seeded from Dasha's suggestions:**
+- **Workplace synastry/matching feature** — select yourself + a coworker, get tips on how to work better together given your respective charts. Dasha: "Let me know once you get that matching system going, because I feel like I need that right now." Filed to app-vision.md under Corporate Product.
+- **Interface skins/theming** — old MySpace/Tumblr concept: user can apply different visual skins (hot pink, retro, whimsigoth, etc.) to their astrology interface. Endgame Phase 3 feature. Filed to app-vision.md.
+- **Mobile-forward navigation** — Jordan confirmed the current scroll-dashboard format needs to evolve to a nav-based mobile-first layout before the product goes to Phase 2.
+
+**Tech stack from Dasha (June 9):**
+- **Resend** — email service (Dasha's "R" one, near Render). Free tier, newsletter/subscriber comms, API-accessible, vibe-codeable. Use for Phase 2 subscriber email delivery.
+- **Supabase** — free tier (1–2 projects per org), then ~$10–20/mo per project. For DB/storage — can't store data locally for long at scale. Filed to app-vision.md.
+- **Xcode** — use for live mobile phone preview while coding. Dasha's dev tip for testing mobile UI without deploying.
+
+### Inbox Processed
+- **Lilith research** (True H10 + Mean H11 interpretations) → KNOWLEDGE.md
+- **Transit-to-transit library** (societal + workplace-specific) → app-vision.md
+- **SEO/AEO/passive income angle** → market-strategy
+
+### Tony Birth Time
+Still pending. Jordan asked him; he says he doesn't know. Suggestion: ask his mom.
+
+---
+
 ## 2026-06-08 — Data Integrity + System Architecture Day
 
 **The headline:** Discovered and corrected significant errors in the natal chart data that had been in the system since the beginning. Everything downstream is now accurate for the first time.
