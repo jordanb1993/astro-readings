@@ -4,6 +4,27 @@
 
 ---
 
+## 2026-06-10 (session 5) — Transit Library Complete + Four-Section UI
+
+**The headline:** All transit library stubs replaced with full breakdowns. Transits panel redesigned with four labeled sections replacing the flat list. Infrastructure is now deeper and scales cleanly as transits move through their lifecycle.
+
+### What Changed
+
+**Transits panel — four-section UI:** Applying · Separating · Between Passes · Complete. Each section has a label + count pill header. JS-driven: sections only appear if they have entries. Removed the old separate `t-historical-section` HTML div — everything now flows through a single `t-list-body` container. Section headers use `.t-sec` / `.t-sec-label` / `.t-sec-count` CSS.
+
+**Transit library — 3 stubs → full breakdowns:**
+- `neptune-sesquiquadrate-venus.md`: Neptune at 4° Aries □/ natal Venus 19° Scorpio 5th. First pass complete May 15. Eleanor arc documented as the real-time correlation. Retrograde 2nd pass possible November 2026.
+- `neptune-trine-northnode.md`: Neptune △ natal NNode 3° Sag 6th. Separating. Business pivot (Etsy → full product) and #astroflow-weekly launch documented as transit-timed activations. The inspired work IS the on-path work.
+- `nnode-square-sun.md`: Transiting NNode 2.89° Pisces □ natal Sun 1.82° Sag 6th (and simultaneously □ natal NNode). Exact June 15–17. Full context of the June 11–17 transit stack (NNode△Jupiter, Uranus⚻Jupiter, NNode□Sun).
+
+**passes patched:** All three transits updated in transits.json.
+
+**All 13 transit library files now fully written.** No stubs remain.
+
+**Deployed:** commit `bbae97b` → Netlify production via API restore.
+
+---
+
 ## 2026-06-10 (session 4) — Home Panel: Live Data Wiring
 
 **The headline:** Home panel now populates with real live data on every load. Moon phase is pulled from today.json instead of a math approximation. Daily card shows today's reading title + key transit preview. Transits card shows active transit count once transits load.
