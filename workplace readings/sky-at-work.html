@@ -1,1760 +1,839 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Sky at Work &middot; Week of June 8</title>
+<meta charset="UTF-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#09102a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Sky at Work">
+<meta property="og:title" content="Sky at Work · Week of June 8, 2026">
+<meta property="og:description" content="Venus meets Jupiter. Collective transit weather for the week — no birth chart needed.">
+<title>Sky at Work · June 8–14</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Inter:wght@300;400;500&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+/* ══ DESIGN TOKENS ══════════════════════════════════════════════════════════ */
+:root{
+  --bg:#09102a; --surface:#0d1c38; --surface-2:#0a1428;
+  --gold:#d0a840; --gold-dim:rgba(208,168,64,0.10); --gold-mid:rgba(208,168,64,0.30);
+  --gold-brt:rgba(208,168,64,0.75); --gold-alpha:208,168,64;
+  --rose:#c8a090; --rose-dim:rgba(200,160,144,0.09); --rose-mid:rgba(200,160,144,0.26); --rose-alpha:200,160,144;
+  --cerulean:#4a9fd4; --cerulean-dim:rgba(74,159,212,0.09); --cerulean-mid:rgba(74,159,212,0.26);
+  --cerulean-brt:rgba(74,159,212,0.60); --cerulean-alpha:74,159,212;
+  --teal:#5ab8a8; --teal-dim:rgba(90,184,168,0.09); --teal-mid:rgba(90,184,168,0.26); --teal-alpha:90,184,168;
+  --amber:#d48040; --amber-dim:rgba(212,128,64,0.09); --amber-alpha:212,128,64;
+  --text:#faf4e8; --muted:rgba(245,235,210,0.97); --muted-2:rgba(245,235,210,0.82);
+  --muted-3:rgba(245,235,210,0.54); --border:rgba(62,130,185,0.16);
+  --accent:var(--cerulean); --accent-dim:var(--cerulean-dim); --accent-mid:var(--cerulean-mid);
+  --accent-brt:var(--cerulean-brt); --accent-alpha:var(--cerulean-alpha);
+}
 
-  <!-- Social Preview -->
-  <meta property="og:title" content="Sky at Work &middot; Week of June 8, 2026">
-  <meta property="og:description" content="Venus meets Jupiter. The week&rsquo;s collective transit weather &mdash; warmth, precision, and a release phase. No birth charts needed.">
-  <meta property="og:image" content="https://jordanb1993.github.io/astro-readings/workplace%20readings/og-sky-at-work.jpg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Sky at Work &middot; Week of June 8, 2026">
-  <meta name="twitter:description" content="Venus meets Jupiter. Collective transit weather &mdash; warmth, precision, release phase.">
-  <meta name="twitter:image" content="https://jordanb1993.github.io/astro-readings/workplace%20readings/og-sky-at-work.jpg">
+/* ══ BASE RESET ══════════════════════════════════════════════════════════════ */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;overflow:hidden;-webkit-font-smoothing:antialiased}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overscroll-behavior:none}
+p{line-height:1.82;color:var(--muted);font-size:0.93rem}
+strong{color:var(--rose);font-weight:600}
 
-  <!-- PWA -->
-  <meta name="theme-color" content="#09102a">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="Sky at Work">
+/* ══ APP SHELL ═══════════════════════════════════════════════════════════════ */
+.app{display:flex;flex-direction:column;height:100vh;height:100dvh}
+.safe-btm{position:fixed;bottom:0;left:0;right:0;height:env(safe-area-inset-bottom,0px);background:rgba(6,10,26,0.97);z-index:51;pointer-events:none}
 
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+/* ── HEADER ── */
+.app-header{
+  flex-shrink:0;height:calc(60px + env(safe-area-inset-top,0px));
+  background:rgba(6,10,26,0.97);
+  border-bottom:1px solid rgba(var(--cerulean-alpha),0.18);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  display:flex;align-items:flex-end;justify-content:space-between;
+  padding:0 18px 10px;padding-top:env(safe-area-inset-top,0px);
+  position:relative;z-index:50;
+}
+.header-left{display:flex;flex-direction:column;gap:2px}
+.header-eyebrow{font-size:0.50rem;letter-spacing:0.28em;text-transform:uppercase;color:rgba(var(--cerulean-alpha),0.70);line-height:1}
+.header-name{font-family:'Cormorant Garamond',serif;font-size:1.10rem;font-weight:300;letter-spacing:0.10em;color:rgba(var(--cerulean-alpha),1.0);line-height:1;font-style:italic}
+.header-meta{font-size:0.48rem;letter-spacing:0.13em;text-transform:uppercase;color:var(--muted-3);line-height:1;margin-top:1px}
 
-  <style>
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+/* ══ PANELS ═════════════════════════════════════════════════════════════════ */
+.app-body{flex:1;overflow:hidden;position:relative;min-height:0}
+.panel{
+  position:absolute;inset:0;
+  overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;
+  overscroll-behavior-y:contain;touch-action:pan-y;
+  opacity:0;visibility:hidden;pointer-events:none;
+  transition:opacity 0.22s ease,visibility 0.22s ease;
+  z-index:0;
+}
+.panel.active{opacity:1;visibility:visible;pointer-events:auto;z-index:1}
+.reading-panel{background:var(--bg)}
+.reading-inner{
+  position:relative;z-index:1;
+  padding:24px 18px calc(60px + env(safe-area-inset-bottom,0px) + 28px);
+  max-width:640px;margin:0 auto;
+}
+.reading-inner::before,.reading-inner::after{
+  content:'';position:absolute;border-radius:50%;pointer-events:none;z-index:0;
+}
+.reading-inner::before{
+  width:380px;height:380px;top:5%;left:-18%;
+  background:radial-gradient(ellipse,rgba(var(--cerulean-alpha),0.16) 0%,transparent 68%);
+  filter:blur(72px);
+}
+.reading-inner::after{
+  width:300px;height:300px;bottom:12%;right:-14%;
+  background:radial-gradient(ellipse,rgba(var(--cerulean-alpha),0.10) 0%,transparent 65%);
+  filter:blur(65px);
+}
+.geo-bg{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;overflow:hidden}
 
-    body { padding-top: env(safe-area-inset-top); padding-bottom: env(safe-area-inset-bottom); }
+/* ── PANEL HEADING ── */
+.panel-heading{margin-bottom:22px;text-align:center;position:relative;z-index:1}
+.panel-eyebrow-sm{font-size:0.55rem;letter-spacing:0.28em;text-transform:uppercase;color:rgba(var(--cerulean-alpha),0.65);margin-bottom:5px}
+.panel-title-lg{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:300;font-style:italic;color:var(--cerulean);letter-spacing:0.04em;line-height:1.25;opacity:0.96}
 
-    :root {
-      --bg:           #09102a;
-      --surface:      #0d1c38;
-      --surface-2:    #121e36;
-      --gold:         #d0a840;
-      --gold-dim:     rgba(208,168,64,0.11);
-      --gold-mid:     rgba(208,168,64,0.28);
-      --gold-brt:     rgba(208,168,64,0.65);
-      --rose:         #d4a0b5;
-      --rose-dim:     rgba(212,160,181,0.11);
-      --rose-mid:     rgba(212,160,181,0.28);
-      --cerulean:     #4a9fd4;
-      --cerulean-dim: rgba(74,159,212,0.13);
-      --cerulean-mid: rgba(74,159,212,0.30);
-      --cerulean-brt: #6ab8d4;
-      --teal:         #5ab8a8;
-      --teal-dim:     rgba(90,184,168,0.11);
-      --teal-mid:     rgba(90,184,168,0.28);
-      --teal-brt:     #7ecfc2;
-      --amber:        #d48040;
-      --amber-dim:    rgba(212,128,64,0.11);
-      --amber-mid:    rgba(212,128,64,0.28);
-      --text:         #f0e4cc;
-      --muted:        rgba(240,228,200,0.58);
-      --muted-2:      rgba(240,228,200,0.30);
-      --muted-3:      rgba(240,228,200,0.12);
-      --border:       rgba(74,159,212,0.16);
-    }
+/* ── SECTION SEPARATOR ── */
+.sep{display:flex;align-items:center;gap:10px;margin:22px 0 16px}
+.sep::before,.sep::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(var(--cerulean-alpha),0.30),transparent)}
+.sep-inner{font-size:0.52rem;letter-spacing:0.26em;text-transform:uppercase;color:rgba(var(--cerulean-alpha),0.55);white-space:nowrap}
 
-    html { background: var(--bg); color: var(--text); -webkit-font-smoothing: antialiased; }
+/* ══ BOTTOM NAV ═════════════════════════════════════════════════════════════ */
+.app-nav{
+  position:fixed;bottom:0;left:0;right:0;
+  background:rgba(6,10,26,0.97);
+  border-top:1px solid rgba(var(--cerulean-alpha),0.14);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  display:flex;align-items:stretch;
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  height:calc(60px + env(safe-area-inset-bottom,0px));
+  z-index:50;
+}
+.nav-tab{
+  flex:1;background:none;border:none;cursor:pointer;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:3px;padding:0 4px;color:var(--muted-3);
+  transition:color 0.2s;
+  touch-action:manipulation;-webkit-tap-highlight-color:transparent;
+  position:relative;
+}
+.nav-tab.active{color:rgba(var(--cerulean-alpha),0.92)}
+.nav-tab.active::before{
+  content:'';position:absolute;top:6px;left:50%;transform:translateX(-50%);
+  width:4px;height:4px;border-radius:50%;background:rgba(var(--cerulean-alpha),0.80);
+}
+.nav-tab:active{opacity:0.70}
+.nav-icon{font-family:'Apple Symbols','Segoe UI Symbol','Noto Sans Symbols',serif;font-variant-emoji:text;font-size:18px;line-height:1}
+.nav-icon-t{font-family:'Cormorant Garamond',serif;font-size:18px;line-height:1}
+.nav-label{font-size:0.52rem;letter-spacing:0.11em;text-transform:uppercase;font-family:'Inter',sans-serif;font-weight:400;line-height:1}
 
-    body {
-      max-width: 900px; margin: 0 auto;
-      background: transparent;
-      font-family: 'Inter', sans-serif;
-      position: relative; z-index: 1;
-      padding-bottom: 80px;
-    }
+/* ══ HOME PANEL ══════════════════════════════════════════════════════════════ */
 
-    p { line-height: 1.82; color: var(--muted); font-size: 0.93rem; }
-    strong { color: var(--rose); font-weight: 600; }
-    em { color: rgba(240,228,200,0.82); font-style: italic; }
+/* Collective wheel */
+.cw-wrap{width:100%;max-width:260px;margin:0 auto 20px;aspect-ratio:1;display:flex;align-items:center;justify-content:center}
+.cw-wrap svg{width:100%;height:100%}
+.cw-label{text-align:center;font-size:0.48rem;letter-spacing:0.20em;text-transform:uppercase;color:rgba(var(--cerulean-alpha),0.45);margin-bottom:20px}
 
-    /* ── FIXED BACKGROUNDS ── */
-    #star-canvas {
-      position: fixed; inset: 0;
-      width: 100vw; height: 100vh;
-      pointer-events: none; z-index: 0;
-    }
-    #sg-scatter {
-      position: fixed; inset: 0;
-      pointer-events: none; z-index: 0;
-      width: 100vw; height: 100vh;
-      opacity: 1;
-    }
-    #atm-blobs {
-      position: fixed; inset: 0;
-      width: 100vw; height: 100vh;
-      pointer-events: none; z-index: 0; overflow: hidden;
-    }
-    .blob {
-      position: absolute; border-radius: 50%;
-      filter: blur(100px); pointer-events: none;
-    }
-    .blob-gold    { width: 620px; height: 440px; top: -80px; right: -120px; background: radial-gradient(ellipse, rgba(208,168,64,0.16) 0%, transparent 68%); }
-    .blob-cerulean { width: 520px; height: 520px; top: 28%; left: -180px; background: radial-gradient(ellipse, rgba(74,159,212,0.13) 0%, transparent 70%); }
-    .blob-rose    { width: 680px; height: 300px; bottom: -60px; left: 50%; transform: translateX(-50%); background: radial-gradient(ellipse, rgba(212,160,181,0.08) 0%, transparent 70%); }
-    .blob-teal    { width: 320px; height: 320px; top: 55%; right: -60px; background: radial-gradient(ellipse, rgba(90,184,168,0.08) 0%, transparent 70%); }
+/* Trio cards */
+.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:20px;position:relative;z-index:1}
+@media(max-width:480px){.trio{grid-template-columns:1fr;gap:8px}}
+.trio-card{
+  background:radial-gradient(ellipse at 50% 0%,rgba(12,22,52,0.85) 0%,var(--surface) 60%);
+  border:1px solid var(--border);border-radius:10px;padding:18px 14px 16px;
+  text-align:center;position:relative;overflow:hidden;
+}
+.trio-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px}
+.trio-card.t-gold::before{background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.trio-card.t-rose::before{background:linear-gradient(90deg,transparent,var(--rose),transparent)}
+.trio-card.t-cerulean::before{background:linear-gradient(90deg,transparent,var(--cerulean),transparent)}
+.trio-glyph{display:block;font-family:'Cormorant Garamond',serif;font-size:1.6rem;margin-bottom:6px;line-height:1;animation:floatUp 4s ease-in-out infinite}
+.trio-card.t-gold .trio-glyph{color:var(--gold);animation-delay:0s}
+.trio-card.t-rose .trio-glyph{color:var(--rose);animation-delay:1.4s}
+.trio-card.t-cerulean .trio-glyph{color:var(--cerulean);animation-delay:2.8s}
+.trio-label{font-family:'Inter',sans-serif;font-size:0.52rem;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--muted-3);margin-bottom:5px}
+.trio-placement{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:400;line-height:1.15;margin-bottom:4px}
+.trio-card.t-gold .trio-placement{color:var(--gold)}
+.trio-card.t-rose .trio-placement{color:var(--rose)}
+.trio-card.t-cerulean .trio-placement{color:var(--cerulean)}
+.trio-orb{font-size:0.50rem;color:var(--muted-3);margin-bottom:10px;font-family:'IBM Plex Mono',monospace}
+.trio-rule{width:28px;height:1px;margin:0 auto 10px}
+.trio-card.t-gold .trio-rule{background:rgba(208,168,64,0.28)}
+.trio-card.t-rose .trio-rule{background:rgba(200,160,144,0.28)}
+.trio-card.t-cerulean .trio-rule{background:rgba(74,159,212,0.28)}
+.trio-tagline{font-family:'Cormorant Garamond',serif;font-size:0.82rem;font-style:italic;color:var(--muted);line-height:1.5}
+@keyframes floatUp{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
 
-    /* ── CELESTIAL SIDE COLUMNS ── */
-    .cel-col {
-      position: fixed; top: 0; bottom: 0;
-      pointer-events: none; z-index: 1;
-      display: flex; align-items: stretch;
-    }
-    .cel-col-left  { left: 14px; }
-    .cel-col-right { right: 14px; }
-    .cel-col svg   { height: 100vh; width: 22px; }
-    @media (max-width: 680px) { .cel-col { display: none; } }
+/* Rising picker */
+.rs-wrap{position:relative;z-index:1;margin-bottom:4px}
+.rs-label{font-size:0.55rem;letter-spacing:0.24em;text-transform:uppercase;color:rgba(var(--cerulean-alpha),0.60);margin-bottom:10px}
+.rs-chips{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:12px}
+.rs-chip{
+  font-family:'Inter',sans-serif;font-size:0.55rem;letter-spacing:0.10em;text-transform:uppercase;
+  padding:5px 12px;border-radius:20px;border:1px solid rgba(var(--cerulean-alpha),0.22);
+  color:var(--muted-3);background:transparent;cursor:pointer;
+  touch-action:manipulation;-webkit-tap-highlight-color:transparent;
+  transition:all 0.16s;
+}
+.rs-chip.active{border-color:rgba(var(--cerulean-alpha),0.70);color:var(--cerulean);background:rgba(var(--cerulean-alpha),0.10)}
+.rs-chip:active{opacity:0.70}
+.rs-note-wrap{min-height:56px;transition:opacity 0.22s}
+.rs-note{
+  padding:12px 16px;border-left:2px solid var(--cerulean);
+  background:rgba(var(--cerulean-alpha),0.06);border-radius:0 8px 8px 0;
+  font-family:'Cormorant Garamond',serif;font-style:italic;
+  font-size:0.98rem;color:rgba(var(--cerulean-alpha),0.90);line-height:1.65;
+  display:none;
+}
+.rs-note.visible{display:block}
+.rs-dont-know{margin-top:10px;font-size:0.72rem;color:rgba(240,228,200,0.28);font-family:'Inter',sans-serif}
+.rs-dont-know a{color:rgba(var(--cerulean-alpha),0.55);text-decoration:none;border-bottom:1px solid rgba(var(--cerulean-alpha),0.20)}
 
-    /* ── STICKY WEEK PROGRESS BAR ── */
-    #week-bar {
-      position: sticky; top: 0; z-index: 80;
-      background: linear-gradient(180deg, rgba(9,16,42,0.97) 0%, rgba(9,16,42,0.90) 100%);
-      border-bottom: 1px solid rgba(74,159,212,0.12);
-      backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
-      padding: 8px 44px;
-    }
-    .wbar-inner {
-      display: flex; align-items: center; gap: 12px;
-      max-width: 900px; margin: 0 auto;
-    }
-    .wbar-label {
-      font-family: 'Inter', sans-serif; font-size: 0.55rem; font-weight: 600;
-      letter-spacing: 0.26em; text-transform: uppercase; color: var(--muted-2);
-      flex-shrink: 0;
-    }
-    .wbar-track {
-      flex: 1; height: 2px;
-      background: rgba(74,159,212,0.12); border-radius: 1px;
-      position: relative; overflow: visible;
-    }
-    .wbar-fill {
-      height: 100%; background: linear-gradient(90deg, var(--cerulean), rgba(74,159,212,0.40));
-      border-radius: 1px; transition: width 0.6s ease;
-    }
-    .wbar-days {
-      position: absolute; top: 50%; transform: translateY(-50%);
-      left: 0; right: 0; display: flex; justify-content: space-between;
-    }
-    .wbar-tick {
-      width: 4px; height: 4px; border-radius: 2px;
-      background: rgba(74,159,212,0.22); margin-top: -1px;
-      transition: background 0.3s;
-    }
-    .wbar-tick.today { background: var(--cerulean); box-shadow: 0 0 6px rgba(74,159,212,0.60); }
-    .wbar-day-label {
-      font-family: 'Inter', sans-serif; font-size: 0.55rem;
-      letter-spacing: 0.14em; text-transform: uppercase;
-      color: var(--cerulean); flex-shrink: 0;
-    }
-    @media (max-width: 680px) {
-      #week-bar { padding: 7px 16px; }
-    }
+/* ══ SKY PANEL ═══════════════════════════════════════════════════════════════ */
 
-    /* ── HERO ── */
-    .hero {
-      position: relative; width: 100%;
-      padding: 88px 70px 80px;
-      text-align: center; overflow: hidden;
-      background: radial-gradient(ellipse at 50% 30%, #132040 0%, #0d1832 42%, #09102a 100%);
-    }
-    .hero-geo {
-      position: absolute; inset: 0; pointer-events: none;
-      display: flex; align-items: center; justify-content: center;
-      opacity: 0.055;
-    }
-    .hero-label {
-      position: relative; z-index: 2;
-      font-family: 'Inter', sans-serif; font-size: 0.66rem; font-weight: 500;
-      letter-spacing: 0.36em; text-transform: uppercase;
-      color: rgba(240,228,200,0.50); margin-bottom: 26px;
-    }
-    .hero-name {
-      position: relative; z-index: 2;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(60px, 9vw, 106px);
-      font-weight: 300; line-height: 0.96;
-      color: var(--text); letter-spacing: 0.05em;
-      margin-bottom: 22px;
-      text-shadow: 0 2px 40px rgba(9,14,38,0.60);
-    }
-    .hero-ornament {
-      position: relative; z-index: 2;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.4rem; letter-spacing: 0.55em;
-      color: var(--gold); opacity: 0.52;
-      margin-bottom: 32px; padding-left: 0.55em;
-    }
-    .hero-data {
-      display: flex; justify-content: center;
-      gap: 32px; flex-wrap: wrap; position: relative; z-index: 2;
-    }
-    .hero-datum-label {
-      font-family: 'Inter', sans-serif; font-size: 0.57rem;
-      letter-spacing: 0.22em; text-transform: uppercase;
-      color: rgba(240,228,200,0.36); margin-bottom: 5px;
-    }
-    .hero-datum-value {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.05rem; color: rgba(208,168,64,0.88);
-      letter-spacing: 0.06em;
-    }
-    .hero-big-three {
-      display: none; justify-content: center;
-      gap: 9px; flex-wrap: wrap;
-      margin-top: 16px; position: relative; z-index: 2;
-    }
-    .hbt-pill {
-      font-family: 'Inter', sans-serif; font-size: 0.65rem; font-weight: 500;
-      letter-spacing: 0.12em; text-transform: uppercase;
-      padding: 4px 12px; border-radius: 20px; border: 1px solid;
-    }
-    .hbt-pill.warm { color: var(--gold);     border-color: rgba(208,168,64,0.32);  background: rgba(208,168,64,0.07); }
-    .hbt-pill.cool { color: var(--cerulean); border-color: rgba(74,159,212,0.32); background: rgba(74,159,212,0.07); }
-    .hbt-pill.soft { color: var(--rose);     border-color: rgba(212,160,181,0.32); background: rgba(212,160,181,0.07); }
-    @media (max-width: 680px) {
-      .hero-big-three { display: flex; }
-      .hero-data { display: none; }
-      .hero { padding: 60px 22px 52px; }
-      .hero-name { font-size: clamp(40px, 10vw, 56px); }
-    }
+/* Signal board */
+.signal-board{display:flex;flex-direction:column;gap:5px;position:relative;z-index:1}
+.signal-row{
+  display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;
+  background:var(--surface);padding:10px 12px;
+  border-radius:6px;border-left:2px solid;
+  cursor:pointer;transition:background 0.18s;
+  -webkit-tap-highlight-color:transparent;
+}
+.signal-row:hover,.signal-row:active{background:var(--surface-2,#0a1428)}
+.signal-row.gold{border-color:var(--gold)}
+.signal-row.rose{border-color:var(--rose)}
+.signal-row.cerulean{border-color:var(--cerulean)}
+.signal-row.teal{border-color:var(--teal)}
+.signal-row.muted{border-color:rgba(240,228,200,0.18)}
+.sig-aspect{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--text);min-width:140px;flex-shrink:0}
+.sig-orb{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--gold);min-width:38px;flex-shrink:0}
+.sig-note{font-size:11px;color:var(--muted);flex:1;min-width:80px}
+.sig-arrow{font-size:9px;color:var(--muted-3);flex-shrink:0;margin-left:auto;transition:transform 0.22s}
+.signal-row.open .sig-arrow{transform:rotate(180deg)}
+.sig-detail{
+  max-height:0;overflow:hidden;opacity:0;
+  transition:max-height 0.32s ease,opacity 0.22s ease 0.04s;
+  background:rgba(9,14,36,0.85);
+  border-radius:0 0 6px 6px;margin-left:-12px;margin-right:-12px;padding:0 12px;
+}
+.sig-detail.open{max-height:140px;opacity:1;padding:10px 12px 12px}
+.sig-detail p{font-size:0.82rem;color:var(--muted);line-height:1.65}
 
-    /* ── SIGNAL TRIO ── */
-    .trio-wrap { padding: 48px 44px 0; }
-    .trio { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
-    .trio-card {
-      background: radial-gradient(ellipse at 50% 0%, rgba(12,22,52,0.85) 0%, var(--surface) 60%);
-      border: 1px solid var(--border);
-      border-radius: 10px; padding: 28px 18px 24px;
-      text-align: center; position: relative; overflow: hidden;
-      transition: transform 0.30s ease, box-shadow 0.30s ease;
-    }
-    .trio-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 16px 48px rgba(0,0,0,0.40), 0 0 24px rgba(208,168,64,0.07);
-    }
-    .trio-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; }
-    .trio-card.t-gold::before   { background: linear-gradient(90deg, transparent, var(--gold), transparent); }
-    .trio-card.t-rose::before   { background: linear-gradient(90deg, transparent, var(--rose), transparent); }
-    .trio-card.t-cerulean::before { background: linear-gradient(90deg, transparent, var(--cerulean), transparent); }
-    .trio-card::after {
-      content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
-      width: 60%; height: 55px; border-radius: 50%; opacity: 0.12; filter: blur(18px);
-    }
-    .trio-card.t-gold::after     { background: var(--gold); }
-    .trio-card.t-rose::after     { background: var(--rose); }
-    .trio-card.t-cerulean::after { background: var(--cerulean); }
-    .trio-glyph {
-      display: block; font-family: 'Cormorant Garamond', serif;
-      font-size: 2.2rem; margin-bottom: 8px; position: relative;
-      animation: floatUp 4s ease-in-out infinite; line-height: 1;
-    }
-    .trio-card.t-gold     .trio-glyph { color: var(--gold);     animation-delay: 0s; }
-    .trio-card.t-rose     .trio-glyph { color: var(--rose);     animation-delay: 1.4s; }
-    .trio-card.t-cerulean .trio-glyph { color: var(--cerulean); animation-delay: 2.8s; }
-    .trio-label {
-      font-family: 'Inter', sans-serif; font-size: 0.57rem; font-weight: 600;
-      letter-spacing: 0.26em; text-transform: uppercase; color: var(--muted-2);
-      margin-bottom: 8px; position: relative;
-    }
-    .trio-placement {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.42rem; font-weight: 400; line-height: 1.15;
-      margin-bottom: 5px; position: relative;
-    }
-    .trio-card.t-gold     .trio-placement { color: var(--gold); }
-    .trio-card.t-rose     .trio-placement { color: var(--rose); }
-    .trio-card.t-cerulean .trio-placement { color: var(--cerulean); }
-    .trio-orb {
-      font-size: 0.62rem; color: var(--muted-2); margin-bottom: 14px;
-      letter-spacing: 0.06em; font-family: 'IBM Plex Mono', monospace; position: relative;
-    }
-    .trio-rule { width: 32px; height: 1px; margin: 0 auto 12px; position: relative; }
-    .trio-card.t-gold     .trio-rule { background: var(--gold-mid); }
-    .trio-card.t-rose     .trio-rule { background: var(--rose-mid); }
-    .trio-card.t-cerulean .trio-rule { background: var(--cerulean-mid); }
-    .trio-tagline {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 0.90rem; font-style: italic;
-      color: var(--muted); line-height: 1.50; position: relative;
-    }
-    @media (max-width: 680px) {
-      .trio-wrap { padding: 28px 0 0; }
-      .trio { grid-template-columns: 1fr; gap: 10px; padding: 0 12px; }
-      .trio-card { padding: 20px 16px 18px; }
-    }
+/* Pulse card */
+.pulse-card{
+  background:radial-gradient(ellipse at 0% 50%,rgba(74,159,212,0.10) 0%,rgba(13,28,56,0.85) 60%);
+  border:1px solid rgba(74,159,212,0.22);border-radius:10px;padding:18px 20px;
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  position:relative;z-index:1;margin-bottom:20px;
+}
+.pulse-card p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.05rem;color:var(--text);line-height:1.78}
 
-    /* ── CEL DIVIDER ── */
-    .cel-divider { display: flex; align-items: center; gap: 14px; margin: 46px 44px 0; }
-    .cel-rule { flex: 1; height: 1px; }
-    .cel-rule.left  { background: linear-gradient(90deg, transparent, var(--gold-mid)); }
-    .cel-rule.right { background: linear-gradient(90deg, var(--gold-mid), transparent); }
-    .cel-mark {
-      font-family: 'Cormorant Garamond', serif; font-size: 0.82rem;
-      letter-spacing: 0.55em; color: var(--gold); opacity: 0.48;
-      padding-left: 0.55em; position: relative;
-    }
-    .cel-mark::before, .cel-mark::after {
-      content: '&middot; &middot; &middot;'; position: absolute; top: 50%; transform: translateY(-50%);
-      font-size: 0.44rem; letter-spacing: 0.36em; color: var(--gold);
-      opacity: 0.20; white-space: nowrap;
-    }
-    .cel-mark::before { right: 100%; padding-right: 9px; }
-    .cel-mark::after  { left: 100%; padding-left: 9px; }
-    @media (max-width: 680px) { .cel-divider { margin: 28px 12px 0; } }
+/* Deep dive */
+.dive-section{
+  background:rgba(255,255,255,0.038);
+  border:1px solid rgba(var(--cerulean-alpha),0.22);
+  border-radius:12px;margin-bottom:14px;overflow:hidden;
+  position:relative;z-index:1;
+}
+.dive-section::before{content:'';display:block;height:2px;background:linear-gradient(90deg,transparent,rgba(var(--cerulean-alpha),0.60),transparent)}
+.dive-head{display:flex;align-items:flex-start;gap:12px;padding:16px 16px 12px}
+.dive-glyph{font-family:'Cormorant Garamond',serif;font-size:1.8rem;line-height:1;color:var(--cerulean);flex-shrink:0}
+.dive-title-wrap{flex:1;min-width:0}
+.dive-eyebrow{font-size:0.50rem;letter-spacing:0.20em;text-transform:uppercase;color:rgba(var(--cerulean-alpha),0.60);margin-bottom:4px}
+.dive-title{font-family:'Cormorant Garamond',serif;font-size:1.12rem;font-weight:400;color:var(--text);line-height:1.2}
+.dive-body{padding:0 16px 16px;display:flex;flex-direction:column;gap:10px}
+.dive-body p{font-size:0.88rem;line-height:1.76}
+.dive-expanded{max-height:0;overflow:hidden;opacity:0;transition:max-height 0.35s ease,opacity 0.25s ease 0.05s}
+.dive-expanded.open{max-height:600px;opacity:1}
+.dive-expanded-inner{display:flex;flex-direction:column;gap:10px;padding-top:8px}
+.read-more{
+  display:flex;align-items:center;gap:6px;background:none;border:none;cursor:pointer;
+  font-family:'Inter',sans-serif;font-size:0.58rem;letter-spacing:0.14em;text-transform:uppercase;
+  color:rgba(var(--cerulean-alpha),0.60);padding:0;touch-action:manipulation;
+  -webkit-tap-highlight-color:transparent;margin-top:2px;
+}
+.read-more .chev{font-size:0.60rem;transition:transform 0.22s}
+.read-more.open .chev{transform:rotate(180deg)}
 
-    /* ── SECTION WRAP ── */
-    .section-wrap { padding: 36px 44px 0; position: relative; overflow: visible; }
-    .section-eyebrow {
-      font-family: 'Inter', sans-serif; font-size: 0.60rem; font-weight: 600;
-      letter-spacing: 0.28em; text-transform: uppercase; color: var(--cerulean);
-      margin-bottom: 8px;
-    }
-    .section-title {
-      font-family: 'Cormorant Garamond', serif; font-size: 1.60rem; font-weight: 400;
-      color: var(--gold); letter-spacing: 0.04em; margin-bottom: 18px;
-    }
-    @media (max-width: 680px) { .section-wrap { padding: 24px 12px 0; } }
+/* Planet strip */
+.planet-strip-eyebrow{font-size:0.52rem;letter-spacing:0.22em;text-transform:uppercase;color:rgba(var(--cerulean-alpha),0.55);margin-bottom:6px;position:relative;z-index:1}
+.planet-strip-hint{font-size:0.50rem;color:var(--muted-3);margin-bottom:10px;font-family:'IBM Plex Mono',monospace;position:relative;z-index:1}
+.planet-strip{display:flex;flex-wrap:wrap;gap:6px;position:relative;z-index:1}
+.planet-pill{
+  font-family:'IBM Plex Mono',monospace;font-size:10px;
+  padding:4px 10px;border-radius:20px;border:1px solid rgba(var(--cerulean-alpha),0.18);
+  background:rgba(var(--cerulean-alpha),0.05);
+  color:var(--muted);cursor:pointer;position:relative;
+  -webkit-tap-highlight-color:transparent;
+}
+.planet-pill.luminary{border-color:rgba(208,168,64,0.25);color:rgba(240,228,200,0.85)}
+.planet-pill.personal{border-color:rgba(200,160,144,0.22)}
+.planet-pill.social{border-color:rgba(90,184,168,0.22)}
+.planet-pill.outer{border-color:rgba(74,159,212,0.22)}
+.planet-pill.point{border-color:rgba(240,228,200,0.14);color:var(--muted-3)}
+.pill-detail{
+  position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);
+  background:rgba(9,14,36,0.96);border:1px solid rgba(74,159,212,0.22);
+  border-radius:6px;padding:7px 10px;
+  font-size:9.5px;color:var(--muted);white-space:nowrap;
+  opacity:0;pointer-events:none;transition:opacity 0.18s;z-index:10;
+}
+.pill-detail.visible{opacity:1}
+.rx-tag{font-size:8px;opacity:0.65;margin-left:2px}
 
-    /* ── PULSE CARD ── */
-    .pulse-card {
-      background: radial-gradient(ellipse at 0% 50%, rgba(208,168,64,0.14) 0%, rgba(13,28,56,0.85) 60%);
-      border: 1px solid rgba(208,168,64,0.22); border-radius: 10px; padding: 24px 28px;
-      backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
-    }
-    .pulse-card p {
-      font-family: 'Cormorant Garamond', serif; font-style: italic;
-      font-size: 1.08rem; color: var(--text); line-height: 1.78;
-    }
-
-    /* ── SIGNAL BOARD ── */
-    .signal-board { display: flex; flex-direction: column; gap: 5px; }
-    .signal-row {
-      display: flex; align-items: baseline; gap: 10px;
-      background: var(--surface); padding: 10px 14px;
-      border-radius: 6px; border-left: 2px solid;
-      cursor: pointer; position: relative;
-      transition: background 0.18s;
-      -webkit-tap-highlight-color: transparent;
-    }
-    .signal-row:hover { background: var(--surface-2); }
-    .signal-row.gold    { border-color: var(--gold); }
-    .signal-row.rose    { border-color: var(--rose); }
-    .signal-row.cerulean { border-color: var(--cerulean); }
-    .signal-row.teal    { border-color: var(--teal-brt); }
-    .signal-row.amber   { border-color: var(--amber); }
-    .signal-row.muted   { border-color: rgba(240,228,200,0.18); }
-    .sig-aspect {
-      font-family: 'IBM Plex Mono', monospace; font-size: 11px;
-      color: var(--text); min-width: 160px; flex-shrink: 0;
-    }
-    .sig-orb {
-      font-family: 'IBM Plex Mono', monospace; font-size: 10px;
-      color: var(--gold); min-width: 38px; flex-shrink: 0;
-    }
-    .sig-note { font-size: 11.5px; color: var(--muted); flex: 1; }
-    .sig-arrow {
-      font-size: 9px; color: var(--muted-2); flex-shrink: 0; margin-left: auto;
-      transition: transform 0.22s;
-    }
-    .signal-row.open .sig-arrow { transform: rotate(180deg); }
-    .sig-detail {
-      max-height: 0; overflow: hidden; opacity: 0;
-      transition: max-height 0.32s ease, opacity 0.22s ease 0.04s;
-      background: rgba(9,14,36,0.85); margin-top: 0;
-      border-radius: 0 0 6px 6px; margin-left: -14px; margin-right: -14px;
-      padding: 0 14px;
-    }
-    .sig-detail.open { max-height: 120px; opacity: 1; padding: 10px 14px 12px; }
-    .sig-detail p { font-size: 0.82rem; color: var(--muted); line-height: 1.65; }
-    @media (max-width: 680px) {
-      .sig-aspect { min-width: 120px; font-size: 10px; }
-      .sig-note { font-size: 11px; }
-    }
-
-    /* ── DIVE SECTIONS ── */
-    .dive-wrap {
-      padding: 36px 44px 0; position: relative; overflow: visible;
-    }
-    .dive-wrap::before {
-      content: ''; position: absolute;
-      top: -60px; left: -90px;
-      width: 320px; height: 600px;
-      background: radial-gradient(ellipse, rgba(212,160,181,0.07) 0%, transparent 65%);
-      filter: blur(70px); pointer-events: none;
-    }
-    .dive-wrap::after {
-      content: ''; position: absolute;
-      top: 400px; right: -80px;
-      width: 280px; height: 380px;
-      background: radial-gradient(ellipse, rgba(74,159,212,0.07) 0%, transparent 65%);
-      filter: blur(60px); pointer-events: none;
-    }
-    @media (max-width: 680px) { .dive-wrap { padding: 20px 0 0; } }
-
-    .dive-section {
-      margin-bottom: 32px;
-      border: 1px solid var(--border);
-      border-radius: 12px; overflow: hidden;
-    }
-    .dive-section::before { content: ''; display: block; height: 3px; width: 100%; }
-    .dive-section.accent-gold::before    { background: linear-gradient(90deg, transparent 0%, var(--gold) 20%, rgba(212,160,181,0.70) 70%, transparent 100%); }
-    .dive-section.accent-rose::before    { background: linear-gradient(90deg, transparent 0%, var(--rose) 20%, rgba(74,159,212,0.70) 70%, transparent 100%); }
-    .dive-section.accent-cerulean::before { background: linear-gradient(90deg, transparent 0%, var(--cerulean) 20%, rgba(90,184,168,0.70) 70%, transparent 100%); }
-    .dive-section.accent-teal::before    { background: linear-gradient(90deg, transparent 0%, var(--teal) 20%, rgba(208,168,64,0.70) 70%, transparent 100%); }
-    .dive-section.accent-amber::before   { background: linear-gradient(90deg, transparent 0%, var(--amber) 20%, rgba(212,160,181,0.70) 70%, transparent 100%); }
-    @media (max-width: 680px) {
-      .dive-section { border-radius: 0; border-left: none; border-right: none; margin-bottom: 20px; }
-    }
-
-    .dive-head {
-      position: relative; padding: 30px 34px 26px;
-      overflow: hidden; display: flex; align-items: flex-start; gap: 18px;
-    }
-    .dive-head.gold-head {
-      background:
-        radial-gradient(circle at 4% 50%, rgba(208,168,64,0.30) 0%, transparent 50%),
-        radial-gradient(circle at 96% 15%, rgba(212,160,181,0.11) 0%, transparent 40%),
-        radial-gradient(circle at 50% 100%, rgba(74,159,212,0.06) 0%, transparent 50%),
-        linear-gradient(135deg, rgba(16,28,56,0.92) 0%, rgba(10,16,38,0.96) 100%);
-      border-bottom: 1px solid rgba(208,168,64,0.22);
-    }
-    .dive-head.rose-head {
-      background:
-        radial-gradient(circle at 4% 50%, rgba(212,160,181,0.28) 0%, transparent 50%),
-        radial-gradient(circle at 96% 15%, rgba(208,168,64,0.10) 0%, transparent 40%),
-        radial-gradient(circle at 50% 100%, rgba(90,184,168,0.06) 0%, transparent 50%),
-        linear-gradient(135deg, rgba(16,24,52,0.92) 0%, rgba(10,16,38,0.96) 100%);
-      border-bottom: 1px solid rgba(212,160,181,0.20);
-    }
-    .dive-head.cerulean-head {
-      background:
-        radial-gradient(circle at 4% 50%, rgba(74,159,212,0.28) 0%, transparent 50%),
-        radial-gradient(circle at 96% 15%, rgba(90,184,168,0.10) 0%, transparent 40%),
-        radial-gradient(circle at 50% 100%, rgba(208,168,64,0.06) 0%, transparent 50%),
-        linear-gradient(135deg, rgba(12,20,52,0.92) 0%, rgba(9,15,38,0.96) 100%);
-      border-bottom: 1px solid rgba(74,159,212,0.22);
-    }
-    .dive-head.teal-head {
-      background:
-        radial-gradient(circle at 4% 50%, rgba(90,184,168,0.28) 0%, transparent 50%),
-        radial-gradient(circle at 96% 15%, rgba(208,168,64,0.10) 0%, transparent 40%),
-        radial-gradient(circle at 50% 100%, rgba(74,159,212,0.06) 0%, transparent 50%),
-        linear-gradient(135deg, rgba(10,22,50,0.92) 0%, rgba(9,16,40,0.96) 100%);
-      border-bottom: 1px solid rgba(90,184,168,0.20);
-    }
-    .dive-head.amber-head {
-      background:
-        radial-gradient(circle at 4% 50%, rgba(212,128,64,0.26) 0%, transparent 50%),
-        radial-gradient(circle at 96% 15%, rgba(212,160,181,0.10) 0%, transparent 40%),
-        radial-gradient(circle at 50% 100%, rgba(90,184,168,0.06) 0%, transparent 50%),
-        linear-gradient(135deg, rgba(18,22,48,0.92) 0%, rgba(10,14,38,0.96) 100%);
-      border-bottom: 1px solid rgba(212,128,64,0.20);
-    }
-    @media (max-width: 680px) { .dive-head { padding: 22px 18px 18px; gap: 12px; } }
-
-    .dive-head-stars { position: absolute; inset: 0; pointer-events: none; }
-    .dive-icon {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2.4rem; flex-shrink: 0; margin-top: 2px;
-      position: relative; line-height: 1;
-    }
-    .accent-gold .dive-icon     { color: var(--gold); }
-    .accent-rose .dive-icon     { color: var(--rose); }
-    .accent-cerulean .dive-icon { color: var(--cerulean); }
-    .accent-teal .dive-icon     { color: var(--teal-brt); }
-    .accent-amber .dive-icon    { color: var(--amber); }
-
-    .dive-head-text { flex: 1; position: relative; }
-    .dive-eyebrow {
-      font-family: 'Inter', sans-serif; font-size: 0.58rem; font-weight: 600;
-      letter-spacing: 0.28em; text-transform: uppercase; margin-bottom: 7px;
-    }
-    .accent-gold .dive-eyebrow     { color: rgba(208,168,64,0.62); }
-    .accent-rose .dive-eyebrow     { color: rgba(212,160,181,0.62); }
-    .accent-cerulean .dive-eyebrow { color: rgba(74,159,212,0.62); }
-    .accent-teal .dive-eyebrow     { color: rgba(90,184,168,0.62); }
-    .accent-amber .dive-eyebrow    { color: rgba(212,128,64,0.62); }
-
-    .dive-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.68rem; font-weight: 400;
-      line-height: 1.15; letter-spacing: 0.03em; margin-bottom: 9px;
-    }
-    .accent-gold .dive-title     { color: var(--gold); }
-    .accent-rose .dive-title     { color: var(--rose); }
-    .accent-cerulean .dive-title { color: var(--cerulean); }
-    .accent-teal .dive-title     { color: var(--teal-brt); }
-    .accent-amber .dive-title    { color: var(--amber); }
-
-    .dive-subtitle {
-      font-family: 'Cormorant Garamond', serif; font-size: 0.98rem;
-      font-style: italic; color: var(--muted); line-height: 1.5;
-    }
-
-    .dive-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
-    .dtag {
-      font-family: 'Inter', sans-serif; font-size: 0.60rem;
-      letter-spacing: 0.12em; text-transform: uppercase;
-      padding: 3px 10px; border-radius: 20px; border: 1px solid;
-    }
-    .accent-gold .dtag     { color: var(--gold);     border-color: rgba(208,168,64,0.28);  background: rgba(208,168,64,0.07); }
-    .accent-rose .dtag     { color: var(--rose);     border-color: rgba(212,160,181,0.26); background: rgba(212,160,181,0.07); }
-    .accent-cerulean .dtag { color: var(--cerulean); border-color: rgba(74,159,212,0.28);  background: rgba(74,159,212,0.07); }
-    .accent-teal .dtag     { color: var(--teal-brt); border-color: rgba(90,184,168,0.28);  background: rgba(90,184,168,0.07); }
-    .accent-amber .dtag    { color: var(--amber);    border-color: rgba(212,128,64,0.26);  background: rgba(212,128,64,0.07); }
-
-    .dive-body {
-      padding: 28px 34px 24px;
-      background: rgba(9,14,36,0.42) !important;
-      backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
-      border-top: 1px solid rgba(240,228,200,0.03);
-      display: flex; flex-direction: column; gap: 16px;
-    }
-    .dive-body p { font-size: 0.92rem; line-height: 1.84; color: var(--muted); }
-    @media (max-width: 680px) { .dive-body { padding: 20px 18px 18px; gap: 14px; } }
-
-    .pull {
-      border-left: 2px solid var(--gold); padding: 10px 20px;
-      background: var(--gold-dim); border-radius: 0 8px 8px 0;
-      font-family: 'Cormorant Garamond', serif; font-style: italic;
-      font-size: 1.14rem; color: var(--gold); line-height: 1.62;
-    }
-    .pull.rose-pull  { border-color: var(--rose); background: linear-gradient(135deg, rgba(212,160,181,0.11) 0%, rgba(74,159,212,0.05) 100%); color: var(--rose); }
-    .pull.cerulean-pull { border-color: var(--cerulean); background: linear-gradient(135deg, rgba(74,159,212,0.11) 0%, rgba(90,184,168,0.05) 100%); color: var(--cerulean); }
-    .pull.teal-pull  { border-color: var(--teal-brt); background: linear-gradient(135deg, rgba(90,184,168,0.11) 0%, rgba(208,168,64,0.05) 100%); color: var(--teal-brt); }
-
-    .watch-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 8px; }
-    .watch-list li {
-      font-size: 0.90rem; color: var(--muted); line-height: 1.65;
-      padding-left: 16px; position: relative;
-    }
-    .watch-list li::before { content: "\2022"; color: var(--rose); position: absolute; left: 0; }
-
-    /* ── READ MORE ── */
-    .dive-expanded {
-      max-height: 0; opacity: 0; overflow: hidden;
-      transition: max-height 0.44s ease, opacity 0.28s ease 0.06s;
-    }
-    .dive-expanded.open { max-height: 2400px; opacity: 1; }
-    .dive-expanded-inner { display: flex; flex-direction: column; gap: 16px; padding-top: 4px; }
-
-    .read-more {
-      display: inline-flex; align-items: center; gap: 7px; margin-top: 16px;
-      background: rgba(208,168,64,0.06); border: 1px solid rgba(208,168,64,0.22);
-      border-radius: 20px; cursor: pointer; padding: 6px 15px;
-      font-family: 'Cormorant Garamond', serif; font-size: 0.86rem; font-style: italic;
-      color: var(--gold); opacity: 0.82; letter-spacing: 0.04em;
-      transition: opacity 0.15s, background 0.15s, border-color 0.15s;
-      -webkit-tap-highlight-color: transparent;
-    }
-    .read-more:hover { opacity: 1; background: rgba(208,168,64,0.11); border-color: rgba(208,168,64,0.38); }
-    .read-more .chev { font-size: 0.60rem; transition: transform 0.22s; display: inline-block; font-style: normal; }
-    .read-more.open .chev { transform: rotate(180deg); }
-
-    /* ── PLANET STRIP ── */
-    .planet-strip-wrap { padding: 36px 44px 0; position: relative; }
-    .planet-strip-eyebrow {
-      font-family: 'Inter', sans-serif; font-size: 0.58rem; font-weight: 600;
-      letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold);
-      opacity: 0.50; margin-bottom: 4px;
-    }
-    .planet-strip-hint {
-      font-family: 'Inter', sans-serif; font-size: 0.48rem;
-      letter-spacing: 0.14em; text-transform: uppercase;
-      color: rgba(240,228,200,0.22); margin-bottom: 12px;
-    }
-    .planet-strip { display: flex; flex-wrap: wrap; gap: 7px; }
-    .planet-pill {
-      display: inline-flex; align-items: center; gap: 5px;
-      padding: 4px 12px; border-radius: 20px;
-      font-family: 'IBM Plex Mono', monospace; font-size: 0.68rem;
-      border: 1px solid; white-space: nowrap; cursor: pointer;
-      transition: border-color 0.20s, background 0.20s, transform 0.20s;
-      position: relative;
-    }
-    .planet-pill:hover { transform: translateY(-2px); }
-    .planet-pill.luminary { color: var(--gold);     border-color: rgba(208,168,64,0.26); background: rgba(208,168,64,0.06); }
-    .planet-pill.personal { color: var(--rose);     border-color: rgba(212,160,181,0.24); background: rgba(212,160,181,0.06); }
-    .planet-pill.social   { color: var(--cerulean); border-color: rgba(74,159,212,0.26); background: rgba(74,159,212,0.06); }
-    .planet-pill.outer    { color: var(--teal);     border-color: rgba(90,184,168,0.24); background: rgba(90,184,168,0.06); }
-    .planet-pill.point    { color: var(--muted);    border-color: rgba(240,228,200,0.14); background: rgba(240,228,200,0.04); }
-    .planet-pill.rx-tag   { font-size: 0.56rem; color: var(--rose); margin-left: 2px; }
-    .planet-pill[data-tip]::after {
-      content: attr(data-tip);
-      position: absolute; bottom: calc(100% + 9px); left: 50%; transform: translateX(-50%);
-      background: rgba(8,14,36,0.97); border: 1px solid rgba(208,168,64,0.26);
-      border-radius: 8px; padding: 8px 12px;
-      font-family: 'Inter', sans-serif; font-size: 0.65rem;
-      color: var(--text); line-height: 1.52; white-space: nowrap;
-      pointer-events: none; opacity: 0; transition: opacity 0.18s;
-      z-index: 200; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-      box-shadow: 0 8px 28px rgba(0,0,0,0.44);
-    }
-    @media (hover: hover) { .planet-pill[data-tip]:hover::after { opacity: 1; } }
-    @media (max-width: 680px) {
-      .planet-pill[data-tip]::after { display: none; }
-      .planet-strip-wrap { padding: 24px 12px 0; }
-      .planet-strip { gap: 5px; }
-      .planet-pill { font-size: 0.62rem; padding: 4px 9px; }
-    }
-
-    /* ── RISING SIGN PICKER ── */
-    .rs-picker-wrap {
-      padding: 28px 44px 0; display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
-    }
-    .rs-picker-label {
-      font-family: 'Inter', sans-serif; font-size: 0.60rem; font-weight: 600;
-      letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted-2); flex-shrink: 0;
-    }
-    .rs-select {
-      background: var(--surface); border: 1px solid rgba(208,168,64,0.28);
-      border-radius: 22px; color: var(--gold);
-      font-family: 'Cormorant Garamond', serif; font-size: 0.92rem;
-      padding: 6px 18px; cursor: pointer; outline: none;
-      transition: border-color 0.18s, box-shadow 0.18s;
-      -webkit-appearance: none; appearance: none;
-    }
-    .rs-select:focus { border-color: rgba(208,168,64,0.55); box-shadow: 0 0 0 2px rgba(208,168,64,0.10); }
-    .rs-note {
-      margin: 0; padding: 10px 16px;
-      background: rgba(208,168,64,0.06); border-left: 2px solid var(--gold);
-      border-radius: 0 8px 8px 0;
-      font-family: 'Cormorant Garamond', serif; font-style: italic;
-      font-size: 0.96rem; color: rgba(208,168,64,0.88); line-height: 1.60;
-      display: none;
-    }
-    @media (max-width: 680px) {
-      .rs-picker-wrap { padding: 18px 12px 0; }
-    }
-
-    /* ── NATAL READINGS SECTION ── */
-    .nr-section { padding: 48px 44px 0; }
-    .nr-eyebrow { font-family: 'Inter', sans-serif; font-size: 0.58rem; font-weight: 600; letter-spacing: 0.30em; text-transform: uppercase; color: rgba(240,228,200,0.32); margin-bottom: 10px; }
-    .nr-title { font-family: 'Cormorant Garamond', serif; font-size: 2.0rem; font-weight: 300; color: var(--text); margin-bottom: 8px; line-height: 1.1; }
-    .nr-sub { font-size: 0.82rem; color: var(--muted); margin-bottom: 28px; line-height: 1.72; max-width: 540px; }
-    .nr-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 14px; }
-    .nr-card { border-radius: 10px; padding: 20px 18px 18px; border: 1px solid rgba(208,168,64,0.18); background: rgba(13,28,56,0.55); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); transition: border-color 0.2s; text-decoration: none; display: block; }
-    .nr-card:hover { border-color: rgba(208,168,64,0.40); }
-    .nr-card-name { font-family: 'Cormorant Garamond', serif; font-size: 1.28rem; font-weight: 400; color: var(--text); margin-bottom: 3px; display: block; }
-    .nr-card-sign { font-size: 0.50rem; font-family: 'Inter', sans-serif; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(208,168,64,0.60); margin-bottom: 16px; display: block; }
-    .nr-card-cta { font-size: 0.50rem; font-family: 'Inter', sans-serif; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(208,168,64,0.75); display: inline-flex; align-items: center; gap: 5px; border: 1px solid rgba(208,168,64,0.24); border-radius: 20px; padding: 4px 12px; transition: all 0.18s; }
-    .nr-card:hover .nr-card-cta { background: rgba(208,168,64,0.08); border-color: rgba(208,168,64,0.50); }
-    .nr-card.request { opacity: 0.32; border-style: dashed; border-color: rgba(240,228,200,0.14); pointer-events: none; }
-    .nr-card.request .nr-card-name { color: rgba(240,228,200,0.40); font-style: italic; }
-    .nr-card.request .nr-card-sign { color: rgba(240,228,200,0.22); }
-    .nr-card-req { font-size: 0.50rem; font-family: 'Inter', sans-serif; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(240,228,200,0.30); border: 1px solid rgba(240,228,200,0.10); border-radius: 20px; padding: 4px 12px; display: inline-block; }
-    .rs-dont-know { margin-top: 12px; width: 100%; font-size: 0.72rem; color: rgba(240,228,200,0.28); font-family: 'Inter', sans-serif; }
-    .rs-dont-know a { color: rgba(208,168,64,0.50); text-decoration: none; border-bottom: 1px solid rgba(208,168,64,0.18); }
-    @media (max-width: 680px) { .nr-section { padding: 40px 20px 0; } }
-
-    /* ── FOOTER ── */
-    .page-footer {
-      margin: 40px 44px 0; padding-top: 18px;
-      border-top: 1px solid var(--border);
-      font-family: 'Inter', sans-serif; font-size: 0.62rem;
-      color: var(--muted-2); letter-spacing: 0.10em;
-      line-height: 1.9; text-align: center;
-    }
-    .footer-link {
-      color: rgba(74,159,212,0.65); text-decoration: none; letter-spacing: 0.04em;
-    }
-    .footer-link:hover { color: var(--cerulean); }
-    @media (max-width: 680px) { .page-footer { margin: 28px 12px 0; } }
-
-    /* ── BOTTOM SHEET GLOSSARY ── */
-    .key-btn {
-      position: fixed; bottom: 32px; right: 32px; z-index: 100;
-      display: flex; align-items: center; gap: 9px; padding: 10px 20px;
-      background: radial-gradient(ellipse at 30% 50%, #121e36 0%, #0d1c38 100%);
-      border: 1px solid rgba(208,168,64,0.42); border-radius: 40px;
-      cursor: pointer; font-family: 'Inter', sans-serif; font-size: 0.68rem;
-      font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase;
-      color: var(--gold);
-      box-shadow: 0 4px 24px rgba(0,0,0,0.50), 0 0 0 1px rgba(208,168,64,0.09);
-      transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
-      touch-action: manipulation; -webkit-tap-highlight-color: transparent;
-    }
-    .key-btn:hover { border-color: rgba(208,168,64,0.72); box-shadow: 0 4px 32px rgba(0,0,0,0.60), 0 0 20px rgba(208,168,64,0.12); }
-    .key-btn:active { transform: scale(0.97); }
-    .key-btn-icon { font-size: 0.88rem; opacity: 0.88; }
-    @media (max-width: 680px) { .key-btn { bottom: 18px; right: 18px; font-size: 0.62rem; padding: 9px 16px; } }
-    @media print { .key-btn { display: none !important; } }
-
-    .key-dimmer {
-      position: fixed; inset: 0; z-index: 498;
-      background: rgba(8,22,46,0.32); opacity: 0; pointer-events: none;
-      transition: opacity 0.32s ease;
-    }
-    .key-dimmer.open { opacity: 1; pointer-events: auto; }
-
-    .key-overlay {
-      position: fixed; bottom: 0; left: 0; right: 0;
-      max-height: 48vh; z-index: 500;
-      background: linear-gradient(180deg, rgba(14,20,54,0.99) 0%, rgba(9,16,42,0.99) 100%);
-      border-top: 1px solid rgba(208,168,64,0.20);
-      border-radius: 18px 18px 0 0;
-      box-shadow: 0 -8px 56px rgba(0,0,0,0.65);
-      display: flex; flex-direction: column;
-      transform: translateY(100%);
-      transition: transform 0.34s cubic-bezier(0.32,0,0.18,1);
-      will-change: transform;
-      backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
-    }
-    .key-overlay.open { transform: translateY(0); }
-    body.key-open { overflow: hidden; }
-
-    .key-handle {
-      width: 36px; height: 4px;
-      background: rgba(208,168,64,0.26); border-radius: 2px;
-      margin: 12px auto 0; flex-shrink: 0;
-    }
-    .key-header {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 10px 22px 11px;
-      border-bottom: 1px solid rgba(208,168,64,0.09); flex-shrink: 0;
-    }
-    .key-title {
-      font-family: 'Cormorant Garamond', serif; font-size: 1.04rem; font-weight: 300;
-      color: rgba(208,168,64,0.86); letter-spacing: 0.10em; margin: 0;
-    }
-    .key-close {
-      background: none; border: none; color: rgba(240,228,200,0.38); cursor: pointer;
-      min-width: 44px; min-height: 44px; display: flex; align-items: center; justify-content: center;
-      font-family: 'Inter', sans-serif; font-size: 0.60rem; text-transform: uppercase;
-      letter-spacing: 0.08em; transition: color 0.15s;
-      touch-action: manipulation; -webkit-tap-highlight-color: transparent;
-    }
-    .key-close:hover { color: rgba(240,228,200,0.80); }
-    .key-content {
-      overflow-y: auto; -webkit-overflow-scrolling: touch;
-      overscroll-behavior-y: contain; flex: 1; min-height: 0;
-      padding: 16px 22px; padding-bottom: max(28px, calc(env(safe-area-inset-bottom) + 16px));
-      scrollbar-width: thin; scrollbar-color: rgba(208,168,64,0.26) transparent;
-    }
-    .glos-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
-    .glos-item {
-      display: flex; align-items: flex-start; gap: 10px;
-      background: rgba(13,28,56,0.60); border: 1px solid var(--border);
-      border-radius: 8px; padding: 10px 12px;
-    }
-    .glos-sym {
-      font-family: 'Cormorant Garamond', serif; font-size: 1.20rem;
-      color: var(--gold); flex-shrink: 0; min-width: 22px; text-align: center;
-      line-height: 1.2;
-    }
-    .glos-text { display: flex; flex-direction: column; gap: 2px; }
-    .glos-name {
-      font-family: 'Inter', sans-serif; font-size: 0.62rem; font-weight: 600;
-      letter-spacing: 0.10em; text-transform: uppercase; color: var(--text);
-    }
-    .glos-desc { font-family: 'Inter', sans-serif; font-size: 0.72rem; color: var(--muted); line-height: 1.45; }
-    @media (max-width: 520px) { .glos-grid { grid-template-columns: 1fr; } }
-
-    /* ── SECTION NAV DOTS (mobile) ── */
-    #section-nav {
-      position: fixed; right: 9px; top: 50%; transform: translateY(-50%);
-      display: none; flex-direction: column; gap: 6px;
-      z-index: 50; pointer-events: none;
-    }
-    .s-dot {
-      width: 3px; height: 3px; border-radius: 2px;
-      background: var(--gold); opacity: 0.16;
-      transition: opacity 0.35s ease, height 0.35s ease; flex-shrink: 0;
-    }
-    .s-dot.active { opacity: 0.68; height: 14px; }
-    @media (max-width: 680px) { #section-nav { display: flex; } }
-
-    /* ── FIRST VISIT HINT ── */
-    #hint-tooltip {
-      position: fixed; bottom: 88px; right: 50%; transform: translateX(50%);
-      background: rgba(8,14,36,0.94); border: 1px solid rgba(208,168,64,0.28);
-      border-radius: 22px; padding: 7px 18px;
-      font-family: 'Inter', sans-serif; font-size: 0.66rem; font-weight: 400;
-      letter-spacing: 0.10em; text-transform: uppercase; color: rgba(208,168,64,0.80);
-      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-      pointer-events: none; opacity: 0;
-      transition: opacity 0.4s ease;
-      z-index: 90; white-space: nowrap;
-    }
-    #hint-tooltip.visible { opacity: 1; }
-
-    /* ── FADE IN ── */
-    .fade-in { opacity: 1; transform: none; }
-    .fade-in.animate-in { animation: fadeUp 0.52s ease; }
-    @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
-
-    /* ── ANIMATIONS ── */
-    @keyframes floatUp {
-      0%, 100% { transform: translateY(0); }
-      50%       { transform: translateY(-4px); }
-    }
-    @keyframes aurora {
-      0%, 100% { opacity: 0.68; }
-      50%       { opacity: 1.00; }
-    }
-    @keyframes hintFade {
-      0%   { opacity: 0; }
-      15%  { opacity: 1; }
-      75%  { opacity: 1; }
-      100% { opacity: 0; }
-    }
-
-    /* ── PRINT ── */
-    @media print {
-      html, body { background: var(--bg) !important; }
-      * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
-      .key-btn, #section-nav, #hint-tooltip, #week-bar { display: none !important; }
-      .fade-in, .fade-in.animate-in { opacity: 1 !important; transform: none !important; animation: none !important; }
-      .dive-expanded { max-height: none !important; opacity: 1 !important; overflow: visible !important; }
-    }
-  </style>
+/* ══ READINGS PANEL ══════════════════════════════════════════════════════════ */
+.nr-intro{font-size:0.88rem;color:var(--muted);line-height:1.74;margin-bottom:20px;position:relative;z-index:1}
+.nr-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;position:relative;z-index:1}
+.nr-card{
+  border-radius:10px;padding:18px 16px 16px;
+  border:1px solid rgba(var(--cerulean-alpha),0.20);
+  background:rgba(13,28,56,0.55);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  transition:border-color 0.2s;text-decoration:none;display:block;
+}
+.nr-card:hover{border-color:rgba(var(--cerulean-alpha),0.45)}
+.nr-card-name{font-family:'Cormorant Garamond',serif;font-size:1.22rem;font-weight:400;color:var(--text);margin-bottom:3px;display:block}
+.nr-card-sign{font-size:0.48rem;font-family:'Inter',sans-serif;letter-spacing:0.17em;text-transform:uppercase;color:rgba(var(--cerulean-alpha),0.60);margin-bottom:14px;display:block}
+.nr-card-cta{font-size:0.48rem;font-family:'Inter',sans-serif;letter-spacing:0.13em;text-transform:uppercase;color:rgba(var(--cerulean-alpha),0.70);display:inline-flex;align-items:center;gap:4px;border:1px solid rgba(var(--cerulean-alpha),0.22);border-radius:20px;padding:4px 11px;transition:all 0.18s}
+.nr-card:hover .nr-card-cta{background:rgba(var(--cerulean-alpha),0.08);border-color:rgba(var(--cerulean-alpha),0.50)}
+.nr-card.request{opacity:0.30;border-style:dashed;border-color:rgba(240,228,200,0.14);pointer-events:none}
+.nr-card.request .nr-card-name{color:rgba(240,228,200,0.38);font-style:italic}
+.nr-card.request .nr-card-sign{color:rgba(240,228,200,0.20)}
+.nr-card-req{font-size:0.48rem;font-family:'Inter',sans-serif;letter-spacing:0.15em;text-transform:uppercase;color:rgba(240,228,200,0.28);border:1px solid rgba(240,228,200,0.10);border-radius:20px;padding:4px 11px;display:inline-block}
+</style>
 </head>
 <body>
 
-<!-- ── FIXED BACKGROUNDS ── -->
-<canvas id="star-canvas"></canvas>
+<div class="app">
 
-<!-- ── SACRED GEOMETRY SCATTER ── -->
-<svg id="sg-scatter" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <filter id="wcBlurHeavy" x="-80%" y="-80%" width="260%" height="260%">
-      <feGaussianBlur stdDeviation="38"/>
-    </filter>
-    <filter id="wcBlurMed" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="18"/>
-    </filter>
-    <linearGradient id="rib1" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%"   stop-color="rgba(74,159,212,0)"/>
-      <stop offset="35%"  stop-color="rgba(74,159,212,0.10)"/>
-      <stop offset="65%"  stop-color="rgba(74,159,212,0.07)"/>
-      <stop offset="100%" stop-color="rgba(74,159,212,0)"/>
-    </linearGradient>
-    <linearGradient id="rib2" x1="100%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%"   stop-color="rgba(208,168,64,0)"/>
-      <stop offset="40%"  stop-color="rgba(208,168,64,0.09)"/>
-      <stop offset="70%"  stop-color="rgba(208,168,64,0.06)"/>
-      <stop offset="100%" stop-color="rgba(208,168,64,0)"/>
-    </linearGradient>
-  </defs>
-
-  <!-- Watercolor ribbon paths -->
-  <path d="M 950 -80 C 780 80, 640 280, 420 460 C 200 640, 80 780, -80 940"
-        fill="none" stroke="url(#rib1)" stroke-width="200" opacity="0.95" filter="url(#wcBlurHeavy)"/>
-  <path d="M -120 380 C 80 320, 280 430, 500 360 C 720 290, 880 390, 1120 330"
-        fill="none" stroke="url(#rib2)" stroke-width="160" opacity="0.90" filter="url(#wcBlurHeavy)"/>
-  <path d="M 1060 640 C 860 610, 700 680, 490 625 C 280 570, 140 640, -60 600"
-        fill="none" stroke="rgba(74,159,212,0.050)" stroke-width="90" filter="url(#wcBlurMed)"/>
-  <path d="M -80 160 C 100 220, 340 140, 560 200 C 780 260, 900 170, 1080 230"
-        fill="none" stroke="rgba(212,160,181,0.040)" stroke-width="70" filter="url(#wcBlurMed)"/>
-
-  <!-- Concentric circle mandalas -->
-  <circle cx="500" cy="500" r="570" fill="none" stroke="#d0a840" stroke-width="0.4" opacity="0.034"/>
-  <circle cx="500" cy="500" r="455" fill="none" stroke="#4a9fd4" stroke-width="0.3" opacity="0.030"/>
-  <circle cx="500" cy="500" r="350" fill="none" stroke="#d0a840" stroke-width="0.3" opacity="0.026"/>
-  <circle cx="180" cy="760" r="400" fill="none" stroke="#d4a0b5" stroke-width="0.35" opacity="0.040"/>
-  <circle cx="840" cy="230" r="310" fill="none" stroke="#d0a840" stroke-width="0.3" opacity="0.038"/>
-  <circle cx="720" cy="820" r="250" fill="none" stroke="#5bb8a8" stroke-width="0.28" opacity="0.036"/>
-
-  <!-- Planet glyphs — this week's key transits, very faint -->
-  <text x="780" y="370" font-size="280" fill="#d0a840" opacity="0.024" text-anchor="middle" font-family="Cormorant Garamond,serif" font-style="italic">♀</text>
-  <text x="120" y="640" font-size="220" fill="#d0a840" opacity="0.026" text-anchor="middle" font-family="Cormorant Garamond,serif" font-style="italic">♃</text>
-  <text x="480" y="880" font-size="190" fill="#d4a0b5" opacity="0.022" text-anchor="middle" font-family="Cormorant Garamond,serif" font-style="italic">☿</text>
-  <text x="170" y="210" font-size="165" fill="#5bb8a8" opacity="0.024" text-anchor="middle" font-family="Cormorant Garamond,serif" font-style="italic">♅</text>
-  <text x="870" y="660" font-size="150" fill="#4a9fd4" opacity="0.026" text-anchor="middle" font-family="Cormorant Garamond,serif" font-style="italic">♄</text>
-  <text x="580" y="110" font-size="105" fill="#d0a840" opacity="0.020" text-anchor="middle" font-family="Cormorant Garamond,serif">☽</text>
-
-  <!-- Mandala groups at corners -->
-  <g transform="translate(842, 138)" opacity="0.11">
-    <circle r="62" fill="none" stroke="#d0a840" stroke-width="0.65"/>
-    <circle r="44" fill="none" stroke="#d0a840" stroke-width="0.45"/>
-    <circle r="24" fill="none" stroke="#d0a840" stroke-width="0.45"/>
-    <line x1="-62" y1="0" x2="62" y2="0" stroke="#d0a840" stroke-width="0.45"/>
-    <line x1="0" y1="-62" x2="0" y2="62" stroke="#d0a840" stroke-width="0.45"/>
-    <line x1="-44" y1="-44" x2="44" y2="44" stroke="#d0a840" stroke-width="0.32"/>
-    <line x1="44" y1="-44" x2="-44" y2="44" stroke="#d0a840" stroke-width="0.32"/>
-  </g>
-  <g transform="translate(132, 792)" opacity="0.09">
-    <circle r="78" fill="none" stroke="#4a9fd4" stroke-width="0.60"/>
-    <circle r="55" fill="none" stroke="#4a9fd4" stroke-width="0.40"/>
-    <circle r="32" fill="none" stroke="#4a9fd4" stroke-width="0.40"/>
-    <line x1="-78" y1="0" x2="78" y2="0" stroke="#4a9fd4" stroke-width="0.40"/>
-    <line x1="0" y1="-78" x2="0" y2="78" stroke="#4a9fd4" stroke-width="0.40"/>
-    <line x1="-55" y1="-55" x2="55" y2="55" stroke="#4a9fd4" stroke-width="0.30"/>
-    <line x1="55" y1="-55" x2="-55" y2="55" stroke="#4a9fd4" stroke-width="0.30"/>
-  </g>
-  <g transform="translate(295, 180)" opacity="0.13">
-    <circle r="36" fill="none" stroke="#d4a0b5" stroke-width="0.55"/>
-    <circle r="24" fill="none" stroke="#d4a0b5" stroke-width="0.40"/>
-    <line x1="-36" y1="0" x2="36" y2="0" stroke="#d4a0b5" stroke-width="0.38"/>
-    <line x1="0" y1="-36" x2="0" y2="36" stroke="#d4a0b5" stroke-width="0.38"/>
-    <line x1="-25" y1="-25" x2="25" y2="25" stroke="#d4a0b5" stroke-width="0.28"/>
-    <line x1="25" y1="-25" x2="-25" y2="25" stroke="#d4a0b5" stroke-width="0.28"/>
-  </g>
-  <g transform="translate(680, 740)" opacity="0.12">
-    <circle r="42" fill="none" stroke="#5bb8a8" stroke-width="0.52"/>
-    <circle r="28" fill="none" stroke="#5bb8a8" stroke-width="0.38"/>
-    <line x1="-42" y1="0" x2="42" y2="0" stroke="#5bb8a8" stroke-width="0.36"/>
-    <line x1="0" y1="-42" x2="0" y2="42" stroke="#5bb8a8" stroke-width="0.36"/>
-    <line x1="-30" y1="-30" x2="30" y2="30" stroke="#5bb8a8" stroke-width="0.26"/>
-    <line x1="30" y1="-30" x2="-30" y2="30" stroke="#5bb8a8" stroke-width="0.26"/>
-  </g>
-
-  <!-- Diamond accents -->
-  <g opacity="0.15" fill="none" stroke="#d0a840" stroke-width="0.52">
-    <polygon points="304,244 313,258 304,272 295,258"/>
-    <polygon points="654,324 664,340 654,356 644,340"/>
-    <polygon points="176,584 185,600 176,616 167,600"/>
-    <polygon points="784,684 794,702 784,720 774,702"/>
-  </g>
-
-  <!-- Constellation dot + line network -->
-  <g opacity="0.088">
-    <circle cx="118" cy="78"  r="2.2" fill="#d0a840"/>
-    <circle cx="348" cy="148" r="1.9" fill="#d0a840"/>
-    <circle cx="615" cy="88"  r="2.0" fill="#4a9fd4"/>
-    <circle cx="882" cy="172" r="1.7" fill="#d0a840"/>
-    <circle cx="52"  cy="418" r="2.0" fill="#d4a0b5"/>
-    <circle cx="214" cy="558" r="1.8" fill="#d0a840"/>
-    <circle cx="478" cy="486" r="2.2" fill="#4a9fd4"/>
-    <circle cx="738" cy="442" r="1.7" fill="#5bb8a8"/>
-    <circle cx="924" cy="518" r="1.8" fill="#d0a840"/>
-    <circle cx="155" cy="718" r="2.0" fill="#4a9fd4"/>
-    <circle cx="376" cy="808" r="1.8" fill="#d0a840"/>
-    <circle cx="604" cy="752" r="2.2" fill="#d4a0b5"/>
-    <circle cx="824" cy="874" r="1.6" fill="#d0a840"/>
-    <line x1="118" y1="78"  x2="348" y2="148" stroke="#d0a840" stroke-width="0.40"/>
-    <line x1="348" y1="148" x2="615" y2="88"  stroke="#d0a840" stroke-width="0.36"/>
-    <line x1="615" y1="88"  x2="882" y2="172" stroke="#4a9fd4" stroke-width="0.36"/>
-    <line x1="118" y1="78"  x2="52"  y2="418" stroke="#d0a840" stroke-width="0.38"/>
-    <line x1="52"  y1="418" x2="214" y2="558" stroke="#d0a840" stroke-width="0.34"/>
-    <line x1="214" y1="558" x2="478" y2="486" stroke="#4a9fd4" stroke-width="0.34"/>
-    <line x1="478" y1="486" x2="738" y2="442" stroke="#4a9fd4" stroke-width="0.38"/>
-    <line x1="738" y1="442" x2="924" y2="518" stroke="#d0a840" stroke-width="0.34"/>
-    <line x1="882" y1="172" x2="924" y2="518" stroke="#d0a840" stroke-width="0.32"/>
-    <line x1="155" y1="718" x2="376" y2="808" stroke="#d0a840" stroke-width="0.34"/>
-    <line x1="376" y1="808" x2="604" y2="752" stroke="#d4a0b5" stroke-width="0.30"/>
-    <line x1="604" y1="752" x2="824" y2="874" stroke="#d0a840" stroke-width="0.34"/>
-    <line x1="118" y1="78"  x2="824" y2="874" stroke="#4a9fd4" stroke-width="0.20" opacity="0.6"/>
-    <line x1="882" y1="172" x2="155" y2="718" stroke="#d0a840" stroke-width="0.20" opacity="0.6"/>
-  </g>
-</svg>
-
-<div id="atm-blobs">
-  <div style="position:absolute;width:580px;height:380px;top:-80px;right:-120px;background:radial-gradient(ellipse,rgba(208,168,64,0.14) 0%,transparent 70%);filter:blur(90px);border-radius:50%;"></div>
-  <div style="position:absolute;width:520px;height:560px;top:28%;left:-180px;background:radial-gradient(ellipse,rgba(74,159,212,0.11) 0%,transparent 70%);filter:blur(100px);border-radius:50%;"></div>
-  <div style="position:absolute;width:680px;height:300px;bottom:-60px;left:50%;transform:translateX(-50%);background:radial-gradient(ellipse,rgba(212,160,181,0.07) 0%,transparent 70%);filter:blur(130px);border-radius:50%;"></div>
-  <div style="position:absolute;width:320px;height:320px;top:55%;right:-60px;background:radial-gradient(ellipse,rgba(90,184,168,0.07) 0%,transparent 70%);filter:blur(80px);border-radius:50%;"></div>
-</div>
-
-<!-- ── CELESTIAL SIDE COLUMNS ── -->
-<div class="cel-col cel-col-left">
-  <svg viewBox="0 0 26 900" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
-    <line x1="13" y1="0" x2="13" y2="900" stroke="#3e6fa0" stroke-width="0.8" opacity="0.22"/>
-    <text x="13" y="52"  text-anchor="middle" font-size="15" fill="#d0a840" opacity="0.66" font-family="serif">☽</text>
-    <text x="13" y="112" text-anchor="middle" font-size="10" fill="#f0e4cc" opacity="0.44" font-family="serif">✦</text>
-    <text x="13" y="180" text-anchor="middle" font-size="14" fill="#d4a0b5" opacity="0.56" font-family="serif">☉</text>
-    <circle cx="13" cy="240" r="1.5" fill="#d0a840" opacity="0.42"/>
-    <text x="13" y="300" text-anchor="middle" font-size="10" fill="#d4a0b5" opacity="0.48" font-family="serif">✧</text>
-    <text x="13" y="368" text-anchor="middle" font-size="15" fill="#f0e4cc" opacity="0.28" font-family="serif">☾</text>
-    <circle cx="13" cy="432" r="1.2" fill="#f0e4cc" opacity="0.32"/>
-    <text x="13" y="498" text-anchor="middle" font-size="10" fill="#d0a840" opacity="0.42" font-family="serif">✦</text>
-    <text x="13" y="564" text-anchor="middle" font-size="14" fill="#d0a840" opacity="0.38" font-family="serif">☉</text>
-    <text x="13" y="634" text-anchor="middle" font-size="15" fill="#d4a0b5" opacity="0.46" font-family="serif">☽</text>
-    <circle cx="13" cy="698" r="1.5" fill="#d0a840" opacity="0.34"/>
-    <text x="13" y="762" text-anchor="middle" font-size="10" fill="#f0e4cc" opacity="0.36" font-family="serif">✧</text>
-    <text x="13" y="830" text-anchor="middle" font-size="15" fill="#d0a840" opacity="0.30" font-family="serif">☾</text>
-    <circle cx="13" cy="882" r="1.2" fill="#d4a0b5" opacity="0.26"/>
-  </svg>
-</div>
-<div class="cel-col cel-col-right">
-  <svg viewBox="0 0 26 900" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
-    <line x1="13" y1="0" x2="13" y2="900" stroke="#3e6fa0" stroke-width="0.8" opacity="0.22"/>
-    <text x="13" y="52"  text-anchor="middle" font-size="10" fill="#f0e4cc" opacity="0.44" font-family="serif">✦</text>
-    <text x="13" y="112" text-anchor="middle" font-size="15" fill="#d0a840" opacity="0.58" font-family="serif">☾</text>
-    <text x="13" y="180" text-anchor="middle" font-size="10" fill="#d4a0b5" opacity="0.48" font-family="serif">✧</text>
-    <circle cx="13" cy="240" r="1.5" fill="#d0a840" opacity="0.36"/>
-    <text x="13" y="300" text-anchor="middle" font-size="14" fill="#d0a840" opacity="0.52" font-family="serif">☉</text>
-    <text x="13" y="368" text-anchor="middle" font-size="15" fill="#f0e4cc" opacity="0.26" font-family="serif">☽</text>
-    <circle cx="13" cy="432" r="1.2" fill="#d4a0b5" opacity="0.40"/>
-    <text x="13" y="498" text-anchor="middle" font-size="10" fill="#d0a840" opacity="0.48" font-family="serif">✦</text>
-    <text x="13" y="564" text-anchor="middle" font-size="14" fill="#f0e4cc" opacity="0.34" font-family="serif">☉</text>
-    <text x="13" y="634" text-anchor="middle" font-size="15" fill="#d0a840" opacity="0.38" font-family="serif">☾</text>
-    <circle cx="13" cy="698" r="1.5" fill="#d4a0b5" opacity="0.32"/>
-    <text x="13" y="762" text-anchor="middle" font-size="10" fill="#d0a840" opacity="0.34" font-family="serif">✦</text>
-    <text x="13" y="830" text-anchor="middle" font-size="15" fill="#f0e4cc" opacity="0.26" font-family="serif">☽</text>
-    <circle cx="13" cy="882" r="1.2" fill="#d0a840" opacity="0.24"/>
-  </svg>
-</div>
-
-<!-- ── STICKY WEEK PROGRESS BAR ── -->
-<div id="week-bar">
-  <div class="wbar-inner">
-    <span class="wbar-label">Week</span>
-    <div class="wbar-track">
-      <div class="wbar-fill" id="wbar-fill" style="width:7.1%"></div>
-      <div class="wbar-days" id="wbar-days"></div>
-    </div>
-    <span class="wbar-day-label" id="wbar-today">Mon</span>
+<!-- ── HEADER ──────────────────────────────────────────────────────────────── -->
+<header class="app-header">
+  <div class="header-left">
+    <div class="header-eyebrow">Transit-to-Transit &middot; Collective Sky</div>
+    <div class="header-name">Sky at Work</div>
+    <div class="header-meta">Week of June 8&ndash;14, 2026 &middot; Venus ☌ Jupiter</div>
   </div>
-</div>
+</header>
 
-<!-- ── HERO ── -->
-<div class="hero">
-  <!-- Hero constellation + star field -->
-  <svg class="hero-stars" viewBox="0 0 900 480" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;" aria-hidden="true">
-    <defs>
-      <filter id="heroWC" x="-50%" y="-50%" width="200%" height="200%">
-        <feGaussianBlur stdDeviation="22"/>
-      </filter>
-    </defs>
-    <!-- Stars -->
-    <circle cx="74"   cy="68"   r="1.2" fill="#f0e4cc" opacity="0.46"/>
-    <circle cx="210"  cy="42"   r="0.9" fill="#d0a840" opacity="0.40"/>
-    <circle cx="368"  cy="60"   r="1.3" fill="#f0e4cc" opacity="0.38"/>
-    <circle cx="522"  cy="28"   r="0.8" fill="#d4a0b5" opacity="0.48"/>
-    <circle cx="676"  cy="52"   r="1.1" fill="#f0e4cc" opacity="0.36"/>
-    <circle cx="820"  cy="82"   r="1.3" fill="#d0a840" opacity="0.42"/>
-    <circle cx="866"  cy="36"   r="0.9" fill="#f0e4cc" opacity="0.34"/>
-    <circle cx="32"   cy="290"  r="0.9" fill="#d0a840" opacity="0.32"/>
-    <circle cx="874"  cy="262"  r="0.8" fill="#f0e4cc" opacity="0.34"/>
-    <circle cx="442"  cy="452"  r="0.8" fill="#f0e4cc" opacity="0.30"/>
-    <!-- Constellation frame lines connecting stars -->
-    <g opacity="0.40">
-      <line x1="134" y1="122" x2="460" y2="20"  stroke="#d0a840" stroke-width="0.5"/>
-      <line x1="460" y1="20"  x2="762" y2="142" stroke="#d0a840" stroke-width="0.7"/>
-      <line x1="762" y1="142" x2="840" y2="340" stroke="#d0a840" stroke-width="0.7"/>
-      <line x1="134" y1="122" x2="70"  y2="356" stroke="#d0a840" stroke-width="0.7"/>
-      <line x1="70"  y1="356" x2="454" y2="462" stroke="#d0a840" stroke-width="0.7"/>
-      <line x1="454" y1="462" x2="840" y2="340" stroke="#d0a840" stroke-width="0.7"/>
-      <line x1="134" y1="122" x2="762" y2="142" stroke="#d0a840" stroke-width="0.4"/>
-      <line x1="460" y1="20"  x2="70"  y2="356" stroke="#4ab8e8" stroke-width="0.4"/>
-      <line x1="762" y1="142" x2="454" y2="462" stroke="#4ab8e8" stroke-width="0.4"/>
-    </g>
-    <!-- Watercolor glow at top-right -->
-    <ellipse cx="800" cy="80" rx="190" ry="110" fill="rgba(200,145,60,0.06)" filter="url(#heroWC)"/>
-    <circle cx="450" cy="240" r="220" fill="none" stroke="#d0a840" stroke-width="0.4" opacity="0.06"/>
-    <circle cx="450" cy="240" r="168" fill="none" stroke="#4a9fd4" stroke-width="0.3" opacity="0.05"/>
-    <!-- Corner star marks -->
-    <text x="134" y="126" font-size="12" fill="#d0a840" opacity="0.55" text-anchor="middle" font-family="serif">✦</text>
-    <text x="762" y="146" font-size="8"  fill="#f0e4cc" opacity="0.38" text-anchor="middle" font-family="serif">✧</text>
-    <text x="460" y="24"  font-size="7"  fill="#d4a0b5" opacity="0.48" text-anchor="middle" font-family="serif">✦</text>
-    <text x="840" y="344" font-size="7"  fill="#d0a840" opacity="0.40" text-anchor="middle" font-family="serif">✧</text>
-    <text x="454" y="466" font-size="8"  fill="#f0e4cc" opacity="0.30" text-anchor="middle" font-family="serif">✦</text>
-  </svg>
+<!-- ── APP BODY ────────────────────────────────────────────────────────────── -->
+<div class="app-body">
 
-  <!-- Sacred Geometry: Seed of Life -->
-  <div class="hero-geo" aria-hidden="true">
-    <svg width="420" height="420" viewBox="-210 -210 420 420" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <radialGradient id="geoGrad" cx="50%" cy="50%" r="50%">
-          <stop offset="0%"   stop-color="#d0a840" stop-opacity="0.85"/>
-          <stop offset="100%" stop-color="#d0a840" stop-opacity="0.10"/>
-        </radialGradient>
-      </defs>
-      <!-- Seed of Life: center + 6 petals at R=80 -->
-      <g stroke="url(#geoGrad)" stroke-width="0.7" fill="none" opacity="0.9">
-        <circle cx="0"   cy="0"    r="80"/>
-        <circle cx="80"  cy="0"    r="80"/>
-        <circle cx="40"  cy="69.3" r="80"/>
-        <circle cx="-40" cy="69.3" r="80"/>
-        <circle cx="-80" cy="0"    r="80"/>
-        <circle cx="-40" cy="-69.3" r="80"/>
-        <circle cx="40"  cy="-69.3" r="80"/>
-        <!-- Outer ring -->
-        <circle cx="0"   cy="0"    r="160"/>
-        <!-- Axis lines -->
-        <line x1="-160" y1="0"    x2="160"  y2="0"    stroke-opacity="0.35"/>
-        <line x1="-80"  y1="138.6" x2="80"  y2="-138.6" stroke-opacity="0.35"/>
-        <line x1="80"   y1="138.6" x2="-80" y2="-138.6" stroke-opacity="0.35"/>
-        <!-- Inner hexagon -->
-        <polygon points="80,0 40,69.3 -40,69.3 -80,0 -40,-69.3 40,-69.3" stroke-opacity="0.50"/>
-        <!-- Center dot -->
-        <circle cx="0" cy="0" r="3" fill="url(#geoGrad)" stroke="none"/>
-        <!-- Outer decorative points -->
-        <circle cx="160"  cy="0"     r="2.5" fill="#d0a840" fill-opacity="0.70" stroke="none"/>
-        <circle cx="-160" cy="0"     r="2.5" fill="#d0a840" fill-opacity="0.70" stroke="none"/>
-        <circle cx="80"   cy="138.6" r="2.5" fill="#d0a840" fill-opacity="0.70" stroke="none"/>
-        <circle cx="-80"  cy="138.6" r="2.5" fill="#d0a840" fill-opacity="0.70" stroke="none"/>
-        <circle cx="80"   cy="-138.6" r="2.5" fill="#d0a840" fill-opacity="0.70" stroke="none"/>
-        <circle cx="-80"  cy="-138.6" r="2.5" fill="#d0a840" fill-opacity="0.70" stroke="none"/>
-      </g>
+  <!-- ── HOME PANEL ─────────────────────────────────────────────────────── -->
+  <div class="panel reading-panel active" id="panel-home">
+    <svg class="geo-bg" viewBox="0 0 380 720" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="190" cy="220" r="200" stroke="rgba(74,159,212,0.05)" stroke-width="0.5"/>
+      <circle cx="190" cy="220" r="110" stroke="rgba(74,159,212,0.04)" stroke-width="0.5"/>
     </svg>
-  </div>
+    <div class="reading-inner">
+      <div class="panel-heading">
+        <div class="panel-eyebrow-sm">Collective Sky</div>
+        <div class="panel-title-lg">This Week</div>
+      </div>
 
-  <div class="hero-label">Transit-to-Transit &middot; Collective Sky</div>
-  <h1 class="hero-name">Sky at Work</h1>
-  <div class="hero-ornament">&#9789; &#10022; &#9737; &#10022; &#9790;</div>
-  <div class="hero-data">
-    <div>
-      <div class="hero-datum-label">Week of</div>
-      <div class="hero-datum-value">June 8&ndash;14</div>
-    </div>
-    <div>
-      <div class="hero-datum-label">Moon</div>
-      <div class="hero-datum-value">Last Quarter &rarr; Balsamic</div>
-    </div>
-    <div>
-      <div class="hero-datum-label">Dominant</div>
-      <div class="hero-datum-value">Venus &sdot; Jupiter</div>
-    </div>
-  </div>
-  <div class="hero-big-three">
-    <span class="hbt-pill warm">Venus ☌ Jupiter</span>
-    <span class="hbt-pill soft">Mercury □ Saturn</span>
-    <span class="hbt-pill cool">Last Quarter ↓</span>
-  </div>
-</div>
+      <!-- Collective sky wheel -->
+      <div class="cw-wrap">
+        <svg viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg" id="cw-svg"></svg>
+      </div>
+      <div class="cw-label">live transiting sky</div>
 
-<!-- ── SIGNAL TRIO ── -->
-<div class="trio-wrap fade-in" data-section="trio">
-  <div class="trio">
-    <div class="trio-card t-gold">
-      <span class="trio-glyph">♀ ☌ ♃</span>
-      <div class="trio-label">Venus &amp; Jupiter</div>
-      <div class="trio-placement">Warmth Opens</div>
-      <div class="trio-orb">1.16&deg; &middot; Cancer &middot; exact Tue</div>
-      <div class="trio-rule"></div>
-      <div class="trio-tagline">The collaborative ask that lands. Warmest sky of the month.</div>
-    </div>
-    <div class="trio-card t-rose">
-      <span class="trio-glyph">☿ □ ♄</span>
-      <div class="trio-label">Mercury &amp; Saturn</div>
-      <div class="trio-placement">Write It Right</div>
-      <div class="trio-orb">1.98&deg; &middot; Cancer/Aries &middot; exact Tue</div>
-      <div class="trio-rule"></div>
-      <div class="trio-tagline">Precision before warmth: draft today, send Wednesday</div>
-    </div>
-    <div class="trio-card t-cerulean">
-      <span class="trio-glyph">&#9790; &#8595;</span>
-      <div class="trio-label">Last Quarter Moon</div>
-      <div class="trio-placement">Release Phase</div>
-      <div class="trio-orb">peaked Mon AM &middot; New Moon Jun 14&ndash;15</div>
-      <div class="trio-rule"></div>
-      <div class="trio-tagline">Close what&rsquo;s in motion. Not the week to launch.</div>
-    </div>
-  </div>
-</div>
-
-<!-- ── RISING SIGN PICKER ── -->
-<div class="rs-picker-wrap fade-in">
-  <span class="rs-picker-label">Your rising sign</span>
-  <select id="rs-select" class="rs-select" onchange="applyRising(this.value)">
-    <option value="">Select for a personalized note &darr;</option>
-    <option value="aries">Aries ♈</option>
-    <option value="taurus">Taurus ♉</option>
-    <option value="gemini">Gemini ♊</option>
-    <option value="cancer">Cancer ♋</option>
-    <option value="leo">Leo ♌</option>
-    <option value="virgo">Virgo ♍</option>
-    <option value="libra">Libra ♎</option>
-    <option value="scorpio">Scorpio ♏</option>
-    <option value="sagittarius">Sagittarius ♐</option>
-    <option value="capricorn">Capricorn ♑</option>
-    <option value="aquarius">Aquarius ♒</option>
-    <option value="pisces">Pisces ♓</option>
-  </select>
-  <p class="rs-dont-know">Don&rsquo;t know yours? <a href="/natal%20readings/jordan.html">A natal chart reading from Jordan will tell you &rarr;</a></p>
-</div>
-
-<div class="cel-divider fade-in"><div class="cel-rule left"></div><div class="cel-mark">&#10022; &#10022; &#10022;</div><div class="cel-rule right"></div></div>
-
-<!-- ── THE PULSE ── -->
-<div class="section-wrap fade-in" data-section="pulse">
-  <div class="section-eyebrow">The Weather This Week</div>
-  <div class="section-title">The Pulse</div>
-  <div class="pulse-card">
-    <p>Venus conjuncts Jupiter in Cancer this week, the most socially generous sky of the month. Warmth lands, collaboration opens, relationship asks go further than they would on any other week. Counter that with Mercury squaring Saturn exact Tuesday: communications need to be deliberate before they&rsquo;re warm. Write it, check it, then send it. Last Quarter Moon says completion energy, not launch energy. Close out what&rsquo;s in motion before you start something new.</p>
-  </div>
-</div>
-
-<div class="cel-divider fade-in"><div class="cel-rule left"></div><div class="cel-mark">&#10022; &#10022; &#10022;</div><div class="cel-rule right"></div></div>
-
-<!-- ── SIGNAL BOARD ── -->
-<div class="section-wrap fade-in" data-section="glance">
-  <div class="section-eyebrow">Sorted by Exactness</div>
-  <div class="section-title">At a Glance</div>
-  <div class="signal-board" id="signal-board">
-
-    <div class="signal-row cerulean" data-detail="uranus-node">
-      <span class="sig-aspect">&#9799; Uranus &#9744; &#9738; NNode</span>
-      <span class="sig-orb">0.43&deg;</span>
-      <span class="sig-note">square &middot; nearly exact &middot; unexpected pivots</span>
-      <span class="sig-arrow">&#9660;</span>
-    </div>
-    <div class="sig-detail" id="uranus-node"><p>Uranus at 2°30&prime; Gemini squares the North Node at 2°56&prime; Pisces Rx. Plans that felt locked can pivot, not from failure but from new information. Hold the goal; stay flexible on the route. Active all week.</p></div>
-
-    <div class="signal-row gold" data-detail="venus-jupiter">
-      <span class="sig-aspect">&#9794;&#9792; Venus &#9791; Jupiter</span>
-      <span class="sig-orb">1.16&deg;</span>
-      <span class="sig-note">conjunction &middot; Cancer &middot; exact Tue</span>
-      <span class="sig-arrow">&#9660;</span>
-    </div>
-    <div class="sig-detail" id="venus-jupiter"><p>Venus at 24°22&prime; Cancer conjunct Jupiter at 25°32&prime; Cancer. Warmth amplified: generosity, goodwill, genuine connection. Exact Tuesday. Use that window for any ask that requires buy-in, not just sign-off.</p></div>
-
-    <div class="signal-row teal" data-detail="neptune-pluto">
-      <span class="sig-aspect">&#9798; Neptune &#10023; &#9800; Pluto Rx</span>
-      <span class="sig-orb">1.07&deg;</span>
-      <span class="sig-note">sextile &middot; Aries/Aquarius &middot; generational</span>
-      <span class="sig-arrow">&#9660;</span>
-    </div>
-    <div class="sig-detail" id="neptune-pluto"><p>Neptune at 4°12&prime; Aries sextile Pluto Rx at 5°16&prime; Aquarius. A slow generational undercurrent&mdash;the dissolution of old power structures and the emergence of new ones. Background context for 2026&rsquo;s collective arc.</p></div>
-
-    <div class="signal-row rose" data-detail="mercury-saturn">
-      <span class="sig-aspect">&#9791; Mercury &#9744; &#9799; Saturn</span>
-      <span class="sig-orb">1.98&deg;</span>
-      <span class="sig-note">square &middot; Cancer/Aries &middot; exact Tue</span>
-      <span class="sig-arrow">&#9660;</span>
-    </div>
-    <div class="sig-detail" id="mercury-saturn"><p>Mercury at 10°52&prime; Cancer squares Saturn at 12°51&prime; Aries, exact Tuesday. Communication under precision pressure&mdash;what goes out this week should be worth sending. Quality beats volume. Write Tuesday; send Wednesday.</p></div>
-
-    <div class="signal-row amber" data-detail="venus-chiron">
-      <span class="sig-aspect">&#9792; Venus &#9744; &#9767; Chiron</span>
-      <span class="sig-orb">5.18&deg;</span>
-      <span class="sig-note">square &middot; applying &middot; exact Fri</span>
-      <span class="sig-arrow">&#9660;</span>
-    </div>
-    <div class="sig-detail" id="venus-chiron"><p>Venus at 24°22&prime; Cancer squares Chiron at 29°55&prime; Aries (anaretic degree). Both at threshold degrees. A tender spot in a collaboration or relationship may surface by Friday. Don&rsquo;t schedule the most vulnerable conversation for Friday afternoon.</p></div>
-
-    <div class="signal-row muted" data-detail="last-quarter">
-      <span class="sig-aspect">&#9790; Last Quarter Moon</span>
-      <span class="sig-orb">&#8595;</span>
-      <span class="sig-note">peaked Mon AM &middot; waning to balsamic</span>
-      <span class="sig-arrow">&#9660;</span>
-    </div>
-    <div class="sig-detail" id="last-quarter"><p>Last Quarter Moon peaked Monday morning (Sun 17°50&prime; Gemini square Moon 20°22&prime; Pisces). The lunar cycle now wanes toward New Moon June 14&ndash;15. Release energy all week&mdash;completions land better than launches under this phase.</p></div>
-
-  </div>
-</div>
-
-<div class="cel-divider fade-in"><div class="cel-rule left"></div><div class="cel-mark">&#10022; &#10022; &#10022;</div><div class="cel-rule right"></div></div>
-
-<!-- ── DIVE SECTIONS ── -->
-<div class="dive-wrap">
-
-  <!-- Communication -->
-  <div class="dive-section accent-rose fade-in" data-section="communication">
-    <div class="dive-head rose-head">
-      <svg class="dive-head-stars" viewBox="0 0 500 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <circle cx="420" cy="28" r="1.1" fill="#d4a0b5" opacity="0.38"/>
-        <circle cx="460" cy="60" r="0.8" fill="#d0a840" opacity="0.30"/>
-        <circle cx="480" cy="18" r="0.9" fill="#f0e4cc" opacity="0.22"/>
-        <circle cx="440" cy="90" r="0.7" fill="#d4a0b5" opacity="0.28"/>
-      </svg>
-      <div class="dive-icon">&#9791;</div>
-      <div class="dive-head-text">
-        <div class="dive-eyebrow">Mercury &middot; Communication</div>
-        <div class="dive-title">Write It Twice This Week</div>
-        <div class="dive-subtitle">Mercury squares Saturn exact Tuesday: quality beats volume</div>
-        <div class="dive-tags">
-          <span class="dtag">Mercury in Cancer</span>
-          <span class="dtag">Mercury □ Saturn</span>
-          <span class="dtag">one-on-ones beat groups</span>
+      <!-- Trio cards -->
+      <div class="trio">
+        <div class="trio-card t-gold">
+          <span class="trio-glyph">♀ ☌ ♃</span>
+          <div class="trio-label">Venus &amp; Jupiter</div>
+          <div class="trio-placement">Warmth Opens</div>
+          <div class="trio-orb">Cancer &middot; exact Tue</div>
+          <div class="trio-rule"></div>
+          <div class="trio-tagline">The collaborative ask that lands.</div>
+        </div>
+        <div class="trio-card t-rose">
+          <span class="trio-glyph">☿ □ ♄</span>
+          <div class="trio-label">Mercury &amp; Saturn</div>
+          <div class="trio-placement">Write It Right</div>
+          <div class="trio-orb">Cancer/Aries &middot; exact Tue</div>
+          <div class="trio-rule"></div>
+          <div class="trio-tagline">Draft today, send Wednesday.</div>
+        </div>
+        <div class="trio-card t-cerulean">
+          <span class="trio-glyph">☽ ↓</span>
+          <div class="trio-label">Last Quarter</div>
+          <div class="trio-placement">Release Phase</div>
+          <div class="trio-orb">New Moon Jun 14&ndash;15</div>
+          <div class="trio-rule"></div>
+          <div class="trio-tagline">Close what&rsquo;s in motion.</div>
         </div>
       </div>
+
+      <div class="sep"><span class="sep-inner">Your Rising Sign</span></div>
+
+      <!-- Rising sign picker -->
+      <div class="rs-wrap">
+        <div class="rs-label">Select your rising for a personalized note</div>
+        <div class="rs-chips" id="rs-chips">
+          <button class="rs-chip" data-sign="aries">Aries ♈</button>
+          <button class="rs-chip" data-sign="taurus">Taurus ♉</button>
+          <button class="rs-chip" data-sign="gemini">Gemini ♊</button>
+          <button class="rs-chip" data-sign="cancer">Cancer ♋</button>
+          <button class="rs-chip" data-sign="leo">Leo ♌</button>
+          <button class="rs-chip" data-sign="virgo">Virgo ♍</button>
+          <button class="rs-chip" data-sign="libra">Libra ♎</button>
+          <button class="rs-chip" data-sign="scorpio">Scorpio ♏</button>
+          <button class="rs-chip" data-sign="sagittarius">Sagittarius ♐</button>
+          <button class="rs-chip" data-sign="capricorn">Capricorn ♑</button>
+          <button class="rs-chip" data-sign="aquarius">Aquarius ♒</button>
+          <button class="rs-chip" data-sign="pisces">Pisces ♓</button>
+        </div>
+        <div class="rs-note-wrap">
+          <div class="rs-note" id="rs-note"></div>
+        </div>
+        <p class="rs-dont-know">Don&rsquo;t know yours? <a href="/natal%20readings/jordan.html">A natal reading from Jordan will tell you &rarr;</a></p>
+      </div>
     </div>
-    <div class="dive-body">
-      <p>Mercury in Cancer squares Saturn in Aries exact Tuesday. Cancer Mercury leads with feeling; Saturn demands accountability. The combination doesn&rsquo;t block communication. It asks for quality. What goes out this week should be worth sending.</p>
-      <p>Write the email on Tuesday. Don&rsquo;t send it until Wednesday. That discipline is what Mercury-Saturn is actually asking for.</p>
-      <div class="pull rose-pull">The message that holds up is the one you wrote twice.</div>
-      <p class="rs-note" id="rs-comm"></p>
-      <div class="dive-expanded" id="comm-expand">
-        <div class="dive-expanded-inner">
-          <p>One-on-ones beat group threads all week. Cancer Mercury means the direct conversation goes further than the all-hands: people say more of what they actually think when it&rsquo;s personal rather than performed. If something needs to land, deliver it one-to-one before it goes to the room.</p>
-          <p><strong>Best days:</strong> Wednesday&ndash;Thursday, once Saturn&rsquo;s rigor has landed. <strong>Watch Tuesday:</strong> the warm instinct is to send the kind message; the discipline is to make it accurate first.</p>
+  </div><!-- /panel-home -->
+
+  <!-- ── SKY PANEL ──────────────────────────────────────────────────────── -->
+  <div class="panel reading-panel" id="panel-sky">
+    <svg class="geo-bg" viewBox="0 0 380 720" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="190" cy="360" r="200" stroke="rgba(74,159,212,0.04)" stroke-width="0.5"/>
+      <circle cx="190" cy="360" r="100" stroke="rgba(74,159,212,0.03)" stroke-width="0.5"/>
+    </svg>
+    <div class="reading-inner">
+      <div class="panel-heading">
+        <div class="panel-eyebrow-sm">Transit Signal Board</div>
+        <div class="panel-title-lg">This Week</div>
+      </div>
+
+      <!-- Pulse -->
+      <div class="pulse-card">
+        <p>Venus conjuncts Jupiter in Cancer this week &mdash; the most socially generous sky of the month. Warmth lands, collaboration opens, relationship asks go further than they would on any other week. Counter that with Mercury squaring Saturn exact Tuesday: communications need to be deliberate before they&rsquo;re warm. Write it, check it, then send it. Last Quarter Moon says completion energy, not launch energy.</p>
+      </div>
+
+      <!-- Signal board -->
+      <div class="signal-board">
+
+        <div class="signal-row cerulean" data-detail="d-uranus-node">
+          <span class="sig-aspect">&#9799; Uranus &#9744; &#9738; NNode</span>
+          <span class="sig-orb">0.43&deg;</span>
+          <span class="sig-note">square &middot; nearly exact &middot; unexpected pivots</span>
+          <span class="sig-arrow">&#9660;</span>
+        </div>
+        <div class="sig-detail" id="d-uranus-node"><p>Uranus at 2&deg;30&prime; Gemini squares the North Node at 2&deg;56&prime; Pisces Rx. Plans that felt locked can pivot &mdash; not from failure but from new information. Hold the goal; stay flexible on the route. Active all week.</p></div>
+
+        <div class="signal-row gold" data-detail="d-venus-jup">
+          <span class="sig-aspect">&#9792; Venus &#9737; &#9795; Jupiter</span>
+          <span class="sig-orb">1.16&deg;</span>
+          <span class="sig-note">conjunction &middot; Cancer &middot; exact Tue AM</span>
+          <span class="sig-arrow">&#9660;</span>
+        </div>
+        <div class="sig-detail" id="d-venus-jup"><p>Venus at 24&deg;22&prime; conjunct Jupiter at 25&deg;38&prime; Cancer. The warmest sky of the month: generosity, ease, collaborative asks that land. Use Tuesday for the relationship work you&rsquo;ve been deferring. The hard ask goes down easier this week.</p></div>
+
+        <div class="signal-row rose" data-detail="d-merc-sat">
+          <span class="sig-aspect">&#9791; Mercury &#9744; &#9796; Saturn</span>
+          <span class="sig-orb">1.98&deg;</span>
+          <span class="sig-note">square &middot; Cancer/Aries &middot; exact Tue</span>
+          <span class="sig-arrow">&#9660;</span>
+        </div>
+        <div class="sig-detail" id="d-merc-sat"><p>Mercury at 10&deg;52&prime; Cancer squares Saturn at 12&deg;51&prime; Aries. Every communication benefits from a second pass. The email that felt done probably needs one more read. Draft Monday; send after the exact Tuesday.</p></div>
+
+        <div class="signal-row teal" data-detail="d-sat-nep">
+          <span class="sig-aspect">&#9796; Saturn &#8741; &#9798; Neptune</span>
+          <span class="sig-orb">8.65&deg;</span>
+          <span class="sig-note">conjunction &middot; Aries &middot; 2026 arc</span>
+          <span class="sig-arrow">&#9660;</span>
+        </div>
+        <div class="sig-detail" id="d-sat-nep"><p>Saturn at 12&deg;51&prime;, Neptune at 4&deg;12&prime; &mdash; both in Aries, building toward their 2026 conjunction. Big vision meeting practical demand. Ideas that sound compelling in theory are encountering the work required to build them. Background pressure all year.</p></div>
+
+        <div class="signal-row muted" data-detail="d-moon">
+          <span class="sig-aspect">&#9790; Last Quarter Moon</span>
+          <span class="sig-orb"></span>
+          <span class="sig-note">release phase &middot; peaked Mon AM &middot; New Moon Jun 14</span>
+          <span class="sig-arrow">&#9660;</span>
+        </div>
+        <div class="sig-detail" id="d-moon"><p>Waning Last Quarter in Pisces. Completion energy, not launch energy. Wrap up what&rsquo;s already in motion. The New Moon in Gemini arrives June 14&ndash;15 &mdash; that&rsquo;s when new cycles begin. This week is finishing work.</p></div>
+
+      </div><!-- /signal-board -->
+
+      <div class="sep"><span class="sep-inner">Deep Dives</span></div>
+
+      <!-- Dive 1: Mercury □ Saturn -->
+      <div class="dive-section">
+        <div class="dive-head">
+          <span class="dive-glyph">☿</span>
+          <div class="dive-title-wrap">
+            <div class="dive-eyebrow">Communication &middot; Precision &middot; Review</div>
+            <div class="dive-title">Mercury Square Saturn &mdash; Write It Right</div>
+          </div>
+        </div>
+        <div class="dive-body">
+          <p>Mercury in Cancer wants to communicate from feeling &mdash; warmth first, data second. Saturn in Aries wants the work to be solid before it goes anywhere. The square is a deadline: this communication isn&rsquo;t ready to send yet.</p>
+          <p><strong>Practical read:</strong> Draft everything Monday. Let it sit. Re-read Tuesday before the exact square. The email, the proposal, the Slack message that matters &mdash; give it a second pass. The deliberate version beats the fast version this week.</p>
+          <div class="dive-expanded" id="dive1-expand">
+            <div class="dive-expanded-inner">
+              <p>The tension between Cancer (feeling, care, context) and Aries (directness, urgency, action) means communication that feels complete to you may feel incomplete to the recipient. Add the context. State the ask directly. Mercury square Saturn rewards the person who does the extra work before hitting send.</p>
+              <p><strong>For managers:</strong> Feedback given this week needs to be specific, not just directional. &ldquo;This isn&rsquo;t quite right&rdquo; won&rsquo;t land. Name exactly what&rsquo;s missing.</p>
+            </div>
+          </div>
+          <button class="read-more" onclick="toggleExpand('dive1-expand',this)"><span>Read more</span><span class="chev">&#9660;</span></button>
         </div>
       </div>
-      <button class="read-more" onclick="toggleExpand('comm-expand', this)">
-        <span>Read more</span><span class="chev">&#9660;</span>
-      </button>
-    </div>
-  </div>
 
-  <!-- Collaboration -->
-  <div class="dive-section accent-gold fade-in" data-section="collaboration">
-    <div class="dive-head gold-head">
-      <svg class="dive-head-stars" viewBox="0 0 500 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <circle cx="410" cy="22" r="1.2" fill="#d0a840" opacity="0.42"/>
-        <circle cx="455" cy="55" r="0.9" fill="#d4a0b5" opacity="0.32"/>
-        <circle cx="476" cy="88" r="0.8" fill="#f0e4cc" opacity="0.24"/>
-        <circle cx="430" cy="95" r="1.0" fill="#d0a840" opacity="0.30"/>
-      </svg>
-      <div class="dive-icon">&#9792;</div>
-      <div class="dive-head-text">
-        <div class="dive-eyebrow">Venus &middot; Jupiter &middot; Connection</div>
-        <div class="dive-title">The Week&rsquo;s Open Door</div>
-        <div class="dive-subtitle">Most generous collaborative sky of the month, exact Tuesday</div>
-        <div class="dive-tags">
-          <span class="dtag">Venus ☌ Jupiter</span>
-          <span class="dtag">Cancer</span>
-          <span class="dtag">goodwill flows</span>
+      <!-- Dive 2: Venus ☌ Jupiter -->
+      <div class="dive-section">
+        <div class="dive-head">
+          <span class="dive-glyph">♀</span>
+          <div class="dive-title-wrap">
+            <div class="dive-eyebrow">Collaboration &middot; Warmth &middot; Relationship</div>
+            <div class="dive-title">Venus Conjunct Jupiter &mdash; Warmth Opens</div>
+          </div>
+        </div>
+        <div class="dive-body">
+          <p>Venus and Jupiter meet exactly in Cancer on Tuesday &mdash; the most socially generous transit of the month. Care lands as leadership. Warmth reads as competence. The relationship ask that felt risky a month ago has a softer landing this week.</p>
+          <p><strong>Practical read:</strong> Tuesday is the day for the conversation you&rsquo;ve been deferring. The hard sell becomes easier. The partnership pitch goes further. The check-in with someone you&rsquo;ve been meaning to reconnect with actually works.</p>
+          <div class="dive-expanded" id="dive2-expand">
+            <div class="dive-expanded-inner">
+              <p>Cancer is the sign of nurturing, home, and emotional intelligence. Both Venus and Jupiter in Cancer mean the professional environment this week rewards genuine care, not performance of care. The difference between &ldquo;I want to check in&rdquo; and &ldquo;I wanted to see how you&rsquo;re doing&rdquo; &mdash; the second one lands better under this sky.</p>
+              <p><strong>For the ask:</strong> Lead with the relationship, then the request. Jupiter expands what Venus starts. The warm open is the mechanism, not a preamble to it.</p>
+            </div>
+          </div>
+          <button class="read-more" onclick="toggleExpand('dive2-expand',this)"><span>Read more</span><span class="chev">&#9660;</span></button>
         </div>
       </div>
-    </div>
-    <div class="dive-body">
-      <p>Venus and Jupiter are both in Cancer, closing to conjunction exact Tuesday. Cancer is the sign of genuine care and connection; Venus and Jupiter amplifying each other here means goodwill flows freely. Partnership asks land. The difficult conversation has a warmer container. The stakeholder who&rsquo;s been resistant is more receptive.</p>
-      <div class="pull">Ask for the thing this week. The sky says yes before you do.</div>
-      <p class="rs-note" id="rs-collab"></p>
-      <div class="dive-expanded" id="collab-expand">
-        <div class="dive-expanded-inner">
-          <p>Genuine appreciation, the kind that names the specific thing someone did, goes unusually far under this sky. The ask that requires buy-in rather than just sign-off has its best window Tuesday. Don&rsquo;t let Tuesday fill up with logistics; this is the week&rsquo;s relationship capital.</p>
-          <p><strong>Best for:</strong> New partnership conversations, feedback sessions, difficult conversations that need warmth to land, creative collaboration, any ask that requires a yes from someone who&rsquo;s been on the fence. <strong>Watch Friday:</strong> Venus squares Chiron at the end of the week. A tender spot can surface; don&rsquo;t schedule the most vulnerable conversation for Friday afternoon.</p>
+
+      <!-- Dive 3: Saturn/Neptune backdrop -->
+      <div class="dive-section">
+        <div class="dive-head">
+          <span class="dive-glyph">♄</span>
+          <div class="dive-title-wrap">
+            <div class="dive-eyebrow">2026 Arc &middot; Vision &middot; Structure</div>
+            <div class="dive-title">The Bigger Picture &mdash; Vision Proving Itself</div>
+          </div>
+        </div>
+        <div class="dive-body">
+          <p>Saturn and Neptune are both in Aries, 8.65&deg; apart and building toward their 2026 conjunction. The theme: big vision being asked to prove itself in material form. Ideas that sounded compelling in theory are encountering the concrete work required to build them.</p>
+          <div class="dive-expanded" id="dive3-expand">
+            <div class="dive-expanded-inner">
+              <p>Mercury squaring Saturn this week is the weekly-scale version of that pressure: where is the plan actually solid, and where does it need more work before it goes anywhere external? Venus and Jupiter in Cancer are the emotional counterbalance &mdash; the people, the warmth, the genuine connection. That&rsquo;s what the Saturn&ndash;Neptune rigor is actually building toward.</p>
+              <p><strong>Saturn conjunct Neptune</strong> will be exact later in 2026. We&rsquo;re in the approach phase now. This week&rsquo;s Mercury&ndash;Saturn asks the same question at a smaller scale: is this plan as solid as it sounds?</p>
+            </div>
+          </div>
+          <button class="read-more" onclick="toggleExpand('dive3-expand',this)"><span>Read more</span><span class="chev">&#9660;</span></button>
         </div>
       </div>
-      <button class="read-more" onclick="toggleExpand('collab-expand', this)">
-        <span>Read more</span><span class="chev">&#9660;</span>
-      </button>
-    </div>
-  </div>
 
-  <!-- Decisions & Momentum -->
-  <div class="dive-section accent-cerulean fade-in" data-section="momentum">
-    <div class="dive-head cerulean-head">
-      <svg class="dive-head-stars" viewBox="0 0 500 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <circle cx="425" cy="30" r="1.0" fill="#4a9fd4" opacity="0.40"/>
-        <circle cx="462" cy="68" r="0.8" fill="#d0a840" opacity="0.28"/>
-        <circle cx="482" cy="20" r="0.9" fill="#f0e4cc" opacity="0.22"/>
-      </svg>
-      <div class="dive-icon">&#9799;</div>
-      <div class="dive-head-text">
-        <div class="dive-eyebrow">Uranus &middot; Moon Phase &middot; Momentum</div>
-        <div class="dive-title">Complete First, Launch After</div>
-        <div class="dive-subtitle">Uranus pivots the path &middot; Last Quarter says finish what&rsquo;s moving</div>
-        <div class="dive-tags">
-          <span class="dtag">Last Quarter Moon</span>
-          <span class="dtag">Uranus □ North Node</span>
-          <span class="dtag">stay flexible</span>
+      <div class="sep"><span class="sep-inner">Planets This Week</span></div>
+
+      <!-- Planet strip -->
+      <div class="planet-strip-eyebrow">Planets This Week</div>
+      <div class="planet-strip-hint">tap each to expand</div>
+      <div class="planet-strip" id="planet-strip">
+        <span class="planet-pill luminary" data-tip="Sun · 17°50′ Gemini · information, adaptability, quick thinking">☉ Sun <span style="color:var(--muted-3);margin:0 2px">&middot;</span> 17&deg;50&prime; ♊</span>
+        <span class="planet-pill luminary" data-tip="Moon · 20°22′ Pisces · waning, release, reflection">☽ Moon <span style="color:var(--muted-3);margin:0 2px">&middot;</span> 20&deg;22&prime; ♓</span>
+        <span class="planet-pill personal" data-tip="Mercury · 10°52′ Cancer · feeling-first communication, care before data">☿ Mercury <span style="color:var(--muted-3);margin:0 2px">&middot;</span> 10&deg;52&prime; ♋</span>
+        <span class="planet-pill personal" data-tip="Venus · 24°22′ Cancer · warmth, nurturing connection, collaborative energy">♀ Venus <span style="color:var(--muted-3);margin:0 2px">&middot;</span> 24&deg;22&prime; ♋</span>
+        <span class="planet-pill personal" data-tip="Mars · 15°23′ Taurus · patient drive, persistent effort, slow build">♂ Mars <span style="color:var(--muted-3);margin:0 2px">&middot;</span> 15&deg;23&prime; ♉</span>
+        <span class="planet-pill social" data-tip="Jupiter · 25°32′ Cancer · expansion through care, generous momentum">♃ Jupiter <span style="color:var(--muted-3);margin:0 2px">&middot;</span> 25&deg;32&prime; ♋</span>
+        <span class="planet-pill social" data-tip="Saturn · 12°51′ Aries · structural demand, accountability, earned authority">♄ Saturn <span style="color:var(--muted-3);margin:0 2px">&middot;</span> 12&deg;51&prime; ♈</span>
+        <span class="planet-pill outer" data-tip="Uranus · 2°30′ Gemini · disruption of fixed patterns, sudden pivots">♅ Uranus <span style="color:var(--muted-3);margin:0 2px">&middot;</span> 2&deg;30&prime; ♊</span>
+        <span class="planet-pill outer" data-tip="Neptune · 4°12′ Aries · vision testing against reality, 2026 arc">♆ Neptune <span style="color:var(--muted-3);margin:0 2px">&middot;</span> 4&deg;12&prime; ♈</span>
+        <span class="planet-pill outer" data-tip="Pluto Rx · 5°16′ Aquarius · collective transformation, power structures">♇ Pluto <span class="rx-tag">Rx</span> <span style="color:var(--muted-3);margin:0 2px">&middot;</span> 5&deg;16&prime; ♒</span>
+        <span class="planet-pill point" data-tip="Chiron · 29°53′ Aries (anaretic) · wound completing its Aries chapter">⚷ Chiron <span style="color:var(--muted-3);margin:0 2px">&middot;</span> 29&deg;53&prime; ♈</span>
+        <span class="planet-pill point" data-tip="North Node Rx · 2°55′ Pisces · collective evolutionary direction">☊ NNode <span class="rx-tag">Rx</span> <span style="color:var(--muted-3);margin:0 2px">&middot;</span> 2&deg;55&prime; ♓</span>
+      </div>
+
+    </div>
+  </div><!-- /panel-sky -->
+
+  <!-- ── READINGS PANEL ──────────────────────────────────────────────────── -->
+  <div class="panel reading-panel" id="panel-readings">
+    <svg class="geo-bg" viewBox="0 0 380 720" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="190" cy="360" r="200" stroke="rgba(74,159,212,0.04)" stroke-width="0.5"/>
+    </svg>
+    <div class="reading-inner">
+      <div class="panel-heading">
+        <div class="panel-eyebrow-sm">Built for your chart</div>
+        <div class="panel-title-lg">Natal Readings</div>
+      </div>
+
+      <p class="nr-intro">The collective sky is everyone&rsquo;s weather. Your natal chart is the map you bring to it. These readings go deeper &mdash; built specifically for your chart, not the shared sky.</p>
+
+      <div class="nr-cards">
+
+        <a class="nr-card" href="/natal%20readings/dasha.html" target="_blank">
+          <span class="nr-card-name">Dasha</span>
+          <span class="nr-card-sign">29&deg; Sagittarius Sun</span>
+          <span class="nr-card-cta">Open reading &rarr;</span>
+        </a>
+
+        <a class="nr-card" href="/natal%20readings/yvonne.html" target="_blank">
+          <span class="nr-card-name">Yvonne</span>
+          <span class="nr-card-sign">22&deg; Cancer · Sag Rising</span>
+          <span class="nr-card-cta">Open reading &rarr;</span>
+        </a>
+
+        <div class="nr-card request">
+          <span class="nr-card-name">Your reading</span>
+          <span class="nr-card-sign">birth chart · personalized</span>
+          <span class="nr-card-req">request</span>
         </div>
-      </div>
-    </div>
-    <div class="dive-body">
-      <p>Uranus squares the North Node this week at 0.43&deg; orb, nearly exact as the week opens. Uranus doesn&rsquo;t slow things down; it reroutes them. Plans that felt stable can pivot, not because anything went wrong, but because new information has a way of surfacing. Hold the goal; stay flexible on the route.</p>
-      <p>The Last Quarter Moon peaked Monday morning, beginning the waning arc toward New Moon (June 14&ndash;15). Completion energy. The most useful decisions this week close out what&rsquo;s already been decided. Launches planned for this week will land better if held until after the New Moon.</p>
-      <div class="pull cerulean-pull">The work that finishes this week lays the foundation. The work that starts this week struggles to find its footing.</div>
-      <p class="rs-note" id="rs-momentum"></p>
-      <div class="dive-expanded" id="momentum-expand">
-        <div class="dive-expanded-inner">
-          <p><strong>Best for:</strong> Finishing in-progress work, closing decision loops, editing rather than drafting, cleaning up what&rsquo;s already in motion.</p>
-          <p><strong>Uranus watch:</strong> Build flexibility into Monday and Tuesday&rsquo;s agenda. Something in the external environment may shift team direction unexpectedly. This isn&rsquo;t crisis; it&rsquo;s information. Treat it that way.</p>
+
+        <div class="nr-card request">
+          <span class="nr-card-name">Your reading</span>
+          <span class="nr-card-sign">birth chart · personalized</span>
+          <span class="nr-card-req">request</span>
         </div>
-      </div>
-      <button class="read-more" onclick="toggleExpand('momentum-expand', this)">
-        <span>Read more</span><span class="chev">&#9660;</span>
-      </button>
-    </div>
-  </div>
 
-  <!-- Watch For -->
-  <div class="dive-section accent-amber fade-in" data-section="watch">
-    <div class="dive-head amber-head">
-      <svg class="dive-head-stars" viewBox="0 0 500 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <circle cx="415" cy="25" r="1.1" fill="#d48040" opacity="0.38"/>
-        <circle cx="458" cy="72" r="0.8" fill="#d0a840" opacity="0.26"/>
-        <circle cx="478" cy="42" r="0.9" fill="#f0e4cc" opacity="0.20"/>
-      </svg>
-      <div class="dive-icon">&#9812;</div>
-      <div class="dive-head-text">
-        <div class="dive-eyebrow">Friction &middot; Timing &middot; Watch For</div>
-        <div class="dive-title">Four Things to Know</div>
-        <div class="dive-subtitle">The week&rsquo;s friction points and timing notes</div>
-        <div class="dive-tags">
-          <span class="dtag">timing</span>
-          <span class="dtag">communication</span>
-          <span class="dtag">end-of-week</span>
+        <div class="nr-card request">
+          <span class="nr-card-name">Your reading</span>
+          <span class="nr-card-sign">birth chart · personalized</span>
+          <span class="nr-card-req">request</span>
         </div>
+
       </div>
     </div>
-    <div class="dive-body">
-      <ul class="watch-list">
-        <li><strong>Mercury-Saturn through Tuesday:</strong> The warm instinct is to send the kind message. The discipline is to make it accurate first. Both can be true; do them in the right order.</li>
-        <li><strong>Uranus square North Node all week:</strong> Team direction that felt set can shift Monday. One piece of unexpected news can reorient the week&rsquo;s priorities. Build in flexibility before you lock the agenda.</li>
-        <li><strong>Venus-Jupiter window on Tuesday:</strong> This is the week&rsquo;s relationship capital. Use Tuesday for the ask that needs buy-in. Don&rsquo;t let the morning fill up with logistics.</li>
-        <li><strong>Venus square Chiron exact Friday:</strong> End-of-week tender spot. A vulnerability in a collaboration or relationship can surface. Schedule the important conversation for Tuesday or Thursday, not Friday at 4.</li>
-        <li><strong>End-of-week quiet:</strong> Balsamic Moon approaching means Friday afternoon gets reflective, not generative. Good for processing; not good for launching.</li>
-      </ul>
-    </div>
-  </div>
+  </div><!-- /panel-readings -->
 
-  <!-- Bigger Picture -->
-  <div class="dive-section accent-teal fade-in" data-section="bigger">
-    <div class="dive-head teal-head">
-      <svg class="dive-head-stars" viewBox="0 0 500 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <circle cx="418" cy="28" r="1.1" fill="#5ab8a8" opacity="0.38"/>
-        <circle cx="460" cy="65" r="0.8" fill="#d0a840" opacity="0.26"/>
-        <circle cx="480" cy="18" r="0.9" fill="#f0e4cc" opacity="0.20"/>
-      </svg>
-      <div class="dive-icon">&#9793;</div>
-      <div class="dive-head-text">
-        <div class="dive-eyebrow">Saturn &middot; Neptune &middot; 2026 Arc</div>
-        <div class="dive-title">The Longer Story</div>
-        <div class="dive-subtitle">The structural arc under this entire year</div>
-        <div class="dive-tags">
-          <span class="dtag">Saturn approaching Neptune</span>
-          <span class="dtag">Aries</span>
-          <span class="dtag">vision meets reality</span>
-        </div>
-      </div>
-    </div>
-    <div class="dive-body">
-      <p>Saturn and Neptune are both in Aries, 8.65&deg; apart and close enough that their conjunction is already shaping 2026. The theme: big vision being asked to prove itself in material form. Ideas that sounded compelling in theory are encountering the concrete work required to build them.</p>
-      <div class="dive-expanded" id="bigger-expand">
-        <div class="dive-expanded-inner">
-          <p>Mercury squaring Saturn this week is the weekly-scale version of that pressure: where is the plan actually solid, and where does it need more work before it goes anywhere external? Venus and Jupiter in Cancer are the emotional counterbalance. The people, the warmth, the genuine connection. That&rsquo;s what the Saturn-Neptune rigor is actually building toward. The hard work is worth it when you know who it&rsquo;s with.</p>
-          <p><strong>Saturn conjunct Neptune</strong> will be exact later in 2026. We&rsquo;re in the approach phase now. The pressure to ground vision in reality is building. This week&rsquo;s Mercury-Saturn asks the same question at a smaller scale: is this plan as solid as it sounds?</p>
-        </div>
-      </div>
-      <button class="read-more" onclick="toggleExpand('bigger-expand', this)">
-        <span>Read more</span><span class="chev">&#9660;</span>
-      </button>
-    </div>
-  </div>
+</div><!-- /app-body -->
 
-</div>
+<!-- ── BOTTOM NAV ──────────────────────────────────────────────────────────── -->
+<nav class="app-nav" role="navigation" aria-label="App sections">
+  <button class="nav-tab active" data-target="home" onclick="switchPanel('home',this)">
+    <span class="nav-icon-t">✦</span>
+    <span class="nav-label">Home</span>
+  </button>
+  <button class="nav-tab" data-target="sky" onclick="switchPanel('sky',this)">
+    <span class="nav-icon">☽</span>
+    <span class="nav-label">Sky</span>
+  </button>
+  <button class="nav-tab" data-target="readings" onclick="switchPanel('readings',this)">
+    <span class="nav-icon">◯</span>
+    <span class="nav-label">Readings</span>
+  </button>
+</nav>
 
-<!-- ── PLANET STRIP ── -->
-<div class="planet-strip-wrap fade-in">
-  <div class="planet-strip-eyebrow">Planets This Week</div>
-  <div class="planet-strip-hint">tap each to expand</div>
-  <div class="planet-strip">
-    <span class="planet-pill luminary" data-tip="Sun · 17°50′ Gemini · information, adaptability, quick thinking">&#9737; Sun <span style="color:var(--muted-2);margin:0 2px">&middot;</span> 17°50&prime; &#9802;</span>
-    <span class="planet-pill luminary" data-tip="Moon · 20°22′ Pisces · waning, release, reflection">&#9790; Moon <span style="color:var(--muted-2);margin:0 2px">&middot;</span> 20°22&prime; &#9811;</span>
-    <span class="planet-pill personal" data-tip="Mercury · 10°52′ Cancer · feeling-first communication, care before data">&#9791; Mercury <span style="color:var(--muted-2);margin:0 2px">&middot;</span> 10°52&prime; &#9803;</span>
-    <span class="planet-pill personal" data-tip="Venus · 24°22′ Cancer · warmth, nurturing connection, collaborative energy">&#9792; Venus <span style="color:var(--muted-2);margin:0 2px">&middot;</span> 24°22&prime; &#9803;</span>
-    <span class="planet-pill personal" data-tip="Mars · 15°23′ Taurus · patient drive, persistent effort, slow build">&#9794; Mars <span style="color:var(--muted-2);margin:0 2px">&middot;</span> 15°23&prime; &#9801;</span>
-    <span class="planet-pill social" data-tip="Jupiter · 25°32′ Cancer · expansion through care, generous momentum">&#9795; Jupiter <span style="color:var(--muted-2);margin:0 2px">&middot;</span> 25°32&prime; &#9803;</span>
-    <span class="planet-pill social" data-tip="Saturn · 12°51′ Aries · structural demand, accountability, earned authority">&#9796; Saturn <span style="color:var(--muted-2);margin:0 2px">&middot;</span> 12°51&prime; &#9800;</span>
-    <span class="planet-pill outer" data-tip="Uranus · 2°30′ Gemini · disruption of fixed patterns, sudden pivots, new pathways">&#9797; Uranus <span style="color:var(--muted-2);margin:0 2px">&middot;</span> 2°30&prime; &#9802;</span>
-    <span class="planet-pill outer" data-tip="Neptune · 4°12′ Aries · vision testing against reality, 2026 structural arc">&#9798; Neptune <span style="color:var(--muted-2);margin:0 2px">&middot;</span> 4°12&prime; &#9800;</span>
-    <span class="planet-pill outer" data-tip="Pluto Rx · 5°16′ Aquarius · collective transformation, power structures shifting">&#9800; Pluto <span class="rx-tag">Rx</span> <span style="color:var(--muted-2);margin:0 2px">&middot;</span> 5°16&prime; &#9810;</span>
-    <span class="planet-pill point" data-tip="Chiron · 29°53′ Aries (anaretic) · wound completing its Aries chapter">&#9767; Chiron <span style="color:var(--muted-2);margin:0 2px">&middot;</span> 29°53&prime; &#9800;</span>
-    <span class="planet-pill point" data-tip="North Node Rx · 2°55′ Pisces · collective evolutionary direction, soul-path pressure">&#9738; NNode <span class="rx-tag">Rx</span> <span style="color:var(--muted-2);margin:0 2px">&middot;</span> 2°55&prime; &#9811;</span>
-  </div>
-</div>
-
-<!-- ── NATAL CHART READINGS ── -->
-<div class="cel-divider fade-in"><div class="cel-rule left"></div><div class="cel-mark">&#10022; &#10022; &#10022;</div><div class="cel-rule right"></div></div>
-<div class="nr-section fade-in">
-  <div class="nr-eyebrow">Personal Readings</div>
-  <div class="nr-title">Natal Chart Readings</div>
-  <p class="nr-sub">The collective sky is everyone&rsquo;s weather. Your natal chart is the map you bring to it. These readings go deeper &mdash; built specifically for your chart, not the shared sky.</p>
-  <div class="nr-cards">
-
-    <a class="nr-card" href="/natal%20readings/dasha.html" target="_blank">
-      <span class="nr-card-name">Dasha</span>
-      <span class="nr-card-sign">29&deg; Sagittarius Sun</span>
-      <span class="nr-card-cta">Open reading &rarr;</span>
-    </a>
-
-    <a class="nr-card" href="/natal%20readings/yvonne.html" target="_blank">
-      <span class="nr-card-name">Yvonne</span>
-      <span class="nr-card-sign">22&deg; Cancer Sun &middot; Sag Rising</span>
-      <span class="nr-card-cta">Open reading &rarr;</span>
-    </a>
-
-    <div class="nr-card request">
-      <span class="nr-card-name">Your reading</span>
-      <span class="nr-card-sign">birth chart &middot; personalized</span>
-      <span class="nr-card-req">request</span>
-    </div>
-
-    <div class="nr-card request">
-      <span class="nr-card-name">Your reading</span>
-      <span class="nr-card-sign">birth chart &middot; personalized</span>
-      <span class="nr-card-req">request</span>
-    </div>
-
-    <div class="nr-card request">
-      <span class="nr-card-name">Your reading</span>
-      <span class="nr-card-sign">birth chart &middot; personalized</span>
-      <span class="nr-card-req">request</span>
-    </div>
-
-  </div>
-</div>
-
-<!-- ── FOOTER ── -->
-<div class="page-footer fade-in">
-  transit-to-transit aspects only &middot; no natal charts used &middot; everyone&rsquo;s in this weather<br>
-  positions via swiss ephemeris (pyswisseph) &middot; week of june 8&ndash;14, 2026<br>
-  <a class="footer-link" href="https://astrologyos.netlify.app/workplace%20readings/sky-at-work.html">live link</a>
-  &middot; <a class="footer-link" href="/natal%20readings/jordan.html">Jordan&rsquo;s chart</a>
-</div>
-
-<!-- ── ASPECT KEY BUTTON ── -->
-<button class="key-btn" onclick="openGlossary()" aria-label="Open aspect key">
-  <span class="key-btn-icon">&#128477;</span>
-  <span>Aspect Key</span>
-</button>
-
-<!-- ── GLOSSARY OVERLAY ── -->
-<div class="key-dimmer" id="key-dimmer" onclick="closeGlossary()"></div>
-<div class="key-overlay" id="key-overlay" role="dialog" aria-modal="true" aria-label="Aspect Symbol Key">
-  <div class="key-handle"></div>
-  <div class="key-header">
-    <h3 class="key-title">Aspect Symbol Key</h3>
-    <button class="key-close" onclick="closeGlossary()" aria-label="Close">Close</button>
-  </div>
-  <div class="key-content">
-    <div class="glos-grid">
-      <div class="glos-item">
-        <span class="glos-sym">&#9791;</span>
-        <div class="glos-text"><div class="glos-name">Conjunction ☌</div><div class="glos-desc">Planets in the same place&mdash;energies fuse and amplify</div></div>
-      </div>
-      <div class="glos-item">
-        <span class="glos-sym" style="color:var(--teal-brt)">&#9651;</span>
-        <div class="glos-text"><div class="glos-name">Trine △</div><div class="glos-desc">120&deg; apart&mdash;flow and ease, natural support</div></div>
-      </div>
-      <div class="glos-item">
-        <span class="glos-sym" style="color:var(--cerulean)">&#10023;</span>
-        <div class="glos-text"><div class="glos-name">Sextile ✶</div><div class="glos-desc">60&deg; apart&mdash;opportunity, helpful if you act on it</div></div>
-      </div>
-      <div class="glos-item">
-        <span class="glos-sym" style="color:var(--rose)">&#9744;</span>
-        <div class="glos-text"><div class="glos-name">Square □</div><div class="glos-desc">90&deg; apart&mdash;friction, pressure, demands action</div></div>
-      </div>
-      <div class="glos-item">
-        <span class="glos-sym" style="color:var(--rose)">&#9741;</span>
-        <div class="glos-text"><div class="glos-name">Opposition ☍</div><div class="glos-desc">180&deg; apart&mdash;tension between two forces, awareness needed</div></div>
-      </div>
-      <div class="glos-item">
-        <span class="glos-sym" style="color:var(--muted-2)">&#9739;</span>
-        <div class="glos-text"><div class="glos-name">Inconjunct ⚻</div><div class="glos-desc">150&deg; apart&mdash;adjustment required, awkward angle</div></div>
-      </div>
-      <div class="glos-item">
-        <span class="glos-sym" style="color:var(--amber)">Rx</span>
-        <div class="glos-text"><div class="glos-name">Retrograde</div><div class="glos-desc">Planet appears to move backward&mdash;internalized, review energy</div></div>
-      </div>
-      <div class="glos-item">
-        <span class="glos-sym" style="color:var(--cerulean)">&#9660;</span>
-        <div class="glos-text"><div class="glos-name">Applying</div><div class="glos-desc">Moving toward exact&mdash;building pressure, increasingly felt</div></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ── SECTION NAV DOTS ── -->
-<div id="section-nav" aria-hidden="true">
-  <div class="s-dot" data-sec="trio"></div>
-  <div class="s-dot" data-sec="pulse"></div>
-  <div class="s-dot" data-sec="glance"></div>
-  <div class="s-dot" data-sec="communication"></div>
-  <div class="s-dot" data-sec="collaboration"></div>
-  <div class="s-dot" data-sec="momentum"></div>
-  <div class="s-dot" data-sec="watch"></div>
-  <div class="s-dot" data-sec="bigger"></div>
-</div>
-
-<!-- ── FIRST VISIT HINT ── -->
-<div id="hint-tooltip">tap a transit row to expand &#9660;</div>
+</div><!-- /app -->
+<div class="safe-btm" aria-hidden="true"></div>
 
 <script>
-  /* ── STAR FIELD ── */
-  (function() {
-    const canvas = document.getElementById('star-canvas');
-    const ctx = canvas.getContext('2d');
-    let stars = [];
-    function resize() {
-      canvas.width  = window.innerWidth;
-      canvas.height = window.innerHeight;
-    }
-    function initStars() {
-      stars = [];
-      const n = Math.min(200, Math.floor(canvas.width * canvas.height / 8000));
-      for (let i = 0; i < n; i++) {
-        stars.push({
-          x: Math.random() * canvas.width,
-          y: Math.random() * canvas.height,
-          r: Math.random() * 1.2 + 0.3,
-          a: Math.random() * 0.55 + 0.08,
-          c: ['#fff8ee','#d0a840','#d4a0b5','#4a9fd4'][Math.floor(Math.random()*4)],
-          sp: Math.random() * 0.008 + 0.002,
-          phase: Math.random() * Math.PI * 2
-        });
+/* ── PANEL SWITCHING ──────────────────────────────────────────────────────── */
+function switchPanel(id,btn){
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(t=>t.classList.remove('active'));
+  const p=document.getElementById('panel-'+id);
+  if(p)p.classList.add('active');
+  if(btn)btn.classList.add('active');
+}
+
+/* ── SVG HELPERS ──────────────────────────────────────────────────────────── */
+const SVG_NS='http://www.w3.org/2000/svg';
+function el(tag,attrs){const e=document.createElementNS(SVG_NS,tag);Object.entries(attrs).forEach(([k,v])=>e.setAttribute(k,v));return e;}
+function tx(text,attrs){const e=el('text',attrs);e.textContent=text;return e;}
+const GLYPH_FONT="'Apple Symbols','Segoe UI Symbol','Noto Sans Symbols',serif";
+
+/* Sign data for zodiac ring */
+const SIGNS=[
+  {gl:'♈',color:'#c87840'},{gl:'♉',color:'#58925a'},{gl:'♊',color:'#5878c8'},
+  {gl:'♋',color:'#3880b8'},{gl:'♌',color:'#c87840'},{gl:'♍',color:'#58925a'},
+  {gl:'♎',color:'#5878c8'},{gl:'♏',color:'#3880b8'},{gl:'♐',color:'#c87840'},
+  {gl:'♑',color:'#58925a'},{gl:'♒',color:'#5878c8'},{gl:'♓',color:'#3880b8'}
+];
+const signEls=['fire','earth','air','water','fire','earth','air','water','fire','earth','air','water'];
+const elColors={fire:'rgba(210,130,48,0.22)',earth:'rgba(80,142,68,0.16)',air:'rgba(80,112,200,0.18)',water:'rgba(40,128,188,0.24)'};
+
+/* Spread function: clusters planets within 8° and enforces 10° min gap */
+function spread(planets){
+  const sorted=[...planets].sort((a,b)=>a.disp-b.disp);
+  let changed=true,passes=0;
+  while(changed&&passes<40){
+    changed=false;passes++;
+    for(let i=0;i<sorted.length;i++){
+      const a=sorted[i],b=sorted[(i+1)%sorted.length];
+      let diff=((b.disp-a.disp)%360+360)%360;
+      if(diff<10){
+        const shift=(10-diff)/2;
+        a.disp=((a.disp-shift)%360+360)%360;
+        b.disp=(b.disp+shift)%360;
+        changed=true;
       }
     }
-    let t = 0;
-    function draw() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      t += 0.008;
-      stars.forEach(s => {
-        const pulse = s.a * (0.7 + 0.3 * Math.sin(t * s.sp * 60 + s.phase));
-        ctx.beginPath();
-        ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
-        ctx.fillStyle = s.c;
-        ctx.globalAlpha = pulse;
-        ctx.fill();
-      });
-      ctx.globalAlpha = 1;
-      requestAnimationFrame(draw);
-    }
-    resize(); initStars(); draw();
-    window.addEventListener('resize', () => { resize(); initStars(); });
-  })();
+  }
+  return sorted;
+}
 
-  /* ── WEEK PROGRESS BAR ── */
-  (function() {
-    const days  = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
-    const today = 0; // Monday = index 0
-    const fill  = document.getElementById('wbar-fill');
-    const daysEl = document.getElementById('wbar-days');
-    const todayEl = document.getElementById('wbar-today');
-    fill.style.width = ((today + 0.5) / 7 * 100) + '%';
-    todayEl.textContent = days[today];
-    days.forEach((d, i) => {
-      const tick = document.createElement('div');
-      tick.className = 'wbar-tick' + (i === today ? ' today' : '');
-      tick.title = d;
-      daysEl.appendChild(tick);
-    });
-  })();
+/* ── COLLECTIVE WHEEL RENDERER ────────────────────────────────────────────── */
+let cwData=null;
+function renderCollectiveWheel(){
+  const svg=document.getElementById('cw-svg');
+  if(!svg)return;
+  while(svg.firstChild)svg.removeChild(svg.firstChild);
 
-  /* ── SCROLL FADE-IN ── */
-  const fadeEls = document.querySelectorAll('.fade-in');
-  const fadeObs = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('animate-in'); fadeObs.unobserve(e.target); } });
-  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-  fadeEls.forEach(el => fadeObs.observe(el));
+  const CX=130,CY=130;
+  const norm=a=>((a%360)+360)%360;
+  const rad=d=>d*Math.PI/180;
+  const f=n=>n.toFixed(2);
+  /* 0° Aries at 9-o'clock (ASC=0): svgA(ecl) = norm(180 - ecl) */
+  const svgA=ecl=>norm(180-ecl);
+  const pt=(a,r)=>({x:CX+r*Math.cos(rad(a)),y:CY+r*Math.sin(rad(a))});
+  const ept=(ecl,r)=>pt(svgA(ecl),r);
+  const R={outer:122,trGlyph:110,trSep:116,zodOut:106,zodMid:96,zodIn:84,center:70};
 
-  /* ── SIGNAL BOARD EXPAND ── */
-  document.querySelectorAll('.signal-row').forEach(row => {
-    row.addEventListener('click', () => {
-      const id = row.getAttribute('data-detail');
-      const detail = document.getElementById(id);
-      if (!detail) return;
-      const isOpen = detail.classList.contains('open');
-      // close all
-      document.querySelectorAll('.sig-detail.open').forEach(d => { d.classList.remove('open'); d.previousElementSibling.classList.remove('open'); });
-      if (!isOpen) {
-        detail.classList.add('open');
-        row.classList.add('open');
+  /* Defs */
+  const defs=el('defs',{});
+  const cp=el('clipPath',{id:'cwClip'});
+  cp.appendChild(el('circle',{cx:CX,cy:CY,r:R.outer}));
+  defs.appendChild(cp);
+  svg.appendChild(defs);
+
+  /* Background */
+  const bg=el('g',{'clip-path':'url(#cwClip)','pointer-events':'none'});
+  bg.appendChild(el('circle',{cx:CX,cy:CY,r:R.outer,fill:'#09102a'}));
+  bg.appendChild(el('ellipse',{cx:CX+20,cy:CY-22,rx:60,ry:32,fill:'rgba(74,159,212,0.07)',transform:`rotate(-30,${CX},${CY})`}));
+  bg.appendChild(el('ellipse',{cx:CX-20,cy:CY+22,rx:60,ry:34,fill:'rgba(40,128,188,0.06)',transform:`rotate(-30,${CX},${CY})`}));
+  svg.appendChild(bg);
+
+  /* Zodiac ring */
+  const zG=el('g',{'pointer-events':'none'});
+  for(let i=0;i<12;i++){
+    const s=i*30,e=s+30;
+    const a1=svgA(s),a2=svgA(e);
+    const oo=pt(a1,R.zodOut),oe=pt(a2,R.zodOut),io=pt(a1,R.zodIn),ie=pt(a2,R.zodIn);
+    const d=`M${f(oo.x)} ${f(oo.y)} A${R.zodOut} ${R.zodOut} 0 0 0 ${f(oe.x)} ${f(oe.y)} L${f(ie.x)} ${f(ie.y)} A${R.zodIn} ${R.zodIn} 0 0 1 ${f(io.x)} ${f(io.y)}Z`;
+    zG.appendChild(el('path',{d,fill:elColors[signEls[i]],stroke:'rgba(208,168,64,0.16)','stroke-width':'0.5'}));
+    const gp=ept(s+15,R.zodMid);
+    zG.appendChild(tx(SIGNS[i].gl,{x:f(gp.x),y:f(gp.y),fill:SIGNS[i].color,opacity:'0.75','font-size':'7.5','font-family':GLYPH_FONT,'font-variant-emoji':'text','text-anchor':'middle','dominant-baseline':'central'}));
+  }
+  zG.appendChild(el('circle',{cx:CX,cy:CY,r:R.zodOut,fill:'none',stroke:'rgba(208,168,64,0.38)','stroke-width':'0.5'}));
+  zG.appendChild(el('circle',{cx:CX,cy:CY,r:R.zodIn, fill:'none',stroke:'rgba(208,168,64,0.22)','stroke-width':'0.4'}));
+  zG.appendChild(el('circle',{cx:CX,cy:CY,r:R.outer, fill:'none',stroke:'rgba(208,168,64,0.28)','stroke-width':'0.5'}));
+  for(let i=0;i<12;i++){const a=svgA(i*30);const op=pt(a,R.outer),zp=pt(a,R.zodOut+0.5);zG.appendChild(el('line',{x1:f(op.x),y1:f(op.y),x2:f(zp.x),y2:f(zp.y),stroke:'rgba(208,168,64,0.38)','stroke-width':'0.4'}));}
+  svg.appendChild(zG);
+
+  /* Center fill */
+  const cf=el('g',{'pointer-events':'none'});
+  cf.appendChild(el('circle',{cx:CX,cy:CY,r:R.zodIn,fill:'#09102a'}));
+  cf.appendChild(el('circle',{cx:CX,cy:CY,r:R.zodIn,fill:'rgba(9,20,50,0.50)'}));
+  svg.appendChild(cf);
+
+  /* Planets — if today.json loaded */
+  if(cwData&&cwData.transiting_positions){
+    const TC='rgba(210,188,255,0.90)',TCR='rgba(180,208,255,0.78)';
+    const tData=cwData.transiting_positions.map(tp=>({id:tp.planet,gl:tp.glyph,deg:tp.deg,retro:tp.retrograde,grp:'transit',disp:tp.deg}));
+    const tSpread=spread(tData);
+    const tG=el('g',{'pointer-events':'none'});
+    for(const tp of tSpread){
+      const tick=ept(tp.deg,R.trSep);
+      tG.appendChild(el('circle',{cx:f(tick.x),cy:f(tick.y),r:'1.3',fill:tp.retro?TCR:TC,opacity:'0.60'}));
+      const gp=ept(tp.disp,R.trGlyph);
+      tG.appendChild(tx(tp.gl,{x:f(gp.x),y:f(gp.y),fill:tp.retro?TCR:TC,opacity:'0.88','font-size':'8','font-family':GLYPH_FONT,'font-variant-emoji':'text','text-anchor':'middle','dominant-baseline':'central'}));
+      if(tp.retro){
+        const rp=ept(tp.disp,R.trGlyph-6);
+        tG.appendChild(tx('℞',{x:f(rp.x),y:f(rp.y),fill:TCR,opacity:'0.50','font-size':'4','font-family':GLYPH_FONT,'font-variant-emoji':'text','text-anchor':'middle','dominant-baseline':'central'}));
       }
+    }
+    svg.appendChild(tG);
+  }else{
+    /* fallback: faint "live sky" placeholder */
+    const fb=el('g',{'pointer-events':'none'});
+    fb.appendChild(tx('☽ ☿ ♀ ♂ ♃',{x:CX,y:CY,fill:'rgba(74,159,212,0.28)','font-size':'9','font-family':GLYPH_FONT,'font-variant-emoji':'text','text-anchor':'middle','dominant-baseline':'central'}));
+    svg.appendChild(fb);
+  }
+
+  /* Center dot */
+  const cd=el('g',{'pointer-events':'none'});
+  cd.appendChild(el('circle',{cx:CX,cy:CY,r:'12',fill:'#09102a',stroke:'rgba(74,159,212,0.18)','stroke-width':'0.5'}));
+  cd.appendChild(el('circle',{cx:CX,cy:CY,r:'3',fill:'rgba(74,159,212,0.35)'}));
+  cd.appendChild(el('circle',{cx:CX,cy:CY,r:'1.4',fill:'rgba(240,228,200,0.70)'}));
+  svg.appendChild(cd);
+}
+
+/* Fetch today.json for live planet positions */
+(async function(){
+  try{
+    const r=await fetch('/today.json?_='+Date.now());
+    cwData=await r.json();
+    renderCollectiveWheel();
+  }catch(e){
+    renderCollectiveWheel(); /* render zodiac-only fallback */
+  }
+})();
+
+/* ── RISING SIGN NOTES ────────────────────────────────────────────────────── */
+const RS_NOTES={
+  aries:      'Your directness is an asset this week. The pushback you expect from Saturn won\'t come if you front-load your reasoning. Lead with the case; let your confidence follow it.',
+  taurus:     'Slow your send finger on Tuesday. Venus and Jupiter are yours this week — the collaborative ask goes further than usual, but Mercury-Saturn wants you to write it twice first.',
+  gemini:     'Uranus in your sign is personal this week. Unexpected information may reorganize your entire week\'s priorities. Hold the goal; stay flexible on the route.',
+  cancer:     'This is your sky. Venus and Jupiter are both in your sign, and your natural care lands as leadership. The warm ask you\'ve been deferring? Make it Tuesday.',
+  leo:        'The authoritative voice lands well this week, but only if it comes with the receipts. Mercury-Saturn wants depth, not just presence.',
+  virgo:      'You\'re built for Mercury-Saturn discipline. Trust your instinct to review before sending — this is the week it pays off. Let yourself be thanked for the care you put in.',
+  libra:      'Partnership and Venus are your domain. Use Tuesday for the relationship work you\'ve been deferring. The diplomatic open is the mechanism this week, not just the warm-up.',
+  scorpio:    'Your precision serves you. Resist the urge to over-explain and let the quality speak. The depth you bring to connection is welcome under this sky.',
+  sagittarius:'The instinct to skip to the punchline will cost you this week. Build the case first, then the enthusiasm. Hold your launch instinct until after the New Moon.',
+  capricorn:  'Saturn is your home planet. This pressure is familiar and you know how to use it. Warmth from you lands as authority this week — use it deliberately on the asks that need buy-in.',
+  aquarius:   'The team dynamic benefits from your perspective. Put the collaborative idea into the room. The Uranus pivot may feel disruptive, but it\'s pointing toward something more aligned.',
+  pisces:     'The fog risk is real for you this week. Write twice, verify once before hitting send. The waning moon supports your naturally reflective mode — use the quiet intentionally.'
+};
+
+function applyRising(sign){
+  const note=document.getElementById('rs-note');
+  const chips=document.querySelectorAll('.rs-chip');
+  chips.forEach(c=>c.classList.toggle('active',c.dataset.sign===sign));
+  if(sign&&RS_NOTES[sign]){
+    note.textContent=RS_NOTES[sign];
+    note.classList.add('visible');
+  }else{
+    note.classList.remove('visible');
+  }
+  if(sign)localStorage.setItem('saw-rising',sign);
+}
+
+document.querySelectorAll('.rs-chip').forEach(chip=>{
+  chip.addEventListener('click',()=>{
+    const sign=chip.dataset.sign;
+    const active=chip.classList.contains('active');
+    applyRising(active?null:sign);
+    if(active)localStorage.removeItem('saw-rising');
+  });
+});
+
+const saved=localStorage.getItem('saw-rising');
+if(saved)applyRising(saved);
+
+/* ── SIGNAL BOARD EXPAND ──────────────────────────────────────────────────── */
+document.querySelectorAll('.signal-row').forEach(row=>{
+  row.addEventListener('click',()=>{
+    const id=row.getAttribute('data-detail');
+    const detail=document.getElementById(id);
+    if(!detail)return;
+    const isOpen=detail.classList.contains('open');
+    document.querySelectorAll('.sig-detail.open').forEach(d=>{d.classList.remove('open');d.previousElementSibling.classList.remove('open');});
+    if(!isOpen){detail.classList.add('open');row.classList.add('open');}
+  });
+});
+
+/* ── READ MORE TOGGLE ─────────────────────────────────────────────────────── */
+function toggleExpand(id,btn){
+  const el=document.getElementById(id);
+  if(!el)return;
+  const isOpen=el.classList.contains('open');
+  el.classList.toggle('open',!isOpen);
+  btn.classList.toggle('open',!isOpen);
+  btn.querySelector('span:first-child').textContent=isOpen?'Read more':'Show less';
+}
+
+/* ── PLANET PILL TOOLTIPS ─────────────────────────────────────────────────── */
+if('ontouchstart' in window){
+  document.querySelectorAll('.planet-pill[data-tip]').forEach(p=>{
+    p.addEventListener('click',()=>{
+      document.querySelectorAll('.pill-detail.visible').forEach(d=>{if(d.parentNode!==p)d.classList.remove('visible');});
+      let d=p._detail;
+      if(!d){d=document.createElement('div');d.className='pill-detail';d.textContent=p.getAttribute('data-tip');p.appendChild(d);p._detail=d;}
+      d.classList.toggle('visible');
     });
   });
-
-  /* ── READ MORE TOGGLE ── */
-  function toggleExpand(id, btn) {
-    const el = document.getElementById(id);
-    if (!el) return;
-    const isOpen = el.classList.contains('open');
-    el.classList.toggle('open', !isOpen);
-    btn.classList.toggle('open', !isOpen);
-    btn.querySelector('span:first-child').textContent = isOpen ? 'Read more' : 'Show less';
-  }
-
-  /* ── GLOSSARY BOTTOM SHEET ── */
-  function openGlossary() {
-    document.getElementById('key-overlay').classList.add('open');
-    document.getElementById('key-dimmer').classList.add('open');
-    document.body.classList.add('key-open');
-  }
-  function closeGlossary() {
-    document.getElementById('key-overlay').classList.remove('open');
-    document.getElementById('key-dimmer').classList.remove('open');
-    document.body.classList.remove('key-open');
-  }
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeGlossary(); });
-
-  /* ── RISING SIGN PERSONALIZATION ── */
-  const RS_COMM = {
-    aries:       'Your directness is an asset this week; the pushback you expect from Saturn won\'t come if you front-load your reasoning.',
-    taurus:      'Slow your send finger on Tuesday. The deliberate email beats the fast one every time this week.',
-    gemini:      'Your natural Mercury agility helps, but Saturn wants depth, not speed. One thorough message beats three quick ones.',
-    cancer:      'This transit speaks your language: feeling-first with evidence behind it is exactly right.',
-    leo:         'The authoritative voice lands well this week, but only if it comes with the receipts.',
-    virgo:       'You\'re built for Mercury-Saturn discipline. Trust your instinct to review before sending.',
-    libra:       'Diplomacy is your default and it works here. Just make sure the substance is there, not only the tone.',
-    scorpio:     'Your precision serves you. Resist the urge to over-explain and let the quality speak.',
-    sagittarius: 'The instinct to skip to the punchline will cost you this week. Build the case first.',
-    capricorn:   'Saturn is your home planet. This pressure is familiar and you know how to use it.',
-    aquarius:    'The big-picture framing lands, but Saturn wants the detail layer. Add it before you send.',
-    pisces:      'The fog risk is real for you this week. Write twice, verify once before hitting send.'
-  };
-  const RS_COLLAB = {
-    aries:       'You may need to slow down to receive the warmth available this week. Let people come to you too.',
-    taurus:      'Venus in Cancer speaks to your sensibilities. This is your week to ask for what you want.',
-    gemini:      'Your social ease is amplified. The offhand comment you make Tuesday could open a door.',
-    cancer:      'This is your sky. Venus and Jupiter are both in your sign, and your natural care lands as leadership.',
-    leo:         'Others are genuinely receptive this week. The ask that felt risky a month ago is worth trying now.',
-    virgo:       'The detail-oriented care you bring is recognized under this sky. Let yourself be thanked.',
-    libra:       'Partnership and Venus are your domain. Use Tuesday for the relationship work you\'ve been deferring.',
-    scorpio:     'The depth you bring to connection is welcome this week. Don\'t hold back the honest appreciation.',
-    sagittarius: 'Your enthusiasm amplifies. The pitch that needs a warm room to land has one this week.',
-    capricorn:   'Warmth from you lands as authority this week. Use it deliberately on the asks that need buy-in.',
-    aquarius:    'The team dynamic benefits from your perspective. Put the collaborative idea into the room.',
-    pisces:      'Your empathy is at full signal. Use it to bridge the gap with the person who\'s been harder to reach.'
-  };
-  const RS_MOMENTUM = {
-    aries:       'The unexpected pivot on Monday is an invitation, not a setback. Your instinct to move is right.',
-    taurus:      'The Last Quarter pressure to close is real. Resist the urge to start something new until after the New Moon.',
-    gemini:      'Uranus in your sign is personal this week. Unexpected information may reorganize your entire week\'s priorities.',
-    cancer:      'The completion energy supports wrapping up work that\'s been running in the background. Close it out.',
-    leo:         'The plan that shifts isn\'t broken, just updated. Your natural confidence in the new direction is the right read.',
-    virgo:       'Your instinct to finish before launching is exactly right this week. Trust it.',
-    libra:       'Decision loops that have been open too long want to close. This is the week to give them a clear answer.',
-    scorpio:     'The release energy asks you to let go of something that\'s been occupying space. It\'s time.',
-    sagittarius: 'Hold your launch instinct until after the New Moon. The work done this week makes that launch better.',
-    capricorn:   'Closing out is your strength. Use this phase to put final form on what\'s already in motion.',
-    aquarius:    'The Uranus pivot may feel disruptive, but it\'s pointing toward something more aligned. Follow it.',
-    pisces:      'The waning moon supports your naturally reflective mode. Use the quiet of this phase intentionally.'
-  };
-  function applyRising(sign) {
-    ['comm','collab','momentum'].forEach(function(sec) {
-      var el = document.getElementById('rs-' + sec);
-      if (!el) return;
-      var map = sec === 'comm' ? RS_COMM : sec === 'collab' ? RS_COLLAB : RS_MOMENTUM;
-      if (sign && map[sign]) { el.textContent = map[sign]; el.style.display = 'block'; }
-      else { el.style.display = 'none'; }
-    });
-    if (sign) localStorage.setItem('sky-rising', sign);
-  }
-  var savedRising = localStorage.getItem('sky-rising');
-  if (savedRising) { var rsSel = document.getElementById('rs-select'); if (rsSel) { rsSel.value = savedRising; applyRising(savedRising); } }
-
-  /* ── SECTION NAV DOTS ── */
-  const sections = document.querySelectorAll('[data-section]');
-  const dots = document.querySelectorAll('.s-dot');
-  const navObs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        const sec = e.target.getAttribute('data-section');
-        dots.forEach(d => { d.classList.toggle('active', d.getAttribute('data-sec') === sec); });
-      }
-    });
-  }, { threshold: 0.5 });
-  sections.forEach(s => navObs.observe(s));
-
-  /* ── PLANET PILL MOBILE TAP TOOLTIPS ── */
-  if ('ontouchstart' in window) {
-    const pills = document.querySelectorAll('.planet-pill[data-tip]');
-    pills.forEach(p => {
-      let detail = null;
-      p.addEventListener('click', () => {
-        pills.forEach(other => { if (other !== p && other._detail) { other._detail.classList.remove('visible'); } });
-        if (!p._detail) {
-          detail = document.createElement('div');
-          detail.className = 'pill-detail';
-          detail.textContent = p.getAttribute('data-tip');
-          p.parentNode.insertBefore(detail, p.nextSibling);
-          p._detail = detail;
-        }
-        p._detail.classList.toggle('visible');
-      });
-    });
-  }
-
-  /* ── FIRST VISIT HINT ── */
-  const hintKey = 'saw-sky-hint-v2';
-  if (!localStorage.getItem(hintKey)) {
-    const hint = document.getElementById('hint-tooltip');
-    hint.style.animation = 'hintFade 4.2s ease forwards';
-    hint.style.pointerEvents = 'none';
-    setTimeout(() => { hint.style.display = 'none'; }, 4400);
-    localStorage.setItem(hintKey, '1');
-  }
+}else{
+  document.querySelectorAll('.planet-pill[data-tip]').forEach(p=>{
+    p.addEventListener('mouseenter',()=>{let d=p._detail;if(!d){d=document.createElement('div');d.className='pill-detail';d.textContent=p.getAttribute('data-tip');p.appendChild(d);p._detail=d;}d.classList.add('visible');});
+    p.addEventListener('mouseleave',()=>{if(p._detail)p._detail.classList.remove('visible');});
+  });
+}
 </script>
 </body>
 </html>
