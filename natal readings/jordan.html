@@ -108,8 +108,9 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overs
   display:block;
   opacity:0;visibility:hidden;pointer-events:none;
   transition:opacity 0.22s ease, visibility 0.22s ease;
+  z-index:0;
 }
-.panel.active{opacity:1;visibility:visible;pointer-events:auto;display:block}
+.panel.active{opacity:1;visibility:visible;pointer-events:auto;display:block;z-index:1}
 
 /* ── SACRED GEOMETRY BACKGROUND ── */
 .geo-bg{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;overflow:hidden}
@@ -425,42 +426,39 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overs
 #panel-natal{
   position:absolute;inset:0;
   display:flex;flex-direction:column;
-  padding-top:calc(60px + env(safe-area-inset-top,0px));
-  padding-bottom:calc(60px + env(safe-area-inset-bottom,0px));
-  box-sizing:border-box;
   opacity:0;visibility:hidden;pointer-events:none;
   transition:opacity 0.22s ease,visibility 0.22s ease;
+  z-index:0;
 }
-#panel-natal.active{opacity:1;visibility:visible;pointer-events:auto}
+#panel-natal.active{opacity:1;visibility:visible;pointer-events:auto;z-index:1}
 
 .natal-subnav{
-  flex-shrink:0;height:38px;
+  flex-shrink:0;height:42px;
   background:rgba(6,10,26,0.97);
-  border-bottom:1px solid rgba(var(--gold-alpha),0.14);
+  border-bottom:1px solid rgba(var(--gold-alpha),0.16);
   backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
   display:flex;align-items:center;
   overflow-x:auto;overflow-y:hidden;
   scrollbar-width:none;
-  padding:0 14px;gap:5px;
+  padding:0 14px;gap:4px;
   position:relative;z-index:2;
-  flex-shrink:0;
 }
 .natal-subnav::-webkit-scrollbar{display:none}
 .subnav-tab{
   flex:none;
   background:none;border:none;cursor:pointer;
   display:flex;align-items:center;gap:5px;
-  padding:4px 10px;border-radius:20px;
-  color:var(--muted-3);
-  font-family:'Inter',sans-serif;font-size:0.50rem;letter-spacing:0.14em;text-transform:uppercase;
-  font-weight:400;white-space:nowrap;
+  padding:5px 12px;border-radius:20px;
+  color:var(--muted-2);
+  font-family:'Inter',sans-serif;font-size:0.55rem;letter-spacing:0.13em;text-transform:uppercase;
+  font-weight:500;white-space:nowrap;
   transition:color 0.15s,background 0.15s;
   -webkit-tap-highlight-color:transparent;
 }
-.subnav-tab .sn-icon{font-size:0.75rem;line-height:1}
+.subnav-tab .sn-icon{font-size:0.78rem;line-height:1}
 .subnav-tab.active{
-  color:rgba(var(--gold-alpha),0.90);
-  background:rgba(var(--gold-alpha),0.10);
+  color:rgba(var(--gold-alpha),0.95);
+  background:rgba(var(--gold-alpha),0.12);
 }
 .natal-body{flex:1;min-height:0;position:relative;overflow:hidden}
 
@@ -476,6 +474,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overs
   display:flex;flex-direction:column;align-items:center;justify-content:center;
   overflow:hidden;touch-action:none;
   background:var(--bg);
+  padding-bottom:calc(60px + env(safe-area-inset-bottom,0px));
 }
 .sp-reading{
   overflow-y:auto;overflow-x:hidden;
@@ -488,7 +487,6 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overs
 /* ══ HOME PANEL ═════════════════════════════════════════════════════════════ */
 #panel-home{
   position:absolute;inset:0;
-  padding-top:calc(60px + env(safe-area-inset-top,0px));
   padding-bottom:calc(60px + env(safe-area-inset-bottom,0px));
   box-sizing:border-box;
   overflow-y:auto;overflow-x:hidden;
@@ -498,8 +496,9 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overs
   background:var(--bg);
   opacity:0;visibility:hidden;pointer-events:none;
   transition:opacity 0.22s ease,visibility 0.22s ease;
+  z-index:0;
 }
-#panel-home.active{opacity:1;visibility:visible;pointer-events:auto}
+#panel-home.active{opacity:1;visibility:visible;pointer-events:auto;z-index:1}
 
 .home-inner{padding:20px 16px 8px}
 .home-sky-strip{
