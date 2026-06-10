@@ -198,7 +198,7 @@ git add CLAUDE.md NATAL.md KNOWLEDGE.md && git commit -m "update workspace files
 
 **Finances:** Savings: $3,209 ✅. CC balance: ~$6,000 (falling). Student loan rehab form ready for mail. Regular paycheck ~$2,314.75 (~$4,629/month). First real budgeted months underway.
 
-**Astrology business:** App is fully data-driven as of June 10. Daily tab renders live from `today.json`, Transits tab from `transits.json` with list→detail navigation. 4am routine writes both JSON files nightly + deploys directly via Netlify CLI (no webhook). Placeholder name: **Astrology OS**. AstroFlow = Slack channel name only (not app name). Final name TBD — candidates: Thin Place · The Watcher · Vespertine · Halflight · Solas · Liminal · The 29th. Next session: visual polish on Daily + Transits panels.
+**Astrology business:** App fully data-driven + visually polished as of June 10. Daily tab: live reading from `today.json`, two-tier transit pills (top 5 tightest orbs + "+N more → Transits" CTA), TODAY tagged action items. Transits tab: three-tab layout (Now/Returning/Archive) with sticky tab nav, biwheel placeholder (renderer = next session), list→detail slide navigation. 4am routine autonomous. Mobile-first, all panels verified. Placeholder name: **Astrology OS**. Final name TBD — candidates: Thin Place · The Watcher · Vespertine · Halflight · Solas · Liminal · The 29th. **Next session: biwheel SVG renderer** — natal positions hardcoded in JS + live `transiting_positions` outer ring. Two sessions estimated.
 
 **Body:** Walking pad 6+ week streak ✅. Psychiatrist (Dr. Ashley George) June 10. PCP unassigned — calling Anthem (855-383-7248). BP monitor in hand.
 

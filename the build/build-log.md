@@ -18,9 +18,11 @@
 
 **Audit findings (all panels passing):** Home live data correct · Daily two-tier pills (slow + mini) rendering cleanly · Daily TODAY tags (WORK/CREATIVE/BODY) visible · Transits Now/Returning/Archive tabs functional · Archive empty state correct · Mobile home 2-column grid perfect · Mobile Daily single-column clean.
 
-**Deployed:** → Netlify production via API restore (deploy `6a2998d4515f00d4c5623231`).
+**Daily pills redesign (same session):** Daily tab was showing 18+ slow-planet pills stacked one-per-row — unusable on mobile. Redesigned: top 5 by tightest orb shown, rest collapsed behind "+N more · See all in Transits →" ghost pill that navigates directly to the Transits panel. Philosophy: Daily is a reading, Transits is where the full list lives.
 
-**Next session:** Build the actual biwheel SVG renderer in JS using natal chart hardcoded positions + live `transiting_positions` from today.json.
+**Deployed:** → Netlify production via API restore (deploy `6a2998d4515f00d4c5623231`, `6a299a9ab7cbf6d7bdc8787f`).
+
+**Next session:** Build the actual biwheel SVG renderer in JS — natal positions hardcoded in JS (static) + live `transiting_positions` from today.json outer ring (dynamic). Two sessions estimated. Outer ring = 12 transiting planets at live degrees. Inner ring = natal chart. Aspect lines between rings for active transits.
 
 ---
 
