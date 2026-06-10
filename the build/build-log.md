@@ -4,6 +4,24 @@
 
 ---
 
+## 2026-06-10 (session 4) — Home Panel: Live Data Wiring
+
+**The headline:** Home panel now populates with real live data on every load. Moon phase is pulled from today.json instead of a math approximation. Daily card shows today's reading title + key transit preview. Transits card shows active transit count once transits load.
+
+### What Changed
+
+**Sky strip moon:** Replaced 29.53-day cycle approximation with a fetch from today.json. `home-moon` now shows `moon_phase · moon_sign` exactly as written by the 4am routine.
+
+**Daily card live state:** Added `id="home-daily-title"` — shows today's reading title the moment today.json loads, replaces static "Today's reading." Added `.hc-preview` pill (`id="home-daily-transit"`) that surfaces `key_transit` text in cerulean uppercase below the title. Hidden when key_transit is absent.
+
+**Transits card count:** `id="home-transit-count"` updates to "N active" when the Transits tab loads (or when user visits the Transits panel). Falls back gracefully to "Current sky" if transits haven't loaded yet.
+
+**Pre-fetch on startup:** Added an async IIFE at page load that fetches today.json immediately and calls `updateHomeFromDaily(d)`. Home panel is populated before the user ever taps Daily. `loadDaily()` updated to call `renderDaily()` instead of returning early when `dailyData` is already set.
+
+**Deployed:** commit `2c040b8` → Netlify production via API restore.
+
+---
+
 ## 2026-06-10 (session 3) — Transit Library Expansion + Historical Archive
 
 **The headline:** Four full transit library breakdowns written (replacing stubs), historical archive feature built end-to-end, Saturn conjunct Moon installed as the first historical entry.
