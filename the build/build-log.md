@@ -4,6 +4,33 @@
 
 ---
 
+## 2026-06-10 (session 10d) — Sky at Work: Plain Language Inversion
+
+**Philosophy shift: built from the technical, not shown as the technical.**
+
+The content hierarchy was inverted to serve a corporate audience with no astrology background. The astrological mechanisms are still fully present — they now live one tap deeper, not on the surface.
+
+**This Week tab:**
+- Week headline leads: "Warmth opens. Words need care." — no symbols, no jargon
+- 4 insight cards (Connections open / Write before you send / A week to finish not start / Plans may shift — lean in) — plain-English headline + practical body + hidden "What's driving this?" disclosure revealing the transit mechanism
+- Sun sign picker replaces rising sign picker — everyone knows their sun sign; rising is an upsell after trust is established
+- Sign notes written entirely in plain language (no astrological vocabulary)
+- Biwheel removed from entry tab (now lives on The Sky for the curious)
+
+**The Sky tab:**
+- Explicit bridge text at top: "These are the planetary alignments behind this week's themes — the insights are translated on the This Week tab"
+- Full signal board + biwheel + planet strip stays intact for astrology-fluent users
+
+**Tab labels:** This Week / The Sky / Readings
+
+**Why this matters for the product:** Establishes the pattern for how Astrology OS will eventually onboard non-astrologers — spiritual and energetic truth in precise, practical language, with the technical layer available for those who want it.
+
+---
+
+## 2026-06-10 (session 10c) — Sky at Work UX Restructure
+
+---
+
 ## 2026-06-10 (session 10b) — Sky at Work Full App Rebuild
 
 **sky-at-work.html rebuilt as proper mobile app** — matching jordan.html's architecture exactly.
