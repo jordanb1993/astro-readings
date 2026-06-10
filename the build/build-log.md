@@ -4,9 +4,11 @@
 
 ---
 
-## 2026-06-10 (session 9b) — Biwheel Hit Circle Fix
+## 2026-06-10 (session 9b) — Bug Fixes (3)
 
-**Bug:** Tapping transiting planets on the biwheel stopped working. Root cause: SVG hit circles used `fill:transparent` without `pointer-events:all`. SVG's default `visiblePainted` pointer-events ignores transparent fills, so clicks passed through. Fixed by adding `pointer-events:all` attribute. Deployed + CDN flushed.
+1. **SVG hit circles not receiving taps:** `fill:transparent` circles need `pointer-events:all` — SVG default `visiblePainted` ignores transparent fills. Added attribute.
+2. **PWA "page not found" + today.json 404:** Manual deploys had been running from `natal readings/` instead of the `the stars/` root, stripping `today.json` and `transits.json` from the site. Fixed deploy path — all future deploys must run from repo root (same as the 4am routine).
+3. **Transit rows not opening detail view:** `fmtNP()` was a closure inside `renderTransitTabContent()` but `openTransitDetail()` called it from outside that scope — `ReferenceError`. Hoisted `fmtNP` to top level.
 
 ---
 
