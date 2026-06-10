@@ -4,6 +4,12 @@
 
 ---
 
+## 2026-06-10 (session 9b) — Biwheel Hit Circle Fix
+
+**Bug:** Tapping transiting planets on the biwheel stopped working. Root cause: SVG hit circles used `fill:transparent` without `pointer-events:all`. SVG's default `visiblePainted` pointer-events ignores transparent fills, so clicks passed through. Fixed by adding `pointer-events:all` attribute. Deployed + CDN flushed.
+
+---
+
 ## 2026-06-10 (session 9) — Biwheel Interactivity (Session 2 of 2)
 
 **The headline:** Tap any transiting planet glyph on the biwheel → aspect lines for that planet come alive, all others dim, a gold selection ring appears, and a detail panel slides in below the chart showing the planet's degree + every active aspect. Tap again (or the label) to dismiss. Biwheel is now fully interactive.
