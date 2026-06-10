@@ -632,6 +632,26 @@
       .rs-picker-wrap { padding: 18px 12px 0; }
     }
 
+    /* ── NATAL READINGS SECTION ── */
+    .nr-section { padding: 48px 44px 0; }
+    .nr-eyebrow { font-family: 'Inter', sans-serif; font-size: 0.58rem; font-weight: 600; letter-spacing: 0.30em; text-transform: uppercase; color: rgba(240,228,200,0.32); margin-bottom: 10px; }
+    .nr-title { font-family: 'Cormorant Garamond', serif; font-size: 2.0rem; font-weight: 300; color: var(--text); margin-bottom: 8px; line-height: 1.1; }
+    .nr-sub { font-size: 0.82rem; color: var(--muted); margin-bottom: 28px; line-height: 1.72; max-width: 540px; }
+    .nr-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 14px; }
+    .nr-card { border-radius: 10px; padding: 20px 18px 18px; border: 1px solid rgba(208,168,64,0.18); background: rgba(13,28,56,0.55); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); transition: border-color 0.2s; text-decoration: none; display: block; }
+    .nr-card:hover { border-color: rgba(208,168,64,0.40); }
+    .nr-card-name { font-family: 'Cormorant Garamond', serif; font-size: 1.28rem; font-weight: 400; color: var(--text); margin-bottom: 3px; display: block; }
+    .nr-card-sign { font-size: 0.50rem; font-family: 'Inter', sans-serif; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(208,168,64,0.60); margin-bottom: 16px; display: block; }
+    .nr-card-cta { font-size: 0.50rem; font-family: 'Inter', sans-serif; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(208,168,64,0.75); display: inline-flex; align-items: center; gap: 5px; border: 1px solid rgba(208,168,64,0.24); border-radius: 20px; padding: 4px 12px; transition: all 0.18s; }
+    .nr-card:hover .nr-card-cta { background: rgba(208,168,64,0.08); border-color: rgba(208,168,64,0.50); }
+    .nr-card.request { opacity: 0.32; border-style: dashed; border-color: rgba(240,228,200,0.14); pointer-events: none; }
+    .nr-card.request .nr-card-name { color: rgba(240,228,200,0.40); font-style: italic; }
+    .nr-card.request .nr-card-sign { color: rgba(240,228,200,0.22); }
+    .nr-card-req { font-size: 0.50rem; font-family: 'Inter', sans-serif; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(240,228,200,0.30); border: 1px solid rgba(240,228,200,0.10); border-radius: 20px; padding: 4px 12px; display: inline-block; }
+    .rs-dont-know { margin-top: 12px; width: 100%; font-size: 0.72rem; color: rgba(240,228,200,0.28); font-family: 'Inter', sans-serif; }
+    .rs-dont-know a { color: rgba(208,168,64,0.50); text-decoration: none; border-bottom: 1px solid rgba(208,168,64,0.18); }
+    @media (max-width: 680px) { .nr-section { padding: 40px 20px 0; } }
+
     /* ── FOOTER ── */
     .page-footer {
       margin: 40px 44px 0; padding-top: 18px;
@@ -1138,6 +1158,7 @@
     <option value="aquarius">Aquarius ♒</option>
     <option value="pisces">Pisces ♓</option>
   </select>
+  <p class="rs-dont-know">Don&rsquo;t know yours? <a href="/natal%20readings/jordan.html">A natal chart reading from Jordan will tell you &rarr;</a></p>
 </div>
 
 <div class="cel-divider fade-in"><div class="cel-rule left"></div><div class="cel-mark">&#10022; &#10022; &#10022;</div><div class="cel-rule right"></div></div>
@@ -1414,12 +1435,53 @@
   </div>
 </div>
 
+<!-- ── NATAL CHART READINGS ── -->
+<div class="cel-divider fade-in"><div class="cel-rule left"></div><div class="cel-mark">&#10022; &#10022; &#10022;</div><div class="cel-rule right"></div></div>
+<div class="nr-section fade-in">
+  <div class="nr-eyebrow">Personal Readings</div>
+  <div class="nr-title">Natal Chart Readings</div>
+  <p class="nr-sub">The collective sky is everyone&rsquo;s weather. Your natal chart is the map you bring to it. These readings go deeper &mdash; built specifically for your chart, not the shared sky.</p>
+  <div class="nr-cards">
+
+    <a class="nr-card" href="/natal%20readings/dasha.html" target="_blank">
+      <span class="nr-card-name">Dasha</span>
+      <span class="nr-card-sign">29&deg; Sagittarius Sun</span>
+      <span class="nr-card-cta">Open reading &rarr;</span>
+    </a>
+
+    <a class="nr-card" href="/natal%20readings/yvonne.html" target="_blank">
+      <span class="nr-card-name">Yvonne</span>
+      <span class="nr-card-sign">22&deg; Cancer Sun &middot; Sag Rising</span>
+      <span class="nr-card-cta">Open reading &rarr;</span>
+    </a>
+
+    <div class="nr-card request">
+      <span class="nr-card-name">Your reading</span>
+      <span class="nr-card-sign">birth chart &middot; personalized</span>
+      <span class="nr-card-req">request</span>
+    </div>
+
+    <div class="nr-card request">
+      <span class="nr-card-name">Your reading</span>
+      <span class="nr-card-sign">birth chart &middot; personalized</span>
+      <span class="nr-card-req">request</span>
+    </div>
+
+    <div class="nr-card request">
+      <span class="nr-card-name">Your reading</span>
+      <span class="nr-card-sign">birth chart &middot; personalized</span>
+      <span class="nr-card-req">request</span>
+    </div>
+
+  </div>
+</div>
+
 <!-- ── FOOTER ── -->
 <div class="page-footer fade-in">
   transit-to-transit aspects only &middot; no natal charts used &middot; everyone&rsquo;s in this weather<br>
   positions via swiss ephemeris (pyswisseph) &middot; week of june 8&ndash;14, 2026<br>
-  <a class="footer-link" href="https://jordanb1993.github.io/astro-readings/workplace%20readings/sky-at-work.html">live link</a>
-  &middot; <a class="footer-link" href="https://jordanb1993.github.io/astro-readings/natal%20readings/jordan-natal.html">natal chart</a>
+  <a class="footer-link" href="https://astrologyos.netlify.app/workplace%20readings/sky-at-work.html">live link</a>
+  &middot; <a class="footer-link" href="/natal%20readings/jordan.html">Jordan&rsquo;s chart</a>
 </div>
 
 <!-- ── ASPECT KEY BUTTON ── -->
