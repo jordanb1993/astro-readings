@@ -650,6 +650,10 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overs
 .d-t-pill-text{font-size:0.46rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted-3);font-family:'Inter',sans-serif}
 .d-t-pill:active{transform:scale(0.95);opacity:0.8}
 .d-t-pill.d-t-applying{border-color:rgba(var(--cerulean-alpha),0.32);background:rgba(var(--cerulean-alpha),0.09)}
+.d-t-pill-mini{display:flex;align-items:center;gap:4px;padding:3px 9px;border-radius:20px;background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.06)}
+.d-t-pill-mini .d-t-pill-glyph{font-size:0.75rem;color:rgba(var(--text-alpha),0.35)}
+.d-t-pill-mini span:last-child{font-size:0.42rem;letter-spacing:0.10em;text-transform:uppercase;color:rgba(var(--text-alpha),0.28);font-family:'Inter',sans-serif}
+.d-pills-divider{width:100%;height:1px;background:rgba(var(--gold-alpha),0.07);margin:6px 0}
 </style>
 </head>
 <body>
@@ -2200,11 +2204,20 @@ function renderDaily(){
   const months=['January','February','March','April','May','June','July','August','September','October','November','December'];
   const dateObj=new Date(d.date+'T12:00:00');
   const dateLabel=`${months[dateObj.getMonth()]} ${dateObj.getDate()}, ${dateObj.getFullYear()}`;
-  const pillsHtml=(d.active_transits||[]).map(t=>`
+  const slowGlyphs=new Set(['♃','♄','♅','♆','♇','⚷','☊','☋']);
+  const allT=d.active_transits||[];
+  const slowT=allT.filter(t=>slowGlyphs.has(t.glyph));
+  const fastT=allT.filter(t=>!slowGlyphs.has(t.glyph));
+  const slowHtml=slowT.map(t=>`
     <span class="d-t-pill${t.direction==='applying'?' d-t-applying':''}" role="button" data-transit-label="${(t.label||'').replace(/"/g,'&quot;')}" data-transit-glyph="${(t.glyph||'').replace(/"/g,'&quot;')}">
       <span class="d-t-pill-glyph">${t.glyph}</span>
       <span class="d-t-pill-text">${t.label} · ${t.orb}</span>
     </span>`).join('');
+  const fastHtml=fastT.map(t=>{
+    const short=t.label.replace(/\s*natal\s*/i,' ').replace(/\s*\([^)]*\)/g,'').trim();
+    return `<span class="d-t-pill-mini"><span class="d-t-pill-glyph">${t.glyph}</span><span>${short}</span></span>`;
+  }).join('');
+  const pillsHtml=[slowHtml,slowHtml&&fastHtml?'<div class="d-pills-divider"></div>':'',fastHtml].filter(Boolean).join('');
   const proseHtml=(d.prose||[]).map(p=>`<p>${p}</p>`).join('');
   const todayHtml=d.today?`
     <div class="d-today">
