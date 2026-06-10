@@ -204,7 +204,7 @@ git add CLAUDE.md NATAL.md KNOWLEDGE.md && git commit -m "update workspace files
 
 **Personal:** Eleanor chapter closed May 18 — clean, kind call. South Node mirroring pattern named. Two of Cups as tuning fork. Bumble for Pride June on radar. Summer: Mimi in Chicago Jun 27, Dad visit Jul 23–29, Oregon with Carina Aug 22–29.
 
-Active transits as of 2026-06-09: Jupiter 25.69° Cancer:0.02° separating trine natal Pluto (6th) | Jupiter 25.69° Cancer:0.08° applying sesquiquadrate natal Mars (6th) | Pluto 5.26° Aquarius Rx:0.29° applying sextile natal Moon (10th) | Uranus 2.54° Gemini:0.32° applying inconjunct natal Jupiter (5th)
+Active transits as of 2026-06-10: Jupiter 25.89° Cancer:0.12° separating sesquiquadrate natal Mars (6th) | Jupiter 25.89° Cancer:0.22° separating trine natal Pluto (6th) | Uranus 2.60° Gemini:0.27° applying inconjunct natal Jupiter (5th) | Pluto 5.24° Aquarius Rx:0.28° applying sextile natal Moon (10th)
 
 ---
 
