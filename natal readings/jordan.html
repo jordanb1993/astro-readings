@@ -613,6 +613,12 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overs
 .t-hist-badge.between{background:rgba(var(--amber-alpha),0.10);color:rgba(var(--amber-alpha),0.72)}
 .t-hist-badge.complete{background:rgba(255,255,255,0.05);color:var(--muted-3)}
 .t-hist-dates{font-size:0.44rem;letter-spacing:0.12em;color:var(--muted-3);font-family:'Inter',sans-serif;margin-top:3px}
+.t-tabs{display:flex;gap:0;margin:0 0 18px;border-bottom:1px solid rgba(var(--gold-alpha),0.10)}
+.t-tab{flex:1;background:none;border:none;cursor:pointer;padding:10px 0;font-size:0.44rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted-3);font-family:'Inter',sans-serif;font-weight:500;border-bottom:2px solid transparent;margin-bottom:-1px;transition:color 0.15s,border-color 0.15s;-webkit-tap-highlight-color:transparent}
+.t-tab.active{color:rgba(var(--gold-alpha),0.85);border-bottom-color:rgba(var(--gold-alpha),0.55)}
+.t-biwheel-wrap{width:100%;max-width:260px;margin:0 auto 22px;aspect-ratio:1;position:relative;display:flex;align-items:center;justify-content:center}
+.t-biwheel-wrap svg{width:100%;height:100%}
+.t-biwheel-label{position:absolute;bottom:-18px;left:0;right:0;text-align:center;font-size:0.38rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(var(--gold-alpha),0.22);font-family:'Inter',sans-serif}
 .t-sec{padding:18px 0 10px;border-top:1px solid rgba(var(--gold-alpha),0.08);display:flex;align-items:center;gap:9px}
 .t-sec.t-sec-first{border-top:none;padding-top:2px}
 .t-sec-label{font-size:0.41rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted-3);font-family:'Inter',sans-serif;font-weight:500}
@@ -1377,8 +1383,32 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overs
         <div class="panel-eyebrow-sm" id="t-eyebrow">live sky</div>
         <div class="panel-title-lg">Transits</div>
       </div>
+
+      <!-- Biwheel placeholder — replaced with live chart once builder is complete -->
+      <div class="t-biwheel-wrap">
+        <svg viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg" id="t-biwheel-svg">
+          <circle cx="130" cy="130" r="122" fill="none" stroke="rgba(212,128,64,0.10)" stroke-width="0.8"/>
+          <circle cx="130" cy="130" r="90" fill="none" stroke="rgba(212,128,64,0.07)" stroke-width="0.6"/>
+          <circle cx="130" cy="130" r="58" fill="none" stroke="rgba(212,128,64,0.05)" stroke-width="0.5"/>
+          <line x1="8" y1="130" x2="252" y2="130" stroke="rgba(212,128,64,0.05)" stroke-width="0.4"/>
+          <line x1="130" y1="8" x2="130" y2="252" stroke="rgba(212,128,64,0.05)" stroke-width="0.4"/>
+          <line x1="44" y1="44" x2="216" y2="216" stroke="rgba(212,128,64,0.04)" stroke-width="0.4"/>
+          <line x1="216" y1="44" x2="44" y2="216" stroke="rgba(212,128,64,0.04)" stroke-width="0.4"/>
+          <circle cx="130" cy="130" r="3.5" fill="rgba(212,128,64,0.22)"/>
+          <text x="130" y="135" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-size="10" fill="rgba(242,236,255,0.14)" letter-spacing="4">CHART</text>
+        </svg>
+        <div class="t-biwheel-label">biwheel · coming soon</div>
+      </div>
+
+      <!-- Tab nav -->
+      <div class="t-tabs">
+        <button class="t-tab active" data-ttab="now" onclick="switchTransitTab('now',this)">Now</button>
+        <button class="t-tab" data-ttab="returning" onclick="switchTransitTab('returning',this)">Returning</button>
+        <button class="t-tab" data-ttab="archive" onclick="switchTransitTab('archive',this)">Archive</button>
+      </div>
+
       <div id="t-list-body" style="display:flex;flex-direction:column;gap:2px">
-        <!-- populated by JS — four sections: applying · separating · between passes · complete -->
+        <!-- populated by JS based on active tab -->
       </div>
     </div>
   </div>
@@ -1947,6 +1977,15 @@ overlay.addEventListener('touchend',e=>{if(e.changedTouches[0].clientX-_sx>80)cl
 
 // ─── TRANSITS DATA + NAVIGATION ──────────────────────────────────────────────
 let transitsData=null;
+let activeTransitTab='now';
+
+function switchTransitTab(tab,btn){
+  if(tab===activeTransitTab)return;
+  activeTransitTab=tab;
+  document.querySelectorAll('.t-tab').forEach(t=>t.classList.remove('active'));
+  btn.classList.add('active');
+  renderTransitTabContent();
+}
 
 async function loadTransits(){
   if(transitsData)return;
@@ -1964,10 +2003,15 @@ function renderTransitList(){
   const eyebrow=document.getElementById('t-eyebrow');
   if(eyebrow)eyebrow.textContent='live sky · '+transitsData.generated;
   const cur=transitsData.current||[];
-  const hist=transitsData.historical||[];
   const countEl=document.getElementById('home-transit-count');
   if(countEl){const n=cur.length;countEl.textContent=n>0?`${n} active`:'Current sky';}
+  renderTransitTabContent();
+}
 
+function renderTransitTabContent(){
+  if(!transitsData)return;
+  const cur=transitsData.current||[];
+  const hist=transitsData.historical||[];
   const applying=cur.filter(t=>t.direction==='applying');
   const separating=cur.filter(t=>t.direction!=='applying');
   const between=hist.filter(t=>t.status==='between_passes');
@@ -1982,7 +2026,6 @@ function renderTransitList(){
     hdr.innerHTML=`<span class="t-sec-label">${label}</span><span class="t-sec-count">${count}</span>`;
     body.appendChild(hdr);
   }
-
   function addCurrentRow(t){
     const idx=cur.indexOf(t);
     const row=document.createElement('button');
@@ -2004,7 +2047,6 @@ function renderTransitList(){
     row.addEventListener('click',()=>openTransitDetail(idx));
     body.appendChild(row);
   }
-
   function addHistRow(t){
     const idx=hist.indexOf(t);
     const row=document.createElement('button');
@@ -2026,11 +2068,22 @@ function renderTransitList(){
     body.appendChild(row);
   }
 
-  let isFirst=true;
-  if(applying.length){addSectionHdr('Applying',applying.length,isFirst);isFirst=false;applying.forEach(t=>addCurrentRow(t));}
-  if(separating.length){addSectionHdr('Separating',separating.length,isFirst);isFirst=false;separating.forEach(t=>addCurrentRow(t));}
-  if(between.length){addSectionHdr('Between Passes',between.length,isFirst);isFirst=false;between.forEach(t=>addHistRow(t));}
-  if(complete.length){addSectionHdr('Complete',complete.length,isFirst);complete.forEach(t=>addHistRow(t));}
+  function emptyState(msg){
+    body.innerHTML=`<div style="opacity:0.28;text-align:center;padding:32px 0;font-size:0.70rem;font-family:'Inter',sans-serif">${msg}</div>`;
+  }
+
+  if(activeTransitTab==='now'){
+    let isFirst=true;
+    if(applying.length){addSectionHdr('Applying',applying.length,isFirst);isFirst=false;applying.forEach(t=>addCurrentRow(t));}
+    if(separating.length){addSectionHdr('Separating',separating.length,isFirst);isFirst=false;separating.forEach(t=>addCurrentRow(t));}
+    if(!applying.length&&!separating.length)emptyState('No active transits today');
+  } else if(activeTransitTab==='returning'){
+    if(between.length){addSectionHdr('Between Passes',between.length,true);between.forEach(t=>addHistRow(t));}
+    else emptyState('No transits between passes');
+  } else if(activeTransitTab==='archive'){
+    if(complete.length){addSectionHdr('Complete',complete.length,true);complete.forEach(t=>addHistRow(t));}
+    else emptyState('No archived transits yet');
+  }
 }
 
 function openTransitDetail(idx,pool){

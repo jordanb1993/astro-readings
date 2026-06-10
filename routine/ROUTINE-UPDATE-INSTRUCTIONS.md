@@ -158,6 +158,14 @@ Go to `claude.ai/code/routines` → find routine `trig_01Rtm1xSST2GbdCZh896F2vP`
        // Sort by orb ascending (tightest first)
        // Each entry:
        { "glyph": "[planet Unicode glyph]", "label": "[Planet △ natal Point (Hnn)]", "orb": "[X.XX°]", "direction": "[applying OR separating]" }
+     ],
+     "transiting_positions": [
+       // ALL 12 bodies from positions-today.json → positions
+       // Used by the biwheel chart renderer in the Transits panel
+       // Include every planet regardless of whether it forms an aspect
+       // Each entry — pull directly from positions-today.json:
+       { "planet": "[name]", "glyph": "[Unicode glyph]", "deg": [absolute 0-360 zodiac degree as number], "sign": "[sign name]", "formatted": "[e.g. 19.52° Gemini]", "retrograde": [true or false] }
+       // Order: Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto, Chiron, NNode
      ]
    }
 

@@ -20,31 +20,259 @@
     "body": "Aries Moon at 13°, Last Quarter; the fire is running, let it consolidate rather than scatter into new starts"
   },
   "active_transits": [
-    { "glyph": "☊", "label": "NNode △ natal Jupiter (H5)", "orb": "0.02°", "direction": "applying" },
-    { "glyph": "☉", "label": "Sun ⚻ natal Uranus (H7)", "orb": "0.05°", "direction": "separating" },
-    { "glyph": "♃", "label": "Jupiter □/ natal Mars (H6)", "orb": "0.12°", "direction": "separating" },
-    { "glyph": "☊", "label": "NNode □ natal NNode (H6)", "orb": "0.15°", "direction": "separating" },
-    { "glyph": "☊", "label": "NNode □ natal SNode (H12)", "orb": "0.15°", "direction": "separating" },
-    { "glyph": "♀", "label": "Venus ⚻ natal Fortune (H9)", "orb": "0.20°", "direction": "separating" },
-    { "glyph": "♃", "label": "Jupiter △ natal Pluto (H6)", "orb": "0.22°", "direction": "separating" },
-    { "glyph": "⚷", "label": "Chiron ✶ natal Ascendant (H1)", "orb": "0.25°", "direction": "separating" },
-    { "glyph": "♅", "label": "Uranus ⚻ natal Jupiter (H5)", "orb": "0.27°", "direction": "applying" },
-    { "glyph": "♇", "label": "Pluto ✶ natal Moon (H10)", "orb": "0.28°", "direction": "applying" },
-    { "glyph": "☉", "label": "Sun ⚻ natal Neptune (H7)", "orb": "0.33°", "direction": "separating" },
-    { "glyph": "♃", "label": "Jupiter ⚻ natal Fortune (H9)", "orb": "0.33°", "direction": "applying" },
-    { "glyph": "♆", "label": "Neptune □/ natal Venus (H5)", "orb": "0.39°", "direction": "separating" },
-    { "glyph": "♅", "label": "Uranus ☍ natal NNode (H6)", "orb": "0.43°", "direction": "applying" },
-    { "glyph": "♅", "label": "Uranus ☌ natal SNode (H12)", "orb": "0.43°", "direction": "applying" },
-    { "glyph": "♀", "label": "Venus □/ natal Mars (H6)", "orb": "0.65°", "direction": "separating" },
-    { "glyph": "☉", "label": "Sun ⚻ natal Venus (H5)", "orb": "0.68°", "direction": "separating" },
-    { "glyph": "♄", "label": "Saturn ⚻ natal Mercury (H5)", "orb": "0.70°", "direction": "separating" },
-    { "glyph": "♀", "label": "Venus △ natal Pluto (H6)", "orb": "0.75°", "direction": "separating" },
-    { "glyph": "♆", "label": "Neptune ☌ natal Moon (H10)", "orb": "0.75°", "direction": "applying" },
-    { "glyph": "♅", "label": "Uranus ☍ natal Sun (H6)", "orb": "0.78°", "direction": "separating" },
-    { "glyph": "☿", "label": "Mercury △ natal Mercury (H5)", "orb": "0.87°", "direction": "separating" },
-    { "glyph": "☊", "label": "NNode □ natal Sun (H6)", "orb": "1.07°", "direction": "applying" },
-    { "glyph": "♆", "label": "Neptune △ natal NNode (H6)", "orb": "1.19°", "direction": "separating" },
-    { "glyph": "♆", "label": "Neptune ✶ natal SNode (H12)", "orb": "1.19°", "direction": "separating" },
-    { "glyph": "♆", "label": "Neptune ⚻ natal Jupiter (H5)", "orb": "1.35°", "direction": "separating" }
+    {
+      "glyph": "☊",
+      "label": "NNode △ natal Jupiter (H5)",
+      "orb": "0.02°",
+      "direction": "applying"
+    },
+    {
+      "glyph": "☉",
+      "label": "Sun ⚻ natal Uranus (H7)",
+      "orb": "0.05°",
+      "direction": "separating"
+    },
+    {
+      "glyph": "♃",
+      "label": "Jupiter □/ natal Mars (H6)",
+      "orb": "0.12°",
+      "direction": "separating"
+    },
+    {
+      "glyph": "☊",
+      "label": "NNode □ natal NNode (H6)",
+      "orb": "0.15°",
+      "direction": "separating"
+    },
+    {
+      "glyph": "☊",
+      "label": "NNode □ natal SNode (H12)",
+      "orb": "0.15°",
+      "direction": "separating"
+    },
+    {
+      "glyph": "♀",
+      "label": "Venus ⚻ natal Fortune (H9)",
+      "orb": "0.20°",
+      "direction": "separating"
+    },
+    {
+      "glyph": "♃",
+      "label": "Jupiter △ natal Pluto (H6)",
+      "orb": "0.22°",
+      "direction": "separating"
+    },
+    {
+      "glyph": "⚷",
+      "label": "Chiron ✶ natal Ascendant (H1)",
+      "orb": "0.25°",
+      "direction": "separating"
+    },
+    {
+      "glyph": "♅",
+      "label": "Uranus ⚻ natal Jupiter (H5)",
+      "orb": "0.27°",
+      "direction": "applying"
+    },
+    {
+      "glyph": "♇",
+      "label": "Pluto ✶ natal Moon (H10)",
+      "orb": "0.28°",
+      "direction": "applying"
+    },
+    {
+      "glyph": "☉",
+      "label": "Sun ⚻ natal Neptune (H7)",
+      "orb": "0.33°",
+      "direction": "separating"
+    },
+    {
+      "glyph": "♃",
+      "label": "Jupiter ⚻ natal Fortune (H9)",
+      "orb": "0.33°",
+      "direction": "applying"
+    },
+    {
+      "glyph": "♆",
+      "label": "Neptune □/ natal Venus (H5)",
+      "orb": "0.39°",
+      "direction": "separating"
+    },
+    {
+      "glyph": "♅",
+      "label": "Uranus ☍ natal NNode (H6)",
+      "orb": "0.43°",
+      "direction": "applying"
+    },
+    {
+      "glyph": "♅",
+      "label": "Uranus ☌ natal SNode (H12)",
+      "orb": "0.43°",
+      "direction": "applying"
+    },
+    {
+      "glyph": "♀",
+      "label": "Venus □/ natal Mars (H6)",
+      "orb": "0.65°",
+      "direction": "separating"
+    },
+    {
+      "glyph": "☉",
+      "label": "Sun ⚻ natal Venus (H5)",
+      "orb": "0.68°",
+      "direction": "separating"
+    },
+    {
+      "glyph": "♄",
+      "label": "Saturn ⚻ natal Mercury (H5)",
+      "orb": "0.70°",
+      "direction": "separating"
+    },
+    {
+      "glyph": "♀",
+      "label": "Venus △ natal Pluto (H6)",
+      "orb": "0.75°",
+      "direction": "separating"
+    },
+    {
+      "glyph": "♆",
+      "label": "Neptune ☌ natal Moon (H10)",
+      "orb": "0.75°",
+      "direction": "applying"
+    },
+    {
+      "glyph": "♅",
+      "label": "Uranus ☍ natal Sun (H6)",
+      "orb": "0.78°",
+      "direction": "separating"
+    },
+    {
+      "glyph": "☿",
+      "label": "Mercury △ natal Mercury (H5)",
+      "orb": "0.87°",
+      "direction": "separating"
+    },
+    {
+      "glyph": "☊",
+      "label": "NNode □ natal Sun (H6)",
+      "orb": "1.07°",
+      "direction": "applying"
+    },
+    {
+      "glyph": "♆",
+      "label": "Neptune △ natal NNode (H6)",
+      "orb": "1.19°",
+      "direction": "separating"
+    },
+    {
+      "glyph": "♆",
+      "label": "Neptune ✶ natal SNode (H12)",
+      "orb": "1.19°",
+      "direction": "separating"
+    },
+    {
+      "glyph": "♆",
+      "label": "Neptune ⚻ natal Jupiter (H5)",
+      "orb": "1.35°",
+      "direction": "separating"
+    }
+  ],
+  "transiting_positions": [
+    {
+      "planet": "Sun",
+      "glyph": "☉",
+      "deg": 79.517,
+      "sign": "Gemini",
+      "formatted": "19.52° Gemini",
+      "retrograde": false
+    },
+    {
+      "planet": "Moon",
+      "glyph": "☽",
+      "deg": 13.91,
+      "sign": "Aries",
+      "formatted": "13.91° Aries",
+      "retrograde": false
+    },
+    {
+      "planet": "Mercury",
+      "glyph": "☿",
+      "deg": 103.155,
+      "sign": "Cancer",
+      "formatted": "13.16° Cancer",
+      "retrograde": false
+    },
+    {
+      "planet": "Venus",
+      "glyph": "♀",
+      "deg": 116.418,
+      "sign": "Cancer",
+      "formatted": "26.42° Cancer",
+      "retrograde": false
+    },
+    {
+      "planet": "Mars",
+      "glyph": "♂",
+      "deg": 46.671,
+      "sign": "Taurus",
+      "formatted": "16.67° Taurus",
+      "retrograde": false
+    },
+    {
+      "planet": "Jupiter",
+      "glyph": "♃",
+      "deg": 115.887,
+      "sign": "Cancer",
+      "formatted": "25.89° Cancer",
+      "retrograde": false
+    },
+    {
+      "planet": "Saturn",
+      "glyph": "♄",
+      "deg": 12.983,
+      "sign": "Aries",
+      "formatted": "12.98° Aries",
+      "retrograde": false
+    },
+    {
+      "planet": "Uranus",
+      "glyph": "♅",
+      "deg": 62.601,
+      "sign": "Gemini",
+      "formatted": "2.60° Gemini",
+      "retrograde": false
+    },
+    {
+      "planet": "Neptune",
+      "glyph": "♆",
+      "deg": 4.219,
+      "sign": "Aries",
+      "formatted": "4.22° Aries",
+      "retrograde": false
+    },
+    {
+      "planet": "Pluto",
+      "glyph": "♇",
+      "deg": 305.243,
+      "sign": "Aquarius",
+      "formatted": "5.24° Aquarius",
+      "retrograde": true
+    },
+    {
+      "planet": "Chiron",
+      "glyph": "⚷",
+      "deg": 29.619,
+      "sign": "Aries",
+      "formatted": "29.62° Aries",
+      "retrograde": false
+    },
+    {
+      "planet": "NNode",
+      "glyph": "☊",
+      "deg": 332.885,
+      "sign": "Pisces",
+      "formatted": "2.89° Pisces",
+      "retrograde": true
+    }
   ]
 }
