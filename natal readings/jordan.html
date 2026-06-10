@@ -2252,6 +2252,8 @@ function renderTransitList(){
   renderTransitTabContent();
 }
 
+function fmtNP(s){return(s||'').replace(/([a-z])([A-Z])/g,'$1 $2');}
+
 function renderTransitTabContent(){
   if(!transitsData)return;
   const cur=transitsData.current||[];
@@ -2270,7 +2272,6 @@ function renderTransitTabContent(){
     hdr.innerHTML=`<span class="t-sec-label">${label}</span><span class="t-sec-count">${count}</span>`;
     body.appendChild(hdr);
   }
-  function fmtNP(s){return(s||'').replace(/([a-z])([A-Z])/g,'$1 $2');}
   function addCurrentRow(t){
     const idx=cur.indexOf(t);
     const row=document.createElement('button');
