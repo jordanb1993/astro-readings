@@ -1736,6 +1736,8 @@ function switchPanel(id,btn){
   const showKey=id==='natal'&&activeSub==='chart';
   document.getElementById('keyBtn').classList.toggle('hidden',!showKey);
   if(!showKey)closeKey();
+  if(id==='transits')loadTransits();
+  if(id==='daily')loadDaily();
 }
 
 // Navigate from home card directly into Natal/Chart
@@ -2031,14 +2033,6 @@ function closeTransitDetail(){
   listEl.style.transform='translateX(0)';
   listEl.style.opacity='1';
   listEl.style.pointerEvents='';
-}
-
-// load transits when panel first activated
-const _origSwitchPanel=switchPanel;
-function switchPanel(id,btn){
-  _origSwitchPanel(id,btn);
-  if(id==='transits')loadTransits();
-  if(id==='daily')loadDaily();
 }
 
 // ─── DAILY DATA ───────────────────────────────────────────────────────────────
