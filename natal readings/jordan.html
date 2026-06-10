@@ -613,6 +613,10 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overs
 .t-hist-badge.between{background:rgba(var(--amber-alpha),0.10);color:rgba(var(--amber-alpha),0.72)}
 .t-hist-badge.complete{background:rgba(255,255,255,0.05);color:var(--muted-3)}
 .t-hist-dates{font-size:0.44rem;letter-spacing:0.12em;color:var(--muted-3);font-family:'Inter',sans-serif;margin-top:3px}
+.t-sec{padding:18px 0 10px;border-top:1px solid rgba(var(--gold-alpha),0.08);display:flex;align-items:center;gap:9px}
+.t-sec.t-sec-first{border-top:none;padding-top:2px}
+.t-sec-label{font-size:0.41rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted-3);font-family:'Inter',sans-serif;font-weight:500}
+.t-sec-count{font-size:0.38rem;letter-spacing:0.06em;color:rgba(var(--gold-alpha),0.28);font-family:'Inter',sans-serif;background:rgba(var(--gold-alpha),0.07);border-radius:10px;padding:2px 7px}
 
 /* ══ DAILY READING ══════════════════════════════════════════════════════ */
 .d-header{margin-bottom:20px;padding-bottom:18px;border-bottom:1px solid rgba(var(--cerulean-alpha),0.10)}
@@ -1371,14 +1375,10 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overs
     <div class="reading-inner accent-amber" style="padding-top:24px">
       <div class="panel-heading" style="margin-bottom:20px">
         <div class="panel-eyebrow-sm" id="t-eyebrow">live sky</div>
-        <div class="panel-title-lg">Active Transits</div>
+        <div class="panel-title-lg">Transits</div>
       </div>
       <div id="t-list-body" style="display:flex;flex-direction:column;gap:2px">
-        <!-- populated by JS -->
-      </div>
-      <div id="t-historical-section" style="display:none;margin-top:24px">
-        <div class="sep"><span class="sep-inner">Historical</span></div>
-        <div id="t-hist-body" style="display:flex;flex-direction:column;gap:2px;margin-top:12px"></div>
+        <!-- populated by JS — four sections: applying · separating · between passes · complete -->
       </div>
     </div>
   </div>
@@ -1963,11 +1963,28 @@ function renderTransitList(){
   if(!transitsData)return;
   const eyebrow=document.getElementById('t-eyebrow');
   if(eyebrow)eyebrow.textContent='live sky · '+transitsData.generated;
+  const cur=transitsData.current||[];
+  const hist=transitsData.historical||[];
   const countEl=document.getElementById('home-transit-count');
-  if(countEl){const n=(transitsData.current||[]).length;countEl.textContent=n>0?`${n} active`:'Current sky';}
+  if(countEl){const n=cur.length;countEl.textContent=n>0?`${n} active`:'Current sky';}
+
+  const applying=cur.filter(t=>t.direction==='applying');
+  const separating=cur.filter(t=>t.direction!=='applying');
+  const between=hist.filter(t=>t.status==='between_passes');
+  const complete=hist.filter(t=>t.status==='complete');
+
   const body=document.getElementById('t-list-body');
   body.innerHTML='';
-  transitsData.current.forEach((t,i)=>{
+
+  function addSectionHdr(label,count,isFirst){
+    const hdr=document.createElement('div');
+    hdr.className='t-sec'+(isFirst?' t-sec-first':'');
+    hdr.innerHTML=`<span class="t-sec-label">${label}</span><span class="t-sec-count">${count}</span>`;
+    body.appendChild(hdr);
+  }
+
+  function addCurrentRow(t){
+    const idx=cur.indexOf(t);
     const row=document.createElement('button');
     row.className='t-row';
     row.setAttribute('aria-label',`${t.transit_planet} ${t.aspect} natal ${t.natal_point}`);
@@ -1984,34 +2001,36 @@ function renderTransitList(){
         <span class="t-row-orb-dir ${dirCls}">${dirLabel}</span>
       </span>
       <span class="t-row-chevron">›</span>`;
-    row.addEventListener('click',()=>openTransitDetail(i));
+    row.addEventListener('click',()=>openTransitDetail(idx));
     body.appendChild(row);
-  });
-  if(transitsData.historical&&transitsData.historical.length){
-    const hs=document.getElementById('t-historical-section');
-    hs.style.display='';
-    const hb=document.getElementById('t-hist-body');
-    hb.innerHTML='';
-    transitsData.historical.forEach((t,i)=>{
-      const row=document.createElement('button');
-      row.className='t-row';
-      const badgeCls=t.status==='between_passes'?'between':'complete';
-      const badgeLabel=t.status==='between_passes'?'between passes':'complete';
-      const nextStr=t.next_pass?`<span class="t-hist-dates">next: ${t.next_pass}</span>`:
-                    t.active_dates?`<span class="t-hist-dates">${t.active_dates}</span>`:'';
-      row.innerHTML=`
-        <span class="t-row-glyph" style="opacity:0.55">${t.glyph}</span>
-        <span class="t-row-body">
-          <span class="t-row-name" style="opacity:0.80">${t.aspect} Natal ${t.natal_point}</span>
-          <span class="t-row-meta">${t.transit_planet}${t.active_dates?' · '+t.active_dates:''}</span>
-          ${nextStr}
-        </span>
-        <span class="t-hist-badge ${badgeCls}">${badgeLabel}</span>
-        <span class="t-row-chevron" style="opacity:0.35">›</span>`;
-      row.addEventListener('click',()=>openTransitDetail(i,'historical'));
-      hb.appendChild(row);
-    });
   }
+
+  function addHistRow(t){
+    const idx=hist.indexOf(t);
+    const row=document.createElement('button');
+    row.className='t-row';
+    const badgeCls=t.status==='between_passes'?'between':'complete';
+    const badgeLabel=t.status==='between_passes'?'between passes':'complete';
+    const nextStr=t.next_pass?`<span class="t-hist-dates">next: ${t.next_pass}</span>`:
+                  t.active_dates?`<span class="t-hist-dates">${t.active_dates}</span>`:'';
+    row.innerHTML=`
+      <span class="t-row-glyph" style="opacity:0.55">${t.glyph}</span>
+      <span class="t-row-body">
+        <span class="t-row-name" style="opacity:0.80">${t.aspect} Natal ${t.natal_point}</span>
+        <span class="t-row-meta">${t.transit_planet}${t.active_dates?' · '+t.active_dates:''}</span>
+        ${nextStr}
+      </span>
+      <span class="t-hist-badge ${badgeCls}">${badgeLabel}</span>
+      <span class="t-row-chevron" style="opacity:0.35">›</span>`;
+    row.addEventListener('click',()=>openTransitDetail(idx,'historical'));
+    body.appendChild(row);
+  }
+
+  let isFirst=true;
+  if(applying.length){addSectionHdr('Applying',applying.length,isFirst);isFirst=false;applying.forEach(t=>addCurrentRow(t));}
+  if(separating.length){addSectionHdr('Separating',separating.length,isFirst);isFirst=false;separating.forEach(t=>addCurrentRow(t));}
+  if(between.length){addSectionHdr('Between Passes',between.length,isFirst);isFirst=false;between.forEach(t=>addHistRow(t));}
+  if(complete.length){addSectionHdr('Complete',complete.length,isFirst);complete.forEach(t=>addHistRow(t));}
 }
 
 function openTransitDetail(idx,pool){

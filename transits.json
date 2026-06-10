@@ -261,7 +261,18 @@
       ],
       "summary": "Neptune has been in sesquiquadrate friction with natal Venus in Scorpio's 5th house. Past its exact point in May; separating. The distinction between genuine desire and Neptunian idealization has been actively tested.",
       "reading": "Neptune in Aries forming a sesquiquadrate to natal Venus in Scorpio (5th house) is a friction-adjustment aspect — not the full dissolution of a conjunction, but a consistent pressure on the way desire and beauty are perceived. The Scorpio 5th house Venus holds deep, total romantic and creative values. Neptune's sesquiquadrate creates interference: what looks beautiful may be partially projection; what feels like connection may be partially vision. Past its exact point in May and separating, the fog-and-desire test is now in its closing phase.",
-      "passes": []
+      "passes": [
+        {
+          "label": "First exact (direct)",
+          "date": "~May 15, 2026",
+          "status": "complete"
+        },
+        {
+          "label": "Second exact (retrograde)",
+          "date": "~November 2026",
+          "status": "upcoming (if station allows)"
+        }
+      ]
     },
     {
       "id": "uranus-opposition-northnode",
@@ -488,7 +499,13 @@
       ],
       "summary": "The transiting NNode in Pisces is forming a square to natal Sun in Sagittarius (6th house). A friction point between the current evolutionary pull (Pisces: surrender, vision) and the daily work identity (Sagittarius: teaching, expansion). Exact June 15–17.",
       "reading": "The transiting NNode in Pisces forms a square to natal Sun in Sagittarius (6th house) — approaching exact June 15–17. A square is a friction aspect. The soul's current evolutionary direction (Pisces NNode: surrender, depth, dissolution of old ego-structures) is at right angles to the core daily-work identity (Sagittarius Sun 6th: teaching, seeking, expansion through daily practice).\n\nThis isn't a crisis. It's a necessary tension. The soul path is asking for something the operational identity hasn't fully made room for yet. The Sagittarian Sun in the 6th wants to push forward; the Pisces NNode wants receptivity. The square says: not this way, or not this fast. Brief transit — the NNode moves on within weeks. But the friction it's pointing at is real information.",
-      "passes": []
+      "passes": [
+        {
+          "label": "Only pass",
+          "date": "~June 15–17, 2026",
+          "status": "upcoming"
+        }
+      ]
     },
     {
       "id": "neptune-trine-northnode",
@@ -512,7 +529,18 @@
       ],
       "summary": "Neptune in Aries formed a trine to natal NNode in Sagittarius (6th house). Past exact; separating. The visionary and porous quality of Neptune has been flowing toward the soul direction, softening the Sagittarian push-and-seek instinct.",
       "reading": "Neptune in Aries formed a trine to natal North Node in Sagittarius (6th house) — past exact and now separating. The trine between these was a cooperative flow: Neptune's visionary, porous quality loosening the grip of old 6th house duty-patterns, making room for the path to feel like something that flows rather than pushes. The Sagittarius NNode in the 6th ordinarily needs to feel the daily work expanding, teaching, seeking. Neptune trining it from Aries said: trust what arrives before you see the full picture. The window is closing; what it opened can be carried forward.",
-      "passes": []
+      "passes": [
+        {
+          "label": "First exact (direct)",
+          "date": "~May 2026",
+          "status": "complete"
+        },
+        {
+          "label": "Second exact (retrograde)",
+          "date": "~late 2026",
+          "status": "upcoming (if station allows)"
+        }
+      ]
     },
     {
       "id": "neptune-sextile-southnode",
