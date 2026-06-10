@@ -4,6 +4,22 @@
 
 ---
 
+## 2026-06-10 (session 10b) — Sky at Work Full App Rebuild
+
+**sky-at-work.html rebuilt as proper mobile app** — matching jordan.html's architecture exactly.
+
+**App shell:** `100dvh` fixed height, 3 panels with opacity crossfade, fixed bottom nav (Home ✦ / Sky ☽ / Readings ◯), `safe-area-inset-bottom` padding, cerulean as primary accent.
+
+**Home tab:** Collective sky biwheel (zodiac ring + transiting planets from `today.json`, ASC=0 natural zodiac, no natal ring), trio signal cards (Venus☌Jupiter gold, Mercury□Saturn rose, Last Quarter cerulean), rising sign picker with `localStorage` persistence + "Don't know yours? → natal reading from Jordan" link.
+
+**Sky tab:** Full signal board (5 rows, click to expand — Uranus□NNode, Venus☌Jupiter, Mercury□Saturn, Saturn∥Neptune, Last Quarter), pulse paragraph, 3 deep dives with read-more expand, IBM Plex Mono monospace, planet strip with tap-to-expand tooltips (12 bodies).
+
+**Readings tab:** Intro text + natal card grid — Dasha + Yvonne active with links to their chart HTMLs, 3 faded dashed "request" placeholders (visual only, pointer-events:none).
+
+Architecture: every page in the same Netlify deploy, interconnected via root-relative paths. This is the foundation the final product will build on.
+
+---
+
 ## 2026-06-10 (session 10) — Sky at Work Connected + Daily Biwheel
 
 **Biwheel on Daily tab:** Same SVG renderer, rendered non-interactive (`renderBiwheel(svgId, false)`) so the visual sits above the prose without introducing a second selection state.
