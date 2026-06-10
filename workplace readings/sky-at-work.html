@@ -256,6 +256,62 @@ strong{color:var(--rose);font-weight:500}
 .pill-detail.visible{opacity:1}
 .rx-tag{font-size:8px;opacity:0.55;margin-left:2px}
 
+/* ══ DESKTOP RESPONSIVE ═════════════════════════════════════════════════════ */
+.desk-header{display:none}
+
+@media(min-width:680px){
+  .desk-header{
+    display:flex;flex-shrink:0;
+    background:rgba(6,10,26,0.98);
+    border-bottom:1px solid rgba(var(--cerulean-alpha),0.14);
+    backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+    z-index:50;
+  }
+  .desk-header-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    width:100%;max-width:860px;margin:0 auto;padding:0 40px;height:54px;
+  }
+  .desk-brand{display:flex;align-items:center;gap:9px}
+  .desk-brand-icon{font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:rgba(var(--cerulean-alpha),0.78)}
+  .desk-brand-name{font-family:'Cormorant Garamond',serif;font-size:1.02rem;font-weight:300;font-style:italic;color:rgba(var(--cerulean-alpha),0.88);letter-spacing:0.06em}
+  .desk-brand-sep{color:var(--muted-3);font-size:0.55rem;opacity:0.60}
+  .desk-brand-date{font-size:0.47rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted-3)}
+  .desk-tabs{display:flex;align-items:center;gap:26px}
+  .desk-tab{
+    font-family:'Inter',sans-serif;font-size:0.54rem;letter-spacing:0.14em;text-transform:uppercase;
+    color:var(--muted-3);background:none;border:none;cursor:pointer;
+    padding-bottom:2px;border-bottom:1.5px solid transparent;
+    transition:color 0.18s,border-color 0.18s;-webkit-tap-highlight-color:transparent;
+  }
+  .desk-tab:hover{color:var(--muted-2)}
+  .desk-tab.active{color:rgba(var(--cerulean-alpha),0.88);border-bottom-color:rgba(var(--cerulean-alpha),0.55)}
+
+  .app-nav{display:none}
+
+  .reading-inner{
+    padding:38px 44px 56px;
+    max-width:800px;
+  }
+  .reading-inner::before{
+    background:
+      radial-gradient(ellipse 500px 360px at 0% 8%,rgba(var(--cerulean-alpha),0.09) 0%,transparent 68%),
+      radial-gradient(ellipse 340px 280px at 100% 85%,rgba(var(--cerulean-alpha),0.06) 0%,transparent 65%);
+  }
+
+  .week-headline{font-size:2.5rem}
+  .insight-card{padding:20px 22px 17px}
+  .ic-headline{font-size:1.30rem}
+  .ic-body{font-size:0.90rem}
+
+  .cw-wrap{max-width:260px}
+
+  .sign-chips{grid-template-columns:repeat(6,1fr)}
+  .sign-chip{padding:10px 4px}
+  .sign-chip-gl{font-size:1.15rem}
+
+  .nr-cards{grid-template-columns:repeat(auto-fill,minmax(180px,1fr))}
+}
+
 /* ══ READINGS PANEL ══════════════════════════════════════════════════════════ */
 .readings-identity{margin-bottom:18px;position:relative;z-index:1}
 .readings-eyebrow{font-size:0.48rem;letter-spacing:0.26em;text-transform:uppercase;color:rgba(var(--cerulean-alpha),0.55);margin-bottom:5px}
@@ -281,6 +337,24 @@ strong{color:var(--rose);font-weight:500}
 </head>
 <body>
 <div class="app">
+
+<!-- Desktop header (hidden on mobile) -->
+<header class="desk-header">
+  <div class="desk-header-inner">
+    <div class="desk-brand">
+      <span class="desk-brand-icon">✦</span>
+      <span class="desk-brand-name">Sky at Work</span>
+      <span class="desk-brand-sep">&middot;</span>
+      <span class="desk-brand-date">June 8&ndash;14, 2026</span>
+    </div>
+    <div class="desk-tabs">
+      <button class="desk-tab active" data-target="week" onclick="switchPanel('week',this)">This Week</button>
+      <button class="desk-tab" data-target="sky" onclick="switchPanel('sky',this)">The Sky</button>
+      <button class="desk-tab" data-target="foryou" onclick="switchPanel('foryou',this)">For You</button>
+    </div>
+  </div>
+</header>
+
 <div class="app-body">
 
 <!-- ══ THIS WEEK PANEL ════════════════════════════════════════════════════════ -->
@@ -538,11 +612,10 @@ strong{color:var(--rose);font-weight:500}
 /* ── PANEL SWITCHING ──────────────────────────────────────────────────────── */
 function switchPanel(id,btn){
   document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
-  document.querySelectorAll('.nav-tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('[data-target]').forEach(t=>t.classList.remove('active'));
   const p=document.getElementById('panel-'+id);
   if(p){p.classList.add('active');p.scrollTop=0;}
-  if(btn)btn.classList.add('active');
-  else{const t=document.querySelector('[data-target='+id+']');if(t)t.classList.add('active');}
+  document.querySelectorAll('[data-target="'+id+'"]').forEach(t=>t.classList.add('active'));
 }
 
 /* ── WEEK PROGRESS BAR ────────────────────────────────────────────────────── */
