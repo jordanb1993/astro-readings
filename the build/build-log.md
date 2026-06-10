@@ -4,6 +4,26 @@
 
 ---
 
+## 2026-06-09 — App Shell Restructure: Home + 4-Tab Nav + Architecture v2
+
+**The headline:** The app now has a real architecture. Home screen with artistic nav cards, a 4-tab bottom nav (Home · Natal · Transits · Daily), and the full 5-section Natal reading nested inside its own sub-navigation. The foundation for the 7-section product vision is in place.
+
+### What Changed
+
+**Home panel:** Full-width Natal hero card with generative SVG compass art, 2-column row for Daily + Transits, 2-column row for Synastry + Workplace (coming soon), full-width Wheel & Moon (coming soon). Live date and lunar phase displayed in header strip. `goNatal()` navigates directly into the Natal chart.
+
+**New 4-tab bottom nav:** Replaced the old 7-tab scrollable nav with a clean 4-tab nav — Home (✦) · Natal (◯) · Transits (♄) · Daily (☽). Synastry, Workplace, and Wheel & Moon are represented on the Home screen until they have content.
+
+**Natal sub-navigation:** All 5 natal reading sections (Chart · Identity · Depth · Roots · Soul) moved inside `#panel-natal` with a dedicated `.natal-subnav` pill row. The chart wheel and all reading content are now sub-panels within the Natal section, not top-level tabs.
+
+**Panel architecture:** `panel-chart` → `sp-chart`, `panel-identity` → `sp-identity`, etc. All sub-panels use `.subpanel` + `.natal-body` flex container. New `switchSub()` function handles sub-navigation. Chart key button now shows only when on Natal > Chart.
+
+**Arch doc:** `the build/app-architecture-v2.md` — the full 7-section product map, section specs, build phases, and governing design principle.
+
+**Commits:** `22526ab` (architecture doc), `df599fe` (full shell restructure)
+
+---
+
 ## 2026-06-09 — Mobile Polish: Fluid Layout + Scroll Fix
 
 **The headline:** Chart fills edge-to-edge on all iPhone sizes. Accidental horizontal scroll drift on reading panels eliminated. Shell confirmed beautiful on SE, 11, 14 Pro Max.
