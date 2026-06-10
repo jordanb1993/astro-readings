@@ -4,6 +4,24 @@
 
 ---
 
+## 2026-06-10 (session 6) — Biwheel Data Layer + Tab Nav Infrastructure
+
+**The headline:** Transits panel restructured from a flat list to a three-tab layout (Now / Returning / Archive) with a biwheel placeholder at the top. All 12 transiting planet positions now written to `today.json` nightly — the data layer the biwheel renderer needs is live.
+
+### What Changed
+
+**Three-tab nav:** Now (applying + separating) · Returning (between passes) · Archive (complete). `switchTransitTab()` re-renders list body on click. Empty state message for tabs with no entries. `renderTransitList()` slimmed down; all rendering logic moved to `renderTransitTabContent()`.
+
+**Biwheel placeholder:** Orbital ring SVG at the top of the Transits panel — three concentric rings + axis lines + "CHART / biwheel · coming soon" label. Holds the space for the real renderer.
+
+**`transiting_positions` in today.json:** All 12 bodies (Sun through NNode) with absolute degree (0–360), sign, formatted string, retrograde flag. Routine patched to write this field every night. today.json manually seeded with June 10 positions for immediate testing.
+
+**Next session:** Build the actual biwheel SVG renderer in JS using the natal chart hardcoded positions + live `transiting_positions` from today.json.
+
+**Deployed:** commit `e549a17` → Netlify production via API restore.
+
+---
+
 ## 2026-06-10 (session 5) — Transit Library Complete + Four-Section UI
 
 **The headline:** All transit library stubs replaced with full breakdowns. Transits panel redesigned with four labeled sections replacing the flat list. Infrastructure is now deeper and scales cleanly as transits move through their lifecycle.
