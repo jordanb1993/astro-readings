@@ -4,6 +4,20 @@
 
 ---
 
+## 2026-06-10 (session 10) — Sky at Work Connected + Daily Biwheel
+
+**Biwheel on Daily tab:** Same SVG renderer, rendered non-interactive (`renderBiwheel(svgId, false)`) so the visual sits above the prose without introducing a second selection state.
+
+**Sky at Work connected to the app ecosystem:**
+- Rising sign picker now has "Don't know yours? A natal chart reading from Jordan will tell you →" — links to jordan.html, converts curiosity into reading requests
+- Natal Chart Readings section added before footer: active cards for Dasha + Yvonne (link directly to their chart HTMLs), 3 faded "request" placeholders (visual only for now — conversion funnel for Phase 2 cohort)
+- Home panel workplace card unlocked — was disabled/Soon, now opens `sky-at-work.html` in new tab
+- Footer links updated to Netlify URLs
+
+Architecture note: all three pages (jordan.html, sky-at-work.html, dasha.html, yvonne.html) are now interconnected within the same Netlify deploy. Foundation for the final product's unified app.
+
+---
+
 ## 2026-06-10 (session 9b) — Bug Fixes (3)
 
 1. **SVG hit circles not receiving taps:** `fill:transparent` circles need `pointer-events:all` — SVG default `visiblePainted` ignores transparent fills. Added attribute.
