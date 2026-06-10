@@ -4,6 +4,28 @@
 
 ---
 
+## 2026-06-10 (session 2) — Visual Polish: Daily + Transits Panels
+
+**The headline:** Daily panel refined, transit pills now link directly to transit detail views, passes bug fixed, applying/separating color-coded throughout.
+
+### What Changed
+
+**Daily panel — visual upgrades:** Title enlarged to 1.85rem for stronger hero presence. Header section gets a bottom border divider (cerulean 10%) separating title/moon from the reading body. Key transit pill redesigned: removed box border, added a 3px cerulean left-border accent (matches pull quote treatment) with slightly elevated background — makes the day's starred transit visually primary.
+
+**Today block — category labels:** Work / Creative / Body labels upgraded from plain text to small pill badges (cerulean border + background, rounded 20px). Reads as a scannable labeled list rather than three indistinct rows.
+
+**Transit pills → transit detail links:** All 26 active_transit pills in the Daily panel are now tappable. Tap any pill → switches to the Transits panel → if the transit has a library file, opens the full detail view. Matching logic uses `normPlanet()` normalization (NorthNode → nnode, SouthNode → snode, LotOfFortune → fortune, etc.) plus glyph matching. Applying transits get a slightly elevated cerulean border for emphasis. Implemented via data attributes + event listeners (clean, no inline onclick escaping issues).
+
+**Transit list — direction color coding:** The `applying` direction label in transit rows is now cerulean-tinted. `separating` stays muted. Applies/separating distinction is now visually scannable.
+
+**Passes bug fixed:** Transit detail view was rendering an empty "Passes" heading for transits with `passes: []` (empty array is truthy in JS). Fixed to `t.passes && t.passes.length`. The passes display format itself (the passes timeline strip) is unchanged — kept the format as-is. Only 4 of 23 active transits have pass data; the section is now hidden for the rest.
+
+**New functions:** `normPlanet(s)` — normalizes planet name strings for matching. `openTransitFromPill(label, glyph)` — loads transit data if needed, switches to Transits panel, opens detail on match.
+
+**Deployed:** commit `1ba3d71` → Netlify production via API restore.
+
+---
+
 ## 2026-06-10 — Daily + Transits Live: JSON Pipeline + Netlify Direct Deploy
 
 **The headline:** The app is now fully data-driven. The Daily tab renders a real reading from `today.json` (title, pulse, key transit pill, prose, pull quote, today block). The Transits tab renders all active slow-planet transits from `transits.json` with a list→detail slide navigation. The 4am routine now writes both JSON files every night and deploys directly to Netlify — no GitHub webhook required.
