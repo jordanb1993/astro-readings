@@ -126,16 +126,104 @@ Go to `claude.ai/code/routines` → find routine `trig_01Rtm1xSST2GbdCZh896F2vP`
    The INDEX.md is always-loaded — stale orbs degrade every session's accuracy.
    This patch should take 2–3 minutes and must happen before the reading is written.
 
-7. Write "weekly readings/YYYY-MM-DD-week-ahead.md" using positions-week.json.
+7. Write "today.json" to the repo root.
+
+   This powers the Daily tab in the AstroFlow app (astrologyos.netlify.app). Write it every day.
+   Source all values from the reading you just wrote + positions-today.json. Do NOT skip this step.
+
+   Format — write exactly this structure to "today.json":
+   {
+     "date": "YYYY-MM-DD",
+     "title": "[the H1 title from the daily reading — the evocative phrase, not a date string]",
+     "moon_phase": "[phase part of the frontmatter moon field, before the · separator]",
+     "moon_sign": "[sign part of the frontmatter moon field, after the · separator]",
+     "moon_glyph": "☽",
+     "pulse": "[the italic opening paragraph from the reading — the lines between H1 and the first --- divider, stripped of markdown italics markers]",
+     "key_transit": "[the highest-priority transit from the reading — the one the prose centers on — formatted as 'Planet △ natal Point' or appropriate aspect glyph]",
+     "key_transit_note": "[orb + applying/separating, e.g. '0.02° · exact window is now']",
+     "prose": [
+       "[paragraph 1 of the prose body — full text, no markdown formatting]",
+       "[paragraph 2]",
+       "[paragraph 3]",
+       "[paragraph 4 if present]"
+     ],
+     "pull": "[the blockquote text if present, stripped of the > marker and surrounding whitespace. Omit this field if no blockquote in the reading]",
+     "today": {
+       "business": "[the Business line from the today block, stripped of the '- Business:' prefix]",
+       "creative": "[the Creative line, stripped of prefix]",
+       "body": "[the Body line, stripped of prefix]"
+     },
+     "active_transits": [
+       // Include ALL transit-to-natal aspects from positions-today.json where orb_degrees ≤ 1.5
+       // Sort by orb ascending (tightest first)
+       // Each entry:
+       { "glyph": "[planet Unicode glyph]", "label": "[Planet △ natal Point (Hnn)]", "orb": "[X.XX°]", "direction": "[applying OR separating]" }
+     ]
+   }
+
+   Planet glyphs reference: ☉ Sun, ☽ Moon, ☿ Mercury, ♀ Venus, ♂ Mars, ♃ Jupiter, ♄ Saturn, ♅ Uranus, ♆ Neptune, ♇ Pluto, ⚷ Chiron, ☊ NNode
+
+8. Write "transits.json" to the repo root.
+
+   This powers the Transits tab in the AstroFlow app. Write it every day. The app uses this for
+   the list view (all active transits) and detail view (full reading per transit).
+
+   Include ALL slow-planet transit-to-natal aspects from positions-today.json where orb_degrees ≤ 2.5
+   and the transiting planet is one of: Jupiter, Saturn, Uranus, Neptune, Pluto, Chiron, North Node.
+   Sort by orb ascending.
+
+   For each transit, check if a transit library file exists (transit library/[slug].md).
+   Slug format: [transiting-planet-lowercase]-[aspect-word]-[natal-point-lowercase].md
+   (e.g. jupiter-trine-pluto.md, pluto-sextile-moon.md)
+
+   If the file EXISTS: extract the reading content from it for the "reading" field (first 3
+   substantial paragraphs of prose — skip frontmatter, headers, and any template stubs).
+   If NO file exists: write 2–3 original sentences for the "reading" field as a placeholder.
+
+   Format:
+   {
+     "generated": "YYYY-MM-DD",
+     "current": [
+       {
+         "id": "[transiting-planet-lowercase]-[aspect-word]-[natal-point-lowercase]",
+         "glyph": "[planet glyph]",
+         "transit_planet": "[e.g. Jupiter]",
+         "transit_sign": "[e.g. Cancer]",
+         "transit_deg": "[e.g. 25°42']",
+         "aspect": "[e.g. Trine]",
+         "aspect_glyph": "[△ / ✶ / □ / ☌ / ☍ / ⚻ / □/ etc]",
+         "natal_point": "[e.g. Pluto]",
+         "natal_sign": "[e.g. Scorpio]",
+         "natal_house": "[e.g. H6]",
+         "orb": "[e.g. 0.02°]",
+         "direction": "[applying OR separating]",
+         "exact_date": "[YYYY-MM or YYYY-MM-DD if known from the transit library file or INDEX.md — omit if unknown]",
+         "keywords": ["[3–5 keywords from the transit library file, or generate from the aspect meaning]"],
+         "summary": "[1–2 sentence essence — the single most important thing about this transit right now]",
+         "reading": "[full reading prose for the detail view — 2–4 paragraphs. From transit library file if it exists, otherwise original. No markdown headers. Paragraphs separated by \\n\\n]",
+         "passes": [
+           // Only include if the transit is multi-pass (retrograde-driven) or has a known exact date
+           // Each pass: { "label": "First pass", "date": "Month YYYY", "status": "complete OR exact now OR upcoming" }
+           // Leave passes array empty [] or omit entirely for simple direct transits
+         ]
+       }
+     ],
+     "historical": []
+   }
+
+   The "historical" array stays empty for now. It will be populated in a future phase when
+   past transits are archived.
+
+9. Write "weekly readings/YYYY-MM-DD-week-ahead.md" using positions-week.json.
    Use the date of the COMING Monday as the filename date (e.g. "weekly readings/2026-06-01-week-ahead.md").
    Only write this file on Sundays — skip on other days.
    Format: see template below.
 
-8. Patch CLAUDE.md active transits line:
+10. Patch CLAUDE.md active transits line:
    Replace the line beginning with "Active transits as of" in CLAUDE.md with the
    content of active-transits.txt. The line is inside the "Current Situation Snapshot" section.
 
-9. SELF-CHECK before committing — read your completed reading and verify every item:
+11. SELF-CHECK before committing — read your completed reading and verify every item:
 
    ACCURACY:
    □ Every slow-planet aspect (Saturn/Uranus/Neptune/Pluto/Chiron) has applying/separating
@@ -162,10 +250,16 @@ Go to `claude.ai/code/routines` → find routine `trig_01Rtm1xSST2GbdCZh896F2vP`
    □ No "you may feel" / "this might bring" hedging language.
    □ No generic horoscope phrases disconnected from Jordan's specific natal chart.
 
+   APP JSON:
+   □ today.json exists at repo root with today's date, non-null title, at least 2 prose paragraphs.
+   □ transits.json exists at repo root with "generated" matching today's date.
+   □ transits.json "current" array has at least the slow-planet transits listed in INDEX.md.
+   □ Every transit in transits.json with an existing library file has prose from that file (not placeholder).
+
    If any item fails: fix it before proceeding to the commit.
 
-10. Commit and push:
-   git add -A && git commit -m "reading + week-ahead + patches YYYY-MM-DD" && git push origin main
+12. Commit and push:
+   git add -A && git commit -m "reading + today.json + transits.json + patches YYYY-MM-DD" && git push origin main
 ```
 
 ---
