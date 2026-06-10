@@ -9,6 +9,14 @@
     Pragma = "no-cache"
     Expires = "0"
 
+# No-cache on JSON data files — updated nightly, must always be fresh
+[[headers]]
+  for = "/*.json"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+    Pragma = "no-cache"
+    Expires = "0"
+
 # Long cache on fonts/images/static assets (they don't change)
 [[headers]]
   for = "/**/*.jpg"
