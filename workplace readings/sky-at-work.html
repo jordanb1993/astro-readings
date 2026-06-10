@@ -10,11 +10,11 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Sky at Work">
 <meta property="og:title" content="Sky at Work · Week of June 8, 2026">
-<meta property="og:description" content="Venus meets Jupiter. Collective transit weather for the week — no birth chart needed.">
+<meta property="og:description" content="Warmth opens. Words need care. This week's energy in plain language.">
 <title>Sky at Work · June 8–14</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Inter:wght@300;400;500&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet">
 <style>
-/* ══ TOKENS ═════════════════════════════════════════════════════════════════ */
+/* ══ TOKENS ══════════════════════════════════════════════════════════════════ */
 :root{
   --bg:#09102a; --surface:#0d1c38; --surface-2:#0a1428;
   --gold:#d0a840; --gold-alpha:208,168,64;
@@ -24,15 +24,13 @@
   --text:#faf4e8; --muted:rgba(245,235,210,0.97); --muted-2:rgba(245,235,210,0.82);
   --muted-3:rgba(245,235,210,0.54); --border:rgba(62,130,185,0.16);
 }
-
-/* ══ RESET ══════════════════════════════════════════════════════════════════ */
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html,body{height:100%;overflow:hidden;-webkit-font-smoothing:antialiased}
 body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overscroll-behavior:none}
-p{line-height:1.82;color:var(--muted);font-size:0.91rem}
-strong{color:var(--rose);font-weight:600}
+p{line-height:1.80;color:var(--muted);font-size:0.91rem}
+strong{color:var(--rose);font-weight:500}
 
-/* ══ APP SHELL ══════════════════════════════════════════════════════════════ */
+/* ══ APP SHELL ═══════════════════════════════════════════════════════════════ */
 .app{display:flex;flex-direction:column;height:100vh;height:100dvh}
 .app-body{flex:1;overflow:hidden;position:relative;min-height:0}
 .panel{
@@ -40,31 +38,28 @@ strong{color:var(--rose);font-weight:600}
   overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;
   overscroll-behavior-y:contain;touch-action:pan-y;
   opacity:0;visibility:hidden;pointer-events:none;
-  transition:opacity 0.22s ease,visibility 0.22s ease;z-index:0;
+  transition:opacity 0.24s ease,visibility 0.24s ease;z-index:0;
 }
 .panel.active{opacity:1;visibility:visible;pointer-events:auto;z-index:1}
 .reading-inner{
   position:relative;z-index:1;
-  padding:calc(env(safe-area-inset-top,0px) + 22px) 18px calc(72px + env(safe-area-inset-bottom,0px));
-  max-width:640px;margin:0 auto;
+  padding:calc(env(safe-area-inset-top,0px) + 24px) 20px calc(74px + env(safe-area-inset-bottom,0px));
+  max-width:620px;margin:0 auto;
 }
-/* subtle ambient glow */
 .reading-inner::before{
   content:'';position:absolute;inset:0;pointer-events:none;z-index:0;
   background:
-    radial-gradient(ellipse 380px 300px at 10% 12%,rgba(var(--cerulean-alpha),0.13) 0%,transparent 70%),
-    radial-gradient(ellipse 280px 260px at 92% 80%,rgba(var(--cerulean-alpha),0.08) 0%,transparent 65%);
+    radial-gradient(ellipse 400px 320px at 8% 10%,rgba(var(--cerulean-alpha),0.11) 0%,transparent 70%),
+    radial-gradient(ellipse 260px 240px at 96% 82%,rgba(var(--cerulean-alpha),0.07) 0%,transparent 65%);
 }
+.sep{display:flex;align-items:center;gap:10px;margin:22px 0 14px}
+.sep::before,.sep::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(var(--cerulean-alpha),0.24),transparent)}
+.sep-inner{font-size:0.50rem;letter-spacing:0.26em;text-transform:uppercase;color:rgba(var(--cerulean-alpha),0.48);white-space:nowrap}
 
-/* ── SEPARATORS ── */
-.sep{display:flex;align-items:center;gap:10px;margin:20px 0 14px}
-.sep::before,.sep::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(var(--cerulean-alpha),0.28),transparent)}
-.sep-inner{font-size:0.50rem;letter-spacing:0.26em;text-transform:uppercase;color:rgba(var(--cerulean-alpha),0.52);white-space:nowrap}
-
-/* ══ NAV ════════════════════════════════════════════════════════════════════ */
+/* ══ NAV ═════════════════════════════════════════════════════════════════════ */
 .app-nav{
   flex-shrink:0;
-  background:rgba(6,10,26,0.97);border-top:1px solid rgba(var(--cerulean-alpha),0.14);
+  background:rgba(6,10,26,0.97);border-top:1px solid rgba(var(--cerulean-alpha),0.12);
   backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
   display:flex;align-items:stretch;
   padding-bottom:env(safe-area-inset-bottom,0px);
@@ -77,84 +72,134 @@ strong{color:var(--rose);font-weight:600}
   transition:color 0.2s;touch-action:manipulation;-webkit-tap-highlight-color:transparent;
   position:relative;
 }
-.nav-tab.active{color:rgba(var(--cerulean-alpha),0.92)}
+.nav-tab.active{color:rgba(var(--cerulean-alpha),0.90)}
 .nav-tab.active::before{
   content:'';position:absolute;top:7px;left:50%;transform:translateX(-50%);
-  width:4px;height:4px;border-radius:50%;background:rgba(var(--cerulean-alpha),0.80);
+  width:4px;height:4px;border-radius:50%;background:rgba(var(--cerulean-alpha),0.78);
 }
-.nav-tab:active{opacity:0.70}
+.nav-tab:active{opacity:0.68}
 .nav-icon{font-family:'Apple Symbols','Segoe UI Symbol','Noto Sans Symbols',serif;font-variant-emoji:text;font-size:17px;line-height:1}
 .nav-icon-t{font-family:'Cormorant Garamond',serif;font-size:18px;line-height:1}
 .nav-label{font-size:0.50rem;letter-spacing:0.11em;text-transform:uppercase;font-family:'Inter',sans-serif;font-weight:400;line-height:1}
 
-/* ══ NOW PANEL ══════════════════════════════════════════════════════════════ */
+/* ══ WEEK PANEL ══════════════════════════════════════════════════════════════ */
 
-/* Identity block (replaces fixed header) */
-.now-identity{margin-bottom:16px;position:relative;z-index:1}
-.now-eyebrow{font-size:0.50rem;letter-spacing:0.26em;text-transform:uppercase;color:rgba(var(--cerulean-alpha),0.60);margin-bottom:5px}
-.now-headline{font-family:'Cormorant Garamond',serif;font-size:1.70rem;font-weight:300;font-style:italic;color:var(--text);line-height:1.15;letter-spacing:0.02em}
-.now-subhead{font-size:0.52rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted-3);margin-top:4px}
-
-/* Week progress bar */
-.week-bar-wrap{margin-bottom:18px;position:relative;z-index:1}
-.week-bar-track{height:3px;background:rgba(var(--cerulean-alpha),0.10);border-radius:2px;overflow:hidden;margin-bottom:5px}
-.week-bar-fill{height:100%;background:linear-gradient(90deg,rgba(var(--cerulean-alpha),0.55),rgba(var(--cerulean-alpha),0.80));border-radius:2px;transition:width 0.6s ease}
-.week-bar-meta{display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--muted-3)}
-.week-bar-mid{color:rgba(var(--cerulean-alpha),0.65)}
-
-/* Week pulse */
-.now-pulse{
-  font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.02rem;
-  color:var(--muted);line-height:1.72;
-  padding:14px 16px;border-left:2px solid rgba(var(--cerulean-alpha),0.45);
-  background:rgba(var(--cerulean-alpha),0.05);border-radius:0 8px 8px 0;
-  margin-bottom:4px;position:relative;z-index:1;
+/* Identity */
+.week-identity{margin-bottom:18px;position:relative;z-index:1}
+.week-eyebrow{font-size:0.48rem;letter-spacing:0.28em;text-transform:uppercase;color:rgba(var(--cerulean-alpha),0.55);margin-bottom:8px}
+.week-headline{
+  font-family:'Cormorant Garamond',serif;font-size:2.0rem;font-weight:300;
+  color:var(--text);line-height:1.12;letter-spacing:0.01em;
+  margin-bottom:6px;
 }
+.week-sub{font-size:0.52rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted-3)}
 
-/* Rising sign picker */
-.rs-wrap{position:relative;z-index:1}
-.rs-label{font-size:0.52rem;letter-spacing:0.22em;text-transform:uppercase;color:rgba(var(--cerulean-alpha),0.58);margin-bottom:10px}
-.rs-chips{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;margin-bottom:12px}
-.rs-chip{
-  font-family:'Inter',sans-serif;font-size:0.50rem;letter-spacing:0.06em;
-  padding:7px 4px;border-radius:6px;border:1px solid rgba(var(--cerulean-alpha),0.18);
+/* Week bar */
+.week-bar-wrap{margin-bottom:22px;position:relative;z-index:1}
+.week-bar-track{height:2px;background:rgba(var(--cerulean-alpha),0.10);border-radius:2px;overflow:hidden;margin-bottom:5px}
+.week-bar-fill{height:100%;background:linear-gradient(90deg,rgba(var(--cerulean-alpha),0.45),rgba(var(--cerulean-alpha),0.75));border-radius:2px;transition:width 0.8s ease}
+.week-bar-meta{display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:8.5px;color:var(--muted-3)}
+.week-bar-mid{color:rgba(var(--cerulean-alpha),0.60)}
+
+/* ── Insight cards ── */
+.insight-cards{display:flex;flex-direction:column;gap:10px;position:relative;z-index:1;margin-bottom:6px}
+.insight-card{
+  border-radius:10px;border-left:3px solid;
+  background:var(--surface);padding:16px 16px 14px;
+  position:relative;overflow:hidden;
+}
+.insight-card::after{
+  content:'';position:absolute;top:0;right:0;width:60%;height:100%;
+  pointer-events:none;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,0.014));
+}
+.ic-gold{border-color:var(--gold)}
+.ic-rose{border-color:var(--rose)}
+.ic-cerulean{border-color:var(--cerulean)}
+.ic-teal{border-color:var(--teal);opacity:0.85}
+
+.ic-top{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:7px}
+.ic-badge{
+  font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:0.05em;
+  padding:3px 9px;border-radius:4px;flex-shrink:0;
+}
+.ic-gold .ic-badge{background:rgba(208,168,64,0.12);color:var(--gold)}
+.ic-rose .ic-badge{background:rgba(200,160,144,0.12);color:var(--rose)}
+.ic-cerulean .ic-badge{background:rgba(74,159,212,0.12);color:var(--cerulean)}
+.ic-teal .ic-badge{background:rgba(90,184,168,0.12);color:var(--teal)}
+
+.ic-headline{
+  font-family:'Cormorant Garamond',serif;font-size:1.22rem;font-weight:400;
+  color:var(--text);line-height:1.18;margin-bottom:7px;
+}
+.ic-body{font-size:0.86rem;color:var(--muted);line-height:1.72;margin-bottom:11px}
+
+.ic-why{
+  display:inline-flex;align-items:center;gap:5px;
+  background:none;border:none;cursor:pointer;
+  font-family:'Inter',sans-serif;font-size:0.48rem;letter-spacing:0.15em;text-transform:uppercase;
+  color:rgba(var(--cerulean-alpha),0.40);padding:0;
+  touch-action:manipulation;-webkit-tap-highlight-color:transparent;transition:color 0.16s;
+}
+.ic-why:hover,.ic-why:active{color:rgba(var(--cerulean-alpha),0.65)}
+.ic-why .chev{font-size:0.48rem;transition:transform 0.20s;display:inline-block}
+.ic-why.open .chev{transform:rotate(180deg)}
+.ic-why.open{color:rgba(var(--cerulean-alpha),0.58)}
+
+.ic-mechanism{
+  max-height:0;overflow:hidden;opacity:0;
+  transition:max-height 0.28s ease,opacity 0.22s ease 0.04s,margin 0.28s ease;
+  font-family:'IBM Plex Mono',monospace;font-size:0.70rem;
+  color:rgba(var(--cerulean-alpha),0.48);line-height:1.60;
+  border-top:1px solid rgba(var(--cerulean-alpha),0.10);
+  margin-top:0;
+}
+.ic-mechanism.open{max-height:100px;opacity:1;padding-top:10px;margin-top:10px}
+
+/* ── Sign picker ── */
+.sign-wrap{position:relative;z-index:1}
+.sign-label{font-size:0.50rem;letter-spacing:0.22em;text-transform:uppercase;color:rgba(var(--cerulean-alpha),0.55);margin-bottom:10px}
+.sign-chips{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;margin-bottom:12px}
+.sign-chip{
+  font-family:'Inter',sans-serif;font-size:0.46rem;letter-spacing:0.04em;
+  padding:8px 4px;border-radius:7px;border:1px solid rgba(var(--cerulean-alpha),0.16);
   color:var(--muted-3);background:rgba(var(--cerulean-alpha),0.03);cursor:pointer;
   text-align:center;touch-action:manipulation;-webkit-tap-highlight-color:transparent;
-  transition:all 0.16s;line-height:1.3;
+  transition:all 0.16s;line-height:1.25;
 }
-.rs-chip.active{
-  border-color:rgba(var(--cerulean-alpha),0.70);
-  color:var(--cerulean);background:rgba(var(--cerulean-alpha),0.12);
-}
-.rs-chip:active{opacity:0.70}
-.rs-chip-glyph{display:block;font-size:1.05rem;line-height:1.2;margin-bottom:2px;font-family:'Cormorant Garamond',serif}
-.rs-chip-name{display:block;font-size:0.43rem;letter-spacing:0.08em;text-transform:uppercase}
-.rs-note{
-  padding:12px 16px;border-left:2px solid var(--cerulean);
-  background:rgba(var(--cerulean-alpha),0.07);border-radius:0 8px 8px 0;
+.sign-chip.active{border-color:rgba(var(--cerulean-alpha),0.65);color:var(--cerulean);background:rgba(var(--cerulean-alpha),0.10)}
+.sign-chip:active{opacity:0.68}
+.sign-chip-gl{display:block;font-size:1.10rem;line-height:1.2;margin-bottom:2px;font-family:'Cormorant Garamond',serif}
+.sign-chip-nm{display:block;font-size:0.42rem;letter-spacing:0.07em;text-transform:uppercase}
+
+.sign-note{
+  padding:13px 16px;border-left:2px solid var(--cerulean);
+  background:rgba(var(--cerulean-alpha),0.06);border-radius:0 8px 8px 0;
   font-family:'Cormorant Garamond',serif;font-style:italic;
-  font-size:0.96rem;color:rgba(var(--cerulean-alpha),0.92);line-height:1.65;
+  font-size:0.97rem;color:rgba(var(--cerulean-alpha),0.90);line-height:1.68;
   display:none;margin-bottom:10px;
 }
-.rs-note.visible{display:block}
-.rs-dont-know{font-size:0.70rem;color:rgba(240,228,200,0.26);font-family:'Inter',sans-serif;margin-bottom:0}
-.rs-dont-know a{color:rgba(var(--cerulean-alpha),0.52);text-decoration:none;border-bottom:1px solid rgba(var(--cerulean-alpha),0.18)}
+.sign-note.visible{display:block}
+.sign-deeper{font-size:0.68rem;color:rgba(240,228,200,0.24);font-family:'Inter',sans-serif;margin-bottom:0}
+.sign-deeper a{color:rgba(var(--cerulean-alpha),0.48);text-decoration:none;border-bottom:1px solid rgba(var(--cerulean-alpha),0.16)}
 
-/* Top 3 compact signal rows on Now tab */
-.now-signals{display:flex;flex-direction:column;gap:5px;position:relative;z-index:1;margin-bottom:14px}
-
-/* CTA to Signals tab */
-.more-signals-btn{
-  display:flex;align-items:center;justify-content:center;gap:6px;width:100%;
-  background:rgba(var(--cerulean-alpha),0.07);border:1px solid rgba(var(--cerulean-alpha),0.18);
-  border-radius:8px;padding:12px;cursor:pointer;
-  font-family:'Inter',sans-serif;font-size:0.54rem;letter-spacing:0.14em;text-transform:uppercase;
-  color:rgba(var(--cerulean-alpha),0.70);touch-action:manipulation;-webkit-tap-highlight-color:transparent;
-  transition:all 0.18s;position:relative;z-index:1;
+/* ══ THE SKY PANEL ═══════════════════════════════════════════════════════════ */
+.sky-intro{
+  font-size:0.82rem;color:var(--muted-3);line-height:1.70;
+  margin-bottom:18px;position:relative;z-index:1;
+  padding:10px 14px;border-left:2px solid rgba(var(--cerulean-alpha),0.24);
+  background:rgba(var(--cerulean-alpha),0.04);border-radius:0 6px 6px 0;
 }
-.more-signals-btn:hover,.more-signals-btn:active{background:rgba(var(--cerulean-alpha),0.12);border-color:rgba(var(--cerulean-alpha),0.35)}
+.sky-identity{margin-bottom:16px;position:relative;z-index:1}
+.sky-eyebrow{font-size:0.48rem;letter-spacing:0.26em;text-transform:uppercase;color:rgba(var(--cerulean-alpha),0.55);margin-bottom:5px}
+.sky-headline{font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:300;font-style:italic;color:var(--text);line-height:1.2}
 
-/* ══ SIGNAL BOARD (shared Now + Signals) ════════════════════════════════════ */
+/* Collective wheel */
+.cw-wrap{width:100%;max-width:210px;margin:0 auto 8px;aspect-ratio:1;position:relative;z-index:1}
+.cw-wrap svg{width:100%;height:100%}
+.cw-label{text-align:center;font-size:0.44rem;letter-spacing:0.20em;text-transform:uppercase;color:rgba(var(--cerulean-alpha),0.36);margin-bottom:18px;position:relative;z-index:1}
+
+/* Signal board */
 .signal-board{display:flex;flex-direction:column;gap:5px;position:relative;z-index:1}
 .signal-row{
   display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;
@@ -177,62 +222,45 @@ strong{color:var(--rose);font-weight:600}
 .sig-detail{
   max-height:0;overflow:hidden;opacity:0;
   transition:max-height 0.36s ease,opacity 0.24s ease 0.04s,padding 0.36s ease;
-  background:rgba(7,12,32,0.90);
-  border-radius:0 0 6px 6px;
-  margin-left:-12px;margin-right:-12px;padding:0 16px;
+  background:rgba(7,12,32,0.92);
+  border-radius:0 0 6px 6px;margin-left:-12px;margin-right:-12px;padding:0 16px;
 }
 .sig-detail.open{max-height:640px;opacity:1;padding:14px 16px 16px}
-.sig-detail p{font-size:0.84rem;color:var(--muted);line-height:1.72;margin-bottom:8px}
+.sig-detail p{font-size:0.83rem;color:var(--muted);line-height:1.72;margin-bottom:8px}
 .sig-detail p:last-child{margin-bottom:0}
-.sig-detail-eyebrow{font-size:0.46rem;letter-spacing:0.20em;text-transform:uppercase;color:rgba(var(--cerulean-alpha),0.50);margin-bottom:6px;font-family:'Inter',sans-serif}
-.sig-detail .detail-rule{width:100%;height:1px;background:linear-gradient(90deg,transparent,rgba(var(--cerulean-alpha),0.18),transparent);margin:10px 0}
-
-/* ══ SIGNALS PANEL ══════════════════════════════════════════════════════════ */
-
-/* Collective wheel */
-.cw-wrap{width:100%;max-width:220px;margin:0 auto 8px;aspect-ratio:1}
-.cw-wrap svg{width:100%;height:100%}
-.cw-label{text-align:center;font-size:0.46rem;letter-spacing:0.20em;text-transform:uppercase;color:rgba(var(--cerulean-alpha),0.40);margin-bottom:18px}
-
-/* Pulse card on Signals tab */
-.pulse-card{
-  background:rgba(7,14,36,0.70);
-  border:1px solid rgba(var(--cerulean-alpha),0.18);border-radius:10px;padding:16px 18px;
-  position:relative;z-index:1;margin-bottom:16px;
-}
-.pulse-card p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.02rem;color:var(--muted);line-height:1.76}
+.sig-detail-eyebrow{font-size:0.44rem;letter-spacing:0.20em;text-transform:uppercase;color:rgba(var(--cerulean-alpha),0.46);margin-bottom:6px}
+.detail-rule{width:100%;height:1px;background:linear-gradient(90deg,transparent,rgba(var(--cerulean-alpha),0.16),transparent);margin:10px 0}
 
 /* Planet strip */
-.planet-strip-eyebrow{font-size:0.50rem;letter-spacing:0.22em;text-transform:uppercase;color:rgba(var(--cerulean-alpha),0.52);margin-bottom:5px;position:relative;z-index:1}
-.planet-strip-hint{font-size:0.48rem;color:var(--muted-3);margin-bottom:10px;font-family:'IBM Plex Mono',monospace;position:relative;z-index:1}
+.planet-strip-hint{font-family:'IBM Plex Mono',monospace;font-size:8.5px;color:var(--muted-3);margin-bottom:8px;position:relative;z-index:1}
 .planet-strip{display:flex;flex-wrap:wrap;gap:5px;position:relative;z-index:1}
 .planet-pill{
   font-family:'IBM Plex Mono',monospace;font-size:9.5px;
-  padding:4px 10px;border-radius:20px;border:1px solid rgba(var(--cerulean-alpha),0.16);
+  padding:4px 10px;border-radius:20px;border:1px solid rgba(var(--cerulean-alpha),0.15);
   background:rgba(var(--cerulean-alpha),0.04);
   color:var(--muted);cursor:pointer;position:relative;
   -webkit-tap-highlight-color:transparent;
 }
-.planet-pill.luminary{border-color:rgba(208,168,64,0.24);color:rgba(240,228,200,0.84)}
-.planet-pill.personal{border-color:rgba(200,160,144,0.20)}
-.planet-pill.social{border-color:rgba(90,184,168,0.20)}
-.planet-pill.outer{border-color:rgba(74,159,212,0.20)}
-.planet-pill.point{border-color:rgba(240,228,200,0.12);color:var(--muted-3)}
+.planet-pill.luminary{border-color:rgba(208,168,64,0.22);color:rgba(240,228,200,0.82)}
+.planet-pill.personal{border-color:rgba(200,160,144,0.18)}
+.planet-pill.social{border-color:rgba(90,184,168,0.18)}
+.planet-pill.outer{border-color:rgba(74,159,212,0.18)}
+.planet-pill.point{border-color:rgba(240,228,200,0.10);color:var(--muted-3)}
 .pill-detail{
   position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);
-  background:rgba(9,14,36,0.97);border:1px solid rgba(74,159,212,0.22);
+  background:rgba(9,14,36,0.97);border:1px solid rgba(74,159,212,0.20);
   border-radius:6px;padding:7px 10px;
   font-size:9.5px;color:var(--muted);white-space:nowrap;
   opacity:0;pointer-events:none;transition:opacity 0.16s;z-index:10;
 }
 .pill-detail.visible{opacity:1}
-.rx-tag{font-size:8px;opacity:0.60;margin-left:2px}
+.rx-tag{font-size:8px;opacity:0.55;margin-left:2px}
 
-/* ══ MY CHART PANEL ════════════════════════════════════════════════════════ */
-.mychart-identity{margin-bottom:18px;position:relative;z-index:1}
-.mychart-eyebrow{font-size:0.50rem;letter-spacing:0.26em;text-transform:uppercase;color:rgba(var(--cerulean-alpha),0.60);margin-bottom:5px}
-.mychart-headline{font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:300;font-style:italic;color:var(--text);line-height:1.2}
-.nr-intro{font-size:0.86rem;color:var(--muted-3);line-height:1.72;margin-bottom:20px;position:relative;z-index:1}
+/* ══ READINGS PANEL ══════════════════════════════════════════════════════════ */
+.readings-identity{margin-bottom:18px;position:relative;z-index:1}
+.readings-eyebrow{font-size:0.48rem;letter-spacing:0.26em;text-transform:uppercase;color:rgba(var(--cerulean-alpha),0.55);margin-bottom:5px}
+.readings-headline{font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:300;font-style:italic;color:var(--text);line-height:1.2;margin-bottom:8px}
+.readings-intro{font-size:0.86rem;color:var(--muted-3);line-height:1.72;margin-bottom:20px;position:relative;z-index:1}
 .nr-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:10px;position:relative;z-index:1}
 .nr-card{
   border-radius:10px;padding:18px 15px 15px;
@@ -242,28 +270,28 @@ strong{color:var(--rose);font-weight:600}
 }
 .nr-card:hover{border-color:rgba(var(--cerulean-alpha),0.42);background:rgba(13,28,56,0.70)}
 .nr-card-name{font-family:'Cormorant Garamond',serif;font-size:1.20rem;font-weight:400;color:var(--text);margin-bottom:2px;display:block}
-.nr-card-sign{font-size:0.47rem;font-family:'Inter',sans-serif;letter-spacing:0.16em;text-transform:uppercase;color:rgba(var(--cerulean-alpha),0.56);margin-bottom:14px;display:block}
-.nr-card-cta{font-size:0.47rem;font-family:'Inter',sans-serif;letter-spacing:0.12em;text-transform:uppercase;color:rgba(var(--cerulean-alpha),0.68);display:inline-flex;align-items:center;gap:4px;border:1px solid rgba(var(--cerulean-alpha),0.20);border-radius:20px;padding:4px 11px;transition:all 0.16s}
-.nr-card:hover .nr-card-cta{background:rgba(var(--cerulean-alpha),0.10);border-color:rgba(var(--cerulean-alpha),0.46)}
-.nr-card.request{opacity:0.26;border-style:dashed;border-color:rgba(240,228,200,0.12);pointer-events:none}
-.nr-card.request .nr-card-name{color:rgba(240,228,200,0.36);font-style:italic}
+.nr-card-sign{font-size:0.46rem;font-family:'Inter',sans-serif;letter-spacing:0.16em;text-transform:uppercase;color:rgba(var(--cerulean-alpha),0.54);margin-bottom:14px;display:block}
+.nr-card-cta{font-size:0.46rem;font-family:'Inter',sans-serif;letter-spacing:0.12em;text-transform:uppercase;color:rgba(var(--cerulean-alpha),0.66);display:inline-flex;align-items:center;gap:4px;border:1px solid rgba(var(--cerulean-alpha),0.20);border-radius:20px;padding:4px 11px;transition:all 0.16s}
+.nr-card:hover .nr-card-cta{background:rgba(var(--cerulean-alpha),0.10);border-color:rgba(var(--cerulean-alpha),0.44)}
+.nr-card.request{opacity:0.25;border-style:dashed;border-color:rgba(240,228,200,0.12);pointer-events:none}
+.nr-card.request .nr-card-name{color:rgba(240,228,200,0.34);font-style:italic}
 .nr-card.request .nr-card-sign{color:rgba(240,228,200,0.18)}
-.nr-card-req{font-size:0.47rem;font-family:'Inter',sans-serif;letter-spacing:0.14em;text-transform:uppercase;color:rgba(240,228,200,0.26);border:1px solid rgba(240,228,200,0.10);border-radius:20px;padding:4px 11px;display:inline-block}
+.nr-card-req{font-size:0.46rem;font-family:'Inter',sans-serif;letter-spacing:0.14em;text-transform:uppercase;color:rgba(240,228,200,0.24);border:1px solid rgba(240,228,200,0.10);border-radius:20px;padding:4px 11px;display:inline-block}
 </style>
 </head>
 <body>
 <div class="app">
 <div class="app-body">
 
-<!-- ══ NOW PANEL ══════════════════════════════════════════════════════════════ -->
-<div class="panel active" id="panel-now">
+<!-- ══ THIS WEEK PANEL ════════════════════════════════════════════════════════ -->
+<div class="panel active" id="panel-week">
   <div class="reading-inner">
 
-    <!-- Identity (no fixed header — baked into panel) -->
-    <div class="now-identity">
-      <div class="now-eyebrow">Sky at Work &middot; Transit Weather</div>
-      <div class="now-headline">Venus meets Jupiter</div>
-      <div class="now-subhead">Week of June 8&ndash;14, 2026</div>
+    <!-- Identity -->
+    <div class="week-identity">
+      <div class="week-eyebrow">Sky at Work &middot; June 8&ndash;14, 2026</div>
+      <div class="week-headline">Warmth opens.<br>Words need care.</div>
+      <div class="week-sub">This week in plain language</div>
     </div>
 
     <!-- Week progress bar -->
@@ -276,102 +304,106 @@ strong{color:var(--rose);font-weight:600}
       </div>
     </div>
 
-    <!-- Week pulse -->
-    <div class="now-pulse">Venus conjuncts Jupiter in Cancer on Tuesday &mdash; the most socially generous sky of the month. Counter that with Mercury squaring Saturn exact the same day: write everything before you send it.</div>
+    <!-- Insight cards -->
+    <div class="insight-cards">
 
-    <!-- Rising sign picker -->
-    <div class="sep"><span class="sep-inner">Your Rising Sign</span></div>
-    <div class="rs-wrap">
-      <div class="rs-label">Select for a personalized note</div>
-      <div class="rs-chips" id="rs-chips">
-        <button class="rs-chip" data-sign="aries"><span class="rs-chip-glyph">♈</span><span class="rs-chip-name">Aries</span></button>
-        <button class="rs-chip" data-sign="taurus"><span class="rs-chip-glyph">♉</span><span class="rs-chip-name">Taurus</span></button>
-        <button class="rs-chip" data-sign="gemini"><span class="rs-chip-glyph">♊</span><span class="rs-chip-name">Gemini</span></button>
-        <button class="rs-chip" data-sign="cancer"><span class="rs-chip-glyph">♋</span><span class="rs-chip-name">Cancer</span></button>
-        <button class="rs-chip" data-sign="leo"><span class="rs-chip-glyph">♌</span><span class="rs-chip-name">Leo</span></button>
-        <button class="rs-chip" data-sign="virgo"><span class="rs-chip-glyph">♍</span><span class="rs-chip-name">Virgo</span></button>
-        <button class="rs-chip" data-sign="libra"><span class="rs-chip-glyph">♎</span><span class="rs-chip-name">Libra</span></button>
-        <button class="rs-chip" data-sign="scorpio"><span class="rs-chip-glyph">♏</span><span class="rs-chip-name">Scorpio</span></button>
-        <button class="rs-chip" data-sign="sagittarius"><span class="rs-chip-glyph">♐</span><span class="rs-chip-name">Sagittarius</span></button>
-        <button class="rs-chip" data-sign="capricorn"><span class="rs-chip-glyph">♑</span><span class="rs-chip-name">Capricorn</span></button>
-        <button class="rs-chip" data-sign="aquarius"><span class="rs-chip-glyph">♒</span><span class="rs-chip-name">Aquarius</span></button>
-        <button class="rs-chip" data-sign="pisces"><span class="rs-chip-glyph">♓</span><span class="rs-chip-name">Pisces</span></button>
+      <div class="insight-card ic-gold">
+        <div class="ic-top">
+          <div class="ic-headline">Connections open</div>
+          <span class="ic-badge">Tuesday</span>
+        </div>
+        <div class="ic-body">The collaborative ask lands easier than usual this week. Warmth reads as leadership, not softness — genuine care in how you show up carries extra weight. Tuesday is the day for the conversation you&rsquo;ve been putting off.</div>
+        <button class="ic-why" onclick="toggleMech('mech1',this)"><span>What&rsquo;s driving this?</span><span class="chev">&#9660;</span></button>
+        <div class="ic-mechanism" id="mech1">Venus conjunct Jupiter in Cancer &middot; exact Tue AM &middot; 1.16&deg; orb<br>The warmest sky of the month. Both planets in Cancer amplify emotional intelligence as a professional asset.</div>
       </div>
-      <div class="rs-note" id="rs-note"></div>
-      <p class="rs-dont-know">Don&rsquo;t know yours? <a href="/natal%20readings/jordan.html">A natal reading from Jordan will tell you &rarr;</a></p>
+
+      <div class="insight-card ic-rose">
+        <div class="ic-top">
+          <div class="ic-headline">Write before you send</div>
+          <span class="ic-badge">Tuesday</span>
+        </div>
+        <div class="ic-body">Every important message this week benefits from a second pass. Draft it, let it sit, re-read before you hit send. Communication that feels finished to you may land as incomplete to the recipient. The deliberate version wins.</div>
+        <button class="ic-why" onclick="toggleMech('mech2',this)"><span>What&rsquo;s driving this?</span><span class="chev">&#9660;</span></button>
+        <div class="ic-mechanism" id="mech2">Mercury square Saturn &middot; exact Tue &middot; 1.98&deg; orb<br>Cancer (warmth, feeling) squaring Aries (directness, urgency) — the tension asks for precision before warmth goes anywhere.</div>
+      </div>
+
+      <div class="insight-card ic-cerulean">
+        <div class="ic-top">
+          <div class="ic-headline">A week to finish, not start</div>
+          <span class="ic-badge">New cycle Sat</span>
+        </div>
+        <div class="ic-body">Completion energy is running through the week. The projects already in motion want to close. Save the launches and big pitches for next week &mdash; a new cycle begins Saturday and it&rsquo;s a better launchpad.</div>
+        <button class="ic-why" onclick="toggleMech('mech3',this)"><span>What&rsquo;s driving this?</span><span class="chev">&#9660;</span></button>
+        <div class="ic-mechanism" id="mech3">Last Quarter Moon in Pisces &middot; waning phase<br>New Moon in Gemini arrives June 14–15. Waning moons support closing cycles, not opening them.</div>
+      </div>
+
+      <div class="insight-card ic-teal">
+        <div class="ic-top">
+          <div class="ic-headline">Plans may shift &mdash; lean in</div>
+          <span class="ic-badge">All week</span>
+        </div>
+        <div class="ic-body">If unexpected information reorganizes your priorities mid-week, follow it. The pivot may be the correction, not the problem. The goal stays the same; the route is just updating.</div>
+        <button class="ic-why" onclick="toggleMech('mech4',this)"><span>What&rsquo;s driving this?</span><span class="chev">&#9660;</span></button>
+        <div class="ic-mechanism" id="mech4">Uranus square North Node &middot; 0.43&deg; &middot; nearly exact<br>Uranus in Gemini (rapid information) squaring the collective direction node — disruption as course-correction.</div>
+      </div>
+
+    </div><!-- /insight-cards -->
+
+    <!-- Sign picker -->
+    <div class="sep"><span class="sep-inner">Your Sign</span></div>
+    <div class="sign-wrap">
+      <div class="sign-label">Select your sun sign for a personalized note</div>
+      <div class="sign-chips" id="sign-chips">
+        <button class="sign-chip" data-sign="aries"><span class="sign-chip-gl">♈</span><span class="sign-chip-nm">Aries</span></button>
+        <button class="sign-chip" data-sign="taurus"><span class="sign-chip-gl">♉</span><span class="sign-chip-nm">Taurus</span></button>
+        <button class="sign-chip" data-sign="gemini"><span class="sign-chip-gl">♊</span><span class="sign-chip-nm">Gemini</span></button>
+        <button class="sign-chip" data-sign="cancer"><span class="sign-chip-gl">♋</span><span class="sign-chip-nm">Cancer</span></button>
+        <button class="sign-chip" data-sign="leo"><span class="sign-chip-gl">♌</span><span class="sign-chip-nm">Leo</span></button>
+        <button class="sign-chip" data-sign="virgo"><span class="sign-chip-gl">♍</span><span class="sign-chip-nm">Virgo</span></button>
+        <button class="sign-chip" data-sign="libra"><span class="sign-chip-gl">♎</span><span class="sign-chip-nm">Libra</span></button>
+        <button class="sign-chip" data-sign="scorpio"><span class="sign-chip-gl">♏</span><span class="sign-chip-nm">Scorpio</span></button>
+        <button class="sign-chip" data-sign="sagittarius"><span class="sign-chip-gl">♐</span><span class="sign-chip-nm">Sagittarius</span></button>
+        <button class="sign-chip" data-sign="capricorn"><span class="sign-chip-gl">♑</span><span class="sign-chip-nm">Capricorn</span></button>
+        <button class="sign-chip" data-sign="aquarius"><span class="sign-chip-gl">♒</span><span class="sign-chip-nm">Aquarius</span></button>
+        <button class="sign-chip" data-sign="pisces"><span class="sign-chip-gl">♓</span><span class="sign-chip-nm">Pisces</span></button>
+      </div>
+      <div class="sign-note" id="sign-note"></div>
+      <p class="sign-deeper">Want something more precise? <a href="/natal%20readings/jordan.html">A natal reading from Jordan goes deeper &rarr;</a></p>
     </div>
 
-    <!-- Top 3 signals (compact, expandable) -->
-    <div class="sep"><span class="sep-inner">Top Signals This Week</span></div>
-    <div class="now-signals">
-
-      <div class="signal-row gold" data-detail="hn-venus-jup">
-        <span class="sig-aspect">&#9792; Venus &#9737; &#9795; Jupiter</span>
-        <span class="sig-orb">1.16&deg;</span>
-        <span class="sig-note">Cancer &middot; exact Tue &middot; warmth lands</span>
-        <span class="sig-arrow">&#9660;</span>
-      </div>
-      <div class="sig-detail" id="hn-venus-jup">
-        <p>The warmest sky of the month. Care lands as leadership, collaborative asks go further than usual. Tuesday is the day for the conversation you&rsquo;ve been deferring.</p>
-      </div>
-
-      <div class="signal-row rose" data-detail="hn-merc-sat">
-        <span class="sig-aspect">&#9791; Mercury &#9744; &#9796; Saturn</span>
-        <span class="sig-orb">1.98&deg;</span>
-        <span class="sig-note">exact Tue &middot; write twice, send once</span>
-        <span class="sig-arrow">&#9660;</span>
-      </div>
-      <div class="sig-detail" id="hn-merc-sat">
-        <p>Every communication benefits from a second pass. Draft Monday, re-read before the exact Tuesday square, then send. The deliberate version beats the fast version.</p>
-      </div>
-
-      <div class="signal-row muted" data-detail="hn-moon">
-        <span class="sig-aspect">&#9790; Last Quarter Moon</span>
-        <span class="sig-orb"></span>
-        <span class="sig-note">release phase &middot; New Moon Jun 14&ndash;15</span>
-        <span class="sig-arrow">&#9660;</span>
-      </div>
-      <div class="sig-detail" id="hn-moon">
-        <p>Waning Last Quarter in Pisces. Completion energy, not launch energy. Wrap up what&rsquo;s in motion. New cycle begins with the Gemini New Moon June 14&ndash;15.</p>
-      </div>
-
-    </div><!-- /now-signals -->
-
-    <button class="more-signals-btn" onclick="switchPanel('signals',document.querySelector('[data-target=signals]'))">
-      All 5 signals &middot; planet positions &middot; deeper reads &rarr;
-    </button>
-
   </div>
-</div><!-- /panel-now -->
+</div><!-- /panel-week -->
 
-<!-- ══ SIGNALS PANEL ══════════════════════════════════════════════════════════ -->
-<div class="panel" id="panel-signals">
+<!-- ══ THE SKY PANEL ═══════════════════════════════════════════════════════════ -->
+<div class="panel" id="panel-sky">
   <div class="reading-inner">
 
-    <!-- Collective sky biwheel (for the engaged user — lives here, not on Now) -->
+    <div class="sky-identity">
+      <div class="sky-eyebrow">Astrological Mechanisms</div>
+      <div class="sky-headline">The Sky This Week</div>
+    </div>
+
+    <div class="sky-intro">These are the planetary alignments driving this week&rsquo;s energy. You don&rsquo;t need to read every symbol &mdash; the insights from these patterns are translated on the <strong style="color:rgba(var(--cerulean-alpha),0.80);font-weight:400">This Week</strong> tab.</div>
+
+    <!-- Collective sky biwheel -->
     <div class="cw-wrap">
       <svg viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg" id="cw-svg"></svg>
     </div>
     <div class="cw-label">live transiting sky &middot; natural zodiac</div>
 
-    <!-- Pulse -->
-    <div class="pulse-card">
-      <p>Venus conjuncts Jupiter in Cancer this week &mdash; the most socially generous sky of the month. Warmth lands, collaboration opens, relationship asks go further. Counter that with Mercury squaring Saturn exact Tuesday: communications need to be deliberate before they&rsquo;re warm. Write it, check it, then send it. Last Quarter Moon says completion energy, not launch energy.</p>
-    </div>
-
-    <!-- Full signal board — expanded state includes deep dive content -->
+    <!-- Full signal board -->
     <div class="signal-board">
 
       <div class="signal-row cerulean" data-detail="sb-uranus-node">
         <span class="sig-aspect">&#9799; Uranus &#9744; &#9738; NNode</span>
         <span class="sig-orb">0.43&deg;</span>
-        <span class="sig-note">nearly exact &middot; unexpected pivots</span>
+        <span class="sig-note">nearly exact &middot; plans can pivot</span>
         <span class="sig-arrow">&#9660;</span>
       </div>
       <div class="sig-detail" id="sb-uranus-node">
         <div class="sig-detail-eyebrow">Disruption &middot; Adaptability &middot; Direction</div>
-        <p>Uranus at 2&deg;30&prime; Gemini squares the North Node at 2&deg;56&prime; Pisces Rx &mdash; nearly exact and active all week. Plans that felt locked can pivot, not from failure but from new information arriving that changes the frame. Hold the goal; stay flexible on the route.</p>
-        <p>New information this week is load-bearing. Don&rsquo;t dismiss the thing that shows up sideways &mdash; it may be exactly the adjustment the project needed.</p>
+        <p>Uranus at 2&deg;30&prime; Gemini squares the North Node at 2&deg;56&prime; Pisces Rx &mdash; nearly exact and active all week. Plans that felt locked can pivot, not from failure but from new information. Hold the goal; stay flexible on the route.</p>
+        <p>New information this week is load-bearing. Don&rsquo;t dismiss what arrives sideways.</p>
       </div>
 
       <div class="signal-row gold" data-detail="sb-venus-jup">
@@ -382,10 +414,10 @@ strong{color:var(--rose);font-weight:600}
       </div>
       <div class="sig-detail" id="sb-venus-jup">
         <div class="sig-detail-eyebrow">Collaboration &middot; Warmth &middot; Relationship</div>
-        <p>Venus at 24&deg;22&prime; conjunct Jupiter at 25&deg;38&prime; Cancer. The warmest sky of the month: generosity, ease, collaborative asks that land. Use Tuesday for the relationship work you&rsquo;ve been deferring. The hard ask goes down easier this week.</p>
+        <p>Venus at 24&deg;22&prime; conjunct Jupiter at 25&deg;38&prime; Cancer. The warmest sky of the month: generosity, ease, collaborative asks that land. Use Tuesday for the relationship work you&rsquo;ve been deferring.</p>
         <div class="detail-rule"></div>
-        <p>Cancer is the sign of nurturing and emotional intelligence. Both Venus and Jupiter here mean the professional environment rewards genuine care, not performance of care. Lead with the relationship, then the request. Jupiter expands what Venus starts &mdash; the warm open is the mechanism, not a preamble to it.</p>
-        <p><strong>For the ask:</strong> Tuesday AM is the peak window. The partnership pitch goes further. The check-in with someone you&rsquo;ve been meaning to reconnect with actually works.</p>
+        <p>Cancer is the sign of nurturing and emotional intelligence. Both planets here mean the professional environment rewards genuine care. Lead with the relationship, then the request. Jupiter expands what Venus starts.</p>
+        <p><strong>For the ask:</strong> Tuesday AM is the peak window. The partnership pitch goes further than it would any other week.</p>
       </div>
 
       <div class="signal-row rose" data-detail="sb-merc-sat">
@@ -396,10 +428,10 @@ strong{color:var(--rose);font-weight:600}
       </div>
       <div class="sig-detail" id="sb-merc-sat">
         <div class="sig-detail-eyebrow">Communication &middot; Precision &middot; Review</div>
-        <p>Mercury at 10&deg;52&prime; Cancer squares Saturn at 12&deg;51&prime; Aries. Mercury in Cancer communicates from feeling &mdash; warmth first, data second. Saturn in Aries wants the work to be solid before it goes anywhere. The square is a deadline: this communication isn&rsquo;t ready to send yet.</p>
+        <p>Mercury at 10&deg;52&prime; Cancer squares Saturn at 12&deg;51&prime; Aries. Mercury in Cancer communicates from feeling &mdash; warmth first, data second. Saturn in Aries wants the work to be solid before it goes anywhere.</p>
         <div class="detail-rule"></div>
-        <p><strong>Practical read:</strong> Draft Monday. Let it sit. Re-read Tuesday before the exact square. The email, the proposal, the message that matters &mdash; give it a second pass. Communication that feels complete to you may feel incomplete to the recipient. Add the context. State the ask directly.</p>
-        <p><strong>For managers:</strong> Feedback this week needs to be specific, not just directional. &ldquo;This isn&rsquo;t quite right&rdquo; won&rsquo;t land. Name exactly what&rsquo;s missing.</p>
+        <p><strong>Practical read:</strong> Draft Monday. Let it sit. Re-read Tuesday before the exact square. Communication that feels complete to you may feel incomplete to the recipient. Add the context. State the ask directly.</p>
+        <p><strong>For managers:</strong> Feedback this week needs to be specific, not directional. &ldquo;This isn&rsquo;t quite right&rdquo; won&rsquo;t land. Name exactly what&rsquo;s missing.</p>
       </div>
 
       <div class="signal-row teal" data-detail="sb-sat-nep">
@@ -410,56 +442,53 @@ strong{color:var(--rose);font-weight:600}
       </div>
       <div class="sig-detail" id="sb-sat-nep">
         <div class="sig-detail-eyebrow">2026 Arc &middot; Vision &middot; Structure</div>
-        <p>Saturn at 12&deg;51&prime; and Neptune at 4&deg;12&prime; &mdash; both in Aries, building toward their 2026 conjunction. The theme all year: big vision being asked to prove itself in material form. Ideas that sound compelling in theory are encountering the concrete work required to build them.</p>
-        <div class="detail-rule"></div>
-        <p>This week&rsquo;s Mercury&ndash;Saturn square is the weekly-scale version of that pressure: where is the plan actually solid? Venus and Jupiter in Cancer are the counterbalance &mdash; the people, the warmth, the genuine connection. That&rsquo;s what the Saturn&ndash;Neptune rigor is building toward.</p>
-        <p><strong>Saturn conjunct Neptune</strong> will be exact later in 2026. We&rsquo;re in the approach phase now &mdash; background pressure, not a crisis.</p>
+        <p>Saturn at 12&deg;51&prime; and Neptune at 4&deg;12&prime; &mdash; both in Aries, building toward their 2026 conjunction. The year-long theme: big vision being asked to prove itself in material form. Background pressure, not a crisis.</p>
+        <p><strong>Saturn conjunct Neptune</strong> will be exact later in 2026. This week&rsquo;s Mercury&ndash;Saturn square is the same question at smaller scale: where is the plan actually solid?</p>
       </div>
 
       <div class="signal-row muted" data-detail="sb-moon">
         <span class="sig-aspect">&#9790; Last Quarter Moon</span>
         <span class="sig-orb"></span>
-        <span class="sig-note">release phase &middot; peaked Mon AM &middot; New Moon Jun 14</span>
+        <span class="sig-note">waning &middot; Pisces &middot; New Moon Jun 14</span>
         <span class="sig-arrow">&#9660;</span>
       </div>
       <div class="sig-detail" id="sb-moon">
-        <div class="sig-detail-eyebrow">Lunar Phase &middot; Completion &middot; Closure</div>
-        <p>Waning Last Quarter in Pisces. Completion energy, not launch energy. Wrap up what&rsquo;s already in motion. This is a week for finishing, not starting.</p>
-        <p>The New Moon in Gemini arrives June 14&ndash;15 &mdash; that&rsquo;s when new cycles begin. Save the launch for then. This week: ship what you already started, close loops, clear the board.</p>
+        <div class="sig-detail-eyebrow">Lunar Phase &middot; Completion</div>
+        <p>Waning Last Quarter in Pisces. Completion energy, not launch energy. Wrap up what&rsquo;s already in motion. The New Moon in Gemini arrives June 14&ndash;15 &mdash; that&rsquo;s when new cycles begin.</p>
       </div>
 
     </div><!-- /signal-board -->
 
     <div class="sep"><span class="sep-inner">Planets This Week</span></div>
-    <div class="planet-strip-hint" style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--muted-3);margin-bottom:8px;position:relative;z-index:1">tap to expand</div>
+    <div class="planet-strip-hint">tap to expand</div>
     <div class="planet-strip" id="planet-strip">
-      <span class="planet-pill luminary" data-tip="Sun · 17°50′ Gemini · information, adaptability, quick thinking">☉ Sun &middot; 17&deg;50&prime; ♊</span>
-      <span class="planet-pill luminary" data-tip="Moon · 20°22′ Pisces · waning, release, reflection">☽ Moon &middot; 20&deg;22&prime; ♓</span>
+      <span class="planet-pill luminary" data-tip="Sun · 17°50′ Gemini · information, adaptability">☉ Sun &middot; 17&deg;50&prime; ♊</span>
+      <span class="planet-pill luminary" data-tip="Moon · 20°22′ Pisces · waning, release">☽ Moon &middot; 20&deg;22&prime; ♓</span>
       <span class="planet-pill personal" data-tip="Mercury · 10°52′ Cancer · feeling-first communication">☿ Mercury &middot; 10&deg;52&prime; ♋</span>
       <span class="planet-pill personal" data-tip="Venus · 24°22′ Cancer · warmth, collaborative energy">♀ Venus &middot; 24&deg;22&prime; ♋</span>
-      <span class="planet-pill personal" data-tip="Mars · 15°23′ Taurus · patient drive, persistent effort">♂ Mars &middot; 15&deg;23&prime; ♉</span>
+      <span class="planet-pill personal" data-tip="Mars · 15°23′ Taurus · patient drive, slow build">♂ Mars &middot; 15&deg;23&prime; ♉</span>
       <span class="planet-pill social" data-tip="Jupiter · 25°32′ Cancer · expansion through care">♃ Jupiter &middot; 25&deg;32&prime; ♋</span>
-      <span class="planet-pill social" data-tip="Saturn · 12°51′ Aries · structural demand, earned authority">♄ Saturn &middot; 12&deg;51&prime; ♈</span>
-      <span class="planet-pill outer" data-tip="Uranus · 2°30′ Gemini · disruption of fixed patterns">♅ Uranus &middot; 2&deg;30&prime; ♊</span>
-      <span class="planet-pill outer" data-tip="Neptune · 4°12′ Aries · vision testing against reality">♆ Neptune &middot; 4&deg;12&prime; ♈</span>
+      <span class="planet-pill social" data-tip="Saturn · 12°51′ Aries · structural demand">♄ Saturn &middot; 12&deg;51&prime; ♈</span>
+      <span class="planet-pill outer" data-tip="Uranus · 2°30′ Gemini · disruption, sudden pivots">♅ Uranus &middot; 2&deg;30&prime; ♊</span>
+      <span class="planet-pill outer" data-tip="Neptune · 4°12′ Aries · vision testing reality">♆ Neptune &middot; 4&deg;12&prime; ♈</span>
       <span class="planet-pill outer" data-tip="Pluto Rx · 5°16′ Aquarius · collective transformation">♇ Pluto<span class="rx-tag">Rx</span> &middot; 5&deg;16&prime; ♒</span>
-      <span class="planet-pill point" data-tip="Chiron · 29°53′ Aries (anaretic) · wound completing Aries chapter">⚷ Chiron &middot; 29&deg;53&prime; ♈</span>
+      <span class="planet-pill point" data-tip="Chiron · 29°53′ Aries · wound completing Aries chapter">⚷ Chiron &middot; 29&deg;53&prime; ♈</span>
       <span class="planet-pill point" data-tip="North Node Rx · 2°55′ Pisces · collective direction">☊ NNode<span class="rx-tag">Rx</span> &middot; 2&deg;55&prime; ♓</span>
     </div>
 
   </div>
-</div><!-- /panel-signals -->
+</div><!-- /panel-sky -->
 
-<!-- ══ MY CHART PANEL ════════════════════════════════════════════════════════ -->
-<div class="panel" id="panel-mychart">
+<!-- ══ READINGS PANEL ════════════════════════════════════════════════════════ -->
+<div class="panel" id="panel-readings">
   <div class="reading-inner">
 
-    <div class="mychart-identity">
-      <div class="mychart-eyebrow">Built for your chart</div>
-      <div class="mychart-headline">Natal Readings</div>
+    <div class="readings-identity">
+      <div class="readings-eyebrow">Built for your chart</div>
+      <div class="readings-headline">Personal Readings</div>
     </div>
 
-    <p class="nr-intro">The collective sky is everyone&rsquo;s weather. Your natal chart is the map you bring to it. These go deeper &mdash; built specifically for your chart, not the shared sky.</p>
+    <p class="readings-intro">The collective sky is everyone&rsquo;s weather. Your natal chart is the map you bring to it. These readings go deeper &mdash; built specifically for your chart, your timing, your life.</p>
 
     <div class="nr-cards">
       <a class="nr-card" href="/natal%20readings/dasha.html" target="_blank">
@@ -490,23 +519,23 @@ strong{color:var(--rose);font-weight:600}
     </div>
 
   </div>
-</div><!-- /panel-mychart -->
+</div><!-- /panel-readings -->
 
 </div><!-- /app-body -->
 
-<!-- ══ BOTTOM NAV ════════════════════════════════════════════════════════════ -->
+<!-- ══ NAV ════════════════════════════════════════════════════════════════════ -->
 <nav class="app-nav" role="navigation" aria-label="App sections">
-  <button class="nav-tab active" data-target="now" onclick="switchPanel('now',this)">
+  <button class="nav-tab active" data-target="week" onclick="switchPanel('week',this)">
     <span class="nav-icon-t">✦</span>
-    <span class="nav-label">Now</span>
+    <span class="nav-label">This Week</span>
   </button>
-  <button class="nav-tab" data-target="signals" onclick="switchPanel('signals',this)">
+  <button class="nav-tab" data-target="sky" onclick="switchPanel('sky',this)">
     <span class="nav-icon">☽</span>
-    <span class="nav-label">Signals</span>
+    <span class="nav-label">The Sky</span>
   </button>
-  <button class="nav-tab" data-target="mychart" onclick="switchPanel('mychart',this)">
+  <button class="nav-tab" data-target="readings" onclick="switchPanel('readings',this)">
     <span class="nav-icon">◯</span>
-    <span class="nav-label">My Chart</span>
+    <span class="nav-label">Readings</span>
   </button>
 </nav>
 
@@ -525,148 +554,26 @@ function switchPanel(id,btn){
 
 /* ── WEEK PROGRESS BAR ────────────────────────────────────────────────────── */
 (function(){
-  const weekStart=new Date('2026-06-08T00:00:00');
-  const weekEnd=new Date('2026-06-15T00:00:00');
-  const now=new Date();
-  const pct=Math.min(100,Math.max(0,(now-weekStart)/(weekEnd-weekStart)*100));
+  const s=new Date('2026-06-08T00:00:00'),e=new Date('2026-06-15T00:00:00'),n=new Date();
+  const pct=Math.min(100,Math.max(0,(n-s)/(e-s)*100));
   const fill=document.getElementById('week-fill');
   const lbl=document.getElementById('week-pct-label');
   if(fill)fill.style.width=pct.toFixed(1)+'%';
   if(lbl){
     const days=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-    lbl.textContent=days[now.getDay()]+' · '+pct.toFixed(0)+'% through';
+    lbl.textContent=days[n.getDay()]+' &middot; '+pct.toFixed(0)+'% through';
+    lbl.innerHTML=days[n.getDay()]+' &middot; '+pct.toFixed(0)+'% through';
   }
 })();
 
-/* ── SVG HELPERS ──────────────────────────────────────────────────────────── */
-const SVG_NS='http://www.w3.org/2000/svg';
-function el(tag,attrs){const e=document.createElementNS(SVG_NS,tag);Object.entries(attrs).forEach(([k,v])=>e.setAttribute(k,v));return e;}
-function tx(text,attrs){const e=el('text',attrs);e.textContent=text;return e;}
-const GLYPH_FONT="'Apple Symbols','Segoe UI Symbol','Noto Sans Symbols',serif";
-
-const SIGNS=[
-  {gl:'♈',color:'#c87840'},{gl:'♉',color:'#58925a'},{gl:'♊',color:'#5878c8'},
-  {gl:'♋',color:'#3880b8'},{gl:'♌',color:'#c87840'},{gl:'♍',color:'#58925a'},
-  {gl:'♎',color:'#5878c8'},{gl:'♏',color:'#3880b8'},{gl:'♐',color:'#c87840'},
-  {gl:'♑',color:'#58925a'},{gl:'♒',color:'#5878c8'},{gl:'♓',color:'#3880b8'}
-];
-const signEls=['fire','earth','air','water','fire','earth','air','water','fire','earth','air','water'];
-const elColors={fire:'rgba(210,130,48,0.22)',earth:'rgba(80,142,68,0.16)',air:'rgba(80,112,200,0.18)',water:'rgba(40,128,188,0.24)'};
-
-function spread(planets){
-  const sorted=[...planets].sort((a,b)=>a.disp-b.disp);
-  let changed=true,passes=0;
-  while(changed&&passes<40){
-    changed=false;passes++;
-    for(let i=0;i<sorted.length;i++){
-      const a=sorted[i],b=sorted[(i+1)%sorted.length];
-      let diff=((b.disp-a.disp)%360+360)%360;
-      if(diff<10){const shift=(10-diff)/2;a.disp=((a.disp-shift)%360+360)%360;b.disp=(b.disp+shift)%360;changed=true;}
-    }
-  }
-  return sorted;
+/* ── INSIGHT CARD MECHANISM REVEAL ────────────────────────────────────────── */
+function toggleMech(id,btn){
+  const m=document.getElementById(id);
+  if(!m)return;
+  const isOpen=m.classList.contains('open');
+  m.classList.toggle('open',!isOpen);
+  btn.classList.toggle('open',!isOpen);
 }
-
-/* ── COLLECTIVE WHEEL ─────────────────────────────────────────────────────── */
-let cwData=null;
-function renderCollectiveWheel(){
-  const svg=document.getElementById('cw-svg');
-  if(!svg)return;
-  while(svg.firstChild)svg.removeChild(svg.firstChild);
-  const CX=130,CY=130;
-  const rad=d=>d*Math.PI/180;
-  const f=n=>n.toFixed(2);
-  const norm=a=>((a%360)+360)%360;
-  const svgA=ecl=>norm(180-ecl);
-  const pt=(a,r)=>({x:CX+r*Math.cos(rad(a)),y:CY+r*Math.sin(rad(a))});
-  const ept=(ecl,r)=>pt(svgA(ecl),r);
-  const R={outer:122,trGlyph:110,trSep:116,zodOut:106,zodMid:96,zodIn:84};
-
-  const defs=el('defs',{});
-  const cp=el('clipPath',{id:'cwClip'});cp.appendChild(el('circle',{cx:CX,cy:CY,r:R.outer}));defs.appendChild(cp);svg.appendChild(defs);
-
-  const bg=el('g',{'clip-path':'url(#cwClip)','pointer-events':'none'});
-  bg.appendChild(el('circle',{cx:CX,cy:CY,r:R.outer,fill:'#09102a'}));
-  bg.appendChild(el('ellipse',{cx:CX+18,cy:CY-20,rx:58,ry:30,fill:'rgba(74,159,212,0.07)',transform:`rotate(-30,${CX},${CY})`}));
-  svg.appendChild(bg);
-
-  const zG=el('g',{'pointer-events':'none'});
-  for(let i=0;i<12;i++){
-    const s=i*30,a1=svgA(s),a2=svgA(s+30);
-    const oo=pt(a1,R.zodOut),oe=pt(a2,R.zodOut),io=pt(a1,R.zodIn),ie=pt(a2,R.zodIn);
-    const d=`M${f(oo.x)} ${f(oo.y)} A${R.zodOut} ${R.zodOut} 0 0 0 ${f(oe.x)} ${f(oe.y)} L${f(ie.x)} ${f(ie.y)} A${R.zodIn} ${R.zodIn} 0 0 1 ${f(io.x)} ${f(io.y)}Z`;
-    zG.appendChild(el('path',{d,fill:elColors[signEls[i]],stroke:'rgba(208,168,64,0.15)','stroke-width':'0.5'}));
-    const gp=ept(s+15,R.zodMid);
-    zG.appendChild(tx(SIGNS[i].gl,{x:f(gp.x),y:f(gp.y),fill:SIGNS[i].color,opacity:'0.74','font-size':'7.5','font-family':GLYPH_FONT,'font-variant-emoji':'text','text-anchor':'middle','dominant-baseline':'central'}));
-  }
-  zG.appendChild(el('circle',{cx:CX,cy:CY,r:R.zodOut,fill:'none',stroke:'rgba(208,168,64,0.36)','stroke-width':'0.5'}));
-  zG.appendChild(el('circle',{cx:CX,cy:CY,r:R.zodIn, fill:'none',stroke:'rgba(208,168,64,0.20)','stroke-width':'0.4'}));
-  zG.appendChild(el('circle',{cx:CX,cy:CY,r:R.outer, fill:'none',stroke:'rgba(208,168,64,0.26)','stroke-width':'0.5'}));
-  for(let i=0;i<12;i++){const a=svgA(i*30);const op=pt(a,R.outer),zp=pt(a,R.zodOut+0.5);zG.appendChild(el('line',{x1:f(op.x),y1:f(op.y),x2:f(zp.x),y2:f(zp.y),stroke:'rgba(208,168,64,0.36)','stroke-width':'0.4'}));}
-  svg.appendChild(zG);
-
-  const cf=el('g',{'pointer-events':'none'});
-  cf.appendChild(el('circle',{cx:CX,cy:CY,r:R.zodIn,fill:'#09102a'}));
-  svg.appendChild(cf);
-
-  if(cwData&&cwData.transiting_positions){
-    const TC='rgba(210,188,255,0.90)',TCR='rgba(180,208,255,0.78)';
-    const tData=cwData.transiting_positions.map(tp=>({gl:tp.glyph,deg:tp.deg,retro:tp.retrograde,disp:tp.deg}));
-    const tSpread=spread(tData);
-    const tG=el('g',{'pointer-events':'none'});
-    for(const tp of tSpread){
-      const tick=ept(tp.deg,R.trSep);
-      tG.appendChild(el('circle',{cx:f(tick.x),cy:f(tick.y),r:'1.3',fill:tp.retro?TCR:TC,opacity:'0.55'}));
-      const gp=ept(tp.disp,R.trGlyph);
-      tG.appendChild(tx(tp.gl,{x:f(gp.x),y:f(gp.y),fill:tp.retro?TCR:TC,opacity:'0.86','font-size':'8','font-family':GLYPH_FONT,'font-variant-emoji':'text','text-anchor':'middle','dominant-baseline':'central'}));
-    }
-    svg.appendChild(tG);
-  }
-
-  const cd=el('g',{'pointer-events':'none'});
-  cd.appendChild(el('circle',{cx:CX,cy:CY,r:'12',fill:'#09102a',stroke:'rgba(74,159,212,0.16)','stroke-width':'0.5'}));
-  cd.appendChild(el('circle',{cx:CX,cy:CY,r:'3',fill:'rgba(74,159,212,0.32)'}));
-  cd.appendChild(el('circle',{cx:CX,cy:CY,r:'1.4',fill:'rgba(240,228,200,0.68)'}));
-  svg.appendChild(cd);
-}
-
-(async function(){
-  try{const r=await fetch('/today.json?_='+Date.now());cwData=await r.json();}catch(e){}
-  renderCollectiveWheel();
-})();
-
-/* ── RISING SIGN NOTES ────────────────────────────────────────────────────── */
-const RS_NOTES={
-  aries:      "Your directness is an asset this week. The pushback you expect from Saturn won't come if you front-load your reasoning. Lead with the case; let your confidence follow it.",
-  taurus:     "Slow your send finger on Tuesday. Venus and Jupiter are yours this week — the collaborative ask goes further than usual, but Mercury-Saturn wants you to write it twice first.",
-  gemini:     "Uranus in your sign is personal this week. Unexpected information may reorganize your entire week's priorities. Hold the goal; stay flexible on the route.",
-  cancer:     "This is your sky. Venus and Jupiter are both in your sign, and your natural care lands as leadership. The warm ask you've been deferring? Make it Tuesday.",
-  leo:        "The authoritative voice lands well this week, but only if it comes with the receipts. Mercury-Saturn wants depth, not just presence.",
-  virgo:      "You're built for Mercury-Saturn discipline. Trust your instinct to review before sending — this is the week it pays off. Let yourself be thanked for the care you put in.",
-  libra:      "Partnership and Venus are your domain. Use Tuesday for the relationship work you've been deferring. The diplomatic open is the mechanism this week, not just the warm-up.",
-  scorpio:    "Your precision serves you. Resist the urge to over-explain and let the quality speak. The depth you bring to connection is welcome under this sky.",
-  sagittarius:"The instinct to skip to the punchline will cost you this week. Build the case first, then the enthusiasm. Hold your launch instinct until after the New Moon.",
-  capricorn:  "Saturn is your home planet. This pressure is familiar and you know how to use it. Warmth from you lands as authority this week — use it deliberately on the asks that need buy-in.",
-  aquarius:   "The team dynamic benefits from your perspective. Put the collaborative idea into the room. The Uranus pivot may feel disruptive, but it's pointing toward something more aligned.",
-  pisces:     "The fog risk is real for you this week. Write twice, verify once before hitting send. The waning moon supports your naturally reflective mode — use the quiet intentionally."
-};
-
-function applyRising(sign){
-  document.querySelectorAll('.rs-chip').forEach(c=>c.classList.toggle('active',c.dataset.sign===sign));
-  const note=document.getElementById('rs-note');
-  if(sign&&RS_NOTES[sign]){note.textContent=RS_NOTES[sign];note.classList.add('visible');}
-  else{note.classList.remove('visible');}
-  if(sign)localStorage.setItem('saw-rising',sign);
-  else localStorage.removeItem('saw-rising');
-}
-
-document.querySelectorAll('.rs-chip').forEach(chip=>{
-  chip.addEventListener('click',()=>{
-    applyRising(chip.classList.contains('active')?null:chip.dataset.sign);
-  });
-});
-const saved=localStorage.getItem('saw-rising');
-if(saved)applyRising(saved);
 
 /* ── SIGNAL BOARD EXPAND ──────────────────────────────────────────────────── */
 document.querySelectorAll('.signal-row').forEach(row=>{
@@ -682,13 +589,110 @@ document.querySelectorAll('.signal-row').forEach(row=>{
   });
 });
 
+/* ── SVG HELPERS ──────────────────────────────────────────────────────────── */
+const SVG_NS='http://www.w3.org/2000/svg';
+function el(tag,attrs){const e=document.createElementNS(SVG_NS,tag);Object.entries(attrs).forEach(([k,v])=>e.setAttribute(k,v));return e;}
+function tx(text,attrs){const e=el('text',attrs);e.textContent=text;return e;}
+const GF="'Apple Symbols','Segoe UI Symbol','Noto Sans Symbols',serif";
+const SIGNS=[
+  {gl:'♈',color:'#c87840'},{gl:'♉',color:'#58925a'},{gl:'♊',color:'#5878c8'},
+  {gl:'♋',color:'#3880b8'},{gl:'♌',color:'#c87840'},{gl:'♍',color:'#58925a'},
+  {gl:'♎',color:'#5878c8'},{gl:'♏',color:'#3880b8'},{gl:'♐',color:'#c87840'},
+  {gl:'♑',color:'#58925a'},{gl:'♒',color:'#5878c8'},{gl:'♓',color:'#3880b8'}
+];
+const signEls=['fire','earth','air','water','fire','earth','air','water','fire','earth','air','water'];
+const elC={fire:'rgba(210,130,48,0.22)',earth:'rgba(80,142,68,0.16)',air:'rgba(80,112,200,0.18)',water:'rgba(40,128,188,0.24)'};
+
+function spread(planets){
+  const s=[...planets].sort((a,b)=>a.disp-b.disp);
+  let ch=true,ps=0;
+  while(ch&&ps<40){ch=false;ps++;for(let i=0;i<s.length;i++){const a=s[i],b=s[(i+1)%s.length];let d=((b.disp-a.disp)%360+360)%360;if(d<10){const sh=(10-d)/2;a.disp=((a.disp-sh)%360+360)%360;b.disp=(b.disp+sh)%360;ch=true;}}}
+  return s;
+}
+
+let cwData=null;
+function renderCollectiveWheel(){
+  const svg=document.getElementById('cw-svg');if(!svg)return;
+  while(svg.firstChild)svg.removeChild(svg.firstChild);
+  const CX=130,CY=130,f=n=>n.toFixed(2),norm=a=>((a%360)+360)%360;
+  const rad=d=>d*Math.PI/180,svgA=ecl=>norm(180-ecl);
+  const pt=(a,r)=>({x:CX+r*Math.cos(rad(a)),y:CY+r*Math.sin(rad(a))});
+  const ept=(ecl,r)=>pt(svgA(ecl),r);
+  const R={outer:122,trGlyph:110,trSep:116,zodOut:106,zodMid:96,zodIn:84};
+  const defs=el('defs',{});const cp=el('clipPath',{id:'cwClip'});cp.appendChild(el('circle',{cx:CX,cy:CY,r:R.outer}));defs.appendChild(cp);svg.appendChild(defs);
+  const bg=el('g',{'clip-path':'url(#cwClip)','pointer-events':'none'});
+  bg.appendChild(el('circle',{cx:CX,cy:CY,r:R.outer,fill:'#09102a'}));
+  bg.appendChild(el('ellipse',{cx:CX+18,cy:CY-20,rx:58,ry:30,fill:'rgba(74,159,212,0.07)',transform:`rotate(-30,${CX},${CY})`}));
+  svg.appendChild(bg);
+  const zG=el('g',{'pointer-events':'none'});
+  for(let i=0;i<12;i++){
+    const s=i*30,a1=svgA(s),a2=svgA(s+30);
+    const oo=pt(a1,R.zodOut),oe=pt(a2,R.zodOut),io=pt(a1,R.zodIn),ie=pt(a2,R.zodIn);
+    const d=`M${f(oo.x)} ${f(oo.y)} A${R.zodOut} ${R.zodOut} 0 0 0 ${f(oe.x)} ${f(oe.y)} L${f(ie.x)} ${f(ie.y)} A${R.zodIn} ${R.zodIn} 0 0 1 ${f(io.x)} ${f(io.y)}Z`;
+    zG.appendChild(el('path',{d,fill:elC[signEls[i]],stroke:'rgba(208,168,64,0.14)','stroke-width':'0.5'}));
+    const gp=ept(s+15,R.zodMid);
+    zG.appendChild(tx(SIGNS[i].gl,{x:f(gp.x),y:f(gp.y),fill:SIGNS[i].color,opacity:'0.72','font-size':'7.5','font-family':GF,'font-variant-emoji':'text','text-anchor':'middle','dominant-baseline':'central'}));
+  }
+  zG.appendChild(el('circle',{cx:CX,cy:CY,r:R.zodOut,fill:'none',stroke:'rgba(208,168,64,0.34)','stroke-width':'0.5'}));
+  zG.appendChild(el('circle',{cx:CX,cy:CY,r:R.zodIn, fill:'none',stroke:'rgba(208,168,64,0.18)','stroke-width':'0.4'}));
+  zG.appendChild(el('circle',{cx:CX,cy:CY,r:R.outer, fill:'none',stroke:'rgba(208,168,64,0.24)','stroke-width':'0.5'}));
+  for(let i=0;i<12;i++){const a=svgA(i*30);const op=pt(a,R.outer),zp=pt(a,R.zodOut);zG.appendChild(el('line',{x1:f(op.x),y1:f(op.y),x2:f(zp.x),y2:f(zp.y),stroke:'rgba(208,168,64,0.34)','stroke-width':'0.4'}));}
+  svg.appendChild(zG);
+  const cf=el('g',{'pointer-events':'none'});cf.appendChild(el('circle',{cx:CX,cy:CY,r:R.zodIn,fill:'#09102a'}));svg.appendChild(cf);
+  if(cwData&&cwData.transiting_positions){
+    const TC='rgba(210,188,255,0.88)',TCR='rgba(180,208,255,0.76)';
+    const tSpread=spread(cwData.transiting_positions.map(tp=>({gl:tp.glyph,deg:tp.deg,retro:tp.retrograde,disp:tp.deg})));
+    const tG=el('g',{'pointer-events':'none'});
+    for(const tp of tSpread){
+      const tick=ept(tp.deg,R.trSep);tG.appendChild(el('circle',{cx:f(tick.x),cy:f(tick.y),r:'1.2',fill:tp.retro?TCR:TC,opacity:'0.52'}));
+      const gp=ept(tp.disp,R.trGlyph);tG.appendChild(tx(tp.gl,{x:f(gp.x),y:f(gp.y),fill:tp.retro?TCR:TC,opacity:'0.84','font-size':'8','font-family':GF,'font-variant-emoji':'text','text-anchor':'middle','dominant-baseline':'central'}));
+    }
+    svg.appendChild(tG);
+  }
+  const cd=el('g',{'pointer-events':'none'});
+  cd.appendChild(el('circle',{cx:CX,cy:CY,r:'12',fill:'#09102a',stroke:'rgba(74,159,212,0.14)','stroke-width':'0.5'}));
+  cd.appendChild(el('circle',{cx:CX,cy:CY,r:'3',fill:'rgba(74,159,212,0.30)'}));
+  cd.appendChild(el('circle',{cx:CX,cy:CY,r:'1.4',fill:'rgba(240,228,200,0.65)'}));
+  svg.appendChild(cd);
+}
+(async function(){try{const r=await fetch('/today.json?_='+Date.now());cwData=await r.json();}catch(e){}renderCollectiveWheel();})();
+
+/* ── SUN SIGN NOTES ───────────────────────────────────────────────────────── */
+const SIGN_NOTES={
+  aries:      "Your directness is an asset, but this week it pairs better with warmth than speed. Lead with care before the ask — it lands further than usual under this sky. Slow the send finger on anything important.",
+  taurus:     "Venus is shining especially bright in your corner this week. The relationship work or collaborative ask you&rsquo;ve been deferring has a softer landing now, particularly Tuesday. Communication still benefits from an extra pass before sending.",
+  gemini:     "Your environment is shifting with Uranus newly in your sign. Unexpected information may clarify something that felt stuck — follow the pivot, not your original plan. Your adaptability is the advantage right now.",
+  cancer:     "This is your sky. Venus and Jupiter are both in your sign, and the warmth and care you bring naturally is reading as authority and leadership this week. The collaborative ask you&rsquo;ve been deferring? Tuesday is your moment.",
+  leo:        "The warm spotlight is available, but Saturn wants substance behind it. Back your confidence with specifics — especially in written communication. The quality of the work is doing the talking this week.",
+  virgo:      "Your instinct to review and refine is exactly what the week is asking of everyone. You were already doing it right. Trust that the extra pass on the proposal is worth it — and let yourself be thanked for the precision.",
+  libra:      "Partnership energy is high. Use Tuesday for the relationship conversation or collaborative ask you&rsquo;ve been putting off. The diplomatic opening lands well under this sky — it&rsquo;s the mechanism, not just courtesy.",
+  scorpio:    "Your precision serves you. The depth you bring to connection is exactly what the week is rewarding. Resist the urge to over-explain; let the quality speak without the justification.",
+  sagittarius:"The instinct to move fast or launch big runs up against a week that wants finishing energy. Build the case before the pitch. Hold launches for Saturday&rsquo;s new cycle — the timing is genuinely better.",
+  capricorn:  "Saturn&rsquo;s precision is your native language. What feels like extra effort this week is what the sky is asking of everyone, and you&rsquo;re built for it. The warmth you show alongside the structure carries extra weight.",
+  aquarius:   "Put the collaborative idea into the room. The team dynamic is receptive this week. An unexpected shift in priorities may be pointing toward something more aligned — follow the new information.",
+  pisces:     "The waning moon is supporting your reflective mode. Write twice, send once. This is a week for closing loops and completing what&rsquo;s in motion — the quiet is useful, not wasted."
+};
+
+function applySign(sign){
+  document.querySelectorAll('.sign-chip').forEach(c=>c.classList.toggle('active',c.dataset.sign===sign));
+  const note=document.getElementById('sign-note');
+  if(sign&&SIGN_NOTES[sign]){note.innerHTML=SIGN_NOTES[sign];note.classList.add('visible');}
+  else{note.classList.remove('visible');}
+  if(sign)localStorage.setItem('saw-sign',sign);
+  else localStorage.removeItem('saw-sign');
+}
+document.querySelectorAll('.sign-chip').forEach(chip=>{
+  chip.addEventListener('click',()=>applySign(chip.classList.contains('active')?null:chip.dataset.sign));
+});
+const savedSign=localStorage.getItem('saw-sign');
+if(savedSign)applySign(savedSign);
+
 /* ── PLANET PILL TOOLTIPS ─────────────────────────────────────────────────── */
 if('ontouchstart' in window){
   document.querySelectorAll('.planet-pill[data-tip]').forEach(p=>{
     p.addEventListener('click',()=>{
       document.querySelectorAll('.pill-detail.visible').forEach(d=>{if(d.parentNode!==p)d.classList.remove('visible');});
-      let d=p._detail;
-      if(!d){d=document.createElement('div');d.className='pill-detail';d.textContent=p.getAttribute('data-tip');p.appendChild(d);p._detail=d;}
+      let d=p._detail;if(!d){d=document.createElement('div');d.className='pill-detail';d.textContent=p.getAttribute('data-tip');p.appendChild(d);p._detail=d;}
       d.classList.toggle('visible');
     });
   });
