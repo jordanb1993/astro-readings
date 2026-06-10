@@ -4,6 +4,26 @@
 
 ---
 
+## 2026-06-10 (session 7) — Full Visual Audit + Polish Pass
+
+**The headline:** Playwright screenshot audit across every panel and state, desktop and mobile. Three issues found and fixed: sticky tab nav, biwheel placeholder oversized, "LotOfFortune" label spacing.
+
+### What Changed
+
+**Sticky transit tabs:** `.t-tabs` now has `position:sticky;top:0` within the `#t-list` scroll container — NOW/RETURNING/ARCHIVE always visible when scrolling through the transit list.
+
+**Biwheel placeholder resized:** `max-width` reduced from 260px → 160px. Was eating ~40% of the panel viewport; now a subtle decorative element.
+
+**"Lot Of Fortune" label fix:** Added `fmtNP()` helper that splits camelCase natal point names (`LotOfFortune` → `Lot Of Fortune`). Applied to all four render sites: current row, returning row, detail title, aria-label.
+
+**Audit findings (all panels passing):** Home live data correct · Daily two-tier pills (slow + mini) rendering cleanly · Daily TODAY tags (WORK/CREATIVE/BODY) visible · Transits Now/Returning/Archive tabs functional · Archive empty state correct · Mobile home 2-column grid perfect · Mobile Daily single-column clean.
+
+**Deployed:** → Netlify production via API restore (deploy `6a2998d4515f00d4c5623231`).
+
+**Next session:** Build the actual biwheel SVG renderer in JS using natal chart hardcoded positions + live `transiting_positions` from today.json.
+
+---
+
 ## 2026-06-10 (session 6) — Biwheel Data Layer + Tab Nav Infrastructure
 
 **The headline:** Transits panel restructured from a flat list to a three-tab layout (Now / Returning / Archive) with a biwheel placeholder at the top. All 12 transiting planet positions now written to `today.json` nightly — the data layer the biwheel renderer needs is live.

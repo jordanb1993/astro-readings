@@ -613,10 +613,10 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overs
 .t-hist-badge.between{background:rgba(var(--amber-alpha),0.10);color:rgba(var(--amber-alpha),0.72)}
 .t-hist-badge.complete{background:rgba(255,255,255,0.05);color:var(--muted-3)}
 .t-hist-dates{font-size:0.44rem;letter-spacing:0.12em;color:var(--muted-3);font-family:'Inter',sans-serif;margin-top:3px}
-.t-tabs{display:flex;gap:0;margin:0 0 18px;border-bottom:1px solid rgba(var(--gold-alpha),0.10)}
+.t-tabs{display:flex;gap:0;margin:0 0 18px;border-bottom:1px solid rgba(var(--gold-alpha),0.10);position:sticky;top:0;z-index:10;background:#0a0614;padding-top:4px}
 .t-tab{flex:1;background:none;border:none;cursor:pointer;padding:10px 0;font-size:0.44rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted-3);font-family:'Inter',sans-serif;font-weight:500;border-bottom:2px solid transparent;margin-bottom:-1px;transition:color 0.15s,border-color 0.15s;-webkit-tap-highlight-color:transparent}
 .t-tab.active{color:rgba(var(--gold-alpha),0.85);border-bottom-color:rgba(var(--gold-alpha),0.55)}
-.t-biwheel-wrap{width:100%;max-width:260px;margin:0 auto 22px;aspect-ratio:1;position:relative;display:flex;align-items:center;justify-content:center}
+.t-biwheel-wrap{width:100%;max-width:160px;margin:0 auto 22px;aspect-ratio:1;position:relative;display:flex;align-items:center;justify-content:center}
 .t-biwheel-wrap svg{width:100%;height:100%}
 .t-biwheel-label{position:absolute;bottom:-18px;left:0;right:0;text-align:center;font-size:0.38rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(var(--gold-alpha),0.22);font-family:'Inter',sans-serif}
 .t-sec{padding:18px 0 10px;border-top:1px solid rgba(var(--gold-alpha),0.08);display:flex;align-items:center;gap:9px}
@@ -2030,17 +2030,18 @@ function renderTransitTabContent(){
     hdr.innerHTML=`<span class="t-sec-label">${label}</span><span class="t-sec-count">${count}</span>`;
     body.appendChild(hdr);
   }
+  function fmtNP(s){return(s||'').replace(/([a-z])([A-Z])/g,'$1 $2');}
   function addCurrentRow(t){
     const idx=cur.indexOf(t);
     const row=document.createElement('button');
     row.className='t-row';
-    row.setAttribute('aria-label',`${t.transit_planet} ${t.aspect} natal ${t.natal_point}`);
+    row.setAttribute('aria-label',`${t.transit_planet} ${t.aspect} natal ${fmtNP(t.natal_point)}`);
     const dirLabel=t.direction==='applying'?'applying':'separating';
     const dirCls=t.direction==='applying'?'t-applying':'';
     row.innerHTML=`
       <span class="t-row-glyph">${t.glyph}</span>
       <span class="t-row-body">
-        <span class="t-row-name">${t.aspect} Natal ${t.natal_point}</span>
+        <span class="t-row-name">${t.aspect} Natal ${fmtNP(t.natal_point)}</span>
         <span class="t-row-meta">${t.transit_planet} · ${t.transit_deg} ${t.transit_sign} · ${t.natal_house}</span>
       </span>
       <span class="t-row-orb">
@@ -2062,7 +2063,7 @@ function renderTransitTabContent(){
     row.innerHTML=`
       <span class="t-row-glyph" style="opacity:0.55">${t.glyph}</span>
       <span class="t-row-body">
-        <span class="t-row-name" style="opacity:0.80">${t.aspect} Natal ${t.natal_point}</span>
+        <span class="t-row-name" style="opacity:0.80">${t.aspect} Natal ${fmtNP(t.natal_point)}</span>
         <span class="t-row-meta">${t.transit_planet}${t.active_dates?' · '+t.active_dates:''}</span>
         ${nextStr}
       </span>
@@ -2121,7 +2122,7 @@ function openTransitDetail(idx,pool){
   db.innerHTML=`
     <div class="t-detail-header">
       <div class="t-detail-eyebrow">${t.transit_planet} · ${t.transit_deg||'—'} ${t.transit_sign}</div>
-      <div class="t-detail-title">${t.aspect} Natal ${t.natal_point}</div>
+      <div class="t-detail-title">${t.aspect} Natal ${fmtNP(t.natal_point)}</div>
       <div class="t-detail-subtitle">${t.natal_sign} · ${t.natal_house}</div>
       ${orbBlock}
     </div>
