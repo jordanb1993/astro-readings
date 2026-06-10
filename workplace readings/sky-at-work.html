@@ -92,15 +92,6 @@ strong{color:var(--rose);font-weight:500}
   color:var(--text);line-height:1.12;letter-spacing:0.01em;
   margin-bottom:6px;
 }
-.week-sub{font-size:0.52rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted-3)}
-
-/* Week bar */
-.week-bar-wrap{margin-bottom:22px;position:relative;z-index:1}
-.week-bar-track{height:2px;background:rgba(var(--cerulean-alpha),0.10);border-radius:2px;overflow:hidden;margin-bottom:5px}
-.week-bar-fill{height:100%;background:linear-gradient(90deg,rgba(var(--cerulean-alpha),0.45),rgba(var(--cerulean-alpha),0.75));border-radius:2px;transition:width 0.8s ease}
-.week-bar-meta{display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:8.5px;color:var(--muted-3)}
-.week-bar-mid{color:rgba(var(--cerulean-alpha),0.60)}
-
 /* ── Insight cards ── */
 .insight-cards{display:grid;grid-template-columns:1fr;gap:10px;position:relative;z-index:1;margin-bottom:6px}
 .insight-card{
@@ -240,7 +231,6 @@ strong{color:var(--rose);font-weight:500}
 .detail-rule{width:100%;height:1px;background:linear-gradient(90deg,transparent,rgba(var(--cerulean-alpha),0.16),transparent);margin:10px 0}
 
 /* Planet strip */
-.planet-strip-hint{font-family:'IBM Plex Mono',monospace;font-size:8.5px;color:var(--muted-3);margin-bottom:8px;position:relative;z-index:1}
 .planet-strip{display:flex;flex-wrap:wrap;gap:5px;position:relative;z-index:1}
 .planet-pill{
   font-family:'IBM Plex Mono',monospace;font-size:9.5px;
@@ -379,17 +369,6 @@ strong{color:var(--rose);font-weight:500}
     <div class="week-identity">
       <div class="week-eyebrow">Sky at Work &middot; June 8&ndash;14, 2026</div>
       <div class="week-headline">Warmth opens.<br>Words need care.</div>
-      <div class="week-sub">This week in plain language</div>
-    </div>
-
-    <!-- Week progress bar -->
-    <div class="week-bar-wrap">
-      <div class="week-bar-track"><div class="week-bar-fill" id="week-fill"></div></div>
-      <div class="week-bar-meta">
-        <span>Mon Jun 8</span>
-        <span class="week-bar-mid" id="week-pct-label"></span>
-        <span>Sun Jun 14</span>
-      </div>
     </div>
 
     <!-- Insight cards -->
@@ -400,7 +379,7 @@ strong{color:var(--rose);font-weight:500}
           <div class="ic-headline">Connections open</div>
           <span class="ic-badge">Tuesday</span>
         </div>
-        <div class="ic-body">The collaborative ask lands easier than usual this week. Warmth reads as leadership, not softness — genuine care in how you show up carries extra weight. Tuesday is the day for the conversation you&rsquo;ve been putting off.</div>
+        <div class="ic-body">The collaborative ask lands easier than usual. Warmth reads as leadership, not softness — genuine care in how you show up carries extra weight. Tuesday is the day for the conversation you&rsquo;ve been putting off.</div>
         <button class="ic-why" onclick="toggleMech('mech1',this)"><span>What&rsquo;s driving this?</span><span class="chev">&#9660;</span></button>
         <div class="ic-mechanism" id="mech1">Venus conjunct Jupiter in Cancer &middot; exact Tue AM &middot; 1.16&deg; orb<br>The warmest sky of the month. Both planets in Cancer amplify emotional intelligence as a professional asset.</div>
       </div>
@@ -420,19 +399,19 @@ strong{color:var(--rose);font-weight:500}
           <div class="ic-headline">A week to finish, not start</div>
           <span class="ic-badge">New cycle Sat</span>
         </div>
-        <div class="ic-body">Completion energy is running through the week. The projects already in motion want to close. Save the launches and big pitches for next week &mdash; a new cycle begins Saturday and it&rsquo;s a better launchpad.</div>
+        <div class="ic-body">The projects already in motion want to close. Hold launches and big pitches for Saturday &mdash; a new cycle begins and it&rsquo;s a genuinely better launchpad.</div>
         <button class="ic-why" onclick="toggleMech('mech3',this)"><span>What&rsquo;s driving this?</span><span class="chev">&#9660;</span></button>
         <div class="ic-mechanism" id="mech3">Last Quarter Moon in Pisces &middot; waning phase<br>New Moon in Gemini arrives June 14–15. Waning moons support closing cycles, not opening them.</div>
       </div>
 
       <div class="insight-card ic-teal">
         <div class="ic-top">
-          <div class="ic-headline">Plans may shift &mdash; lean in</div>
+          <div class="ic-headline">Plans may shift. Lean in.</div>
           <span class="ic-badge">All week</span>
         </div>
         <div class="ic-body">If unexpected information reorganizes your priorities mid-week, follow it. The pivot may be the correction, not the problem. The goal stays the same; the route is just updating.</div>
         <button class="ic-why" onclick="toggleMech('mech4',this)"><span>What&rsquo;s driving this?</span><span class="chev">&#9660;</span></button>
-        <div class="ic-mechanism" id="mech4">Uranus square North Node &middot; 0.43&deg; &middot; nearly exact<br>Uranus in Gemini (rapid information) squaring the collective direction node — disruption as course-correction.</div>
+        <div class="ic-mechanism" id="mech4">Uranus square North Node &middot; 0.43&deg; &middot; nearly exact<br>Uranus in Gemini (rapid information) squaring the North Node &mdash; the point of collective momentum. Disruption as course-correction.</div>
       </div>
 
     </div><!-- /insight-cards -->
@@ -445,7 +424,7 @@ strong{color:var(--rose);font-weight:500}
   <div class="reading-inner">
 
     <div class="sky-identity">
-      <div class="sky-eyebrow">Astrological Mechanisms</div>
+      <div class="sky-eyebrow">What&rsquo;s Driving the Week</div>
       <div class="sky-headline">The Sky This Week</div>
     </div>
 
@@ -463,7 +442,7 @@ strong{color:var(--rose);font-weight:500}
       <div class="signal-row cerulean" data-detail="sb-uranus-node">
         <span class="sig-aspect">&#9797; Uranus &#9744; &#9738; NNode</span>
         <span class="sig-orb">0.43&deg;</span>
-        <span class="sig-note">nearly exact &middot; plans can pivot</span>
+        <span class="sig-note">nearly exact &middot; active all week</span>
         <span class="sig-arrow">&#9660;</span>
       </div>
       <div class="sig-detail" id="sb-uranus-node">
@@ -483,7 +462,7 @@ strong{color:var(--rose);font-weight:500}
         <p>Venus at 24&deg;22&prime; conjunct Jupiter at 25&deg;38&prime; Cancer. The warmest sky of the month: generosity, ease, collaborative asks that land. Use Tuesday for the relationship work you&rsquo;ve been deferring.</p>
         <div class="detail-rule"></div>
         <p>Cancer is the sign of nurturing and emotional intelligence. Both planets here mean the professional environment rewards genuine care. Lead with the relationship, then the request. Jupiter expands what Venus starts.</p>
-        <p><strong>For the ask:</strong> Tuesday AM is the peak window. The partnership pitch goes further than it would any other week.</p>
+        <p><strong>For the ask:</strong> Tuesday AM is the peak window this month. The partnership pitch goes further than it would any other week.</p>
       </div>
 
       <div class="signal-row rose" data-detail="sb-merc-sat">
@@ -526,7 +505,6 @@ strong{color:var(--rose);font-weight:500}
     </div><!-- /signal-board -->
 
     <div class="sep"><span class="sep-inner">Planets This Week</span></div>
-    <div class="planet-strip-hint">tap to expand</div>
     <div class="planet-strip" id="planet-strip">
       <span class="planet-pill luminary" data-tip="Sun · 17°50′ Gemini · information, adaptability">☉ Sun &middot; 17&deg;50&prime; ♊</span>
       <span class="planet-pill luminary" data-tip="Moon · 20°22′ Pisces · waning, release">☽ Moon &middot; 20&deg;22&prime; ♓</span>
@@ -554,7 +532,7 @@ strong{color:var(--rose);font-weight:500}
       <div class="readings-headline">Your Week</div>
     </div>
 
-    <p class="readings-intro">The collective weather is the same for everyone. Your sign is the lens you bring to it &mdash; select below for a note written specifically for you.</p>
+    <p class="readings-intro">The collective weather is the same for everyone. Your sign is the lens you bring to it &mdash; pick your sign for a note written specifically for you.</p>
 
     <div class="sign-wrap">
       <div class="sign-label">Your sun sign</div>
@@ -577,7 +555,7 @@ strong{color:var(--rose);font-weight:500}
 
     <div class="sep"><span class="sep-inner">Go Deeper</span></div>
 
-    <p class="readings-intro" style="margin-bottom:16px">The collective sky shows the weather. A natal reading is built from your specific birth chart &mdash; your timing, your patterns, your life. These go much further than a sun sign note.</p>
+    <p class="readings-intro" style="margin-bottom:16px">A natal reading is built from your birth chart, not your sign. It goes much further.</p>
 
     <div class="nr-cards">
       <div class="nr-card request">
@@ -631,20 +609,6 @@ function switchPanel(id,btn){
   if(p){p.classList.add('active');p.scrollTop=0;}
   document.querySelectorAll('[data-target="'+id+'"]').forEach(t=>t.classList.add('active'));
 }
-
-/* ── WEEK PROGRESS BAR ────────────────────────────────────────────────────── */
-(function(){
-  const s=new Date('2026-06-08T00:00:00'),e=new Date('2026-06-15T00:00:00'),n=new Date();
-  const pct=Math.min(100,Math.max(0,(n-s)/(e-s)*100));
-  const fill=document.getElementById('week-fill');
-  const lbl=document.getElementById('week-pct-label');
-  if(fill)fill.style.width=pct.toFixed(1)+'%';
-  if(lbl){
-    const days=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-    lbl.textContent=days[n.getDay()]+' &middot; '+pct.toFixed(0)+'% through';
-    lbl.innerHTML=days[n.getDay()]+' &middot; '+pct.toFixed(0)+'% through';
-  }
-})();
 
 /* ── INSIGHT CARD MECHANISM REVEAL ────────────────────────────────────────── */
 function toggleMech(id,btn){
@@ -740,12 +704,12 @@ function renderCollectiveWheel(){
 /* ── SUN SIGN NOTES ───────────────────────────────────────────────────────── */
 const SIGN_NOTES={
   aries:      "Your directness is an asset, but this week it pairs better with warmth than speed. Lead with care before the ask — it lands further than usual under this sky. Slow the send finger on anything important.",
-  taurus:     "Venus is shining especially bright in your corner this week. The relationship work or collaborative ask you&rsquo;ve been deferring has a softer landing now, particularly Tuesday. Communication still benefits from an extra pass before sending.",
+  taurus:     "Venus is working especially in your favor this week. The relationship work or collaborative ask you&rsquo;ve been deferring has a softer landing now, particularly Tuesday. Communication still benefits from an extra pass before sending.",
   gemini:     "Your environment is shifting with Uranus newly in your sign. Unexpected information may clarify something that felt stuck — follow the pivot, not your original plan. Your adaptability is the advantage right now.",
   cancer:     "This is your sky. Venus and Jupiter are both in your sign, and the warmth and care you bring naturally is reading as authority and leadership this week. The collaborative ask you&rsquo;ve been deferring? Tuesday is your moment.",
   leo:        "The warm spotlight is available, but Saturn wants substance behind it. Back your confidence with specifics — especially in written communication. The quality of the work is doing the talking this week.",
   virgo:      "Your instinct to review and refine is exactly what the week is asking of everyone. You were already doing it right. Trust that the extra pass on the proposal is worth it — and let yourself be thanked for the precision.",
-  libra:      "Partnership energy is high. Use Tuesday for the relationship conversation or collaborative ask you&rsquo;ve been putting off. The diplomatic opening lands well under this sky — it&rsquo;s the mechanism, not just courtesy.",
+  libra:      "Partnership energy is high. Use Tuesday for the relationship conversation or collaborative ask you&rsquo;ve been putting off. The diplomatic opening lands well under this sky — the timing is genuinely working for you, not just your instinct.",
   scorpio:    "Your precision serves you. The depth you bring to connection is exactly what the week is rewarding. Resist the urge to over-explain; let the quality speak without the justification.",
   sagittarius:"The instinct to move fast or launch big runs up against a week that wants finishing energy. Build the case before the pitch. Hold launches for Saturday&rsquo;s new cycle — the timing is genuinely better.",
   capricorn:  "Saturn&rsquo;s precision is your native language. What feels like extra effort this week is what the sky is asking of everyone, and you&rsquo;re built for it. The warmth you show alongside the structure carries extra weight.",
