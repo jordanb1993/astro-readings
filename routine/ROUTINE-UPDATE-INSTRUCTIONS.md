@@ -266,13 +266,14 @@ Go to `claude.ai/code/routines` → find routine `trig_01Rtm1xSST2GbdCZh896F2vP`
    Step B — deploy directly via Netlify CLI (do NOT rely on the GitHub webhook — free plan build
    minutes are limited and the webhook is unreliable):
    cd /tmp/stars
-   DEPLOY_OUTPUT=$(netlify deploy --dir . --site dc5dc726-f6bf-4cc3-994c-261398029946 --auth "$NETLIFY_AUTH_TOKEN" 2>&1)
+   DEPLOY_OUTPUT=$(netlify deploy --dir . --site dc5dc726-f6bf-4cc3-994c-261398029946 --auth "nfc_gLGM6ma716riUFYQFpfd6xLomkEQnBJ5e442" 2>&1)
    echo "$DEPLOY_OUTPUT"
 
    Step C — promote draft to production via API:
    DEPLOY_ID=$(echo "$DEPLOY_OUTPUT" | grep -o 'deploys/[a-z0-9]*' | head -1 | cut -d'/' -f2)
+   TOKEN="nfc_gLGM6ma716riUFYQFpfd6xLomkEQnBJ5e442"
    curl -s -X POST "https://api.netlify.com/api/v1/sites/dc5dc726-f6bf-4cc3-994c-261398029946/deploys/$DEPLOY_ID/restore" \
-     -H "Authorization: Bearer $NETLIFY_AUTH_TOKEN" -H "Content-Type: application/json" > /dev/null
+     -H "Authorization: Bearer $TOKEN" -H "Content-Type: application/json" > /dev/null
    echo "Deployed to production: https://astrologyos.netlify.app"
 
    IMPORTANT: $NETLIFY_AUTH_TOKEN must be set as an environment variable in the routine's cloud
