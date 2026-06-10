@@ -4,6 +4,14 @@
 
 ---
 
+## 2026-06-10 (session 10e–f) — Sky at Work: Tab Restructure + Responsive Desktop
+
+**For You tab:** Sign picker moved off This Week onto its own tab. Three-act structure now clean — collective (This Week) → mechanism (The Sky) → personal (For You). Active Dasha/Yvonne reading links removed from the app entirely. Privacy architecture: natal charts will link OUT to Sky at Work, not the reverse. Faded request cards remain as the reading invitation.
+
+**Responsive desktop layout:** Slack-shared link → desktop browser is the primary use case. Added sticky top header (hidden on mobile) with brand left + tab links right, underline active indicator. Bottom nav hidden at ≥680px. Content opens to 800px max-width. Week headline scales up. Sign chips go 6-column. `switchPanel` now syncs all `[data-target]` buttons simultaneously so both navs stay in sync on resize.
+
+---
+
 ## 2026-06-10 (session 10d) — Sky at Work: Plain Language Inversion
 
 **Philosophy shift: built from the technical, not shown as the technical.**
