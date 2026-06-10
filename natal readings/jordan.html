@@ -2004,12 +2004,13 @@ const BW_PLANET_NAMES={'☉':'Sun','☽':'Moon','☿':'Mercury','♀':'Venus','�
   '♃':'Jupiter','♄':'Saturn','♅':'Uranus','♆':'Neptune','♇':'Pluto',
   '⚷':'Chiron','☊':'NNode','☋':'SNode'};
 
-function renderBiwheel(){
-  const bSvg=document.getElementById('t-biwheel-svg');
+function renderBiwheel(svgId,interactive){
+  if(svgId===undefined)svgId='t-biwheel-svg';
+  if(interactive===undefined)interactive=true;
+  const bSvg=document.getElementById(svgId);
   if(!bSvg||!dailyData||!dailyData.transiting_positions)return;
   while(bSvg.firstChild)bSvg.removeChild(bSvg.firstChild);
-  window.bwState={selected:null,lines:[],planets:{},selRing:null};
-  bSvg.onclick=()=>clearBiwheelSelection();
+  if(interactive){window.bwState={selected:null,lines:[],planets:{},selRing:null};bSvg.onclick=()=>clearBiwheelSelection();}
 
   const bCX=130,bCY=130,bASC=CHART.asc,bMC=CHART.mc;
   const bNorm=a=>((a%360)+360)%360;
@@ -2096,7 +2097,7 @@ function renderBiwheel(){
     const tpt=bEpt(tP.deg,bR.aspLine),npt=bEpt(nP.deg,bR.aspLine);
     const lineEl=el('line',{x1:bF(tpt.x),y1:bF(tpt.y),x2:bF(npt.x),y2:bF(npt.y),stroke:asp.c,'stroke-width':'0.8',opacity:String(AMBIENT)});
     aspG.appendChild(lineEl);
-    window.bwState.lines.push({glyph:tr.glyph,elem:lineEl,fullOp:asp.op,fullSw:'1.2'});
+    if(interactive)window.bwState.lines.push({glyph:tr.glyph,elem:lineEl,fullOp:asp.op,fullSw:'1.2'});
   }
   bSvg.appendChild(aspG);
 
@@ -2127,12 +2128,12 @@ function renderBiwheel(){
       const rp=bEpt(tp.disp,bR.trGlyph-6);
       tPG.appendChild(tx('℞',{x:bF(rp.x),y:bF(rp.y),fill:TCR,opacity:'0.55','font-size':'4.5','font-family':GLYPH_FONT,'font-variant-emoji':'text','text-anchor':'middle','dominant-baseline':'central','pointer-events':'none'}));
     }
-    // Invisible hit circle for tap target
-    const hit=el('circle',{cx:bF(gp.x),cy:bF(gp.y),r:'10',fill:'transparent','pointer-events':'all',style:'cursor:pointer;-webkit-tap-highlight-color:transparent'});
-    hit.onclick=(e)=>{e.stopPropagation();selectBiwheelPlanet(tp.gl);};
-    tPG.appendChild(hit);
-    // Store for selection
-    window.bwState.planets[tp.gl]={glyphEl:glEl,glyphPos:{x:gp.x,y:gp.y},data:tp};
+    if(interactive){
+      const hit=el('circle',{cx:bF(gp.x),cy:bF(gp.y),r:'10',fill:'transparent','pointer-events':'all',style:'cursor:pointer;-webkit-tap-highlight-color:transparent'});
+      hit.onclick=(e)=>{e.stopPropagation();selectBiwheelPlanet(tp.gl);};
+      tPG.appendChild(hit);
+      window.bwState.planets[tp.gl]={glyphEl:glEl,glyphPos:{x:gp.x,y:gp.y},data:tp};
+    }
   }
   bSvg.appendChild(tPG);
 
@@ -2153,10 +2154,11 @@ function renderBiwheel(){
   cg.appendChild(el('circle',{cx:bCX,cy:bCY,r:'2',fill:'rgba(240,228,200,0.78)'}));
   bSvg.appendChild(cg);
 
-  // ── Selection ring (hidden until tap) ─────────────────────────────────────────
-  const selRing=el('circle',{cx:'130',cy:'130',r:'10',fill:'none',stroke:'transparent','stroke-width':'1.8','pointer-events':'none'});
-  bSvg.appendChild(selRing);
-  window.bwState.selRing=selRing;
+  if(interactive){
+    const selRing=el('circle',{cx:'130',cy:'130',r:'10',fill:'none',stroke:'transparent','stroke-width':'1.8','pointer-events':'none'});
+    bSvg.appendChild(selRing);
+    window.bwState.selRing=selRing;
+  }
 }
 
 function selectBiwheelPlanet(glyph){
@@ -2482,6 +2484,10 @@ function renderDaily(){
           <span class="d-moon-text">${[d.moon_phase,d.moon_sign].filter(Boolean).join(' · ')}</span>
         </div>`:''}
       </div>
+      <div class="t-biwheel-wrap" style="margin-bottom:20px">
+        <svg viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg" id="d-biwheel-svg"></svg>
+        <div class="t-biwheel-label">natal · live sky</div>
+      </div>
       ${d.pulse?`<div class="d-pulse">${d.pulse}</div>`:''}
       ${d.key_transit?`<div class="d-key-transit">
         <span class="d-key-transit-name">${d.key_transit}</span>
@@ -2493,6 +2499,7 @@ function renderDaily(){
       ${todayHtml}
       <div style="height:32px"></div>
     </div>`;
+  renderBiwheel('d-biwheel-svg',false);
   document.querySelectorAll('.d-t-pill[data-transit-label]').forEach(p=>{
     p.addEventListener('click',()=>openTransitFromPill(p.dataset.transitLabel,p.dataset.transitGlyph));
   });
