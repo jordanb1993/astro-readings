@@ -673,5 +673,51 @@
       "passes": []
     }
   ],
-  "historical": []
+  "historical": [
+    {
+      "id": "saturn-conjunct-moon",
+      "glyph": "♄",
+      "transit_planet": "Saturn",
+      "transit_sign": "Aries",
+      "transit_deg": "12°52'",
+      "aspect": "Conjunction",
+      "aspect_glyph": "☌",
+      "natal_point": "Moon",
+      "natal_sign": "Aries",
+      "natal_house": "10th House",
+      "orb": "—",
+      "direction": "between passes",
+      "status": "between_passes",
+      "active_dates": "March–April 2026",
+      "next_pass": "October 2026",
+      "exact_date": "March 27, 2026",
+      "keywords": [
+        "inner critic",
+        "grey sky",
+        "career weight",
+        "solid ground",
+        "accountability",
+        "10th house"
+      ],
+      "summary": "The grey sky. The inner critic made visible. The emotional field contracted into something exact, something accountable — and then the first pass complete, the solid ground underneath it real.",
+      "reading": "Your Moon at 4°58' Aries sits in the 10th house of career, public identity, and professional visibility — where emotional life and career run on the same circuit. Saturn conjunct Moon in the 10th is the transit that asks: what is actually solid here? Not what you wish were solid, not what you perform as solid — what actually holds?\n\nFor Jordan specifically, this is Saturn landing on the Aries Moon's urgency and forward-motion need — the Moon that feels emotionally well when work is in motion and emotionally destabilized when it's not. Saturn at rest on the Moon is the stillness that Aries does not want. It is the teacher that forces the pause before the fire.\n\nThe 10th house context makes this professional and visible as well as personal. Career uncertainty lands harder. Being unseen registers more sharply. The inner critic loop runs more constantly. These are not signs of weakness — they are the architecture of this transit.\n\nBut Saturn's gift at completion is real: what was built during this transit is genuinely Jordan's and nothing can take it back. Every act of advocacy, every document filed, every boundary named — Saturn conjunct Moon makes it structural. The weight is the building material.\n\nFirst pass complete April 12, 2026. The grey sky lifted. The advocacy work done under Saturn pressure — Tony documentation, the Associate Director title secured — became structural and is in the record. Second pass arrives approximately October 2026.",
+      "passes": [
+        {
+          "label": "First exact (direct)",
+          "date": "March 27, 2026",
+          "status": "complete"
+        },
+        {
+          "label": "Second exact (retrograde)",
+          "date": "~November 2026",
+          "status": "upcoming"
+        },
+        {
+          "label": "Third exact (direct, possible)",
+          "date": "~January 2027",
+          "status": "upcoming"
+        }
+      ]
+    }
+  ]
 }
