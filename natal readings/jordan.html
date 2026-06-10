@@ -420,6 +420,152 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overs
 @media(min-width:415px) and (max-width:768px){
   .big-three-card{max-width:150px}
 }
+
+/* ══ NATAL WRAPPER PANEL ════════════════════════════════════════════════════ */
+#panel-natal{
+  position:absolute;inset:0;
+  display:flex;flex-direction:column;
+  padding-top:calc(60px + env(safe-area-inset-top,0px));
+  padding-bottom:calc(60px + env(safe-area-inset-bottom,0px));
+  box-sizing:border-box;
+  opacity:0;visibility:hidden;pointer-events:none;
+  transition:opacity 0.22s ease,visibility 0.22s ease;
+}
+#panel-natal.active{opacity:1;visibility:visible;pointer-events:auto}
+
+.natal-subnav{
+  flex-shrink:0;height:38px;
+  background:rgba(6,10,26,0.97);
+  border-bottom:1px solid rgba(var(--gold-alpha),0.14);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  display:flex;align-items:center;
+  overflow-x:auto;overflow-y:hidden;
+  scrollbar-width:none;
+  padding:0 14px;gap:5px;
+  position:relative;z-index:2;
+  flex-shrink:0;
+}
+.natal-subnav::-webkit-scrollbar{display:none}
+.subnav-tab{
+  flex:none;
+  background:none;border:none;cursor:pointer;
+  display:flex;align-items:center;gap:5px;
+  padding:4px 10px;border-radius:20px;
+  color:var(--muted-3);
+  font-family:'Inter',sans-serif;font-size:0.50rem;letter-spacing:0.14em;text-transform:uppercase;
+  font-weight:400;white-space:nowrap;
+  transition:color 0.15s,background 0.15s;
+  -webkit-tap-highlight-color:transparent;
+}
+.subnav-tab .sn-icon{font-size:0.75rem;line-height:1}
+.subnav-tab.active{
+  color:rgba(var(--gold-alpha),0.90);
+  background:rgba(var(--gold-alpha),0.10);
+}
+.natal-body{flex:1;min-height:0;position:relative;overflow:hidden}
+
+/* ── SUB-PANELS (inside natal-body) ── */
+.subpanel{
+  position:absolute;inset:0;
+  opacity:0;visibility:hidden;pointer-events:none;
+  transition:opacity 0.22s ease,visibility 0.22s ease;
+}
+.subpanel.active{opacity:1;visibility:visible;pointer-events:auto}
+
+#sp-chart{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  overflow:hidden;touch-action:none;
+  background:var(--bg);
+}
+.sp-reading{
+  overflow-y:auto;overflow-x:hidden;
+  -webkit-overflow-scrolling:touch;
+  overscroll-behavior-y:contain;overscroll-behavior-x:none;
+  touch-action:pan-y;
+  background:var(--bg);
+}
+
+/* ══ HOME PANEL ═════════════════════════════════════════════════════════════ */
+#panel-home{
+  position:absolute;inset:0;
+  padding-top:calc(60px + env(safe-area-inset-top,0px));
+  padding-bottom:calc(60px + env(safe-area-inset-bottom,0px));
+  box-sizing:border-box;
+  overflow-y:auto;overflow-x:hidden;
+  -webkit-overflow-scrolling:touch;
+  overscroll-behavior-y:contain;
+  touch-action:pan-y;
+  background:var(--bg);
+  opacity:0;visibility:hidden;pointer-events:none;
+  transition:opacity 0.22s ease,visibility 0.22s ease;
+}
+#panel-home.active{opacity:1;visibility:visible;pointer-events:auto}
+
+.home-inner{padding:20px 16px 8px}
+.home-sky-strip{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  font-size:0.50rem;letter-spacing:0.22em;text-transform:uppercase;
+  color:var(--muted-3);margin-bottom:18px;
+}
+.home-sky-dot{width:3px;height:3px;border-radius:50%;background:rgba(var(--gold-alpha),0.35);flex-shrink:0}
+.home-greeting{text-align:center;margin-bottom:26px}
+.home-greeting-name{
+  font-family:'Cormorant Garamond',serif;font-size:1.95rem;font-weight:300;
+  font-style:italic;letter-spacing:0.06em;
+  color:rgba(var(--gold-alpha),0.96);line-height:1.1;
+}
+.home-greeting-sub{
+  font-size:0.50rem;letter-spacing:0.24em;text-transform:uppercase;
+  color:var(--muted-3);margin-top:5px;
+}
+
+/* Home section cards */
+.home-cards{display:flex;flex-direction:column;gap:10px}
+.home-card-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+
+.home-card{
+  width:100%;background:none;border:none;cursor:pointer;
+  -webkit-tap-highlight-color:transparent;text-align:left;
+  border-radius:16px;overflow:hidden;position:relative;
+  border:1px solid rgba(var(--hc-alpha,var(--gold-alpha)),0.20);
+  background:rgba(var(--hc-alpha,var(--gold-alpha)),0.04);
+  padding:18px 16px 16px;
+  display:flex;flex-direction:column;gap:8px;
+  transition:transform 0.15s,opacity 0.15s;
+}
+.home-card:active{transform:scale(0.97);opacity:0.85}
+.home-card-hero{padding:22px 20px 20px;min-height:130px}
+.home-card-soon{opacity:0.52;cursor:default}
+.home-card-soon:active{transform:none;opacity:0.52}
+
+.hc-top{display:flex;align-items:flex-start;justify-content:space-between}
+.hc-art{width:40px;height:40px;opacity:0.80;flex-shrink:0}
+.hc-hero-art{width:52px;height:52px;opacity:0.85;flex-shrink:0}
+.hc-soon-badge{
+  font-size:0.40rem;letter-spacing:0.16em;text-transform:uppercase;
+  color:var(--muted-3);border:1px solid var(--muted-3);
+  border-radius:20px;padding:2px 7px;align-self:flex-start;
+}
+.hc-label{
+  font-size:0.50rem;letter-spacing:0.22em;text-transform:uppercase;
+  color:rgba(var(--hc-alpha,var(--gold-alpha)),0.80);line-height:1;
+}
+.hc-title{
+  font-family:'Cormorant Garamond',serif;font-size:1.22rem;font-weight:300;
+  color:var(--text);line-height:1.2;
+}
+.hc-title-sm{font-size:1.00rem}
+.hc-desc{
+  font-size:0.50rem;letter-spacing:0.10em;text-transform:uppercase;
+  color:var(--muted-3);line-height:1.5;
+}
+/* per-card accent colors */
+.hc-natal{ --hc-alpha:var(--gold-alpha) }
+.hc-daily{ --hc-alpha:var(--cerulean-alpha) }
+.hc-transits{ --hc-alpha:var(--amber-alpha) }
+.hc-synastry{ --hc-alpha:var(--teal-alpha) }
+.hc-workplace{ --hc-alpha:var(--cerulean-alpha) }
+.hc-wheel{ --hc-alpha:var(--teal-alpha) }
 </style>
 </head>
 <body>
@@ -437,8 +583,166 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overs
 
 <div class="app-body">
 
-<!-- ══ PANEL 1 — CHART ══════════════════════════════════════════════════════ -->
-<div class="panel" id="panel-chart">
+<!-- ══ HOME PANEL ══════════════════════════════════════════════════════════ -->
+<div id="panel-home">
+  <div class="home-inner">
+
+    <div class="home-sky-strip">
+      <span id="home-date"></span>
+      <span class="home-sky-dot"></span>
+      <span id="home-moon"></span>
+    </div>
+
+    <div class="home-greeting">
+      <div class="home-greeting-name">Jordan</div>
+      <div class="home-greeting-sub">born into the threshold</div>
+    </div>
+
+    <div class="home-cards">
+
+      <!-- Natal — hero full-width -->
+      <button class="home-card home-card-hero hc-natal" onclick="goNatal()">
+        <div class="hc-top">
+          <div>
+            <div class="hc-label">Natal Chart</div>
+            <div class="hc-title">Your birth chart</div>
+          </div>
+          <svg class="hc-hero-art" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="26" cy="26" r="23" fill="none" stroke="rgba(208,168,64,0.35)" stroke-width="0.7"/>
+            <circle cx="26" cy="26" r="16" fill="none" stroke="rgba(208,168,64,0.18)" stroke-width="0.5"/>
+            <circle cx="26" cy="26" r="3.5" fill="rgba(208,168,64,0.40)"/>
+            <polygon points="26,3 27.8,23.2 26,26 24.2,23.2" fill="rgba(208,168,64,0.80)"/>
+            <polygon points="26,49 24.2,28.8 26,26 27.8,28.8" fill="rgba(208,168,64,0.50)"/>
+            <polygon points="3,26 23.2,24.2 26,26 23.2,27.8" fill="rgba(208,168,64,0.50)"/>
+            <polygon points="49,26 28.8,27.8 26,26 28.8,24.2" fill="rgba(208,168,64,0.70)"/>
+            <polygon points="42,10 28.2,24.8 26,26 28.5,27.5" fill="rgba(208,168,64,0.22)"/>
+            <polygon points="10,10 24.8,24.8 26,26 24.2,27.5" fill="rgba(208,168,64,0.22)"/>
+            <polygon points="10,42 24.8,27.2 26,26 24.2,24.5" fill="rgba(208,168,64,0.22)"/>
+            <polygon points="42,42 27.2,27.2 26,26 28.5,24.5" fill="rgba(208,168,64,0.22)"/>
+          </svg>
+        </div>
+        <div class="hc-desc">chart wheel · identity · depth · roots · soul</div>
+      </button>
+
+      <!-- Row: Daily + Transits -->
+      <div class="home-card-row">
+        <button class="home-card hc-daily" onclick="switchToPanel('daily',document.querySelector('[data-target=daily]'))">
+          <div class="hc-top">
+            <svg class="hc-art" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="20" cy="20" r="17" fill="none" stroke="rgba(74,159,212,0.40)" stroke-width="0.7"/>
+              <circle cx="20" cy="8" r="3" fill="rgba(74,159,212,0.55)"/>
+              <circle cx="20" cy="20" r="2" fill="rgba(74,159,212,0.30)"/>
+              <path d="M3,20 Q10,5 20,20 Q30,35 37,20" fill="none" stroke="rgba(74,159,212,0.35)" stroke-width="0.8"/>
+            </svg>
+          </div>
+          <div class="hc-label">Daily</div>
+          <div class="hc-title hc-title-sm">Today's reading</div>
+        </button>
+        <button class="home-card hc-transits" onclick="switchToPanel('transits',document.querySelector('[data-target=transits]'))">
+          <div class="hc-top">
+            <svg class="hc-art" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="20" cy="20" rx="17" ry="8" fill="none" stroke="rgba(212,128,64,0.38)" stroke-width="0.7"/>
+              <ellipse cx="20" cy="20" rx="17" ry="8" fill="none" stroke="rgba(212,128,64,0.18)" stroke-width="0.5" transform="rotate(60,20,20)"/>
+              <circle cx="20" cy="12" r="2.5" fill="rgba(212,128,64,0.65)"/>
+              <circle cx="20" cy="20" r="1.5" fill="rgba(212,128,64,0.25)"/>
+            </svg>
+          </div>
+          <div class="hc-label">Transits</div>
+          <div class="hc-title hc-title-sm">Current sky</div>
+        </button>
+      </div>
+
+      <!-- Row: Synastry + Workplace (coming soon) -->
+      <div class="home-card-row">
+        <button class="home-card hc-synastry home-card-soon" disabled>
+          <div class="hc-top">
+            <svg class="hc-art" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="14" cy="20" r="11" fill="none" stroke="rgba(90,184,168,0.38)" stroke-width="0.7"/>
+              <circle cx="26" cy="20" r="11" fill="none" stroke="rgba(90,184,168,0.22)" stroke-width="0.7"/>
+              <circle cx="14" cy="20" r="2" fill="rgba(90,184,168,0.50)"/>
+              <circle cx="26" cy="20" r="2" fill="rgba(90,184,168,0.35)"/>
+            </svg>
+            <span class="hc-soon-badge">Soon</span>
+          </div>
+          <div class="hc-label">Synastry</div>
+          <div class="hc-title hc-title-sm">Compatibility</div>
+        </button>
+        <button class="home-card hc-workplace home-card-soon" disabled>
+          <div class="hc-top">
+            <svg class="hc-art" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+              <rect x="8" y="8" width="24" height="24" rx="4" fill="none" stroke="rgba(74,159,212,0.35)" stroke-width="0.7"/>
+              <line x1="8" y1="16" x2="32" y2="16" stroke="rgba(74,159,212,0.22)" stroke-width="0.5"/>
+              <circle cx="14" cy="12" r="1.5" fill="rgba(74,159,212,0.45)"/>
+              <circle cx="20" cy="12" r="1.5" fill="rgba(74,159,212,0.30)"/>
+              <line x1="13" y1="22" x2="27" y2="22" stroke="rgba(74,159,212,0.25)" stroke-width="0.5"/>
+              <line x1="13" y1="27" x2="22" y2="27" stroke="rgba(74,159,212,0.18)" stroke-width="0.5"/>
+            </svg>
+            <span class="hc-soon-badge">Soon</span>
+          </div>
+          <div class="hc-label">Workplace</div>
+          <div class="hc-title hc-title-sm">#astroflow</div>
+        </button>
+      </div>
+
+      <!-- Wheel & Moon full-width (coming soon) -->
+      <button class="home-card hc-wheel home-card-soon" disabled style="min-height:90px">
+        <div class="hc-top">
+          <div>
+            <div class="hc-label">Wheel &amp; Moon</div>
+            <div class="hc-title">Rituals &amp; the year</div>
+          </div>
+          <svg class="hc-hero-art" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="26" cy="26" r="22" fill="none" stroke="rgba(90,184,168,0.35)" stroke-width="0.7"/>
+            <circle cx="26" cy="26" r="14" fill="none" stroke="rgba(90,184,168,0.18)" stroke-width="0.5"/>
+            <line x1="26" y1="4" x2="26" y2="48" stroke="rgba(90,184,168,0.14)" stroke-width="0.4"/>
+            <line x1="4" y1="26" x2="48" y2="26" stroke="rgba(90,184,168,0.14)" stroke-width="0.4"/>
+            <line x1="9.6" y1="9.6" x2="42.4" y2="42.4" stroke="rgba(90,184,168,0.12)" stroke-width="0.4"/>
+            <line x1="42.4" y1="9.6" x2="9.6" y2="42.4" stroke="rgba(90,184,168,0.12)" stroke-width="0.4"/>
+            <circle cx="26" cy="4" r="2" fill="rgba(90,184,168,0.55)"/>
+            <circle cx="26" cy="48" r="1.5" fill="rgba(90,184,168,0.35)"/>
+            <circle cx="4" cy="26" r="1.5" fill="rgba(90,184,168,0.35)"/>
+            <circle cx="48" cy="26" r="1.8" fill="rgba(90,184,168,0.45)"/>
+            <circle cx="9.6" cy="9.6" r="1.2" fill="rgba(90,184,168,0.28)"/>
+            <circle cx="42.4" cy="9.6" r="1.2" fill="rgba(90,184,168,0.28)"/>
+            <circle cx="42.4" cy="42.4" r="1.2" fill="rgba(90,184,168,0.28)"/>
+            <circle cx="9.6" cy="42.4" r="1.2" fill="rgba(90,184,168,0.28)"/>
+            <circle cx="26" cy="26" r="3" fill="none" stroke="rgba(90,184,168,0.40)" stroke-width="0.7"/>
+          </svg>
+          <span class="hc-soon-badge" style="position:absolute;top:18px;right:16px">Soon</span>
+        </div>
+        <div class="hc-desc">wheel of the year · new moon · full moon · personalized rituals</div>
+      </button>
+
+    </div><!-- /home-cards -->
+  </div><!-- /home-inner -->
+</div><!-- /panel-home -->
+
+<!-- ══ NATAL WRAPPER PANEL ══════════════════════════════════════════════════ -->
+<div id="panel-natal">
+
+  <!-- Sub-navigation -->
+  <nav class="natal-subnav" aria-label="Natal sections">
+    <button class="subnav-tab active" data-sub="chart" onclick="switchSub('chart',this)">
+      <span class="sn-icon">✦</span> Chart
+    </button>
+    <button class="subnav-tab" data-sub="identity" onclick="switchSub('identity',this)">
+      <span class="sn-icon">☉</span> Identity
+    </button>
+    <button class="subnav-tab" data-sub="depth" onclick="switchSub('depth',this)">
+      <span class="sn-icon">♏</span> Depth
+    </button>
+    <button class="subnav-tab" data-sub="roots" onclick="switchSub('roots',this)">
+      <span class="sn-icon">⚷</span> Roots
+    </button>
+    <button class="subnav-tab" data-sub="soul" onclick="switchSub('soul',this)">
+      <span class="sn-icon">☊</span> Soul
+    </button>
+  </nav>
+
+  <!-- Sub-panel body -->
+  <div class="natal-body">
+
+<div class="subpanel" id="sp-chart">
 
   <!-- Sacred geometry background for chart panel -->
   <svg class="geo-bg" viewBox="0 0 375 700" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -490,10 +794,10 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overs
     </div>
   </div>
 
-</div><!-- /panel-chart -->
+</div><!-- /sp-chart -->
 
-<!-- ══ PANEL 2 — IDENTITY ════════════════════════════════════════════════════ -->
-<div class="panel reading-panel" id="panel-identity">
+<!-- ══ IDENTITY ══════════════════════════════════════════════════════════════ -->
+<div class="subpanel sp-reading" id="sp-identity">
 
   <svg class="geo-bg" viewBox="0 0 375 812" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
     <polygon points="188,30 320,110 362,310 295,540 188,590 81,540 13,310 56,110" fill="none" stroke="rgba(201,168,76,0.07)" stroke-width="0.6"/>
@@ -636,10 +940,10 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overs
     <div class="sep-stars">✦ &nbsp; ✧ &nbsp; ✦</div>
 
   </div>
-</div><!-- /panel-identity -->
+</div><!-- /sp-identity -->
 
-<!-- ══ PANEL 3 — DEPTH ═══════════════════════════════════════════════════════ -->
-<div class="panel reading-panel" id="panel-depth">
+<!-- ══ DEPTH ═════════════════════════════════════════════════════════════════ -->
+<div class="subpanel sp-reading" id="sp-depth">
 
   <svg class="geo-bg" viewBox="0 0 375 812" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
     <polygon points="188,50 340,140 375,340 305,560 188,610 71,560 0,340 35,140" fill="none" stroke="rgba(201,168,76,0.065)" stroke-width="0.55"/>
@@ -744,10 +1048,10 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overs
     <div class="sep-stars">✦ &nbsp; ✧ &nbsp; ✦</div>
 
   </div>
-</div><!-- /panel-depth -->
+</div><!-- /sp-depth -->
 
-<!-- ══ PANEL 4 — ROOTS ═══════════════════════════════════════════════════════ -->
-<div class="panel reading-panel" id="panel-roots">
+<!-- ══ ROOTS ═════════════════════════════════════════════════════════════════ -->
+<div class="subpanel sp-reading" id="sp-roots">
 
   <svg class="geo-bg" viewBox="0 0 375 812" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
     <polygon points="188,40 310,120 345,300 290,510 188,555 86,510 30,300 65,120" fill="none" stroke="rgba(201,168,76,0.065)" stroke-width="0.55"/>
@@ -840,10 +1144,10 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overs
     <div class="sep-stars">✦ &nbsp; ✧ &nbsp; ✦</div>
 
   </div>
-</div><!-- /panel-roots -->
+</div><!-- /sp-roots -->
 
-<!-- ══ PANEL 5 — SOUL ════════════════════════════════════════════════════════ -->
-<div class="panel reading-panel" id="panel-soul">
+<!-- ══ SOUL ═══════════════════════════════════════════════════════════════════ -->
+<div class="subpanel sp-reading" id="sp-soul">
 
   <svg class="geo-bg" viewBox="0 0 375 812" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
     <!-- More elaborate geometry for the closing panel -->
@@ -973,9 +1277,12 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overs
 
     <div style="height:16px"></div>
   </div>
-</div><!-- /panel-soul -->
+</div><!-- /sp-soul -->
 
-<!-- ── T1-D: PLACEHOLDER PANELS ──────────────────────────────────────────── -->
+  </div><!-- /natal-body -->
+</div><!-- /panel-natal -->
+
+<!-- ── TOP-LEVEL PLACEHOLDER PANELS ─────────────────────────────────────── -->
 <div class="panel reading-panel" id="panel-transits">
   <div class="geo-bg">
     <svg viewBox="0 0 380 720" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
@@ -1145,27 +1452,15 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overs
 
 </div><!-- /app-body -->
 
-<!-- ── T1-C: SCROLLABLE NAV ───────────────────────────────────────────────── -->
-<nav class="app-nav" role="navigation" aria-label="Chart sections">
-  <button class="nav-tab active" data-target="chart" onclick="switchPanel('chart',this)">
+<!-- ── BOTTOM NAV (4 top-level tabs) ─────────────────────────────────────── -->
+<nav class="app-nav" role="navigation" aria-label="App sections">
+  <button class="nav-tab active" data-target="home" onclick="switchPanel('home',this)">
     <span class="nav-icon-t">✦</span>
-    <span class="nav-label">Chart</span>
+    <span class="nav-label">Home</span>
   </button>
-  <button class="nav-tab" data-target="identity" onclick="switchPanel('identity',this)">
-    <span class="nav-icon">☉</span>
-    <span class="nav-label">Identity</span>
-  </button>
-  <button class="nav-tab" data-target="depth" onclick="switchPanel('depth',this)">
-    <span class="nav-icon">♏</span>
-    <span class="nav-label">Depth</span>
-  </button>
-  <button class="nav-tab" data-target="roots" onclick="switchPanel('roots',this)">
-    <span class="nav-icon">⚷</span>
-    <span class="nav-label">Roots</span>
-  </button>
-  <button class="nav-tab" data-target="soul" onclick="switchPanel('soul',this)">
-    <span class="nav-icon">☊</span>
-    <span class="nav-label">Soul</span>
+  <button class="nav-tab" data-target="natal" onclick="switchPanel('natal',this)">
+    <span class="nav-icon">◯</span>
+    <span class="nav-label">Natal</span>
   </button>
   <button class="nav-tab" data-target="transits" onclick="switchPanel('transits',this)">
     <span class="nav-icon">♄</span>
@@ -1445,16 +1740,41 @@ render();
 
 // ─── NAVIGATION ───────────────────────────────────────────────────────────────
 const panels={
-  chart:document.getElementById('panel-chart'),
-  identity:document.getElementById('panel-identity'),
-  depth:document.getElementById('panel-depth'),
-  roots:document.getElementById('panel-roots'),
-  soul:document.getElementById('panel-soul'),
+  home:    document.getElementById('panel-home'),
+  natal:   document.getElementById('panel-natal'),
   transits:document.getElementById('panel-transits'),
-  daily:document.getElementById('panel-daily'),
+  daily:   document.getElementById('panel-daily'),
 };
-let activePanel='chart';
-panels.chart.classList.add('active');
+const subpanels={
+  chart:   document.getElementById('sp-chart'),
+  identity:document.getElementById('sp-identity'),
+  depth:   document.getElementById('sp-depth'),
+  roots:   document.getElementById('sp-roots'),
+  soul:    document.getElementById('sp-soul'),
+};
+let activePanel='home';
+let activeSub='chart';
+panels.home.classList.add('active');
+subpanels.chart.classList.add('active');
+// Key is only visible on Natal > Chart sub-panel — hide on startup (home)
+document.getElementById('keyBtn').classList.add('hidden');
+
+// Home panel: date + moon phase
+(function(){
+  const months=['January','February','March','April','May','June','July','August','September','October','November','December'];
+  const days=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  const now=new Date();
+  const el=document.getElementById('home-date');
+  if(el)el.textContent=`${days[now.getDay()]} · ${months[now.getMonth()]} ${now.getDate()}`;
+  // Lunar phase (simple approximation)
+  const known=new Date('2000-01-06T18:14:00Z'); // known new moon
+  const msDay=86400000*29.53059;
+  const age=((now-known)%msDay+msDay)%msDay/86400000;
+  const phases=['New Moon','Waxing Crescent','First Quarter','Waxing Gibbous','Full Moon','Waning Gibbous','Last Quarter','Waning Crescent'];
+  const idx=Math.round(age/29.53059*8)%8;
+  const moonEl=document.getElementById('home-moon');
+  if(moonEl)moonEl.textContent=phases[idx];
+})();
 
 function switchPanel(id,btn){
   if(id===activePanel)return;
@@ -1463,9 +1783,33 @@ function switchPanel(id,btn){
   panels[id].classList.add('active');
   btn.classList.add('active');
   activePanel=id;
-  document.getElementById('keyBtn').classList.toggle('hidden',id!=='chart');
-  if(id!=='chart')closeKey();
-  panels[id].scrollTop=0;
+  const showKey=id==='natal'&&activeSub==='chart';
+  document.getElementById('keyBtn').classList.toggle('hidden',!showKey);
+  if(!showKey)closeKey();
+}
+
+// Navigate from home card directly into Natal/Chart
+function goNatal(){
+  const btn=document.querySelector('[data-target="natal"]');
+  switchPanel('natal',btn);
+}
+
+// Navigate from home cards to top-level panels
+function switchToPanel(id,btn){
+  if(btn)switchPanel(id,btn);
+}
+
+function switchSub(id,btn){
+  if(id===activeSub)return;
+  subpanels[activeSub].classList.remove('active');
+  document.querySelectorAll('.subnav-tab').forEach(t=>t.classList.remove('active'));
+  subpanels[id].classList.add('active');
+  btn.classList.add('active');
+  activeSub=id;
+  const showKey=id==='chart';
+  document.getElementById('keyBtn').classList.toggle('hidden',!showKey);
+  if(!showKey)closeKey();
+  if(subpanels[id].scrollTop!==undefined)subpanels[id].scrollTop=0;
 }
 
 // ─── SCROLL FADE-IN ───────────────────────────────────────────────────────────
@@ -1520,10 +1864,14 @@ document.querySelectorAll('.sec-card,.dive-wrap,.throughline,.tarot-outer,.poem-
 
   function reset(animated){s=1;tx=0;ty=0;apply(animated!==false);}
 
-  // reset when leaving chart panel
+  // reset when leaving chart sub-panel
+  document.querySelector('.natal-subnav').addEventListener('click',function(e){
+    const btn=e.target.closest('.subnav-tab');
+    if(btn&&btn.dataset.sub!=='chart') reset(false);
+  },{passive:true});
   document.querySelector('.app-nav').addEventListener('click',function(e){
     const btn=e.target.closest('.nav-tab');
-    if(btn&&btn.dataset.target!=='chart') reset(false);
+    if(btn&&btn.dataset.target!=='natal') reset(false);
   },{passive:true});
 
   // tap badge to reset
