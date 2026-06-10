@@ -2128,7 +2128,7 @@ function renderBiwheel(){
       tPG.appendChild(tx('℞',{x:bF(rp.x),y:bF(rp.y),fill:TCR,opacity:'0.55','font-size':'4.5','font-family':GLYPH_FONT,'font-variant-emoji':'text','text-anchor':'middle','dominant-baseline':'central','pointer-events':'none'}));
     }
     // Invisible hit circle for tap target
-    const hit=el('circle',{cx:bF(gp.x),cy:bF(gp.y),r:'10',fill:'transparent',style:'cursor:pointer;-webkit-tap-highlight-color:transparent'});
+    const hit=el('circle',{cx:bF(gp.x),cy:bF(gp.y),r:'10',fill:'transparent','pointer-events':'all',style:'cursor:pointer;-webkit-tap-highlight-color:transparent'});
     hit.onclick=(e)=>{e.stopPropagation();selectBiwheelPlanet(tp.gl);};
     tPG.appendChild(hit);
     // Store for selection
