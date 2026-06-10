@@ -4,6 +4,24 @@
 
 ---
 
+## 2026-06-10 (session 3) — Transit Library Expansion + Historical Archive
+
+**The headline:** Four full transit library breakdowns written (replacing stubs), historical archive feature built end-to-end, Saturn conjunct Moon installed as the first historical entry.
+
+### What Changed
+
+**Transit library — 4 stubs → full breakdowns:** `nnode-trine-jupiter.md` (exact June 11–12, the soul path confirmation window), `uranus-inconjunct-jupiter.md` (exact June 14, creative work form pivot, 2 passes), `uranus-opposition-northnode.md` (exact June 20–22, nodal axis rewire, 3 passes through April 2027), `saturn-inconjunct-mercury.md` (just past exact, the direct-version adjustment, 3 passes). Each file: opening line + full "What This Is" + "The Arc" with bolded exact dates + "In Real Time" table + "Working With It" section + "Current Status."
+
+**transits.json patches:** passes fields manually updated for 5 transits (NNode△Jupiter, Uranus⚻Jupiter, Uranus☍NNode, Uranus☌SNode, Saturn⚻Mercury) so they appear immediately in the app without waiting for 4am routine.
+
+**Historical archive — UI built:** Historical rows now show a status badge ("between passes" amber pill / "complete" muted pill), active date range, next pass date, and correctly de-emphasized glyph + name. The detail view header adapts to historical status — "between passes" entries show a badge + next pass date instead of the orb pill. Status is determined by `t.status` field on each historical entry.
+
+**Saturn conjunct Moon installed:** First historical entry. Status: `between_passes`. Active dates: March–April 2026 (first pass complete April 12). Next pass: ~October 2026. Full reading, keywords, 3-pass timeline. The Tony situation, Associate Director title, and first-pass grey sky all documented.
+
+**Deployed:** commit `8c54b97` → Netlify production via API restore.
+
+---
+
 ## 2026-06-10 (session 2) — Visual Polish: Daily + Transits Panels
 
 **The headline:** Daily panel refined, transit pills now link directly to transit detail views, passes bug fixed, applying/separating color-coded throughout.
