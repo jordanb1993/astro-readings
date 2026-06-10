@@ -192,13 +192,13 @@ git add CLAUDE.md NATAL.md KNOWLEDGE.md && git commit -m "update workspace files
 
 ---
 
-## Current Situation Snapshot — June 8, 2026
+## Current Situation Snapshot — June 10, 2026
 
 **Career:** Associate Director of Content Operations at Everflow (effective April 1, 2026). Tony dynamic documented and monitored. Active projects: EverForce X website audit, AI Use Case Repository (co-owned with Dasha), Masterclasses series, weekly newsletter. Jordan is building sophisticated AI systems — Claude Code is central to how she works.
 
 **Finances:** Savings: $3,209 ✅. CC balance: ~$6,000 (falling). Student loan rehab form ready for mail. Regular paycheck ~$2,314.75 (~$4,629/month). First real budgeted months underway.
 
-**Astrology business:** #astroflow-weekly launched May 21 (Krista endorsed within 24 min, organic adoption). Building a subscription AI astrology app. NOT Etsy — full-time job. Phase 1 = build + internal beta; Phase 2 = closed cohort ~20 subscribers $20–35/mo; Phase 3 = public app. Production pipeline operational. Name TBD: Thin Place / The 29th / Solas.
+**Astrology business:** App is fully data-driven as of June 10. Daily tab renders live from `today.json`, Transits tab from `transits.json` with list→detail navigation. 4am routine writes both JSON files nightly + deploys directly via Netlify CLI (no webhook). Placeholder name: **Astrology OS**. AstroFlow = Slack channel name only (not app name). Final name TBD — candidates: Thin Place · The Watcher · Vespertine · Halflight · Solas · Liminal · The 29th. Next session: visual polish on Daily + Transits panels.
 
 **Body:** Walking pad 6+ week streak ✅. Psychiatrist (Dr. Ashley George) June 10. PCP unassigned — calling Anthem (855-383-7248). BP monitor in hand.
 
