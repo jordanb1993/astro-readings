@@ -4,6 +4,36 @@
 
 ---
 
+## 2026-06-10 (session 8) — Biwheel SVG Renderer (Session 1 of 2)
+
+**The headline:** The biwheel placeholder in the Transits panel is replaced with a live SVG renderer. Natal chart inner ring + transiting sky outer ring + aspect lines. Renders from `today.json` `transiting_positions` data that has been live since session 6.
+
+### What Changed
+
+**`renderBiwheel()` function added (~150 lines JS):**
+- Clears and re-renders `#t-biwheel-svg` on every call
+- Background: dark `#09102a` fill with subtle amber/blue ellipse glows
+- Zodiac ring (r=88–108): 12 sign sectors with element fill colors + accent arc strokes + sign glyphs at r=98
+- Degree ticks at the 12 sign boundaries between outer circle and zodiac
+- Natal inner fill + separator ring at r=82
+- Aspect lines (top 6 by tightest orb): drawn at r=78 between transiting and natal planet positions. Colors: teal=trine, cerulean=sextile, rose=square/opposition, amber=sesquiquadrate, muted=quincunx. Parsed from `active_transits` label strings
+- Natal planets (inner ring, r=73): tick dots on separator + glyphs spread via existing `spread()` function. Element color coding (luminary/personal/social/outer/point)
+- Transiting planets (outer ring, r=116): tick dots just outside zodiac + glyphs spread. Retrograde planets in ice-blue with small ℞ subscript
+- ASC/DSC/MC/IC axis: tick lines + 4.2px uppercase labels in natal zone
+- Center: three concentric circles with gold accent dot
+
+**Hookup:** `renderBiwheel()` called in pre-fetch IIFE (page load) and `loadDaily()` fallback. Renders as soon as `dailyData` is available, before user taps Transits.
+
+**CSS:** `.t-biwheel-wrap` max-width increased from 160px → 280px. Renders at full 280px on mobile.
+
+**Label:** "biwheel · coming soon" → "natal · live sky"
+
+**Deployed:** commit `29de726` → Netlify production `6a29b2a4`.
+
+**Next session:** Session 2 — interactivity. Tap a transiting planet → highlight its aspect lines + show aspect detail tooltip. Possible: tap a natal planet → show natal interpretation snippet.
+
+---
+
 ## 2026-06-10 (session 7) — Full Visual Audit + Polish Pass
 
 **The headline:** Playwright screenshot audit across every panel and state, desktop and mobile. Three issues found and fixed: sticky tab nav, biwheel placeholder oversized, "LotOfFortune" label spacing.
