@@ -121,6 +121,30 @@ The corporate women's career astrology angle (sky-at-work, timing professional m
 
 ---
 
+### Natal Chart HTML: Archetype Card + Planet Strip UI Patterns
+**Status: RESOLVED**
+**Decided:** June 5, 2026 (surgical fixes after first mobile review)
+**Details:**
+
+**Archetype card tap-to-reveal pill:**
+- The pill lives INSIDE `.card-label` as a flex child, below the sign subtitle (e.g. "Gemini · Pisces · Scorpio") — not absolutely positioned over the label text
+- `.card-label` height = 96px (not 76px); `justify-content: flex-end; padding-bottom: 14px`
+- Pill gets `margin-top: 13px` to give it breathing room above on mobile
+- Pill styling: `backdrop-filter: blur(4px)`, dark semi-transparent bg (`rgba(10,6,32,0.50)`), no key emoji — text only ("tap to reveal")
+- **Anti-pattern:** `position: absolute; bottom: 10px` on the hint will overlap the label text — never do this
+
+**Planet pills "At a Glance" strip:**
+- Add a `.planet-strip-hint` ghost caption directly below the "At a Glance" label: "tap each to expand"
+- `.planet-strip-label { margin-bottom: 5px }` + `.planet-strip-hint { margin-bottom: 14px }` to keep total spacing consistent
+- `.planet-strip-hint` styling: Inter, 0.49rem, letter-spacing 0.16em, uppercase, `rgba(240,228,200,0.25)` — very faint, clearly subordinate
+- `.planet-pill` must have `cursor: pointer` — check on every new build; `cursor: default` silently kills the desktop affordance
+
+**Live URLs:**
+- mimi: `https://jordanb1993.github.io/astro-readings/natal%20readings/mimi.html`
+- carina: `https://jordanb1993.github.io/astro-readings/natal%20readings/carina.html`
+
+---
+
 ### Visual Aesthetic: Whimsigoth Sacred Geometry
 **Status: RESOLVED**
 **Decided:** June 4, 2026 (locked with carina.html v2)

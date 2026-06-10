@@ -4,6 +4,36 @@
 
 ---
 
+## 2026-06-10 — Daily + Transits Live: JSON Pipeline + Netlify Direct Deploy
+
+**The headline:** The app is now fully data-driven. The Daily tab renders a real reading from `today.json` (title, pulse, key transit pill, prose, pull quote, today block). The Transits tab renders all active slow-planet transits from `transits.json` with a list→detail slide navigation. The 4am routine now writes both JSON files every night and deploys directly to Netlify — no GitHub webhook required.
+
+### What Changed
+
+**`today.json` + `transits.json` at repo root:** Both files committed to root and served by Netlify. `today.json` holds the daily reading (title, moon, pulse, key transit, prose paragraphs, pull quote, today block, active transit pills). `transits.json` holds all slow-planet transits with full detail-view prose, passes timeline, keywords, and orb data. Served with `no-cache` headers so nightly updates are always fresh.
+
+**Daily panel — live render:** Fetches `today.json` on first activation (lazy-load, cached after). Renders: date eyebrow, Cormorant italic title, moon glyph + phase + sign, italic pulse block, key transit pill (planet + aspect + natal point, orb + direction), full prose paragraphs, pull quote block, today action items (Business · Creative · Body).
+
+**Transits panel — list + detail:** Fetches `transits.json` on first activation. List view: each transit as a row (planet glyph, aspect name + natal point, transiting planet + sign + house, orb + direction chevron). Detail view: slides in from right on tap — back button, passes timeline strip, keyword pills, summary pull quote, full prose. `closeTransitDetail()` slides list back in.
+
+**Netlify direct deploy pipeline:** Free-plan build minutes are finite and the GitHub webhook is unreliable. Switch to `netlify deploy --dir . --site [id]` + API restore call. Token pulled from `~/Library/Preferences/netlify/config.json`. `netlify-cli` installed globally. No build minutes consumed. Step 12 of `ROUTINE-UPDATE-INSTRUCTIONS.md` updated with the full sequence.
+
+**Bug fixed — recursive `switchPanel`:** The override pattern (`const _origSwitchPanel=switchPanel; function switchPanel(...)`) caused infinite recursion because `function` declarations are hoisted — `_origSwitchPanel` captured the new function, not the original. Fixed by removing the override and adding `loadTransits()` / `loadDaily()` calls directly into the original `switchPanel` body.
+
+**`netlify.toml`:** Added no-cache headers for `/*.json` so CDN never serves stale daily data.
+
+### Files Changed
+- `natal readings/jordan.html` — Daily + Transits live render, switchPanel fix
+- `today.json` — first live daily reading (June 9: "the fire crosses over")
+- `transits.json` — 4 active transits with full readings and passes
+- `netlify.toml` — no-cache headers for JSON files
+- `routine/ROUTINE-UPDATE-INSTRUCTIONS.md` — step 12 updated with direct deploy sequence
+- `.gitignore` — added `.netlify` folder
+
+**Commits:** `a2d8ed4` (wire panels to JSON), `d68a589` (switchPanel fix), `8ae6a31` (no-cache headers), `665bf74` (routine step 12)
+
+---
+
 ## 2026-06-09 — App Shell Restructure: Home + 4-Tab Nav + Architecture v2
 
 **The headline:** The app now has a real architecture. Home screen with artistic nav cards, a 4-tab bottom nav (Home · Natal · Transits · Daily), and the full 5-section Natal reading nested inside its own sub-navigation. The foundation for the 7-section product vision is in place.
