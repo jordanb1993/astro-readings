@@ -4,13 +4,35 @@
 
 ---
 
-## 2026-06-10 (session 10g) — Sky at Work: Visual Polish Pass
+## 2026-06-10 (session 10g) — Sky at Work: Visual Polish + Full Audit
 
-**Insight cards:** Added 2px top accent gradient line (per card color) via `::before` — makes each card feel intentional and premium rather than just left-bordered. Teal card changed from `opacity:0.85` to proper `background:var(--surface-2)` + dimmed border — removes the "broken" look while preserving the contextual tone.
+**Visual polish pass:**
+- Insight cards: 2px top accent gradient line per card color via `::before` — premium, intentional, not just left-bordered
+- Teal card: removed `opacity:0.85` hack, replaced with `var(--surface-2)` + dimmed border — properly contextual rather than broken-looking
+- `ic-mechanism` opacity 0.48 → 0.65 — reveals are now actually readable
+- Desktop 2×2 insight card grid (was single column of 4) — cuts scroll depth, uses 800px canvas properly
+- `readings-headline` + `sky-headline` scaled up to 1.80rem (were 1.55rem) — consistent hierarchy weight across all three tabs
+- `week-headline` letter-spacing zeroed at 2.5rem display size
 
-**Typography + readability:** `ic-mechanism` text opacity bumped 0.48 → 0.65 — revealed technical detail is now legible. `ic-why` button nudged from 0.48rem → 0.50rem. Desktop `readings-headline` and `sky-headline` both scaled up to 1.80rem (were 1.55rem) to match the hierarchy weight of the main tab. `week-headline` letter-spacing zeroed at desktop size (2.5rem is too large for tracking).
+**Playwright audit (accessibility snapshots):**
+- Uranus signal row was showing ♇ (Pluto's glyph) — fixed to ♅
+- `ic-mechanism` max-height 100px → 150px — mech1 was hitting the exact limit, would have clipped future content
+- Removed `font-style:normal` override on desktop `readings-headline` (inconsistent with `sky-headline`)
+- All interactive states verified: mechanism expand/collapse, sign chip + localStorage, signal row expand, panel switching sync on both navs, biwheel SVG rendering, desktop responsive breakpoint
 
-**Desktop layout:** Insight cards switch to a 2×2 grid at ≥680px (was a single column of 4). Reduces scroll depth significantly and uses the 800px canvas properly. Cards expand downward in place. Signal rows get slightly more padding on desktop (12px → consistent with breathing room).
+**Copy + structure audit:**
+- Cut: week progress bar (HTML + JS + CSS), "This week in plain language" sub, "tap to expand" planet strip hint
+- Card 3 body rewritten — was restating the headline; now leads with the specific action
+- Card 4 headline: em dash → period ("Plans may shift. Lean in.")
+- mech4: "collective direction node" → "the North Node — the point of collective momentum" (non-astrologers can parse it)
+- Sky eyebrow: "Astrological Mechanisms" → "What's Driving the Week"
+- Uranus sig-note: "plans can pivot" → "active all week" (plain-language insight lives on This Week, not The Sky)
+- Venus-Jupiter detail: "peak window this month" added for specificity
+- For You intro: "select below" → "pick your sign"
+- Go Deeper body: two-sentence pitch compressed to one clean line
+- Taurus + Libra sign notes tightened
+
+**Stale file cleanup:** `slack-draft.md`, `og-sky-at-work.jpg`, `README.md` (old Slack-text format guide) removed from `workplace readings/`
 
 ---
 
