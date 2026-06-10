@@ -4,6 +4,16 @@
 
 ---
 
+## 2026-06-10 (session 10g) — Sky at Work: Visual Polish Pass
+
+**Insight cards:** Added 2px top accent gradient line (per card color) via `::before` — makes each card feel intentional and premium rather than just left-bordered. Teal card changed from `opacity:0.85` to proper `background:var(--surface-2)` + dimmed border — removes the "broken" look while preserving the contextual tone.
+
+**Typography + readability:** `ic-mechanism` text opacity bumped 0.48 → 0.65 — revealed technical detail is now legible. `ic-why` button nudged from 0.48rem → 0.50rem. Desktop `readings-headline` and `sky-headline` both scaled up to 1.80rem (were 1.55rem) to match the hierarchy weight of the main tab. `week-headline` letter-spacing zeroed at desktop size (2.5rem is too large for tracking).
+
+**Desktop layout:** Insight cards switch to a 2×2 grid at ≥680px (was a single column of 4). Reduces scroll depth significantly and uses the 800px canvas properly. Cards expand downward in place. Signal rows get slightly more padding on desktop (12px → consistent with breathing room).
+
+---
+
 ## 2026-06-10 (session 10e–f) — Sky at Work: Tab Restructure + Responsive Desktop
 
 **For You tab:** Sign picker moved off This Week onto its own tab. Three-act structure now clean — collective (This Week) → mechanism (The Sky) → personal (For You). Active Dasha/Yvonne reading links removed from the app entirely. Privacy architecture: natal charts will link OUT to Sky at Work, not the reverse. Faded request cards remain as the reading invitation.
