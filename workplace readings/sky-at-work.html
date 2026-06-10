@@ -349,28 +349,6 @@ strong{color:var(--rose);font-weight:500}
 
     </div><!-- /insight-cards -->
 
-    <!-- Sign picker -->
-    <div class="sep"><span class="sep-inner">Your Sign</span></div>
-    <div class="sign-wrap">
-      <div class="sign-label">Select your sun sign for a personalized note</div>
-      <div class="sign-chips" id="sign-chips">
-        <button class="sign-chip" data-sign="aries"><span class="sign-chip-gl">♈</span><span class="sign-chip-nm">Aries</span></button>
-        <button class="sign-chip" data-sign="taurus"><span class="sign-chip-gl">♉</span><span class="sign-chip-nm">Taurus</span></button>
-        <button class="sign-chip" data-sign="gemini"><span class="sign-chip-gl">♊</span><span class="sign-chip-nm">Gemini</span></button>
-        <button class="sign-chip" data-sign="cancer"><span class="sign-chip-gl">♋</span><span class="sign-chip-nm">Cancer</span></button>
-        <button class="sign-chip" data-sign="leo"><span class="sign-chip-gl">♌</span><span class="sign-chip-nm">Leo</span></button>
-        <button class="sign-chip" data-sign="virgo"><span class="sign-chip-gl">♍</span><span class="sign-chip-nm">Virgo</span></button>
-        <button class="sign-chip" data-sign="libra"><span class="sign-chip-gl">♎</span><span class="sign-chip-nm">Libra</span></button>
-        <button class="sign-chip" data-sign="scorpio"><span class="sign-chip-gl">♏</span><span class="sign-chip-nm">Scorpio</span></button>
-        <button class="sign-chip" data-sign="sagittarius"><span class="sign-chip-gl">♐</span><span class="sign-chip-nm">Sagittarius</span></button>
-        <button class="sign-chip" data-sign="capricorn"><span class="sign-chip-gl">♑</span><span class="sign-chip-nm">Capricorn</span></button>
-        <button class="sign-chip" data-sign="aquarius"><span class="sign-chip-gl">♒</span><span class="sign-chip-nm">Aquarius</span></button>
-        <button class="sign-chip" data-sign="pisces"><span class="sign-chip-gl">♓</span><span class="sign-chip-nm">Pisces</span></button>
-      </div>
-      <div class="sign-note" id="sign-note"></div>
-      <p class="sign-deeper">Want something more precise? <a href="/natal%20readings/jordan.html">A natal reading from Jordan goes deeper &rarr;</a></p>
-    </div>
-
   </div>
 </div><!-- /panel-week -->
 
@@ -479,28 +457,41 @@ strong{color:var(--rose);font-weight:500}
   </div>
 </div><!-- /panel-sky -->
 
-<!-- ══ READINGS PANEL ════════════════════════════════════════════════════════ -->
-<div class="panel" id="panel-readings">
+<!-- ══ FOR YOU PANEL ══════════════════════════════════════════════════════════ -->
+<div class="panel" id="panel-foryou">
   <div class="reading-inner">
 
     <div class="readings-identity">
-      <div class="readings-eyebrow">Built for your chart</div>
-      <div class="readings-headline">Personal Readings</div>
+      <div class="readings-eyebrow">Personalized for your sign</div>
+      <div class="readings-headline">Your Week</div>
     </div>
 
-    <p class="readings-intro">The collective sky is everyone&rsquo;s weather. Your natal chart is the map you bring to it. These readings go deeper &mdash; built specifically for your chart, your timing, your life.</p>
+    <p class="readings-intro">The collective weather is the same for everyone. Your sign is the lens you bring to it &mdash; select below for a note written specifically for you.</p>
+
+    <div class="sign-wrap">
+      <div class="sign-label">Your sun sign</div>
+      <div class="sign-chips" id="sign-chips">
+        <button class="sign-chip" data-sign="aries"><span class="sign-chip-gl">♈</span><span class="sign-chip-nm">Aries</span></button>
+        <button class="sign-chip" data-sign="taurus"><span class="sign-chip-gl">♉</span><span class="sign-chip-nm">Taurus</span></button>
+        <button class="sign-chip" data-sign="gemini"><span class="sign-chip-gl">♊</span><span class="sign-chip-nm">Gemini</span></button>
+        <button class="sign-chip" data-sign="cancer"><span class="sign-chip-gl">♋</span><span class="sign-chip-nm">Cancer</span></button>
+        <button class="sign-chip" data-sign="leo"><span class="sign-chip-gl">♌</span><span class="sign-chip-nm">Leo</span></button>
+        <button class="sign-chip" data-sign="virgo"><span class="sign-chip-gl">♍</span><span class="sign-chip-nm">Virgo</span></button>
+        <button class="sign-chip" data-sign="libra"><span class="sign-chip-gl">♎</span><span class="sign-chip-nm">Libra</span></button>
+        <button class="sign-chip" data-sign="scorpio"><span class="sign-chip-gl">♏</span><span class="sign-chip-nm">Scorpio</span></button>
+        <button class="sign-chip" data-sign="sagittarius"><span class="sign-chip-gl">♐</span><span class="sign-chip-nm">Sagittarius</span></button>
+        <button class="sign-chip" data-sign="capricorn"><span class="sign-chip-gl">♑</span><span class="sign-chip-nm">Capricorn</span></button>
+        <button class="sign-chip" data-sign="aquarius"><span class="sign-chip-gl">♒</span><span class="sign-chip-nm">Aquarius</span></button>
+        <button class="sign-chip" data-sign="pisces"><span class="sign-chip-gl">♓</span><span class="sign-chip-nm">Pisces</span></button>
+      </div>
+      <div class="sign-note" id="sign-note"></div>
+    </div>
+
+    <div class="sep"><span class="sep-inner">Go Deeper</span></div>
+
+    <p class="readings-intro" style="margin-bottom:16px">The collective sky shows the weather. A natal reading is built from your specific birth chart &mdash; your timing, your patterns, your life. These go much further than a sun sign note.</p>
 
     <div class="nr-cards">
-      <a class="nr-card" href="/natal%20readings/dasha.html" target="_blank">
-        <span class="nr-card-name">Dasha</span>
-        <span class="nr-card-sign">29&deg; Sagittarius Sun</span>
-        <span class="nr-card-cta">Open reading &rarr;</span>
-      </a>
-      <a class="nr-card" href="/natal%20readings/yvonne.html" target="_blank">
-        <span class="nr-card-name">Yvonne</span>
-        <span class="nr-card-sign">22&deg; Cancer &middot; Sag Rising</span>
-        <span class="nr-card-cta">Open reading &rarr;</span>
-      </a>
       <div class="nr-card request">
         <span class="nr-card-name">Your reading</span>
         <span class="nr-card-sign">birth chart &middot; personalized</span>
@@ -518,8 +509,10 @@ strong{color:var(--rose);font-weight:500}
       </div>
     </div>
 
+    <p class="sign-deeper" style="margin-top:14px">Ask Jordan about a natal chart reading &rarr;</p>
+
   </div>
-</div><!-- /panel-readings -->
+</div><!-- /panel-foryou -->
 
 </div><!-- /app-body -->
 
@@ -533,9 +526,9 @@ strong{color:var(--rose);font-weight:500}
     <span class="nav-icon">☽</span>
     <span class="nav-label">The Sky</span>
   </button>
-  <button class="nav-tab" data-target="readings" onclick="switchPanel('readings',this)">
+  <button class="nav-tab" data-target="foryou" onclick="switchPanel('foryou',this)">
     <span class="nav-icon">◯</span>
-    <span class="nav-label">Readings</span>
+    <span class="nav-label">For You</span>
   </button>
 </nav>
 
