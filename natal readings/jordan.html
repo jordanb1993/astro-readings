@@ -558,6 +558,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overs
   font-size:0.50rem;letter-spacing:0.10em;text-transform:uppercase;
   color:var(--muted-3);line-height:1.5;
 }
+.hc-preview{font-size:0.46rem;letter-spacing:0.10em;text-transform:uppercase;color:rgba(var(--hc-alpha,var(--gold-alpha)),0.60);font-family:'Inter',sans-serif;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 /* per-card accent colors */
 .hc-natal{ --hc-alpha:var(--gold-alpha) }
 .hc-daily{ --hc-alpha:var(--cerulean-alpha) }
@@ -709,7 +710,8 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overs
             </svg>
           </div>
           <div class="hc-label">Daily</div>
-          <div class="hc-title hc-title-sm">Today's reading</div>
+          <div class="hc-title hc-title-sm" id="home-daily-title">Today's reading</div>
+          <div class="hc-preview" id="home-daily-transit" style="display:none"></div>
         </button>
         <button class="home-card hc-transits" onclick="switchToPanel('transits',document.querySelector('[data-target=transits]'))">
           <div class="hc-top">
@@ -721,7 +723,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overs
             </svg>
           </div>
           <div class="hc-label">Transits</div>
-          <div class="hc-title hc-title-sm">Current sky</div>
+          <div class="hc-title hc-title-sm" id="home-transit-count">Current sky</div>
         </button>
       </div>
 
@@ -1718,21 +1720,23 @@ subpanels.chart.classList.add('active');
 // Key is only visible on Natal > Chart sub-panel — hide on startup (home)
 document.getElementById('keyBtn').classList.add('hidden');
 
-// Home panel: date + moon phase
+// Home panel: date (static) + moon phase (live from today.json)
 (function(){
   const months=['January','February','March','April','May','June','July','August','September','October','November','December'];
   const days=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
   const now=new Date();
   const el=document.getElementById('home-date');
   if(el)el.textContent=`${days[now.getDay()]} · ${months[now.getMonth()]} ${now.getDate()}`;
-  // Lunar phase (simple approximation)
-  const known=new Date('2000-01-06T18:14:00Z'); // known new moon
-  const msDay=86400000*29.53059;
-  const age=((now-known)%msDay+msDay)%msDay/86400000;
-  const phases=['New Moon','Waxing Crescent','First Quarter','Waxing Gibbous','Full Moon','Waning Gibbous','Last Quarter','Waning Crescent'];
-  const idx=Math.round(age/29.53059*8)%8;
-  const moonEl=document.getElementById('home-moon');
-  if(moonEl)moonEl.textContent=phases[idx];
+})();
+
+// Pre-fetch today.json so home panel populates without tapping Daily first
+(async function(){
+  try{
+    const r=await fetch('/today.json?_='+Date.now());
+    const d=await r.json();
+    dailyData=d;
+    updateHomeFromDaily(d);
+  }catch(e){}
 })();
 
 function switchPanel(id,btn){
@@ -1959,6 +1963,8 @@ function renderTransitList(){
   if(!transitsData)return;
   const eyebrow=document.getElementById('t-eyebrow');
   if(eyebrow)eyebrow.textContent='live sky · '+transitsData.generated;
+  const countEl=document.getElementById('home-transit-count');
+  if(countEl){const n=(transitsData.current||[]).length;countEl.textContent=n>0?`${n} active`:'Current sky';}
   const body=document.getElementById('t-list-body');
   body.innerHTML='';
   transitsData.current.forEach((t,i)=>{
@@ -2095,11 +2101,21 @@ async function openTransitFromPill(label,glyph){
 // ─── DAILY DATA ───────────────────────────────────────────────────────────────
 let dailyData=null;
 
+function updateHomeFromDaily(d){
+  const moonEl=document.getElementById('home-moon');
+  if(moonEl&&(d.moon_phase||d.moon_sign))moonEl.textContent=[d.moon_phase,d.moon_sign].filter(Boolean).join(' · ');
+  const titleEl=document.getElementById('home-daily-title');
+  if(titleEl&&d.title)titleEl.textContent=d.title;
+  const transitEl=document.getElementById('home-daily-transit');
+  if(transitEl&&d.key_transit){transitEl.textContent=d.key_transit;transitEl.style.display='';}
+}
+
 async function loadDaily(){
-  if(dailyData)return;
+  if(dailyData){renderDaily();return;}
   try{
     const r=await fetch('/today.json?_='+Date.now());
     dailyData=await r.json();
+    updateHomeFromDaily(dailyData);
     renderDaily();
   }catch(e){
     document.getElementById('daily-body').innerHTML='<div style="opacity:0.30;text-align:center;padding:40px 0;font-size:0.75rem">Could not load today\'s reading.</div>';
