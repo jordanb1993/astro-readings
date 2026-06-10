@@ -1,0 +1,93 @@
+{
+  "generated": "2026-06-09",
+  "current": [
+    {
+      "id": "jupiter-trine-pluto",
+      "glyph": "♃",
+      "transit_planet": "Jupiter",
+      "transit_sign": "Cancer",
+      "transit_deg": "25°42'",
+      "aspect": "Trine",
+      "aspect_glyph": "△",
+      "natal_point": "Pluto",
+      "natal_sign": "Scorpio",
+      "natal_house": "H6",
+      "orb": "0.02°",
+      "direction": "applying",
+      "exact_date": "2026-06-09",
+      "keywords": ["expansion", "depth power", "grace through shadow", "6th house"],
+      "summary": "Peak window. Jupiter in Cancer offering structural confirmation to the 6th house depth work. Not encouragement — scope validation.",
+      "reading": "Jupiter in Cancer has been building toward this trine to natal Pluto in Scorpio all spring. At 0.02°, it's at the absolute closest contact. The trine is between the two water signs — Cancer's accumulated emotional intelligence and Scorpio's total commitment to depth. The 6th house placement of natal Pluto means this shows up in daily practice: the work you put your body into every morning, the project that requires full engagement or nothing at all.\n\nWhat this transit offers is not enthusiasm. It offers confirmation. The scope you've been building toward — the product, the readings, the infrastructure — is the right size. Jupiter doesn't expand what isn't ready; it expands what already has genuine structural weight. That's what 0.02° feels like: the frame fits.\n\nThis is a multi-pass transit. Jupiter entered orb in April, retrograded, and is making its final direct pass now. The window won't return for 12 years.",
+      "passes": [
+        {"label": "First pass", "date": "April 2026", "status": "complete"},
+        {"label": "Retrograde pass", "date": "May 2026", "status": "complete"},
+        {"label": "Final direct pass", "date": "June 9, 2026", "status": "exact now"}
+      ]
+    },
+    {
+      "id": "pluto-sextile-moon",
+      "glyph": "♇",
+      "transit_planet": "Pluto",
+      "transit_sign": "Aquarius Rx",
+      "transit_deg": "5°16'",
+      "aspect": "Sextile",
+      "aspect_glyph": "✶",
+      "natal_point": "Moon",
+      "natal_sign": "Aries",
+      "natal_house": "H10",
+      "orb": "0.29°",
+      "direction": "applying",
+      "exact_date": "2026-07",
+      "keywords": ["emotional structure", "slow reshaping", "career arc", "10th house"],
+      "summary": "A slow build toward structural transformation in the career and public sphere. The 10th house Moon — how you lead, how you're seen — is being quietly remade.",
+      "reading": "Pluto in Aquarius moving toward sextile with the natal Moon in Aries in the 10th. A sextile from Pluto is not dramatic — it's an offer. The kind of transformation that arrives through invitation rather than crisis.\n\nThe 10th house Moon is where your emotional intelligence becomes public. Aries there means the leadership register is instinctive, direct, first-in. Pluto from Aquarius is asking: what does that leadership look like when the structures around it also shift? The sextile creates an opening to consciously reshape the public-facing emotional identity — not lose it, but evolve it intentionally.\n\nAt 0.29° applying, this is still building. The exact contact arrives in late July. What you're experiencing now is the approach: a growing awareness that the form of how you show up professionally wants to change.",
+      "passes": [
+        {"label": "Building", "date": "June–July 2026", "status": "in orb"},
+        {"label": "Exact", "date": "July 2026", "status": "upcoming"}
+      ]
+    },
+    {
+      "id": "uranus-inconjunct-jupiter",
+      "glyph": "♅",
+      "transit_planet": "Uranus",
+      "transit_sign": "Gemini",
+      "transit_deg": "2°32'",
+      "aspect": "Inconjunct",
+      "aspect_glyph": "⚻",
+      "natal_point": "Jupiter",
+      "natal_sign": "Scorpio",
+      "natal_house": "H5",
+      "orb": "0.32°",
+      "direction": "applying",
+      "exact_date": "2026-06-14",
+      "keywords": ["creative friction", "expansion redirected", "5th house", "adjustment signal"],
+      "summary": "The creative work wants to turn sideways rather than forward. The pivot is the information, not the obstacle.",
+      "reading": "Uranus in Gemini applying to inconjunct natal Jupiter in Scorpio in the 5th. An inconjunct (150°) is the adjustment aspect — it signals that two areas of your chart that don't naturally speak to each other are being forced into conversation. Gemini and Scorpio share almost nothing in mode, element, or register.\n\nNatal Jupiter in Scorpio in the 5th house is the creative and expressive self operating at full depth. The 5th house is where the thing you make carries your actual identity — the astrology business, the readings, anything that is genuinely yours. Jupiter there amplifies, expands, and calls for the full commitment.\n\nUranus in Gemini is the disruption to form. Not to the content — to the direction of expansion. The inconjunct says: the creative work will not grow in the way you currently expect it to. A redirection is coming (exact June 14). The signal to watch is where the project wants to turn sideways — that sideways movement is the new path.",
+      "passes": [
+        {"label": "Exact", "date": "June 14, 2026", "status": "upcoming in 5 days"}
+      ]
+    },
+    {
+      "id": "jupiter-sesquiquadrate-mars",
+      "glyph": "♃",
+      "transit_planet": "Jupiter",
+      "transit_sign": "Cancer",
+      "transit_deg": "25°42'",
+      "aspect": "Sesquiquadrate",
+      "aspect_glyph": "□/",
+      "natal_point": "Mars",
+      "natal_sign": "Virgo",
+      "natal_house": "H6",
+      "orb": "0.08°",
+      "direction": "applying",
+      "exact_date": "2026-06-10",
+      "keywords": ["drive under pressure", "ambition friction", "work tension", "6th house"],
+      "summary": "Expansion (Jupiter) and drive (Mars) in the same house, in friction. More being asked of the work body than it finds easy. The pressure is productive.",
+      "reading": "The sesquiquadrate (135°) is a minor hard aspect — a friction aspect within expansion. Jupiter in Cancer is sending a challenging signal to natal Mars in Virgo in the 6th house. Both are in the 6th, which is the house of daily work, body, and practice. The friction is internal to the work itself.\n\nNatal Mars in Virgo in the 6th operates through precision and method — it works best when the task is clear, the standard is high, and the execution is controlled. Jupiter in Cancer expands through feeling and care, which doesn't always map onto Virgo's precision requirements. At 0.08° applying, the tension is near its peak.\n\nThis transit is short — Jupiter moves quickly at this degree. What it asks is: can the drive hold the expanded scope without constricting? The answer is usually yes, but it requires consciously not letting ambition collapse into perfectionism when the load increases.",
+      "passes": [
+        {"label": "Exact", "date": "June 10, 2026", "status": "tomorrow"}
+      ]
+    }
+  ],
+  "historical": []
+}

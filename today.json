@@ -1,0 +1,30 @@
+{
+  "date": "2026-06-09",
+  "title": "the fire crosses over",
+  "moon_phase": "Last Quarter",
+  "moon_sign": "Aries 0°",
+  "moon_glyph": "☽",
+  "pulse": "Jupiter stands at 0.02° from natal Pluto, applying, not yet at exact. The Moon has just entered Aries. Yesterday's Pisces dissolve ends. Today is where the trine lands.",
+  "key_transit": "Jupiter △ natal Pluto",
+  "key_transit_note": "0.02° · exact window is now",
+  "prose": [
+    "The Moon crossed into Aries in the last several hours, zero degrees, the first step into fire. After the Pisces disseminating phase, this shift isn't soft. Aries doesn't receive; it arrives. The emotional register moves from release to ignition. And what it's arriving into is a sky where Jupiter's trine to natal Pluto is at 0.02°, still applying: the closest this aspect will come.",
+    "That trine is the center of gravity today. Jupiter in Cancer, running on emotional intelligence and accumulated care, reaching 120° to natal Pluto in Scorpio in the 6th house. The 6th is where you show up in the body: the daily practice, the form the work takes, what you do at the desk every morning. Pluto in Scorpio there doesn't do anything partially; the work is either total or it doesn't function. At 0.02°, Jupiter's trine to that placement is offering one thing: the scope is right. Not encouragement. Actual structural confirmation that the full weight of what you're building belongs exactly where you've put it.",
+    "Venus at 0.42° trine natal Pluto (exact by tonight) adds a second contact to the same 6th house depth point, this time through beauty and value. The Venus–Jupiter Cancer conjunction sits at 0.44°; both bodies in Cancer, both sending trine energy into the Scorpio zone. The quality of what's available in the creative and work field today is not ordinary output. It has weight.",
+    "New on the board today: Uranus at 0.32° inconjunct natal Jupiter in the 5th. An inconjunct is not a challenge or a support — it's an adjustment signal. The 5th house creative work (the business, the readings, what requires full imaginative engagement) is receiving a Uranus-in-Gemini redirection: something won't expand in the expected direction. The pivot is the information. Watch where the creative work wants to turn sideways rather than forward; that's the signal, not the obstacle."
+  ],
+  "pull": "Jupiter isn't increasing the work — it's confirming the scale.",
+  "today": {
+    "business": "Jupiter △ natal Pluto at 0.02°, the exact-trine window is now. Anything requiring depth and structural scope has maximum support today.",
+    "creative": "Uranus ⚻ natal Jupiter (5th) closing toward June 14 exact. Something in the creative field is pivoting — follow the turn.",
+    "body": "Aries 0° Moon after Pisces waning. The fire has returned; the nervous system wants movement after dissolve."
+  },
+  "active_transits": [
+    {"glyph": "♃", "label": "Jupiter △ natal Pluto (H6)", "orb": "0.02°", "direction": "applying"},
+    {"glyph": "☊", "label": "NNode △ natal Jupiter (H5)", "orb": "0.05°", "direction": "applying"},
+    {"glyph": "♀", "label": "Venus △ natal Pluto (H6)", "orb": "0.42°", "direction": "applying"},
+    {"glyph": "⚷", "label": "Chiron ✶ natal Ascendant", "orb": "0.21°", "direction": "separating"},
+    {"glyph": "♇", "label": "Pluto Rx ✶ natal Moon (H10)", "orb": "0.29°", "direction": "applying"},
+    {"glyph": "♅", "label": "Uranus ⚻ natal Jupiter (H5)", "orb": "0.32°", "direction": "applying"}
+  ]
+}

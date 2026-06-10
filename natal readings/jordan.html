@@ -565,6 +565,71 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overs
 .hc-synastry{ --hc-alpha:var(--teal-alpha) }
 .hc-workplace{ --hc-alpha:var(--cerulean-alpha) }
 .hc-wheel{ --hc-alpha:var(--teal-alpha) }
+/* ══ TRANSIT LIST ROWS ══════════════════════════════════════════════════ */
+.t-row{
+  display:flex;align-items:center;gap:12px;
+  padding:14px 16px;border-radius:12px;
+  background:rgba(var(--amber-alpha),0.04);
+  border:1px solid rgba(var(--amber-alpha),0.12);
+  cursor:pointer;-webkit-tap-highlight-color:transparent;
+  transition:background 0.14s,border-color 0.14s;
+  margin-bottom:6px;
+}
+.t-row:active{background:rgba(var(--amber-alpha),0.09);border-color:rgba(var(--amber-alpha),0.25)}
+.t-row-glyph{font-size:1.35rem;flex-shrink:0;width:28px;text-align:center;line-height:1;color:rgba(var(--amber-alpha),0.80)}
+.t-row-body{flex:1;min-width:0}
+.t-row-name{font-family:'Cormorant Garamond',serif;font-size:1.0rem;font-weight:300;color:var(--text);line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.t-row-meta{font-size:0.48rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted-3);margin-top:3px}
+.t-row-orb{flex-shrink:0;text-align:right}
+.t-row-orb-val{font-size:0.52rem;letter-spacing:0.08em;color:rgba(var(--amber-alpha),0.75);font-family:'Inter',sans-serif;font-weight:500}
+.t-row-orb-dir{font-size:0.44rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted-3);margin-top:2px}
+.t-row-chevron{color:rgba(var(--amber-alpha),0.35);font-size:0.75rem;flex-shrink:0;margin-left:4px}
+
+/* ══ TRANSIT DETAIL ═════════════════════════════════════════════════════ */
+.t-detail-header{margin-bottom:22px}
+.t-detail-eyebrow{font-size:0.52rem;letter-spacing:0.20em;text-transform:uppercase;color:rgba(var(--amber-alpha),0.70);margin-bottom:6px}
+.t-detail-title{font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:300;color:var(--text);line-height:1.2}
+.t-detail-subtitle{font-size:0.52rem;letter-spacing:0.13em;text-transform:uppercase;color:var(--muted-3);margin-top:5px}
+.t-detail-orb{display:inline-flex;align-items:center;gap:8px;background:rgba(var(--amber-alpha),0.07);border:1px solid rgba(var(--amber-alpha),0.20);border-radius:20px;padding:5px 14px;margin-top:10px}
+.t-detail-orb-val{font-size:0.52rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(var(--amber-alpha),0.80);font-family:'Inter',sans-serif}
+.t-detail-prose{margin-top:20px}
+.t-detail-prose p{color:var(--muted);font-size:0.88rem;line-height:1.85;margin-bottom:18px}
+.t-detail-pull{border-left:2px solid rgba(var(--amber-alpha),0.30);padding:10px 0 10px 16px;margin:20px 0;font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:300;font-style:italic;color:rgba(var(--amber-alpha),0.85);line-height:1.5}
+.t-passes{margin-top:20px}
+.t-passes-label{font-size:0.48rem;letter-spacing:0.20em;text-transform:uppercase;color:var(--muted-3);margin-bottom:10px}
+.t-pass-row{display:flex;align-items:center;justify-content:space-between;padding:9px 0;border-bottom:1px solid rgba(var(--gold-alpha),0.08)}
+.t-pass-row:last-child{border-bottom:none}
+.t-pass-label{font-size:0.55rem;letter-spacing:0.10em;text-transform:uppercase;color:var(--muted-2);font-family:'Inter',sans-serif}
+.t-pass-date{font-size:0.52rem;color:var(--muted-3);font-family:'Inter',sans-serif}
+.t-pass-status{font-size:0.44rem;letter-spacing:0.14em;text-transform:uppercase;padding:2px 8px;border-radius:12px;font-family:'Inter',sans-serif}
+.t-pass-status.now{background:rgba(var(--amber-alpha),0.14);color:rgba(var(--amber-alpha),0.90)}
+.t-pass-status.upcoming{background:rgba(var(--cerulean-alpha),0.10);color:rgba(var(--cerulean-alpha),0.75)}
+.t-pass-status.done{background:rgba(255,255,255,0.05);color:var(--muted-3)}
+
+/* ══ DAILY READING ══════════════════════════════════════════════════════ */
+.d-header{margin-bottom:28px}
+.d-eyebrow{font-size:0.52rem;letter-spacing:0.22em;text-transform:uppercase;color:rgba(var(--cerulean-alpha),0.70);margin-bottom:5px}
+.d-title{font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:300;font-style:italic;color:var(--text);line-height:1.2}
+.d-moon-strip{display:flex;align-items:center;gap:8px;margin-top:8px}
+.d-moon-glyph{font-size:1.1rem;color:rgba(var(--cerulean-alpha),0.75)}
+.d-moon-text{font-size:0.52rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted-3)}
+.d-pulse{background:rgba(var(--cerulean-alpha),0.06);border:1px solid rgba(var(--cerulean-alpha),0.16);border-radius:12px;padding:16px 18px;margin-bottom:20px;font-family:'Cormorant Garamond',serif;font-size:1.0rem;font-weight:300;font-style:italic;color:rgba(var(--cerulean-alpha),0.90);line-height:1.65}
+.d-key-transit{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:rgba(var(--cerulean-alpha),0.06);border:1px solid rgba(var(--cerulean-alpha),0.14);border-radius:10px;margin-bottom:20px}
+.d-key-transit-name{font-size:0.58rem;letter-spacing:0.10em;text-transform:uppercase;color:rgba(var(--cerulean-alpha),0.85);font-family:'Inter',sans-serif;font-weight:500}
+.d-key-transit-note{font-size:0.50rem;letter-spacing:0.10em;text-transform:uppercase;color:var(--muted-3);font-family:'Inter',sans-serif}
+.d-prose{margin-bottom:24px}
+.d-prose p{color:var(--muted);font-size:0.88rem;line-height:1.85;margin-bottom:18px}
+.d-pull{border-left:2px solid rgba(var(--cerulean-alpha),0.35);padding:10px 0 10px 16px;margin:22px 0;font-family:'Cormorant Garamond',serif;font-size:1.08rem;font-weight:300;font-style:italic;color:rgba(var(--cerulean-alpha),0.88);line-height:1.5}
+.d-today{margin-top:24px}
+.d-today-label{font-size:0.48rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--muted-3);margin-bottom:12px}
+.d-today-row{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid rgba(var(--gold-alpha),0.08)}
+.d-today-row:last-child{border-bottom:none}
+.d-today-cat{font-size:0.48rem;letter-spacing:0.16em;text-transform:uppercase;color:rgba(var(--cerulean-alpha),0.65);font-family:'Inter',sans-serif;font-weight:500;min-width:56px;padding-top:2px}
+.d-today-text{font-size:0.80rem;color:var(--muted-2);line-height:1.6;flex:1}
+.d-transit-pills{display:flex;flex-wrap:wrap;gap:6px;margin-top:20px;margin-bottom:8px}
+.d-t-pill{display:flex;align-items:center;gap:5px;padding:4px 10px;border-radius:20px;background:rgba(var(--cerulean-alpha),0.07);border:1px solid rgba(var(--cerulean-alpha),0.15)}
+.d-t-pill-glyph{font-size:0.80rem;color:rgba(var(--cerulean-alpha),0.75)}
+.d-t-pill-text{font-size:0.46rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted-3);font-family:'Inter',sans-serif}
 </style>
 </head>
 <body>
@@ -1281,170 +1346,56 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overs
   </div><!-- /natal-body -->
 </div><!-- /panel-natal -->
 
-<!-- ── TOP-LEVEL PLACEHOLDER PANELS ─────────────────────────────────────── -->
-<div class="panel reading-panel" id="panel-transits">
-  <div class="geo-bg">
-    <svg viewBox="0 0 380 720" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
-      <circle cx="190" cy="360" r="180" stroke="rgba(212,128,64,0.06)" stroke-width="0.5"/>
-      <circle cx="190" cy="360" r="120" stroke="rgba(212,128,64,0.04)" stroke-width="0.5"/>
-      <line x1="10" y1="360" x2="370" y2="360" stroke="rgba(212,128,64,0.04)" stroke-width="0.4"/>
-      <line x1="190" y1="60" x2="190" y2="660" stroke="rgba(212,128,64,0.04)" stroke-width="0.4"/>
-    </svg>
+<!-- ══ TRANSITS PANEL ══════════════════════════════════════════════════════ -->
+<div class="panel" id="panel-transits" style="overflow:hidden">
+  <svg class="geo-bg" viewBox="0 0 380 720" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <circle cx="190" cy="360" r="180" stroke="rgba(212,128,64,0.06)" stroke-width="0.5"/>
+    <circle cx="190" cy="360" r="120" stroke="rgba(212,128,64,0.04)" stroke-width="0.5"/>
+    <line x1="10" y1="360" x2="370" y2="360" stroke="rgba(212,128,64,0.04)" stroke-width="0.4"/>
+    <line x1="190" y1="60" x2="190" y2="660" stroke="rgba(212,128,64,0.04)" stroke-width="0.4"/>
+  </svg>
+
+  <!-- LIST VIEW -->
+  <div id="t-list" style="position:absolute;inset:0;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;transition:transform 0.28s cubic-bezier(0.4,0,0.2,1),opacity 0.22s ease">
+    <div class="reading-inner accent-amber" style="padding-top:24px">
+      <div class="panel-heading" style="margin-bottom:20px">
+        <div class="panel-eyebrow-sm" id="t-eyebrow">live sky</div>
+        <div class="panel-title-lg">Active Transits</div>
+      </div>
+      <div id="t-list-body" style="display:flex;flex-direction:column;gap:2px">
+        <!-- populated by JS -->
+      </div>
+      <div id="t-historical-section" style="display:none;margin-top:24px">
+        <div class="sep"><span class="sep-inner">Historical</span></div>
+        <div id="t-hist-body" style="display:flex;flex-direction:column;gap:2px;margin-top:12px"></div>
+      </div>
+    </div>
   </div>
-  <div class="reading-inner accent-amber">
-    <div class="panel-slot">
-      <div class="panel-slot-head">
-        <div class="panel-heading">
-          <div class="panel-eyebrow-sm">live sky · june 2026</div>
-          <div class="panel-title-lg">Active Transits</div>
-        </div>
-      </div>
-      <div class="panel-slot-body">
 
-        <div class="sec-card">
-          <div class="sec-head">
-            <div class="sec-sign-glyph" style="font-size:24px">♃</div>
-            <div class="sec-meta">
-              <div class="sec-eyebrow">Jupiter · 25°42' Cancer</div>
-              <div class="sec-title">Trine Natal Pluto</div>
-              <div class="sec-tagline">0.02° separating · peak contact just passed · natal Pluto H6</div>
-            </div>
-          </div>
-          <div class="kw-row">
-            <span class="kw">expansion</span><span class="kw">depth power</span><span class="kw">grace through shadow</span><span class="kw">6th house</span>
-          </div>
-          <div class="sec-body">
-            <div class="transit-phase2-note" style="display:inline-flex;align-items:center;gap:6px;background:rgba(var(--accent-alpha),0.06);border:1px solid rgba(var(--accent-alpha),0.20);border-radius:20px;padding:5px 14px;margin-top:2px">
-              <span style="font-size:0.42rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(var(--accent-alpha),0.55);font-family:'Inter',sans-serif">reading · phase 2</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="sec-card">
-          <div class="sec-head">
-            <div class="sec-sign-glyph" style="font-size:24px">♇</div>
-            <div class="sec-meta">
-              <div class="sec-eyebrow">Pluto · 5°16' Aquarius Rx</div>
-              <div class="sec-title">Sextile Natal Moon</div>
-              <div class="sec-tagline">0.29° applying · slow build · natal Moon H10</div>
-            </div>
-          </div>
-          <div class="kw-row">
-            <span class="kw">emotional structure</span><span class="kw">slow reshaping</span><span class="kw">career arc</span><span class="kw">10th house</span>
-          </div>
-          <div class="sec-body">
-            <div class="transit-phase2-note" style="display:inline-flex;align-items:center;gap:6px;background:rgba(var(--accent-alpha),0.06);border:1px solid rgba(var(--accent-alpha),0.20);border-radius:20px;padding:5px 14px;margin-top:2px">
-              <span style="font-size:0.42rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(var(--accent-alpha),0.55);font-family:'Inter',sans-serif">reading · phase 2</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="sec-card">
-          <div class="sec-head">
-            <div class="sec-sign-glyph" style="font-size:24px">♅</div>
-            <div class="sec-meta">
-              <div class="sec-eyebrow">Uranus · 2°32' Gemini</div>
-              <div class="sec-title">Inconjunct Natal Jupiter</div>
-              <div class="sec-tagline">0.32° applying · adjustment needed · natal Jupiter H5</div>
-            </div>
-          </div>
-          <div class="kw-row">
-            <span class="kw">creative friction</span><span class="kw">expansion redirected</span><span class="kw">5th house</span>
-          </div>
-          <div class="sec-body">
-            <div class="transit-phase2-note" style="display:inline-flex;align-items:center;gap:6px;background:rgba(var(--accent-alpha),0.06);border:1px solid rgba(var(--accent-alpha),0.20);border-radius:20px;padding:5px 14px;margin-top:2px">
-              <span style="font-size:0.42rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(var(--accent-alpha),0.55);font-family:'Inter',sans-serif">reading · phase 2</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="sec-card">
-          <div class="sec-head">
-            <div class="sec-sign-glyph" style="font-size:24px">♃</div>
-            <div class="sec-meta">
-              <div class="sec-eyebrow">Jupiter · 25°42' Cancer</div>
-              <div class="sec-title">Sesquiquadrate Natal Mars</div>
-              <div class="sec-tagline">0.08° applying · friction within expansion · natal Mars H6</div>
-            </div>
-          </div>
-          <div class="kw-row">
-            <span class="kw">drive under pressure</span><span class="kw">ambition friction</span><span class="kw">work tension</span>
-          </div>
-          <div class="sec-body">
-            <div class="transit-phase2-note" style="display:inline-flex;align-items:center;gap:6px;background:rgba(var(--accent-alpha),0.06);border:1px solid rgba(var(--accent-alpha),0.20);border-radius:20px;padding:5px 14px;margin-top:2px">
-              <span style="font-size:0.42rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(var(--accent-alpha),0.55);font-family:'Inter',sans-serif">reading · phase 2</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="panel-slot-empty visible" style="padding-top:28px">
-          <div class="slot-empty-note" style="opacity:0.55">phase 2 — readings generated nightly from live ephemeris + your natal positions</div>
-        </div>
-
-      </div>
+  <!-- DETAIL VIEW (slides in from right) -->
+  <div id="t-detail" style="position:absolute;inset:0;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;transform:translateX(100%);transition:transform 0.28s cubic-bezier(0.4,0,0.2,1);background:var(--bg);z-index:2">
+    <div class="reading-inner accent-amber" style="padding-top:16px">
+      <!-- back button -->
+      <button id="t-back" onclick="closeTransitDetail()" style="display:flex;align-items:center;gap:8px;background:none;border:none;cursor:pointer;-webkit-tap-highlight-color:transparent;margin-bottom:20px;padding:0">
+        <span style="font-size:1rem;color:rgba(var(--gold-alpha),0.70)">←</span>
+        <span style="font-size:0.52rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(var(--gold-alpha),0.60);font-family:'Inter',sans-serif;font-weight:500">All Transits</span>
+      </button>
+      <div id="t-detail-body"><!-- populated by JS --></div>
     </div>
   </div>
 </div><!-- /panel-transits -->
 
+<!-- ══ DAILY PANEL ═════════════════════════════════════════════════════════ -->
 <div class="panel reading-panel" id="panel-daily">
-  <div class="geo-bg">
-    <svg viewBox="0 0 380 720" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
-      <circle cx="190" cy="360" r="200" stroke="rgba(106,184,212,0.05)" stroke-width="0.5"/>
-      <circle cx="190" cy="360" r="100" stroke="rgba(106,184,212,0.04)" stroke-width="0.5"/>
-      <circle cx="190" cy="360" r="40" stroke="rgba(106,184,212,0.07)" stroke-width="0.5"/>
-    </svg>
-  </div>
-  <div class="reading-inner accent-cerulean">
-    <div class="panel-slot">
-      <div class="panel-slot-head">
-        <div class="panel-heading">
-          <div class="panel-eyebrow-sm" id="daily-eyebrow">today</div>
-          <div class="panel-title-lg">Daily Reading</div>
-        </div>
-      </div>
-      <div class="panel-slot-body">
-
-        <!-- Date card -->
-        <div class="sec-card">
-          <div class="sec-head">
-            <div class="sec-sign-glyph" style="font-size:24px">☽</div>
-            <div class="sec-meta">
-              <div class="sec-eyebrow" id="daily-date-eyebrow">loading date...</div>
-              <div class="sec-title">Today's Sky</div>
-              <div class="sec-tagline">Personalized to Jordan's natal chart · updated 4am daily</div>
-            </div>
-          </div>
-          <div class="kw-row">
-            <span class="kw">moon sign</span><span class="kw">dominant transits</span><span class="kw">natal contacts</span><span class="kw">daily tone</span>
-          </div>
-          <div class="sec-body">
-            <div class="transit-phase2-note" style="display:inline-flex;align-items:center;gap:6px;background:rgba(var(--accent-alpha),0.06);border:1px solid rgba(var(--accent-alpha),0.20);border-radius:20px;padding:5px 14px;margin-top:2px">
-              <span style="font-size:0.42rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(var(--accent-alpha),0.55);font-family:'Inter',sans-serif">reading · phase 2</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Reading body slot -->
-        <div class="sec-card">
-          <div class="sec-head">
-            <div class="sec-sign-glyph" style="font-size:24px">✦</div>
-            <div class="sec-meta">
-              <div class="sec-eyebrow">daily reading</div>
-              <div class="sec-title">The Thread for Today</div>
-              <div class="sec-tagline">Prose reading · 200–350 words · voice-canon matched</div>
-            </div>
-          </div>
-          <div class="sec-body" style="padding-top:20px;padding-bottom:24px">
-            <p style="opacity:0.30;line-height:2.0;font-style:italic">The reading lives here. One paragraph for the sky. One for what it touches in your chart. One for what it means today.</p>
-            <p style="opacity:0.18;line-height:2.0;font-style:italic">Generated nightly at 4am. Always personalized. Never generic.</p>
-          </div>
-        </div>
-
-        <div class="panel-slot-empty visible" style="padding-top:28px">
-          <div class="slot-empty-note" style="opacity:0.55">phase 2 — nightly generation from live ephemeris + voice canon</div>
-        </div>
-
-      </div>
+  <svg class="geo-bg" viewBox="0 0 380 720" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <circle cx="190" cy="360" r="200" stroke="rgba(74,159,212,0.05)" stroke-width="0.5"/>
+    <circle cx="190" cy="360" r="100" stroke="rgba(74,159,212,0.04)" stroke-width="0.5"/>
+    <circle cx="190" cy="360" r="40" stroke="rgba(74,159,212,0.07)" stroke-width="0.5"/>
+  </svg>
+  <div class="reading-inner accent-cerulean" id="daily-body">
+    <!-- populated by JS -->
+    <div style="display:flex;align-items:center;justify-content:center;height:60vh;opacity:0.30">
+      <span style="font-size:0.52rem;letter-spacing:0.22em;text-transform:uppercase;font-family:'Inter',sans-serif">loading reading…</span>
     </div>
   </div>
 </div><!-- /panel-daily -->
@@ -1978,6 +1929,173 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeKey()});
 let _sx=0;
 overlay.addEventListener('touchstart',e=>{_sx=e.touches[0].clientX},{passive:true});
 overlay.addEventListener('touchend',e=>{if(e.changedTouches[0].clientX-_sx>80)closeKey()},{passive:true});
+
+// ─── TRANSITS DATA + NAVIGATION ──────────────────────────────────────────────
+let transitsData=null;
+
+async function loadTransits(){
+  if(transitsData)return;
+  try{
+    const r=await fetch('/transits.json?_='+Date.now());
+    transitsData=await r.json();
+    renderTransitList();
+  }catch(e){
+    document.getElementById('t-list-body').innerHTML='<p style="opacity:0.35;font-size:0.75rem;padding:20px 0;text-align:center">Could not load transit data.</p>';
+  }
+}
+
+function renderTransitList(){
+  if(!transitsData)return;
+  const eyebrow=document.getElementById('t-eyebrow');
+  if(eyebrow)eyebrow.textContent='live sky · '+transitsData.generated;
+  const body=document.getElementById('t-list-body');
+  body.innerHTML='';
+  transitsData.current.forEach((t,i)=>{
+    const row=document.createElement('button');
+    row.className='t-row';
+    row.setAttribute('aria-label',`${t.transit_planet} ${t.aspect} natal ${t.natal_point}`);
+    const dirLabel=t.direction==='applying'?'applying':'separating';
+    row.innerHTML=`
+      <span class="t-row-glyph">${t.glyph}</span>
+      <span class="t-row-body">
+        <span class="t-row-name">${t.aspect} Natal ${t.natal_point}</span>
+        <span class="t-row-meta">${t.transit_planet} · ${t.transit_deg} ${t.transit_sign} · ${t.natal_house}</span>
+      </span>
+      <span class="t-row-orb">
+        <span class="t-row-orb-val">${t.orb}</span>
+        <span class="t-row-orb-dir">${dirLabel}</span>
+      </span>
+      <span class="t-row-chevron">›</span>`;
+    row.addEventListener('click',()=>openTransitDetail(i));
+    body.appendChild(row);
+  });
+  if(transitsData.historical&&transitsData.historical.length){
+    const hs=document.getElementById('t-historical-section');
+    hs.style.display='';
+    const hb=document.getElementById('t-hist-body');
+    hb.innerHTML='';
+    transitsData.historical.forEach((t,i)=>{
+      const row=document.createElement('button');
+      row.className='t-row';
+      row.style.opacity='0.65';
+      row.innerHTML=`<span class="t-row-glyph">${t.glyph}</span><span class="t-row-body"><span class="t-row-name">${t.aspect} Natal ${t.natal_point}</span><span class="t-row-meta">${t.transit_planet} · ${t.transit_sign}</span></span><span class="t-row-chevron">›</span>`;
+      row.addEventListener('click',()=>openTransitDetail(i,'historical'));
+      hb.appendChild(row);
+    });
+  }
+}
+
+function openTransitDetail(idx,pool){
+  const t=(pool==='historical'?transitsData.historical:transitsData.current)[idx];
+  const db=document.getElementById('t-detail-body');
+  const statusMap={'exact now':'now','upcoming':'upcoming','complete':'done'};
+  const passesHtml=t.passes?`
+    <div class="t-passes">
+      <div class="t-passes-label">Passes</div>
+      ${t.passes.map(p=>{
+        const skey=Object.keys(statusMap).find(k=>p.status.toLowerCase().includes(k))||'';
+        const cls=statusMap[skey]||'done';
+        return `<div class="t-pass-row"><span class="t-pass-label">${p.label}</span><span class="t-pass-date">${p.date}</span><span class="t-pass-status ${cls}">${p.status}</span></div>`;
+      }).join('')}
+    </div>`:'';
+  const kwHtml=t.keywords?`<div class="kw-row" style="margin-top:14px;margin-bottom:0">${t.keywords.map(k=>`<span class="kw">${k}</span>`).join('')}</div>`:'';
+  const proseHtml=t.reading?t.reading.split('\n\n').map(p=>`<p>${p.replace(/\n/g,' ')}</p>`).join(''):'';
+  db.innerHTML=`
+    <div class="t-detail-header">
+      <div class="t-detail-eyebrow">${t.transit_planet} · ${t.transit_deg} ${t.transit_sign}</div>
+      <div class="t-detail-title">${t.aspect} Natal ${t.natal_point}</div>
+      <div class="t-detail-subtitle">${t.natal_sign} · ${t.natal_house}</div>
+      <div class="t-detail-orb">
+        <span class="t-detail-orb-val">${t.orb} ${t.direction}</span>
+        ${t.exact_date?`<span class="t-detail-orb-val" style="opacity:0.55">· exact ${t.exact_date}</span>`:''}
+      </div>
+    </div>
+    ${kwHtml}
+    ${t.summary?`<div class="t-detail-pull" style="margin-top:18px">${t.summary}</div>`:''}
+    <div class="t-detail-prose">${proseHtml}</div>
+    ${passesHtml}
+    <div style="height:32px"></div>`;
+  const listEl=document.getElementById('t-list');
+  const detailEl=document.getElementById('t-detail');
+  listEl.style.transform='translateX(-28%)';
+  listEl.style.opacity='0';
+  listEl.style.pointerEvents='none';
+  detailEl.style.transform='translateX(0)';
+  detailEl.scrollTop=0;
+}
+
+function closeTransitDetail(){
+  const listEl=document.getElementById('t-list');
+  const detailEl=document.getElementById('t-detail');
+  detailEl.style.transform='translateX(100%)';
+  listEl.style.transform='translateX(0)';
+  listEl.style.opacity='1';
+  listEl.style.pointerEvents='';
+}
+
+// load transits when panel first activated
+const _origSwitchPanel=switchPanel;
+function switchPanel(id,btn){
+  _origSwitchPanel(id,btn);
+  if(id==='transits')loadTransits();
+  if(id==='daily')loadDaily();
+}
+
+// ─── DAILY DATA ───────────────────────────────────────────────────────────────
+let dailyData=null;
+
+async function loadDaily(){
+  if(dailyData)return;
+  try{
+    const r=await fetch('/today.json?_='+Date.now());
+    dailyData=await r.json();
+    renderDaily();
+  }catch(e){
+    document.getElementById('daily-body').innerHTML='<div style="opacity:0.30;text-align:center;padding:40px 0;font-size:0.75rem">Could not load today\'s reading.</div>';
+  }
+}
+
+function renderDaily(){
+  if(!dailyData)return;
+  const d=dailyData;
+  const months=['January','February','March','April','May','June','July','August','September','October','November','December'];
+  const dateObj=new Date(d.date+'T12:00:00');
+  const dateLabel=`${months[dateObj.getMonth()]} ${dateObj.getDate()}, ${dateObj.getFullYear()}`;
+  const pillsHtml=(d.active_transits||[]).map(t=>`
+    <span class="d-t-pill">
+      <span class="d-t-pill-glyph">${t.glyph}</span>
+      <span class="d-t-pill-text">${t.label} · ${t.orb}</span>
+    </span>`).join('');
+  const proseHtml=(d.prose||[]).map(p=>`<p>${p}</p>`).join('');
+  const todayHtml=d.today?`
+    <div class="d-today">
+      <div class="d-today-label">Today</div>
+      ${d.today.business?`<div class="d-today-row"><span class="d-today-cat">Work</span><span class="d-today-text">${d.today.business}</span></div>`:''}
+      ${d.today.creative?`<div class="d-today-row"><span class="d-today-cat">Creative</span><span class="d-today-text">${d.today.creative}</span></div>`:''}
+      ${d.today.body?`<div class="d-today-row"><span class="d-today-cat">Body</span><span class="d-today-text">${d.today.body}</span></div>`:''}
+    </div>`:'';
+  document.getElementById('daily-body').innerHTML=`
+    <div style="padding-top:24px">
+      <div class="d-header">
+        <div class="d-eyebrow">${dateLabel}</div>
+        <div class="d-title">${d.title||'Daily Reading'}</div>
+        ${d.moon_phase||d.moon_sign?`<div class="d-moon-strip">
+          <span class="d-moon-glyph">☽</span>
+          <span class="d-moon-text">${[d.moon_phase,d.moon_sign].filter(Boolean).join(' · ')}</span>
+        </div>`:''}
+      </div>
+      ${d.pulse?`<div class="d-pulse">${d.pulse}</div>`:''}
+      ${d.key_transit?`<div class="d-key-transit">
+        <span class="d-key-transit-name">${d.key_transit}</span>
+        <span class="d-key-transit-note">${d.key_transit_note||''}</span>
+      </div>`:''}
+      <div class="d-prose">${proseHtml}</div>
+      ${d.pull?`<div class="d-pull">${d.pull}</div>`:''}
+      ${pillsHtml?`<div class="d-transit-pills">${pillsHtml}</div>`:''}
+      ${todayHtml}
+      <div style="height:32px"></div>
+    </div>`;
+}
 </script>
 </body>
 </html>
