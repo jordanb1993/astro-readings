@@ -4,6 +4,32 @@
 
 ---
 
+## 2026-06-10 (session 9) — Biwheel Interactivity (Session 2 of 2)
+
+**The headline:** Tap any transiting planet glyph on the biwheel → aspect lines for that planet come alive, all others dim, a gold selection ring appears, and a detail panel slides in below the chart showing the planet's degree + every active aspect. Tap again (or the label) to dismiss. Biwheel is now fully interactive.
+
+### What Changed
+
+**`window.bwState`:** Module-level state object (`{selected, lines, planets, selRing}`) initialized on every `renderBiwheel()` call. Stores refs to all aspect line elements and planet positions for direct DOM manipulation (no re-render on selection).
+
+**All aspect lines now drawn at ambient opacity (0.14)** — all mappable `active_transits` rendered, not just top 6. On tap: matching lines jump to full color opacity + 1.2px stroke. All others drop to 0.05. Gives the chart a "latent geometry → activated" feel.
+
+**Invisible hit circles (r=10)** behind each transiting planet glyph — reliable ~21px touch targets on mobile. `onclick` with `stopPropagation` so the SVG background tap-to-dismiss doesn't fire.
+
+**Gold selection ring** (`stroke: rgba(208,168,64,0.60)`) moves to the tapped planet's spread position. Initially transparent, appears on selection.
+
+**Detail panel (`#bw-detail`):** Slides open below the biwheel (max-height transition). Shows planet glyph + name + formatted degree + Rx badge if retrograde. Each aspect row: aspect symbol (color-coded by type) + "natal X (HN)" + "0.00° · app/sep".
+
+**Label updates:** "natal · live sky" → "tap to dismiss" (gold, cursor:pointer) when planet is selected. Clicking the label also clears selection.
+
+**`pointer-events:none`** on all non-interactive SVG groups (background, zodiac, natal fill, aspect lines, natal planets, axis, center) so taps propagate cleanly to hit circles or the SVG background.
+
+**Deployed:** commit `90c1d75` → Netlify production `6a29b6a6`.
+
+**Next session:** TBD — chart is feature-complete at this milestone. Candidates: natal planet tap (show interpretation snippet), biwheel for friends' charts, print/share button.
+
+---
+
 ## 2026-06-10 (session 8) — Biwheel SVG Renderer (Session 1 of 2)
 
 **The headline:** The biwheel placeholder in the Transits panel is replaced with a live SVG renderer. Natal chart inner ring + transiting sky outer ring + aspect lines. Renders from `today.json` `transiting_positions` data that has been live since session 6.
