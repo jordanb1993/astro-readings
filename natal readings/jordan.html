@@ -616,7 +616,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overs
 .t-tabs{display:flex;gap:0;margin:0 0 18px;border-bottom:1px solid rgba(var(--gold-alpha),0.10);position:sticky;top:0;z-index:10;background:#0a0614;padding-top:4px}
 .t-tab{flex:1;background:none;border:none;cursor:pointer;padding:10px 0;font-size:0.44rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted-3);font-family:'Inter',sans-serif;font-weight:500;border-bottom:2px solid transparent;margin-bottom:-1px;transition:color 0.15s,border-color 0.15s;-webkit-tap-highlight-color:transparent}
 .t-tab.active{color:rgba(var(--gold-alpha),0.85);border-bottom-color:rgba(var(--gold-alpha),0.55)}
-.t-biwheel-wrap{width:100%;max-width:160px;margin:0 auto 22px;aspect-ratio:1;position:relative;display:flex;align-items:center;justify-content:center}
+.t-biwheel-wrap{width:100%;max-width:280px;margin:0 auto 28px;aspect-ratio:1;position:relative;display:flex;align-items:center;justify-content:center}
 .t-biwheel-wrap svg{width:100%;height:100%}
 .t-biwheel-label{position:absolute;bottom:-18px;left:0;right:0;text-align:center;font-size:0.38rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(var(--gold-alpha),0.22);font-family:'Inter',sans-serif}
 .t-sec{padding:18px 0 10px;border-top:1px solid rgba(var(--gold-alpha),0.08);display:flex;align-items:center;gap:9px}
@@ -1390,20 +1390,10 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overs
         <div class="panel-title-lg">Transits</div>
       </div>
 
-      <!-- Biwheel placeholder — replaced with live chart once builder is complete -->
+      <!-- Biwheel — live renderer (natal inner ring · transiting outer ring) -->
       <div class="t-biwheel-wrap">
-        <svg viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg" id="t-biwheel-svg">
-          <circle cx="130" cy="130" r="122" fill="none" stroke="rgba(212,128,64,0.10)" stroke-width="0.8"/>
-          <circle cx="130" cy="130" r="90" fill="none" stroke="rgba(212,128,64,0.07)" stroke-width="0.6"/>
-          <circle cx="130" cy="130" r="58" fill="none" stroke="rgba(212,128,64,0.05)" stroke-width="0.5"/>
-          <line x1="8" y1="130" x2="252" y2="130" stroke="rgba(212,128,64,0.05)" stroke-width="0.4"/>
-          <line x1="130" y1="8" x2="130" y2="252" stroke="rgba(212,128,64,0.05)" stroke-width="0.4"/>
-          <line x1="44" y1="44" x2="216" y2="216" stroke="rgba(212,128,64,0.04)" stroke-width="0.4"/>
-          <line x1="216" y1="44" x2="44" y2="216" stroke="rgba(212,128,64,0.04)" stroke-width="0.4"/>
-          <circle cx="130" cy="130" r="3.5" fill="rgba(212,128,64,0.22)"/>
-          <text x="130" y="135" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-size="10" fill="rgba(242,236,255,0.14)" letter-spacing="4">CHART</text>
-        </svg>
-        <div class="t-biwheel-label">biwheel · coming soon</div>
+        <svg viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg" id="t-biwheel-svg"></svg>
+        <div class="t-biwheel-label">natal · live sky</div>
       </div>
 
       <!-- Tab nav -->
@@ -1772,6 +1762,7 @@ document.getElementById('keyBtn').classList.add('hidden');
     const d=await r.json();
     dailyData=d;
     updateHomeFromDaily(d);
+    renderBiwheel();
   }catch(e){}
 })();
 
@@ -1993,6 +1984,152 @@ function switchTransitTab(tab,btn){
   renderTransitTabContent();
 }
 
+// ─── BIWHEEL RENDERER ─────────────────────────────────────────────────────────
+function renderBiwheel(){
+  const bSvg=document.getElementById('t-biwheel-svg');
+  if(!bSvg||!dailyData||!dailyData.transiting_positions)return;
+  while(bSvg.firstChild)bSvg.removeChild(bSvg.firstChild);
+
+  const bCX=130,bCY=130,bASC=CHART.asc,bMC=CHART.mc;
+  const bNorm=a=>((a%360)+360)%360;
+  const bRad=d=>d*Math.PI/180;
+  const bF=n=>n.toFixed(2);
+  const bSvgA=ecl=>bNorm(180-(ecl-bASC));
+  const bPt=(a,r)=>({x:bCX+r*Math.cos(bRad(a)),y:bCY+r*Math.sin(bRad(a))});
+  const bEpt=(ecl,r)=>bPt(bSvgA(ecl),r);
+
+  // Ring radii
+  const bR={outer:122,trGlyph:116,trSep:110,zodOut:108,zodMid:98,zodIn:88,
+            nSep:82,nGlyph:73,aspLine:78,center:10};
+
+  // ── Defs ──────────────────────────────────────────────────────────────────────
+  const defs=el('defs',{});
+  const cp=el('clipPath',{id:'bwClip'});
+  cp.appendChild(el('circle',{cx:bCX,cy:bCY,r:bR.outer}));
+  defs.appendChild(cp);
+  bSvg.appendChild(defs);
+
+  // ── Background ────────────────────────────────────────────────────────────────
+  const bgG=el('g',{'clip-path':'url(#bwClip)'});
+  bgG.appendChild(el('circle',{cx:bCX,cy:bCY,r:bR.outer,fill:'#09102a'}));
+  bgG.appendChild(el('ellipse',{cx:bCX+18,cy:bCY-28,rx:72,ry:38,fill:'rgba(180,110,30,0.07)',transform:`rotate(-35,${bCX},${bCY})`}));
+  bgG.appendChild(el('ellipse',{cx:bCX-18,cy:bCY+28,rx:72,ry:42,fill:'rgba(30,100,160,0.08)',transform:`rotate(-35,${bCX},${bCY})`}));
+  bSvg.appendChild(bgG);
+
+  // ── Zodiac ring (r=88–108) ────────────────────────────────────────────────────
+  const elColors={fire:'rgba(210,130,48,0.25)',earth:'rgba(80,142,68,0.18)',air:'rgba(80,112,200,0.20)',water:'rgba(40,128,188,0.27)'};
+  const elArcs={fire:'#c87840',earth:'#58925a',air:'#5878c8',water:'#3880b8'};
+  const signEls=['fire','earth','air','water','fire','earth','air','water','fire','earth','air','water'];
+  const zodG=el('g',{id:'bw-zodiac'});
+  for(let i=0;i<12;i++){
+    const s=i*30,e=s+30;
+    const a1=bSvgA(s),a2=bSvgA(e);
+    const oo=bPt(a1,bR.zodOut),oe=bPt(a2,bR.zodOut),io=bPt(a1,bR.zodIn),ie=bPt(a2,bR.zodIn);
+    const d=`M${bF(oo.x)} ${bF(oo.y)} A${bR.zodOut} ${bR.zodOut} 0 0 0 ${bF(oe.x)} ${bF(oe.y)} L${bF(ie.x)} ${bF(ie.y)} A${bR.zodIn} ${bR.zodIn} 0 0 1 ${bF(io.x)} ${bF(io.y)}Z`;
+    zodG.appendChild(el('path',{d,fill:elColors[signEls[i]],stroke:'rgba(208,168,64,0.18)','stroke-width':'0.5'}));
+    // element arc accent
+    const aa1=bSvgA(s+1.5),aa2=bSvgA(e-1.5);
+    const ap1=bPt(aa1,bR.zodOut-1.5),ap2=bPt(aa2,bR.zodOut-1.5);
+    zodG.appendChild(el('path',{d:`M${bF(ap1.x)} ${bF(ap1.y)} A${bR.zodOut-1.5} ${bR.zodOut-1.5} 0 0 0 ${bF(ap2.x)} ${bF(ap2.y)}`,fill:'none',stroke:elArcs[signEls[i]],'stroke-width':'2.5',opacity:'0.50','stroke-linecap':'round'}));
+    // sign glyph
+    const gp=bEpt(s+15,bR.zodMid);
+    zodG.appendChild(tx(SIGNS[i].gl,{x:bF(gp.x),y:bF(gp.y),fill:SIGNS[i].color,opacity:'0.80','font-size':'7.8','font-family':GLYPH_FONT,'font-variant-emoji':'text','text-anchor':'middle','dominant-baseline':'central'}));
+  }
+  zodG.appendChild(el('circle',{cx:bCX,cy:bCY,r:bR.zodOut,fill:'none',stroke:'rgba(208,168,64,0.45)','stroke-width':'0.6'}));
+  zodG.appendChild(el('circle',{cx:bCX,cy:bCY,r:bR.zodIn, fill:'none',stroke:'rgba(208,168,64,0.30)','stroke-width':'0.5'}));
+  zodG.appendChild(el('circle',{cx:bCX,cy:bCY,r:bR.outer, fill:'none',stroke:'rgba(208,168,64,0.32)','stroke-width':'0.6'}));
+  // degree ticks at sign boundaries
+  for(let i=0;i<12;i++){const a=bSvgA(i*30);const op=bPt(a,bR.outer),zp=bPt(a,bR.zodOut+0.5);zodG.appendChild(el('line',{x1:bF(op.x),y1:bF(op.y),x2:bF(zp.x),y2:bF(zp.y),stroke:'rgba(208,168,64,0.45)','stroke-width':'0.5'}));}
+  bSvg.appendChild(zodG);
+
+  // ── Natal inner fill + separator ──────────────────────────────────────────────
+  const nFill=el('g',{});
+  nFill.appendChild(el('circle',{cx:bCX,cy:bCY,r:bR.zodIn,fill:'#09102a'}));
+  nFill.appendChild(el('circle',{cx:bCX,cy:bCY,r:bR.zodIn,fill:'rgba(12,18,44,0.55)'}));
+  nFill.appendChild(el('circle',{cx:bCX,cy:bCY,r:bR.nSep, fill:'none',stroke:'rgba(208,168,64,0.38)','stroke-width':'0.6'}));
+  bSvg.appendChild(nFill);
+
+  // ── Aspect lines (top 6 tightest, drawn inside natal circle) ─────────────────
+  const NAME_MAP={Sun:'sun',Moon:'moon',Mercury:'mercury',Venus:'venus',Mars:'mars',
+    Jupiter:'jupiter',Saturn:'saturn',Uranus:'uranus',Neptune:'neptune',Pluto:'pluto',
+    Chiron:'chiron',NNode:'nnode',SNode:'snode',Ascendant:'asc',Fortune:null};
+  const natalByIdMap={};
+  CHART.planets.forEach(p=>{natalByIdMap[p.id]=p;});
+  natalByIdMap['asc']={deg:CHART.asc};
+  const transitByGlyph={};
+  dailyData.transiting_positions.forEach(tp=>{transitByGlyph[tp.glyph]=tp;});
+  function getAspColor(label){
+    if(label.includes('□/'))return{c:'rgba(212,128,64,0.72)',op:0.40};
+    if(label.includes('☌'))return{c:'#d0a840',op:0.52};
+    if(label.includes('✶'))return{c:'#3e8fc0',op:0.42};
+    if(label.includes('△'))return{c:'#5ab8a8',op:0.42};
+    if(label.includes('□'))return{c:'#c89898',op:0.46};
+    if(label.includes('☍'))return{c:'#c89898',op:0.46};
+    if(label.includes('⚻'))return{c:'rgba(240,228,200,0.55)',op:0.35};
+    return{c:'rgba(240,228,200,0.40)',op:0.28};
+  }
+  const aspG=el('g',{id:'bw-aspects'});
+  const activeTop=(dailyData.active_transits||[]).slice(0,6);
+  for(const tr of activeTop){
+    const nm=tr.label.match(/natal\s+(\w+)/)?.[1];
+    if(!nm)continue;
+    const nP=natalByIdMap[NAME_MAP[nm]];
+    const tP=transitByGlyph[tr.glyph];
+    if(!nP||!tP)continue;
+    const asp=getAspColor(tr.label);
+    const tp=bEpt(tP.deg,bR.aspLine),np=bEpt(nP.deg,bR.aspLine);
+    aspG.appendChild(el('line',{x1:bF(tp.x),y1:bF(tp.y),x2:bF(np.x),y2:bF(np.y),stroke:asp.c,'stroke-width':'0.8',opacity:String(asp.op)}));
+  }
+  bSvg.appendChild(aspG);
+
+  // ── Natal planets (inner ring, r=73) ──────────────────────────────────────────
+  const nColors={luminary:'#d8b850',personal:'#c8a0a0',social:'#7ab0d0',outer:'#5ab8a8',point:'rgba(240,228,200,0.72)'};
+  const nSpread=spread(CHART.planets.map(p=>({...p,disp:p.deg})));
+  const nPG=el('g',{id:'bw-natal-pl'});
+  for(const p of nSpread){
+    // tick on natal separator
+    const tick=bEpt(p.deg,bR.nSep-1);
+    nPG.appendChild(el('circle',{cx:bF(tick.x),cy:bF(tick.y),r:'1.1',fill:nColors[p.grp]||'#d8b850',opacity:'0.60'}));
+    // glyph at spread position
+    const gp=bEpt(p.disp,bR.nGlyph);
+    nPG.appendChild(tx(p.gl,{x:bF(gp.x),y:bF(gp.y),fill:nColors[p.grp]||'#d8b850',opacity:'0.92','font-size':'8','font-family':GLYPH_FONT,'font-variant-emoji':'text','text-anchor':'middle','dominant-baseline':'central'}));
+  }
+  bSvg.appendChild(nPG);
+
+  // ── Transiting planets (outer ring, r=116) ─────────────────────────────────────
+  const trSpread=spread(dailyData.transiting_positions.map(tp=>({id:tp.planet,gl:tp.glyph,deg:tp.deg,retro:tp.retrograde,grp:'transit',disp:tp.deg})));
+  const tPG=el('g',{id:'bw-transit-pl'});
+  const TC='rgba(210,188,255,0.92)',TCR='rgba(180,208,255,0.82)';
+  for(const tp of trSpread){
+    // tick just outside zodiac
+    const tick=bEpt(tp.deg,bR.zodOut+4);
+    tPG.appendChild(el('circle',{cx:bF(tick.x),cy:bF(tick.y),r:'1.4',fill:tp.retro?TCR:TC,opacity:'0.65'}));
+    // glyph
+    const gp=bEpt(tp.disp,bR.trGlyph);
+    tPG.appendChild(tx(tp.gl,{x:bF(gp.x),y:bF(gp.y),fill:tp.retro?TCR:TC,opacity:'0.90','font-size':'8','font-family':GLYPH_FONT,'font-variant-emoji':'text','text-anchor':'middle','dominant-baseline':'central'}));
+    if(tp.retro){
+      const rp=bEpt(tp.disp,bR.trGlyph-6);
+      tPG.appendChild(tx('℞',{x:bF(rp.x),y:bF(rp.y),fill:TCR,opacity:'0.55','font-size':'4.5','font-family':GLYPH_FONT,'font-variant-emoji':'text','text-anchor':'middle','dominant-baseline':'central'}));
+    }
+  }
+  bSvg.appendChild(tPG);
+
+  // ── Angle markers (ASC/DSC/MC/IC tick lines in natal zone) ───────────────────
+  const axG=el('g',{id:'bw-axes'});
+  for(const [ecl,lbl] of [[bASC,'ASC'],[bNorm(bASC+180),'DSC'],[bMC,'MC'],[bNorm(bMC+180),'IC']]){
+    const o=bEpt(ecl,bR.nSep+1),i=bEpt(ecl,bR.aspLine-6);
+    axG.appendChild(el('line',{x1:bF(o.x),y1:bF(o.y),x2:bF(i.x),y2:bF(i.y),stroke:'rgba(208,168,64,0.55)','stroke-width':'0.7'}));
+    const lp=bEpt(ecl,bR.nSep+6);
+    axG.appendChild(tx(lbl,{x:bF(lp.x),y:bF(lp.y),fill:'rgba(208,168,64,0.75)','font-size':'4.2','font-family':"'Inter',sans-serif",'font-weight':'600','letter-spacing':'0.2','text-anchor':'middle','dominant-baseline':'central'}));
+  }
+  bSvg.appendChild(axG);
+
+  // ── Center ────────────────────────────────────────────────────────────────────
+  bSvg.appendChild(el('circle',{cx:bCX,cy:bCY,r:'16',fill:'#09102a',stroke:'rgba(208,168,64,0.22)','stroke-width':'0.5'}));
+  bSvg.appendChild(el('circle',{cx:bCX,cy:bCY,r:'4.5',fill:'rgba(208,168,64,0.32)'}));
+  bSvg.appendChild(el('circle',{cx:bCX,cy:bCY,r:'2',fill:'rgba(240,228,200,0.78)'}));
+}
+
 async function loadTransits(){
   if(transitsData)return;
   try{
@@ -2195,6 +2332,7 @@ async function loadDaily(){
     const r=await fetch('/today.json?_='+Date.now());
     dailyData=await r.json();
     updateHomeFromDaily(dailyData);
+    renderBiwheel();
     renderDaily();
   }catch(e){
     document.getElementById('daily-body').innerHTML='<div style="opacity:0.30;text-align:center;padding:40px 0;font-size:0.75rem">Could not load today\'s reading.</div>';
