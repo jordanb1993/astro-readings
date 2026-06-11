@@ -1826,6 +1826,26 @@ document.getElementById('keyBtn').classList.add('hidden');
   if(el)el.textContent=`${days[now.getDay()]} · ${months[now.getMonth()]} ${now.getDate()}`;
 })();
 
+// Planet name → glyph map (shared by position fetch + biwheel)
+const PLANET_GLYPHS={'Sun':'☉','Moon':'☽','Mercury':'☿','Venus':'♀','Mars':'♂','Jupiter':'♃','Saturn':'♄','Uranus':'♅','Neptune':'♆','Pluto':'♇','Chiron':'⚷','NNode':'☊','SNode':'☋','TrueNode':'☊','MeanNode':'☊'};
+const SIGN_NAMES=['Aries','Taurus','Gemini','Cancer','Leo','Virgo','Libra','Scorpio','Sagittarius','Capricorn','Aquarius','Pisces'];
+
+async function fetchPositions(){
+  try{
+    const r=await fetch('/routine/positions-today.json?_='+Date.now());
+    const pos=await r.json();
+    if(!pos||!pos.positions)return;
+    dailyData.transiting_positions=Object.entries(pos.positions).map(([name,p])=>({
+      planet:name,
+      glyph:PLANET_GLYPHS[name]||name[0],
+      deg:p.deg,
+      retrograde:p.retrograde||false,
+      formatted:p.formatted||'',
+      sign:SIGN_NAMES[Math.floor(((p.deg%360)+360)%360/30)]||''
+    }));
+  }catch(e){}
+}
+
 // Pre-fetch today.json so home panel populates without tapping Daily first
 (async function(){
   try{
@@ -1833,6 +1853,7 @@ document.getElementById('keyBtn').classList.add('hidden');
     const d=await r.json();
     dailyData=d;
     updateHomeFromDaily(d);
+    await fetchPositions();
     renderBiwheel();
   }catch(e){}
 })();
@@ -2612,11 +2633,16 @@ function updateHomeFromDaily(d){
 }
 
 async function loadDaily(){
-  if(dailyData){renderDaily();return;}
+  if(dailyData){
+    if(!dailyData.transiting_positions)await fetchPositions();
+    renderDaily();
+    return;
+  }
   try{
     const r=await fetch('/today.json?_='+Date.now());
     dailyData=await r.json();
     updateHomeFromDaily(dailyData);
+    await fetchPositions();
     renderBiwheel();
     renderDaily();
   }catch(e){
