@@ -1163,6 +1163,8 @@ function renderSynastryPanel(){
     const fColor=nColors[a.f.grp]||'rgba(240,228,200,0.70)';
     return `<div class="syn-row"><span class="syn-glyph" style="color:rgba(180,140,255,0.90)">${a.j.gl}</span><span class="syn-sym" style="color:${a.c}">${a.sym}</span><span class="syn-glyph" style="color:${fColor}">${a.f.gl}</span><span class="syn-label">${a.type}</span><span class="syn-orb">${orbStr}</span></div>`;
   }).join('');
+  const readingSrc=document.getElementById('synastry-reading-src');
+  const readingHtml=readingSrc?readingSrc.innerHTML:'';
   document.getElementById('daily-body').innerHTML=`
     <div style="padding-top:24px">
       <div class="d-header">
@@ -1180,6 +1182,7 @@ function renderSynastryPanel(){
         <div class="syn-section-label">Contacts by orb</div>
         ${rows}
       </div>
+      ${readingHtml?`<div class="syn-reading">${readingHtml}</div>`:''}
       <div style="height:32px"></div>
     </div>`;
   renderSynastryBiwheel('s-biwheel-svg');

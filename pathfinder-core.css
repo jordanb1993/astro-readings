@@ -664,3 +664,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overs
 .syn-sym{font-family:'Apple Symbols','Segoe UI Symbol','Noto Sans Symbols',serif;font-variant-emoji:text;font-size:0.78rem;width:22px;text-align:center;flex-shrink:0}
 .syn-label{flex:1;font-family:'Inter',sans-serif;font-size:0.58rem;letter-spacing:0.08em;color:rgba(240,228,200,0.48);padding-left:8px}
 .syn-orb{font-family:'Inter',sans-serif;font-size:0.55rem;letter-spacing:0.06em;color:rgba(240,228,200,0.38)}
+.syn-reading{padding:28px 16px 8px;border-top:1px solid rgba(208,168,64,0.10);margin-top:8px}
+.syn-reading-section{margin-bottom:28px}
+.syn-reading-title{font-family:'Cormorant Garamond',serif;font-size:0.86rem;font-weight:400;font-style:italic;color:rgba(208,168,64,0.62);margin-bottom:10px;letter-spacing:0.02em}
+.syn-reading p{font-family:'Cormorant Garamond',serif;font-size:1.0rem;font-weight:300;line-height:1.85;color:var(--muted);margin-bottom:14px}
