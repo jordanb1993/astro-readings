@@ -1,10 +1,10 @@
-# The Stars:Daily Digest | 2026-06-10
+# The Stars:Daily Digest | 2026-06-11
 
-**Moon:** 13.91° Aries | Last Quarter
+**Moon:** 28.00° Aries | Last Quarter
 
 **Top active transits (tight orb):**
-- NNode △ natal Jupiter (5th):0.02° applying
-- Sun ⚻ natal Uranus (7th):0.05° separating
-- Jupiter □/ natal Mars (6th):0.12° separating
+- NNode △ natal Jupiter (5th):0.05° separating
+- Jupiter ⚻ natal LotOfFortune (9th):0.13° applying
+- Uranus ⚻ natal Jupiter (5th):0.21° applying
 
-*Full reading: the stars/daily readings/2026-06/2026-06-10.md*
+*Full reading: the stars/daily readings/2026-06/2026-06-11.md*
