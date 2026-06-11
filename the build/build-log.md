@@ -4,6 +4,24 @@
 
 ---
 
+## 2026-06-11 (session 14) — Synastry Variable Tab · Reading Copy · Audit Pass
+
+**Audit pass (two parallel agents — design + copy):**
+
+*Design fixes (pathfinder-core.css):*
+- Removed double lateral padding from `.synastry-contacts` and `.syn-reading` — `reading-inner` already provides 18px gutters
+- `.syn-orb`: added `flex-shrink:0; text-align:right; min-width:32px` so orb column holds its position
+- `.syn-row:last-child { border-bottom:none }` — removed orphan trailing border
+- `.syn-reading-section:last-child { margin-bottom:0 }` — removed dead space before bottom spacer
+
+*Copy fixes (marina.html + dasha.html):*
+- Marina: floating noun opener rewritten in Identity dive; "soul path" replaced twice; Venus-Chiron tagline em dash → colon; two em dashes in Roots body → colons
+- Dasha: double-em-dash parenthetical → actual parentheses; one em dash split into two declarative sentences; two additive-aside em dashes → commas; Scorpio Moon floating noun opener rewritten
+- All synastry copy confirmed clean (no em dashes, no flagged patterns)
+- Two remaining `&mdash;` in Dasha's prose kept — both genuine contrast pivots per voice canon
+
+---
+
 ## 2026-06-11 (session 14) — Synastry Variable Tab (Marina + Dasha)
 
 **Synastry module — prototype:**
