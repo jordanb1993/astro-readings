@@ -438,7 +438,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overs
   transition:color 0.15s,background 0.15s;
   -webkit-tap-highlight-color:transparent;
 }
-.subnav-tab .sn-icon{font-size:0.78rem;line-height:1}
+.subnav-tab .sn-icon{font-size:0.78rem;line-height:1;font-variant-emoji:text}
 .subnav-tab.active{
   color:rgba(var(--gold-alpha),0.95);
   background:rgba(var(--gold-alpha),0.12);
