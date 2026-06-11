@@ -4,6 +4,19 @@
 
 ---
 
+## 2026-06-11 (session 14, cont.) — Lunar Phase Fix
+
+**Bug:** Lunar phase not loading on friend builds (Marina, Dasha).
+
+**Root cause:** Pre-fetch IIFE returned early on IS_FRIEND_BUILD to prevent daily title overwrite — but that also blocked the `today.json` fetch that populates `#home-moon`.
+
+**Fix:**
+- Added `omitTitle=false` parameter to `updateHomeFromDaily()`
+- Friend builds now fetch `today.json`, set `dailyData`, and call `updateHomeFromDaily(d, true)` — moon phase populates, title/transit fields untouched
+- Jordan's build unchanged
+
+---
+
 ## 2026-06-11 (session 14) — Synastry Variable Tab · Reading Copy · Audit Pass
 
 **Audit pass (two parallel agents — design + copy):**
