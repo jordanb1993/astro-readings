@@ -6,7 +6,7 @@ type: build-doc
 
 # Product Decisions Log
 *Resolved and open decisions for the astrology app*
-*Last updated: June 5, 2026*
+*Last updated: June 11, 2026*
 
 ---
 
@@ -135,6 +135,39 @@ The corporate women's career astrology angle (sky-at-work, timing professional m
 
 ---
 
+### Structural Design Principle: Every Data Element Is Also a Door
+**Status: RESOLVED**
+**Decided:** June 11, 2026
+
+**The principle:** Every piece of data in Pathfinder is simultaneously a navigation target. Nothing is a dead end. The reading is the entry point; the library is what lives behind it.
+
+**The synthesis (three reference points combined):**
+- **The Pattern / Co-Star:** visual language, voice tone, reading quality — the surface experience
+- **Time Passages:** structural depth, organized library architecture, comprehensive coverage, consistent drill-down — the bones underneath
+
+Time Passages is not beautiful but it is *complete and navigable*. Every aspects entry opens an interpretation. Every planet is a tap target. Every transit has a history. You always know where you are and how to go deeper. That structural DNA is what Pathfinder steals from it — applied to a visual language and reading voice that Time Passages never had.
+
+**What this means concretely:**
+- A transit pill in The Variable → transit detail with orb, history, passes, prose
+- A planet in The Constant → its natal story (sign, house, aspects)
+- A house cusp → what lives there, who rules it
+- A transit in the library → where it's been, when it returns, what it means for this chart specifically
+- A moon phase in The Wheel → this lunation in your houses, personalized ritual, intention prompt
+- Historical transits stay — they become an autobiography in transit form over years
+
+**The consistency rule:** The drill-down pattern must be the same across all sections. Tap → detail slides in → back returns to list. No section gets a different interaction model. Uniformity is what makes it feel like a library rather than a collection of features.
+
+**Current state of the build:**
+- The Variable has it: pill → transit detail ✅
+- The Constant does not yet: natal placements are viewable but not tappable
+- The Wheel has no tappable elements yet
+
+**Build implication:** The drill-down pattern needs to be consistent before new sections are added. Expanding The Constant's tappable planets is higher priority than adding new sections to The Wheel.
+
+---
+
+---
+
 ### Phase 1: Build + Internal Beta (No Etsy)
 **Status: RESOLVED**
 **Original decision:** May 18, 2026 (Etsy plan)
@@ -240,3 +273,4 @@ The corporate women's career astrology angle (sky-at-work, timing professional m
 | June 5, 2026 | Business model: freemium vs. subscription | OPEN |
 | Ongoing | Business name: Thin Place / The 29th / Solas | OPEN |
 | Ongoing | Corporate product: same brand or separate | OPEN |
+| June 11, 2026 | Structural principle: every data element is a door | RESOLVED |

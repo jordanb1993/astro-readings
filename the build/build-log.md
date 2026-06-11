@@ -4,6 +4,31 @@
 
 ---
 
+## 2026-06-11 (session 12) — Design Audit · Polish Pass · Product Principle Locked
+
+**Design audit (Playwright, full pass):**
+- Full iPhone viewport audit across all 5 panels — 17 issues identified and resolved
+- Nav tabs: `flex:1` so The Constant / The Variable stay on one line on mobile
+- Home sky strip: brighter gold tint, 0.58rem
+- Home greeting sub: 0.62rem, gold tint
+- Banner: removed birth meta from persistent chrome — moved to The Constant card
+- Biwheel: moved after pull quote in The Variable (reading first, visual anchor second)
+- Transit Library eyebrow: ISO date → "June 11" human-readable format
+- Wheel tab: Rituals placeholder coming-soon card removed
+- Daily moon glyph: Unicode ☽ → inline SVG (fixes ")" rendering on iPhone)
+
+**Polish pass (from research synthesis):**
+- Pill tap transitions: added `transform/opacity` to transition list (eased scale, was snapping)
+- Daily prose: 0.88rem → 1.0rem (16px, mobile readability minimum)
+- Skeleton screen: shimmer loading placeholders on The Variable first load — date, title, block, prose lines, pills — teal-tinted, animated, replaced by reading on fetch resolve
+
+**Product principle locked:**
+- "Every data element is a door" — Time Passages structural depth + Co-Star/The Pattern visual language
+- Documented in product-decisions.md as resolved decision with build implications
+- Current gap: The Constant has no tappable planets yet — that's the next structural priority
+
+---
+
 ## 2026-06-11 (session 11) — Vercel Migration · Pathfinder Name · Reading Format Redesign · App Architecture
 
 **Infrastructure:**
