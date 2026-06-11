@@ -1,36 +1,44 @@
 # READING-FORMAT.md — Session SOPs, Format Specs, Voice Guide
 *Load for any reading session: daily, weekly, ritual, tarot, synastry, parts work, reflection.*
 *Do not load for workplace HTML builds, natal chart builds, or build/business sessions — those have their own files.*
-*Last updated: June 8, 2026*
+*Last updated: June 11, 2026*
+
+**Architecture note (June 11, 2026):** Jordan's personal reading system is now the Pathfinder app format. She is her own first beta user. The old hyper-personalized two-way system (life-context weaving, KNOWLEDGE.md as required load, project-specific references) served its purpose and is archived below. All daily readings — including the 4am routine — use the three-layer Pathfinder format going forward.
 
 ---
 
-## Daily Transit Reading SOP
+## Daily Reading SOP — Pathfinder Format
 
 **Trigger:** Jordan asks for a reading, mentions a date, or it's the automated 4am routine.
 
-**Pre-writing verification:**
+### Pre-writing verification (unchanged — accuracy first)
 1. Fetch live planet positions from `astrolibrary.org/current-planets/`
 2. Calculate all transit-to-natal aspects using NATAL.md orb table
-3. Check `transit library/INDEX.md` for active long-term transits (note current orbs)
-4. Run applying/separating check on every aspect — confirm motion direction before writing
-5. Remove any separating transits >5° from the active board
+3. Check `transit library/INDEX.md` for active long-term transits
+4. Run applying/separating check on every aspect
+5. Remove separating transits >5° from consideration
+6. Velocity-based timing: calculate exact day, never write "soon" or "building"
 
-**Late-period applying scan:** Before writing, scan all planets for anything entering 0–3° orb of a natal point. These are the approach days — name them with velocity-based timing, not vague language.
+### Output format — three layers
 
-**Velocity-based timing (required):**
-- Venus ~1.2°/day: if Venus is 1.8° from exact, write "exact in ~1.5 days / [day name]"
-- Jupiter ~0.083°/day: if Jupiter is 0.5° from exact, write "exact in ~6 days / [date]"
-- Saturn ~0.034°/day: if Saturn is 1.5° from exact, write "exact in ~44 days / [date]"
-- Never write "soon" or "building" when you can calculate the exact day.
+**Layer 1 — Surface**
+One to two sentences. The felt sense of the day. No jargon, no degrees, no aspect names.
 
-**After writing:** Save to `daily readings/YYYY-MM/YYYY-MM-DD.md`. Auto-open in Obsidian. Never write to the existing routine output file — the routine already handles that.
+The reader should be able to carry this through the morning without reading further.
 
----
+**Layer 2 — Middle**
+2–3 short paragraphs. The psychological layer — what this transit is asking, what pattern it touches, what it means for this specific placement.
 
-## Daily Reading Format
+Plain language. Declarative, not hedged. No floating nouns. Every sentence passes the test: *what specific thing is this saying?*
 
-**Sky-responsive format. No fixed template. Length and structure match the sky's actual density.**
+Short paragraphs. Never block text. A two-sentence paragraph is fine.
+
+**Layer 3 — Technical**
+Full mechanics: planet, degree, aspect, orb, applying/separating, house, timing. Written so a curious reader can learn from it.
+
+This layer is always present. Never hidden. The Surface layer sequences meaning first — it doesn't replace the technical; it precedes it.
+
+**Pull quote:** Optional. Only when a line earns it. Never forced.
 
 ### Frontmatter (always)
 ```yaml
@@ -44,72 +52,10 @@ moon: [Phase] · [Sign] [Degree]°
 ---
 ```
 
-### Title + Epigraph
-```
-# [Date] ✦ [one evocative phrase — written fresh each day, not templated]
-
-*[one to three lines of prose — the essence of this sky. Sets the emotional register.]*
+### File + auto-open
+Save to `daily readings/YYYY-MM/YYYY-MM-DD.md`. Auto-open in Obsidian.
 
 ---
-```
-
-### Transit Board
-Markdown table. Only include aspects currently in orb (applying OR separating ≤5°).
-
-```
-| transit | orb | |
-|---------|-----|--|
-| [symbol] [planet] [aspect] [natal point (house)] | **X.XX°** applying | [one-phrase essence] |
-| [symbol with link] | X.XX° separating | → [[transit-file-slug]] |
-```
-
-- Bold orb = applying
-- `→ [[link]]` = long-term transit with a breakdown file in transit library
-- Long-term transits: one-phrase essence only in the board; full context lives in the breakdown file
-- Moon and inner planets: one-phrase essence inline (no separate file needed)
-- Chiron and outer planets: always link to breakdown if file exists
-
-**Example:**
-```
-| ☊ NNode △ ♃ natal Jupiter (5th) | **0.06°** applying | soul path × creative depth |
-| ⚷ Chiron ✶ ↑ Ascendant | 0.16° separating | → [[chiron-sextile-ascendant]] |
-| ♃ Jupiter △ ♇ natal Pluto (6th) | **0.18°** applying | → [[venus-jupiter-cancer-scorpio]] |
-| ♆ Neptune ☌ ☽ natal Moon (10th) | **0.78°** applying | → [[neptune-conjunct-moon]] |
-| ♇ Pluto Rx ✶ ☽ natal Moon (10th) | **0.31°** applying | depth becoming authority |
-| ♀ Venus ☌ ♃ Jupiter (transit) | 1.42° | exact [day] — → [[link]] |
-| ☽ Moon □ ☉ Sun (Last Quarter) | **0.46°** | Pisces Moon · release phase |
-```
-
----
-
-### Prose Body
-2–4 paragraphs of flowing prose. No section headers. No bullet points. No templating.
-
-Write to what the sky actually is today. Weave in life context only if it has astrological charge (see Life Context Filter in CLAUDE.md). Let long-term transits speak through the links — don't re-explain what the breakdown file already says. The prose interprets the meaning, the interaction, the felt quality.
-
-**Pull quote:** Optional. Only when a single line earns it — not every reading. Never forced. It's a reward for a line that condensed something real. Separate with `>` blockquote.
-
-### Today Block (practical integration)
-```
-**today**
-- [Category]: [one line — specific, actionable, grounded in sky]
-- [Category]: [one line]
-- [Category if needed]: [one line]
-```
-
-3 items max. Categories can be anything: Work, Body, Creative, Love, Money, Space, the business, the build. Rotate based on what the sky is actually touching. Don't include a category just to have it.
-
----
-
-### Length Tiers
-
-| Sky density | Target length | Notes |
-|-------------|--------------|-------|
-| Light (1–2 fast-moving aspects) | 80–120 words prose | Transit board may have 2–3 rows |
-| Standard (3–5 aspects) | 200–300 words prose | Typical daily |
-| Dense (6+ aspects, outer planets exact) | 400–500 words prose | Use pull quote, longer today block |
-
-The routine output (4am CDT) starts at 300 words and compresses on light days. Manual readings should match sky density, not fill a template.
 
 ---
 
@@ -358,6 +304,100 @@ Not every transit needs a full house paragraph. Match depth to intensity:
 - See CLAUDE-NATAL-BUILD.md for the full v3 build spec
 - These are HTML deliverables (exception to the .md-only daily rule)
 - mimi.html or carina.html are the canonical templates — load one at build start
+
+---
+
+## Pathfinder Reading Format — Product Spec + Jordan's Personal System
+
+*This is simultaneously the product spec for app users AND Jordan's personal reading standard as of June 11, 2026. Jordan is her own first beta user. The old hyper-personalized system is archived in `_archive/` and in git history.*
+
+---
+
+### The Philosophy
+
+Pathfinder's goal is **recognition, not validation.**
+
+Accepted is something someone else gives you. Acceptable is something you give yourself. A reading that makes someone feel seen doesn't say "you're wonderful" — it gives the reader the framework to look at their own chart and think: *this is why I am the way I am, and it makes complete sense.* That's the goal.
+
+Full articulation + canonical prose specimen in `the build/voice-canon.md`.
+
+---
+
+### User Journey
+
+```
+Birth data entered
+    ↓
+The Constant — Big Three Portrait (natal onboarding)
+    ↓
+The Variable — Daily Transit Reading
+```
+
+The Big Three portrait comes before any transit reading. A user who doesn't know what their placements mean can't understand what's moving through them. The onboarding moment is: *here is what you already know, and here is what it actually means.*
+
+---
+
+### The Big Three Portrait
+
+**What it is not:** archetype keywords ("Sagittarius Suns are adventurous and philosophical"). Every reader has already seen that.
+
+**What it is:** a combination reading. What does this specific pairing of Sun + Moon + Rising create as a lived experience? The tension between them is the portrait.
+
+**The move:** Find the reframe that's more accurate than the received version. Name the specific texture of experience this placement creates — the thing the reader already knew but had no language for.
+
+**The recognition test:** the reader should laugh or go "yeah." If it could apply to any Sagittarius, it failed.
+
+**Voice:** Plain language throughout. No technical terms requiring explanation at this layer. See voice rules below.
+
+**Full specimen (Jordan's Sag Sun + Aries Moon + 29° Gemini Rising) is in `the build/voice-canon.md`** under "Canonical Specimen."
+
+**Big Three portrait architecture — deeper layers available beneath the onboarding:**
+- Natal Aspects
+- By House
+- By Planet
+- Love Reading
+- Career Reading
+
+---
+
+### Three-Layer Transit Architecture
+
+Each transit is accessible at three depths. All three are present; the user navigates between them.
+
+| Layer | What it does | Voice |
+|-------|-------------|-------|
+| **Surface** | Plain meaning + felt sense — what today is, in one to two sentences | No jargon. Immediate. |
+| **Middle** | Psychological depth — what this transit is asking, what pattern it touches | 2–3 sentences. Precise, not soft. Grounded in the specific placement. |
+| **Technical** | Full mechanics — planet, degree, aspect, orb, house, applying/separating, timing | Complete data. Educational. Learnable. |
+
+The technical layer is **never hidden.** It's available on tap for every reading. The surface layer isn't dumbing down — it's sequencing. Meaning first, mechanics second, both always present.
+
+**The competitive gap this fills:**
+- CHANI: warmth only, mechanics permanently hidden, no learning ladder
+- Time Passages: mechanics first, no emotional scaffolding, fails to onboard beginners
+- Pathfinder: all three layers present, user chooses depth, reading teaches while it reads
+
+---
+
+### App Voice Rules
+
+**Positive spec:**
+- Plain language, Sally Rooney register — stripped back, beauty through precision not decoration
+- Declarative, not hedged ("You're fast in the knowing sense" not "you may tend to act quickly")
+- The specific beats the archetype ("your Aries Moon" not "Aries Moon people")
+- Body-level language grounds the spiritual ("your nervous system," "locate," "the gap between them")
+- Unexpected precise nouns doing emotional heavy lifting ("edges," "bid," "field")
+- Every sentence must answer: *what specific thing is this saying?*
+
+**Negative spec — the eye-roll:**
+> *"The soul path said yes before you asked."*
+> *"The well was full before you arrived."*
+
+Floating nouns. Paradox structures that feel wise but point at nothing. If you can't locate the reader inside the sentence, it failed.
+
+**Vocabulary to avoid:** soul path, the void, the container, the infinite, the well, cosmic unfolding, sacred space, divine timing (unless attached to an actual transit and date), energetic field, vibrational alignment.
+
+Full negative spec analysis in `the build/voice-canon.md`.
 
 ---
 

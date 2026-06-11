@@ -21,13 +21,13 @@ Jordan is a 32-year-old lesbian woman in Chicago. Associate Director of Content 
 **Every session:**
 1. **This file (CLAUDE.md)** — auto-loaded
 2. **`NATAL.md`** — natal chart, orb table, calculation rules, key people, fluency level
-3. **`KNOWLEDGE.md`** — accumulated correlations, patterns, life arcs
-4. **`transit library/INDEX.md`** — active transit status + links (replaces loading individual breakdown files)
-5. **Most recent `daily readings/YYYY-MM/YYYY-MM-DD.md`** — continuity thread (latest only)
-6. **`_inbox/capture.md`** — check for unprocessed captures before starting
+3. **`transit library/INDEX.md`** — active transit status + links
+4. **`_inbox/capture.md`** — check for unprocessed captures before starting
 
 **For reading sessions** (daily, weekly, ritual, tarot, synastry, parts work):
 → also load **`READING-FORMAT.md`** — all session SOPs, format specs, voice guide
+
+**Note on KNOWLEDGE.md (June 11, 2026):** Archived as reference. Load only if Jordan explicitly asks about a past correlation or pattern. No longer required reading for daily sessions. The reading system is now the Pathfinder format — accuracy comes from NATAL.md + live positions, not life-context weaving.
 
 **For workplace HTML builds** (`sky-at-work.html`):
 → also load **`CLAUDE-WORKPLACE-HTML.md`** — full HTML design spec, signal board rules, Slack format
@@ -134,19 +134,7 @@ Claude pulls live positions from the web at the start of every reading.
 
 ## Life Context Filter
 
-Apply this when incorporating life context into a reading:
-
-**High astrological charge — lead with these:**
-- Identity moves: title earned, chapter closed, decision made, pattern recognized
-- Creative/spiritual work: business scoped, writing started, ritual done, brainstorm
-- Relationship events: connection opened or closed, something named and acted on
-- Healing moments: nervous system wins, consistency streaks, a fear faced
-- Financial breakthroughs: first real budget month, freeze cracking, savings milestone
-
-**Low astrological charge — omit from reading framing:**
-- Logistical to-dos: forms to mail, calls to make, appointments not yet scheduled
-- Admin completions: inbox cleared, car registration renewed
-- Pending tasks: things that haven't happened yet with no emotional weight
+*Archived June 11, 2026. The Pathfinder reading format does not weave personal life context into readings — accuracy comes from the chart and sky, not from knowing Jordan's current projects or relationships. Jordan is now her own first beta user; readings should work because they're good, not because they're hyper-personalized. If Jordan asks for a personally-contextualized reading explicitly, this filter can be re-applied — but it's no longer the default.*
 
 ---
 

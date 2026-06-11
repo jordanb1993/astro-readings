@@ -18,6 +18,14 @@ When something gets refined in the daily reading system, it gets logged here wit
 
 ---
 
+## Mission Statement (Candidate — June 11, 2026)
+
+> **Pathfinder gives you the framework to recognize yourself — not just a description of your chart.**
+
+The distinction: *accepted* is something someone else gives you. *Acceptable* is something you give yourself. A reading that makes someone feel *seen* doesn't say "you're wonderful" — it gives the reader the framework to look at their own chart and think: *this is why I am the way I am, and it makes complete sense.* That's recognition, not validation. Recognition is the goal.
+
+---
+
 ## The Product Voice: What Makes It Different
 
 Generic AI astrology apps produce output. This produces readings.
@@ -33,6 +41,82 @@ The differentiator is not the astrology — it's the combination of:
 **4. Continuity.** The CLAUDE.md + INSTRUCTIONS.md + KNOWLEDGE.md architecture creates genuine memory across sessions. The reading for a given day is informed by what was verified three months ago. That accumulation is what makes this a practice, not a service.
 
 **The pitch in one sentence:** Every astrology app sounds the same. This one sounds like someone who got an MFA, worked through her religious trauma, and actually uses astrology to navigate her career and love life.
+
+---
+
+## Canonical Specimen: What "Seen" Looks Like
+
+*The following two sentences are the clearest proof of concept in the archive. Jordan pulled these from a journal where she had written them down — proof they landed hard enough to be worth keeping.*
+
+> *"It was the first time your nervous system had ever been asked to locate Jordan without your mother's field defining the edges of you."*
+>
+> *"That was your soul making its first serious bid for itself."*
+
+**What these sentences do (the prose moves to protect):**
+
+- **The person's name as object, not subject.** "Locate Jordan" — she's not doing the discovering; something is trying to find her. Passivity that holds enormous charge. This is different from "you discovered who you were."
+- **Precision nouns doing emotional work.** "Field" and "edges" — not "your mother's influence" or "her expectations." The *edges* of you. Where you end. The exact, specific, unnamed thing.
+- **Unexpected register for interior experience.** "Bid" is a legal/auction word. It gives the soul agency and strategy — implies prior attempts, a moment of deliberate commitment. No ornamentation. Just the most accurate word.
+- **Declarative, not hedged.** No "you may feel" or "this could suggest." Said and done.
+- **The thing that was never said out loud.** Both sentences name something the reader already knew but had no language for. Recognition, not revelation.
+
+This is the Sally Rooney standard: beauty through exactness, not decoration. Three sharp plain sentences beat one beautiful vague one. The precision IS the warmth.
+
+---
+
+## Big Three Portrait Specimen
+
+*Draft 1, June 11 2026. Jordan's chart — Sag Sun + Aries Moon + 29° Gemini Rising. Approved as a working specimen. The Aries Moon section is the proof of concept: "yeah..." response confirmed recognition.*
+
+---
+
+Your Sagittarius Sun is the part of you that cannot function without a reason that matters.
+
+Not a goal — reasons are bigger than goals. You can work a job without passion for years as long as you believe it's pointing somewhere real. When the meaning goes, so does your energy, and no amount of discipline gets it back.
+
+This is not a flaw in your work ethic. It's your Sun doing its actual job, which is to orient you by purpose, not by obligation.
+
+---
+
+Your Aries Moon is why you already know what you want before you've thought it through. The emotional body moves first — impulse, instinct, reaction — and the thinking arrives late to a decision that's already been made in the gut.
+
+You're not impulsive in the reckless sense. You're fast in the knowing sense.
+
+The frustration isn't that you act without thinking. It's that you spend a lot of energy explaining decisions to yourself after the fact that were right the first time.
+
+---
+
+The tension between these two: your Sun wants the full picture before it moves. Your Moon has already moved. Most of your inner friction lives in this gap.
+
+---
+
+Your Gemini Rising at 29° is the face both of them move through — the one who communicates, translates, makes it legible.
+
+The 29° placement means this has urgency; you've been doing this work longer than you know, and there's something unfinished in how you present yourself to the world that you're still resolving.
+
+---
+
+**What the Aries Moon section demonstrates (the move to replicate):**
+
+The reframe is the recognition. "Impulsive in the reckless sense" vs. "fast in the knowing sense" — two kinds of fast. The received version says flaw. The accurate version says *different mechanism.* The frustration line names the specific texture of the experience, not just the behavior. That's why it lands.
+
+---
+
+## The Negative Spec: What to Never Write
+
+The failure mode is **performed profundity** — language that creates the *feeling* of insight without the content of insight.
+
+Specimen (the eye-roll):
+> *"The soul path said yes before you asked."*
+> *"The well was full before you arrived."*
+
+**Why these fail:** Floating nouns ("soul path," "the well") point at nothing specific. Paradox structures ("was full before you arrived") create the impression of wisdom without locating the reader in anything real. You cannot answer: what well? Yes to what? There is no "Jordan" in these sentences, no placement, no dynamic, no body. They perform the spiritual register without paying for it with precision.
+
+**The test:** Every sentence must be able to answer *what specific thing is this saying?* If you can't point at the thing, the sentence fails. Not because it needs to be simple — precision and complexity can coexist. A difficult poem is hard because the compression is dense with meaning. These sentences are hard because there is no meaning to find.
+
+**The rule:** Everything moves through something real. A named placement. A specific dynamic. A body-level experience. An actual behavior. Even when we're talking about the soul. Especially then.
+
+**Floating nouns to avoid:** soul path, the void, the container, the infinite, the well, the field (unless grounded in a specific context), cosmic unfolding, sacred space, divine timing (unless attached to an actual transit and date).
 
 ---
 
@@ -103,6 +187,10 @@ Humor lives in the space between taking something seriously and not being precio
 **Sentence rhythm: vary length, favor short.**
 
 Long sentences have their place. A string of them doesn't. When every sentence runs three clauses deep, nothing stands out — everything feels equally weighted and the reader loses footing. Short sentences land harder. One short sentence after two longer ones resets the rhythm of the whole paragraph. The rule: if a sentence runs past three clauses, break it. The period is underused. Use it.
+
+**Paragraph length: short, always. More paragraphs over fewer.**
+
+Avoid block paragraphs. If a paragraph runs more than four sentences, look for the natural break and take it. A short paragraph has more weight than a long one — it gets its own space on the page. More paragraphs is not more writing; it's better writing. Jordan's explicit preference: short paragraphs even if it means more of them. Never consolidate for tidiness.
 
 ---
 
@@ -225,6 +313,9 @@ The problem this fixed: The same tracking prompts ("track emotional permeability
 
 | Date | What Changed | Why | Applies To |
 |------|-------------|-----|------------|
+| 2026-06-11 | **Paragraph length rule added** — short paragraphs always, more paragraphs over fewer, never consolidate for tidiness | Jordan's explicit preference: short paragraphs even if it means more of them; block paragraphs feel heavy and avoid the visual breathing room the prose needs | All |
+| 2026-06-11 | **Big Three portrait format added to READING-FORMAT.md** — app onboarding section: combination reading, recognition-first, three-layer transit architecture, positive + negative voice spec | Voice interview session: recognition vs. validation distinction, Sally Rooney register, canonical specimen drafted and approved | Pathfinder app (Phase 2) |
+| 2026-06-11 | **Mission statement candidate added** — "Pathfinder gives you the framework to recognize yourself — not just a description of your chart" | Surfaced during voice interview; accepted/acceptable distinction | All |
 | 2026-06-08 | **Cross-reading-type evaluation protocol added** — every refinement tagged with scope and pushed to all applicable types in CLAUDE.md | Refinements were being applied only to the reading type where the problem surfaced, leaving the same problem in other reading types | All |
 | 2026-06-08 | **Stale transit discipline** — >5° separating orb = remove from any featured position; don't headline a transit that peaked before the reading period | Mercury-Neptune appeared in the signal board at 6.67° separating — the exact moment had passed; featuring it as active weather was misleading | All (daily: >5° separating = no headline; weekly/workplace: no signal board placement) |
 | 2026-06-08 | **Velocity-based timing precision** — calculate exact day by daily speed, not by eyeballing; document the math when timing is part of the reading | Venus-Jupiter was written as "Thu-Fri peak" when calculation (1.16° gap ÷ ~1.1°/day net gain) gave Tuesday. Eyeballing orb is imprecise | All |
