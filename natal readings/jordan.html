@@ -2711,6 +2711,10 @@ function renderDaily(){
           <span class="d-moon-text">${[d.moon_phase,d.moon_sign].filter(Boolean).join(' · ')}</span>
         </div>`:''}
       </div>
+      <div class="t-biwheel-wrap" style="margin-bottom:24px">
+        <svg viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg" id="d-biwheel-svg"></svg>
+        <div class="t-biwheel-label">natal · live sky</div>
+      </div>
       ${d.pulse?`<div class="d-pulse">${d.pulse}</div>`:''}
       ${d.key_transit?`<div class="d-key-transit">
         <span class="d-key-transit-name">${d.key_transit}</span>
@@ -2718,10 +2722,6 @@ function renderDaily(){
       </div>`:''}
       <div class="d-prose">${proseHtml}</div>
       ${d.pull?`<div class="d-pull">${d.pull}</div>`:''}
-      <div class="t-biwheel-wrap" style="margin-bottom:20px">
-        <svg viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg" id="d-biwheel-svg"></svg>
-        <div class="t-biwheel-label">natal · live sky</div>
-      </div>
       ${pillsHtml?`<div class="d-transit-pills">${pillsHtml}</div>`:''}
       ${todayHtml}
       <div style="height:32px"></div>
