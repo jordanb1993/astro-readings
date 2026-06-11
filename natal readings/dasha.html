@@ -57,12 +57,11 @@
         <div class="hc-desc">Dec 20 2000 · Quito, Ecuador · Placidus</div>
       </button>
 
-      <!-- Variable — greyed out; biwheel live but daily reading not yet personalized -->
-      <button class="home-card home-card-hero hc-daily" onclick="switchToPanel('daily',document.querySelector('[data-target=daily]'))" style="opacity:0.55">
+      <button class="home-card home-card-hero hc-daily" onclick="switchToPanel('daily',document.querySelector('[data-target=daily]'))">
         <div class="hc-top">
           <div>
             <div class="hc-label">The Variable</div>
-            <div class="hc-title" id="home-daily-title">Coming Soon</div>
+            <div class="hc-title" id="home-daily-title">Synastry with Jordan</div>
           </div>
           <svg class="hc-hero-art" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg">
             <circle cx="26" cy="26" r="22" fill="none" stroke="rgba(74,159,212,0.18)" stroke-width="0.6"/>
@@ -71,7 +70,7 @@
           </svg>
         </div>
         <div class="hc-preview" id="home-daily-transit" style="display:none"></div>
-        <div class="hc-desc">personalized daily readings · in development</div>
+        <div class="hc-desc">natal charts · exact contacts</div>
       </button>
 
       <button class="home-card hc-wheel" onclick="switchToPanel('wheel',document.querySelector('[data-target=wheel]'))" style="min-height:90px">
@@ -524,12 +523,7 @@
     <circle cx="190" cy="360" r="200" stroke="rgba(74,159,212,0.05)" stroke-width="0.5"/>
     <circle cx="190" cy="360" r="100" stroke="rgba(74,159,212,0.04)" stroke-width="0.5"/>
   </svg>
-  <div class="reading-inner accent-cerulean" id="daily-body">
-    <div style="padding-top:48px;padding-bottom:48px;text-align:center;opacity:0.45">
-      <div style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:300;color:var(--text);margin-bottom:12px">Personalized readings coming</div>
-      <div style="font-size:0.78rem;color:var(--muted);line-height:1.8;max-width:280px;margin:0 auto">Daily transit-to-natal readings for Dasha&rsquo;s chart are on the roadmap for Phase 2. The biwheel in The Variable tab already renders her natal chart against today&rsquo;s sky.</div>
-    </div>
-  </div>
+  <div class="reading-inner accent-cerulean" id="daily-body"></div>
 </div>
 
 <!-- WHEEL PANEL -->
@@ -616,6 +610,8 @@
 
 <script>
 const T='︎';
+const IS_FRIEND_BUILD=true;
+const PERSON_NAME='Dasha';
 const CHART={
   asc:355.7366,mc:266.4033,
   cusps:[355.7366,28.051,58.3015,86.4033,114.2112,143.7971,175.7366,208.051,238.3015,266.4033,294.2112,323.7971],

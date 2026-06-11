@@ -61,11 +61,11 @@
         <div class="hc-desc">Jul 28 1993 · 11:03 AM CDT · Winfield, IL · Placidus</div>
       </button>
 
-      <button class="home-card home-card-hero hc-daily" onclick="switchToPanel('daily',document.querySelector('[data-target=daily]'))" style="opacity:0.55">
+      <button class="home-card home-card-hero hc-daily" onclick="switchToPanel('daily',document.querySelector('[data-target=daily]'))">
         <div class="hc-top">
           <div>
             <div class="hc-label">The Variable</div>
-            <div class="hc-title" id="home-daily-title">Coming Soon</div>
+            <div class="hc-title" id="home-daily-title">Synastry with Jordan</div>
           </div>
           <svg class="hc-hero-art" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg">
             <circle cx="26" cy="26" r="22" fill="none" stroke="rgba(74,159,212,0.18)" stroke-width="0.6"/>
@@ -74,10 +74,7 @@
           </svg>
         </div>
         <div class="hc-preview" id="home-daily-transit" style="display:none"></div>
-        <div class="hc-desc" style="display:flex;align-items:center;justify-content:space-between;margin-top:6px">
-          <span>personalized daily readings · in development</span>
-          <span onclick="event.stopPropagation();openTransitLibrary()" style="font-size:0.54rem;letter-spacing:0.14em;text-transform:uppercase;font-family:'Inter',sans-serif;color:rgba(74,159,212,0.55);cursor:pointer;padding:4px 0;-webkit-tap-highlight-color:transparent">Transit Library →</span>
-        </div>
+        <div class="hc-desc">natal charts · exact contacts</div>
       </button>
 
       <button class="home-card hc-wheel" onclick="switchToPanel('wheel',document.querySelector('[data-target=wheel]'))" style="min-height:90px">
@@ -530,12 +527,7 @@
     <circle cx="190" cy="360" r="200" stroke="rgba(74,159,212,0.05)" stroke-width="0.5"/>
     <circle cx="190" cy="360" r="100" stroke="rgba(74,159,212,0.04)" stroke-width="0.5"/>
   </svg>
-  <div class="reading-inner accent-cerulean" id="daily-body">
-    <div style="padding-top:48px;padding-bottom:48px;text-align:center;opacity:0.45">
-      <div style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:300;color:var(--text);margin-bottom:12px">Personalized readings coming</div>
-      <div style="font-size:0.78rem;color:var(--muted);line-height:1.8;max-width:280px;margin:0 auto">Daily transit-to-natal readings for Marina's chart are on the roadmap for Phase 2. The biwheel in The Variable tab already renders her natal chart against today's sky.</div>
-    </div>
-  </div>
+  <div class="reading-inner accent-cerulean" id="daily-body"></div>
 </div>
 
 <!-- WHEEL PANEL -->
@@ -622,6 +614,8 @@
 
 <script>
 const T='︎';
+const IS_FRIEND_BUILD=true;
+const PERSON_NAME='Marina';
 const CHART={
   asc:187.0051,mc:98.2004,
   cusps:[187.0051,213.4169,244.2091,278.2004,311.8462,341.8063,7.0051,33.4169,64.2091,98.2004,131.8462,161.8063],

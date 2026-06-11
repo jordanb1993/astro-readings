@@ -14,6 +14,26 @@ const SIGNS=[{gl:'♈'+T,el:'fire',name:'Aries',abbr:'Ar',color:'#d4a050'},{gl:'
 const GLYPH_FONT="'Apple Symbols','Segoe UI Symbol','Noto Sans Symbols',serif";
 const MODALITY={Ar:'Cardinal',Ta:'Fixed',Ge:'Mutable',Cn:'Cardinal',Le:'Fixed',Vi:'Mutable',Li:'Cardinal',Sc:'Fixed',Sg:'Mutable',Cp:'Cardinal',Aq:'Fixed',Pi:'Mutable'};
 
+// ─── JORDAN'S NATAL CHART (static — for synastry rendering in friend builds) ──
+const JORDAN_CHART={
+  asc:89.3709,mc:338.2840,
+  planets:[
+    {id:'sun',    gl:'☉'+T,deg:241.8311,retro:false,grp:'luminary'},
+    {id:'moon',   gl:'☽'+T,deg:4.9796, retro:false,grp:'luminary'},
+    {id:'mercury',gl:'☿'+T,deg:222.2947,retro:false,grp:'personal'},
+    {id:'venus',  gl:'♀'+T,deg:228.8348,retro:false,grp:'personal'},
+    {id:'mars',   gl:'♂'+T,deg:250.7698,retro:false,grp:'personal'},
+    {id:'jupiter',gl:'♃'+T,deg:212.8672,retro:false,grp:'social'},
+    {id:'saturn', gl:'♄'+T,deg:324.2549,retro:false,grp:'social'},
+    {id:'uranus', gl:'♅'+T,deg:289.5802,retro:false,grp:'outer'},
+    {id:'neptune',gl:'♆'+T,deg:289.1846,retro:false,grp:'outer'},
+    {id:'pluto',  gl:'♇'+T,deg:235.6816,retro:false,grp:'outer'},
+    {id:'chiron', gl:'⚷'+T,deg:158.4833,retro:false,grp:'point'},
+    {id:'nnode',  gl:'☊'+T,deg:243.0475,retro:true, grp:'point'},
+    {id:'snode',  gl:'☋'+T,deg:63.0475, retro:true, grp:'point'},
+  ],
+};
+
 // ─── MATH ─────────────────────────────────────────────────────────────────────
 const norm=a=>((a%360)+360)%360;
 const rad=d=>d*Math.PI/180;
@@ -1018,6 +1038,153 @@ async function openTransitFromPill(label,glyph){
   if(idx!==-1)setTimeout(()=>openTransitDetail(idx),80);
 }
 
+// ─── SYNASTRY ────────────────────────────────────────────────────────────────
+function calcSynastryAspects(jPlanets,fPlanets){
+  const DEFS=[
+    {type:'conjunction',sym:'☌',angle:0,  orb:8,c:'#d0a840',              op:0.65},
+    {type:'opposition', sym:'☍',angle:180,orb:8,c:'#c89898',              op:0.60},
+    {type:'trine',      sym:'△',angle:120,orb:7,c:'#5ab8a8',              op:0.55},
+    {type:'square',     sym:'□',angle:90, orb:7,c:'#c89898',              op:0.58},
+    {type:'sextile',    sym:'✶',angle:60, orb:5,c:'#3e8fc0',              op:0.50},
+    {type:'inconjunct', sym:'⚻',angle:150,orb:3,c:'rgba(240,228,200,0.55)',op:0.35},
+  ];
+  const results=[];
+  for(const j of jPlanets){
+    for(const f of fPlanets){
+      let diff=Math.abs(j.deg-f.deg);
+      if(diff>180)diff=360-diff;
+      for(const a of DEFS){
+        const orb=Math.abs(diff-a.angle);
+        if(orb<=a.orb){results.push({j,f,type:a.type,sym:a.sym,orb,c:a.c,op:a.op});break;}
+      }
+    }
+  }
+  return results.sort((a,b)=>a.orb-b.orb);
+}
+
+function renderSynastryBiwheel(svgId){
+  const bSvg=document.getElementById(svgId);
+  if(!bSvg)return;
+  while(bSvg.firstChild)bSvg.removeChild(bSvg.firstChild);
+  const bCX=130,bCY=130,bASC=CHART.asc,bMC=CHART.mc;
+  const bNorm=a=>((a%360)+360)%360;
+  const bRad=d=>d*Math.PI/180;
+  const bF=n=>n.toFixed(2);
+  const bSvgA=ecl=>bNorm(180-(ecl-bASC));
+  const bPt=(a,r)=>({x:bCX+r*Math.cos(bRad(a)),y:bCY+r*Math.sin(bRad(a))});
+  const bEpt=(ecl,r)=>bPt(bSvgA(ecl),r);
+  const bR={outer:122,trGlyph:116,trSep:110,zodOut:108,zodMid:98,zodIn:88,nSep:82,nGlyph:73,aspLine:78};
+  const defs=el('defs',{});
+  const cp=el('clipPath',{id:'synClip'});
+  cp.appendChild(el('circle',{cx:bCX,cy:bCY,r:bR.outer}));
+  defs.appendChild(cp);
+  bSvg.appendChild(defs);
+  const bgG=el('g',{'clip-path':'url(#synClip)','pointer-events':'none'});
+  bgG.appendChild(el('circle',{cx:bCX,cy:bCY,r:bR.outer,fill:'#09102a'}));
+  bgG.appendChild(el('ellipse',{cx:bCX+18,cy:bCY-28,rx:72,ry:38,fill:'rgba(180,110,30,0.07)',transform:`rotate(-35,${bCX},${bCY})`}));
+  bgG.appendChild(el('ellipse',{cx:bCX-18,cy:bCY+28,rx:72,ry:42,fill:'rgba(30,100,160,0.08)',transform:`rotate(-35,${bCX},${bCY})`}));
+  bSvg.appendChild(bgG);
+  const elColors={fire:'rgba(210,130,48,0.25)',earth:'rgba(80,142,68,0.18)',air:'rgba(80,112,200,0.20)',water:'rgba(40,128,188,0.27)'};
+  const elArcs={fire:'#c87840',earth:'#58925a',air:'#5878c8',water:'#3880b8'};
+  const signEls=['fire','earth','air','water','fire','earth','air','water','fire','earth','air','water'];
+  const zodG=el('g',{'pointer-events':'none'});
+  for(let i=0;i<12;i++){
+    const s=i*30,e=s+30;
+    const a1=bSvgA(s),a2=bSvgA(e);
+    const oo=bPt(a1,bR.zodOut),oe=bPt(a2,bR.zodOut),io=bPt(a1,bR.zodIn),ie=bPt(a2,bR.zodIn);
+    const d=`M${bF(oo.x)} ${bF(oo.y)} A${bR.zodOut} ${bR.zodOut} 0 0 0 ${bF(oe.x)} ${bF(oe.y)} L${bF(ie.x)} ${bF(ie.y)} A${bR.zodIn} ${bR.zodIn} 0 0 1 ${bF(io.x)} ${bF(io.y)}Z`;
+    zodG.appendChild(el('path',{d,fill:elColors[signEls[i]],stroke:'rgba(208,168,64,0.18)','stroke-width':'0.5'}));
+    const aa1=bSvgA(s+1.5),aa2=bSvgA(e-1.5);
+    const ap1=bPt(aa1,bR.zodOut-1.5),ap2=bPt(aa2,bR.zodOut-1.5);
+    zodG.appendChild(el('path',{d:`M${bF(ap1.x)} ${bF(ap1.y)} A${bR.zodOut-1.5} ${bR.zodOut-1.5} 0 0 0 ${bF(ap2.x)} ${bF(ap2.y)}`,fill:'none',stroke:elArcs[signEls[i]],'stroke-width':'2.5',opacity:'0.50','stroke-linecap':'round'}));
+    const gp=bEpt(s+15,bR.zodMid);
+    zodG.appendChild(tx(SIGNS[i].gl,{x:bF(gp.x),y:bF(gp.y),fill:SIGNS[i].color,opacity:'0.80','font-size':'7.8','font-family':GLYPH_FONT,'font-variant-emoji':'text','text-anchor':'middle','dominant-baseline':'central'}));
+  }
+  zodG.appendChild(el('circle',{cx:bCX,cy:bCY,r:bR.zodOut,fill:'none',stroke:'rgba(208,168,64,0.45)','stroke-width':'0.6'}));
+  zodG.appendChild(el('circle',{cx:bCX,cy:bCY,r:bR.zodIn, fill:'none',stroke:'rgba(208,168,64,0.30)','stroke-width':'0.5'}));
+  zodG.appendChild(el('circle',{cx:bCX,cy:bCY,r:bR.outer, fill:'none',stroke:'rgba(208,168,64,0.32)','stroke-width':'0.6'}));
+  for(let i=0;i<12;i++){const a=bSvgA(i*30);const op=bPt(a,bR.outer),zp=bPt(a,bR.zodOut+0.5);zodG.appendChild(el('line',{x1:bF(op.x),y1:bF(op.y),x2:bF(zp.x),y2:bF(zp.y),stroke:'rgba(208,168,64,0.45)','stroke-width':'0.5'}));}
+  bSvg.appendChild(zodG);
+  const nFill=el('g',{'pointer-events':'none'});
+  nFill.appendChild(el('circle',{cx:bCX,cy:bCY,r:bR.zodIn,fill:'#09102a'}));
+  nFill.appendChild(el('circle',{cx:bCX,cy:bCY,r:bR.zodIn,fill:'rgba(12,18,44,0.55)'}));
+  nFill.appendChild(el('circle',{cx:bCX,cy:bCY,r:bR.nSep, fill:'none',stroke:'rgba(208,168,64,0.38)','stroke-width':'0.6'}));
+  bSvg.appendChild(nFill);
+  const aspects=calcSynastryAspects(JORDAN_CHART.planets,CHART.planets);
+  const AMBIENT=0.22;
+  const aspG=el('g',{'pointer-events':'none'});
+  for(const a of aspects.slice(0,16)){
+    const jpt=bEpt(a.j.deg,bR.aspLine),fpt=bEpt(a.f.deg,bR.aspLine);
+    const sw=a.orb<1?'1.1':a.orb<3?'0.85':'0.65';
+    const op=a.orb<0.5?'0.50':a.orb<2?'0.32':String(AMBIENT);
+    aspG.appendChild(el('line',{x1:bF(jpt.x),y1:bF(jpt.y),x2:bF(fpt.x),y2:bF(fpt.y),stroke:a.c,'stroke-width':sw,opacity:op}));
+  }
+  bSvg.appendChild(aspG);
+  const nColors={luminary:'#d8b850',personal:'#c8a0a0',social:'#7ab0d0',outer:'#5ab8a8',point:'rgba(240,228,200,0.72)'};
+  const nSpread=spread(CHART.planets.map(p=>({...p,disp:p.deg})));
+  const nPG=el('g',{'pointer-events':'none'});
+  for(const p of nSpread){
+    const tick=bEpt(p.deg,bR.nSep-1);
+    nPG.appendChild(el('circle',{cx:bF(tick.x),cy:bF(tick.y),r:'1.1',fill:nColors[p.grp]||'#d8b850',opacity:'0.60'}));
+    const gp=bEpt(p.disp,bR.nGlyph);
+    nPG.appendChild(tx(p.gl,{x:bF(gp.x),y:bF(gp.y),fill:nColors[p.grp]||'#d8b850',opacity:'0.92','font-size':'8','font-family':GLYPH_FONT,'font-variant-emoji':'text','text-anchor':'middle','dominant-baseline':'central'}));
+  }
+  bSvg.appendChild(nPG);
+  const JC='rgba(180,140,255,0.90)',JCR='rgba(140,180,255,0.82)';
+  const jSpread=spread(JORDAN_CHART.planets.map(p=>({...p,disp:p.deg})));
+  const jPG=el('g',{'pointer-events':'none'});
+  for(const jp of jSpread){
+    const tick=bEpt(jp.deg,bR.zodOut+4);
+    jPG.appendChild(el('circle',{cx:bF(tick.x),cy:bF(tick.y),r:'1.4',fill:jp.retro?JCR:JC,opacity:'0.65'}));
+    const gp=bEpt(jp.disp,bR.trGlyph);
+    jPG.appendChild(tx(jp.gl,{x:bF(gp.x),y:bF(gp.y),fill:jp.retro?JCR:JC,opacity:'0.90','font-size':'8','font-family':GLYPH_FONT,'font-variant-emoji':'text','text-anchor':'middle','dominant-baseline':'central'}));
+  }
+  bSvg.appendChild(jPG);
+  const axG=el('g',{'pointer-events':'none'});
+  for(const [ecl,lbl] of [[bASC,'ASC'],[bNorm(bASC+180),'DSC'],[bMC,'MC'],[bNorm(bMC+180),'IC']]){
+    const o=bEpt(ecl,bR.nSep+1),i=bEpt(ecl,bR.aspLine-6);
+    axG.appendChild(el('line',{x1:bF(o.x),y1:bF(o.y),x2:bF(i.x),y2:bF(i.y),stroke:'rgba(208,168,64,0.55)','stroke-width':'0.7'}));
+    const lp=bEpt(ecl,bR.nSep+6);
+    axG.appendChild(tx(lbl,{x:bF(lp.x),y:bF(lp.y),fill:'rgba(208,168,64,0.75)','font-size':'4.2','font-family':"'Inter',sans-serif",'font-weight':'600','letter-spacing':'0.2','text-anchor':'middle','dominant-baseline':'central'}));
+  }
+  bSvg.appendChild(axG);
+  const cg=el('g',{'pointer-events':'none'});
+  cg.appendChild(el('circle',{cx:bCX,cy:bCY,r:'16',fill:'#09102a',stroke:'rgba(208,168,64,0.22)','stroke-width':'0.5'}));
+  cg.appendChild(el('circle',{cx:bCX,cy:bCY,r:'4.5',fill:'rgba(208,168,64,0.32)'}));
+  cg.appendChild(el('circle',{cx:bCX,cy:bCY,r:'2',fill:'rgba(240,228,200,0.78)'}));
+  bSvg.appendChild(cg);
+}
+
+function renderSynastryPanel(){
+  const aspects=calcSynastryAspects(JORDAN_CHART.planets,CHART.planets);
+  const nColors={luminary:'#d8b850',personal:'#c8a0a0',social:'#7ab0d0',outer:'#5ab8a8',point:'rgba(240,228,200,0.72)'};
+  const rows=aspects.slice(0,12).map(a=>{
+    const orbStr=a.orb<0.1?`${(a.orb*60).toFixed(0)}'`:`${a.orb.toFixed(2)}°`;
+    const fColor=nColors[a.f.grp]||'rgba(240,228,200,0.70)';
+    return `<div class="syn-row"><span class="syn-glyph" style="color:rgba(180,140,255,0.90)">${a.j.gl}</span><span class="syn-sym" style="color:${a.c}">${a.sym}</span><span class="syn-glyph" style="color:${fColor}">${a.f.gl}</span><span class="syn-label">${a.type}</span><span class="syn-orb">${orbStr}</span></div>`;
+  }).join('');
+  document.getElementById('daily-body').innerHTML=`
+    <div style="padding-top:24px">
+      <div class="d-header">
+        <div class="d-eyebrow">Synastry</div>
+        <div class="d-title">You &amp; Jordan</div>
+        <div class="d-moon-strip">
+          <span style="letter-spacing:0.08em;font-size:0.62rem;opacity:0.52">natal charts · exact contacts</span>
+        </div>
+      </div>
+      <div class="t-biwheel-wrap" style="margin-bottom:24px">
+        <svg viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg" id="s-biwheel-svg"></svg>
+        <div class="t-biwheel-label">your chart · jordan's chart</div>
+      </div>
+      <div class="synastry-contacts">
+        <div class="syn-section-label">Contacts by orb</div>
+        ${rows}
+      </div>
+      <div style="height:32px"></div>
+    </div>`;
+  renderSynastryBiwheel('s-biwheel-svg');
+}
+
 // ─── DAILY DATA FUNCTIONS ─────────────────────────────────────────────────────
 function updateHomeFromDaily(d){
   const moonEl=document.getElementById('home-moon');
@@ -1047,6 +1214,7 @@ function showDailySkeleton(){
 }
 
 async function loadDaily(){
+  if(typeof IS_FRIEND_BUILD!=='undefined'&&IS_FRIEND_BUILD){renderSynastryPanel();return;}
   if(dailyData){
     if(!dailyData.transiting_positions)await fetchPositions();
     renderDaily();
