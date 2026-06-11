@@ -30,7 +30,7 @@
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html,body{height:100%;overflow:hidden;-webkit-font-smoothing:antialiased}
 body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overscroll-behavior:none}
-p{line-height:1.80;color:var(--muted);font-size:0.91rem}
+p{line-height:1.80;color:var(--muted);font-size:1.0rem}
 strong{color:var(--rose);font-weight:500}
 
 /* ══ APP SHELL ═══════════════════════════════════════════════════════════════ */
@@ -134,7 +134,7 @@ strong{color:var(--rose);font-weight:500}
   font-family:'Cormorant Garamond',serif;font-size:1.22rem;font-weight:400;
   color:var(--text);line-height:1.18;margin-bottom:7px;
 }
-.ic-body{font-size:0.86rem;color:var(--muted);line-height:1.72;margin-bottom:11px}
+.ic-body{font-size:0.92rem;color:var(--muted);line-height:1.72;margin-bottom:11px}
 
 .ic-why{
   display:inline-flex;align-items:center;gap:5px;
@@ -167,10 +167,10 @@ strong{color:var(--rose);font-weight:500}
   padding:8px 4px;border-radius:7px;border:1px solid rgba(var(--cerulean-alpha),0.16);
   color:var(--muted-3);background:rgba(var(--cerulean-alpha),0.03);cursor:pointer;
   text-align:center;touch-action:manipulation;-webkit-tap-highlight-color:transparent;
-  transition:all 0.16s;line-height:1.25;
+  transition:all 0.16s,transform 0.15s;line-height:1.25;
 }
 .sign-chip.active{border-color:rgba(var(--cerulean-alpha),0.65);color:var(--cerulean);background:rgba(var(--cerulean-alpha),0.10)}
-.sign-chip:active{opacity:0.68}
+.sign-chip:active{opacity:0.68;transform:scale(0.94)}
 .sign-chip-gl{display:block;font-size:1.10rem;line-height:1.2;margin-bottom:2px;font-family:'Cormorant Garamond',serif}
 .sign-chip-nm{display:block;font-size:0.42rem;letter-spacing:0.07em;text-transform:uppercase}
 
@@ -207,10 +207,11 @@ strong{color:var(--rose);font-weight:500}
   display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;
   background:var(--surface);padding:10px 12px;
   border-radius:6px;border-left:2.5px solid;
-  cursor:pointer;transition:background 0.16s;
+  cursor:pointer;transition:background 0.16s,transform 0.15s,opacity 0.15s;
   -webkit-tap-highlight-color:transparent;
 }
-.signal-row:hover,.signal-row:active{background:var(--surface-2)}
+.signal-row:hover{background:var(--surface-2)}
+.signal-row:active{background:var(--surface-2);transform:scale(0.99);opacity:0.85}
 .signal-row.gold{border-color:var(--gold)}
 .signal-row.rose{border-color:var(--rose)}
 .signal-row.cerulean{border-color:var(--cerulean)}
@@ -241,7 +242,9 @@ strong{color:var(--rose);font-weight:500}
   background:rgba(var(--cerulean-alpha),0.04);
   color:var(--muted);cursor:pointer;position:relative;
   -webkit-tap-highlight-color:transparent;
+  transition:transform 0.15s,opacity 0.15s;
 }
+.planet-pill:active{transform:scale(0.95);opacity:0.75}
 .planet-pill.luminary{border-color:rgba(208,168,64,0.22);color:rgba(240,228,200,0.82)}
 .planet-pill.personal{border-color:rgba(200,160,144,0.18)}
 .planet-pill.social{border-color:rgba(90,184,168,0.18)}
@@ -592,7 +595,7 @@ strong{color:var(--rose);font-weight:500}
     <span class="nav-label">This Week</span>
   </button>
   <button class="nav-tab" data-target="sky" onclick="switchPanel('sky',this)">
-    <span class="nav-icon">☽</span>
+    <span class="nav-icon"><svg viewBox="0 0 24 24" width="18" height="18" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></span>
     <span class="nav-label">The Sky</span>
   </button>
   <button class="nav-tab" data-target="foryou" onclick="switchPanel('foryou',this)">
