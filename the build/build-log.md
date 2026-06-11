@@ -350,7 +350,7 @@ Architecture note: all three pages (jordan.html, sky-at-work.html, dasha.html, y
 
 ## 2026-06-09 — Natal Shell v2: Tier 3 Complete + Netlify Hosting
 
-**The headline:** Shell is now fully installable as a home-screen web app (PWA). Transits and Daily tabs unlocked with real content — 4 live transit data cards + a date-wired daily reading slot. Hosting permanently migrated from GitHub Pages to Netlify (`astrologyos.netlify.app`) with HTTP-level cache headers. The shell is ready to port to friends' charts.
+**The headline:** Shell is now fully installable as a home-screen web app (PWA). Transits and Daily tabs unlocked with real content — 4 live transit data cards + a date-wired daily reading slot. Hosting permanently migrated from GitHub Pages to Netlify (`pathfinderastro.vercel.app`) with HTTP-level cache headers. The shell is ready to port to friends' charts.
 
 ### What Changed
 

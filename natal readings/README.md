@@ -1,22 +1,22 @@
 # natal readings/ — Birth Chart Readings
 
-This folder contains full natal chart reading HTMLs in the whimsigoth aesthetic. Each chart is hosted live on Netlify at `astrologyos.netlify.app/natal%20readings/[name].html` — always fresh, no cache issues.
+This folder contains full natal chart reading HTMLs in the whimsigoth aesthetic. Each chart is hosted live on Netlify at `pathfinderastro.vercel.app/natal%20readings/[name].html` — always fresh, no cache issues.
 
 ## Completed charts
 
 | Name | File | Live URL | Notes |
 |------|------|----------|-------|
-| Jordan | `jordan.html` | `astrologyos.netlify.app/natal%20readings/jordan.html` | **v3 shell — current canonical template** (Tier 1: CSS tokens, accent colors, scrollable nav) |
-| Jordan | `jordan-natal.html` | `astrologyos.netlify.app/natal%20readings/jordan-natal.html` | v1 — kept for reference only |
-| Dasha | `dasha.html` | `astrologyos.netlify.app/natal%20readings/dasha.html` | Noon chart, time unconfirmed |
-| Iza | `iza.html` | `astrologyos.netlify.app/natal%20readings/iza.html` | Confirmed birth time |
-| Su | `su.html` | `astrologyos.netlify.app/natal%20readings/su.html` | Confirmed birth time |
-| Marina | `marina.html` | `astrologyos.netlify.app/natal%20readings/marina.html` | Leo Sun · Sagittarius Moon · Libra Rising |
-| Kate | `kate.html` | `astrologyos.netlify.app/natal%20readings/kate.html` | Libra Sun · Scorpio Moon · Libra Rising |
-| Hazel | `hazel.html` | `astrologyos.netlify.app/natal%20readings/hazel.html` | Taurus Sun · Virgo Moon · 29° Aquarius Rising |
-| Yvonne | `yvonne.html` | `astrologyos.netlify.app/natal%20readings/yvonne.html` | Cancer Sun · Libra Moon · Sagittarius Rising · coworker |
-| Carina | `carina.html` | `astrologyos.netlify.app/natal%20readings/carina.html` | Gemini Sun · Pisces Moon · Scorpio Rising · Jupiter in 10th |
-| Mimi | `mimi.html` | `astrologyos.netlify.app/natal%20readings/mimi.html` | Aries Sun · Leo Moon · Scorpio Rising · fire grand trine · NNode exact sextile MC |
+| Jordan | `jordan.html` | `pathfinderastro.vercel.app/natal%20readings/jordan.html` | **v3 shell — current canonical template** (Tier 1: CSS tokens, accent colors, scrollable nav) |
+| Jordan | `jordan-natal.html` | `pathfinderastro.vercel.app/natal%20readings/jordan-natal.html` | v1 — kept for reference only |
+| Dasha | `dasha.html` | `pathfinderastro.vercel.app/natal%20readings/dasha.html` | Noon chart, time unconfirmed |
+| Iza | `iza.html` | `pathfinderastro.vercel.app/natal%20readings/iza.html` | Confirmed birth time |
+| Su | `su.html` | `pathfinderastro.vercel.app/natal%20readings/su.html` | Confirmed birth time |
+| Marina | `marina.html` | `pathfinderastro.vercel.app/natal%20readings/marina.html` | Leo Sun · Sagittarius Moon · Libra Rising |
+| Kate | `kate.html` | `pathfinderastro.vercel.app/natal%20readings/kate.html` | Libra Sun · Scorpio Moon · Libra Rising |
+| Hazel | `hazel.html` | `pathfinderastro.vercel.app/natal%20readings/hazel.html` | Taurus Sun · Virgo Moon · 29° Aquarius Rising |
+| Yvonne | `yvonne.html` | `pathfinderastro.vercel.app/natal%20readings/yvonne.html` | Cancer Sun · Libra Moon · Sagittarius Rising · coworker |
+| Carina | `carina.html` | `pathfinderastro.vercel.app/natal%20readings/carina.html` | Gemini Sun · Pisces Moon · Scorpio Rising · Jupiter in 10th |
+| Mimi | `mimi.html` | `pathfinderastro.vercel.app/natal%20readings/mimi.html` | Aries Sun · Leo Moon · Scorpio Rising · fire grand trine · NNode exact sextile MC |
 
 ---
 
@@ -131,7 +131,7 @@ The full style guide lives in `CLAUDE.md → Writing Style Guide: All Reading Ty
 
 1. Run `open "[filepath]"` to open in browser and check visually
 2. Commit to GitHub: `git add "natal readings/[name].html" && git commit -m "Add [Name] natal chart" && git push origin main`
-3. Share the live URL: `astrologyos.netlify.app/natal%20readings/[name].html`
+3. Share the live URL: `pathfinderastro.vercel.app/natal%20readings/[name].html`
 4. GitHub Pages goes live within ~2 minutes of push
 
 ---
@@ -332,7 +332,7 @@ git commit -m "Add [Name] natal chart wheel"
 git push origin main
 ```
 
-**Live URL:** `https://astrologyos.netlify.app/natal%20readings/[name]-wheel.html`
+**Live URL:** `https://pathfinderastro.vercel.app/natal%20readings/[name]-wheel.html`
 Netlify deploys within ~30 seconds of push, always fresh.
 
 ---
@@ -495,7 +495,7 @@ git commit -m "Add [Name] natal reading v2"
 git push origin main
 ```
 
-Live URL: `https://astrologyos.netlify.app/natal%20readings/[name].html`
+Live URL: `https://pathfinderastro.vercel.app/natal%20readings/[name].html`
 
 ---
 

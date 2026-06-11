@@ -67,21 +67,24 @@ Phase 2 remains transactional (per reading on Etsy). Phase 3 launches as subscri
 
 ---
 
-### Business Name: Thin Place / The 29th / Solas
-**Status: OPEN**
+### Business Name
+**Status: RESOLVED**
 **Raised:** May 18, 2026
+**Decided:** June 11, 2026
 
-Top three candidates:
+**Name: Pathfinder**
 
-| Name | Why it works |
-|---|---|
-| **Thin Place** | Celtic — where the veil between visible and invisible is paper-thin. Irish connection real and personal. Not obviously "astrology" — a feature. |
-| **The 29th** | Jordan's Ascendant at 29° Gemini. Astro people clock it. Everyone else finds it intriguing. |
-| **Solas** | Irish for light (SU-las). Simple, warm. Solas Astrology lands cleanly. |
+Named after Star Trek: Voyager's "Pathfinder" episode (S6) — the one where Reg Barclay, the awkward, underestimated, deeply passionate engineer, builds a communication system from a basement computer to reach Voyager lost across the galaxy, because he refuses to stop believing the signal is worth sending.
 
-Other candidates in the running: Meridian, Ingress, Anam, By Degrees.
+Jordan is building a system from her apartment to reach people who feel lost and want to find their way back to themselves. That's not a metaphor. That's the actual story.
 
-**What's blocking:** Let one land. No forcing. The name should arrive, not be decided.
+The Trek reference is hidden and personal — Jordan knows it, the world sees a navigation tool for your life.
+
+**Internal section names (also locked June 11):**
+- Natal chart section: **The Constant** — Lost S4, Desmond's anchor across all timelines. Your chart is the one fixed thing.
+- Transits section: **The Variable** — Lost S4/5, "we are the variables, we can change destiny." What's moving, what you can influence.
+
+**Trademark note:** Check App Store for conflicts before Phase 3 public launch. Different market class from Pathfinder RPG (Paizo) and Nissan Pathfinder — not a current blocker.
 
 ---
 
@@ -104,6 +107,27 @@ The corporate women's career astrology angle (sky-at-work, timing professional m
 
 **Options:** TikTok, Instagram Reels, neither until Phase 2.
 **What's blocking:** Phase 1 doesn't need content strategy. Revisit at Phase 2 when there's product to demonstrate.
+
+---
+
+### Reading UX: Plain-Language First vs. Technical-First
+**Status: OPEN — new product directive**
+**Raised:** June 11, 2026 (inbox capture)
+
+**The insight (Jordan's words):**
+"We need meaning first and practical precise language of what the energy feels like and is doing, then take it technical. I want others to use it as a learning tool but they can't do that if we speak in only technical language. We need to shift to plain language of meaning and affect built from the technical — and then the technical information if the user wants to learn. That way our app can be appealing to beginner, intermediate, and advanced astrology people all at the same time."
+
+**The precedent:** `sky-at-work.html` already implements this exactly — plain-language insight cards on the surface, "What's driving this?" disclosure tap reveals the transit mechanism. The architecture works. The question is how to apply it to daily readings and natal charts.
+
+**Option A — Layered daily reading:** Plain-language meaning in the prose body (what the energy FEELS like), with transit details available in a collapsible / secondary layer. Current readings reverse this — they lead technical and translate into meaning. The inversion makes the product beginner-accessible without dumbing it down for advanced users.
+
+**Option B — Natal chart tiering:** The natal reading scroll stays as-is (a contemplative artifact for intermediate-advanced users), but add a companion "plain language summary" layer at the top — 3–5 sentences about what this chart means in a life, before the technical depth begins.
+
+**Option C — Both:** Daily reading prose leads with meaning/felt sense, technical data lives in the transit board (already there). Natal reading adds a plain-language entry layer.
+
+**What's blocking:** Format spec update. Applies to voice-canon.md and READING-FORMAT.md once decided.
+
+**Design principle already proven:** The `sky-at-work.html` inversion confirms this works. Plain language first is NOT dumbing down — it is meeting people where they are so the technical layer lands as depth rather than barrier.
 
 ---
 

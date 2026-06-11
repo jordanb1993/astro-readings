@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>April 25, 2026 ✦ Transit Reading</title>
+  <link href="https://fonts.googleapis.com/css2?family=VT323&family=Press+Start+2P&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:             #07081c;
+      --surface:        #0c0e28;
+      --surface2:       #09091f;
+      --border:         #2a2258;
+      --border-hi:      #6a50a8;
+      --text:           #ede8d8;
+      --dim:            #7a6e96;
+      --gold:           #c89a2a;
+      --gold-hi:        #e8b830;
+      --gold-glow:      rgba(200,154,42,0.18);
+      --amethyst:       #8a5cb8;
+      --amethyst-glow:  rgba(138,92,184,0.16);
+      --teal:           #2a9080;
+      --teal-glow:      rgba(42,144,128,0.14);
+      --rose:           #aa3868;
+      --rose-glow:      rgba(170,56,104,0.16);
+      --moon:           #8898cc;
+      --moon-glow:      rgba(136,152,204,0.15);
+      --orange:         #c87840;
+      --orange-glow:    rgba(200,120,60,0.14);
+      --sextile:        #4a88cc;
+      --sextile-glow:   rgba(74,136,204,0.13);
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(
+        to bottom,
+        transparent 0px, transparent 3px,
+        rgba(0,0,0,0.08) 3px, rgba(0,0,0,0.08) 4px
+      );
+      pointer-events: none;
+      z-index: 9998;
+    }
+
+    body {
+      background-color: var(--bg);
+      background-image:
+        radial-gradient(ellipse at 18% 12%, rgba(80,40,160,0.22) 0%, transparent 48%),
+        radial-gradient(ellipse at 82% 22%, rgba(150,40,80,0.14) 0%, transparent 42%),
+        radial-gradient(ellipse at 50% 85%, rgba(30,60,150,0.18) 0%, transparent 48%),
+        radial-gradient(ellipse at 8%  88%, rgba(70,30,110,0.14) 0%, transparent 42%);
+      color: var(--text);
+      font-family: 'VT323', monospace;
+      font-size: 20px;
+      min-height: 100vh;
+      padding: 28px 16px 64px;
+      position: relative;
+    }
+
+    #starfield {
+      position: fixed; inset: 0;
+      pointer-events: none; z-index: 0; overflow: hidden;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; transform: scale(0.9); }
+      50%       { opacity: 1;   transform: scale(1.15); }
+    }
+
+    @keyframes shimmer {
+      0%   { background-position: -200% center; }
+      100% { background-position: 200% center; }
+    }
+
+    @keyframes fadeSlideUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ─── WINDOW ───────────────────────────────── */
+    .window {
+      position: relative; z-index: 1;
+      max-width: 840px; margin: 0 auto;
+      border: 2px solid var(--border-hi);
+      box-shadow:
+        inset -1px -1px rgba(0,0,0,0.95),
+        inset  1px  1px rgba(180,150,255,0.2),
+        0 0 60px rgba(80,50,160,0.18),
+        0 0 120px rgba(80,50,160,0.07);
+    }
+
+    .titlebar {
+      background: linear-gradient(90deg, #140c38 0%, #4a2280 32%, #8a2260 62%, #140c38 100%);
+      padding: 5px 8px 5px 10px;
+      display: flex; align-items: center; justify-content: space-between;
+      user-select: none;
+    }
+    .titlebar-label {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 8px; color: #f0e0b8;
+      letter-spacing: 1px; text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+    }
+    .titlebar-btns { display: flex; gap: 3px; }
+    .tbtn {
+      width: 18px; height: 15px; background: #c0c0c0;
+      box-shadow: inset -1px -1px #6a6a6a, inset 1px 1px #ffffff;
+      font-size: 10px; font-family: 'VT323', monospace;
+      color: #000; display: flex; align-items: center; justify-content: center;
+      cursor: default; border: none;
+    }
+
+    .content { background: var(--bg); padding: 32px 40px 42px; }
+
+    /* ─── HEADER ───────────────────────────────── */
+    .reading-meta {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 8px; color: var(--gold);
+      letter-spacing: 2px; text-shadow: 0 0 14px var(--gold-glow);
+      margin-bottom: 8px;
+    }
+
+    h1 {
+      font-family: 'VT323', monospace;
+      font-size: 60px; line-height: 1;
+      background: linear-gradient(90deg, var(--gold) 0%, var(--gold-hi) 40%, #f8d060 60%, var(--gold) 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: shimmer 4s linear infinite;
+      margin-bottom: 6px;
+    }
+
+    .tagline {
+      color: var(--dim); font-size: 18px;
+      margin-bottom: 28px; letter-spacing: 2px;
+    }
+
+    /* ─── PLANET STRIP ─────────────────────────── */
+    .planet-strip {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-top: 2px solid var(--gold);
+      box-shadow: 0 0 16px rgba(200,154,42,0.07), inset 0 1px 0 rgba(0,0,0,0.5);
+      padding: 14px 18px;
+      margin-bottom: 20px;
+    }
+    .strip-label {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 7px; color: var(--gold);
+      letter-spacing: 3px; margin-bottom: 13px;
+      text-shadow: 0 0 8px var(--gold-glow);
+    }
+    .planet-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 2px 24px;
+    }
+    .prow {
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding: 4px 0; border-bottom: 1px dotted rgba(42,34,88,0.7);
+      font-size: 18px;
+    }
+    .pname  { color: var(--amethyst); }
+    .pdeg   { color: var(--gold-hi); font-size: 16px; }
+    .phouse { color: var(--dim); font-size: 13px; }
+
+    /* ─── AT A GLANCE ──────────────────────────── */
+    .glance-panel {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-top: 2px solid var(--amethyst);
+      box-shadow: 0 0 20px var(--amethyst-glow);
+      padding: 16px 18px;
+      margin-bottom: 28px;
+    }
+
+    .glance-grid {
+      display: flex; flex-direction: column; gap: 10px;
+    }
+
+    .glance-row {
+      display: flex; align-items: center;
+      gap: 12px; padding: 8px 10px;
+      background: rgba(10,10,30,0.5);
+      border: 1px solid rgba(42,34,88,0.5);
+      font-size: 18px;
+    }
+
+    .glance-aspect-text {
+      font-family: 'IBM Plex Mono', monospace;
+      flex: 1; color: var(--text); line-height: 1.5;
+      font-size: 13px;
+    }
+    .glance-aspect-text em {
+      color: var(--gold-hi); font-style: normal;
+    }
+
+    .glance-right {
+      display: flex; align-items: center; gap: 10px; flex-shrink: 0;
+    }
+
+    .orb-wrap { display: flex; align-items: center; gap: 6px; }
+    .orb-label { font-size: 14px; color: var(--dim); white-space: nowrap; }
+    .orb-track {
+      width: 56px; height: 4px;
+      background: rgba(42,34,88,0.8);
+      border: 1px solid rgba(42,34,88,1);
+      border-radius: 2px; overflow: hidden;
+    }
+    .orb-fill { height: 100%; border-radius: 2px; }
+
+    .orb-fill.conjunction  { background: var(--gold-hi); box-shadow: 0 0 6px var(--gold); }
+    .orb-fill.trine        { background: var(--teal);    box-shadow: 0 0 6px var(--teal-glow); }
+    .orb-fill.opposition   { background: var(--amethyst); box-shadow: 0 0 6px var(--amethyst); }
+    .orb-fill.inconjunct   { background: var(--orange);  box-shadow: 0 0 6px var(--orange); }
+    .orb-fill.square       { background: var(--rose);    box-shadow: 0 0 6px var(--rose); }
+    .orb-fill.sextile      { background: var(--sextile); box-shadow: 0 0 6px var(--sextile); }
+
+    .badge {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 6px; padding: 3px 6px; white-space: nowrap;
+      letter-spacing: 0.5px; border-radius: 2px;
+    }
+    .badge.conjunction  { background: rgba(200,154,42,0.15); color: var(--gold-hi);  border: 1px solid var(--gold);     }
+    .badge.trine        { background: rgba(42,144,128,0.15); color: var(--teal);     border: 1px solid var(--teal);     }
+    .badge.opposition   { background: rgba(138,92,184,0.15); color: var(--amethyst); border: 1px solid var(--amethyst); }
+    .badge.inconjunct   { background: rgba(200,120,60,0.15); color: var(--orange);   border: 1px solid var(--orange);   }
+    .badge.square       { background: rgba(170,56,104,0.15); color: var(--rose);     border: 1px solid var(--rose);     }
+    .badge.sextile      { background: rgba(74,136,204,0.15); color: var(--sextile);  border: 1px solid var(--sextile);  }
+
+    /* ─── DIVIDER ──────────────────────────────── */
+    .divider {
+      display: flex; align-items: center; gap: 12px; margin: 24px 0;
+    }
+    .divider::before, .divider::after {
+      content: ''; flex: 1; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border-hi), transparent);
+    }
+    .divider-inner {
+      font-size: 20px; color: var(--gold);
+      letter-spacing: 10px; text-shadow: 0 0 10px var(--gold-glow);
+      white-space: nowrap;
+    }
+
+    /* ─── COLLAPSIBLE SECTIONS ─────────────────── */
+    .section {
+      margin-bottom: 12px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      opacity: 0; transform: translateY(14px);
+      transition: opacity 0.45s ease, transform 0.45s ease, border-color 0.2s;
+    }
+    .section.visible {
+      opacity: 1; transform: translateY(0);
+    }
+    .section:hover { border-color: var(--border-hi); }
+
+    .section::before {
+      content: ''; display: block;
+      position: absolute; left: 0; top: 0; bottom: 0;
+      width: 3px;
+    }
+    .section { position: relative; }
+
+    .section.headline::before  { background: var(--gold);     box-shadow: 2px 0 12px var(--gold-glow); }
+    .section.headline { border-color: rgba(200,154,42,0.4); }
+    .section.venus::before     { background: var(--rose);     box-shadow: 2px 0 10px var(--rose-glow); }
+    .section.jupiter::before   { background: var(--teal);     box-shadow: 2px 0 10px var(--teal-glow); }
+    .section.neptune::before   { background: var(--moon);     box-shadow: 2px 0 10px var(--moon-glow); }
+    .section.node::before      { background: var(--gold);     box-shadow: 2px 0 12px var(--gold-glow); }
+    .section.saturn::before    { background: var(--orange);   box-shadow: 2px 0 10px var(--orange-glow); }
+    .section.moonday::before   { background: var(--moon);     box-shadow: 2px 0 10px var(--moon-glow); }
+    .section.ttt::before       { background: var(--teal);     box-shadow: 2px 0 10px var(--teal-glow); }
+    .section.practical::before { background: var(--amethyst); box-shadow: 2px 0 12px var(--amethyst-glow); }
+    .section.summary::before   { background: var(--gold);     box-shadow: 2px 0 12px var(--gold-glow); }
+
+    .section-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 18px 14px 22px;
+      cursor: pointer; user-select: none;
+      transition: background 0.2s;
+    }
+    .section-header:hover { background: rgba(106,80,168,0.08); }
+
+    .section-header-left { display: flex; align-items: flex-start; gap: 12px; flex: 1; }
+
+    .section-icon {
+      font-size: 22px; line-height: 1;
+      margin-top: 2px; flex-shrink: 0;
+    }
+    .headline  .section-icon { color: var(--gold-hi);  text-shadow: 0 0 10px var(--gold-glow); }
+    .venus     .section-icon { color: var(--rose);     }
+    .jupiter   .section-icon { color: var(--teal);     }
+    .neptune   .section-icon { color: var(--moon);     }
+    .node      .section-icon { color: var(--gold-hi);  text-shadow: 0 0 10px var(--gold-glow); }
+    .saturn    .section-icon { color: var(--orange);   }
+    .moonday   .section-icon { color: var(--moon);     }
+    .ttt       .section-icon { color: var(--teal);     }
+    .practical .section-icon { color: var(--amethyst); }
+    .summary   .section-icon { color: var(--gold-hi);  }
+
+    .section-header-text { flex: 1; }
+
+    .section-title {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 9px; letter-spacing: 1px;
+      margin-bottom: 7px; line-height: 1.6;
+    }
+    .headline  .section-title { color: var(--gold-hi);  text-shadow: 0 0 8px var(--gold-glow); }
+    .venus     .section-title { color: var(--rose);     }
+    .jupiter   .section-title { color: var(--teal);     }
+    .neptune   .section-title { color: var(--moon);     }
+    .node      .section-title { color: var(--gold-hi);  text-shadow: 0 0 8px var(--gold-glow); }
+    .saturn    .section-title { color: var(--orange);   }
+    .moonday   .section-title { color: var(--moon);     }
+    .ttt       .section-title { color: var(--teal);     }
+    .practical .section-title { color: var(--amethyst); }
+    .summary   .section-title { color: var(--gold-hi);  }
+
+    .section-teaser {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 12.5px; color: var(--dim); line-height: 1.6;
+    }
+
+    .toggle-btn {
+      font-size: 16px; color: var(--dim);
+      transition: transform 0.3s ease, color 0.2s;
+      flex-shrink: 0; padding: 4px 6px;
+      font-family: 'Press Start 2P', monospace;
+    }
+    .section.open .toggle-btn { transform: rotate(180deg); color: var(--gold); }
+
+    .section-body {
+      overflow: hidden;
+      max-height: 0;
+      opacity: 0;
+      transition: max-height 0.45s ease, opacity 0.35s ease, padding 0.35s ease;
+      padding: 0 22px 0 22px;
+    }
+    .section.open .section-body {
+      max-height: 3000px;
+      opacity: 1;
+      padding: 0 22px 22px 22px;
+    }
+
+    .section.open .section-header {
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* ─── ASPECTS ──────────────────────────────── */
+    .aspect {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 13px; padding: 10px 14px;
+      margin: 14px 0; line-height: 1.62;
+      border-left: 3px solid;
+      display: flex; align-items: flex-start; gap: 10px;
+    }
+    .aspect-text { flex: 1; }
+
+    .aspect.conjunction   { border-color: var(--gold);     background: rgba(200,154,42,0.08);  color: #f5d060;  }
+    .aspect.trine         { border-color: var(--teal);     background: rgba(42,144,128,0.08);  color: #50d4bc;  }
+    .aspect.opposition    { border-color: var(--amethyst); background: rgba(138,92,184,0.08);  color: #c09ee8;  }
+    .aspect.square        { border-color: var(--rose);     background: rgba(170,56,104,0.08);  color: #e07098;  }
+    .aspect.inconjunct    { border-color: var(--orange);   background: rgba(200,120,60,0.08);  color: #f0a868;  }
+    .aspect.sextile       { border-color: var(--sextile);  background: rgba(74,136,204,0.08);  color: #88b8f0;  }
+    .aspect.sesquiquadrate{ border-color: var(--dim);      background: rgba(82,72,112,0.06);   color: #9a8eb8;  }
+
+    .aspect-orb {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 6px; white-space: nowrap;
+      padding: 2px 5px; border-radius: 2px;
+      margin-top: 2px; flex-shrink: 0;
+      background: rgba(0,0,0,0.3);
+      color: var(--dim);
+    }
+    .aspect-orb.exact { color: var(--gold-hi); border: 1px solid var(--gold); background: rgba(200,154,42,0.1); }
+
+    /* ─── PARAGRAPHS ───────────────────────────── */
+    p {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 15px; line-height: 1.82;
+      margin-bottom: 14px; color: var(--text);
+    }
+    p:last-child { margin-bottom: 0; }
+    em     { color: var(--gold-hi); font-style: italic; }
+    strong { color: var(--amethyst); font-style: normal; }
+
+    /* ─── PULL QUOTE ───────────────────────────── */
+    .pull-quote {
+      font-family: 'IBM Plex Mono', monospace;
+      font-style: italic;
+      text-align: center;
+      font-size: 16px; line-height: 1.75;
+      color: var(--gold-hi);
+      padding: 20px 28px;
+      margin: 20px 0;
+      border-top: 1px solid rgba(200,154,42,0.3);
+      border-bottom: 1px solid rgba(200,154,42,0.3);
+      text-shadow: 0 0 20px rgba(200,154,42,0.15);
+      position: relative;
+    }
+    .pull-quote::before {
+      content: '"';
+      font-family: 'VT323', monospace;
+      font-style: normal;
+      position: absolute; top: -8px; left: 18px;
+      font-size: 52px; color: var(--gold);
+      opacity: 0.35; line-height: 1;
+    }
+
+    /* ─── PRACTICAL ROWS ───────────────────────── */
+    .prac-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 4px;
+    }
+    @media (max-width: 640px) {
+      body    { padding: 10px 6px 48px; }
+      .content { padding: 20px 16px 32px; }
+      h1      { font-size: 38px; }
+      .titlebar-label { font-size: 6px; letter-spacing: 0; }
+      .planet-grid    { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
+      .section-title  { font-size: 7.5px; }
+      .section-header { padding: 12px 14px 12px 20px; border-bottom: 1px solid var(--border); cursor: default; }
+      .glance-row     { flex-wrap: wrap; row-gap: 6px; }
+      .glance-right   { margin-left: auto; }
+      .pull-quote     { padding: 16px 16px; font-size: 14px; }
+      .prac-grid      { grid-template-columns: 1fr; }
+
+      /* Remove scroll-reveal blank-space on mobile */
+      .section { opacity: 1 !important; transform: none !important; }
+      /* Auto-expand all sections on mobile — no collapsing */
+      .section-body {
+        max-height: none !important;
+        opacity: 1 !important;
+        padding: 0 14px 18px 14px !important;
+        overflow: visible !important;
+      }
+      .toggle-btn { display: none !important; }
+    }
+
+    .prac-card {
+      font-family: 'IBM Plex Mono', monospace;
+      background: rgba(138,92,184,0.06);
+      border: 1px solid rgba(138,92,184,0.15);
+      padding: 14px 16px;
+      font-size: 13px; line-height: 1.76; color: var(--text);
+    }
+    .prac-label {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 6.5px; color: var(--amethyst);
+      display: block; margin-bottom: 7px; letter-spacing: 1px;
+    }
+
+    .summary .section-body { background: rgba(10,9,22,0.4); }
+
+    .footer {
+      text-align: center; color: var(--dim);
+      font-size: 16px; margin-top: 16px;
+      padding-top: 18px;
+      border-top: 1px solid var(--border);
+      letter-spacing: 3px;
+    }
+  </style>
+</head>
+<body>
+
+<div id="starfield"></div>
+
+<div class="window">
+
+  <div class="titlebar">
+    <span class="titlebar-label">✦ TRANSIT READING &nbsp;·&nbsp; JORDAN &nbsp;·&nbsp; APRIL 25, 2026 ✦</span>
+    <div class="titlebar-btns">
+      <button class="tbtn">_</button>
+      <button class="tbtn">□</button>
+      <button class="tbtn">✕</button>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <div class="reading-meta">SATURDAY &nbsp;·&nbsp; AFTERNOON &nbsp;·&nbsp; CHICAGO</div>
+    <h1>April 25, 2026</h1>
+    <div class="tagline">♅ &nbsp;uranus ingresses into gemini &nbsp;·&nbsp; the threshold opens &nbsp; ♅</div>
+
+    <!-- PLANET STRIP -->
+    <div class="planet-strip">
+      <div class="strip-label">▸ TRANSITING PLANETS — LIVE (astrolibrary.org · 1:10 PM CDT)</div>
+      <div class="planet-grid">
+        <div class="prow"><span class="pname">☉ Sun</span>     <span class="pdeg">5°32' ♉</span>  <span class="phouse">11th</span></div>
+        <div class="prow"><span class="pname">☽ Moon</span>    <span class="pdeg">26°12' ♌</span> <span class="phouse">2nd</span></div>
+        <div class="prow"><span class="pname">☿ Mercury</span> <span class="pdeg">16°35' ♈</span> <span class="phouse">10th</span></div>
+        <div class="prow"><span class="pname">♀ Venus</span>   <span class="pdeg">1°56' ♊</span>  <span class="phouse">12th</span></div>
+        <div class="prow"><span class="pname">♂ Mars</span>    <span class="pdeg">12°21' ♈</span> <span class="phouse">10th</span></div>
+        <div class="prow"><span class="pname">♃ Jupiter</span> <span class="pdeg">18°13' ♋</span> <span class="phouse">1st</span></div>
+        <div class="prow"><span class="pname">♄ Saturn</span>  <span class="pdeg">8°32' ♈</span>  <span class="phouse">10th</span></div>
+        <div class="prow"><span class="pname">♅ Uranus</span>  <span class="pdeg">29°59' ♉ ★</span><span class="phouse">12th</span></div>
+        <div class="prow"><span class="pname">♆ Neptune</span> <span class="pdeg">3°05' ♈</span>  <span class="phouse">10th</span></div>
+        <div class="prow"><span class="pname">♇ Pluto</span>   <span class="pdeg">5°29' ♒</span>  <span class="phouse">8th</span></div>
+        <div class="prow"><span class="pname">⚷ Chiron</span>  <span class="pdeg">27°11' ♈</span> <span class="phouse">11th</span></div>
+        <div class="prow"><span class="pname">☊ N.Node</span>  <span class="pdeg">7°22' ♓ R</span> <span class="phouse">9th</span></div>
+      </div>
+    </div>
+
+    <!-- AT A GLANCE -->
+    <div class="glance-panel">
+      <div class="strip-label">▸ KEY ASPECTS TODAY — SORTED BY EXACTNESS</div>
+      <div class="glance-grid">
+
+        <div class="glance-row">
+          <div class="glance-aspect-text">♀ Venus <em>⚻ inconjunct</em> natal Jupiter 2° ♏ — essentially exact</div>
+          <div class="glance-right">
+            <div class="orb-wrap">
+              <span class="orb-label">0.07°</span>
+              <div class="orb-track"><div class="orb-fill inconjunct" style="width:98%"></div></div>
+            </div>
+            <span class="badge inconjunct">INCON</span>
+          </div>
+        </div>
+
+        <div class="glance-row">
+          <div class="glance-aspect-text">♃ Jupiter <em>△ trine</em> natal Venus 18° ♏ — just past exact</div>
+          <div class="glance-right">
+            <div class="orb-wrap">
+              <span class="orb-label">0.21°</span>
+              <div class="orb-track"><div class="orb-fill trine" style="width:97%"></div></div>
+            </div>
+            <span class="badge trine">TRINE</span>
+          </div>
+        </div>
+
+        <div class="glance-row">
+          <div class="glance-aspect-text">♄ Saturn <em>⚻ inconjunct</em> natal Chiron 8° ♍ — just past exact</div>
+          <div class="glance-right">
+            <div class="orb-wrap">
+              <span class="orb-label">0.55°</span>
+              <div class="orb-track"><div class="orb-fill inconjunct" style="width:82%"></div></div>
+            </div>
+            <span class="badge inconjunct">INCON</span>
+          </div>
+        </div>
+
+        <div class="glance-row">
+          <div class="glance-aspect-text">☊ N.Node <em>☌ conjunct</em> natal Midheaven 8° ♓ — destiny on the career axis</div>
+          <div class="glance-right">
+            <div class="orb-wrap">
+              <span class="orb-label">0.63°</span>
+              <div class="orb-track"><div class="orb-fill conjunction" style="width:92%"></div></div>
+            </div>
+            <span class="badge conjunction">CONJ</span>
+          </div>
+        </div>
+
+        <div class="glance-row">
+          <div class="glance-aspect-text">♃ Jupiter <em>☍ opposite</em> natal Uranus 19° ♑ (7th house) — applying</div>
+          <div class="glance-right">
+            <div class="orb-wrap">
+              <span class="orb-label">0.79°</span>
+              <div class="orb-track"><div class="orb-fill opposition" style="width:90%"></div></div>
+            </div>
+            <span class="badge opposition">OPP</span>
+          </div>
+        </div>
+
+        <div class="glance-row">
+          <div class="glance-aspect-text">♃ Jupiter <em>☍ opposite</em> natal Neptune 19° ♑ (7th house) — applying</div>
+          <div class="glance-right">
+            <div class="orb-wrap">
+              <span class="orb-label">0.79°</span>
+              <div class="orb-track"><div class="orb-fill opposition" style="width:90%"></div></div>
+            </div>
+            <span class="badge opposition">OPP</span>
+          </div>
+        </div>
+
+        <div class="glance-row">
+          <div class="glance-aspect-text">♆ Neptune <em>☌ conjunct</em> natal Moon 4° ♈ — 0.91°, applying</div>
+          <div class="glance-right">
+            <div class="orb-wrap">
+              <span class="orb-label">0.91°</span>
+              <div class="orb-track"><div class="orb-fill conjunction" style="width:89%"></div></div>
+            </div>
+            <span class="badge conjunction">CONJ</span>
+          </div>
+        </div>
+
+        <div class="glance-row">
+          <div class="glance-aspect-text">♀ Venus <em>☍ opposite</em> natal Sun 1° ♐ — barely separating, essentially exact</div>
+          <div class="glance-right">
+            <div class="orb-wrap">
+              <span class="orb-label">0.93°</span>
+              <div class="orb-track"><div class="orb-fill opposition" style="width:88%"></div></div>
+            </div>
+            <span class="badge opposition">OPP</span>
+          </div>
+        </div>
+
+        <div class="glance-row">
+          <div class="glance-aspect-text">♅ Uranus <em>☍ opposite</em> natal Sun 1° ♐ — ingress + solar opposition</div>
+          <div class="glance-right">
+            <div class="orb-wrap">
+              <span class="orb-label">1.02°</span>
+              <div class="orb-track"><div class="orb-fill opposition" style="width:87%"></div></div>
+            </div>
+            <span class="badge opposition">OPP</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="divider"><span class="divider-inner">✦ ♅ ✦</span></div>
+
+    <!-- ═══ HEADLINE ════════════════════════════ -->
+    <div class="section headline open visible">
+      <div class="section-header" onclick="toggleSection(this)">
+        <div class="section-header-left">
+          <span class="section-icon">♅</span>
+          <div class="section-header-text">
+            <div class="section-title">HEADLINE · URANUS AT THE GEMINI THRESHOLD — OPPOSITION YOUR NATAL SUN</div>
+            <div class="section-teaser">29°59' Taurus → 0° Gemini · ingress today · 1.02° opposition natal Sun, applying · the 7-year chapter turns</div>
+          </div>
+        </div>
+        <span class="toggle-btn">▼</span>
+      </div>
+      <div class="section-body">
+
+        <div class="aspect opposition">
+          <div class="aspect-text">Transiting Uranus at 29°59' Taurus (crossing 0° Gemini ingress) opposition natal Sun at 1° Sagittarius (6th house) — applying</div>
+          <span class="aspect-orb exact">1.02° TIGHT</span>
+        </div>
+
+        <div class="aspect sextile">
+          <div class="aspect-text">Transiting Uranus at 29°59' Taurus sextile natal Moon at 4° Aries (10th house) — applying</div>
+          <span class="aspect-orb">4.02°</span>
+        </div>
+
+        <div class="aspect opposition">
+          <div class="aspect-text">Transiting Uranus at 29°59' Taurus opposition natal North Node at 3° Sagittarius (6th house) — applying</div>
+          <span class="aspect-orb">3.02°</span>
+        </div>
+
+        <p>Uranus at 29°59'05" Taurus. The ingress into Gemini is happening today — within hours or minutes of this reading. Seven years in Taurus are complete. The Gemini chapter opens.</p>
+
+        <p>And at the exact moment of this crossing, Uranus is opposing your natal Sun at 1° Sagittarius. <em>1.02° applying orb.</em> The liberating disruptor and your core identity in direct conversation at the zodiac's most liminal threshold. This is not a coincidence — it is the chart doing exactly what it's built to do: marking the significant transitions with personal activation.</p>
+
+        <p>The 12th house matters here. Uranus has been transiting your 12th house throughout its Taurus chapter, working in the realm of the hidden, the unconscious, the dissolved. As it enters Gemini, it stays in the 12th — because Gemini is your 12th house sign, holding your South Node at 3° Gemini and your Ascendant at 29° Gemini as the far endpoint years from now. This means the disruption Uranus brings is not arriving from the outside. <em>It is waking up from within.</em> From the habitual patterns you run without realizing it. From what has lived below the floor of awareness.</p>
+
+        <div class="pull-quote">The disruption is no longer coming at you. It is coming from inside the house.</div>
+
+        <p>The opposition to your natal Sun (6th house: work, daily practice, service, health) from the 12th house Uranus says: something about how you understand yourself in your work, your service, your daily identity is being questioned from the deep unconscious level. Old stories about what you owe, what you're for, what defines your value in the daily realm — Uranus is opposing those stories, applying pressure, asking which ones are actually still true.</p>
+
+        <p>This is the opening chapter of a multi-year arc: Uranus approaching your South Node at 3° Gemini (~2027), eventually reaching your Ascendant at 29° Gemini (~2033-34). Today is not the peak — it is the threshold. The door swings open. What wants to move differently? Whatever feels freshly restless, freshly questionable, freshly in need of reinvention — that is Uranus entering the building.</p>
+
+      </div>
+    </div>
+
+    <!-- ═══ VENUS ════════════════════════════════ -->
+    <div class="section venus visible">
+      <div class="section-header" onclick="toggleSection(this)">
+        <div class="section-header-left">
+          <span class="section-icon">♀</span>
+          <div class="section-header-text">
+            <div class="section-title">THE VENUS CONSTELLATION — THREE ASPECTS AT ONCE</div>
+            <div class="section-teaser">opposition natal Sun (0.93°) · inconjunct natal Jupiter (0.07° exact) · opposition natal North Node (1.07°) · just conjuncted Uranus</div>
+          </div>
+        </div>
+        <span class="toggle-btn">▼</span>
+      </div>
+      <div class="section-body">
+
+        <div class="aspect opposition">
+          <div class="aspect-text">Transiting Venus at 1°56' Gemini opposition natal Sun at 1° Sagittarius (6th house) — barely separating</div>
+          <span class="aspect-orb exact">0.93° PEAK</span>
+        </div>
+
+        <div class="aspect inconjunct">
+          <div class="aspect-text">Transiting Venus at 1°56' Gemini inconjunct natal Jupiter at 2° Scorpio (5th house) — applying</div>
+          <span class="aspect-orb exact">0.07° EXACT</span>
+        </div>
+
+        <div class="aspect opposition">
+          <div class="aspect-text">Transiting Venus at 1°56' Gemini opposition natal North Node at 3° Sagittarius (6th house) — applying</div>
+          <span class="aspect-orb">1.07°</span>
+        </div>
+
+        <div class="aspect square">
+          <div class="aspect-text">Transiting Venus at 1°56' Gemini square natal Chiron at 8° Virgo (4th house) — applying, building</div>
+          <span class="aspect-orb">6.07°</span>
+        </div>
+
+        <p>Venus entered Gemini yesterday and is already generating a constellation of aspects to your natal chart — all firing simultaneously, all within orb, all with something specific to say.</p>
+
+        <p><strong>Venus opposition natal Sun (0.93°, peak right now):</strong> Venus in Gemini facing your natal Sun in Sagittarius. The relational mirror facing your core identity. In the context of the dating window that is actively opening: you are <em>visible</em> right now in a very particular way. The person who shows up to connect — your Venus self, your relational presentation — is in direct dialogue with who you actually are at the center. This is the moment when "who I am for others" and "who I actually am" are being asked to tell the truth to each other. No gap. No performance.</p>
+
+        <p><strong>Venus inconjunct natal Jupiter (0.07°, essentially exact right now):</strong> The tightest transit of the day. The inconjunct is the adjustment aspect — two placements that can't see each other by element or modality, forced to negotiate. Venus in Gemini (light, communicative, curious, playful connection) is in friction with natal Jupiter in Scorpio (depth, intensity, the need for meaning and real transformation in love). The adjustment: you are being asked to hold both modes simultaneously — the delightful Gemini surface and the Scorpio depth underneath. Neither wins. They learn to coexist. The invitation is not to choose but to trust that the sparkle and the depth are both real in you.</p>
+
+        <p><strong>Venus opposition natal North Node (1.07°, applying):</strong> Venus is approaching an opposition to your soul path marker. This is the question Venus is carrying on your behalf: <em>is this desire pointing toward my growth, or toward what's comfortable?</em> The South Node in Gemini is expert at mirroring — being exactly what someone needs, charming and adapting and reflecting back. That mechanism can masquerade as connection. The opposition to the North Node asks you to notice the difference between real desire and the reflex to make yourself match someone else's frequency.</p>
+
+        <p><strong>Venus square natal Chiron (6.07°, building over the next few days):</strong> Not yet at peak but worth tracking. As Venus moves toward 8° Gemini, it will exactly square natal Chiron in Virgo — the foundational wound. The wound-voice around love and worthiness will grow louder over the next 48 hours. Name it when it does. It is not evidence. It is transit weather.</p>
+
+      </div>
+    </div>
+
+    <!-- ═══ JUPITER ═══════════════════════════════ -->
+    <div class="section jupiter visible">
+      <div class="section-header" onclick="toggleSection(this)">
+        <div class="section-header-left">
+          <span class="section-icon">♃</span>
+          <div class="section-header-text">
+            <div class="section-title">JUPITER DOUBLE PLAY — TRINE NATAL VENUS · OPPOSITION NATAL URANUS/NEPTUNE</div>
+            <div class="section-teaser">trine natal Venus (0.21°, just past exact) · opp natal Uranus + Neptune (0.79°, applying) · green light meets the unknown</div>
+          </div>
+        </div>
+        <span class="toggle-btn">▼</span>
+      </div>
+      <div class="section-body">
+
+        <div class="aspect trine">
+          <div class="aspect-text">Transiting Jupiter at 18°13' Cancer trine natal Venus at 18° Scorpio (5th house) — just past exact</div>
+          <span class="aspect-orb exact">0.21° PEAK</span>
+        </div>
+
+        <div class="aspect opposition">
+          <div class="aspect-text">Transiting Jupiter at 18°13' Cancer opposition natal Uranus at 19° Capricorn (7th house) — applying</div>
+          <span class="aspect-orb exact">0.79° TIGHT</span>
+        </div>
+
+        <div class="aspect opposition">
+          <div class="aspect-text">Transiting Jupiter at 18°13' Cancer opposition natal Neptune at 19° Capricorn (7th house) — applying</div>
+          <span class="aspect-orb exact">0.79° TIGHT</span>
+        </div>
+
+        <p>Two Jupiter aspects at essentially full strength, simultaneously, and they are in productive tension with each other.</p>
+
+        <p><strong>Jupiter trine natal Venus (0.21°, peak right now):</strong> Jupiter at 18°13' Cancer was within minutes of exact trine to natal Venus at 18° Scorpio — Cancer to Scorpio, water sign to water sign. Nurturing to depth. This is one of the most generous love-and-abundance transits possible, and it is at its absolute peak <em>today</em>. Jupiter's expansiveness in its Cancer exaltation flowing easily to your natal Venus in the 5th house: capacity for love, creative joy, pleasure, desire. The ease of this aspect feels like connection approaching you, not requiring you to chase it. Jupiter in Cancer in your 1st house is already expanding your personal presence and warmth — trine to natal Venus means that warmth is directly activating the love center of your chart. <em>If something or someone catches your attention today, pay attention.</em></p>
+
+        <p><strong>Jupiter opposition natal Uranus and Neptune (0.79°, applying — both simultaneously):</strong> Jupiter in Cancer is forming a nearly-exact opposition to both your natal Uranus and natal Neptune at 19° Capricorn in the 7th house. These two outer planets conjunct natally mean that your relationship psychology has always carried an inherent quality of the unexpected and the dissolving — partners who surprised you, connections that felt fated but ended in fog, love that was genuinely felt but hard to hold clearly. Jupiter opposite this entire 7th house complex is expanding and destabilizing your existing beliefs about how relationships work. Jupiter opposite Uranus: sudden developments in the relational realm, beliefs about connection disrupted in ways that ultimately liberate. Jupiter opposite Neptune: the idealized vision of partnership expands — both the beauty of the vision and the fog it can generate.</p>
+
+        <p>The productive tension between these two sets of Jupiter aspects: Jupiter is simultaneously saying <em>yes</em> to love (trine natal Venus) while stirring up the unconscious partnership psychology (opposition natal Uranus-Neptune). The green light is real. The road ahead is also genuinely unfamiliar. Both things are true.</p>
+
+      </div>
+    </div>
+
+    <!-- ═══ NEPTUNE ════════════════════════════════ -->
+    <div class="section neptune visible">
+      <div class="section-header" onclick="toggleSection(this)">
+        <div class="section-header-left">
+          <span class="section-icon">♆</span>
+          <div class="section-header-text">
+            <div class="section-title">NEPTUNE CONJUNCT NATAL MOON — TIGHTEST IT'S BEEN</div>
+            <div class="section-teaser">3°05' Aries conjunct natal Moon 4° Aries · 0.91° applying · the porosity is near its peak</div>
+          </div>
+        </div>
+        <span class="toggle-btn">▼</span>
+      </div>
+      <div class="section-body">
+
+        <div class="aspect conjunction">
+          <div class="aspect-text">Transiting Neptune at 3°05' Aries conjunct natal Moon at 4° Aries (10th house) — applying</div>
+          <span class="aspect-orb exact">0.91° TIGHTEST YET</span>
+        </div>
+
+        <div class="aspect trine">
+          <div class="aspect-text">Transiting Neptune at 3°05' Aries trine natal North Node at 3° Sagittarius (6th house) — essentially exact, ongoing</div>
+          <span class="aspect-orb exact">0.09°</span>
+        </div>
+
+        <p>The long-term backdrop, now at its tightest so far: Neptune at 0.91° from exact conjunction with your natal Moon. It will tighten further in the weeks ahead before Neptune stations retrograde and begins to pull back. The exact conjunction is approaching. What this means at 0.91°: you are operating with a container that is more porous than usual. The line between your inner emotional state and what's in the room around you is soft. You absorb more. Others' energy registers in your body as if it were your own. The effort to maintain clear emotional self-knowledge costs more.</p>
+
+        <p>The 10th house Moon means this porosity lives in your professional-emotional identity — career matters always hit the emotional body directly, and Neptune on the Moon amplifies this significantly. What other people project onto your work, you may feel more acutely. What is genuinely yours versus what is absorbed from the environment requires active discernment. The intuition is heightened; the fog is also heightened. Trust the inner knowing without letting it override the documented record.</p>
+
+        <div class="pull-quote">This transit requires one thing: move slowly enough to know what's yours.</div>
+
+        <p>Neptune also sits at essentially exact trine to your natal North Node (0.09°) — the soul path itself is being touched by vision and inspiration simultaneously with the emotional porosity. The gift side of Neptune on your Moon-North Node axis: you are capable right now of receiving impressions, creative impulses, and intuitive knowing that are genuinely aligned with where you're going. The fog and the vision are the same transit. The instruction is to receive without dissolving into it.</p>
+
+      </div>
+    </div>
+
+    <!-- ═══ NORTH NODE ════════════════════════════ -->
+    <div class="section node visible">
+      <div class="section-header" onclick="toggleSection(this)">
+        <div class="section-header-left">
+          <span class="section-icon">☊</span>
+          <div class="section-header-text">
+            <div class="section-title">NORTH NODE CONJUNCT NATAL MIDHEAVEN — DESTINATION CONFIRMED</div>
+            <div class="section-teaser">7°22' Pisces R conjunct natal Midheaven 8° Pisces · 0.63° · soul path meets career destiny</div>
+          </div>
+        </div>
+        <span class="toggle-btn">▼</span>
+      </div>
+      <div class="section-body">
+
+        <div class="aspect conjunction">
+          <div class="aspect-text">Transiting North Node at 7°22' Pisces R conjunct natal Midheaven at 8° Pisces — just past exact</div>
+          <span class="aspect-orb exact">0.63°</span>
+        </div>
+
+        <div class="aspect sextile">
+          <div class="aspect-text">Transiting Sun at 5°32' Taurus sextile natal Midheaven at 8° Pisces (10th house) — applying</div>
+          <span class="aspect-orb">2.45°</span>
+        </div>
+
+        <p>This needs to be named clearly, because it is easy to overlook on a day with so many dramatic aspects: <em>the transiting North Node of collective soul direction is sitting essentially exactly on your natal Midheaven.</em> 0.63° from exact. It has been building toward this conjunction for weeks and is now separating slowly — the peak of the conjunction was within the last few days. The North Node moves retrograde, so this is a considered, deliberate arrival rather than a rushing forward.</p>
+
+        <p>What this aspect says, simply: you are exactly where you are supposed to be professionally. The work you have been doing — the advocacy, the documentation, the Q2 projects, the case studies, the content direction you're building — is aligned with the soul's actual path. Not because it's comfortable or easy. Because it's pointed in the right direction. The North Node on the Midheaven is not encouragement to push harder. It is <em>confirmation of direction.</em></p>
+
+        <p>The Pisces Midheaven carries an inherent quality of purpose-beyond-the-practical — the career that matters at a soul level, not merely a resume level. With the North Node here, the message is: the pivot toward soul-aligned work has happened and is real. The dissatisfaction with purely transactional career environments, the care you bring to what you build, the AI app vision that lives in the background — these are Pisces Midheaven expressions. You are not off course. You are arriving.</p>
+
+      </div>
+    </div>
+
+    <!-- ═══ SATURN / CHIRON ════════════════════════ -->
+    <div class="section saturn visible">
+      <div class="section-header" onclick="toggleSection(this)">
+        <div class="section-header-left">
+          <span class="section-icon">♄</span>
+          <div class="section-header-text">
+            <div class="section-title">SATURN INCONJUNCT NATAL CHIRON — THE STRUCTURE MEETS THE WOUND</div>
+            <div class="section-teaser">8°32' Aries inconjunct natal Chiron 8° Virgo · 0.55° past exact · Aries urgency vs Virgo wound · adjustment needed</div>
+          </div>
+        </div>
+        <span class="toggle-btn">▼</span>
+      </div>
+      <div class="section-body">
+
+        <div class="aspect inconjunct">
+          <div class="aspect-text">Transiting Saturn at 8°32' Aries inconjunct natal Chiron at 8° Virgo (4th house) — just past exact</div>
+          <span class="aspect-orb exact">0.55°</span>
+        </div>
+
+        <div class="aspect conjunction">
+          <div class="aspect-text">Transiting Saturn at 8°32' Aries conjunct natal Moon at 4° Aries (10th house) — separating, chapter easing</div>
+          <span class="aspect-orb">4.55°</span>
+        </div>
+
+        <div class="aspect trine">
+          <div class="aspect-text">Transiting Saturn at 8°32' Aries trine natal Mars at 10° Sagittarius (6th house) — applying</div>
+          <span class="aspect-orb">1.45°</span>
+        </div>
+
+        <p>The inconjunct is the aspect that refuses clean resolution. Two signs that share no element, no modality — they can't see each other directly. They must coexist without a common language. Aries Saturn (urgency, assertion, prove-it-now energy) and Virgo Chiron (the foundational wound of never enough, conditional belonging, perfectionism as protection). These two are forced into negotiation at 0.55° from exact.</p>
+
+        <p>What this inconjunct generates in lived experience: a background static that's hard to locate. When Saturn's energy shows up as pressure to perform, to be decisive, to move fast and demonstrate competence — the Chiron wound hears that pressure through the filter of "what if I'm still not enough?" The result is not dramatic crisis. It is more subtle: an unease that shows up precisely when things are going well, a background whisper of inadequacy at moments of genuine capability.</p>
+
+        <p>The adjustment Saturn inconjunct Chiron asks for is not more effort. <em>It is grace.</em> The wound cannot be resolved through Saturn-in-Aries performance — through proving, producing, pushing harder. It requires something warmer: the recognition that the inadequacy feeling is the transit, not the truth. <em>"This is Saturn inconjunct my natal Chiron. The 'not enough' feeling is the aspect talking, not reality."</em></p>
+
+        <p>Two additional Saturn notes worth holding: the Saturn-Moon conjunction from March-April is now at 4.55° orb, definitively separating — that heavy grey chapter is behind you and receding. And Saturn is now applying to trine your natal Mars at 10° Sagittarius (1.45°, building). Saturn trine natal Mars brings productive structure to Sagittarian ambition and drive. The discipline is becoming an ally rather than a constraint. In the weeks ahead, focused work in the areas you care about most will feel more supported and structured than it has in a while.</p>
+
+        <div class="pull-quote">The wound is not a verdict. It is a weather event. Name the transit. Move through it.</div>
+
+      </div>
+    </div>
+
+    <!-- ═══ MOON WEATHER ═══════════════════════════ -->
+    <div class="section moonday visible">
+      <div class="section-header" onclick="toggleSection(this)">
+        <div class="section-header-left">
+          <span class="section-icon">☽</span>
+          <div class="section-header-text">
+            <div class="section-title">MOON IN LEO — THE DAY'S WEATHER (+ VIRGO TONIGHT)</div>
+            <div class="section-teaser">26°12' Leo at 1:10 PM · sq natal Pluto (just past) · sq natal Sun (building) · enters Virgo ~8 PM · approaches natal Chiron overnight</div>
+          </div>
+        </div>
+        <span class="toggle-btn">▼</span>
+      </div>
+      <div class="section-body">
+
+        <div class="aspect square">
+          <div class="aspect-text">Transiting Moon at 26°12' Leo square natal Pluto at 25° Scorpio (6th house) — just past exact, separating</div>
+          <span class="aspect-orb">1.20°</span>
+        </div>
+
+        <div class="aspect opposition">
+          <div class="aspect-text">Transiting Moon at 26°12' Leo opposition natal Saturn at 24° Aquarius (9th house) — separating</div>
+          <span class="aspect-orb">2.20°</span>
+        </div>
+
+        <div class="aspect sextile">
+          <div class="aspect-text">Transiting Moon at 26°12' Leo sextile natal Ascendant at 29° Gemini — applying</div>
+          <span class="aspect-orb">2.80°</span>
+        </div>
+
+        <div class="aspect square">
+          <div class="aspect-text">Transiting Moon at 26°12' Leo square natal Sun at 1° Sagittarius (6th house) — applying</div>
+          <span class="aspect-orb">4.80°</span>
+        </div>
+
+        <p>The Leo Moon at 26° is warm, dramatic, heart-forward — it wants to be seen, to make things feel special, to lead with generosity and delight. Several aspects have already completed and others are building as the day moves forward.</p>
+
+        <p><strong>What's past:</strong> Moon square natal Pluto (1.20°, just past exact) — a deep emotional intensity charge was in the body earlier this morning or midday. Leo squaring Scorpio: the desire to shine meeting the shadow and depth. Whatever felt heavy or charged earlier has crested. Moon opposition natal Saturn (2.20°, separating) — a moment of self-reckoning or inner authority bump also recently passed. Don't take any lingering guilt or self-doubt from those moments seriously. They were aspects, not revelations.</p>
+
+        <p><strong>What's building:</strong> Moon sextile natal Ascendant (2.80°, applying) — ease in self-presentation is growing through the afternoon. Leo Moon working smoothly with Gemini rising means natural social sparkle, verbal warmth, the ability to be charming without trying. Moon square natal Sun (4.80°, applying) — this builds through the evening, two fire signs in tension. Leo wanting to perform and be seen vs. Sagittarius Sun needing authenticity over performance. This might feel like wanting to show up in a particular way but something subtly misaligned underneath. The tension is generative, not destructive — it produces self-awareness.</p>
+
+        <p><strong>Tonight, important:</strong> The Moon enters Virgo around 8 PM CDT. Once in Virgo, it will be approaching natal Chiron at 8° Virgo — reaching the conjunction in the early morning hours tomorrow (approximately 10-11 AM Sunday). Tonight as the Moon crosses into Virgo, if the wound-voice grows louder — the inner critic, the "not enough" loop, guilt about rest or responsiveness or any of the familiar Chiron themes — it has a direct astrological address. Moon moving toward natal Chiron. <em>It is transit weather. Not truth.</em></p>
+
+      </div>
+    </div>
+
+    <!-- ═══ TRANSIT-TO-TRANSIT ═══════════════════ -->
+    <div class="section ttt visible">
+      <div class="section-header" onclick="toggleSection(this)">
+        <div class="section-header-left">
+          <span class="section-icon">✦</span>
+          <div class="section-header-text">
+            <div class="section-title">TRANSIT-TO-TRANSIT OBSERVATIONS</div>
+            <div class="section-teaser">derived from Planets list — Venus conjunct Uranus at ingress · Venus sextile Neptune · Mars separating Saturn · Moon squaring Uranus</div>
+          </div>
+        </div>
+        <span class="toggle-btn">▼</span>
+      </div>
+      <div class="section-body">
+
+        <div class="aspect conjunction">
+          <div class="aspect-text">Venus at 1°56' Gemini conjunct Uranus at 29°59' Taurus — separating, 1.95° (just happened at the ingress boundary)</div>
+          <span class="aspect-orb">1.95°</span>
+        </div>
+
+        <div class="aspect sextile">
+          <div class="aspect-text">Venus at 1°56' Gemini sextile Neptune at 3°05' Aries — applying, 1.16°</div>
+          <span class="aspect-orb">1.16°</span>
+        </div>
+
+        <div class="aspect inconjunct">
+          <div class="aspect-text">Mars at 12°21' Aries inconjunct natal Mercury at 12° Scorpio (5th house) — essentially exact, just past (0.35°)</div>
+          <span class="aspect-orb exact">0.35°</span>
+        </div>
+
+        <div class="aspect conjunction">
+          <div class="aspect-text">Mars at 12°21' Aries conjunct Saturn at 8°33' Aries — separating, 3.80°</div>
+          <span class="aspect-orb">3.80°</span>
+        </div>
+
+        <div class="aspect square">
+          <div class="aspect-text">Moon at 26°12' Leo square Uranus at 29°59' Taurus — 3.78°</div>
+          <span class="aspect-orb">3.78°</span>
+        </div>
+
+        <p><em>(Transit-to-transit aspects derived from Planets list — not from the Aspects tab)</em></p>
+
+        <p><strong>Venus conjunct Uranus at the ingress boundary (1.95°, separating):</strong> Venus crossed into Gemini in close company with Uranus at the 29°59'/0° threshold. These two planets were essentially conjunct at the ingress point within the last 24-48 hours. Venus + Uranus at the Gemini threshold carries: electric attraction, the unexpected spark, sudden interest from an unfamiliar direction. The conjunction is separating but the charge doesn't dissipate immediately. Something that arrived recently or arrives today under this influence carries a quality of the surprising and the generative.</p>
+
+        <p><strong>Venus sextile Neptune (1.16°, applying):</strong> Venus in Gemini approaching sextile to Neptune in Aries. Ease between connection and inspiration. Creative romanticism, the ability to see the best in people, love as a source of vision rather than just feeling. Beautiful for art, writing, softness, allowing beauty in. <em>Watch for:</em> Neptune's characteristic fog — idealization that feels like insight. Everything looks more luminous under Venus-Neptune. Not everything that feels romantic right now is clearly seen.</p>
+
+        <p><strong>Mars inconjunct natal Mercury (0.35°, essentially exact):</strong> Transiting Mars at 12°21' Aries inconjunct natal Mercury at 12° Scorpio in the 5th house — practically exact. Aries Mars (urgency, bluntness, direct action impulse) in uncomfortable adjustment with Scorpio Mercury (depth processing, the need to say the whole true thing, not just the fast thing). The inconjunct here: the urge to speak quickly and directly is in friction with Mercury's Scorpio requirement to get it exactly right before speaking. Don't mistake the urgency for clarity today. Let Scorpio Mercury have its pace.</p>
+
+        <p><strong>Mars separating Saturn (3.80°):</strong> Mars and Saturn were conjunct in Aries within the last week — the concentrated frustration-meets-drive energy. That conjunction is easing. If work or motivation felt like running into a wall over the past week, that pressure is releasing.</p>
+
+        <p><strong>Moon square transiting Uranus (3.78°):</strong> As the Leo Moon moves through the day and into Virgo tonight, it's squaring the Uranus ingress point. Some emotional restlessness or jumpiness is possible — the Leo desire for warmth and the Uranus disruption energy creating minor friction in the emotional body. Good to know, easy to navigate once named.</p>
+
+      </div>
+    </div>
+
+    <!-- ═══ PRACTICAL ═════════════════════════════ -->
+    <div class="section practical open visible">
+      <div class="section-header" onclick="toggleSection(this)">
+        <div class="section-header-left">
+          <span class="section-icon">✧</span>
+          <div class="section-header-text">
+            <div class="section-title">PRACTICAL APPLICATION</div>
+            <div class="section-teaser">identity · love · the inner critic · career · energy · tonight</div>
+          </div>
+        </div>
+        <span class="toggle-btn">▼</span>
+      </div>
+      <div class="section-body">
+        <div class="prac-grid">
+          <div class="prac-card">
+            <span class="prac-label">FOR IDENTITY</span>
+            Uranus is opposing your natal Sun from the 12th house — the disruption is interior, not exterior. If something you believed about yourself suddenly feels less true or less stable today, stay with that rather than rushing to reassert the old story. The new one is forming in real time. Notice what wants to move differently without forcing a conclusion about it yet.
+          </div>
+          <div class="prac-card">
+            <span class="prac-label">FOR LOVE</span>
+            This is arguably the most romantically activated weekend of the spring: Jupiter exact trine natal Venus, Venus opposite natal Sun at peak, Venus + Uranus electricity still in the air, Venus sextile Neptune building. If something or someone catches your attention today, that's information — not coincidence. Jupiter in Cancer trine natal Venus means connection approaches you. Let it. You don't have to chase.
+          </div>
+          <div class="prac-card">
+            <span class="prac-label">FOR THE INNER CRITIC</span>
+            If tonight it gets louder as the Moon enters Virgo and moves toward natal Chiron — name the transit specifically: "Moon approaching natal Chiron in Virgo. This is the wound getting weather. It is not truth." Saturn inconjunct natal Chiron is also still essentially exact. The inadequacy feeling has two astrological addresses right now. Neither one is a verdict. You have the receipts.
+          </div>
+          <div class="prac-card">
+            <span class="prac-label">FOR CAREER AND PURPOSE</span>
+            North Node on your Midheaven says: the direction is confirmed. Saturn trine natal Mars is building productive structure. You don't need to push harder to validate the path — the sky is already validating it. If you feel the pull to prove yourself on a Saturday, ask whether that's genuine inspiration or Saturn inconjunct Chiron talking.
+          </div>
+          <div class="prac-card">
+            <span class="prac-label">FOR ENERGY</span>
+            Neptune near-exact on your Moon means the container is still porous. A big day astrologically doesn't require a big day energetically. Integration is its own kind of work. Moving slowly through significant sky energy is appropriate. This is a Saturday — the permission to pace yourself is real and not a failure.
+          </div>
+          <div class="prac-card">
+            <span class="prac-label">FOR TONIGHT</span>
+            Moon enters Virgo around 8 PM CDT. The Uranus ingress into Gemini is happening today — if you want to mark it with any intention, the evening is a natural threshold. A small ritual, a note about what you want to release from the Taurus chapter, something you want to open to in the Gemini chapter. Optional, not required. But the timing is genuinely there if you want it.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ SUMMARY ════════════════════════════════ -->
+    <div class="section summary open visible">
+      <div class="section-header" onclick="toggleSection(this)">
+        <div class="section-header-left">
+          <span class="section-icon">✨</span>
+          <div class="section-header-text">
+            <div class="section-title">THE SHORT VERSION</div>
+            <div class="section-teaser">Uranus crosses into Gemini. Venus lights the solar axis. The North Node says: you're on the path.</div>
+          </div>
+        </div>
+        <span class="toggle-btn">▼</span>
+      </div>
+      <div class="section-body">
+        <p>Uranus is officially in Gemini as of today — the 7-year Taurus chapter closes and the Gemini chapter begins, with Uranus pointing directly at your natal Sun in opposition as it crosses the threshold. The disruption is no longer coming from outside. It's waking up from inside: old stories about your work identity, your daily self, what you're for — Uranus is opposing all of that from the 12th house, and the question it asks is which of those stories you're actually ready to release.</p>
+        <p>While Uranus marks the long-arc shift, Venus is handling the immediate: opposition natal Sun (essentially exact today), inconjunct natal Jupiter (literally 0.07° from exact), opposition natal North Node building. <em>You are visible, in the relational sense, in a very specific way right now.</em> Jupiter is trine natal Venus at its own peak simultaneously — the most generous love-and-abundance transit of the spring, at maximum, today. If something arrives in the relational space this weekend, the sky is not being subtle about whether you're supposed to be open to it.</p>
+        <p>The North Node is sitting on your Midheaven. You are on the path. The inner critic tonight has an address — Moon entering Virgo approaching natal Chiron — and can be named and set down. Tonight is yours.</p>
+      </div>
+    </div>
+
+    <div class="footer">☽ &nbsp; reading archived &nbsp;·&nbsp; april 25, 2026 &nbsp; ☾</div>
+
+  </div>
+</div>
+
+<script>
+/* ── Starfield ── */
+(function () {
+  const field = document.getElementById('starfield');
+  const syms  = ['✦','✧','★','✩','·','✦','·','·','✦'];
+  for (let i = 0; i < 90; i++) {
+    const s = document.createElement('span');
+    s.textContent = syms[Math.floor(Math.random() * syms.length)];
+    const size = 5 + Math.random() * 13;
+    const dur  = 2 + Math.random() * 5;
+    const del  = Math.random() * 6;
+    const op   = 0.15 + Math.random() * 0.6;
+    s.style.cssText = [
+      'position:absolute',
+      `left:${(Math.random()*100).toFixed(2)}%`,
+      `top:${(Math.random()*100).toFixed(2)}%`,
+      `font-size:${size.toFixed(1)}px`,
+      `color:rgba(210,165,45,${op.toFixed(2)})`,
+      `animation:twinkle ${dur.toFixed(1)}s ease-in-out ${del.toFixed(1)}s infinite`,
+      'pointer-events:none','user-select:none','line-height:1'
+    ].join(';');
+    field.appendChild(s);
+  }
+})();
+
+/* ── Toggle collapse ── */
+function toggleSection(header) {
+  const section = header.closest('.section');
+  section.classList.toggle('open');
+}
+
+/* ── Scroll reveal ── */
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.05 });
+
+document.querySelectorAll('.section:not(.visible)').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

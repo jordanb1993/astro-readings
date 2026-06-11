@@ -128,7 +128,7 @@ Go to `claude.ai/code/routines` → find routine `trig_01Rtm1xSST2GbdCZh896F2vP`
 
 7. Write "today.json" to the repo root.
 
-   This powers the Daily tab in the AstroFlow app (astrologyos.netlify.app). Write it every day.
+   This powers the Daily tab in the AstroFlow app (pathfinderastro.vercel.app). Write it every day.
    Source all values from the reading you just wrote + positions-today.json. Do NOT skip this step.
 
    Format — write exactly this structure to "today.json":
@@ -266,32 +266,13 @@ Go to `claude.ai/code/routines` → find routine `trig_01Rtm1xSST2GbdCZh896F2vP`
 
    If any item fails: fix it before proceeding to the commit.
 
-12. Commit, push, and deploy to astrologyos.netlify.app:
+12. Commit and push — Vercel deploys automatically:
 
-   Step A — commit and push to GitHub:
    git add -A && git commit -m "reading + today.json + transits.json + patches YYYY-MM-DD" && git push origin main
 
-   Step B — ensure Netlify CLI is available, then create a draft deploy:
-   (The cloud routine environment does not have netlify pre-installed — install it every time.)
-   cd /tmp/stars
-   npm install -g netlify-cli 2>&1 | tail -3
-   DEPLOY_OUTPUT=$(netlify deploy --dir . --site dc5dc726-f6bf-4cc3-994c-261398029946 --auth "nfc_gLGM6ma716riUFYQFpfd6xLomkEQnBJ5e442" 2>&1)
-   echo "$DEPLOY_OUTPUT"
-
-   Step C — promote draft to production via API:
-   DEPLOY_ID=$(echo "$DEPLOY_OUTPUT" | grep -o 'deploys/[a-z0-9]*' | head -1 | cut -d'/' -f2)
-   TOKEN="nfc_gLGM6ma716riUFYQFpfd6xLomkEQnBJ5e442"
-   if [ -z "$DEPLOY_ID" ]; then
-     echo "ERROR: DEPLOY_ID not found — netlify CLI may have failed. Check DEPLOY_OUTPUT above."
-   else
-     curl -s -X POST "https://api.netlify.com/api/v1/sites/dc5dc726-f6bf-4cc3-994c-261398029946/deploys/$DEPLOY_ID/restore" \
-       -H "Authorization: Bearer $TOKEN" -H "Content-Type: application/json" > /dev/null
-     echo "Deployed to production: https://astrologyos.netlify.app (deploy: $DEPLOY_ID)"
-   fi
-
-   NOTE: The --prod flag is forbidden with this token type — always use the two-step draft→restore
-   flow above. The GitHub webhook will also attempt a build and fail ("credits exceeded") — that is
-   expected and harmless; the CLI deploy is the real publish path.
+   That's it. Vercel watches the GitHub repo and deploys within ~30 seconds of every push.
+   No CLI, no tokens, no draft/promote dance. The app is live at pathfinder.vercel.app
+   (or whatever the project URL is — check live-links.md for the current canonical URL).
 ```
 
 ---

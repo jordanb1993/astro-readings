@@ -1,6 +1,6 @@
 # Sky at Work — Workplace Reading App
 
-**What this is:** A weekly collective sky reading for Everflow coworkers, delivered as a web app at `astrologyos.netlify.app/workplace readings/sky-at-work.html`.
+**What this is:** A weekly collective sky reading for Everflow coworkers, delivered as a web app at `pathfinderastro.vercel.app/workplace readings/sky-at-work.html`.
 
 Built for a corporate audience with no astrology background. Plain language on the surface. Astrological mechanism as optional depth.
 
@@ -38,6 +38,6 @@ When rebuilding for a new week:
 
 ## Deployed
 
-`astrologyos.netlify.app` — Netlify site ID `dc5dc726-f6bf-4cc3-994c-261398029946`
+`pathfinderastro.vercel.app` — Netlify site ID `dc5dc726-f6bf-4cc3-994c-261398029946`
 
 Deploy: `netlify deploy` from `the stars/` root → get draft ID → `netlify api restoreSiteDeploy` with site_id + deploy_id.

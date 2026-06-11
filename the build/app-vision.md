@@ -76,19 +76,15 @@ Not an astrology app. Not a content platform. A subscription product that holds 
 
 ---
 
-## Business name shortlist (brainstormed May 18, 2026)
+## Business name — DECIDED June 11, 2026
 
-| Name | Why it works |
-|------|-------------|
-| **Thin Place** | Celtic concept — where the veil between visible + invisible is paper-thin. Irish connection is real and personal. Not obviously "astrology" — which is a feature. |
-| **The 29th** | Jordan's Ascendant is at 29° Gemini. Astro people clock it immediately. Everyone else finds it intriguing. |
-| **Solas** | Irish for *light* (pronounced "SU-las"). Simple, warm, beautiful. *Solas Astrology* lands cleanly. |
-| **Meridian** | The highest point of a planet's arc — where things come into full visibility. |
-| **Ingress** | The moment a planet crosses a threshold into new territory. |
-| **Anam** | Irish for *soul* (pronounced "AH-num"). *Anam Astrology.* |
-| **By Degrees** | Gradual, astrological, literary. Warmer and more approachable. |
+**Pathfinder**
 
-**Top three to sit with:** Thin Place · The 29th · Solas
+Named after the Star Trek: Voyager episode "Pathfinder" — Reg Barclay builds a communication system from a basement computer to reach Voyager lost across the galaxy because he refuses to stop believing the signal is worth sending. Jordan is building a system to reach people who feel lost and want to find their way back to themselves.
+
+**Internal section names:**
+- Natal: **The Constant** (Lost — your fixed anchor across all timelines)
+- Transits: **The Variable** (Lost — what's moving, what you can influence)
 
 ---
 
@@ -214,7 +210,7 @@ The single biggest market differentiator available: an astrology reading voice t
 
 *Conceived May 22, 2026 · Built June 4, 2026*
 
-**Status: live proof of concept** — `natal readings/chart-wheel.html` (Carina's chart). Commits to Netlify (astrologyos.netlify.app).
+**Status: live proof of concept** — `natal readings/chart-wheel.html` (Carina's chart). Commits to Netlify (pathfinderastro.vercel.app).
 
 **What was built:**
 - Full SVG natal chart wheel procedurally generated from Swiss Ephemeris data (pyswisseph)
@@ -311,7 +307,7 @@ The workplace digest format (see `readings/workplace/`) is a proof of concept fo
 ## PWA / Home Screen App Delivery
 **Source:** Dasha's June 4 tip — confirmed by Jordan as underused
 
-Any hosted URL can be added to a phone's home screen as a Progressive Web App (PWA) — no App Store submission, no native code, no approval process. The sky-at-work.html is already on Netlify (astrologyos.netlify.app). Every natal chart reading HTML is already hosted. The entire Phase 3 app can ship as a PWA.
+Any hosted URL can be added to a phone's home screen as a Progressive Web App (PWA) — no App Store submission, no native code, no approval process. The sky-at-work.html is already on Netlify (pathfinderastro.vercel.app). Every natal chart reading HTML is already hosted. The entire Phase 3 app can ship as a PWA.
 
 **Why this matters:**
 - Phase 1: Jordan can send customers a link to their natal chart that lives on their home screen, not in a Downloads folder. Feels like a real product.
@@ -380,7 +376,7 @@ One URL per person. Everything about their chart, their transits, their sky, acc
 ```
 
 **What makes this achievable without a backend:**
-The routine already writes JSON every morning (`positions-today.json`, `active-transits.txt`). The HTML just needs to fetch those files on load. Netlify (astrologyos.netlify.app) can serve them. No server, no database, no login — until Phase 3 requires it.
+The routine already writes JSON every morning (`positions-today.json`, `active-transits.txt`). The HTML just needs to fetch those files on load. Netlify (pathfinderastro.vercel.app) can serve them. No server, no database, no login — until Phase 3 requires it.
 
 **The JSON contract (Phase 2 target):**
 Each person's chart gets a companion `[name]-live.json` rebuilt nightly by the routine:

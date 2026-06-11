@@ -315,7 +315,7 @@ Transits, Natal, and Synastry all have nested views (list → detail). The patte
 | AstroFlow Weekly format | `CLAUDE-WORKPLACE-HTML.md` | ✅ Live in Slack |
 | Wheel of the Year | `rituals/wheel-of-the-year.md` | ✅ Exists |
 | Voice canon | `the build/voice-canon.md` | ✅ Documented |
-| PWA shell + hosting | `astrologyos.netlify.app` | ✅ Live |
+| PWA shell + hosting | `pathfinderastro.vercel.app` | ✅ Live |
 
 Almost nothing needs to be invented. The content, the voice, the reading systems, the visual language — all of it exists. The architecture work is connecting it and building the navigation shell that holds it.
 
