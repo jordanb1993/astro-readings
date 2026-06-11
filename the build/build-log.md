@@ -4,6 +4,54 @@
 
 ---
 
+## 2026-06-11 (session 11) — Vercel Migration · Pathfinder Name · Reading Format Redesign · App Architecture
+
+**Infrastructure:**
+- Diagnosed Netlify build credit exhaustion — migrated entirely to Vercel
+- Created `vercel.json` with cache headers (no-cache HTML/JSON, immutable images)
+- Updated all 49 URL references across workspace from `astrologyos.netlify.app` → `pathfinderastro.vercel.app`
+- Added `.claude/` to `.gitignore` — prevents Claude Code internals from committing
+- Added `vercel/vercel-plugin` via npx — 28 skills, MCP integration
+- Deleted Netlify account
+
+**App name: Pathfinder — decided**
+- Named after ST:Voyager "Pathfinder" (S6) — Reg Barclay's basement signal to Voyager
+- Jordan/Barclay parallel: passion for connection as the mechanism that brings people home
+- Internal section names locked: The Constant (natal, Lost S4) · The Variable (transits, Lost S4/5)
+- Updated: CLAUDE.md, app-vision.md, product-decisions.md, live-links.md, sky-at-work.html, all architecture files
+
+**Reading format redesign — voice interview session:**
+- Conducted structured voice interview with Jordan: philosophy, prose moves, voice register, negative spec
+- Core product thesis: recognition not validation. "Acceptable" not "accepted." Give readers the framework to recognize themselves, not just a description.
+- Voice reference locked: Sally Rooney — stripped back, precision not decoration, beauty through exactness
+- Three-layer architecture confirmed: Surface (plain, felt sense) · Middle (psychological depth) · Technical (full mechanics, always present, never hidden)
+- Competitive gap confirmed by research agent: CHANI = warm/no ladder, Time Passages = technical/no onramp, Pathfinder = both layers present simultaneously
+- Mission statement candidate: "Pathfinder gives you the framework to recognize yourself — not just a description of your chart."
+- Big Three Portrait specimen drafted + approved (Sag Sun/Aries Moon/29° Gem Rising)
+- Canonical prose specimen logged from Jordan's journal (the "locate Jordan" / "first serious bid" lines)
+- Negative spec logged: floating nouns, paradox structures, performed profundity
+
+**Reading system migration:**
+- Jordan is now her own first beta user — personal reading system = Pathfinder format
+- Old hyper-personalized system (life-context weaving, KNOWLEDGE.md required load) archived
+- READING-FORMAT.md restructured: Pathfinder three-layer format is primary SOP
+- CLAUDE.md session start protocol simplified: KNOWLEDGE.md demoted to optional reference
+- Life Context Filter archived (no longer default behavior)
+
+**App architecture locked — four tabs:**
+- Home (✦) · The Constant (◯) · The Variable (☽) · The Wheel (✧)
+- The Wheel: triple resonance — zodiac wheel · Wheel of the Year · Lost's Frozen Donkey Wheel
+- The Variable: Daily + Transits collapsed into one tab, two levels deep max
+- The Wheel: lunar rituals · wheel of year · collective transit-to-transit sky reading
+- Synastry: confirmed on roadmap, Phase 2+
+- app-architecture-v2.md updated with full section map
+
+**Files committed and pushed:** CLAUDE.md · READING-FORMAT.md · voice-canon.md · app-vision.md · product-decisions.md · app-architecture-v2.md · vercel.json · live-links.md · .gitignore
+
+**Pending (manual):** Update routine prompt at `claude.ai/code/routines → trig_01Rtm1xSST2GbdCZh896F2vP` to write in Pathfinder three-layer format.
+
+---
+
 ## 2026-06-10 (session 10g) — Sky at Work: Visual Polish + Full Audit
 
 **Visual polish pass:**

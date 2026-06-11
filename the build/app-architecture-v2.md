@@ -12,26 +12,49 @@ The natal chart is not the product. The natal chart is the root. Every section o
 
 ---
 
-## App Section Map
+## Navigation — Four Tabs (locked June 11, 2026)
 
 ```
-HOME ──────────────────── Quick-link cards to all sections. The front door.
+✦ HOME            ◯ THE CONSTANT      ☽ THE VARIABLE      ✧ THE WHEEL
+──────────────────────────────────────────────────────────────────────
+portal            natal chart          today's reading      lunar rituals
+                  Big Three Portrait   long-term transits   wheel of year
+                  area-specific reads  (Daily + Transits    collective sky
+                  (static, fixed)       collapsed into one)  (cyclical time)
+```
+
+**The naming logic:**
+
+- **The Constant** — Lost S4. Desmond's anchor across all timelines. Your chart is the one fixed thing that never changes. Functionally: natal chart, deep sections, area-specific reads (love/career/body/creativity).
+
+- **The Variable** — Lost S4/5. "We are the variables, we can change destiny." What's moving through your fixed chart right now. Functionally: today's reading + long-term transit archive. Daily and Transits tabs collapse here — you open The Variable, see today, tap a pill, go deeper into that transit.
+
+- **The Wheel** — Triple resonance: the zodiac wheel · the Wheel of the Year (8 Sabbats) · the Frozen Donkey Wheel from Lost (the mechanism that moves the island through time). Functionally: lunar cycles + personalized rituals, wheel of the year personalized to natal chart, collective transit-to-transit sky reading.
+
+**Depth rule:** The Variable is two levels max — today's reading → transit detail. No deeper. The Wheel is a separate tab rather than a nested section of The Variable specifically to prevent depth overload.
+
+---
+
+## App Section Map (updated June 11, 2026)
+
+```
+HOME ──────────────────── Portal. Quick-link cards to all sections.
 │
-├── DAILY ─────────────── Today's personalized transit reading.
+├── THE CONSTANT ──────── Your fixed anchor.
+│     ├── Big Three Portrait (new — Phase 2 onboarding)
+│     ├── Deep Natal Sections (Identity / Depth / Roots / Soul — built)
+│     └── Area-Specific Reads (Love / Career / Body / Creativity — Phase 2)
 │
-├── TRANSITS ──────────── Active + historical transit archive. Navigation-first.
+├── THE VARIABLE ──────── Live sky against your chart.
+│     ├── Today (daily reading: pulse → prose → transit pills)
+│     └── Transits (Now / Returning / Archive → detail view)
 │
-├── NATAL ─────────────── The deep chart. Multi-section, multi-layer.
-│     ├── Chart Wheel
-│     ├── Identity / Depth / Roots / Soul (already built)
-│     ├── Predictive Patterns
-│     └── Past Life Reading + Tarot Card + Verse Poem
+├── THE WHEEL ─────────── Cyclical and seasonal time.
+│     ├── Moon (current phase + ritual on new/full moon)
+│     ├── Wheel of the Year (8 Sabbats, personalized to natal chart)
+│     └── The Sky (collective transit-to-transit reading — ambient weather)
 │
-├── SYNASTRY ──────────── Relationship charts. Composite + compatibility.
-│
-├── WORKPLACE ─────────── AstroFlow Weekly lives here. Career + team sky.
-│
-└── WHEEL & MOON ──────── Wheel of the Year + Lunar cycle. Rituals, all personalized.
+└── SYNASTRY ──────────── Relationship charts. Phase 2+.
 ```
 
 ---
