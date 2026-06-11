@@ -4,6 +4,25 @@
 
 ---
 
+## 2026-06-11 — Session 14 Overview
+
+**Theme:** Synastry infrastructure + friend build polish
+
+The big move this session was building the synastry module as the Variable tab for friend builds. Jordan's natal is now baked into the core as `JORDAN_CHART` — a static constant that every future friend build can draw against. The biwheel renders immediately (friend chart inner, Jordan outer, aspect lines by orb weight), and a `calcSynastryAspects()` engine dynamically computes the contacts so nothing is hardcoded. Synastry reading copy was written for both Marina and Dasha: four sections each, voice-canon compliant, personal and specific.
+
+The session also resolved three bugs caught in post-deploy testing. The pre-fetch IIFE was overwriting the "Synastry with Jordan" home card title with today's reading title — fixed by adding an IS_FRIEND_BUILD early-return. The lunar phase then disappeared (same IIFE was blocked entirely) — fixed by letting friend builds fetch today.json but calling `updateHomeFromDaily(d, true)` to skip the title/transit overwrite. Finally, ♑ ⚷ ♐ in the natal subnav were rendering as iOS color emoji — fixed with `font-variant-emoji:text` on `.sn-icon`.
+
+Two parallel audit agents ran at end of session: design (CSS polish on synastry panel — padding, orb column anchoring, trailing borders) and copy (em dash sweep + floating noun openers across both friend HTMLs).
+
+**What's now live at pathfinderastro.vercel.app:**
+- Marina: full synastry biwheel + contacts list + 4-section reading copy
+- Dasha: same — plus subtitle updated to "Sun at the world's edge"
+- Both: lunar phase loads correctly from today.json; subnav icons render as glyphs
+
+**Architecture note for Phase 2:** IS_FRIEND_BUILD is the foundation. When friend transit data is built, the flag will route to a friend-specific today.json path rather than short-circuiting to synastry. JORDAN_CHART stays as the permanent synastry anchor across all friend builds.
+
+---
+
 ## 2026-06-11 (session 14, cont.) — Lunar Phase Fix
 
 **Bug:** Lunar phase not loading on friend builds (Marina, Dasha).

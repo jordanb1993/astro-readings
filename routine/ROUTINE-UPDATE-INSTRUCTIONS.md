@@ -1,5 +1,5 @@
 # Routine Update Instructions
-_Current prompt for the daily 4am reading routine — last updated May 30, 2026_
+_Current prompt for the daily 4am reading routine — last updated June 11, 2026_
 
 ---
 
@@ -13,7 +13,8 @@ Go to `claude.ai/code/routines` → find routine `trig_01Rtm1xSST2GbdCZh896F2vP`
 
 ```
 1. Clone the repo:
-   cd /tmp && rm -rf stars && git clone https://github.com/jordanb1993/astro-readings.git stars
+   cd /tmp && rm -rf stars && git clone https://[GITHUB_PAT]@github.com/jordanb1993/astro-readings.git stars
+   # PAT lives in the live routine prompt only — do not commit it here
    cd stars
 
 2. Run the position calculator:
@@ -128,7 +129,7 @@ Go to `claude.ai/code/routines` → find routine `trig_01Rtm1xSST2GbdCZh896F2vP`
 
 7. Write "today.json" to the repo root.
 
-   This powers the Daily tab in the AstroFlow app (pathfinderastro.vercel.app). Write it every day.
+   This powers the Daily tab in Pathfinder (pathfinderastro.vercel.app). Write it every day.
    Source all values from the reading you just wrote + positions-today.json. Do NOT skip this step.
 
    Format — write exactly this structure to "today.json":
@@ -173,7 +174,7 @@ Go to `claude.ai/code/routines` → find routine `trig_01Rtm1xSST2GbdCZh896F2vP`
 
 8. Write "transits.json" to the repo root.
 
-   This powers the Transits tab in the AstroFlow app. Write it every day. The app uses this for
+   This powers the Transits tab in Pathfinder. Write it every day. The app uses this for
    the list view (all active transits) and detail view (full reading per transit).
 
    Include ALL slow-planet transit-to-natal aspects from positions-today.json where orb_degrees ≤ 2.5
@@ -271,8 +272,8 @@ Go to `claude.ai/code/routines` → find routine `trig_01Rtm1xSST2GbdCZh896F2vP`
    git add -A && git commit -m "reading + today.json + transits.json + patches YYYY-MM-DD" && git push origin main
 
    That's it. Vercel watches the GitHub repo and deploys within ~30 seconds of every push.
-   No CLI, no tokens, no draft/promote dance. The app is live at pathfinder.vercel.app
-   (or whatever the project URL is — check live-links.md for the current canonical URL).
+   No CLI, no tokens, no draft/promote dance. The app is live at pathfinderastro.vercel.app
+   (check live-links.md for the current canonical URL).
 ```
 
 ---
