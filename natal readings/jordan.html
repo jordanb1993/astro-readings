@@ -330,11 +330,11 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overs
 }
 .app-nav::-webkit-scrollbar{display:none}
 .nav-tab{
-  flex:none;min-width:72px;width:72px;
+  flex:1;min-width:0;
   scroll-snap-align:start;
   background:none;border:none;cursor:pointer;
   display:flex;flex-direction:column;align-items:center;justify-content:center;
-  gap:3px;padding:0 4px;
+  gap:3px;padding:0 6px;
   color:var(--muted-3);
   transition:color 0.2s;
   touch-action:manipulation;-webkit-tap-highlight-color:transparent;
@@ -503,8 +503,8 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overs
 .home-inner{padding:20px 16px 8px}
 .home-sky-strip{
   display:flex;align-items:center;justify-content:center;gap:10px;
-  font-size:0.50rem;letter-spacing:0.22em;text-transform:uppercase;
-  color:var(--muted-3);margin-bottom:18px;
+  font-size:0.58rem;letter-spacing:0.20em;text-transform:uppercase;
+  color:rgba(var(--gold-alpha),0.45);margin-bottom:20px;
 }
 .home-sky-dot{width:3px;height:3px;border-radius:50%;background:rgba(var(--gold-alpha),0.35);flex-shrink:0}
 .home-greeting{text-align:center;margin-bottom:26px}
@@ -514,8 +514,8 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overs
   color:rgba(var(--gold-alpha),0.96);line-height:1.1;
 }
 .home-greeting-sub{
-  font-size:0.50rem;letter-spacing:0.24em;text-transform:uppercase;
-  color:var(--muted-3);margin-top:5px;
+  font-size:0.62rem;letter-spacing:0.22em;text-transform:uppercase;
+  color:rgba(var(--gold-alpha),0.42);margin-top:7px;
 }
 
 /* Home section cards */
@@ -647,7 +647,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overs
 .d-key-transit-name{font-size:0.58rem;letter-spacing:0.10em;text-transform:uppercase;color:rgba(var(--cerulean-alpha),0.85);font-family:'Inter',sans-serif;font-weight:500}
 .d-key-transit-note{font-size:0.50rem;letter-spacing:0.10em;text-transform:uppercase;color:var(--muted-3);font-family:'Inter',sans-serif}
 .d-prose{margin-bottom:24px}
-.d-prose p{color:var(--muted);font-size:0.88rem;line-height:1.85;margin-bottom:18px}
+.d-prose p{color:var(--muted);font-size:0.94rem;line-height:1.85;margin-bottom:18px}
 .d-pull{border-left:2px solid rgba(var(--cerulean-alpha),0.35);padding:10px 0 10px 16px;margin:22px 0;font-family:'Cormorant Garamond',serif;font-size:1.08rem;font-weight:300;font-style:italic;color:rgba(var(--cerulean-alpha),0.88);line-height:1.5}
 .d-today{margin-top:24px}
 .d-today-label{font-size:0.48rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--muted-3);margin-bottom:12px}
@@ -1462,10 +1462,6 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overs
         <div style="margin-top:14px;font-size:0.82rem;color:var(--muted);line-height:1.7" id="wheel-moon-desc"></div>
       </div>
 
-      <div style="margin-top:10px;background:rgba(90,184,168,0.03);border:1px solid rgba(90,184,168,0.10);border-radius:12px;padding:14px 16px;opacity:0.65">
-        <div style="font-size:0.48rem;letter-spacing:0.18em;text-transform:uppercase;font-family:'Inter',sans-serif;color:rgba(90,184,168,0.55);margin-bottom:5px">Rituals</div>
-        <div style="font-size:0.80rem;color:var(--muted-3)">Personalized new moon &amp; full moon rituals coming — generated for your chart at each lunation.</div>
-      </div>
     </div>
 
     <!-- ── SEASONS SECTION ── -->
@@ -2450,7 +2446,7 @@ async function loadTransits(){
 function renderTransitList(){
   if(!transitsData)return;
   const eyebrow=document.getElementById('t-eyebrow');
-  if(eyebrow)eyebrow.textContent='live sky · '+transitsData.generated;
+  if(eyebrow){const g=transitsData.generated||'';const d=g?new Date(g+'T12:00:00'):null;const label=d&&!isNaN(d)?d.toLocaleDateString('en-US',{month:'long',day:'numeric'}):g;eyebrow.textContent='live sky · '+label;}
   const cur=transitsData.current||[];
   const countEl=document.getElementById('home-transit-count');
   if(countEl){const n=cur.length;countEl.textContent=n>0?`${n} active`:'Current sky';}
@@ -2687,13 +2683,9 @@ function renderDaily(){
         <div class="d-eyebrow">${dateLabel}</div>
         <div class="d-title">${d.title||'Daily Reading'}</div>
         ${d.moon_phase||d.moon_sign?`<div class="d-moon-strip">
-          <span class="d-moon-glyph">☽</span>
+          <span class="d-moon-glyph"><svg viewBox="0 0 24 24" width="16" height="16" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></span>
           <span class="d-moon-text">${[d.moon_phase,d.moon_sign].filter(Boolean).join(' · ')}</span>
         </div>`:''}
-      </div>
-      <div class="t-biwheel-wrap" style="margin-bottom:20px">
-        <svg viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg" id="d-biwheel-svg"></svg>
-        <div class="t-biwheel-label">natal · live sky</div>
       </div>
       ${d.pulse?`<div class="d-pulse">${d.pulse}</div>`:''}
       ${d.key_transit?`<div class="d-key-transit">
@@ -2702,6 +2694,10 @@ function renderDaily(){
       </div>`:''}
       <div class="d-prose">${proseHtml}</div>
       ${d.pull?`<div class="d-pull">${d.pull}</div>`:''}
+      <div class="t-biwheel-wrap" style="margin-bottom:20px">
+        <svg viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg" id="d-biwheel-svg"></svg>
+        <div class="t-biwheel-label">natal · live sky</div>
+      </div>
       ${pillsHtml?`<div class="d-transit-pills">${pillsHtml}</div>`:''}
       ${todayHtml}
       <div style="height:32px"></div>
