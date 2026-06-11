@@ -616,7 +616,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overs
 .t-tabs{display:flex;gap:0;margin:0 0 18px;border-bottom:1px solid rgba(var(--gold-alpha),0.10);position:sticky;top:0;z-index:10;background:#0a0614;padding-top:4px}
 .t-tab{flex:1;background:none;border:none;cursor:pointer;padding:10px 0;font-size:0.44rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted-3);font-family:'Inter',sans-serif;font-weight:500;border-bottom:2px solid transparent;margin-bottom:-1px;transition:color 0.15s,border-color 0.15s;-webkit-tap-highlight-color:transparent}
 .t-tab.active{color:rgba(var(--gold-alpha),0.85);border-bottom-color:rgba(var(--gold-alpha),0.55)}
-.t-biwheel-wrap{width:100%;max-width:280px;margin:0 auto 28px;aspect-ratio:1;position:relative;display:flex;align-items:center;justify-content:center}
+.t-biwheel-wrap{width:100%;max-width:320px;margin:0 auto 28px;aspect-ratio:1;position:relative;display:flex;align-items:center;justify-content:center}
 .t-biwheel-wrap svg{width:100%;height:100%}
 .t-biwheel-label{position:absolute;bottom:-18px;left:0;right:0;text-align:center;font-size:0.38rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(var(--gold-alpha),0.22);font-family:'Inter',sans-serif;cursor:default;transition:color 0.15s}
 .t-biwheel-label.bw-has-sel{color:rgba(var(--gold-alpha),0.50);cursor:pointer}
@@ -676,7 +676,6 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overs
 <header class="app-header">
   <div class="header-left">
     <div class="header-eyebrow">pathfinder · jordan ashley barney</div>
-    <div class="header-meta">Nov 23 1993 &nbsp;·&nbsp; 6:36 PM PST &nbsp;·&nbsp; Palo Alto &nbsp;·&nbsp; Placidus</div>
   </div>
   <button class="key-btn" id="keyBtn" title="Open Chart Key">✦</button>
 </header>
@@ -704,8 +703,8 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overs
       <button class="home-card home-card-hero hc-natal" onclick="goNatal()">
         <div class="hc-top">
           <div>
-            <div class="hc-label">Natal Chart</div>
-            <div class="hc-title">Your birth chart</div>
+            <div class="hc-label">The Constant</div>
+            <div class="hc-title">Your natal chart</div>
           </div>
           <svg class="hc-hero-art" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg">
             <circle cx="26" cy="26" r="23" fill="none" stroke="rgba(208,168,64,0.35)" stroke-width="0.7"/>
@@ -721,68 +720,47 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overs
             <polygon points="42,42 27.2,27.2 26,26 28.5,24.5" fill="rgba(208,168,64,0.22)"/>
           </svg>
         </div>
-        <div class="hc-desc">chart wheel · identity · depth · roots · soul</div>
+        <div class="hc-desc">Nov 23 1993 · 6:36 PM PST · Palo Alto · Placidus</div>
       </button>
 
-      <!-- Row: Daily + Transits -->
-      <div class="home-card-row">
-        <button class="home-card hc-daily" onclick="switchToPanel('daily',document.querySelector('[data-target=daily]'))">
-          <div class="hc-top">
-            <svg class="hc-art" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="20" cy="20" r="17" fill="none" stroke="rgba(74,159,212,0.40)" stroke-width="0.7"/>
-              <circle cx="20" cy="8" r="3" fill="rgba(74,159,212,0.55)"/>
-              <circle cx="20" cy="20" r="2" fill="rgba(74,159,212,0.30)"/>
-              <path d="M3,20 Q10,5 20,20 Q30,35 37,20" fill="none" stroke="rgba(74,159,212,0.35)" stroke-width="0.8"/>
-            </svg>
+      <!-- The Variable — hero full-width -->
+      <button class="home-card home-card-hero hc-daily" onclick="switchToPanel('daily',document.querySelector('[data-target=daily]'))">
+        <div class="hc-top">
+          <div>
+            <div class="hc-label">The Variable</div>
+            <div class="hc-title" id="home-daily-title">Today's Reading</div>
           </div>
-          <div class="hc-label">The Variable</div>
-          <div class="hc-title hc-title-sm" id="home-daily-title">Today's reading</div>
-          <div class="hc-preview" id="home-daily-transit" style="display:none"></div>
-        </button>
-        <button class="home-card hc-transits" onclick="openTransitLibrary()">
-          <div class="hc-top">
-            <svg class="hc-art" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-              <ellipse cx="20" cy="20" rx="17" ry="8" fill="none" stroke="rgba(212,128,64,0.38)" stroke-width="0.7"/>
-              <ellipse cx="20" cy="20" rx="17" ry="8" fill="none" stroke="rgba(212,128,64,0.18)" stroke-width="0.5" transform="rotate(60,20,20)"/>
-              <circle cx="20" cy="12" r="2.5" fill="rgba(212,128,64,0.65)"/>
-              <circle cx="20" cy="20" r="1.5" fill="rgba(212,128,64,0.25)"/>
-            </svg>
-          </div>
-          <div class="hc-label">Transit Library</div>
-          <div class="hc-title hc-title-sm" id="home-transit-count">Now · Returning · Archive</div>
-        </button>
-      </div>
+          <svg class="hc-hero-art" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="26" cy="26" r="22" fill="none" stroke="rgba(74,159,212,0.18)" stroke-width="0.6"/>
+            <circle cx="26" cy="26" r="14" fill="none" stroke="rgba(74,159,212,0.10)" stroke-width="0.5"/>
+            <path d="M26 4A22 22 0 0 1 26 48A13 22 0 0 0 26 4Z" fill="rgba(74,159,212,0.42)"/>
+            <circle cx="26" cy="4" r="1.8" fill="rgba(74,159,212,0.50)"/>
+          </svg>
+        </div>
+        <div class="hc-preview" id="home-daily-transit" style="display:none"></div>
+        <div class="hc-desc" style="display:flex;align-items:center;justify-content:space-between;margin-top:6px">
+          <span>today's sky against your chart</span>
+          <span onclick="event.stopPropagation();openTransitLibrary()" style="font-size:0.54rem;letter-spacing:0.14em;text-transform:uppercase;font-family:'Inter',sans-serif;color:rgba(74,159,212,0.55);cursor:pointer;padding:4px 0;-webkit-tap-highlight-color:transparent">Transit Library →</span>
+        </div>
+      </button>
 
-      <!-- Row: Synastry + Workplace (coming soon) -->
-      <div class="home-card-row">
-        <button class="home-card hc-synastry home-card-soon" disabled>
-          <div class="hc-top">
-            <svg class="hc-art" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="14" cy="20" r="11" fill="none" stroke="rgba(90,184,168,0.38)" stroke-width="0.7"/>
-              <circle cx="26" cy="20" r="11" fill="none" stroke="rgba(90,184,168,0.22)" stroke-width="0.7"/>
-              <circle cx="14" cy="20" r="2" fill="rgba(90,184,168,0.50)"/>
-              <circle cx="26" cy="20" r="2" fill="rgba(90,184,168,0.35)"/>
-            </svg>
-            <span class="hc-soon-badge">Soon</span>
+      <!-- Workplace — compact strip -->
+      <button class="home-card hc-workplace" onclick="window.open('/workplace%20readings/sky-at-work.html','_blank')" style="padding:14px 18px">
+        <div style="display:flex;align-items:center;gap:14px">
+          <svg viewBox="0 0 40 40" width="30" height="30" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0">
+            <rect x="8" y="8" width="24" height="24" rx="4" fill="none" stroke="rgba(74,159,212,0.35)" stroke-width="0.7"/>
+            <line x1="8" y1="16" x2="32" y2="16" stroke="rgba(74,159,212,0.22)" stroke-width="0.5"/>
+            <circle cx="14" cy="12" r="1.5" fill="rgba(74,159,212,0.45)"/>
+            <circle cx="20" cy="12" r="1.5" fill="rgba(74,159,212,0.30)"/>
+            <line x1="13" y1="22" x2="27" y2="22" stroke="rgba(74,159,212,0.25)" stroke-width="0.5"/>
+            <line x1="13" y1="27" x2="22" y2="27" stroke="rgba(74,159,212,0.18)" stroke-width="0.5"/>
+          </svg>
+          <div>
+            <div class="hc-label">Workplace</div>
+            <div class="hc-title hc-title-sm">Sky at Work</div>
           </div>
-          <div class="hc-label">Synastry</div>
-          <div class="hc-title hc-title-sm">Compatibility</div>
-        </button>
-        <button class="home-card hc-workplace" onclick="window.open('/workplace%20readings/sky-at-work.html','_blank')">
-          <div class="hc-top">
-            <svg class="hc-art" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-              <rect x="8" y="8" width="24" height="24" rx="4" fill="none" stroke="rgba(74,159,212,0.35)" stroke-width="0.7"/>
-              <line x1="8" y1="16" x2="32" y2="16" stroke="rgba(74,159,212,0.22)" stroke-width="0.5"/>
-              <circle cx="14" cy="12" r="1.5" fill="rgba(74,159,212,0.45)"/>
-              <circle cx="20" cy="12" r="1.5" fill="rgba(74,159,212,0.30)"/>
-              <line x1="13" y1="22" x2="27" y2="22" stroke="rgba(74,159,212,0.25)" stroke-width="0.5"/>
-              <line x1="13" y1="27" x2="22" y2="27" stroke="rgba(74,159,212,0.18)" stroke-width="0.5"/>
-            </svg>
-          </div>
-          <div class="hc-label">Workplace</div>
-          <div class="hc-title hc-title-sm">Sky at Work</div>
-        </button>
-      </div>
+        </div>
+      </button>
 
       <!-- The Wheel full-width -->
       <button class="home-card hc-wheel" onclick="switchToPanel('wheel',document.querySelector('[data-target=wheel]'))" style="min-height:90px">
@@ -1479,7 +1457,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overs
             <div style="font-size:0.48rem;letter-spacing:0.18em;text-transform:uppercase;font-family:'Inter',sans-serif;color:rgba(90,184,168,0.55);margin-bottom:6px" id="wheel-moon-phase-label">loading…</div>
             <div style="font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:300;color:var(--text);line-height:1.2" id="wheel-moon-sign-label"></div>
           </div>
-          <div style="font-size:2rem;opacity:0.55;flex-shrink:0" id="wheel-moon-glyph">☽</div>
+          <div style="flex-shrink:0;opacity:0.70;width:36px;height:36px" id="wheel-moon-glyph"></div>
         </div>
         <div style="margin-top:14px;font-size:0.82rem;color:var(--muted);line-height:1.7" id="wheel-moon-desc"></div>
       </div>
@@ -1918,6 +1896,30 @@ const MOON_PHASE_DESC={
 };
 
 let wheelLoaded=false;
+function getMoonPhaseSVG(phase){
+  const p=(phase||'').toLowerCase();
+  const f='rgba(90,184,168,0.52)';
+  const s='rgba(90,184,168,0.32)';
+  const bg='rgba(90,184,168,0.07)';
+  if(p.includes('new'))
+    return `<svg viewBox="0 0 36 36" width="36" height="36"><circle cx="18" cy="18" r="13" fill="${bg}" stroke="${s}" stroke-width="1.2"/></svg>`;
+  if(p.includes('full'))
+    return `<svg viewBox="0 0 36 36" width="36" height="36"><circle cx="18" cy="18" r="13" fill="${f}"/></svg>`;
+  if(p.includes('first quarter'))
+    return `<svg viewBox="0 0 36 36" width="36" height="36"><path d="M18 5A13 13 0 0 1 18 31L18 5Z" fill="${f}"/><circle cx="18" cy="18" r="13" fill="none" stroke="${s}" stroke-width="0.8"/></svg>`;
+  if(p.includes('last quarter')||p.includes('third quarter'))
+    return `<svg viewBox="0 0 36 36" width="36" height="36"><path d="M18 5A13 13 0 0 0 18 31L18 5Z" fill="${f}"/><circle cx="18" cy="18" r="13" fill="none" stroke="${s}" stroke-width="0.8"/></svg>`;
+  if(p.includes('waxing crescent'))
+    return `<svg viewBox="0 0 36 36" width="36" height="36"><path d="M18 5A13 13 0 0 1 18 31A10 13 0 0 0 18 5Z" fill="${f}"/><circle cx="18" cy="18" r="13" fill="none" stroke="${s}" stroke-width="0.6" opacity="0.5"/></svg>`;
+  if(p.includes('waxing gibbous'))
+    return `<svg viewBox="0 0 36 36" width="36" height="36"><path d="M18 5A13 13 0 0 1 18 31A6 13 0 0 1 18 5Z" fill="${f}"/><circle cx="18" cy="18" r="13" fill="none" stroke="${s}" stroke-width="0.6" opacity="0.5"/></svg>`;
+  if(p.includes('waning gibbous'))
+    return `<svg viewBox="0 0 36 36" width="36" height="36"><path d="M18 5A13 13 0 0 0 18 31A6 13 0 0 0 18 5Z" fill="${f}"/><circle cx="18" cy="18" r="13" fill="none" stroke="${s}" stroke-width="0.6" opacity="0.5"/></svg>`;
+  if(p.includes('waning crescent'))
+    return `<svg viewBox="0 0 36 36" width="36" height="36"><path d="M18 5A13 13 0 0 0 18 31A10 13 0 0 1 18 5Z" fill="${f}"/><circle cx="18" cy="18" r="13" fill="none" stroke="${s}" stroke-width="0.6" opacity="0.5"/></svg>`;
+  return `<svg viewBox="0 0 24 24" width="36" height="36"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="${f}"/></svg>`;
+}
+
 function loadWheel(){
   if(wheelLoaded)return;
   wheelLoaded=true;
@@ -1931,7 +1933,7 @@ function loadWheel(){
     const dl=document.getElementById('wheel-moon-desc');
     if(el)el.textContent=phase;
     if(sl)sl.textContent=sign;
-    if(gl)gl.textContent=dailyData.moon_glyph||'☽';
+    if(gl)gl.innerHTML=getMoonPhaseSVG(phase);
     if(dl)dl.textContent=MOON_PHASE_DESC[phase]||'';
   }
   // Sabbat timeline
