@@ -289,9 +289,17 @@ async function fetchPositions(){
 }
 
 // Pre-fetch today.json so home panel populates without tapping Daily first
-// Skip entirely on friend builds — they use synastry, not today.json
+// Friend builds: fetch moon phase only — skip daily title + transit overwrite
 (async function(){
-  if(typeof IS_FRIEND_BUILD!=='undefined'&&IS_FRIEND_BUILD)return;
+  if(typeof IS_FRIEND_BUILD!=='undefined'&&IS_FRIEND_BUILD){
+    try{
+      const r=await fetch('/today.json?_='+Date.now());
+      const d=await r.json();
+      dailyData=d;
+      updateHomeFromDaily(d,true);
+    }catch(e){}
+    return;
+  }
   try{
     const r=await fetch('/today.json?_='+Date.now());
     const d=await r.json();
@@ -1191,13 +1199,15 @@ function renderSynastryPanel(){
 }
 
 // ─── DAILY DATA FUNCTIONS ─────────────────────────────────────────────────────
-function updateHomeFromDaily(d){
+function updateHomeFromDaily(d,omitTitle=false){
   const moonEl=document.getElementById('home-moon');
   if(moonEl&&(d.moon_phase||d.moon_sign))moonEl.textContent=[d.moon_phase,d.moon_sign].filter(Boolean).join(' · ');
-  const titleEl=document.getElementById('home-daily-title');
-  if(titleEl&&d.title)titleEl.textContent=d.title;
-  const transitEl=document.getElementById('home-daily-transit');
-  if(transitEl&&d.key_transit){transitEl.textContent=d.key_transit;transitEl.style.display='';}
+  if(!omitTitle){
+    const titleEl=document.getElementById('home-daily-title');
+    if(titleEl&&d.title)titleEl.textContent=d.title;
+    const transitEl=document.getElementById('home-daily-transit');
+    if(transitEl&&d.key_transit){transitEl.textContent=d.key_transit;transitEl.style.display='';}
+  }
 }
 
 function showDailySkeleton(){
