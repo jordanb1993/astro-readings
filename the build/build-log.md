@@ -4,6 +4,23 @@
 
 ---
 
+## 2026-06-11 (session 14) — Synastry Variable Tab (Marina + Dasha)
+
+**Synastry module — prototype:**
+- `JORDAN_CHART` constant added to `pathfinder-core.js` (Jordan's natal, static, drives all future friend builds)
+- `calcSynastryAspects(jPlanets, fPlanets)` — dynamic aspect engine, 6 types (conjunction, opposition, trine, square, sextile, inconjunct), orbs 3–8° by type
+- `renderSynastryBiwheel(svgId)` — biwheel SVG: friend chart inner ring (gold tones), Jordan outer ring (violet/purple), aspect lines scaled by orb tightness (tight = visible, wide = ambient 0.22)
+- `renderSynastryPanel()` — populates `#daily-body` with biwheel + "Contacts by orb" list (top 12, glyph/symbol/glyph/type/orb columns)
+- `loadDaily()` branches on `IS_FRIEND_BUILD` flag — Jordan's own app unchanged
+- Marina and Dasha scripts: added `const IS_FRIEND_BUILD=true; const PERSON_NAME='...'`
+- Home Variable card updated: removed opacity:0.55, title = "Synastry with Jordan", desc = "natal charts · exact contacts"
+- Pathfinder-core.css: `.synastry-contacts`, `.syn-row`, `.syn-glyph`, `.syn-sym`, `.syn-label`, `.syn-orb` styles added
+- Deployed + CDN refresh; both builds live at `pathfinderastro.vercel.app/natal%20readings/marina.html` and `.../dasha.html`
+
+**Architecture note:** this module is the prototype for the full synastry feature (Phase 2). When friend transit infrastructure is built, `IS_FRIEND_BUILD` will expand to include a friend-specific `today.json` path rather than short-circuiting to synastry.
+
+---
+
 ## 2026-06-11 (session 13) — Shared Layer Migration · First Friend Builds (Marina + Dasha)
 
 **Shared layer extraction:**
