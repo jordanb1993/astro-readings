@@ -34,6 +34,7 @@ Jordan is a 32-year-old lesbian woman in Chicago. Associate Director of Content 
 
 **For build/business sessions** (app, architecture, product, intake):
 → also load **`CLAUDE-BUILD.md`** — build SOPs, intake protocol, business context
+→ also load **`the build/CLAUDE-APP-DESIGN.md`** — design system, tokens, UX principles, propagation architecture
 
 **For natal chart builds** (new friend chart or rebuilding Jordan's):
 → also load **`CLAUDE-NATAL-BUILD.md`** — v3 template spec, archetype card SOP, poem SOP
