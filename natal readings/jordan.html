@@ -736,11 +736,11 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overs
               <path d="M3,20 Q10,5 20,20 Q30,35 37,20" fill="none" stroke="rgba(74,159,212,0.35)" stroke-width="0.8"/>
             </svg>
           </div>
-          <div class="hc-label">Daily</div>
+          <div class="hc-label">The Variable</div>
           <div class="hc-title hc-title-sm" id="home-daily-title">Today's reading</div>
           <div class="hc-preview" id="home-daily-transit" style="display:none"></div>
         </button>
-        <button class="home-card hc-transits" onclick="switchToPanel('transits',document.querySelector('[data-target=transits]'))">
+        <button class="home-card hc-transits" onclick="openTransitLibrary()">
           <div class="hc-top">
             <svg class="hc-art" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
               <ellipse cx="20" cy="20" rx="17" ry="8" fill="none" stroke="rgba(212,128,64,0.38)" stroke-width="0.7"/>
@@ -749,8 +749,8 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overs
               <circle cx="20" cy="20" r="1.5" fill="rgba(212,128,64,0.25)"/>
             </svg>
           </div>
-          <div class="hc-label">Transits</div>
-          <div class="hc-title hc-title-sm" id="home-transit-count">Current sky</div>
+          <div class="hc-label">Transit Library</div>
+          <div class="hc-title hc-title-sm" id="home-transit-count">Now · Returning · Archive</div>
         </button>
       </div>
 
@@ -785,12 +785,12 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overs
         </button>
       </div>
 
-      <!-- Wheel & Moon full-width (coming soon) -->
-      <button class="home-card hc-wheel home-card-soon" disabled style="min-height:90px">
+      <!-- The Wheel full-width -->
+      <button class="home-card hc-wheel" onclick="switchToPanel('wheel',document.querySelector('[data-target=wheel]'))" style="min-height:90px">
         <div class="hc-top">
           <div>
-            <div class="hc-label">Wheel &amp; Moon</div>
-            <div class="hc-title">Rituals &amp; the year</div>
+            <div class="hc-label">The Wheel</div>
+            <div class="hc-title">Lunar · Seasonal · The Sky</div>
           </div>
           <svg class="hc-hero-art" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg">
             <circle cx="26" cy="26" r="22" fill="none" stroke="rgba(90,184,168,0.35)" stroke-width="0.7"/>
@@ -809,9 +809,8 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overs
             <circle cx="9.6" cy="42.4" r="1.2" fill="rgba(90,184,168,0.28)"/>
             <circle cx="26" cy="26" r="3" fill="none" stroke="rgba(90,184,168,0.40)" stroke-width="0.7"/>
           </svg>
-          <span class="hc-soon-badge" style="position:absolute;top:18px;right:16px">Soon</span>
         </div>
-        <div class="hc-desc">wheel of the year · new moon · full moon · personalized rituals</div>
+        <div class="hc-desc">wheel of the year · new moon · full moon · collective sky · personalized rituals</div>
       </button>
 
     </div><!-- /home-cards -->
@@ -1395,9 +1394,13 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overs
   <!-- LIST VIEW -->
   <div id="t-list" style="position:absolute;inset:0;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;transition:transform 0.28s cubic-bezier(0.4,0,0.2,1),opacity 0.22s ease">
     <div class="reading-inner accent-amber" style="padding-top:24px">
+      <button onclick="backToToday()" style="display:flex;align-items:center;gap:8px;background:none;border:none;cursor:pointer;-webkit-tap-highlight-color:transparent;margin-bottom:20px;padding:0">
+        <span style="font-size:1rem;color:rgba(var(--cerulean-alpha),0.70)">←</span>
+        <span style="font-size:0.52rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(var(--cerulean-alpha),0.60);font-family:'Inter',sans-serif;font-weight:500">Today</span>
+      </button>
       <div class="panel-heading" style="margin-bottom:20px">
-        <div class="panel-eyebrow-sm" id="t-eyebrow">live sky</div>
-        <div class="panel-title-lg">Transits</div>
+        <div class="panel-eyebrow-sm" id="t-eyebrow">The Variable</div>
+        <div class="panel-title-lg">Transit Library</div>
       </div>
 
       <!-- Biwheel — live renderer (natal inner ring · transiting outer ring) -->
@@ -1448,6 +1451,43 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overs
   </div>
 </div><!-- /panel-daily -->
 
+<!-- ══ THE WHEEL PANEL ══════════════════════════════════════════════════════ -->
+<div class="panel" id="panel-wheel">
+  <svg class="geo-bg" viewBox="0 0 380 720" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <circle cx="190" cy="360" r="180" stroke="rgba(90,184,168,0.06)" stroke-width="0.5"/>
+    <circle cx="190" cy="360" r="120" stroke="rgba(90,184,168,0.04)" stroke-width="0.5"/>
+    <circle cx="190" cy="360" r="60" stroke="rgba(90,184,168,0.07)" stroke-width="0.5"/>
+    <line x1="10" y1="360" x2="370" y2="360" stroke="rgba(90,184,168,0.04)" stroke-width="0.4"/>
+    <line x1="190" y1="60" x2="190" y2="660" stroke="rgba(90,184,168,0.04)" stroke-width="0.4"/>
+    <line x1="58" y1="228" x2="322" y2="492" stroke="rgba(90,184,168,0.03)" stroke-width="0.4"/>
+    <line x1="322" y1="228" x2="58" y2="492" stroke="rgba(90,184,168,0.03)" stroke-width="0.4"/>
+  </svg>
+  <div class="reading-inner" style="padding-top:48px;max-width:680px;margin:0 auto">
+    <div style="text-align:center;padding:40px 0 32px">
+      <div style="font-size:2.4rem;margin-bottom:16px;opacity:0.60">✧</div>
+      <div style="font-size:0.52rem;letter-spacing:0.22em;text-transform:uppercase;font-family:'Inter',sans-serif;color:rgba(90,184,168,0.70);margin-bottom:10px">coming soon</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:300;color:var(--text);line-height:1.2;margin-bottom:12px">The Wheel</div>
+      <div style="font-size:0.82rem;color:var(--muted);line-height:1.7;max-width:300px;margin:0 auto">
+        Lunar cycles · New &amp; Full Moon rituals · Wheel of the Year · Collective sky
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px;margin-top:8px">
+      <div style="background:rgba(90,184,168,0.05);border:1px solid rgba(90,184,168,0.12);border-radius:12px;padding:16px 18px;opacity:0.55">
+        <div style="font-size:0.48rem;letter-spacing:0.20em;text-transform:uppercase;font-family:'Inter',sans-serif;color:rgba(90,184,168,0.65);margin-bottom:6px">Lunar</div>
+        <div style="font-size:0.88rem;color:var(--muted)">New moon &amp; full moon rituals, personalized to your natal chart</div>
+      </div>
+      <div style="background:rgba(90,184,168,0.05);border:1px solid rgba(90,184,168,0.12);border-radius:12px;padding:16px 18px;opacity:0.55">
+        <div style="font-size:0.48rem;letter-spacing:0.20em;text-transform:uppercase;font-family:'Inter',sans-serif;color:rgba(90,184,168,0.65);margin-bottom:6px">Seasonal</div>
+        <div style="font-size:0.88rem;color:var(--muted)">All 8 Sabbats interpreted through your specific placements</div>
+      </div>
+      <div style="background:rgba(90,184,168,0.05);border:1px solid rgba(90,184,168,0.12);border-radius:12px;padding:16px 18px;opacity:0.55">
+        <div style="font-size:0.48rem;letter-spacing:0.20em;text-transform:uppercase;font-family:'Inter',sans-serif;color:rgba(90,184,168,0.65);margin-bottom:6px">The Sky</div>
+        <div style="font-size:0.88rem;color:var(--muted)">Collective transit-to-transit reading — the ambient weather of the season</div>
+      </div>
+    </div>
+  </div>
+</div><!-- /panel-wheel -->
+
 </div><!-- /app-body -->
 
 <!-- ── BOTTOM NAV (4 top-level tabs) ─────────────────────────────────────── -->
@@ -1458,15 +1498,15 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overs
   </button>
   <button class="nav-tab" data-target="natal" onclick="switchPanel('natal',this)">
     <span class="nav-icon">◯</span>
-    <span class="nav-label">Natal</span>
-  </button>
-  <button class="nav-tab" data-target="transits" onclick="switchPanel('transits',this)">
-    <span class="nav-icon">♄</span>
-    <span class="nav-label">Transits</span>
+    <span class="nav-label">The Constant</span>
   </button>
   <button class="nav-tab" data-target="daily" onclick="switchPanel('daily',this)">
     <span class="nav-icon">☽</span>
-    <span class="nav-label">Daily</span>
+    <span class="nav-label">The Variable</span>
+  </button>
+  <button class="nav-tab" data-target="wheel" onclick="switchPanel('wheel',this)">
+    <span class="nav-icon">✧</span>
+    <span class="nav-label">The Wheel</span>
   </button>
 </nav>
 
@@ -1742,6 +1782,7 @@ const panels={
   natal:   document.getElementById('panel-natal'),
   transits:document.getElementById('panel-transits'),
   daily:   document.getElementById('panel-daily'),
+  wheel:   document.getElementById('panel-wheel'),
 };
 const subpanels={
   chart:   document.getElementById('sp-chart'),
@@ -1789,6 +1830,27 @@ function switchPanel(id,btn){
   if(!showKey)closeKey();
   if(id==='transits')loadTransits();
   if(id==='daily')loadDaily();
+  if(id==='wheel'){/* Wheel content loads here in future build */}
+}
+
+// Open transit library from within The Variable (no separate nav tab)
+function openTransitLibrary(){
+  loadTransits();
+  // Hide current panel
+  panels[activePanel].classList.remove('active');
+  document.querySelectorAll('.nav-tab').forEach(t=>t.classList.remove('active'));
+  // Show transits panel, highlight The Variable tab
+  panels.transits.classList.add('active');
+  document.querySelector('.nav-tab[data-target="daily"]').classList.add('active');
+  activePanel='transits';
+  document.getElementById('keyBtn').classList.add('hidden');
+  closeKey();
+}
+
+// Return from transit library to today's reading
+function backToToday(){
+  const btn=document.querySelector('.nav-tab[data-target="daily"]');
+  switchPanel('daily',btn);
 }
 
 // Navigate from home card directly into Natal/Chart
@@ -2408,8 +2470,7 @@ async function openTransitFromPill(label,glyph){
       renderTransitList();
     }catch(e){return;}
   }
-  const navBtn=document.querySelector('.nav-tab[data-target="transits"]');
-  if(navBtn)switchPanel('transits',navBtn);
+  openTransitLibrary();
   const natalM=label.match(/natal\s+(\S+)/i);
   if(!natalM)return;
   const natalNorm=normPlanet(natalM[1]);
@@ -2459,7 +2520,7 @@ function renderDaily(){
       <span class="d-t-pill-glyph">${t.glyph}</span>
       <span class="d-t-pill-text">${t.label} · ${t.orb}</span>
     </span>`).join('');
-  const moreHtml=slowHidden.length>0?`<button class="d-pills-more" onclick="document.querySelector('[data-target=\\'transits\\']').click()">+${slowHidden.length} more · See all in Transits →</button>`:'';
+  const moreHtml=slowHidden.length>0?`<button class="d-pills-more" onclick="openTransitLibrary()">+${slowHidden.length} more · Transit Library →</button>`:'';
   const fastHtml=fastT.map(t=>{
     const short=t.label.replace(/\s*natal\s*/i,' ').replace(/\s*\([^)]*\)/g,'').trim();
     return `<span class="d-t-pill-mini"><span class="d-t-pill-glyph">${t.glyph}</span><span>${short}</span></span>`;
