@@ -289,7 +289,9 @@ async function fetchPositions(){
 }
 
 // Pre-fetch today.json so home panel populates without tapping Daily first
+// Skip entirely on friend builds — they use synastry, not today.json
 (async function(){
+  if(typeof IS_FRIEND_BUILD!=='undefined'&&IS_FRIEND_BUILD)return;
   try{
     const r=await fetch('/today.json?_='+Date.now());
     const d=await r.json();
