@@ -4,6 +4,35 @@
 
 ---
 
+## 2026-06-11 (session 13) — Shared Layer Migration · First Friend Builds (Marina + Dasha)
+
+**Shared layer extraction:**
+- Extracted all CSS from `jordan.html` into `pathfinder-core.css` (~660 lines, all design tokens, accent system, component styles)
+- Extracted all JS from `jordan.html` into `pathfinder-core.js` (~700 lines, all rendering logic, IIFE functions, biwheel, daily fetch, scroll observer)
+- `jordan.html` personal layer now: CHART constant + natal reading HTML only
+- `dailyData` TDZ fix: moved `let dailyData=null;` to top of `pathfinder-core.js`
+- Friend build pattern established: `[name].html` = head + personal HTML + `<script>const T; const CHART;</script>` + `<script src="/pathfinder-core.js"></script>`
+- Any CSS or JS change now propagates to all builds automatically
+
+**Marina LaRusso build (`natal readings/marina.html`):**
+- Placidus cusps via pyswisseph (Jul 28 1993, 11:03 AM CDT, Winfield IL) — ASC Libra 7°01', MC Cancer 8°12' confirmed
+- 13 planets + 6 aspects; Venus sextile Chiron 0.05° is the chart's most exact aspect
+- Reading: Identity (Leo Sun H10, Jupiter conjunct ASC 2.26°, Sag Moon + NNode H3), Depth (Capricorn H4 Uranus/Neptune Rx, Pluto H2), Roots (Venus-Chiron exact, Mercury opposite outer planets), Soul
+- Archetype: The Generous Light · Leo · Libra · Sagittarius
+
+**Dasha Shareiko build (`natal readings/dasha.html`):**
+- Placidus cusps via pyswisseph (Dec 20 2000, noon ECT, Quito Ecuador) — ASC Pisces 25°44', MC Sag 26°24'; noon chart caveat in Big Three
+- Sun at 29° Sag confirmed H10 (2.72° from MC), correcting source data "9th house" entry
+- 13 planets + 6 aspects; Sun conj Mercury + Moon sq Neptune as key aspects
+- Reading: Identity (Sag stellium near MC, Pisces ASC, Scorpio Moon H8), Depth (Aquarius stellium H11, Mars Libra H7 28°), Roots (NNode Cancer H4, Saturn Taurus H2 Rx, Moon-Neptune sq), Soul
+- Archetype: The Keeper of Deep Waters · Sagittarius · Scorpio · Aquarius
+
+**Both friend builds:**
+- Variable tab greyed (opacity 0.55); daily panel shows "personalized readings coming"; biwheel renders live against today's sky
+- Deployed via git push → Vercel autodeploy
+
+---
+
 ## 2026-06-11 (session 12) — Design Audit · Polish Pass · Product Principle Locked
 
 **Design audit (Playwright, full pass):**
