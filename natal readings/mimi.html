@@ -1321,6 +1321,192 @@
     .verse, .poem-final { font-size: 1.02rem; line-height: 2.0; }
   }
 
+  /* ── DIVIDER LIBRARY ── */
+
+  /* Style A — Star scatter */
+  .div-a {
+    display: flex; align-items: center; justify-content: center;
+    gap: 0; margin: 52px 44px 0;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.38em;
+    color: var(--gold);
+    opacity: 0.38;
+    padding-left: 0.38em;
+  }
+  @media (max-width: 680px) { .div-a { margin: 36px 12px 0; } }
+
+  /* Style B — Sacred geometry rule */
+  .div-b {
+    display: flex; align-items: center; gap: 0;
+    margin: 52px 44px 0;
+  }
+  .div-b-line {
+    flex: 1; height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(208,168,64,0.22), rgba(208,168,64,0.22), transparent);
+  }
+  .div-b svg { flex-shrink: 0; display: block; }
+  @media (max-width: 680px) { .div-b { margin: 36px 12px 0; } }
+
+  /* Style C — Celestial arc */
+  .div-c {
+    display: flex; align-items: center; justify-content: center;
+    margin: 52px 44px 0;
+  }
+  .div-c svg { display: block; overflow: visible; }
+  @media (max-width: 680px) { .div-c { margin: 36px 12px 0; } }
+
+  /* ── SECTION GROUPING HEADERS ── */
+  .section-header {
+    padding: 0 44px; margin-bottom: 28px; margin-top: 0;
+  }
+  .section-header-eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.58rem; font-weight: 600;
+    letter-spacing: 0.30em; text-transform: uppercase;
+    color: rgba(208,168,64,0.42); margin-bottom: 6px;
+  }
+  .section-header-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.30rem; font-weight: 400;
+    color: rgba(240,228,200,0.55); letter-spacing: 0.06em;
+  }
+  @media (max-width: 680px) {
+    .section-header { padding: 0 12px; }
+  }
+
+  /* ── FORMATIVE GROUND section — recessed card borders ── */
+  .formative-wrap .dive-section {
+    border-color: rgba(62,130,185,0.08);
+  }
+
+  /* ── SHADOW & MIRROR section — rose accent borders ── */
+  .shadow-wrap .dive-section {
+    border-color: rgba(212,160,181,0.28);
+  }
+  .shadow-wrap .dive-section .dive-body {
+    background: rgba(212,160,181,0.04) !important;
+  }
+  /* Rose-tinted label area on shadow cards */
+  .shadow-wrap .dive-section .dive-head.gold-head,
+  .shadow-wrap .dive-section .dive-head.rose-head {
+    background:
+      radial-gradient(circle at 4% 50%, rgba(212,160,181,0.28) 0%, transparent 50%),
+      radial-gradient(circle at 96% 15%, rgba(208,168,64,0.08) 0%, transparent 40%),
+      linear-gradient(135deg, rgba(16,24,52,0.92) 0%, rgba(10,16,38,0.96) 100%);
+    border-bottom: 1px solid rgba(212,160,181,0.20);
+  }
+
+  /* ── CHART SIGNATURE elevated styling ── */
+  .sig-panel {
+    border-left: 2px solid rgba(201,168,76,0.55);
+    box-shadow: 0 0 28px rgba(201,168,76,0.07);
+    padding-left: 30px;
+  }
+
+  /* ── THE ARC section ── */
+  .arc-wrap {
+    padding: 44px 44px 0;
+  }
+  .arc-header { margin-bottom: 28px; }
+  .arc-eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.60rem; font-weight: 600;
+    letter-spacing: 0.28em; text-transform: uppercase;
+    color: rgba(90,184,168,0.55); margin-bottom: 8px;
+  }
+  .arc-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.65rem; font-weight: 400;
+    color: var(--teal-bright); letter-spacing: 0.04em;
+  }
+  .arc-panels {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 0 24px;
+    align-items: center;
+  }
+  .arc-panel {
+    background: rgba(9,14,36,0.50);
+    border: 1px solid rgba(62,130,185,0.18);
+    border-radius: 12px;
+    padding: 28px 30px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+  .arc-panel.past {
+    opacity: 0.75;
+    border-color: rgba(212,160,181,0.20);
+    background: radial-gradient(ellipse at 0% 50%, rgba(212,160,181,0.09) 0%, rgba(9,14,36,0.55) 70%);
+  }
+  .arc-panel.future {
+    opacity: 1.0;
+    border-color: rgba(90,184,168,0.30);
+    background: radial-gradient(ellipse at 100% 50%, rgba(90,184,168,0.10) 0%, rgba(9,14,36,0.50) 70%);
+    box-shadow: 0 0 22px rgba(90,184,168,0.06);
+  }
+  .arc-panel-eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.58rem; font-weight: 600;
+    letter-spacing: 0.24em; text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .arc-panel.past  .arc-panel-eyebrow { color: rgba(212,160,181,0.60); }
+  .arc-panel.future .arc-panel-eyebrow { color: rgba(90,184,168,0.65); }
+  .arc-panel-placement {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.30rem; font-weight: 400;
+    letter-spacing: 0.04em; margin-bottom: 14px;
+  }
+  .arc-panel.past  .arc-panel-placement { color: var(--rose); }
+  .arc-panel.future .arc-panel-placement { color: var(--teal-bright); }
+  .arc-panel-rule { width: 30px; height: 1px; margin-bottom: 14px; }
+  .arc-panel.past  .arc-panel-rule { background: rgba(212,160,181,0.30); }
+  .arc-panel.future .arc-panel-rule { background: rgba(90,184,168,0.40); }
+  .arc-panel p {
+    font-size: 0.91rem; line-height: 1.80;
+    color: var(--muted);
+  }
+  .arc-arrow {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem; color: rgba(208,168,64,0.42);
+    flex-shrink: 0; text-align: center; line-height: 1;
+    padding: 0 4px;
+  }
+  @media (max-width: 680px) {
+    .arc-wrap { padding: 28px 0 0; }
+    .arc-header { padding: 0 12px; }
+    .arc-panels {
+      grid-template-columns: 1fr;
+      gap: 0;
+      padding: 0 12px;
+    }
+    .arc-panel { border-radius: 0; border-left: none; border-right: none; }
+    .arc-panel.future { border-top: 1px solid rgba(90,184,168,0.30); }
+    .arc-arrow { transform: rotate(90deg); justify-self: center; padding: 8px 0; }
+  }
+
+  /* ── ENTRY SECTION (Big Three Portrait) ── */
+  .entry-section {
+    padding: 44px 44px 0;
+  }
+  .entry-eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.58rem; font-weight: 600;
+    letter-spacing: 0.28em; text-transform: uppercase;
+    color: rgba(208,168,64,0.42); margin-bottom: 8px;
+  }
+  .entry-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.65rem; color: rgba(240,228,200,0.70);
+    letter-spacing: 0.04em; margin-bottom: 24px;
+  }
+  @media (max-width: 680px) {
+    .entry-section { padding: 28px 0 0; }
+    .entry-eyebrow, .entry-title { padding: 0 12px; }
+    .entry-title { margin-bottom: 16px; }
+  }
+
   </style>
 </head>
 <body>
@@ -1650,7 +1836,11 @@
   </div>
 </div>
 
-<!-- ── IDENTITY TRIO ── -->
+<!-- ── SECTION 1: ENTRY — BIG THREE PORTRAIT ── -->
+<div class="entry-section" data-section="1">
+  <div class="entry-eyebrow">Welcome</div>
+  <div class="entry-title">Who You Are, in Plain Language</div>
+</div>
 <div class="trio-wrap" data-section="1">
   <div class="trio">
 
@@ -1660,7 +1850,7 @@
       <div class="trio-placement">19° Aries</div>
       <div class="trio-house">5th House · identity through joy and creation</div>
       <div class="trio-rule"></div>
-      <div class="trio-tagline">You're most yourself when you're absorbed in something you love, or building something that didn't exist before.</div>
+      <div class="trio-tagline">You come alive through creating, not planning. When you're building something that matters to you, the rest of the world goes quiet. That absorption is your truest self.</div>
     </div>
 
     <div class="trio-card moon">
@@ -1669,7 +1859,7 @@
       <div class="trio-placement">11° Leo</div>
       <div class="trio-house">9th House · feeling through warmth and expansion</div>
       <div class="trio-rule"></div>
-      <div class="trio-tagline">When you feel most alive, there's light coming off you. You know the ones who can actually hold that.</div>
+      <div class="trio-tagline">You feel best when you're genuinely lit up, and when the people around you can hold the brightness. You don't dim for rooms that require it.</div>
     </div>
 
     <div class="trio-card asc">
@@ -1678,19 +1868,28 @@
       <div class="trio-placement">23° Scorpio</div>
       <div class="trio-house">Pluto + Jupiter in 1st · depth guards the warmth</div>
       <div class="trio-rule"></div>
-      <div class="trio-tagline">The armor is heavier than people realize. What it's protecting is fiercer than they'd expect.</div>
+      <div class="trio-tagline">The first thing people feel from you is gravity, not fire. The fire is real, but it lives behind a threshold. You decide who gets to see it.</div>
     </div>
 
   </div>
 </div>
 
-<div class="cel-divider">
-  <div class="cel-rule left"></div>
-  <div class="cel-mark">✦ ✦ ✦</div>
-  <div class="cel-rule right"></div>
+<!-- Divider B — Sacred geometry rule: Entry → Chart Signature -->
+<div class="div-b">
+  <div class="div-b-line"></div>
+  <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="26" cy="26" r="20" stroke="rgba(208,168,64,0.28)" stroke-width="0.8"/>
+    <circle cx="26" cy="26" r="12" stroke="rgba(208,168,64,0.20)" stroke-width="0.6"/>
+    <circle cx="26" cy="26" r="4"  stroke="rgba(208,168,64,0.38)" stroke-width="0.8"/>
+    <line x1="6"  y1="26" x2="46" y2="26" stroke="rgba(208,168,64,0.22)" stroke-width="0.7"/>
+    <line x1="26" y1="6"  x2="26" y2="46" stroke="rgba(208,168,64,0.22)" stroke-width="0.7"/>
+    <line x1="11.7" y1="11.7" x2="40.3" y2="40.3" stroke="rgba(208,168,64,0.14)" stroke-width="0.5"/>
+    <line x1="40.3" y1="11.7" x2="11.7" y2="40.3" stroke="rgba(208,168,64,0.14)" stroke-width="0.5"/>
+  </svg>
+  <div class="div-b-line"></div>
 </div>
 
-<!-- ── CHART SIGNATURE ── -->
+<!-- ── SECTION 2: CHART SIGNATURE ── -->
 <div class="sig-wrap" data-section="2">
   <div class="sig-header">
     <div class="sig-eyebrow">Key Patterns</div>
@@ -1722,13 +1921,8 @@
   </div>
 </div>
 
-<!-- ── PLANETS + ASPECTS ── -->
-
-<div class="cel-divider">
-  <div class="cel-rule left"></div>
-  <div class="cel-mark">✦ ✦ ✦</div>
-  <div class="cel-rule right"></div>
-</div>
+<!-- Divider A — Star scatter: Chart Signature → Planets + Core Constitution -->
+<div class="div-a" aria-hidden="true">✧ · · · ✦ · · · ✧</div>
 
 <div class="planet-strip-wrap">
   <div class="planet-strip-label">At a Glance</div>
@@ -1793,14 +1987,15 @@
   </div>
 </div>
 
-<div class="cel-divider">
-  <div class="cel-rule left"></div>
-  <div class="cel-mark">✦ ✦ ✦</div>
-  <div class="cel-rule right"></div>
-</div>
+<!-- Divider A — before Core Constitution -->
+<div class="div-a" aria-hidden="true">✧ · · · ✦ · · · ✧</div>
 
-<!-- ── DEEP DIVES ── -->
-<div class="dive-wrap" data-section="4">
+<!-- ── SECTION 3: CORE CONSTITUTION ── -->
+<div class="section-header" style="margin-top:44px;">
+  <div class="section-header-eyebrow">Section III</div>
+  <div class="section-header-title">Core Constitution</div>
+</div>
+<div class="dive-wrap" data-section="3">
 
   <!-- 1: SCORPIO RISING + PLUTO & JUPITER IN 1ST -->
   <div class="dive-section accent-gold">
@@ -1897,15 +2092,57 @@
     </div>
   </div>
 
-  <!-- 4: VENUS + SATURN IN PISCES -->
+  <!-- ── END CORE CONSTITUTION — close dive-wrap, open new sections below ── -->
+
+</div><!-- end .dive-wrap core constitution -->
+
+<!-- Divider A — Core Constitution → Formative Ground -->
+<div class="div-a" aria-hidden="true">✧ · · · ✦ · · · ✧</div>
+
+<!-- ── SECTION 4: FORMATIVE GROUND ── -->
+<div class="section-header" style="margin-top:44px;">
+  <div class="section-header-eyebrow">Section IV · Deeper Layers</div>
+  <div class="section-header-title">Formative Ground</div>
+</div>
+
+<div class="dive-wrap formative-wrap" data-section="4">
+
+  <!-- CHIRON IN VIRGO, 10TH HOUSE -->
+  <div class="dive-section accent-plum">
+    <div class="dive-head plum-head">
+      <svg class="dive-head-stars" viewBox="0 0 900 130" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="815" cy="32" r="0.9" fill="#4a9fd4" opacity="0.38"/>
+        <circle cx="70"  cy="58" r="0.8" fill="#f0e4cc" opacity="0.28"/>
+        <text x="835" y="76" font-size="9" fill="#4a9fd4" opacity="0.38" text-anchor="middle" font-family="serif">✦</text>
+      </svg>
+      <div class="dive-icon">⚷︎</div>
+      <div class="dive-head-text">
+        <div class="dive-eyebrow">Chiron · Virgo · 10th House · Wound in the Work</div>
+        <div class="dive-title">Chiron Rx in Virgo</div>
+        <div class="dive-subtitle">21°17' Virgo Rx · 10th house · the wound around professional visibility and being seen accurately</div>
+        <div class="dive-tags">
+          <span class="dtag">Virgo</span>
+          <span class="dtag">10th House</span>
+          <span class="dtag">Chiron</span>
+          <span class="dtag">Work</span>
+        </div>
+      </div>
+    </div>
+    <div class="dive-body">
+      <p>Chiron in the 10th house places the wound in the domain of public life, career, and how your work is seen and understood. In Virgo, the specific ache is precision: the gap between the exactness of what you actually do and how it registers in the world around you.</p>
+      <p>This isn't the wound of being unseen. You are seen. The hurt is in being seen for the surface output rather than the intelligence, care, and exactness that produced it. When someone praises the result without noticing the craft, it can land as a kind of erasure, however well-intentioned.</p>
+      <p>Retrograde Chiron suggests this wound was absorbed early. Some early signal that what you produced was not quite right, or right for the wrong reasons. The healing is not to stop caring about the precision. It's to trust that the exactness is worth bringing into visibility, even when the audience can't fully read it yet.</p>
+      <div class="pull plum-pull">The precision isn't the wound. Believing it's invisible is.</div>
+    </div>
+  </div>
+
+  <!-- VENUS + SATURN IN PISCES / 4TH HOUSE -->
   <div class="dive-section accent-gold">
     <div class="dive-head gold-head">
       <svg class="dive-head-stars" viewBox="0 0 900 130" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
         <circle cx="818" cy="30" r="1.0" fill="#d0a840" opacity="0.46"/>
         <circle cx="72"  cy="52" r="0.8" fill="#f0e4cc" opacity="0.28"/>
-        <circle cx="540" cy="18" r="0.9" fill="#f0e4cc" opacity="0.26"/>
         <text x="838" y="72" font-size="9" fill="#d0a840" opacity="0.42" text-anchor="middle" font-family="serif">✦</text>
-        <circle cx="858" cy="42" r="40" fill="#d0a840" opacity="0.05"/>
       </svg>
       <div class="dive-icon">♀︎</div>
       <div class="dive-head-text">
@@ -1928,6 +2165,118 @@
       <div class="pull">You don't do love lightly. Saturn is there to make sure it can hold. The hard part is knowing, in the early porous stages, which ones actually will.</div>
     </div>
   </div>
+
+</div><!-- end .dive-wrap formative-wrap -->
+
+<!-- Divider A — Formative Ground → Shadow & Mirror -->
+<div class="div-a" aria-hidden="true">✧ · · · ✦ · · · ✧</div>
+
+<!-- ── SECTION 5: SHADOW & MIRROR ── -->
+<div class="section-header" style="margin-top:44px;">
+  <div class="section-header-eyebrow">Section V · The Other Side</div>
+  <div class="section-header-title">Shadow &amp; Mirror</div>
+</div>
+
+<div class="dive-wrap shadow-wrap" data-section="5">
+
+  <!-- 7TH HOUSE / DESCENDANT: TAURUS -->
+  <div class="dive-section accent-rose">
+    <div class="dive-head rose-head">
+      <svg class="dive-head-stars" viewBox="0 0 900 130" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="818" cy="30" r="0.9" fill="#d4a0b5" opacity="0.42"/>
+        <circle cx="68"  cy="55" r="0.8" fill="#f0e4cc" opacity="0.30"/>
+        <text x="838" y="74" font-size="9" fill="#d4a0b5" opacity="0.40" text-anchor="middle" font-family="serif">✦</text>
+      </svg>
+      <div class="dive-icon">♉︎</div>
+      <div class="dive-head-text">
+        <div class="dive-eyebrow">Descendant · 7th House · Taurus · What You Seek in Others</div>
+        <div class="dive-title">Taurus Descendant</div>
+        <div class="dive-subtitle">Descendant in Taurus · 7th house · the steadiness you project outward, and what you actually need to come home to</div>
+        <div class="dive-tags">
+          <span class="dtag">Taurus</span>
+          <span class="dtag">7th House</span>
+          <span class="dtag">Partnerships</span>
+          <span class="dtag">Shadow</span>
+        </div>
+      </div>
+    </div>
+    <div class="dive-body">
+      <p>The Descendant in Taurus describes the quality you both seek in others and tend to project outward: stability, patience, groundedness, the capacity to stay. With Scorpio Rising, your first presentation carries intensity and depth. Taurus on the 7th is what that intensity is quietly seeking: someone who doesn't flinch, doesn't scatter, can hold what you bring and still be there the next morning.</p>
+      <p>The shadow question here is about what you've told yourself you don't need. Scorpio Rising can read groundedness as dullness. Can assume that depth requires turbulence. Taurus on the 7th is the chart's correction: what you're actually looking for in partnership is the one who makes the room feel safe enough to let the fire breathe. That's not a lesser thing. That's the whole point.</p>
+      <div class="pull rose-pull">You're looking for someone solid enough to hold all the fire. Not to contain it. To give it somewhere to go.</div>
+    </div>
+  </div>
+
+  <!-- SOUTH NODE + SATURN–CHIRON OPPOSITION -->
+  <div class="dive-section accent-rose">
+    <div class="dive-head rose-head">
+      <svg class="dive-head-stars" viewBox="0 0 900 130" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="820" cy="28" r="0.9" fill="#d4a0b5" opacity="0.40"/>
+        <circle cx="68"  cy="55" r="0.8" fill="#f0e4cc" opacity="0.28"/>
+        <text x="840" y="72" font-size="9" fill="#d4a0b5" opacity="0.38" text-anchor="middle" font-family="serif">✦</text>
+      </svg>
+      <div class="dive-icon">☋︎</div>
+      <div class="dive-head-text">
+        <div class="dive-eyebrow">South Node · Taurus · 6th House · What You're Releasing</div>
+        <div class="dive-title">South Node &amp; the Saturn–Chiron Opposition</div>
+        <div class="dive-subtitle">South Node 6°31' Taurus · 6th house · Saturn opp Chiron 2.10° · the past mastery that now asks to be revised</div>
+        <div class="dive-tags">
+          <span class="dtag">Taurus</span>
+          <span class="dtag">South Node</span>
+          <span class="dtag">Saturn opp Chiron</span>
+          <span class="dtag">Release</span>
+        </div>
+      </div>
+    </div>
+    <div class="dive-body">
+      <p>South Node in Taurus in the 6th house: the past mastery is around building, maintaining, making things work through sheer steadiness. You came in already knowing how to be the dependable one, the one who keeps going, the one whose service is solid and consistent. That was the gift of the past. In this life, it becomes the default pattern when you're afraid.</p>
+      <p>The Saturn–Chiron opposition (2.10° orb) runs Saturn in Pisces (4th) opposite Chiron in Virgo (10th). Structure and wound. Love and professional visibility. Saturn says: make it real, make it last. Chiron says: the ache is in what gets seen. The opposition holds this tension live in the chart. Saturn keeps building the foundation (love, home) to compensate for what feels unreliable in the public domain. The healing requires trusting both at once.</p>
+      <p>The South Node and this opposition together point to the same revision: releasing the compulsion to earn belonging through reliability alone. The belonging was already there. The task is to stop proving it.</p>
+      <div class="pull rose-pull">You already earned the belonging. The task now is to stop re-proving it.</div>
+    </div>
+  </div>
+
+</div><!-- end .dive-wrap shadow-wrap -->
+
+<!-- Divider C — before The Arc -->
+<div class="div-c" aria-hidden="true">
+  <svg width="280" height="40" viewBox="0 0 280 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M 10 30 Q 140 2 270 30" stroke="rgba(208,168,64,0.28)" stroke-width="0.9" fill="none"/>
+    <text x="10"  y="32" font-size="11" fill="rgba(208,168,64,0.45)" text-anchor="middle" font-family="serif">✦</text>
+    <text x="270" y="32" font-size="11" fill="rgba(208,168,64,0.45)" text-anchor="middle" font-family="serif">✦</text>
+  </svg>
+</div>
+
+<!-- ── SECTION 6: THE ARC ── -->
+<div class="arc-wrap" data-section="6">
+  <div class="arc-header">
+    <div class="arc-eyebrow">Section VI · Soul Direction</div>
+    <div class="arc-title">The Arc</div>
+  </div>
+  <div class="arc-panels">
+    <div class="arc-panel past">
+      <div class="arc-panel-eyebrow">Past mastery · South Node</div>
+      <div class="arc-panel-placement">♉ Taurus · 6th House</div>
+      <div class="arc-panel-rule"></div>
+      <p>You came in already knowing how to be the steady one. How to work with patience and precision. How to build things that last. How to be of use without requiring recognition. Taurus in the 6th is the past mastery: reliability as identity, endurance as survival strategy, care expressed through consistent, unglamorous effort.</p>
+      <p>This pattern still activates when you're anxious: doing more, serving harder, making yourself indispensable. It works. It always worked. That's exactly why it's the default. The question is what it costs you, and whether it's chosen or compulsive.</p>
+    </div>
+    <div class="arc-arrow" aria-hidden="true">→</div>
+    <div class="arc-panel future">
+      <div class="arc-panel-eyebrow">Direction · North Node</div>
+      <div class="arc-panel-placement">♏ Scorpio · 12th House</div>
+      <div class="arc-panel-rule"></div>
+      <p>The North Node in Scorpio in the 12th asks for something the South Node never required: going underneath. Not the visible work, not the reliable output, but the hidden interior, the unconscious, the places that don't need to justify themselves through usefulness. The soul direction is toward depth without proof.</p>
+      <p>Twelfth house North Node is the soul path that cannot be completed in public. It requires solitude, interior honesty, and willingness to sit with what cannot be solved or shared. The exact sextile to the MC means this interior work is precisely what the public work draws on, even when neither side knows it explicitly.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Divider A — The Arc → Synastry -->
+<div class="div-a" style="margin-top:52px;" aria-hidden="true">✧ · · · ✦ · · · ✧</div>
+
+<!-- ── SECTION 6b: SYNASTRY (kept from original, re-grouped) ── -->
+<div class="dive-wrap" data-section="6" style="padding-top:44px;">
 
   <!-- 5: SYNASTRY WITH JORDAN -->
   <div class="dive-section accent-teal">
@@ -1988,9 +2337,18 @@
     </div>
   </div>
 
+</div><!-- end .dive-wrap synastry -->
+
+<!-- Divider C — before Archetype Card -->
+<div class="div-c" aria-hidden="true">
+  <svg width="280" height="40" viewBox="0 0 280 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M 10 30 Q 140 2 270 30" stroke="rgba(208,168,64,0.28)" stroke-width="0.9" fill="none"/>
+    <text x="10"  y="32" font-size="11" fill="rgba(208,168,64,0.45)" text-anchor="middle" font-family="serif">✦</text>
+    <text x="270" y="32" font-size="11" fill="rgba(208,168,64,0.45)" text-anchor="middle" font-family="serif">✦</text>
+  </svg>
 </div>
 
-<!-- ── ARCHETYPE CARD ── -->
+<!-- ── SECTION 7: ARCHETYPE CARD ── -->
 <div class="card-wrap fade-in" data-section="6">
   <div class="card-wrap-rule"></div>
   <div class="card-wrap-eyebrow">Your Archetype · XIII</div>
