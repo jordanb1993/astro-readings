@@ -908,7 +908,7 @@ function renderTransitTabContent(){
   function addCurrentRow(t){
     const idx=cur.indexOf(t);
     const row=document.createElement('button');
-    row.className='t-row';
+    row.className='t-row'+(t.direction==='applying'?' t-row-applying':'');
     row.setAttribute('aria-label',`${t.transit_planet} ${t.aspect} natal ${fmtNP(t.natal_point)}`);
     const dirLabel=t.direction==='applying'?'applying':'separating';
     const dirCls=t.direction==='applying'?'t-applying':'';
@@ -979,7 +979,10 @@ function openTransitDetail(idx,pool){
       }).join('')}
     </div>`:'';
   const kwHtml=t.keywords?`<div class="kw-row" style="margin-top:14px;margin-bottom:0">${t.keywords.map(k=>`<span class="kw">${k}</span>`).join('')}</div>`:'';
-  const proseHtml=t.reading?t.reading.split('\n\n').map(p=>`<p>${p.replace(/\n/g,' ')}</p>`).join(''):'';
+  const proseParas=(t.reading||'').split('\n\n').filter(Boolean);
+  const proseFirst=proseParas.length?`<p>${proseParas[0].replace(/\n/g,' ')}</p>`:'';
+  const proseRest=proseParas.length>1?proseParas.slice(1).map(p=>`<p>${p.replace(/\n/g,' ')}</p>`).join(''):'';
+  const proseHtml=proseFirst+(proseRest?`<div class="d-prose-fold" id="td-prose-fold">${proseRest}</div><button class="d-pull-thread" style="border-color:rgba(212,128,64,0.20);color:rgba(212,128,64,0.65)" onclick="document.getElementById('td-prose-fold').classList.add('open');this.style.display='none'">Pull the thread <span>&#8594;</span></button>`:'');
   const orbBlock=t.status==='between_passes'?`
       <div class="t-detail-orb">
         <span class="t-hist-badge between" style="font-size:0.50rem;padding:5px 14px">between passes</span>
@@ -1000,8 +1003,8 @@ function openTransitDetail(idx,pool){
       <div class="t-detail-subtitle">${t.natal_sign} · ${t.natal_house}</div>
       ${orbBlock}
     </div>
-    ${kwHtml}
     ${t.summary?`<div class="t-detail-pull" style="margin-top:18px">${t.summary}</div>`:''}
+    ${kwHtml}
     <div class="t-detail-prose">${proseHtml}</div>
     ${passesHtml}
     <div style="height:32px"></div>`;
@@ -1261,7 +1264,7 @@ function renderDaily(){
   const slowVisible=slowT.slice(0,5);
   const slowHidden=slowT.slice(5);
   const slowPillsHtml=slowVisible.map(t=>`
-    <span class="d-t-pill${t.direction==='applying'?' d-t-applying':''}" role="button" data-transit-label="${(t.label||'').replace(/"/g,'&quot;')}" data-transit-glyph="${(t.glyph||'').replace(/"/g,'&quot;')}">
+    <span class="d-t-pill d-t-pill-season${t.direction==='applying'?' d-t-applying':''}" role="button" data-transit-label="${(t.label||'').replace(/"/g,'&quot;')}" data-transit-glyph="${(t.glyph||'').replace(/"/g,'&quot;')}">
       <span class="d-t-pill-glyph">${t.glyph}</span>
       <span class="d-t-pill-text">${t.label} · ${t.orb}</span>
     </span>`).join('');
