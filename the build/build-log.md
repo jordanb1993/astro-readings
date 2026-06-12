@@ -36,6 +36,18 @@ Full copy rewrite across all three charts:
 
 ---
 
+## SESSION 16 PLAN — June 12 afternoon
+
+1. **Archetype flip card design** — all three charts have `<!-- BUILD: flip card redesign pending -->` comments. Front: archetype name + compass SVG. Back: body description. CSS `rotateY` flip on tap. Apply to jordan/marina/dasha.html and push.
+
+2. **Mimi + Carina copy as text** — no more standalone scrolling chart builds. All future natal builds are Pathfinder app format only. Write voice canon copy for Mimi and Carina as `.md` draft files (name-throughout, plain-language-first, 9-section structure) in `charts/` alongside their birth data. Ready to drop into app builds when Jordan decides to build their charts.
+
+3. **Reddit astrology vocabulary research** — structured pass to expand voice-canon.md Vocabulary Library. Target: r/astrology, r/AskAstrologers, r/astrologyreadings. One planet or aspect type per session. Route findings to voice-canon.md + relevant transit library files.
+
+4. **Routine live update** — Jordan to paste updated ROUTINE-UPDATE-INSTRUCTIONS.md into the live routine at claude.ai/code/routines (em dash ban + June 12 additions).
+
+---
+
 ## 2026-06-12 (session 15, cont.) — Em dash pass + routine update
 
 **Em dash pass: transit library + daily readings June 5–12**
