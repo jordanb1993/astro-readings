@@ -4,6 +4,40 @@
 
 ---
 
+## 2026-06-12 — Session 16 (continued): Archetype flip card redesign
+
+**Theme:** Full archetype card visual system — flip mechanic + unique sigil art per person
+
+### Archetype Card — New System
+
+Replaced the old static tarot card (fixed-height box with compass SVG) with a full flip card system across all three charts (jordan, marina, dasha).
+
+**Shared CSS (`pathfinder-core.css`):**
+- `.tarot-card`: `perspective:1200px`, fixed `min(272px,78vw) × 462px`, `cursor:pointer`
+- `.card-inner`: `transform-style:preserve-3d`, spring flip transition (`cubic-bezier(0.36,0.07,0.19,0.97)`)
+- `.tarot-card.flipped .card-inner`: `rotateY(180deg)` — tap to reveal
+- Both faces: `backface-visibility:hidden`, `border-radius:18px`, gold border + glow shadow
+- Front layer stack: `card-bg` (dark) → `card-wc` (watercolor blobs, animated) → `card-grain` (fractalNoise SVG) → `card-vignette` → double tarot border → `card-numeral` → `card-sigil-wrap` → `card-label`
+- Back layer stack: `card-back-bg` → `card-back-wc` → `card-back-grain` → double border → `card-back-content` (numeral + mini sigil + name + sub + rule + body + "tap to close")
+- Animations: `wc-drift` (10s ease-in-out infinite alternate — scale + micro-rotate), `hint-pulse` (2.4s opacity + border-color breathe)
+- Person-specific watercolor backgrounds added as `<style>` in each file
+
+**Jordan — "The Cartographer at the Seam" (VII):**
+- Watercolor: burnt amber, plum-crimson, cobalt, crimson-rose (Sag + Scorpio + Gemini palette)
+- Sigil: map coordinate grid (5×6 lines inside arch), diagonal crimson seam cutting through territory, 8-point compass rose at seam × grid intersection
+
+**Marina — "The Generous Light" (XIX):**
+- Watercolor: warm amber, solar gold, dusty rose-mauve (Leo + Libra + Sag palette)
+- Sigil: radiant sun disk with 8 primary rays (extending past arch posts) + 8 secondary rays; golden halo glow with inner bright core
+
+**Dasha — "The Threshold Keeper" (XII):**
+- Watercolor: deep violet, midnight blue, amber warmth (Sag + Pisces + Scorpio palette)
+- Sigil: Gothic arch divided into violet (left) and amber (right) zones; luminous gold threshold line running full vertical height with feGaussianBlur glow; asymmetric post diamonds (violet left, amber right)
+
+All three: shared Gothic arch framework (stone post columns, 3-layer tracery arch, crossbar with diamond, apex ornament with radiating spines, corner 4-point stars, Art Nouveau side flourishes). Mini sigil on back face.
+
+---
+
 ## 2026-06-12 — Session 16: Workspace rename (the stars → Pathfinder) + Sky at Work June 15–21
 
 **Theme:** Full workspace identity consolidation + Sky at Work weekly update

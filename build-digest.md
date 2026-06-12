@@ -15,9 +15,9 @@ tags:
 
 | Feature | Status | Notes |
 |---------|--------|-------|
-| Jordan natal chart (jordan.html) | ✅ Live | 9-tab, voice canon complete, Archetype: "The Cartographer at the Seam" |
-| Marina natal chart (marina.html) | ✅ Live | 9-tab, voice canon complete, Archetype: "The Generous Light"; Shadow rebuilt June 12 |
-| Dasha natal chart (dasha.html) | ✅ Live | 9-tab, voice canon complete, Archetype: "The Threshold Keeper"; rebuilt June 12 |
+| Jordan natal chart (jordan.html) | ✅ Live | 9-tab, voice canon complete, Archetype: "The Cartographer at the Seam" — flip card + compass rose sigil |
+| Marina natal chart (marina.html) | ✅ Live | 9-tab, voice canon complete, Archetype: "The Generous Light" — flip card + radiant sun sigil |
+| Dasha natal chart (dasha.html) | ✅ Live | 9-tab, voice canon complete, Archetype: "The Threshold Keeper" — flip card + threshold sigil |
 | Daily reads | ✅ Live | Overnight automation running ✓ — first run June 12 |
 | Transit library | ✅ Live | Applying / separating / returning states, accordion detail, first/second pass timing |
 | Wheel of the year | ✅ Live | Lunar cycles + pagan calendar, natal-personalized mini-reads |
@@ -29,8 +29,7 @@ tags:
 
 | Item | Priority | Notes |
 |------|----------|-------|
-| Archetype flip card redesign | 🟡 Next session | All 3 charts have `<!-- BUILD: flip card redesign pending -->` comments — front: name + compass SVG; back: body description; CSS `rotateY` flip on tap |
-| Archetype flip card redesign | 🟡 Next session | All 3 charts have `<!-- BUILD: flip card redesign pending -->` comments — front: name + compass SVG; back: body description; CSS `rotateY` flip on tap |
+| Supabase intake form for readings | 🟢 Low urgency | Jordan wants it; Vercel + Supabase + GitHub is target infra stack |
 | Sky at Work weekly content cadence | 🟡 Ongoing | Update dates + planet data + voice canon rewrite each week — full template now solid |
 | Voice canon drafts — 8 remaining charts | 🟡 Ongoing | Carina, Mimi, Hazel, Iza, Kate, Su, Yvonne + Cat — `.md` draft files in `charts/` |
 | Reddit vocabulary research | 🟢 Low urgency | r/astrology, r/AskAstrologers, r/astrologyreadings → voice-canon.md |
