@@ -309,6 +309,62 @@ strong{color:var(--rose);font-weight:500}
 }
 .go-deeper-cta:hover{background:rgba(var(--cerulean-alpha),0.08);border-color:rgba(var(--cerulean-alpha),0.38);color:rgba(var(--cerulean-alpha),0.80)}
 
+/* ══ REQUEST MODAL ══════════════════════════════════════════════════════════ */
+.req-backdrop{
+  position:fixed;inset:0;background:rgba(0,0,0,0.56);z-index:100;
+  opacity:0;pointer-events:none;transition:opacity 0.22s ease;
+}
+.req-backdrop.open{opacity:1;pointer-events:auto}
+.req-sheet{
+  position:absolute;bottom:0;left:0;right:0;
+  background:var(--surface);border-radius:20px 20px 0 0;
+  padding:0 0 calc(env(safe-area-inset-bottom,0px) + 28px);
+  transform:translateY(100%);
+  transition:transform 0.30s cubic-bezier(0.34,1.1,0.64,1);
+  max-width:620px;margin:0 auto;
+}
+.req-backdrop.open .req-sheet{transform:translateY(0)}
+.req-drag-bar{
+  display:block;width:36px;height:4px;
+  background:rgba(var(--cerulean-alpha),0.22);border-radius:2px;
+  margin:12px auto 20px;
+}
+.req-head{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 20px 16px;
+  border-bottom:1px solid rgba(var(--cerulean-alpha),0.10);
+  position:relative;
+}
+.req-head::before{
+  content:'';position:absolute;top:0;left:20px;right:20px;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(var(--cerulean-alpha),0.42),transparent);
+}
+.req-title{
+  font-family:'Cormorant Garamond',serif;font-size:1.28rem;font-weight:400;
+  color:var(--text);letter-spacing:0.01em;
+  display:flex;align-items:center;gap:8px;
+}
+.req-title-star{color:rgba(var(--cerulean-alpha),0.68);font-size:0.95rem}
+.req-close{
+  background:none;border:none;cursor:pointer;
+  color:var(--muted-3);font-size:1.05rem;line-height:1;
+  padding:6px;-webkit-tap-highlight-color:transparent;
+  transition:color 0.16s;font-family:'Inter',sans-serif;
+}
+.req-close:hover{color:var(--text)}
+.req-body{padding:20px 20px 0}
+.req-intro{font-size:0.84rem;color:var(--muted-3);line-height:1.70;margin-bottom:18px}
+.req-items{list-style:none;padding:0;margin:0 0 20px;display:flex;flex-direction:column;gap:12px}
+.req-item{display:flex;align-items:flex-start;gap:10px;font-size:0.88rem}
+.req-item-star{color:rgba(var(--cerulean-alpha),0.58);font-size:0.60rem;flex-shrink:0;margin-top:4px}
+.req-item-label{font-weight:500;color:var(--text);line-height:1.4}
+.req-item-note{font-size:0.74rem;color:var(--muted-3);margin-top:2px;line-height:1.52}
+.req-footer{
+  font-size:0.76rem;color:var(--muted-3);line-height:1.62;
+  padding-top:16px;border-top:1px solid rgba(var(--cerulean-alpha),0.08);
+}
+.req-footer strong{color:rgba(var(--cerulean-alpha),0.74);font-weight:500}
+
 /* ══ DESKTOP RESPONSIVE ═════════════════════════════════════════════════════ */
 .desk-header{display:none}
 
@@ -657,7 +713,7 @@ strong{color:var(--rose);font-weight:500}
     <div class="go-deeper">
       <div class="go-deeper-label">Go deeper</div>
       <p class="go-deeper-text">A natal reading is built from your exact birth chart, not your Sun sign. It covers the full architecture of how you work, decide, and relate. Ask Jordan about getting one.</p>
-      <button class="go-deeper-cta" onclick="void(0)">Request a reading &rarr;</button>
+      <button class="go-deeper-cta" onclick="openReadingModal()">Request a reading &rarr;</button>
     </div>
 
   </div>
@@ -680,6 +736,38 @@ strong{color:var(--rose);font-weight:500}
     <span class="nav-label">Your Sign</span>
   </button>
 </nav>
+
+<!-- ══ REQUEST A READING MODAL ════════════════════════════════════════════════ -->
+<div class="req-backdrop" id="reqBackdrop" onclick="closeReadingModal(event)">
+  <div class="req-sheet" id="reqSheet">
+    <span class="req-drag-bar"></span>
+    <div class="req-head">
+      <span class="req-title"><span class="req-title-star">✦</span> Request a Reading</span>
+      <button class="req-close" onclick="closeReadingModal(true)" aria-label="Close">✕</button>
+    </div>
+    <div class="req-body">
+      <p class="req-intro">A natal chart reading is built from your exact birth data, not your Sun sign. It covers the full architecture of how you work, decide, and relate. Three things Jordan needs:</p>
+      <ul class="req-items">
+        <li class="req-item">
+          <span class="req-item-star">✦</span>
+          <div><div class="req-item-label">Birth date</div></div>
+        </li>
+        <li class="req-item">
+          <span class="req-item-star">✦</span>
+          <div>
+            <div class="req-item-label">Birth time</div>
+            <div class="req-item-note">As exact as you know it. Even an approximate hour helps.</div>
+          </div>
+        </li>
+        <li class="req-item">
+          <span class="req-item-star">✦</span>
+          <div><div class="req-item-label">Birth city and country</div></div>
+        </li>
+      </ul>
+      <p class="req-footer"><strong>DM Jordan on Slack.</strong> Readings are built by hand and typically delivered within a few days.</p>
+    </div>
+  </div>
+</div>
 
 </div><!-- /app -->
 
@@ -875,6 +963,16 @@ if('ontouchstart' in window){
     p.addEventListener('mouseenter',()=>{let d=p._detail;if(!d){d=document.createElement('div');d.className='pill-detail';d.textContent=p.getAttribute('data-tip');p.appendChild(d);p._detail=d;}d.classList.add('visible');});
     p.addEventListener('mouseleave',()=>{if(p._detail)p._detail.classList.remove('visible');});
   });
+}
+
+/* ── REQUEST MODAL ─────────────────────────────────────────────────────────── */
+function openReadingModal(){
+  document.getElementById('reqBackdrop').classList.add('open');
+}
+function closeReadingModal(e){
+  if(e===true||e.target===document.getElementById('reqBackdrop')){
+    document.getElementById('reqBackdrop').classList.remove('open');
+  }
 }
 </script>
 </body>
