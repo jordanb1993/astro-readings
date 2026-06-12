@@ -1,32 +1,35 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <!-- Background -->
-  <rect width="512" height="512" rx="114" fill="#09102a"/>
+  <!-- Background: deep plum -->
+  <rect width="512" height="512" rx="114" fill="#0a0614"/>
+
   <!-- Outer ring -->
-  <circle cx="256" cy="256" r="198" fill="none" stroke="#d0a840" stroke-width="1.5" opacity="0.35"/>
+  <circle cx="256" cy="256" r="210" fill="none" stroke="#c9a84c" stroke-width="1.5" opacity="0.35"/>
   <!-- Inner ring -->
-  <circle cx="256" cy="256" r="148" fill="none" stroke="#d0a840" stroke-width="1" opacity="0.22"/>
-  <!-- 8-point star / compass rose -->
-  <g transform="translate(256,256)" fill="#d0a840">
-    <!-- Cardinal points (larger) -->
-    <polygon points="0,-88 7,-12 0,0 -7,-12" opacity="0.95"/>
-    <polygon points="0,88 7,12 0,0 -7,12" opacity="0.95"/>
-    <polygon points="-88,0 -12,7 0,0 -12,-7" opacity="0.95"/>
-    <polygon points="88,0 12,7 0,0 12,-7" opacity="0.95"/>
-    <!-- Diagonal points (smaller) -->
-    <polygon points="0,-62 5,-8 0,0 -5,-8" opacity="0.55" transform="rotate(45)"/>
-    <polygon points="0,-62 5,-8 0,0 -5,-8" opacity="0.55" transform="rotate(135)"/>
-    <polygon points="0,-62 5,-8 0,0 -5,-8" opacity="0.55" transform="rotate(225)"/>
-    <polygon points="0,-62 5,-8 0,0 -5,-8" opacity="0.55" transform="rotate(315)"/>
+  <circle cx="256" cy="256" r="158" fill="none" stroke="#c9a84c" stroke-width="1" opacity="0.20"/>
+
+  <!-- Cardinal compass points — long, bold, bright gold -->
+  <g transform="translate(256,256)" fill="#c9a84c">
+    <polygon points="0,-148  11,-28  0,-6  -11,-28" opacity="1"/>
+    <polygon points="0,148   11,28   0,6   -11,28"  opacity="1"/>
+    <polygon points="148,0   28,11   6,0   28,-11"  opacity="1"/>
+    <polygon points="-148,0 -28,11  -6,0  -28,-11"  opacity="1"/>
   </g>
-  <!-- Center dot -->
-  <circle cx="256" cy="256" r="6" fill="#d0a840" opacity="0.9"/>
-  <!-- Small constellation dots -->
-  <circle cx="256" cy="108" r="2.5" fill="#d0a840" opacity="0.5"/>
-  <circle cx="340" cy="156" r="2" fill="#4ab8e8" opacity="0.45"/>
-  <circle cx="172" cy="156" r="2" fill="#4ab8e8" opacity="0.45"/>
-  <circle cx="108" cy="256" r="2.5" fill="#d0a840" opacity="0.5"/>
-  <circle cx="404" cy="256" r="2.5" fill="#d0a840" opacity="0.5"/>
-  <circle cx="172" cy="356" r="2" fill="#4ab8e8" opacity="0.45"/>
-  <circle cx="340" cy="356" r="2" fill="#4ab8e8" opacity="0.45"/>
-  <circle cx="256" cy="404" r="2.5" fill="#d0a840" opacity="0.5"/>
+
+  <!-- Diagonal points — shorter, rose -->
+  <g transform="translate(256,256)" fill="#d4a0b5">
+    <polygon points="0,-92  7,-18  0,0  -7,-18" opacity="0.85" transform="rotate(45)"/>
+    <polygon points="0,-92  7,-18  0,0  -7,-18" opacity="0.85" transform="rotate(135)"/>
+    <polygon points="0,-92  7,-18  0,0  -7,-18" opacity="0.85" transform="rotate(225)"/>
+    <polygon points="0,-92  7,-18  0,0  -7,-18" opacity="0.85" transform="rotate(315)"/>
+  </g>
+
+  <!-- Center: gold ring with plum core -->
+  <circle cx="256" cy="256" r="14" fill="#c9a84c"/>
+  <circle cx="256" cy="256" r="7"  fill="#0a0614"/>
+
+  <!-- Cardinal tip dots -->
+  <circle cx="256" cy="108" r="4.5" fill="#c9a84c" opacity="0.90"/>
+  <circle cx="404" cy="256" r="4.5" fill="#c9a84c" opacity="0.90"/>
+  <circle cx="256" cy="404" r="4.5" fill="#c9a84c" opacity="0.90"/>
+  <circle cx="108" cy="256" r="4.5" fill="#c9a84c" opacity="0.90"/>
 </svg>
