@@ -38,6 +38,4 @@ When rebuilding for a new week:
 
 ## Deployed
 
-`pathfinderastro.vercel.app` — Netlify site ID `dc5dc726-f6bf-4cc3-994c-261398029946`
-
-Deploy: `netlify deploy` from `the stars/` root → get draft ID → `netlify api restoreSiteDeploy` with site_id + deploy_id.
+`pathfinderastro.vercel.app` — deployed on Vercel, auto-deploys on every `git push origin main` from `pathfinder/` root.

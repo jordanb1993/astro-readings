@@ -141,7 +141,7 @@ Creative vision is at maximum height. The business ideas generated now will be m
 
 Any changes to workspace files that should be backed up:
 ```bash
-cd "/Users/jordanashleybarney/Library/Mobile Documents/iCloud~md~obsidian/Documents/the stars"
+cd "/Users/jordanashleybarney/Library/Mobile Documents/iCloud~md~obsidian/Documents/pathfinder"
 git add -A && git commit -m "build session: [brief description]" && git push origin main
 ```
 

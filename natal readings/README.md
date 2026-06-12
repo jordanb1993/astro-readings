@@ -177,7 +177,7 @@ The design language is locked. Do not deviate without Jordan's explicit instruct
 Run from the routine folder:
 
 ```bash
-cd "/Users/jordanashleybarney/Library/Mobile Documents/iCloud~md~obsidian/Documents/the stars/routine"
+cd "/Users/jordanashleybarney/Library/Mobile Documents/iCloud~md~obsidian/Documents/pathfinder/routine"
 python3 - << 'EOF'
 import sys, os
 os.makedirs("ephe", exist_ok=True)
@@ -326,7 +326,7 @@ open "natal readings/[name]-wheel.html"
 ### Step 5 — Commit and push
 
 ```bash
-cd "/Users/jordanashleybarney/Library/Mobile Documents/iCloud~md~obsidian/Documents/the stars"
+cd "/Users/jordanashleybarney/Library/Mobile Documents/iCloud~md~obsidian/Documents/pathfinder"
 git add "natal readings/[name]-wheel.html"
 git commit -m "Add [Name] natal chart wheel"
 git push origin main
