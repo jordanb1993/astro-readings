@@ -98,21 +98,15 @@
 <!-- NATAL -->
 <div id="panel-natal">
   <nav class="natal-subnav" aria-label="Natal sections">
-    <button class="subnav-tab active" data-sub="chart" onclick="switchSub('chart',this)">
-      <span class="sn-icon">✦</span> Chart
-    </button>
-    <button class="subnav-tab" data-sub="identity" onclick="switchSub('identity',this)">
-      <span class="sn-icon">☉</span> Identity
-    </button>
-    <button class="subnav-tab" data-sub="depth" onclick="switchSub('depth',this)">
-      <span class="sn-icon">♒</span> Depth
-    </button>
-    <button class="subnav-tab" data-sub="roots" onclick="switchSub('roots',this)">
-      <span class="sn-icon">♋</span> Roots
-    </button>
-    <button class="subnav-tab" data-sub="soul" onclick="switchSub('soul',this)">
-      <span class="sn-icon">♓</span> Soul
-    </button>
+    <button class="subnav-tab active" data-sub="chart" onclick="switchSub('chart',this)"><span class="sn-icon">◯</span> Chart</button>
+    <button class="subnav-tab" data-sub="portrait" onclick="switchSub('portrait',this)"><span class="sn-icon">✦</span> Portrait</button>
+    <button class="subnav-tab" data-sub="signature" onclick="switchSub('signature',this)"><span class="sn-icon">♐</span> Signature</button>
+    <button class="subnav-tab" data-sub="constitution" onclick="switchSub('constitution',this)"><span class="sn-icon">◐</span> Constitution</button>
+    <button class="subnav-tab" data-sub="formative" onclick="switchSub('formative',this)"><span class="sn-icon">♄</span> Formative</button>
+    <button class="subnav-tab" data-sub="shadow" onclick="switchSub('shadow',this)"><span class="sn-icon">☽</span> Shadow</button>
+    <button class="subnav-tab" data-sub="arc" onclick="switchSub('arc',this)"><span class="sn-icon">☊</span> Arc</button>
+    <button class="subnav-tab" data-sub="archetype" onclick="switchSub('archetype',this)"><span class="sn-icon">✧</span> Archetype</button>
+    <button class="subnav-tab" data-sub="poem" onclick="switchSub('poem',this)"><span class="sn-icon">∿</span> Poem</button>
   </nav>
 
   <div class="natal-body">
@@ -152,8 +146,8 @@
   </div>
 </div>
 
-<!-- IDENTITY -->
-<div class="subpanel sp-reading" id="sp-identity">
+<!-- PORTRAIT -->
+<div class="subpanel sp-reading" id="sp-portrait">
   <svg class="geo-bg" viewBox="0 0 375 812" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
     <polygon points="188,30 320,110 362,310 295,540 188,590 81,540 13,310 56,110" fill="none" stroke="rgba(201,168,76,0.07)" stroke-width="0.6"/>
     <circle cx="188" cy="30" r="2.0" fill="rgba(201,168,76,0.35)"/>
@@ -165,7 +159,7 @@
   <div class="reading-inner accent-gold">
     <div class="panel-heading">
       <div class="panel-eyebrow-sm">natal reading</div>
-      <div class="panel-title-lg">The Essential Signature</div>
+      <div class="panel-title-lg">Portrait</div>
     </div>
 
     <div class="sec-card">
@@ -206,7 +200,23 @@
       </div>
     </div>
 
-    <div class="sep"><span class="sep-inner">Sun &middot; Mercury &middot; Midheaven</span></div>
+    <div class="sep-stars">&#x2736; &nbsp; &#x2727; &nbsp; &#x2736;</div>
+  </div>
+</div>
+
+<!-- SIGNATURE -->
+<div class="subpanel sp-reading" id="sp-signature">
+  <svg class="geo-bg" viewBox="0 0 375 812" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <polygon points="188,30 320,110 362,310 295,540 188,590 81,540 13,310 56,110" fill="none" stroke="rgba(201,168,76,0.07)" stroke-width="0.6"/>
+    <circle cx="188" cy="30" r="2.0" fill="rgba(201,168,76,0.35)"/>
+    <circle cx="188" cy="590" r="1.8" fill="rgba(201,168,76,0.28)"/>
+  </svg>
+
+  <div class="reading-inner accent-gold">
+    <div class="panel-heading">
+      <div class="panel-eyebrow-sm">chart ruler &middot; dominant theme</div>
+      <div class="panel-title-lg">Signature</div>
+    </div>
 
     <div class="sec-card">
       <div class="sec-head">
@@ -246,8 +256,8 @@
   </div>
 </div>
 
-<!-- DEPTH -->
-<div class="subpanel sp-reading" id="sp-depth">
+<!-- CONSTITUTION -->
+<div class="subpanel sp-reading" id="sp-constitution">
   <svg class="geo-bg" viewBox="0 0 375 812" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
     <polygon points="188,50 340,140 375,340 305,560 188,610 71,560 0,340 35,140" fill="none" stroke="rgba(201,168,76,0.065)" stroke-width="0.55"/>
     <circle cx="188" cy="300" r="3.0" fill="none" stroke="rgba(62,143,192,0.12)" stroke-width="0.6"/>
@@ -257,8 +267,8 @@
 
   <div class="reading-inner accent-cerulean">
     <div class="panel-heading">
-      <div class="panel-eyebrow-sm">inner life</div>
-      <div class="panel-title-lg">The Interior Fields</div>
+      <div class="panel-eyebrow-sm">core drives</div>
+      <div class="panel-title-lg">Constitution</div>
     </div>
 
     <div class="sec-card">
@@ -280,32 +290,12 @@
       </div>
     </div>
 
-    <div class="sep"><span class="sep-inner">Mars &middot; 7th House</span></div>
-
-    <div class="sec-card">
-      <div class="sec-head">
-        <div class="sec-sign-glyph">&#x264E;</div>
-        <div class="sec-meta">
-          <div class="sec-eyebrow">MARS &middot; LIBRA 28&deg;16&prime; &middot; 7TH HOUSE &middot; APPROACHING ANARETIC</div>
-          <div class="sec-title">Mars in the Partnership House</div>
-          <div class="sec-tagline">the drive moves through relationship before it moves alone</div>
-        </div>
-      </div>
-      <div class="kw-row">
-        <span class="kw">MARS</span><span class="kw">LIBRA</span><span class="kw">7TH HOUSE</span><span class="kw">COLLABORATION</span><span class="kw">28&deg;</span>
-      </div>
-      <div class="sec-body">
-        <p>Mars in Libra in the 7th house. Drive and desire move through partnership before they move alone. Dasha operates most powerfully in collaboration or with a clear counterpart. Acting solo is harder not from lack of capacity but from how this Mars gets fuel: the quality of the connection, the alignment of the mission.</p>
-        <p>At 28&deg; Libra, Mars approaches the anaretic degree. The relational drive is concentrated. The urgency around finding the right collaborator is not noise. It is this Mars doing its job.</p>
-      </div>
-    </div>
-
     <div class="sep-stars">&#x2736; &nbsp; &#x2727; &nbsp; &#x2736;</div>
   </div>
 </div>
 
-<!-- ROOTS -->
-<div class="subpanel sp-reading" id="sp-roots">
+<!-- FORMATIVE -->
+<div class="subpanel sp-reading" id="sp-formative">
   <svg class="geo-bg" viewBox="0 0 375 812" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
     <polygon points="188,40 310,120 345,300 290,510 188,555 86,510 30,300 65,120" fill="none" stroke="rgba(201,168,76,0.065)" stroke-width="0.55"/>
     <line x1="188" y1="300" x2="130" y2="460" stroke="rgba(80,142,68,0.09)" stroke-width="0.4"/>
@@ -316,30 +306,8 @@
 
   <div class="reading-inner accent-teal">
     <div class="panel-heading">
-      <div class="panel-eyebrow-sm">foundation</div>
-      <div class="panel-title-lg">The Foundation Work</div>
-    </div>
-
-    <div class="sec-card">
-      <div class="sec-head">
-        <div class="sec-sign-glyph">&#x264B;</div>
-        <div class="sec-meta">
-          <div class="sec-eyebrow">NORTH NODE &middot; CANCER 15&deg;37&prime; Rx &middot; 4TH HOUSE &middot; SOUL PATH</div>
-          <div class="sec-title">The Direction of Growth</div>
-          <div class="sec-tagline">not the home that proves something &mdash; the one that holds you</div>
-        </div>
-      </div>
-      <div class="kw-row">
-        <span class="kw">NORTH NODE</span><span class="kw">CANCER</span><span class="kw">4TH HOUSE</span><span class="kw">HOME</span><span class="kw">BELONGING</span>
-      </div>
-      <div class="sec-body">
-        <p>The North Node in Cancer in the 4th house. The soul path is toward emotional rootedness: the ability to be held, to belong, to have a home that is felt rather than achieved. The South Node in Capricorn in the 10th is the old pattern: building for approval, structuring the self to earn legitimacy.</p>
-        <p>The growth direction is the opposite. Not more achievement. More home.</p>
-        <p>This development is quiet and private. It produces no visible outputs. It runs below the Sagittarius stellium&rsquo;s public orientation, below the reaching toward meaning. It is the work of tending what is already here.</p>
-      </div>
-    </div>
-
-    <div class="div-wrap" style="margin-bottom:12px">
+      <div class="panel-eyebrow-sm">chiron &middot; saturn &middot; early formation</div>
+      <div class="panel-title-lg">Formative</div>
     </div>
 
     <div class="dive-wrap">
@@ -381,8 +349,97 @@
   </div>
 </div>
 
-<!-- SOUL -->
-<div class="subpanel sp-reading" id="sp-soul">
+<!-- SHADOW -->
+<div class="subpanel sp-reading" id="sp-shadow">
+  <svg class="geo-bg" viewBox="0 0 375 812" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <polygon points="188,50 340,140 375,340 305,560 188,610 71,560 0,340 35,140" fill="none" stroke="rgba(201,168,76,0.065)" stroke-width="0.55"/>
+    <circle cx="188" cy="300" r="3.0" fill="none" stroke="rgba(62,143,192,0.12)" stroke-width="0.6"/>
+    <circle cx="188" cy="300" r="1.8" fill="rgba(62,143,192,0.16)"/>
+    <circle cx="188" cy="50" r="1.8" fill="rgba(201,168,76,0.32)"/>
+  </svg>
+
+  <div class="reading-inner accent-cerulean">
+    <div class="panel-heading">
+      <div class="panel-eyebrow-sm">7th house &middot; descendant &middot; projection</div>
+      <div class="panel-title-lg">Shadow</div>
+    </div>
+
+    <div class="sec-card">
+      <div class="sec-head">
+        <div class="sec-sign-glyph">&#x264E;</div>
+        <div class="sec-meta">
+          <div class="sec-eyebrow">MARS &middot; LIBRA 28&deg;16&prime; &middot; 7TH HOUSE &middot; APPROACHING ANARETIC</div>
+          <div class="sec-title">Mars in the Partnership House</div>
+          <div class="sec-tagline">the drive moves through relationship before it moves alone</div>
+        </div>
+      </div>
+      <div class="kw-row">
+        <span class="kw">MARS</span><span class="kw">LIBRA</span><span class="kw">7TH HOUSE</span><span class="kw">COLLABORATION</span><span class="kw">28&deg;</span>
+      </div>
+      <div class="sec-body">
+        <p>Mars in Libra in the 7th house. Drive and desire move through partnership before they move alone. Dasha operates most powerfully in collaboration or with a clear counterpart. Acting solo is harder not from lack of capacity but from how this Mars gets fuel: the quality of the connection, the alignment of the mission.</p>
+        <p>At 28&deg; Libra, Mars approaches the anaretic degree. The relational drive is concentrated. The urgency around finding the right collaborator is not noise. It is this Mars doing its job.</p>
+      </div>
+    </div>
+
+    <div class="sep-stars">&#x2736; &nbsp; &#x2727; &nbsp; &#x2736;</div>
+  </div>
+</div>
+
+<!-- ARC -->
+<div class="subpanel sp-reading" id="sp-arc">
+  <svg class="geo-bg" viewBox="0 0 375 812" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <polygon points="188,28 332,108 370,290 310,500 188,548 66,500 5,290 44,108" fill="none" stroke="rgba(201,168,76,0.08)" stroke-width="0.6"/>
+    <polygon points="188,90 295,162 325,290 278,410 188,440 98,410 51,290 81,162" fill="none" stroke="rgba(201,168,76,0.055)" stroke-width="0.45"/>
+    <circle cx="188" cy="290" r="3.5" fill="none" stroke="rgba(201,168,76,0.15)" stroke-width="0.6"/>
+    <circle cx="188" cy="290" r="1.5" fill="rgba(201,168,76,0.25)"/>
+    <circle cx="188" cy="28" r="2.0" fill="rgba(201,168,76,0.38)"/>
+  </svg>
+
+  <div class="reading-inner accent-teal">
+    <div class="panel-heading">
+      <div class="panel-eyebrow-sm">north node &middot; through-line</div>
+      <div class="panel-title-lg">Arc</div>
+    </div>
+
+    <div class="sec-card">
+      <div class="sec-head">
+        <div class="sec-sign-glyph">&#x264B;</div>
+        <div class="sec-meta">
+          <div class="sec-eyebrow">NORTH NODE &middot; CANCER 15&deg;37&prime; Rx &middot; 4TH HOUSE &middot; SOUL PATH</div>
+          <div class="sec-title">The Direction of Growth</div>
+          <div class="sec-tagline">not the home that proves something &mdash; the one that holds you</div>
+        </div>
+      </div>
+      <div class="kw-row">
+        <span class="kw">NORTH NODE</span><span class="kw">CANCER</span><span class="kw">4TH HOUSE</span><span class="kw">HOME</span><span class="kw">BELONGING</span>
+      </div>
+      <div class="sec-body">
+        <p>The North Node in Cancer in the 4th house. The soul path is toward emotional rootedness: the ability to be held, to belong, to have a home that is felt rather than achieved. The South Node in Capricorn in the 10th is the old pattern: building for approval, structuring the self to earn legitimacy.</p>
+        <p>The growth direction is the opposite. Not more achievement. More home.</p>
+        <p>This development is quiet and private. It produces no visible outputs. It runs below the Sagittarius stellium&rsquo;s public orientation, below the reaching toward meaning. It is the work of tending what is already here.</p>
+      </div>
+    </div>
+
+    <div class="sep"><span class="sep-inner">Through-Line</span></div>
+
+    <div class="throughline">
+      <p>The Sagittarius stellium near the Midheaven says the public life is oriented toward meaning before utility. What is the teaching? What is the truth? What is worth seeking? These are not strategic questions. They are the chart&rsquo;s native orientation.</p>
+      <p>Below the seeking, the Scorpio Moon in the 8th house holds what the public orientation cannot hold: the deep private knowledge, the things accumulated before they&rsquo;re ready to be said. The depth is what makes the seeking real. A Sagittarius that doesn&rsquo;t go deep is just enthusiastic. This one goes down first.</p>
+      <p>The North Node in Cancer in the 4th says the development of this life is not toward more achievement. It is toward being received. The home that holds you. The belonging that doesn&rsquo;t require performance. This is the chart&rsquo;s quietest instruction and its most private.</p>
+      <span class="pull">The seeking is genuine because the depth is real.</span>
+    </div>
+
+    <div class="sep"><span class="sep-inner">Synastry with Jordan</span></div>
+
+    <div id="arc-synastry-inject"></div>
+
+    <div class="sep-stars">&#x2736; &nbsp; &#x2727; &nbsp; &#x2736;</div>
+  </div>
+</div>
+
+<!-- ARCHETYPE -->
+<div class="subpanel sp-reading" id="sp-archetype">
   <svg class="geo-bg" viewBox="0 0 375 812" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
     <polygon points="188,28 332,108 370,290 310,500 188,548 66,500 5,290 44,108" fill="none" stroke="rgba(201,168,76,0.08)" stroke-width="0.6"/>
     <polygon points="188,90 295,162 325,290 278,410 188,440 98,410 51,290 81,162" fill="none" stroke="rgba(201,168,76,0.055)" stroke-width="0.45"/>
@@ -393,18 +450,9 @@
 
   <div class="reading-inner accent-rose">
     <div class="panel-heading">
-      <div class="panel-eyebrow-sm">synthesis</div>
-      <div class="panel-title-lg">The Through-Line</div>
+      <div class="panel-eyebrow-sm">archetype card</div>
+      <div class="panel-title-lg">Archetype</div>
     </div>
-
-    <div class="throughline">
-      <p>The Sagittarius stellium near the Midheaven says the public life is oriented toward meaning before utility. What is the teaching? What is the truth? What is worth seeking? These are not strategic questions. They are the chart&rsquo;s native orientation.</p>
-      <p>Below the seeking, the Scorpio Moon in the 8th house holds what the public orientation cannot hold: the deep private knowledge, the things accumulated before they&rsquo;re ready to be said. The depth is what makes the seeking real. A Sagittarius that doesn&rsquo;t go deep is just enthusiastic. This one goes down first.</p>
-      <p>The North Node in Cancer in the 4th says the development of this life is not toward more achievement. It is toward being received. The home that holds you. The belonging that doesn&rsquo;t require performance. This is the chart&rsquo;s quietest instruction and its most private.</p>
-      <span class="pull">The seeking is genuine because the depth is real.</span>
-    </div>
-
-    <div class="sep"><span class="sep-inner">Archetype</span></div>
 
     <div class="tarot-outer">
       <div class="tarot-card">
@@ -436,7 +484,22 @@
       </div>
     </div>
 
-    <div class="sep"><span class="sep-inner">A Reading in Verse</span></div>
+    <div style="height:16px"></div>
+  </div>
+</div>
+
+<!-- POEM -->
+<div class="subpanel sp-reading" id="sp-poem">
+  <svg class="geo-bg" viewBox="0 0 375 812" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <polygon points="188,28 332,108 370,290 310,500 188,548 66,500 5,290 44,108" fill="none" stroke="rgba(201,168,76,0.08)" stroke-width="0.6"/>
+    <circle cx="188" cy="28" r="2.0" fill="rgba(201,168,76,0.38)"/>
+  </svg>
+
+  <div class="reading-inner accent-rose">
+    <div class="panel-heading">
+      <div class="panel-eyebrow-sm">a reading in verse</div>
+      <div class="panel-title-lg">Poem</div>
+    </div>
 
     <div class="poem-outer">
       <div class="poem-byline">A Reading in Verse &nbsp;&middot;&nbsp; Dasha</div>
@@ -660,5 +723,12 @@ const CHART={
 };
 </script>
 <script src="/pathfinder-core.js"></script>
+<script>
+(function(){
+  const src=document.getElementById('synastry-reading-src');
+  const dest=document.getElementById('arc-synastry-inject');
+  if(src&&dest)dest.innerHTML=src.innerHTML;
+})();
+</script>
 </body>
 </html>
