@@ -40,7 +40,7 @@ Full copy rewrite across all three charts:
 
 1. **Archetype flip card design** — all three charts have `<!-- BUILD: flip card redesign pending -->` comments. Front: archetype name + compass SVG. Back: body description. CSS `rotateY` flip on tap. Apply to jordan/marina/dasha.html and push.
 
-2. **Mimi + Carina copy as text** — no more standalone scrolling chart builds. All future natal builds are Pathfinder app format only. Write voice canon copy for Mimi and Carina as `.md` draft files (name-throughout, plain-language-first, 9-section structure) in `charts/` alongside their birth data. Ready to drop into app builds when Jordan decides to build their charts.
+2. **Voice canon copy drafts for all remaining charts** — no more standalone scrolling chart builds. All future natal builds are Pathfinder app format only. Write voice canon copy as `.md` draft files for all 8 charts not yet in Pathfinder format: **carina, mimi, hazel, iza, kate, su, yvonne** (have old scrolling HTMLs) + **cat** (birth data only). Name-throughout, plain-language-first, 9-section structure (Portrait/Signature/Constitution/Formative/Shadow/Arc/Archetype/Poem). Files go in `charts/` alongside birth data. Ready to drop into app builds when Jordan decides to build each chart.
 
 3. **Reddit astrology vocabulary research** — structured pass to expand voice-canon.md Vocabulary Library. Target: r/astrology, r/AskAstrologers, r/astrologyreadings. One planet or aspect type per session. Route findings to voice-canon.md + relevant transit library files.
 
