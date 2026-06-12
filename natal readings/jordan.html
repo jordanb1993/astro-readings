@@ -807,21 +807,15 @@ end shared styles -->
 
   <!-- Sub-navigation -->
   <nav class="natal-subnav" aria-label="Natal sections">
-    <button class="subnav-tab active" data-sub="chart" onclick="switchSub('chart',this)">
-      <span class="sn-icon">✦</span> Chart
-    </button>
-    <button class="subnav-tab" data-sub="identity" onclick="switchSub('identity',this)">
-      <span class="sn-icon">☉</span> Identity
-    </button>
-    <button class="subnav-tab" data-sub="depth" onclick="switchSub('depth',this)">
-      <span class="sn-icon">♏</span> Depth
-    </button>
-    <button class="subnav-tab" data-sub="roots" onclick="switchSub('roots',this)">
-      <span class="sn-icon">⚷</span> Roots
-    </button>
-    <button class="subnav-tab" data-sub="soul" onclick="switchSub('soul',this)">
-      <span class="sn-icon">☊</span> Soul
-    </button>
+    <button class="subnav-tab active" data-sub="chart" onclick="switchSub('chart',this)"><span class="sn-icon">◯</span> Chart</button>
+    <button class="subnav-tab" data-sub="portrait" onclick="switchSub('portrait',this)"><span class="sn-icon">✦</span> Portrait</button>
+    <button class="subnav-tab" data-sub="signature" onclick="switchSub('signature',this)"><span class="sn-icon">♏</span> Signature</button>
+    <button class="subnav-tab" data-sub="constitution" onclick="switchSub('constitution',this)"><span class="sn-icon">◐</span> Constitution</button>
+    <button class="subnav-tab" data-sub="formative" onclick="switchSub('formative',this)"><span class="sn-icon">♄</span> Formative</button>
+    <button class="subnav-tab" data-sub="shadow" onclick="switchSub('shadow',this)"><span class="sn-icon">☽</span> Shadow</button>
+    <button class="subnav-tab" data-sub="arc" onclick="switchSub('arc',this)"><span class="sn-icon">☊</span> Arc</button>
+    <button class="subnav-tab" data-sub="archetype" onclick="switchSub('archetype',this)"><span class="sn-icon">✧</span> Archetype</button>
+    <button class="subnav-tab" data-sub="poem" onclick="switchSub('poem',this)"><span class="sn-icon">∿</span> Poem</button>
   </nav>
 
   <!-- Sub-panel body -->
@@ -881,8 +875,8 @@ end shared styles -->
 
 </div><!-- /sp-chart -->
 
-<!-- ══ IDENTITY ══════════════════════════════════════════════════════════════ -->
-<div class="subpanel sp-reading" id="sp-identity">
+<!-- ══ PORTRAIT ════════════════════════════════════════════════════════════════ -->
+<div class="subpanel sp-reading" id="sp-portrait">
 
   <svg class="geo-bg" viewBox="0 0 375 812" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
     <polygon points="188,30 320,110 362,310 295,540 188,590 81,540 13,310 56,110" fill="none" stroke="rgba(201,168,76,0.07)" stroke-width="0.6"/>
@@ -898,10 +892,6 @@ end shared styles -->
     <circle cx="81" cy="540" r="1.4" fill="rgba(201,168,76,0.22)"/>
     <circle cx="13" cy="310" r="1.2" fill="rgba(201,168,76,0.18)"/>
     <circle cx="56" cy="110" r="1.4" fill="rgba(201,168,76,0.24)"/>
-    <!-- Stars scattered in lower half for long panel -->
-    <circle cx="40" cy="650" r="0.8" fill="rgba(201,168,76,0.14)"/>
-    <circle cx="330" cy="680" r="0.7" fill="rgba(201,168,76,0.12)"/>
-    <circle cx="200" cy="720" r="0.9" fill="rgba(201,168,76,0.16)"/>
     <line x1="13" y1="310" x2="362" y2="310" stroke="rgba(201,168,76,0.04)" stroke-width="0.3"/>
   </svg>
 
@@ -909,7 +899,7 @@ end shared styles -->
 
     <div class="panel-heading">
       <div class="panel-eyebrow-sm">natal reading</div>
-      <div class="panel-title-lg">The Essential Signature</div>
+      <div class="panel-title-lg">The Portrait</div>
     </div>
 
     <div class="sec-card">
@@ -950,6 +940,107 @@ end shared styles -->
         <p>The work of this chart is to let the Sagittarius self be the one who shows up at the Gemini door.</p>
         <span class="pull">29° is not a flaw in the design. It is the design.</span>
       </div>
+    </div>
+
+    <div class="sep-stars">✦ &nbsp; ✧ &nbsp; ✦</div>
+
+  </div>
+</div><!-- /sp-portrait -->
+
+<!-- ══ SIGNATURE ══════════════════════════════════════════════════════════════ -->
+<div class="subpanel sp-reading" id="sp-signature">
+
+  <svg class="geo-bg" viewBox="0 0 375 812" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <polygon points="188,50 340,140 375,340 305,560 188,610 71,560 0,340 35,140" fill="none" stroke="rgba(201,168,76,0.065)" stroke-width="0.55"/>
+    <line x1="35" y1="140" x2="305" y2="560" stroke="rgba(201,168,76,0.04)" stroke-width="0.35"/>
+    <line x1="340" y1="140" x2="71" y2="560" stroke="rgba(201,168,76,0.04)" stroke-width="0.35"/>
+    <circle cx="188" cy="300" r="3.0" fill="none" stroke="rgba(62,143,192,0.12)" stroke-width="0.6"/>
+    <circle cx="188" cy="300" r="1.8" fill="rgba(62,143,192,0.16)"/>
+    <circle cx="210" cy="285" r="1.2" fill="rgba(62,143,192,0.12)"/>
+    <circle cx="168" cy="285" r="1.2" fill="rgba(62,143,192,0.12)"/>
+    <circle cx="220" cy="310" r="0.9" fill="rgba(62,143,192,0.10)"/>
+    <line x1="188" y1="300" x2="210" y2="285" stroke="rgba(62,143,192,0.10)" stroke-width="0.5"/>
+    <line x1="188" y1="300" x2="168" y2="285" stroke="rgba(62,143,192,0.10)" stroke-width="0.5"/>
+    <line x1="188" y1="300" x2="220" y2="310" stroke="rgba(62,143,192,0.08)" stroke-width="0.4"/>
+    <circle cx="188" cy="50" r="1.8" fill="rgba(201,168,76,0.32)"/>
+    <circle cx="340" cy="140" r="1.3" fill="rgba(201,168,76,0.22)"/>
+    <circle cx="375" cy="340" r="1.1" fill="rgba(201,168,76,0.18)"/>
+    <circle cx="305" cy="560" r="1.3" fill="rgba(201,168,76,0.22)"/>
+    <circle cx="71" cy="560" r="1.3" fill="rgba(201,168,76,0.22)"/>
+    <circle cx="0" cy="340" r="1.1" fill="rgba(201,168,76,0.18)"/>
+    <circle cx="35" cy="140" r="1.3" fill="rgba(201,168,76,0.22)"/>
+  </svg>
+
+  <div class="reading-inner accent-cerulean">
+
+    <div class="panel-heading">
+      <div class="panel-eyebrow-sm">natal reading</div>
+      <div class="panel-title-lg">The Essential Signature</div>
+    </div>
+
+    <div class="sec-card">
+      <div class="sec-head">
+        <div class="sec-sign-glyph">♏</div>
+        <div class="sec-meta">
+          <div class="sec-eyebrow">MERCURY · VENUS · JUPITER · SCORPIO · 5TH HOUSE · STELLIUM</div>
+          <div class="sec-title">The Scorpio Inner Life</div>
+          <div class="sec-tagline">nothing in the 5th house is casual</div>
+        </div>
+      </div>
+      <div class="kw-row">
+        <span class="kw">STELLIUM</span><span class="kw">5TH HOUSE</span><span class="kw">COMPRESSION</span><span class="kw">TOTAL LOVE</span><span class="kw">PRIVATE JOY</span>
+      </div>
+      <div class="sec-body">
+        <p>Three planets in Scorpio in the 5th house: creativity, romance, joy, the things done purely because they matter. The 5th house is where Jordan's most privately held life is. The work that is genuinely hers. The love that is fully meant. The passion projects with no performance layer.</p>
+        <p>Mercury in Scorpio reads beneath what is said, finds the thing being withheld, holds information the way Scorpio holds everything: completely, and for a long time. Venus in Scorpio loves with full presence or not at all. Jupiter in Scorpio expands by going deeper rather than wider, into the places most people avoid.</p>
+        <p>The 5th house in Libra cusp moving into Scorpio creates a specific tension: the door to this house looks diplomatic, balanced, social. What lives inside is Scorpio. Joy here is not light. It is compressed, total, and real.</p>
+        <span class="pull">The door looks diplomatic. What lives inside is Scorpio.</span>
+      </div>
+    </div>
+
+    <div class="dive-wrap">
+      <button class="dive-toggle" aria-expanded="false" onclick="toggleDive(this)">
+        <div class="dive-hd">
+          <div class="dive-lbl"><span class="dive-lbl-glyph">♇</span>Pluto · Scorpio 25°41' · 6th House · Transformation in Work</div>
+          <span class="dive-arrow">▾</span>
+        </div>
+      </button>
+      <div class="dive-body">
+        <div class="dive-content">
+          <p>Pluto has crossed the 6th house cusp at Scorpio 22°07'. The most transformative force in the chart is not confined to the creative and romantic realm. It is in the house of daily work and craft.</p>
+          <p>This means the writing carries Pluto's weight. The astrological system, the AI tools, the transit library: not professional outputs. Transformation made operational. The 6th house is also the house of the body and health, and Pluto in the 6th adds the dimension of deep, biological change to Jordan's relationship with her physical life. What the body goes through is never just physical.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="sep-stars">✦ &nbsp; ✧ &nbsp; ✦</div>
+
+  </div>
+</div><!-- /sp-signature -->
+
+<!-- ══ CONSTITUTION ════════════════════════════════════════════════════════════ -->
+<div class="subpanel sp-reading" id="sp-constitution">
+
+  <svg class="geo-bg" viewBox="0 0 375 812" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <polygon points="188,30 320,110 362,310 295,540 188,590 81,540 13,310 56,110" fill="none" stroke="rgba(201,168,76,0.07)" stroke-width="0.6"/>
+    <line x1="56" y1="110" x2="295" y2="540" stroke="rgba(201,168,76,0.04)" stroke-width="0.35"/>
+    <line x1="320" y1="110" x2="81" y2="540" stroke="rgba(201,168,76,0.04)" stroke-width="0.35"/>
+    <line x1="13" y1="310" x2="362" y2="310" stroke="rgba(201,168,76,0.04)" stroke-width="0.3"/>
+    <circle cx="188" cy="30" r="2.0" fill="rgba(201,168,76,0.35)"/>
+    <circle cx="320" cy="110" r="1.4" fill="rgba(201,168,76,0.24)"/>
+    <circle cx="362" cy="310" r="1.2" fill="rgba(201,168,76,0.18)"/>
+    <circle cx="295" cy="540" r="1.4" fill="rgba(201,168,76,0.22)"/>
+    <circle cx="188" cy="590" r="1.8" fill="rgba(201,168,76,0.28)"/>
+    <circle cx="81" cy="540" r="1.4" fill="rgba(201,168,76,0.22)"/>
+    <circle cx="13" cy="310" r="1.2" fill="rgba(201,168,76,0.18)"/>
+    <circle cx="56" cy="110" r="1.4" fill="rgba(201,168,76,0.24)"/>
+  </svg>
+
+  <div class="reading-inner accent-gold">
+
+    <div class="panel-heading">
+      <div class="panel-eyebrow-sm">natal reading</div>
+      <div class="panel-title-lg">The Constitution</div>
     </div>
 
     <div class="sep"><span class="sep-inner">Sun · North Node · Mars</span></div>
@@ -1025,122 +1116,13 @@ end shared styles -->
     <div class="sep-stars">✦ &nbsp; ✧ &nbsp; ✦</div>
 
   </div>
-</div><!-- /sp-identity -->
+</div><!-- /sp-constitution -->
 
-<!-- ══ DEPTH ═════════════════════════════════════════════════════════════════ -->
-<div class="subpanel sp-reading" id="sp-depth">
-
-  <svg class="geo-bg" viewBox="0 0 375 812" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <polygon points="188,50 340,140 375,340 305,560 188,610 71,560 0,340 35,140" fill="none" stroke="rgba(201,168,76,0.065)" stroke-width="0.55"/>
-    <line x1="35" y1="140" x2="305" y2="560" stroke="rgba(201,168,76,0.04)" stroke-width="0.35"/>
-    <line x1="340" y1="140" x2="71" y2="560" stroke="rgba(201,168,76,0.04)" stroke-width="0.35"/>
-    <!-- Scorpio cluster dots — echoes 5th house stellium -->
-    <circle cx="188" cy="300" r="3.0" fill="none" stroke="rgba(62,143,192,0.12)" stroke-width="0.6"/>
-    <circle cx="188" cy="300" r="1.8" fill="rgba(62,143,192,0.16)"/>
-    <circle cx="210" cy="285" r="1.2" fill="rgba(62,143,192,0.12)"/>
-    <circle cx="168" cy="285" r="1.2" fill="rgba(62,143,192,0.12)"/>
-    <circle cx="220" cy="310" r="0.9" fill="rgba(62,143,192,0.10)"/>
-    <line x1="188" y1="300" x2="210" y2="285" stroke="rgba(62,143,192,0.10)" stroke-width="0.5"/>
-    <line x1="188" y1="300" x2="168" y2="285" stroke="rgba(62,143,192,0.10)" stroke-width="0.5"/>
-    <line x1="188" y1="300" x2="220" y2="310" stroke="rgba(62,143,192,0.08)" stroke-width="0.4"/>
-    <circle cx="188" cy="50" r="1.8" fill="rgba(201,168,76,0.32)"/>
-    <circle cx="340" cy="140" r="1.3" fill="rgba(201,168,76,0.22)"/>
-    <circle cx="375" cy="340" r="1.1" fill="rgba(201,168,76,0.18)"/>
-    <circle cx="305" cy="560" r="1.3" fill="rgba(201,168,76,0.22)"/>
-    <circle cx="71" cy="560" r="1.3" fill="rgba(201,168,76,0.22)"/>
-    <circle cx="0" cy="340" r="1.1" fill="rgba(201,168,76,0.18)"/>
-    <circle cx="35" cy="140" r="1.3" fill="rgba(201,168,76,0.22)"/>
-  </svg>
-
-  <div class="reading-inner accent-cerulean">
-
-    <div class="panel-heading">
-      <div class="panel-eyebrow-sm">inner life</div>
-      <div class="panel-title-lg">The Scorpio Field</div>
-    </div>
-
-    <div class="sec-card">
-      <div class="sec-head">
-        <div class="sec-sign-glyph">♏</div>
-        <div class="sec-meta">
-          <div class="sec-eyebrow">MERCURY · VENUS · JUPITER · SCORPIO · 5TH HOUSE · STELLIUM</div>
-          <div class="sec-title">The Scorpio Inner Life</div>
-          <div class="sec-tagline">nothing in the 5th house is casual</div>
-        </div>
-      </div>
-      <div class="kw-row">
-        <span class="kw">STELLIUM</span><span class="kw">5TH HOUSE</span><span class="kw">COMPRESSION</span><span class="kw">TOTAL LOVE</span><span class="kw">PRIVATE JOY</span>
-      </div>
-      <div class="sec-body">
-        <p>Three planets in Scorpio in the 5th house: creativity, romance, joy, the things done purely because they matter. The 5th house is where Jordan's most privately held life is. The work that is genuinely hers. The love that is fully meant. The passion projects with no performance layer.</p>
-        <p>Mercury in Scorpio reads beneath what is said, finds the thing being withheld, holds information the way Scorpio holds everything: completely, and for a long time. Venus in Scorpio loves with full presence or not at all. Jupiter in Scorpio expands by going deeper rather than wider, into the places most people avoid.</p>
-        <p>The 5th house in Libra cusp moving into Scorpio creates a specific tension: the door to this house looks diplomatic, balanced, social. What lives inside is Scorpio. Joy here is not light. It is compressed, total, and real.</p>
-        <span class="pull">The door looks diplomatic. What lives inside is Scorpio.</span>
-      </div>
-    </div>
-
-    <div class="dive-wrap">
-      <button class="dive-toggle" aria-expanded="false" onclick="toggleDive(this)">
-        <div class="dive-hd">
-          <div class="dive-lbl"><span class="dive-lbl-glyph">♇</span>Pluto · Scorpio 25°41' · 6th House · Transformation in Work</div>
-          <span class="dive-arrow">▾</span>
-        </div>
-      </button>
-      <div class="dive-body">
-        <div class="dive-content">
-          <p>Pluto has crossed the 6th house cusp at Scorpio 22°07'. The most transformative force in the chart is not confined to the creative and romantic realm. It is in the house of daily work and craft.</p>
-          <p>This means the writing carries Pluto's weight. The astrological system, the AI tools, the transit library: not professional outputs. Transformation made operational. The 6th house is also the house of the body and health, and Pluto in the 6th adds the dimension of deep, biological change to Jordan's relationship with her physical life. What the body goes through is never just physical.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="sep"><span class="sep-inner">7th House Architecture</span></div>
-
-    <div class="sec-card">
-      <div class="sec-head">
-        <div class="sec-sign-glyph">♑</div>
-        <div class="sec-meta">
-          <div class="sec-eyebrow">URANUS · NEPTUNE · CAPRICORN · 7TH HOUSE · 0.4° CONJUNCTION</div>
-          <div class="sec-title">The Partnership Field</div>
-          <div class="sec-tagline">disruption and dissolution are natal architecture</div>
-        </div>
-      </div>
-      <div class="kw-row">
-        <span class="kw">URANUS ♅</span><span class="kw">NEPTUNE ♆</span><span class="kw">0.4° APART</span><span class="kw">7TH HOUSE</span><span class="kw">FATED</span>
-      </div>
-      <div class="sec-body">
-        <p>Uranus and Neptune are 0.4° apart, a near-exact generational conjunction. Both are in Jordan's 7th house of partnership, collaboration, and one-on-one relationship. This is natal architecture: disruption and dissolution are not things that happen to Jordan's relationships. They are built into how the relational field is wired.</p>
-        <p>The idealization risk is Neptune. The sudden-disconnection pattern is Uranus. They are not problems to solve; they are the texture of the 7th house as Jordan experiences it. Partnerships feel fated. They can also end with an abruptness Uranus has no apology for.</p>
-        <p>The Capricorn placement grounds this somewhat: the 7th house disruption runs through the register of structure, achievement, and long-term investment. The relationships that pull hardest are ones with Capricornian stakes: career adjacency, shared ambition, the sense that something real is being built together.</p>
-      </div>
-    </div>
-
-    <div class="dive-wrap">
-      <button class="dive-toggle" aria-expanded="false" onclick="toggleDive(this)">
-        <div class="dive-hd">
-          <div class="dive-lbl"><span class="dive-lbl-glyph">♐</span>Sagittarius DSC 29°22' · the partnership threshold</div>
-          <span class="dive-arrow">▾</span>
-        </div>
-      </button>
-      <div class="dive-body">
-        <div class="dive-content">
-          <p>The South Node mirroring pattern (Gemini, 12th house) feeds directly into the 7th house. The unconscious adaptation shapes who arrives at the Descendant before the question of compatibility is asked. The North Node Sun in the 6th is the corrective: the daily-life self, operating without the mirror, draws different people.</p>
-          <p>The Sagittarius DSC at 29°22' mirrors the anaretic Ascendant exactly. The partnership threshold carries the same concentrated urgency as the identity threshold. Both are at the last degree, both pressing toward something not yet fully crossed.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="sep-stars">✦ &nbsp; ✧ &nbsp; ✦</div>
-
-  </div>
-</div><!-- /sp-depth -->
-
-<!-- ══ ROOTS ═════════════════════════════════════════════════════════════════ -->
-<div class="subpanel sp-reading" id="sp-roots">
+<!-- ══ FORMATIVE ══════════════════════════════════════════════════════════════ -->
+<div class="subpanel sp-reading" id="sp-formative">
 
   <svg class="geo-bg" viewBox="0 0 375 812" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
     <polygon points="188,40 310,120 345,300 290,510 188,555 86,510 30,300 65,120" fill="none" stroke="rgba(201,168,76,0.065)" stroke-width="0.55"/>
-    <!-- IC/root motif — lines converging downward -->
     <line x1="188" y1="40" x2="188" y2="555" stroke="rgba(201,168,76,0.04)" stroke-width="0.35"/>
     <line x1="188" y1="300" x2="130" y2="460" stroke="rgba(80,142,68,0.09)" stroke-width="0.4"/>
     <line x1="188" y1="300" x2="246" y2="460" stroke="rgba(80,142,68,0.09)" stroke-width="0.4"/>
@@ -1229,21 +1211,80 @@ end shared styles -->
     <div class="sep-stars">✦ &nbsp; ✧ &nbsp; ✦</div>
 
   </div>
-</div><!-- /sp-roots -->
+</div><!-- /sp-formative -->
 
-<!-- ══ SOUL ═══════════════════════════════════════════════════════════════════ -->
-<div class="subpanel sp-reading" id="sp-soul">
+<!-- ══ SHADOW ══════════════════════════════════════════════════════════════════ -->
+<div class="subpanel sp-reading" id="sp-shadow">
 
   <svg class="geo-bg" viewBox="0 0 375 812" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <!-- More elaborate geometry for the closing panel -->
+    <polygon points="188,50 340,140 375,340 305,560 188,610 71,560 0,340 35,140" fill="none" stroke="rgba(201,168,76,0.065)" stroke-width="0.55"/>
+    <line x1="35" y1="140" x2="305" y2="560" stroke="rgba(201,168,76,0.04)" stroke-width="0.35"/>
+    <line x1="340" y1="140" x2="71" y2="560" stroke="rgba(201,168,76,0.04)" stroke-width="0.35"/>
+    <circle cx="188" cy="50" r="1.8" fill="rgba(201,168,76,0.32)"/>
+    <circle cx="340" cy="140" r="1.3" fill="rgba(201,168,76,0.22)"/>
+    <circle cx="375" cy="340" r="1.1" fill="rgba(201,168,76,0.18)"/>
+    <circle cx="305" cy="560" r="1.3" fill="rgba(201,168,76,0.22)"/>
+    <circle cx="71" cy="560" r="1.3" fill="rgba(201,168,76,0.22)"/>
+    <circle cx="0" cy="340" r="1.1" fill="rgba(201,168,76,0.18)"/>
+    <circle cx="35" cy="140" r="1.3" fill="rgba(201,168,76,0.22)"/>
+  </svg>
+
+  <div class="reading-inner accent-cerulean">
+
+    <div class="panel-heading">
+      <div class="panel-eyebrow-sm">mirror</div>
+      <div class="panel-title-lg">The Shadow</div>
+    </div>
+
+    <div class="sep"><span class="sep-inner">7th House Architecture</span></div>
+
+    <div class="sec-card">
+      <div class="sec-head">
+        <div class="sec-sign-glyph">♑</div>
+        <div class="sec-meta">
+          <div class="sec-eyebrow">URANUS · NEPTUNE · CAPRICORN · 7TH HOUSE · 0.4° CONJUNCTION</div>
+          <div class="sec-title">The Partnership Field</div>
+          <div class="sec-tagline">disruption and dissolution are natal architecture</div>
+        </div>
+      </div>
+      <div class="kw-row">
+        <span class="kw">URANUS ♅</span><span class="kw">NEPTUNE ♆</span><span class="kw">0.4° APART</span><span class="kw">7TH HOUSE</span><span class="kw">FATED</span>
+      </div>
+      <div class="sec-body">
+        <p>Uranus and Neptune are 0.4° apart, a near-exact generational conjunction. Both are in Jordan's 7th house of partnership, collaboration, and one-on-one relationship. This is natal architecture: disruption and dissolution are not things that happen to Jordan's relationships. They are built into how the relational field is wired.</p>
+        <p>The idealization risk is Neptune. The sudden-disconnection pattern is Uranus. They are not problems to solve; they are the texture of the 7th house as Jordan experiences it. Partnerships feel fated. They can also end with an abruptness Uranus has no apology for.</p>
+        <p>The Capricorn placement grounds this somewhat: the 7th house disruption runs through the register of structure, achievement, and long-term investment. The relationships that pull hardest are ones with Capricornian stakes: career adjacency, shared ambition, the sense that something real is being built together.</p>
+      </div>
+    </div>
+
+    <div class="dive-wrap">
+      <button class="dive-toggle" aria-expanded="false" onclick="toggleDive(this)">
+        <div class="dive-hd">
+          <div class="dive-lbl"><span class="dive-lbl-glyph">♐</span>Sagittarius DSC 29°22' · the partnership threshold</div>
+          <span class="dive-arrow">▾</span>
+        </div>
+      </button>
+      <div class="dive-body">
+        <div class="dive-content">
+          <p>The South Node mirroring pattern (Gemini, 12th house) feeds directly into the 7th house. The unconscious adaptation shapes who arrives at the Descendant before the question of compatibility is asked. The North Node Sun in the 6th is the corrective: the daily-life self, operating without the mirror, draws different people.</p>
+          <p>The Sagittarius DSC at 29°22' mirrors the anaretic Ascendant exactly. The partnership threshold carries the same concentrated urgency as the identity threshold. Both are at the last degree, both pressing toward something not yet fully crossed.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="sep-stars">✦ &nbsp; ✧ &nbsp; ✦</div>
+
+  </div>
+</div><!-- /sp-shadow -->
+
+<!-- ══ ARC ═════════════════════════════════════════════════════════════════════ -->
+<div class="subpanel sp-reading" id="sp-arc">
+
+  <svg class="geo-bg" viewBox="0 0 375 812" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
     <polygon points="188,28 332,108 370,290 310,500 188,548 66,500 5,290 44,108" fill="none" stroke="rgba(201,168,76,0.08)" stroke-width="0.6"/>
     <polygon points="188,90 295,162 325,290 278,410 188,440 98,410 51,290 81,162" fill="none" stroke="rgba(201,168,76,0.055)" stroke-width="0.45"/>
-    <polygon points="188,160 258,210 278,290 248,365 188,385 128,365 98,290 118,210" fill="none" stroke="rgba(201,168,76,0.04)" stroke-width="0.35"/>
     <line x1="188" y1="28" x2="188" y2="548" stroke="rgba(201,168,76,0.04)" stroke-width="0.3"/>
     <line x1="5" y1="290" x2="370" y2="290" stroke="rgba(201,168,76,0.04)" stroke-width="0.3"/>
-    <line x1="44" y1="108" x2="310" y2="500" stroke="rgba(201,168,76,0.035)" stroke-width="0.28"/>
-    <line x1="332" y1="108" x2="66" y2="500" stroke="rgba(201,168,76,0.035)" stroke-width="0.28"/>
-    <!-- Center point -->
     <circle cx="188" cy="290" r="3.5" fill="none" stroke="rgba(201,168,76,0.15)" stroke-width="0.6"/>
     <circle cx="188" cy="290" r="1.5" fill="rgba(201,168,76,0.25)"/>
     <circle cx="188" cy="28" r="2.0" fill="rgba(201,168,76,0.38)"/>
@@ -1270,6 +1311,31 @@ end shared styles -->
       <p>The chart is not asking Jordan to become something she is not. It never was.</p>
       <span class="pull">The chart is not asking Jordan to become something she is not. It never was.</span>
     </div>
+
+    <div class="sep-stars">✦ &nbsp; ✧ &nbsp; ✦</div>
+
+  </div>
+</div><!-- /sp-arc -->
+
+<!-- ══ ARCHETYPE ═══════════════════════════════════════════════════════════════ -->
+<div class="subpanel sp-reading" id="sp-archetype">
+
+  <svg class="geo-bg" viewBox="0 0 375 812" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <polygon points="188,28 332,108 370,290 310,500 188,548 66,500 5,290 44,108" fill="none" stroke="rgba(201,168,76,0.08)" stroke-width="0.6"/>
+    <polygon points="188,160 258,210 278,290 248,365 188,385 128,365 98,290 118,210" fill="none" stroke="rgba(201,168,76,0.04)" stroke-width="0.35"/>
+    <circle cx="188" cy="290" r="3.5" fill="none" stroke="rgba(201,168,76,0.15)" stroke-width="0.6"/>
+    <circle cx="188" cy="290" r="1.5" fill="rgba(201,168,76,0.25)"/>
+    <circle cx="188" cy="28" r="2.0" fill="rgba(201,168,76,0.38)"/>
+    <circle cx="332" cy="108" r="1.4" fill="rgba(201,168,76,0.25)"/>
+    <circle cx="370" cy="290" r="1.2" fill="rgba(201,168,76,0.20)"/>
+    <circle cx="310" cy="500" r="1.4" fill="rgba(201,168,76,0.25)"/>
+    <circle cx="188" cy="548" r="2.0" fill="rgba(201,168,76,0.32)"/>
+    <circle cx="66" cy="500" r="1.4" fill="rgba(201,168,76,0.25)"/>
+    <circle cx="5" cy="290" r="1.2" fill="rgba(201,168,76,0.20)"/>
+    <circle cx="44" cy="108" r="1.4" fill="rgba(201,168,76,0.25)"/>
+  </svg>
+
+  <div class="reading-inner accent-gold">
 
     <div class="sep"><span class="sep-inner">Archetype</span></div>
 
@@ -1330,6 +1396,29 @@ end shared styles -->
       </div>
     </div>
 
+    <div style="height:16px"></div>
+  </div>
+</div><!-- /sp-archetype -->
+
+<!-- ══ POEM ════════════════════════════════════════════════════════════════════ -->
+<div class="subpanel sp-reading" id="sp-poem">
+
+  <svg class="geo-bg" viewBox="0 0 375 812" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <polygon points="188,28 332,108 370,290 310,500 188,548 66,500 5,290 44,108" fill="none" stroke="rgba(201,168,76,0.08)" stroke-width="0.6"/>
+    <line x1="44" y1="108" x2="310" y2="500" stroke="rgba(201,168,76,0.035)" stroke-width="0.28"/>
+    <line x1="332" y1="108" x2="66" y2="500" stroke="rgba(201,168,76,0.035)" stroke-width="0.28"/>
+    <circle cx="188" cy="28" r="2.0" fill="rgba(201,168,76,0.38)"/>
+    <circle cx="332" cy="108" r="1.4" fill="rgba(201,168,76,0.25)"/>
+    <circle cx="370" cy="290" r="1.2" fill="rgba(201,168,76,0.20)"/>
+    <circle cx="310" cy="500" r="1.4" fill="rgba(201,168,76,0.25)"/>
+    <circle cx="188" cy="548" r="2.0" fill="rgba(201,168,76,0.32)"/>
+    <circle cx="66" cy="500" r="1.4" fill="rgba(201,168,76,0.25)"/>
+    <circle cx="5" cy="290" r="1.2" fill="rgba(201,168,76,0.20)"/>
+    <circle cx="44" cy="108" r="1.4" fill="rgba(201,168,76,0.25)"/>
+  </svg>
+
+  <div class="reading-inner accent-rose">
+
     <div class="sep"><span class="sep-inner">A Reading in Verse</span></div>
 
     <!-- POEM -->
@@ -1362,7 +1451,7 @@ end shared styles -->
 
     <div style="height:16px"></div>
   </div>
-</div><!-- /sp-soul -->
+</div><!-- /sp-poem -->
 
   </div><!-- /natal-body -->
 </div><!-- /panel-natal -->
