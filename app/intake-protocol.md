@@ -55,7 +55,7 @@ Technical specifications for how the app works internally: agent types, agent be
 - Is modularity mentioned? How?
 - What does the backend need to do that the current workspace doesn't?
 
-**File:** `the build/agent-architecture.md`
+**File:** `app/agent-architecture.md`
 
 ---
 
@@ -91,7 +91,7 @@ How the AI agents should be prompted, calibrated, or fine-tuned: tone, register,
 - How should the agent handle distress vs. curiosity vs. data requests?
 - What existing workspace training (voice-canon.md, KNOWLEDGE.md patterns) does this extend?
 
-**File:** `the build/agent-architecture.md` (training section) · `the build/voice-canon.md`
+**File:** `app/agent-architecture.md` (training section) · `the build/voice-canon.md`
 
 ---
 
