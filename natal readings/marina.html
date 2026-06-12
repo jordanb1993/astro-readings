@@ -11,6 +11,21 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/pathfinder-core.css">
 <!-- shared app styles loaded from pathfinder-core.css -->
+<style>
+/* ── ARCHETYPE CARD — MARINA palette ── */
+.card-wc{background:
+  radial-gradient(ellipse at 15% 20%, rgba(235,155,35,0.72) 0%, transparent 42%),
+  radial-gradient(ellipse at 82% 15%, rgba(195,95,55,0.60) 0%, transparent 40%),
+  radial-gradient(ellipse at 88% 75%, rgba(175,115,155,0.55) 0%, transparent 44%),
+  radial-gradient(ellipse at 18% 85%, rgba(215,135,45,0.62) 0%, transparent 46%),
+  radial-gradient(ellipse at 55% 48%, rgba(250,195,75,0.32) 0%, transparent 40%),
+  radial-gradient(ellipse at 68% 90%, rgba(155,75,115,0.40) 0%, transparent 40%),
+  radial-gradient(ellipse at 40% 5%,  rgba(225,155,35,0.30) 0%, transparent 38%)}
+.card-back-wc{background:
+  radial-gradient(ellipse at 20% 75%, rgba(175,115,155,0.35) 0%, transparent 50%),
+  radial-gradient(ellipse at 80% 22%, rgba(235,155,35,0.28) 0%, transparent 46%),
+  radial-gradient(ellipse at 50% 50%, rgba(195,95,55,0.20) 0%, transparent 55%)}
+</style>
 </head>
 <body>
 <div class="app">
@@ -520,33 +535,168 @@
       <div class="panel-title-lg">The Generous Light</div>
     </div>
 
+    <!-- ARCHETYPE FLIP CARD -->
     <div class="tarot-outer">
-      <div class="tarot-card">
-        <svg class="tarot-arch-svg" viewBox="0 0 260 360" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M18,356 L18,140 Q18,18 130,18 Q242,18 242,140 L242,356" fill="none" stroke="rgba(201,168,76,0.45)" stroke-width="1.2" stroke-linecap="round"/>
-          <path d="M32,356 L32,145 Q32,35 130,35 Q228,35 228,145 L228,356" fill="none" stroke="rgba(201,168,76,0.18)" stroke-width="0.6"/>
-          <circle cx="130" cy="18" r="4" fill="rgba(201,168,76,0.50)"/>
-          <circle cx="130" cy="18" r="7" fill="none" stroke="rgba(201,168,76,0.25)" stroke-width="0.8"/>
-          <circle cx="18" cy="356" r="3" fill="rgba(201,168,76,0.35)"/>
-          <circle cx="242" cy="356" r="3" fill="rgba(201,168,76,0.35)"/>
-          <line x1="35" y1="310" x2="225" y2="310" stroke="rgba(201,168,76,0.22)" stroke-width="0.6"/>
-          <line x1="35" y1="314" x2="225" y2="314" stroke="rgba(201,168,76,0.10)" stroke-width="0.4"/>
-        </svg>
-        <div class="tarot-content">
-          <div class="tarot-ornament">✦ ✧ ✦</div>
-          <svg class="compass-svg" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="40" cy="40" r="30" fill="none" stroke="rgba(201,168,76,0.18)" stroke-width="0.6"/>
-            <circle cx="40" cy="40" r="4" fill="rgba(201,168,76,0.30)"/>
-            <polygon points="40,10 43,37 40,40 37,37" fill="rgba(201,168,76,0.65)"/>
-            <polygon points="40,70 43,43 40,40 37,43" fill="rgba(201,168,76,0.40)"/>
-            <polygon points="10,40 37,37 40,40 37,43" fill="rgba(201,168,76,0.40)"/>
-            <polygon points="70,40 43,37 40,40 43,43" fill="rgba(201,168,76,0.55)"/>
-          </svg>
-          <div class="tarot-name">The Generous Light</div>
-          <div class="tarot-elements">Leo · Libra · Sagittarius</div>
-          <div class="tarot-divider"></div>
-          <!-- BUILD: flip card redesign pending — front: name + compass visual; back: body description -->
-          <div class="tarot-body">Marina's presence raises the room before anything is said. The Leo Sun in the 10th illuminates what it loves. The Jupiter-Libra Ascendant makes the entry an amplification. The Sagittarius Moon in the 3rd carries the question: what is the meaning actually worth speaking here? The wound in the 11th asks to be held by the same community Marina is always holding.</div>
+      <div class="tarot-card" onclick="this.classList.toggle('flipped')">
+        <div class="card-inner">
+
+          <!-- ── FRONT ── -->
+          <div class="card-front">
+            <div class="card-bg"></div>
+            <div class="card-wc"></div>
+            <div class="card-grain"></div>
+            <div class="card-vignette"></div>
+            <div class="card-border-outer"></div>
+            <div class="card-border-inner"></div>
+            <div class="card-numeral">XIX</div>
+
+            <div class="card-sigil-wrap">
+              <svg viewBox="0 0 210 220" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
+                <defs>
+                  <radialGradient id="mArchGlow" cx="50%" cy="62%" r="45%">
+                    <stop offset="0%" stop-color="#e8a020" stop-opacity="0.28"/>
+                    <stop offset="60%" stop-color="#c05010" stop-opacity="0.10"/>
+                    <stop offset="100%" stop-color="#402000" stop-opacity="0.00"/>
+                  </radialGradient>
+                  <radialGradient id="mSunGlow" cx="50%" cy="52%" r="50%">
+                    <stop offset="0%" stop-color="#ffd060" stop-opacity="0.55"/>
+                    <stop offset="40%" stop-color="#e06020" stop-opacity="0.28"/>
+                    <stop offset="100%" stop-color="#402000" stop-opacity="0.00"/>
+                  </radialGradient>
+                  <filter id="mSoftg" x="-40%" y="-40%" width="180%" height="180%">
+                    <feGaussianBlur stdDeviation="2.5" result="b"/>
+                    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+                  </filter>
+                  <filter id="mSunHalo" x="-80%" y="-80%" width="260%" height="260%">
+                    <feGaussianBlur stdDeviation="5"/>
+                  </filter>
+                </defs>
+                <ellipse cx="105" cy="148" rx="32" ry="50" fill="url(#mArchGlow)"/>
+                <circle cx="105" cy="110" r="88" stroke="rgba(208,168,64,0.07)" stroke-width="0.5"/>
+                <circle cx="105" cy="110" r="80" stroke="rgba(208,168,64,0.05)" stroke-width="0.4" stroke-dasharray="1.5 5"/>
+                <!-- secondary rays -->
+                <line x1="105" y1="115" x2="114" y2="93"  stroke="rgba(255,200,60,0.38)" stroke-width="0.5"/>
+                <line x1="105" y1="115" x2="127" y2="104" stroke="rgba(255,200,60,0.38)" stroke-width="0.5"/>
+                <line x1="105" y1="115" x2="127" y2="126" stroke="rgba(225,150,50,0.35)" stroke-width="0.5"/>
+                <line x1="105" y1="115" x2="114" y2="137" stroke="rgba(225,150,50,0.38)" stroke-width="0.5"/>
+                <line x1="105" y1="115" x2="96"  y2="137" stroke="rgba(225,150,50,0.38)" stroke-width="0.5"/>
+                <line x1="105" y1="115" x2="83"  y2="126" stroke="rgba(225,150,50,0.35)" stroke-width="0.5"/>
+                <line x1="105" y1="115" x2="83"  y2="104" stroke="rgba(255,200,60,0.38)" stroke-width="0.5"/>
+                <line x1="105" y1="115" x2="96"  y2="93"  stroke="rgba(255,200,60,0.38)" stroke-width="0.5"/>
+                <!-- primary rays -->
+                <line x1="105" y1="115" x2="105" y2="77"  stroke="rgba(255,215,70,0.72)" stroke-width="1.2"/>
+                <line x1="105" y1="115" x2="132" y2="88"  stroke="rgba(225,155,45,0.65)" stroke-width="1.0"/>
+                <line x1="105" y1="115" x2="143" y2="115" stroke="rgba(255,215,70,0.70)" stroke-width="1.2"/>
+                <line x1="105" y1="115" x2="132" y2="142" stroke="rgba(210,130,80,0.55)" stroke-width="1.0"/>
+                <line x1="105" y1="115" x2="105" y2="153" stroke="rgba(225,155,45,0.62)" stroke-width="1.2"/>
+                <line x1="105" y1="115" x2="78"  y2="142" stroke="rgba(210,130,80,0.55)" stroke-width="1.0"/>
+                <line x1="105" y1="115" x2="67"  y2="115" stroke="rgba(255,215,70,0.70)" stroke-width="1.2"/>
+                <line x1="105" y1="115" x2="78"  y2="88"  stroke="rgba(225,155,45,0.65)" stroke-width="1.0"/>
+                <!-- sun halo -->
+                <circle cx="105" cy="115" r="22" fill="url(#mSunGlow)" filter="url(#mSunHalo)"/>
+                <!-- sun disk -->
+                <circle cx="105" cy="115" r="12" fill="rgba(255,215,80,0.85)"/>
+                <circle cx="105" cy="115" r="6"  fill="rgba(255,240,165,0.96)"/>
+                <circle cx="105" cy="115" r="16" stroke="rgba(255,200,60,0.35)" stroke-width="0.6" fill="none"/>
+                <!-- left post -->
+                <rect x="66" y="106" width="12" height="98" stroke="rgba(240,200,120,0.42)" stroke-width="0.9" fill="none"/>
+                <line x1="69" y1="106" x2="69" y2="204" stroke="rgba(240,200,120,0.10)" stroke-width="0.4"/>
+                <line x1="75" y1="106" x2="75" y2="204" stroke="rgba(240,200,120,0.10)" stroke-width="0.4"/>
+                <line x1="67" y1="118" x2="77" y2="118" stroke="rgba(240,200,120,0.18)" stroke-width="0.5"/>
+                <line x1="67" y1="130" x2="77" y2="130" stroke="rgba(240,200,120,0.18)" stroke-width="0.5"/>
+                <line x1="67" y1="142" x2="77" y2="142" stroke="rgba(240,200,120,0.18)" stroke-width="0.5"/>
+                <line x1="67" y1="154" x2="77" y2="154" stroke="rgba(240,200,120,0.18)" stroke-width="0.5"/>
+                <line x1="67" y1="166" x2="77" y2="166" stroke="rgba(240,200,120,0.18)" stroke-width="0.5"/>
+                <line x1="67" y1="178" x2="77" y2="178" stroke="rgba(240,200,120,0.18)" stroke-width="0.5"/>
+                <line x1="67" y1="190" x2="77" y2="190" stroke="rgba(240,200,120,0.18)" stroke-width="0.5"/>
+                <!-- right post -->
+                <rect x="132" y="106" width="12" height="98" stroke="rgba(240,200,120,0.42)" stroke-width="0.9" fill="none"/>
+                <line x1="135" y1="106" x2="135" y2="204" stroke="rgba(240,200,120,0.10)" stroke-width="0.4"/>
+                <line x1="141" y1="106" x2="141" y2="204" stroke="rgba(240,200,120,0.10)" stroke-width="0.4"/>
+                <line x1="133" y1="118" x2="143" y2="118" stroke="rgba(240,200,120,0.18)" stroke-width="0.5"/>
+                <line x1="133" y1="130" x2="143" y2="130" stroke="rgba(240,200,120,0.18)" stroke-width="0.5"/>
+                <line x1="133" y1="142" x2="143" y2="142" stroke="rgba(240,200,120,0.18)" stroke-width="0.5"/>
+                <line x1="133" y1="154" x2="143" y2="154" stroke="rgba(240,200,120,0.18)" stroke-width="0.5"/>
+                <line x1="133" y1="166" x2="143" y2="166" stroke="rgba(240,200,120,0.18)" stroke-width="0.5"/>
+                <line x1="133" y1="178" x2="143" y2="178" stroke="rgba(240,200,120,0.18)" stroke-width="0.5"/>
+                <line x1="133" y1="190" x2="143" y2="190" stroke="rgba(240,200,120,0.18)" stroke-width="0.5"/>
+                <!-- ground -->
+                <line x1="55" y1="204" x2="155" y2="204" stroke="rgba(240,200,120,0.35)" stroke-width="0.9"/>
+                <line x1="60" y1="207" x2="150" y2="207" stroke="rgba(240,200,120,0.12)" stroke-width="0.5"/>
+                <!-- gothic arch -->
+                <path d="M 66,106 C 66,58 92,30 105,26 C 118,30 144,58 144,106" stroke="rgba(240,200,120,0.44)" stroke-width="0.9" fill="none"/>
+                <path d="M 72,106 C 72,63 94,38 105,34 C 116,38 138,63 138,106" stroke="rgba(240,200,120,0.22)" stroke-width="0.6" fill="none"/>
+                <path d="M 80,106 C 80,70 96,48 105,44 C 114,48 130,70 130,106" stroke="rgba(240,200,120,0.11)" stroke-width="0.5" fill="none"/>
+                <!-- crossbar -->
+                <line x1="66" y1="160" x2="144" y2="160" stroke="rgba(240,200,120,0.22)" stroke-width="0.7"/>
+                <g transform="translate(105,161.5)">
+                  <rect x="-4" y="-4" width="8" height="8" transform="rotate(45)" stroke="rgba(208,168,64,0.55)" stroke-width="0.7" fill="rgba(208,168,64,0.06)"/>
+                  <circle r="1.2" fill="rgba(208,168,64,0.60)"/>
+                </g>
+                <ellipse cx="105" cy="182" rx="20" ry="14" fill="rgba(255,200,50,0.12)"/>
+                <!-- apex ornament -->
+                <circle cx="105" cy="26" r="5.5" stroke="rgba(208,168,64,0.65)" stroke-width="0.8" fill="rgba(208,168,64,0.05)"/>
+                <circle cx="105" cy="26" r="2.2" fill="rgba(208,168,64,0.80)" filter="url(#mSoftg)"/>
+                <line x1="105" y1="17" x2="105" y2="13" stroke="rgba(208,168,64,0.38)" stroke-width="0.7"/>
+                <line x1="113" y1="21" x2="117" y2="18" stroke="rgba(208,168,64,0.28)" stroke-width="0.6"/>
+                <line x1="97"  y1="21" x2="93"  y2="18" stroke="rgba(208,168,64,0.28)" stroke-width="0.6"/>
+                <path d="M 99,18 C 101,14 109,14 111,18" stroke="rgba(208,168,64,0.28)" stroke-width="0.6" fill="none"/>
+                <!-- post diamonds -->
+                <g transform="translate(72,106)"><rect x="-5" y="-5" width="10" height="10" transform="rotate(45)" stroke="rgba(208,168,64,0.58)" stroke-width="0.7" fill="rgba(208,168,64,0.07)"/></g>
+                <g transform="translate(138,106)"><rect x="-5" y="-5" width="10" height="10" transform="rotate(45)" stroke="rgba(208,168,64,0.58)" stroke-width="0.7" fill="rgba(208,168,64,0.07)"/></g>
+                <!-- side flourishes -->
+                <path d="M 66,170 C 56,168 48,158 52,148 C 54,140 62,138 60,128" stroke="rgba(240,200,120,0.18)" stroke-width="0.7" fill="none"/>
+                <circle cx="60" cy="126" r="2" stroke="rgba(240,200,120,0.20)" stroke-width="0.5" fill="none"/>
+                <path d="M 144,170 C 154,168 162,158 158,148 C 156,140 148,138 150,128" stroke="rgba(240,200,120,0.18)" stroke-width="0.7" fill="none"/>
+                <circle cx="150" cy="126" r="2" stroke="rgba(240,200,120,0.20)" stroke-width="0.5" fill="none"/>
+                <!-- corner stars -->
+                <g fill="rgba(208,168,64,0.28)">
+                  <path d="M18,18 L19.3,16 L20.6,18 L22.6,19.3 L20.6,20.6 L19.3,22.6 L18,20.6 L16,19.3Z"/>
+                  <path d="M188,18 L189.3,16 L190.6,18 L192.6,19.3 L190.6,20.6 L189.3,22.6 L188,20.6 L186,19.3Z"/>
+                  <path d="M18,200 L19.3,198 L20.6,200 L22.6,201.3 L20.6,202.6 L19.3,204.6 L18,202.6 L16,201.3Z"/>
+                  <path d="M188,200 L189.3,198 L190.6,200 L192.6,201.3 L190.6,202.6 L189.3,204.6 L188,202.6 L186,201.3Z"/>
+                </g>
+                <circle cx="16"  cy="110" r="1.3" fill="rgba(208,168,64,0.28)"/>
+                <circle cx="194" cy="110" r="1.3" fill="rgba(208,168,64,0.28)"/>
+              </svg>
+            </div>
+
+            <div class="card-label">
+              <div class="card-name-front">The Generous Light</div>
+              <div class="card-sub-front">Leo · Libra · Sagittarius</div>
+              <div class="card-hint"><span class="card-hint-pill">tap to reveal ↻</span></div>
+            </div>
+          </div>
+
+          <!-- ── BACK ── -->
+          <div class="card-back">
+            <div class="card-back-bg"></div>
+            <div class="card-back-wc"></div>
+            <div class="card-back-grain"></div>
+            <div class="card-back-border-outer"></div>
+            <div class="card-back-border-inner"></div>
+            <div class="card-back-content">
+              <div class="card-back-numeral">XIX</div>
+              <svg class="card-back-sigil-mini" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="22" cy="22" r="8"  fill="rgba(255,210,70,0.75)"/>
+                <circle cx="22" cy="22" r="13" stroke="rgba(255,200,60,0.32)" stroke-width="0.8" fill="none"/>
+                <line x1="22" y1="5"  x2="22" y2="10" stroke="rgba(255,200,60,0.72)" stroke-width="1.2"/>
+                <line x1="22" y1="34" x2="22" y2="39" stroke="rgba(225,155,45,0.55)" stroke-width="1.2"/>
+                <line x1="5"  y1="22" x2="10" y2="22" stroke="rgba(255,200,60,0.72)" stroke-width="1.2"/>
+                <line x1="34" y1="22" x2="39" y2="22" stroke="rgba(255,200,60,0.72)" stroke-width="1.2"/>
+                <line x1="9"  y1="9"  x2="13" y2="13" stroke="rgba(225,155,45,0.48)" stroke-width="0.9"/>
+                <line x1="35" y1="9"  x2="31" y2="13" stroke="rgba(225,155,45,0.48)" stroke-width="0.9"/>
+                <line x1="9"  y1="35" x2="13" y2="31" stroke="rgba(210,130,70,0.42)" stroke-width="0.9"/>
+                <line x1="35" y1="35" x2="31" y2="31" stroke="rgba(210,130,70,0.42)" stroke-width="0.9"/>
+              </svg>
+              <div class="card-back-name">The Generous Light</div>
+              <div class="card-back-sub">Leo Sun · Libra Rising · Sagittarius Moon</div>
+              <div class="card-back-rule"></div>
+              <div class="card-back-body"><p>Marina's presence raises the room before anything is said. The Leo Sun in the 10th illuminates what it loves. The Jupiter-Libra Ascendant makes the entry an amplification. The Sagittarius Moon in the 3rd carries the question: what is the meaning actually worth speaking here? The wound in the 11th asks to be held by the same community Marina is always holding.</p></div>
+              <div class="card-back-tap">tap to close ↺</div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>

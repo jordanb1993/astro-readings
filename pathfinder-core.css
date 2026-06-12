@@ -274,20 +274,42 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overs
 /* ── TAROT ARCHETYPE CARD ── */
 .tarot-outer{display:flex;justify-content:center;margin:8px 0 28px;opacity:0;transform:translateY(20px);transition:opacity 0.65s ease,transform 0.65s ease}
 .tarot-outer.visible{opacity:1;transform:translateY(0)}
-.tarot-card{
-  position:relative;width:min(280px,85vw);
-  background:linear-gradient(170deg,#0e0820 0%,#06101e 55%,#0a0c24 100%);
-  border-radius:16px;overflow:hidden;
-  box-shadow:0 8px 48px rgba(0,0,0,0.70),0 0 0 1px rgba(var(--gold-alpha),0.22),0 0 60px rgba(100,60,160,0.12);
-}
-.tarot-arch-svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
-.tarot-content{position:relative;z-index:1;padding:30px 24px 28px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px}
-.tarot-ornament{font-family:'Cormorant Garamond',serif;font-size:1.0rem;color:rgba(var(--gold-alpha),0.55);letter-spacing:0.28em}
-.compass-svg{width:56px;height:56px;flex-shrink:0}
-.tarot-name{font-family:'Cormorant Garamond',serif;font-size:0.95rem;font-weight:600;letter-spacing:0.20em;text-transform:uppercase;color:rgba(var(--gold-alpha),0.90);line-height:1.4}
-.tarot-elements{font-size:0.52rem;letter-spacing:0.26em;text-transform:uppercase;color:rgba(var(--gold-alpha),0.62)}
-.tarot-divider{width:40px;height:1px;background:linear-gradient(90deg,transparent,rgba(var(--gold-alpha),0.35),transparent)}
-.tarot-body{font-family:'Cormorant Garamond',serif;font-size:0.96rem;font-weight:300;font-style:italic;line-height:1.78;color:var(--muted-2);max-width:240px}
+/* ── ARCHETYPE FLIP CARD ── */
+.tarot-card{width:min(272px,78vw);height:462px;perspective:1200px;cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.card-inner{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform 0.78s cubic-bezier(0.36,0.07,0.19,0.97)}
+.tarot-card.flipped .card-inner{transform:rotateY(180deg)}
+.card-front,.card-back{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:18px;overflow:hidden;border:1.5px solid rgba(var(--gold-alpha),0.28);box-shadow:0 8px 48px rgba(0,0,0,0.55),0 0 0 1px rgba(var(--gold-alpha),0.06)}
+.card-back{transform:rotateY(180deg)}
+.card-bg{position:absolute;inset:0;background:#0b041a}
+.card-grain{position:absolute;inset:0;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:0.055;mix-blend-mode:overlay}
+.card-vignette{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 50% 50%,transparent 40%,rgba(0,0,0,0.55) 100%)}
+.card-border-outer{position:absolute;top:10px;left:10px;right:10px;bottom:10px;border:1px solid rgba(var(--gold-alpha),0.22);border-radius:10px;pointer-events:none}
+.card-border-inner{position:absolute;top:14px;left:14px;right:14px;bottom:14px;border:0.5px solid rgba(var(--gold-alpha),0.10);border-radius:7px;pointer-events:none}
+.card-numeral{position:absolute;top:22px;left:0;right:0;text-align:center;font-family:'Cormorant Garamond',serif;font-size:0.70rem;letter-spacing:0.32em;color:rgba(var(--gold-alpha),0.62);font-weight:300}
+.card-sigil-wrap{position:absolute;top:50%;left:50%;transform:translate(-50%,-52%);width:240px;height:240px}
+.card-label{position:absolute;bottom:0;left:0;right:0;height:96px;background:linear-gradient(0deg,rgba(0,0,0,0.75) 0%,transparent 100%);display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding-bottom:14px}
+.card-name-front{font-family:'Cormorant Garamond',serif;font-size:0.80rem;letter-spacing:0.28em;color:rgba(240,228,200,0.92);font-weight:300;text-transform:uppercase;margin-bottom:5px;text-align:center;line-height:1.4}
+.card-sub-front{font-family:'Inter',sans-serif;font-size:0.48rem;letter-spacing:0.22em;color:rgba(var(--gold-alpha),0.52);text-transform:uppercase}
+.card-hint{margin-top:12px}
+.card-hint-pill{display:inline-flex;align-items:center;gap:6px;font-family:'Inter',sans-serif;font-size:0.58rem;letter-spacing:0.14em;color:rgba(240,228,200,0.80);text-transform:uppercase;border:1px solid rgba(240,228,200,0.32);border-radius:20px;padding:5px 14px;background:rgba(10,6,32,0.50);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);animation:hint-pulse 2.4s ease-in-out infinite}
+@keyframes hint-pulse{0%,100%{opacity:0.60;border-color:rgba(240,228,200,0.20)}50%{opacity:1.00;border-color:rgba(240,228,200,0.52)}}
+@keyframes wc-drift{0%{opacity:0.82;transform:scale(1.00) rotate(0deg)}100%{opacity:1.00;transform:scale(1.04) rotate(0.6deg)}}
+.card-wc{position:absolute;inset:-20px;animation:wc-drift 10s ease-in-out infinite alternate}
+.card-back-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 28%,#1c0a3a 0%,#0a0620 100%)}
+.card-back-wc{position:absolute;inset:-20px;animation:wc-drift 12s ease-in-out infinite alternate-reverse}
+.card-back-grain{position:absolute;inset:0;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");opacity:0.045;mix-blend-mode:overlay}
+.card-back-border-outer{position:absolute;top:10px;left:10px;right:10px;bottom:10px;border:1px solid rgba(var(--gold-alpha),0.18);border-radius:10px;pointer-events:none}
+.card-back-border-inner{position:absolute;top:14px;left:14px;right:14px;bottom:14px;border:0.5px solid rgba(var(--gold-alpha),0.08);border-radius:7px;pointer-events:none}
+.card-back-content{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px 26px;text-align:center;gap:0}
+.card-back-numeral{font-family:'Cormorant Garamond',serif;font-size:0.68rem;letter-spacing:0.34em;color:rgba(var(--gold-alpha),0.50);margin-bottom:16px}
+.card-back-sigil-mini{width:42px;height:42px;margin-bottom:14px;opacity:0.55}
+.card-back-name{font-family:'Cormorant Garamond',serif;font-size:1.28rem;font-weight:300;letter-spacing:0.16em;color:rgba(240,228,200,0.94);text-transform:uppercase;line-height:1.25;margin-bottom:7px}
+.card-back-sub{font-family:'Inter',sans-serif;font-size:0.49rem;letter-spacing:0.20em;color:rgba(var(--gold-alpha),0.44);text-transform:uppercase;margin-bottom:20px}
+.card-back-rule{width:36px;height:1px;background:rgba(var(--gold-alpha),0.28);margin-bottom:18px}
+.card-back-body{font-family:'Cormorant Garamond',serif;font-size:0.86rem;font-style:italic;color:rgba(240,228,200,0.65);line-height:1.82}
+.card-back-body p{margin-bottom:9px}
+.card-back-body p:last-child{margin-bottom:0}
+.card-back-tap{margin-top:20px;font-family:'Inter',sans-serif;font-size:0.44rem;letter-spacing:0.18em;color:rgba(240,228,200,0.18);text-transform:uppercase}
 
 /* ── POEM ── */
 .poem-outer{margin:8px 0 16px;opacity:0;transform:translateY(16px);transition:opacity 0.65s ease 0.1s,transform 0.65s ease 0.1s}
