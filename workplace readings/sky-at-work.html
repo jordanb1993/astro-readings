@@ -108,24 +108,40 @@ strong{color:var(--rose);font-weight:500}
   border-radius:10px;border-left:3px solid;
   background:var(--surface);padding:16px 16px 14px;
   position:relative;overflow:hidden;
+  opacity:0;transform:translateY(16px);
+  transition:opacity 0.52s ease,transform 0.52s ease;
 }
+.insight-card.visible{opacity:1;transform:translateY(0)}
+.insight-card:nth-child(2){transition-delay:0.07s}
+.insight-card:nth-child(3){transition-delay:0.14s}
+.insight-card:nth-child(4){transition-delay:0.21s}
 .insight-card::before{
-  content:'';position:absolute;top:0;left:0;right:0;height:1.5px;
-  pointer-events:none;
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  pointer-events:none;z-index:2;
 }
 .insight-card::after{
   content:'';position:absolute;top:0;right:0;width:55%;height:100%;
   pointer-events:none;
   background:linear-gradient(90deg,transparent,rgba(255,255,255,0.012));
 }
-.ic-gold{border-color:var(--gold)}
-.ic-gold::before{background:linear-gradient(90deg,var(--gold),rgba(208,168,64,0.15),transparent)}
-.ic-rose{border-color:var(--rose)}
-.ic-rose::before{background:linear-gradient(90deg,var(--rose),rgba(200,160,144,0.15),transparent)}
-.ic-cerulean{border-color:var(--cerulean)}
-.ic-cerulean::before{background:linear-gradient(90deg,var(--cerulean),rgba(74,159,212,0.15),transparent)}
-.ic-teal{border-color:rgba(var(--teal-alpha),0.45);background:var(--surface-2)}
-.ic-teal::before{background:linear-gradient(90deg,rgba(var(--teal-alpha),0.60),rgba(var(--teal-alpha),0.10),transparent)}
+.ic-gold{border-color:var(--gold);background:radial-gradient(ellipse 65% 110% at 0% 50%,rgba(208,168,64,0.11) 0%,transparent 55%),var(--surface)}
+.ic-gold::before{background:linear-gradient(90deg,transparent 0%,rgba(208,168,64,0.70) 35%,rgba(208,168,64,0.36) 72%,transparent 100%)}
+.ic-rose{border-color:var(--rose);background:radial-gradient(ellipse 65% 110% at 0% 50%,rgba(200,160,144,0.10) 0%,transparent 55%),var(--surface)}
+.ic-rose::before{background:linear-gradient(90deg,transparent 0%,rgba(200,160,144,0.68) 35%,rgba(200,160,144,0.34) 72%,transparent 100%)}
+.ic-cerulean{border-color:var(--cerulean);background:radial-gradient(ellipse 65% 110% at 0% 50%,rgba(74,159,212,0.10) 0%,transparent 55%),var(--surface)}
+.ic-cerulean::before{background:linear-gradient(90deg,transparent 0%,rgba(74,159,212,0.70) 35%,rgba(74,159,212,0.36) 72%,transparent 100%)}
+.ic-teal{border-color:rgba(var(--teal-alpha),0.45);background:radial-gradient(ellipse 65% 110% at 0% 50%,rgba(90,184,168,0.09) 0%,transparent 55%),var(--surface-2)}
+.ic-teal::before{background:linear-gradient(90deg,transparent 0%,rgba(90,184,168,0.58) 35%,rgba(90,184,168,0.28) 72%,transparent 100%)}
+
+/* Float animation + week star */
+@keyframes floatUp{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+.week-star{
+  font-family:'Cormorant Garamond',serif;font-size:1.15rem;
+  color:rgba(var(--cerulean-alpha),0.38);
+  margin-bottom:9px;display:inline-block;
+  animation:floatUp 4.5s ease-in-out infinite;
+  letter-spacing:0.28em;
+}
 
 .ic-top{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:7px}
 .ic-badge{
@@ -380,6 +396,7 @@ strong{color:var(--rose);font-weight:500}
   <div class="reading-inner">
 
     <div class="week-identity">
+      <div class="week-star">✦</div>
       <div class="week-eyebrow">Sky at Work &middot; June 15&ndash;21, 2026</div>
       <div class="week-headline">A fresh cycle.<br>Bring the whole version.</div>
       <p class="week-thesis">The New Moon opened Monday, Venus moved into Leo, and the Solstice arrives Friday. This is a week where showing up fully is the correct read, not the overcorrection.</p>
@@ -678,10 +695,18 @@ function renderCollectiveWheel(){
   const pt=(a,r)=>({x:CX+r*Math.cos(rad(a)),y:CY+r*Math.sin(rad(a))});
   const ept=(ecl,r)=>pt(svgA(ecl),r);
   const R={outer:122,trGlyph:110,trSep:116,zodOut:106,zodMid:96,zodIn:84};
-  const defs=el('defs',{});const cp=el('clipPath',{id:'cwClip'});cp.appendChild(el('circle',{cx:CX,cy:CY,r:R.outer}));defs.appendChild(cp);svg.appendChild(defs);
+  const defs=el('defs',{});const cp=el('clipPath',{id:'cwClip'});cp.appendChild(el('circle',{cx:CX,cy:CY,r:R.outer}));defs.appendChild(cp);
+  // Blur filter for atmospheric blooms
+  const fBlur=el('filter',{id:'cwBlur',x:'-50%',y:'-50%',width:'200%',height:'200%'});fBlur.appendChild(el('feGaussianBlur',{stdDeviation:'9'}));defs.appendChild(fBlur);
+  svg.appendChild(defs);
   const bg=el('g',{'clip-path':'url(#cwClip)','pointer-events':'none'});
   bg.appendChild(el('circle',{cx:CX,cy:CY,r:R.outer,fill:'#09102a'}));
   bg.appendChild(el('ellipse',{cx:CX+18,cy:CY-20,rx:58,ry:30,fill:'rgba(74,159,212,0.07)',transform:`rotate(-30,${CX},${CY})`}));
+  // Star field — scattered around the wheel edge
+  const starPts=[[130,5,0.7,0.26],[165,8,0.55,0.20],[198,18,0.65,0.24],[220,38,0.70,0.26],[242,62,0.55,0.18],[250,92,0.65,0.22],[248,124,0.60,0.20],[244,156,0.55,0.18],[232,186,0.65,0.24],[212,212,0.70,0.26],[186,232,0.55,0.20],[155,245,0.65,0.22],[122,252,0.70,0.24],[88,246,0.55,0.18],[58,234,0.65,0.22],[34,214,0.70,0.26],[14,188,0.55,0.20],[6,156,0.65,0.22],[8,124,0.60,0.20],[12,92,0.55,0.18],[22,62,0.65,0.24],[44,40,0.70,0.26],[68,20,0.55,0.20],[96,9,0.65,0.22],[175,14,0.40,0.15],[44,168,0.40,0.15],[218,168,0.40,0.15]];
+  for(const[sx,sy,sr,so] of starPts)bg.appendChild(el('circle',{cx:sx,cy:sy,r:sr,fill:'rgba(240,228,200,0.90)',opacity:so}));
+  // A few ✦ accent glyphs at the corners
+  for(const[tx2,ty2,ts,to] of [[22,22,7,0.18],[238,22,7,0.16],[22,238,7,0.16],[238,238,7,0.18]]){const s=el('text',{x:tx2,y:ty2,fill:'rgba(208,168,64,0.80)',opacity:to,'font-size':ts,'text-anchor':'middle','dominant-baseline':'central','font-family':'serif'});s.textContent='✦';bg.appendChild(s);}
   svg.appendChild(bg);
   const zG=el('g',{'pointer-events':'none'});
   for(let i=0;i<12;i++){
@@ -697,14 +722,29 @@ function renderCollectiveWheel(){
   zG.appendChild(el('circle',{cx:CX,cy:CY,r:R.outer, fill:'none',stroke:'rgba(208,168,64,0.24)','stroke-width':'0.5'}));
   for(let i=0;i<12;i++){const a=svgA(i*30);const op=pt(a,R.outer),zp=pt(a,R.zodOut);zG.appendChild(el('line',{x1:f(op.x),y1:f(op.y),x2:f(zp.x),y2:f(zp.y),stroke:'rgba(208,168,64,0.34)','stroke-width':'0.4'}));}
   svg.appendChild(zG);
+  // Element arc rim (fire/earth/air/water — outside the zodiac segments)
+  const elRimC={fire:'rgba(210,130,48,0.70)',earth:'rgba(80,142,68,0.64)',air:'rgba(80,112,200,0.66)',water:'rgba(40,128,188,0.68)'};
+  const elTypes=['fire','earth','air','water','fire','earth','air','water','fire','earth','air','water'];
+  const R_RIM=113,rimG=el('g',{'pointer-events':'none'});
+  for(let i=0;i<12;i++){
+    const a1=svgA(i*30),a2=svgA(i*30+30);
+    const p1=pt(a1,R_RIM),p2=pt(a2,R_RIM);
+    const laf=0; // 30° arc is always less than 180°
+    rimG.appendChild(el('path',{d:`M${f(p1.x)} ${f(p1.y)} A${R_RIM} ${R_RIM} 0 0 0 ${f(p2.x)} ${f(p2.y)}`,fill:'none',stroke:elRimC[elTypes[i]],'stroke-width':'4.5','stroke-linecap':'butt'}));
+  }
+  svg.appendChild(rimG);
   const cf=el('g',{'pointer-events':'none'});cf.appendChild(el('circle',{cx:CX,cy:CY,r:R.zodIn,fill:'#09102a'}));svg.appendChild(cf);
-  // Transit-to-transit aspects for June 15-21 week
+  // Atmospheric blooms inside the center (behind aspect lines)
+  const bloomG=el('g',{'pointer-events':'none'});
+  for(const[be,bc] of [[45,'rgba(210,130,48,0.09)'],[135,'rgba(40,128,188,0.10)'],[225,'rgba(80,112,200,0.09)'],[315,'rgba(80,142,68,0.08)']]){const bp=ept(be,48);bloomG.appendChild(el('circle',{cx:f(bp.x),cy:f(bp.y),r:28,fill:bc,filter:'url(#cwBlur)'}));}
+  svg.appendChild(bloomG);
+  // Transit-to-transit aspects for June 15-21 week — colors from ASP_STYLE
   const WKASP=[
-    {a:62.83, b:332.4,  c:'rgba(205,130,130,0.52)',da:'4,3'},   // Uranus sq NNode (0.43°)
-    {a:109.5, b:50,     c:'rgba(120,215,165,0.46)',da:null},     // Mercury sxt Mars (0.5°)
-    {a:121.5, b:116.5,  c:'rgba(218,188,78,0.50)', da:null},     // Venus cnj Jupiter (5°)
-    {a:121.5, b:4.27,   c:'rgba(88,202,175,0.40)', da:null},     // Venus tri Neptune (2.8°)
-    {a:62.83, b:305.2,  c:'rgba(88,175,218,0.34)', da:null},     // Uranus tri Pluto (2.4°)
+    {a:62.83, b:332.4,  c:'rgba(200,152,152,0.72)',da:'5,3'},    // Uranus sq NNode (0.43°) — rose dashed
+    {a:109.5, b:50,     c:'rgba(62,143,192,0.60)', da:null},     // Mercury sxt Mars (0.5°) — cerulean
+    {a:121.5, b:116.5,  c:'rgba(208,168,64,0.64)', da:null},     // Venus cnj Jupiter (5°) — gold
+    {a:121.5, b:4.27,   c:'rgba(90,184,168,0.54)', da:null},     // Venus tri Neptune (2.8°) — teal
+    {a:62.83, b:305.2,  c:'rgba(90,184,168,0.38)', da:null},     // Uranus tri Pluto (2.4°) — teal dim
   ];
   const aspG=el('g',{'pointer-events':'none'});
   for(const asp of WKASP){
@@ -761,6 +801,14 @@ document.querySelectorAll('.sign-chip').forEach(chip=>{
 });
 const savedSign=localStorage.getItem('saw-sign');
 if(savedSign)applySign(savedSign);
+
+/* ── SCROLL-IN ANIMATIONS ─────────────────────────────────────────────────── */
+{
+  const io=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});
+  },{threshold:0.08,rootMargin:'0px 0px -10px 0px'});
+  document.querySelectorAll('.insight-card').forEach(c=>io.observe(c));
+}
 
 /* ── PLANET PILL TOOLTIPS ─────────────────────────────────────────────────── */
 if('ontouchstart' in window){
