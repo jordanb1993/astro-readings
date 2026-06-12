@@ -19,24 +19,31 @@
 5. Remove separating transits >5° from consideration
 6. Velocity-based timing: calculate exact day, never write "soon" or "building"
 
-### Output format — three layers
+### Output format — three layers (plain-language-first)
 
-**Layer 1 — Surface**
-One to two sentences. The felt sense of the day. No jargon, no degrees, no aspect names.
+The prose body follows a strict sequence: felt sense first, psychological depth second, technical mechanics present throughout but never leading. This is not optional — it is how the app stays accessible to beginners without losing depth for advanced readers.
+
+**Layer 1 — Surface (felt sense)**
+One to two sentences. What this transit feels like in the body, in the room, in the day. No jargon, no degrees, no aspect names.
 
 The reader should be able to carry this through the morning without reading further.
 
-**Layer 2 — Middle**
-2–3 short paragraphs. The psychological layer — what this transit is asking, what pattern it touches, what it means for this specific placement.
+*Example of wrong opening:* "Mars at 18° Taurus is pressing toward an exact opposition to natal Venus in the Scorpio 5th, 0.70° out and tightening toward tomorrow."
+*Example of right opening:* "Something in the creative field has been building pressure — not as a block, but as a charge. The opposition axis between drive and desire is approaching exact tomorrow."
+
+**Layer 2 — Middle (psychological)**
+2–3 short paragraphs. What pattern this transit touches. What it's asking. What it means for this specific placement in this specific house.
 
 Plain language. Declarative, not hedged. No floating nouns. Every sentence passes the test: *what specific thing is this saying?*
 
 Short paragraphs. Never block text. A two-sentence paragraph is fine.
 
+Reach into the Planet & Aspect Vocabulary Library in `voice-canon.md` for specific, non-generic language. The library has felt-sense words and body-level language for each outer planet.
+
 **Layer 3 — Technical**
 Full mechanics: planet, degree, aspect, orb, applying/separating, house, timing. Written so a curious reader can learn from it.
 
-This layer is always present. Never hidden. The Surface layer sequences meaning first — it doesn't replace the technical; it precedes it.
+This layer is always present. Never hidden. The Surface layer sequences meaning first — it doesn't replace the technical; it precedes it. The transit board carries the technical data; the prose body should not lead with it.
 
 **Pull quote:** Optional. Only when a line earns it. Never forced.
 
@@ -397,7 +404,13 @@ Floating nouns. Paradox structures that feel wise but point at nothing. If you c
 
 **Vocabulary to avoid:** soul path, the void, the container, the infinite, the well, cosmic unfolding, sacred space, divine timing (unless attached to an actual transit and date), energetic field, vibrational alignment.
 
-Full negative spec analysis in `the build/voice-canon.md`.
+**Named failure modes (full analysis in `the build/voice-canon.md` → Expanded Anti-Patterns):**
+- The reframe construction: "it's not X, it's Y" — AI-ism, says nothing
+- Life-coach speak: "use this energy," "harness this transit," "step into your power"
+- Floating-subject constructions: "this energy is asking you to..." — energies don't ask; name the planet and house
+- Evolutionary jargon: "soul's evolutionary intent," "raising your consciousness," "karmic contract"
+- Prediction without anchor: "there may be changes in relationships" — no chart, no placement, no mechanism
+- The unnecessary hedge: adding "may" or "might" after a clear statement
 
 ---
 

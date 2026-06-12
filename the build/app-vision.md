@@ -421,6 +421,27 @@ The HTML fetches this on load, renders the Transits and Daily tabs with live dat
 
 ---
 
+## Past Life / South Node Readings (Natal Section)
+*Seeded June 12, 2026 — Jordan's idea during voice refinement session*
+
+**The idea:** A dedicated reading type in The Constant focused on South Node, 12th house, and karmic/past-life indicators in the natal chart. Past life astrology is a rich community interest (strong Reddit and YouTube engagement) and a natural depth layer for users who want to understand *where they came from* before exploring where they're going.
+
+**What this would cover:**
+- South Node sign + house: what patterns, skills, and comfort zones were carried in
+- South Node ruler: the planet that "holds" the past-life material
+- 12th house placements: hidden strengths, unconscious patterns, what was brought in from before
+- Saturn's placement: where karmic accountability shows up in this lifetime
+- Chiron: the wound that crosses lifetimes (the "old story" frame from Ada Pembroke's research)
+- Nodes in aspect to other natal planets: which placements are most entangled with karmic material
+
+**Voice approach:** This reading type requires the most careful language — past life framing can easily slide into generic spiritual register ("your soul came here to learn X"). The Pathfinder standard would apply: grounded, specific, psychological, no evolutionary jargon. Frame in terms of *patterns and tendencies* rather than literal past lives. The reader can interpret through whatever cosmological lens fits them.
+
+**Research needed:** Dedicated session on how quality astrologers write about South Node and karmic indicators. Sources: Steven Forrest's "Yesterday's Sky" (the canonical text), Liz Greene's karmic astrology, community writing on r/astrology about South Node placements.
+
+**Phase relevance:** Phase 2 feature. Deepens The Constant beyond natal chart description into natal chart mythology.
+
+---
+
 ## Transit-to-Transit Library
 *Seeded June 9, 2026 — from inbox capture*
 

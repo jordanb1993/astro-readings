@@ -291,6 +291,200 @@ The problem this fixed: The same tracking prompts ("track emotional permeability
 
 ---
 
+## Plain-Language-First Protocol
+
+*Formalized June 12, 2026. Applies to all reading types: daily, natal, transit library, synastry, weekly, workplace.*
+
+The current system leads technical and translates into meaning. The new standard inverts this: **meaning arrives first, mechanics follow for those who want to learn.**
+
+This is not dumbing down. It is sequencing. The technical layer is never removed — it is repositioned so it lands as depth rather than barrier.
+
+**The three-layer sequence (required for all transit prose):**
+
+| Layer | What it does | Voice |
+|-------|-------------|-------|
+| **Surface (felt sense)** | What this transit feels like in the body, in the room, in the day. No jargon. Immediate. | One to two sentences. Carry-through-the-morning quality. |
+| **Middle (psychological)** | What pattern this touches. What the transit is asking. What it means for this specific placement in this specific house. | 2–3 short paragraphs. Precise, not soft. Declarative. |
+| **Technical** | Planet, degree, aspect, orb, applying/separating, house, timing. Written so a curious reader can learn from it. | Complete. Educational. Always present. |
+
+**The competitive white space this fills:**
+- CHANI: warmth only, no technical layer, reader can't learn
+- Time Passages: technical first, no felt-sense entry, beginners bounce off
+- Pathfinder: all three present, reader chooses depth, every reading teaches
+
+**The precedent already in the system:** `sky-at-work.html` implements this exactly — plain-language insight card on the surface, "What's driving this?" tap reveals the mechanism. It works. The question was only how to apply it everywhere.
+
+**What this changes in practice:**
+
+*Old opening:* "Mars at 18° Taurus is pressing toward an exact opposition to natal Venus in the Scorpio 5th, 0.70° out and tightening toward tomorrow."
+
+*New opening:* "Something in the creative field has been building pressure — not as a block, but as a charge. The opposition axis between drive and desire is approaching exact tomorrow. What's been concentrated in the 5th has somewhere to go."
+
+The technical data (Mars 18° Taurus, 0.70° applying opposition natal Venus H5) appears in the transit board and in the technical layer. It is never hidden. It is sequenced after the felt-sense entry.
+
+---
+
+## Planet & Aspect Vocabulary Library
+
+*Built June 12, 2026 from research across professional astrologers, Substack writers, and community astrology language. Use these as a starting palette — not a script. The specific over the general always wins.*
+
+### Uranus transits
+**Felt-sense vocabulary:** upend, dismantle, electrify, awaken, disrupt, spin, liberate, jolt
+**Body-level language:** "shakes you awake," "bolt of lightning," "mind on fire," "the body registers it before the mind does"
+**Situational language:** "trapped by routines," "suddenly, unpredictably, and irreversibly," "can't go back to the shape things were"
+**Key tension:** disruption is not destruction — Uranus liberates what was already too tight
+**Avoid:** "brings unexpected change" (generic), "Uranus energy" (floating subject)
+
+### Neptune transits
+**Felt-sense vocabulary:** dissolve, soften, sensitize, attune, drift, surface, rise, fog, anchor
+**Body-level language:** "dialing sensitivity to eleven," "long-buried feelings rising to the surface," "the edges of things aren't where you left them"
+**Situational language:** "inspired vision that can vanish like a dream unless grounded in action," "hard to tell what's yours and what's the room's"
+**Key tension:** the dissolution is real, AND the inspiration that rises through it is also real — both are Neptune
+**Avoid:** "confusion and illusion" (names without locating), "Neptune fog" (worn out), "losing yourself"
+
+### Pluto transits
+**Felt-sense vocabulary:** excavate, compress, compel, strip, expose, press, rebuild, hollow out, break through
+**Body-level language:** "raw, primal, instinctive," "bursting forth," "territory that has been hidden," "the thing you couldn't look at directly"
+**Situational language:** "breaks through illusions in search of the utter truth," "strips away what is unnecessary or superficial," "rebirth of sorts — but the before has to actually end"
+**Key tension:** Pluto doesn't invite change; it makes the old form untenable
+**Avoid:** "transformation" alone (too vague), "death and rebirth" (cliché), "power and control themes" (generic)
+
+### Saturn transits
+**Felt-sense vocabulary:** press, hold, require, slow, structure, clarify, demand, consolidate
+**Body-level language:** weight, gravity, "the thing that won't move until you move it," endurance as the mechanism
+**Situational language:** "accountability arrives whether invited or not," "what is actually yours to carry vs. what you borrowed," "the work itself is the answer"
+**Key tension:** Saturn's pressure is productive — what it's building toward matters as much as what it's restricting now
+**Avoid:** "lessons," "karma," "hard work pays off" (generic rewards framing), "Saturn return is your cosmic wake-up call"
+
+### Chiron transits
+**Felt-sense vocabulary:** tender, reopen, press, expose, soften, recognize, carry, sit with
+**Body-level language:** "the sore spot that keeps showing up," "stay present with the ache," "the place that never quite healed all the way"
+**Situational language:** "what hurt you at 20 manifests differently at 40 — not because the wound disappeared, but because your relationship with it evolved," "a grain of sand in the shell — the irritant that becomes the pearl if you stay with it"
+**The wound as narrative problem:** Chiron is a distorted story you've been telling about yourself. The transit doesn't reopen the wound — it brings the story close enough to examine.
+**Key tension:** healing Chiron doesn't mean fixing it; it means changing your relationship to it
+**Avoid:** "wound and healing" alone (worn out), "wounded healer" as the whole framing, "Chiron asks you to heal others"
+
+### North Node transits
+**Felt-sense vocabulary:** orient, pull, direct, ignite, call, lean toward, step into, activate
+**Body-level language:** "the direction your life is already leaning," "feels less like arrival than like ignition," "collision between where you've been and where you're going"
+**Situational language:** "the bridge between comfort and calling," "the past gets louder not to pull you back, but to show you what to bring forward," "this isn't about abandoning what you know — it's about which parts of it you carry"
+**Key tension:** the Node is a direction, not a destination — the discomfort is the pull toward unfamiliar territory, not a signal that something's wrong
+**Avoid:** "soul path" (floating), "destiny" (too fixed), "what your soul came here to learn" (performing spiritual register)
+
+---
+
+### Aspect-Type Plain Language
+
+Plain-language descriptions for aspects, for use when introducing them to readers who may not know the terminology.
+
+**Conjunction (☌):** Two planets occupying the same point. The energies fuse — sometimes productively, sometimes in tension, depending on the planets. Neither operates cleanly without the other present.
+
+**Opposition (☍):** Two planets pulling in opposite directions across an axis. The tension is real and productive — like a rope that has to be taut to hold anything. The axis names what's in dialogue; the work is integration, not resolution.
+
+**Trine (△):** Flow without friction. The planets are working in the same element, recognizing each other. Not passive — more like a current that already runs in your direction. You still have to use it.
+
+**Sextile (✶):** Opportunity with a bit of effort. Aligned but not automatic. A door that opens toward you but still needs to be pushed.
+
+**Square (□):** Friction between two genuine needs that don't resolve easily. The tension isn't a malfunction — it's productive pressure. Something gets built by the friction that couldn't happen any other way.
+
+**Inconjunct / Quincunx (⚻):** Two energies that don't share element or modality — they literally can't see each other from where they stand. The adjustment required is real and ongoing. Like running two operating systems that don't speak the same language without effort. A small stone in your shoe: you can still walk, until it shifts position and suddenly demands full attention.
+
+**Sesquiquadrate (□/):** A square-and-a-half. Persistent, low-grade friction — an irritant rather than a crisis. Easy to overlook until it compounds.
+
+---
+
+## Expanded Anti-Patterns
+
+*Added June 12, 2026. These join the existing negative spec. Each one is named so it can be caught quickly.*
+
+### The Reframe Construction ("It's not X, it's Y")
+The most common AI-ism in astrology writing. Sounds analytical; actually says very little.
+
+> *"It's not confusion — it's sensitivity."*
+> *"This isn't failure — it's recalibration."*
+> *"It's not that you're stuck — you're integrating."*
+
+**Why it fails:** The reframe assumes the reader is living in the wrong interpretation and needs to be corrected. It's paternalistic and produced. Real recognition doesn't reframe the experience — it names the experience more precisely, so the reader recognizes something they already knew.
+
+**The fix:** Drop the X entirely. State the Y on its own terms. "Sensitivity is what you're registering right now" is better than "It's not confusion, it's sensitivity."
+
+### Life-Coach Speak
+Astrology writing that sounds like it came from a motivational account.
+
+> *"Use this energy."*
+> *"Harness this transit."*
+> *"Embrace the journey."*
+> *"Honor the process."*
+> *"This is your time to rise."*
+> *"Step into your power."*
+
+**Why it fails:** No actual information. The reader has no idea what to do differently. Generic enough to apply to anyone on any day.
+
+### Floating-Subject Constructions
+The subject of the sentence is "this energy," "the universe," "this transit" — a thing that can't be located.
+
+> *"This energy is asking you to slow down."*
+> *"The universe is supporting your expansion."*
+> *"This transit wants you to reflect."*
+
+**Why it fails:** Energies don't ask. Transits don't want. When the subject can't be located, the reader can't locate themselves inside the sentence. Replace with the actual mechanism: the planet, the house, the natal point, the specific dynamic.
+
+### Evolutionary Jargon
+Language borrowed from evolutionary/karmic astrology that sounds deep but is actually a floating noun cluster.
+
+> *"Your soul's evolutionary intent."*
+> *"Raising your consciousness."*
+> *"Your karmic contract."*
+> *"The lesson your soul came here to learn."*
+> *"Spiritual growth and evolution."*
+
+**Why it fails:** No reader can verify the truth or falsity of these statements. They perform spiritual literacy without earning it. Use psychological vocabulary worn lightly instead.
+
+### Prediction Without Anchor
+Generic event language that could apply to anyone.
+
+> *"There may be changes in your relationships."*
+> *"You might experience some financial shifts."*
+> *"Communication could be challenging."*
+
+**Why it fails:** No chart. No placement. No mechanism. Just the appearance of forecasting. Replace with the specific house, the specific natal point, the specific dynamic being activated.
+
+### The Unnecessary Hedge
+Adding "may" or "might" after making a clear statement, out of social courtesy.
+
+> *"This transit could bring some intensity — though of course everyone experiences it differently."*
+> *"You may feel drawn to rest, but this isn't always the case."*
+
+**Why it fails:** Economy. Say it, then stop. The voice trusts the reader. Hedges are distance dressed up as consideration.
+
+---
+
+## Research Sessions Protocol
+
+*Formalized June 12, 2026, from Jordan's inbox request.*
+
+**Purpose:** Periodically expand the vocabulary library and interpretive range by researching how real people describe astrological experience online and how quality astrologers write.
+
+**Cadence:** Monthly, or when a new planet/transit type comes into the active reading picture.
+
+**Sources to draw from:**
+- Professional astrologers with strong prose: Steven Forrest, Jessica Lanyadoo, Astrolore (Farrington), Hiroki Niizato, Ada Pembroke, Parisa Yazdi
+- Substack astrology: Alice Bell, CHANI Nicholas, Taylor Ellis, Astrolore
+- Beginner-bridge writing: Saturn & Honey, Ruby Slipper (Nadia Gilchrist)
+- Community language: r/astrology, r/AskAstrologers (when accessible)
+
+**Session structure:**
+1. Identify which planet/transit type or aspect is underserved in the current vocabulary library
+2. Search for felt-sense descriptions, plain-language framings, metaphors
+3. Pull specimen sentences from quality sources
+4. Distill into additions to the Planet & Aspect Vocabulary Library above
+5. Identify any new anti-patterns surfaced
+6. Log in the refinement log
+
+**Output:** New entries in the vocabulary library + refinement log entry. Research notes go in `the build/research/` (create folder when first research session produces a standalone file).
+
+---
+
 ## Technical Quality Standards
 
 *Accuracy issues identified and fixed. These belong here because product quality includes calculation accuracy, not just prose quality.*
@@ -313,6 +507,11 @@ The problem this fixed: The same tracking prompts ("track emotional permeability
 
 | Date | What Changed | Why | Applies To |
 |------|-------------|-----|------------|
+| 2026-06-12 | **Plain-language-first protocol formalized** — felt sense first, psychological middle, technical last; meaning sequences before mechanics in all transit prose | Open decision since June 11; sky-at-work.html already proved the inversion works; applied to all reading types | All |
+| 2026-06-12 | **Planet & Aspect Vocabulary Library added** — specific felt-sense words, body-level language, situational framings, and key tensions for Uranus/Neptune/Pluto/Saturn/Chiron/Nodes | Research session across professional astrologers + community writing; vocabulary was too narrow and falling back on worn-out terms | All |
+| 2026-06-12 | **Aspect-type plain language added** — one plain-English description per aspect type for beginner accessibility | App needs to serve beginners who don't know what an inconjunct is; description must be felt-sense accurate, not just definitional | All |
+| 2026-06-12 | **Expanded anti-patterns section** — five named failure modes added: the reframe construction ("it's not X, it's Y"), life-coach speak, floating-subject constructions, evolutionary jargon, prediction without anchor, unnecessary hedge | These were appearing in readings without a named rule to catch them; naming them makes them catchable | All |
+| 2026-06-12 | **Research sessions protocol added** — monthly vocabulary expansion sessions, sources list, session structure | Jordan's inbox request; vocabulary library will decay without regular research input | All |
 | 2026-06-11 | **Paragraph length rule added** — short paragraphs always, more paragraphs over fewer, never consolidate for tidiness | Jordan's explicit preference: short paragraphs even if it means more of them; block paragraphs feel heavy and avoid the visual breathing room the prose needs | All |
 | 2026-06-11 | **Big Three portrait format added to READING-FORMAT.md** — app onboarding section: combination reading, recognition-first, three-layer transit architecture, positive + negative voice spec | Voice interview session: recognition vs. validation distinction, Sally Rooney register, canonical specimen drafted and approved | Pathfinder app (Phase 2) |
 | 2026-06-11 | **Mission statement candidate added** — "Pathfinder gives you the framework to recognize yourself — not just a description of your chart" | Surfaced during voice interview; accepted/acceptable distinction | All |

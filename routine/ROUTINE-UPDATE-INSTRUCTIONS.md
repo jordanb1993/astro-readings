@@ -42,6 +42,23 @@ Go to `claude.ai/code/routines` → find routine `trig_01Rtm1xSST2GbdCZh896F2vP`
      earned metaphor standards, and all refinements logged from previous readings.
      The reading quality standard is set here — match it.
 
+     CRITICAL AS OF JUNE 12, 2026 — PLAIN-LANGUAGE-FIRST:
+     The prose body must follow this sequence: felt sense first → psychological depth → technical.
+     Do NOT open a transit paragraph with planet degree and orb. The transit board holds the
+     technical data. The prose body opens with what the transit feels like — body-level, immediate,
+     no jargon. Then the psychological layer. Technical mechanics are woven in after meaning lands.
+
+     BANNED CONSTRUCTIONS AS OF JUNE 12, 2026:
+     - "It's not X, it's Y" — the reframe construction. Drop X entirely. State Y on its own terms.
+     - "This energy is asking you to..." — floating subject. Name the planet and house instead.
+     - "Use this energy / harness this transit / embrace the journey" — life-coach speak.
+     - "Your soul's evolutionary intent / raising your consciousness / karmic contract" — jargon.
+     - Hedging after a clear statement: "though of course everyone experiences it differently."
+
+     VOCABULARY: The voice-canon now contains a Planet & Aspect Vocabulary Library with
+     specific felt-sense words, body-level language, and situational framings for each outer
+     planet. Use it. Don't fall back on "transformation," "dissolution," "lessons."
+
    Write "daily readings/YYYY-MM/YYYY-MM-DD.md" using positions-today.json data.
    CRITICAL: The reading title format is one evocative phrase written fresh each day — NOT
    "[Weekday], [Month] [Day], [Year]". Use the date in the frontmatter (date: YYYY-MM-DD).
