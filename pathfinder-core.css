@@ -633,13 +633,13 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overs
 .d-prose{margin-bottom:24px}
 .d-prose p{color:var(--muted);font-size:1.0rem;line-height:1.85;margin-bottom:18px}
 .d-pull{border-left:2px solid rgba(var(--cerulean-alpha),0.35);padding:10px 0 10px 16px;margin:22px 0;font-family:'Cormorant Garamond',serif;font-size:1.08rem;font-weight:300;font-style:italic;color:rgba(var(--cerulean-alpha),0.88);line-height:1.5}
-.d-today{margin-top:24px}
-.d-today-label{font-size:0.48rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--muted-3);margin-bottom:12px}
-.d-today-row{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid rgba(var(--gold-alpha),0.08)}
-.d-today-row:last-child{border-bottom:none}
-.d-today-cat{font-size:0.44rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(var(--cerulean-alpha),0.85);font-family:'Inter',sans-serif;font-weight:500;background:rgba(var(--cerulean-alpha),0.09);border:1px solid rgba(var(--cerulean-alpha),0.20);border-radius:20px;padding:3px 9px;white-space:nowrap;align-self:flex-start;margin-top:2px}
-.d-today-text{font-size:0.80rem;color:var(--muted-2);line-height:1.6;flex:1}
-.d-transit-pills{display:flex;flex-wrap:wrap;gap:6px;margin-top:20px;margin-bottom:8px}
+.d-today{margin-top:24px;margin-bottom:20px}
+.d-today-label{font-size:0.48rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--muted-3);margin-bottom:10px}
+.d-today-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+.d-today-card{background:rgba(62,143,192,0.05);border:1px solid rgba(62,143,192,0.12);border-radius:10px;padding:10px 12px}
+.d-today-cat{font-size:0.42rem;letter-spacing:0.16em;text-transform:uppercase;color:rgba(62,143,192,0.80);font-family:'Inter',sans-serif;font-weight:500;margin-bottom:6px}
+.d-today-text{font-size:0.72rem;color:var(--muted-2);line-height:1.5}
+.d-transit-pills{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px;margin-bottom:4px}
 @keyframes shimmer{0%{background-position:-600px 0}100%{background-position:600px 0}}
 .skel{border-radius:8px;background:linear-gradient(90deg,rgba(90,184,168,0.06) 25%,rgba(90,184,168,0.12) 50%,rgba(90,184,168,0.06) 75%);background-size:600px 100%;animation:shimmer 1.6s infinite linear}
 .skel-line{height:14px;margin-bottom:12px}
@@ -653,7 +653,14 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overs
 .d-t-pill-mini{display:flex;align-items:center;gap:4px;padding:3px 9px;border-radius:20px;background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.06)}
 .d-t-pill-mini .d-t-pill-glyph{font-size:0.75rem;color:rgba(var(--text-alpha),0.35)}
 .d-t-pill-mini span:last-child{font-size:0.42rem;letter-spacing:0.10em;text-transform:uppercase;color:rgba(var(--text-alpha),0.28);font-family:'Inter',sans-serif}
-.d-pills-divider{width:100%;height:1px;background:rgba(var(--gold-alpha),0.07);margin:6px 0}
+.d-pills-container{margin-top:20px}
+.d-pills-section{margin-top:14px}
+.d-pills-section:first-child{margin-top:0}
+.d-pills-section-label{font-size:0.42rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(var(--gold-alpha),0.38);font-family:'Inter',sans-serif;margin-bottom:6px}
+.d-prose-fold{max-height:0;overflow:hidden;transition:max-height 0.45s ease}
+.d-prose-fold.open{max-height:4000px}
+.d-pull-thread{display:inline-flex;align-items:center;gap:6px;margin-top:2px;margin-bottom:18px;padding:5px 16px;border-radius:20px;background:none;border:1px solid rgba(62,143,192,0.20);cursor:pointer;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:0.85rem;color:rgba(62,143,192,0.65);-webkit-tap-highlight-color:transparent;transition:border-color 0.15s,color 0.15s}
+.d-pull-thread:active{border-color:rgba(62,143,192,0.50);color:rgba(62,143,192,0.90)}
 .d-pills-more{display:inline-flex;align-items:center;gap:5px;margin-top:6px;padding:4px 10px;border-radius:20px;background:none;border:1px solid rgba(var(--gold-alpha),0.12);cursor:pointer;font-size:0.42rem;letter-spacing:0.13em;text-transform:uppercase;color:rgba(var(--gold-alpha),0.45);font-family:'Inter',sans-serif;-webkit-tap-highlight-color:transparent;transition:border-color 0.15s,color 0.15s}
 .d-pills-more:active{border-color:rgba(var(--gold-alpha),0.35);color:rgba(var(--gold-alpha),0.75)}
 /* ─── SYNASTRY CONTACTS ──────────────────────────────────────────────────── */

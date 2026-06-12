@@ -1260,24 +1260,41 @@ function renderDaily(){
   const fastT=allT.filter(t=>!slowGlyphs.has(t.glyph));
   const slowVisible=slowT.slice(0,5);
   const slowHidden=slowT.slice(5);
-  const slowHtml=slowVisible.map(t=>`
+  const slowPillsHtml=slowVisible.map(t=>`
     <span class="d-t-pill${t.direction==='applying'?' d-t-applying':''}" role="button" data-transit-label="${(t.label||'').replace(/"/g,'&quot;')}" data-transit-glyph="${(t.glyph||'').replace(/"/g,'&quot;')}">
       <span class="d-t-pill-glyph">${t.glyph}</span>
       <span class="d-t-pill-text">${t.label} · ${t.orb}</span>
     </span>`).join('');
   const moreHtml=slowHidden.length>0?`<button class="d-pills-more" onclick="openTransitLibrary()">+${slowHidden.length} more · Transit Library →</button>`:'';
-  const fastHtml=fastT.map(t=>{
+  const fastPillsHtml=fastT.map(t=>{
     const short=t.label.replace(/\s*natal\s*/i,' ').replace(/\s*\([^)]*\)/g,'').trim();
     return `<span class="d-t-pill-mini"><span class="d-t-pill-glyph">${t.glyph}</span><span>${short}</span></span>`;
   }).join('');
-  const pillsHtml=[slowHtml,moreHtml,slowHtml&&fastHtml?'<div class="d-pills-divider"></div>':'',fastHtml].filter(Boolean).join('');
-  const proseHtml=(d.prose||[]).map(p=>`<p>${p}</p>`).join('');
-  const todayHtml=d.today?`
+  const seasonHtml=slowPillsHtml||moreHtml?`
+    <div class="d-pills-section">
+      <div class="d-pills-section-label">The Season</div>
+      <div class="d-transit-pills">${slowPillsHtml}${moreHtml}</div>
+    </div>`:'';
+  const weatherHtml=fastPillsHtml?`
+    <div class="d-pills-section">
+      <div class="d-pills-section-label">Passing Weather</div>
+      <div class="d-transit-pills">${fastPillsHtml}</div>
+    </div>`:'';
+  const proseParas=d.prose||[];
+  const proseFirst=proseParas.length>0?`<p>${proseParas[0]}</p>`:'';
+  const proseRest=proseParas.length>1?proseParas.slice(1).map(p=>`<p>${p}</p>`).join(''):'';
+  const proseHtml=proseFirst+(proseRest?`<div class="d-prose-fold" id="d-prose-fold">${proseRest}</div><button class="d-pull-thread" onclick="expandProse(this)">Pull the thread <span class="d-pull-arrow">→</span></button>`:'');
+  const todayWork=d.today&&d.today.business;
+  const todayBody=d.today&&d.today.body;
+  const todayConn=d.today&&(d.today.connection||d.today.creative);
+  const todayHtml=(todayWork||todayBody||todayConn)?`
     <div class="d-today">
       <div class="d-today-label">Today</div>
-      ${d.today.business?`<div class="d-today-row"><span class="d-today-cat">Work</span><span class="d-today-text">${d.today.business}</span></div>`:''}
-      ${d.today.creative?`<div class="d-today-row"><span class="d-today-cat">Creative</span><span class="d-today-text">${d.today.creative}</span></div>`:''}
-      ${d.today.body?`<div class="d-today-row"><span class="d-today-cat">Body</span><span class="d-today-text">${d.today.body}</span></div>`:''}
+      <div class="d-today-grid">
+        ${todayWork?`<div class="d-today-card"><div class="d-today-cat">Work</div><div class="d-today-text">${todayWork}</div></div>`:''}
+        ${todayBody?`<div class="d-today-card"><div class="d-today-cat">Body</div><div class="d-today-text">${todayBody}</div></div>`:''}
+        ${todayConn?`<div class="d-today-card"><div class="d-today-cat">Connection</div><div class="d-today-text">${todayConn}</div></div>`:''}
+      </div>
     </div>`:'';
   document.getElementById('daily-body').innerHTML=`
     <div style="padding-top:24px">
@@ -1293,6 +1310,7 @@ function renderDaily(){
         <svg viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg" id="d-biwheel-svg"></svg>
         <div class="t-biwheel-label">natal · live sky</div>
       </div>
+      ${todayHtml}
       ${d.pulse?`<div class="d-pulse">${d.pulse}</div>`:''}
       ${d.key_transit?`<div class="d-key-transit">
         <span class="d-key-transit-name">${d.key_transit}</span>
@@ -1300,12 +1318,16 @@ function renderDaily(){
       </div>`:''}
       <div class="d-prose">${proseHtml}</div>
       ${d.pull?`<div class="d-pull">${d.pull}</div>`:''}
-      ${pillsHtml?`<div class="d-transit-pills">${pillsHtml}</div>`:''}
-      ${todayHtml}
+      ${seasonHtml||weatherHtml?`<div class="d-pills-container">${seasonHtml}${weatherHtml}</div>`:''}
       <div style="height:32px"></div>
     </div>`;
   renderBiwheel('d-biwheel-svg',false);
   document.querySelectorAll('.d-t-pill[data-transit-label]').forEach(p=>{
     p.addEventListener('click',()=>openTransitFromPill(p.dataset.transitLabel,p.dataset.transitGlyph));
   });
+}
+function expandProse(btn){
+  const fold=document.getElementById('d-prose-fold');
+  if(fold){fold.classList.add('open');}
+  btn.style.display='none';
 }
