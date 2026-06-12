@@ -4,6 +4,36 @@
 
 ---
 
+## 2026-06-12 — Session 16: Workspace rename (the stars → Pathfinder) + Sky at Work June 15–21
+
+**Theme:** Full workspace identity consolidation + Sky at Work weekly update
+
+### Workspace Rename
+- `the stars/` → `pathfinder/`, `the build/` → `app/` across all workspace files and memory
+- Vault CLAUDE.md, pathfinder CLAUDE.md, build-digest.md, CLAUDE-BUILD.md, natal readings README, workplace readings README, READING-FORMAT.md, routine instructions — all updated
+- Memory files updated: 14 files patched including astrology workspace, sops, dasha, Netlify references, cross-workspace protocol, build log protocol, alias resolution, sky at work architecture, astrology business plan (fully rewritten to reflect Pathfinder as final product name)
+- CLAUDE.md opening rewritten: builder identity leads; astrologer-as-channel framing; not two equal roles
+
+### Sky at Work — June 15–21
+**Voice canon rewrite:** All copy across all 4 insight cards rewritten from scratch. No hedging language, no em dashes, no "it's not X it's Y" constructions, implication-first structure throughout. 12 sign notes rewritten for this specific week's sky.
+
+**New content (June 15–21):**
+- New Moon in Gemini (opened June 14) — fresh 28-day cycle
+- Venus ingress Leo (exact June 13) — visibility as currency
+- Uranus square North Node tightening (0.31° orb mid-week) — course correction signal
+- Sun into Cancer / Summer Solstice (Friday June 20) — seasonal turn + timing hinge
+- Mercury approaching Jupiter in Cancer (~6° applying) — expansive communication arc
+
+**Structural improvements:**
+- `week-thesis` line added (italic Cormorant below headline)
+- "For You" tab renamed "Your Sign" in all nav (mobile + desktop)
+- Placeholder "request" cards removed; replaced with clean go-deeper CTA
+- Bigger headline (2.2rem mobile / 2.8rem desktop)
+- Planet strip updated to June 15 estimates
+- Signal board: 5 rows rewritten for current transits
+
+---
+
 ## 2026-06-12 — Session 15: Transit UI polish + Natal chart restructure + Voice canon copy rewrite
 
 **Theme:** Transit UI refinements, 9-tab natal restructure, full voice canon copy rewrite across all three charts

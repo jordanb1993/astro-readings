@@ -7,7 +7,7 @@ tags:
 
 # Build Digest — Pathfinder App
 *Cold-start synthesis. Load at the start of any build or business session. Updated at session end.*
-*Last updated: 2026-06-12 (Session 15)*
+*Last updated: 2026-06-12 (Session 16)*
 
 ---
 
@@ -21,7 +21,7 @@ tags:
 | Daily reads | ✅ Live | Overnight automation running ✓ — first run June 12 |
 | Transit library | ✅ Live | Applying / separating / returning states, accordion detail, first/second pass timing |
 | Wheel of the year | ✅ Live | Lunar cycles + pagan calendar, natal-personalized mini-reads |
-| Sky at Work | 🔵 In progress | Cards interface live; beginner-first pivot underway; rewrite scope planned |
+| Sky at Work | ✅ Live | June 15–21 shipped June 12 — full voice canon rewrite, week thesis line, Your Sign tab, updated planet strip + signal board |
 
 ---
 
@@ -29,9 +29,9 @@ tags:
 
 | Item | Priority | Notes |
 |------|----------|-------|
-| Sky at Work June 15–21 update | 🔴 TIME SENSITIVE | Must ship by Mon June 15 — weekly update |
-| Sky at Work rewrite scope doc | 🟡 Next session | Read current HTML + CLAUDE-WORKPLACE-HTML.md → produce `sky-at-work-rewrite-scope.md` |
 | Archetype flip card redesign | 🟡 Next session | All 3 charts have `<!-- BUILD: flip card redesign pending -->` comments — front: name + compass SVG; back: body description; CSS `rotateY` flip on tap |
+| Archetype flip card redesign | 🟡 Next session | All 3 charts have `<!-- BUILD: flip card redesign pending -->` comments — front: name + compass SVG; back: body description; CSS `rotateY` flip on tap |
+| Sky at Work weekly content cadence | 🟡 Ongoing | Update dates + planet data + voice canon rewrite each week — full template now solid |
 | Voice canon drafts — 8 remaining charts | 🟡 Ongoing | Carina, Mimi, Hazel, Iza, Kate, Su, Yvonne + Cat — `.md` draft files in `charts/` |
 | Reddit vocabulary research | 🟢 Low urgency | r/astrology, r/AskAstrologers, r/astrologyreadings → voice-canon.md |
 | Routine live update | 🔴 Jordan action | Paste updated ROUTINE-UPDATE-INSTRUCTIONS.md into claude.ai/code/routines — **includes new health-log write step (step 12)** + em dash ban + June 12 additions. Go to claude.ai/code/routines → find `trig_01Rtm1xSST2GbdCZh896F2vP` → replace prompt. |
