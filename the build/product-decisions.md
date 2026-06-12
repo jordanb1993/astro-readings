@@ -22,6 +22,48 @@ Do not re-open resolved decisions without flagging it explicitly. Do not assume 
 
 ---
 
+### Natal Reading Structure: Current vs. Revised Arc
+**Status: OPEN**
+**Raised:** June 12, 2026 (voice refinement + structure research session)
+
+**The problem with current structure:**
+The current sequence (planet strip → deep dive cards → Archetype Card → poem) is beautiful as an artifact but doesn't tell a coherent story. Cards feel like individual essays rather than chapters. A first-time reader has no path through the chart, and no way to understand how the pieces relate to each other.
+
+**Specific gaps identified:**
+- No entry-level Big Three portrait (planned but not standard in existing HTML builds)
+- Chart ruler not featured — for Gemini Rising, Mercury in Scorpio 5th is the chart's organizing lens and is treated as one card among many
+- No explicit shadow/mirror section — the 7th house / Descendant as projection gateway, South Node as comfort zone pattern, are woven into cards but not named
+- No formative ground section — Chiron is in cards but childhood/inherited patterns aren't their own layer
+- No narrative arc — the Nodes as a story (South Node mastery → North Node direction → the productive friction between them) is underused
+- The Liz Greene therapeutic sequence (self → inner dynamics → formative past → relational patterns → integration arc) is the most complete approach and is not reflected in the current structure
+
+**Proposed revised structure:**
+```
+1. Entry — Big Three Portrait (recognition layer, plain language, no jargon)
+2. Chart Signature — chart ruler + dominant weight (the lens everything else reads through)
+3. Core Constitution — major placement deep dive cards (current format, works well)
+4. Formative Ground — Chiron, 4th house, Saturn (what was inherited; what was wounded)
+5. Shadow & Mirror — 7th house/Descendant, South Node, main oppositions (what gets projected)
+6. The Arc — Nodes as narrative (full South→North story; the direction the chart is building toward)
+7. Archetype Card
+8. Poem
+```
+
+**Why this is better:**
+- First-time readers have a path through — each section prepares the reader for the next
+- Advanced readers can navigate non-linearly to any section
+- The therapeutic arc (self → depths → past → shadow → direction) mirrors how good clinical astrology actually works
+- No competitor structures a natal reading this way — white space confirmed
+- The Archetype Card and poem land harder when the reader has traveled the full arc first
+
+**Research sources:** Liz Greene's Psychological Horoscope Analysis structure, Steven Forrest's The Inner Sky, Alice Bell's 7-step interpretation framework, CHANI app architecture review (June 12, 2026)
+
+**What's blocking:** Requires rebuilding all existing natal HTML files. Natural timing: next natal build session applies the new structure; existing files updated in that same session.
+
+**Poem decision:** Keeping the poem. It's the strongest differentiator in the product — no competitor closes with free verse written to the specific chart. The MFA credential is doing real work here. Length guideline tightened to 8–10 lines (was 12–18). Fewer lines forces stronger choices — cut until every line earns its place.
+
+---
+
 ### UX Philosophy: Conversational/Therapeutic vs. Analytical/Technical
 **Status: RESOLVED**
 **Raised:** June 5, 2026 (Gemini intake)

@@ -108,7 +108,7 @@ The poem closes the natal chart. It is the last thing on the page. Non-negotiabl
 - **No title** — the poem has no heading. It arrives.
 - **Jordan has an MFA from Trinity College Dublin.** Workshop standards apply. If a line is weak, rewrite it. No filler. No forced rhyme. No greeting card language.
 
-**Structural latitude:** No required line count. Short poems (12–18 lines) usually land best. Long poems (30+) are for extraordinary charts. Match the poem's scale to what the chart actually calls for.
+**Structural latitude:** 8–10 lines is the target. Fewer lines forces stronger choices — every line must earn its place. Long poems (20+) are almost always a sign of hedging; cut until the compression is tight. The poem should feel like a stone, not a scroll.
 
 **What makes the poem work:**
 - One image that captures the chart's central tension/gift (not a list of images)
