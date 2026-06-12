@@ -48,6 +48,9 @@ Jordan is a 32-year-old lesbian woman in Chicago. Associate Director of Content 
 **For natal chart builds** (new friend chart or rebuilding Jordan's):
 → also load **`CLAUDE-NATAL-BUILD.md`** — v3 template spec, archetype card SOP, poem SOP
 
+**For Fable 5 sessions** (voice elevation, natal foundation reads, transit deep dives, Phase 2 architecture):
+→ load **`CLAUDE-FABLE.md`** — full session types, prompt templates, output protocols, sequencing guide
+
 **Never load speculatively.** Load only what the session actually needs.
 
 ---
