@@ -101,17 +101,8 @@
     <button class="subnav-tab active" data-sub="chart" onclick="switchSub('chart',this)">
       <span class="sn-icon">✦</span> Chart
     </button>
-    <button class="subnav-tab" data-sub="identity" onclick="switchSub('identity',this)">
-      <span class="sn-icon">☉</span> Identity
-    </button>
-    <button class="subnav-tab" data-sub="depth" onclick="switchSub('depth',this)">
-      <span class="sn-icon">♒</span> Depth
-    </button>
-    <button class="subnav-tab" data-sub="roots" onclick="switchSub('roots',this)">
-      <span class="sn-icon">♋</span> Roots
-    </button>
-    <button class="subnav-tab" data-sub="soul" onclick="switchSub('soul',this)">
-      <span class="sn-icon">♓</span> Soul
+    <button class="subnav-tab" data-sub="reading" onclick="switchSub('reading',this)">
+      <span class="sn-icon">☉</span> Reading
     </button>
   </nav>
 
@@ -152,8 +143,8 @@
   </div>
 </div>
 
-<!-- IDENTITY -->
-<div class="subpanel sp-reading" id="sp-identity">
+<!-- READING — single scrollable panel -->
+<div class="subpanel sp-reading" id="sp-reading" style="display:none">
   <svg class="geo-bg" viewBox="0 0 375 812" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
     <polygon points="188,30 320,110 362,310 295,540 188,590 81,540 13,310 56,110" fill="none" stroke="rgba(201,168,76,0.07)" stroke-width="0.6"/>
     <circle cx="188" cy="30" r="2.0" fill="rgba(201,168,76,0.35)"/>
@@ -163,247 +154,476 @@
   </svg>
 
   <div class="reading-inner accent-gold">
-    <div class="panel-heading">
-      <div class="panel-eyebrow-sm">natal reading</div>
-      <div class="panel-title-lg">The Essential Signature</div>
+
+    <!-- ── SECTION 1: ENTRY — BIG THREE PORTRAIT ── -->
+    <div class="entry-section" data-section="1">
+      <div class="entry-eyebrow">Welcome</div>
+      <div class="entry-title">Sun at the World's Edge</div>
     </div>
 
-    <div class="sec-card">
-      <div class="sec-head">
-        <div class="sec-sign-glyph">&#x2736;</div>
-        <div class="sec-meta">
-          <div class="sec-eyebrow">NATAL OVERVIEW &middot; PISCES ASC &middot; SAG SUN &middot; SAG MC</div>
-          <div class="sec-title">Before the planets</div>
-          <div class="sec-tagline">four planets at the career point</div>
-        </div>
-      </div>
-      <div class="kw-row">
-        <span class="kw">SAG STELLIUM</span><span class="kw">PISCES ASC</span><span class="kw">SCORPIO MOON</span><span class="kw">MEANING FIRST</span><span class="kw">DEPTH</span>
-      </div>
-      <div class="sec-body">
-        <p>Before the placements, there is an orientation. Dasha&rsquo;s chart is built around meaning before form. The Sagittarius stellium near the Midheaven (Sun, Mercury, Pluto, Chiron) gathers four planets at the point of becoming visible. The Pisces Ascendant makes the door permeable: Dasha enters spaces having already absorbed the emotional field. What lives below: a Scorpio Moon in the 8th house that holds everything close until it decides to share.</p>
-        <p>The public orientation is expansive. The private life is deep and guarded. These are not contradictions. The seeking is genuine because the depth is real.</p>
-      </div>
-    </div>
+    <div class="trio-wrap" data-section="1">
+      <div class="trio">
 
-    <div class="sep"><span class="sep-inner">Ascendant</span></div>
-
-    <div class="sec-card">
-      <div class="sec-head">
-        <div class="sec-sign-glyph">&#x2653;</div>
-        <div class="sec-meta">
-          <div class="sec-eyebrow">ASCENDANT &middot; PISCES 25&deg;44&prime; &middot; NEPTUNE RULER &middot; AQUARIUS 4&deg;56&prime; &middot; 11TH HOUSE</div>
-          <div class="sec-title">The Permeable Door</div>
-          <div class="sec-tagline">already reading the room before entering it</div>
+        <div class="trio-card sun">
+          <span class="trio-glyph">&#x2609;</span>
+          <div class="trio-label">Sun</div>
+          <div class="trio-placement">29&#xB0; Sagittarius</div>
+          <div class="trio-house">10th House · identity made public</div>
+          <div class="trio-rule"></div>
+          <div class="trio-tagline">You carry the full weight of Sagittarius's question right at its final degree. The truth worth giving. The teaching that doesn't pretend. This is not arriving at meaning — it's already knowing you must.</div>
         </div>
-      </div>
-      <div class="kw-row">
-        <span class="kw">PISCES</span><span class="kw">EMPATHIC</span><span class="kw">POROUS</span><span class="kw">NEPTUNE</span><span class="kw">COLLECTIVE</span>
-      </div>
-      <div class="sec-body">
-        <p>Pisces rises: the boundary between Dasha and the room is not fixed. Not passivity &mdash; the nervous system is built to receive the emotional field before translating it. This is how the information arrives first.</p>
-        <p>Neptune, which rules this Ascendant, is in Aquarius in the 11th house. The portal opens toward the collective: community, future-orientation, the network of people building something together. The permeability serves something social.</p>
+
+        <div class="trio-card moon">
+          <span class="trio-glyph">&#x263D;</span>
+          <div class="trio-label">Moon</div>
+          <div class="trio-placement">2&#xB0; Scorpio</div>
+          <div class="trio-house">8th House · feeling runs private and deep</div>
+          <div class="trio-rule"></div>
+          <div class="trio-tagline">The emotional body holds what it knows until the question of trust has been answered. Not withholding — accumulating. What you carry inside is real, serious, and not available to everyone.</div>
+        </div>
+
+        <div class="trio-card asc">
+          <span class="trio-glyph">&#x2191;</span>
+          <div class="trio-label">Rising</div>
+          <div class="trio-placement">25&#xB0; Pisces</div>
+          <div class="trio-house">Neptune in 11th · the door opens toward the collective</div>
+          <div class="trio-rule"></div>
+          <div class="trio-tagline">The boundary between you and the room is not fixed. You arrive having already absorbed the emotional field. This is not passivity — it is how your information arrives first, before anyone speaks.</div>
+        </div>
+
       </div>
     </div>
 
-    <div class="sep"><span class="sep-inner">Sun &middot; Mercury &middot; Midheaven</span></div>
+    <!-- Divider: Entry → Chart Signature -->
+    <div class="cel-divider" data-section="1">
+      <div class="cel-rule left"></div>
+      <div class="cel-mark">✦</div>
+      <div class="cel-rule right"></div>
+    </div>
 
-    <div class="sec-card">
-      <div class="sec-head">
-        <div class="sec-sign-glyph">&#x2650;</div>
-        <div class="sec-meta">
-          <div class="sec-eyebrow">SUN &middot; SAG 29&deg;07&prime; &middot; 10TH HOUSE &middot; MC 26&deg;24&prime; &middot; 2.72&deg; APART</div>
-          <div class="sec-title">The Stellium at the Career Point</div>
-          <div class="sec-tagline">four planets in Sagittarius, gathered near what becomes visible</div>
-        </div>
+    <!-- ── SECTION 2: CHART SIGNATURE ── -->
+    <div class="sig-wrap" data-section="2">
+      <div class="sig-header">
+        <div class="sig-eyebrow">Key Patterns</div>
+        <div class="sig-title">Chart Signature</div>
       </div>
-      <div class="kw-row">
-        <span class="kw">SAGITTARIUS</span><span class="kw">10TH HOUSE</span><span class="kw">MC</span><span class="kw">ANARETIC</span><span class="kw">STELLIUM</span>
-      </div>
-      <div class="sec-body">
-        <p>The Sun at 29&deg; Sagittarius is the anaretic degree: the full weight of the sign&rsquo;s question at the last point before the transition. What is the truth? What is worth teaching? This question has cycled through everything Sagittarius offers. The answer is not naive.</p>
-        <p>The Sun is 2.72&deg; from the Midheaven. Identity and career are not separate containers. The public life is autobiographical. What Dasha does professionally is also what Dasha believes. Mercury at 26&deg; Sag sits in the 9th house just before the MC cusp. Pluto at 13&deg; and Chiron at 21&deg; are also in the 9th. Four planets in the sign of the seeker: three below the career threshold, one above it.</p>
-        <p>Sun conjunct Mercury at 2.89&deg;: how Dasha thinks is who Dasha is. The mind and the identity are nearly the same organ.</p>
+      <div class="sig-panel">
+        <ul class="sig-list">
+          <li class="sig-item">
+            <span class="sig-glyph">&#x2650;</span>
+            <span class="sig-text"><strong>Sagittarius stellium near the Midheaven: Sun 29°, Mercury 26°, Pluto 13°, Chiron 21°.</strong> Four planets in the sign of the seeker, gathered near the career point. The public life is autobiographical — what Dasha does professionally is also what Dasha believes. The question is not strategic. It is native.</span>
+          </li>
+          <li class="sig-item">
+            <span class="sig-glyph">&#x2653;</span>
+            <span class="sig-text"><strong>Pisces Rising, Neptune in Aquarius (11th house).</strong> The permeability is structural: the nervous system is built to receive the emotional field of a room before translating it. Neptune in the 11th orients that permeability toward community and collective future rather than personal absorption.</span>
+          </li>
+          <li class="sig-item">
+            <span class="sig-glyph">&#x264F;</span>
+            <span class="sig-text"><strong>Moon in Scorpio 8th house · conjunct Mars at 3.78°.</strong> Depth and drive are close to the same organ. The emotional life and the capacity for action run on the same fuel. Private intensity powers the public orientation.</span>
+          </li>
+          <li class="sig-item">
+            <span class="sig-glyph">&#x264B;</span>
+            <span class="sig-text"><strong>North Node in Cancer, 4th house.</strong> The soul direction is toward emotional rootedness — the home that holds you, not the home that proves you arrived. This runs quietly below the 10th-house stellium. Not more achievement: more belonging.</span>
+          </li>
+          <li class="sig-item">
+            <span class="sig-glyph">&#x2652;</span>
+            <span class="sig-text"><strong>Venus, Uranus, Neptune in Aquarius, 11th house.</strong> Relational values are unconventional and collective. The friendships that matter are built on shared vision. The belonging is real, but the terms are Dasha's.</span>
+          </li>
+        </ul>
       </div>
     </div>
 
-    <div class="dive-wrap">
-      <button class="dive-toggle" aria-expanded="false" onclick="toggleDive(this)">
-        <div class="dive-hd">
-          <div class="dive-lbl"><span class="dive-lbl-glyph">&#x264F;</span>Moon &middot; Scorpio 2&deg;03&prime; &middot; 8th House</div>
-          <span class="dive-arrow">&#x25BE;</span>
+    <!-- Divider: Chart Signature → Core Constitution -->
+    <div class="cel-divider" data-section="2" style="margin-top:36px">
+      <div class="cel-rule left"></div>
+      <div class="cel-mark">&#x2727;</div>
+      <div class="cel-rule right"></div>
+    </div>
+
+    <!-- ── SECTION 3: CORE CONSTITUTION ── -->
+    <div class="dive-wrap" data-section="3">
+
+      <!-- Pisces Rising + Neptune -->
+      <div class="dive-section accent-gold">
+        <div class="dive-head gold-head">
+          <svg class="dive-head-stars" viewBox="0 0 900 130" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="820" cy="28" r="1.0" fill="#d0a840" opacity="0.48"/>
+            <circle cx="72"  cy="52" r="0.8" fill="#f0e4cc" opacity="0.34"/>
+            <text x="840" y="72" font-size="9" fill="#d0a840" opacity="0.44" text-anchor="middle" font-family="serif">✦</text>
+            <circle cx="860" cy="42" r="40" fill="#d0a840" opacity="0.05"/>
+          </svg>
+          <div class="dive-icon">&#x2653;&#xFE0E;</div>
+          <div class="dive-head-text">
+            <div class="dive-eyebrow">Ascendant · Pisces 25°44′ · Neptune Ruler · Aquarius 4°56′ · 11th House</div>
+            <div class="dive-title">The Permeable Door</div>
+            <div class="dive-subtitle">already reading the room before entering it</div>
+            <div class="dive-tags">
+              <span class="dtag">Pisces</span>
+              <span class="dtag">Empathic</span>
+              <span class="dtag">Neptune</span>
+              <span class="dtag">Collective</span>
+            </div>
+          </div>
         </div>
-      </button>
-      <div class="dive-body">
-        <div class="dive-content">
+        <div class="dive-body">
+          <p>Pisces rises: the boundary between Dasha and the room is not fixed. Not passivity — the nervous system is built to receive the emotional field before translating it. This is how the information arrives first.</p>
+          <p>Neptune, which rules this Ascendant, is in Aquarius in the 11th house. The portal opens toward the collective: community, future-orientation, the network of people building something together. The permeability serves something social. It is not a private sensitivity. It is how Dasha reads a room full of people at once.</p>
+        </div>
+      </div>
+
+      <!-- Sun · Mercury · Midheaven -->
+      <div class="dive-section accent-rose">
+        <div class="dive-head rose-head">
+          <svg class="dive-head-stars" viewBox="0 0 900 130" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="818" cy="30" r="0.9" fill="#d4a0b5" opacity="0.42"/>
+            <circle cx="68"  cy="55" r="0.8" fill="#f0e4cc" opacity="0.30"/>
+            <text x="838" y="74" font-size="9" fill="#d4a0b5" opacity="0.40" text-anchor="middle" font-family="serif">✦</text>
+            <circle cx="860" cy="44" r="44" fill="#d4a0b5" opacity="0.05"/>
+          </svg>
+          <div class="dive-icon">&#x2650;&#xFE0E;</div>
+          <div class="dive-head-text">
+            <div class="dive-eyebrow">Sun · Sag 29°07′ · 10th House · MC 26°24′ · 2.72° apart · Mercury 26° Sag</div>
+            <div class="dive-title">The Stellium at the Career Point</div>
+            <div class="dive-subtitle">four planets in Sagittarius, gathered near what becomes visible</div>
+            <div class="dive-tags">
+              <span class="dtag">Sagittarius</span>
+              <span class="dtag">10th House</span>
+              <span class="dtag">Anaretic</span>
+              <span class="dtag">Stellium</span>
+            </div>
+          </div>
+        </div>
+        <div class="dive-body">
+          <p>The Sun at 29° Sagittarius is the anaretic degree: the full weight of the sign's question at the last point before transition. What is the truth? What is worth teaching? This question has cycled through everything Sagittarius offers. The answer is not naive.</p>
+          <p>The Sun is 2.72° from the Midheaven. Identity and career are not separate containers. The public life is autobiographical. What Dasha does professionally is also what Dasha believes. Mercury at 26° Sag sits in the 9th house just before the MC cusp. Pluto at 13° and Chiron at 21° also in the 9th. Four planets in the sign of the seeker: three below the career threshold, one above it.</p>
+          <p>Sun conjunct Mercury at 2.89°: how Dasha thinks is who Dasha is. The mind and the identity are nearly the same organ.</p>
+          <div class="pull rose-pull">The seeking is genuine because the depth is real.</div>
+        </div>
+      </div>
+
+      <!-- Moon · Scorpio · 8th House -->
+      <div class="dive-section accent-plum">
+        <div class="dive-head plum-head">
+          <svg class="dive-head-stars" viewBox="0 0 900 130" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="815" cy="32" r="0.9" fill="#4a9fd4" opacity="0.38"/>
+            <circle cx="70"  cy="58" r="0.8" fill="#f0e4cc" opacity="0.28"/>
+            <text x="835" y="76" font-size="9" fill="#4a9fd4" opacity="0.38" text-anchor="middle" font-family="serif">✦</text>
+            <circle cx="860" cy="46" r="44" fill="#7b4fa6" opacity="0.08"/>
+          </svg>
+          <div class="dive-icon">&#x264F;&#xFE0E;</div>
+          <div class="dive-head-text">
+            <div class="dive-eyebrow">Moon · Scorpio 2°03′ · 8th House · conjunct Mars 3.78°</div>
+            <div class="dive-title">Moon in Scorpio</div>
+            <div class="dive-subtitle">feeling runs deep and private; the drive and the depth run together</div>
+            <div class="dive-tags">
+              <span class="dtag">Scorpio</span>
+              <span class="dtag">8th House</span>
+              <span class="dtag">Moon-Mars</span>
+              <span class="dtag">Accumulation</span>
+            </div>
+          </div>
+        </div>
+        <div class="dive-body">
           <p>Moon in Scorpio in the 8th house: feeling runs deep and private. The 8th house Moon holds what it knows until the question of trust has been answered. It does not give recognition early. Trust is earned, slowly, through evidence.</p>
-          <p>At 2&deg; Scorpio, this is the early degree. The Scorpio Moon&rsquo;s development is still accumulating. Not shallow &mdash; the intensity is present from the start. Still becoming what it will eventually know.</p>
+          <p>At 2° Scorpio, this is the early degree. The Scorpio Moon's development is still accumulating. Not shallow — the intensity is present from the start. Still becoming what it will eventually know.</p>
+          <p>Moon conjunct Mars at 3.78°: the emotional body and the drive are closely aligned. When Dasha is moved by something, she is also moved toward it. The inner life and the will are not as separate as they might appear from the outside.</p>
         </div>
       </div>
+
+    </div><!-- end .dive-wrap core constitution -->
+
+    <!-- Divider: Core Constitution → Formative Ground -->
+    <div class="cel-divider" data-section="3" style="margin-top:36px">
+      <div class="cel-rule left"></div>
+      <div class="cel-mark">&#x2736;</div>
+      <div class="cel-rule right"></div>
     </div>
 
-    <div class="sep-stars">&#x2736; &nbsp; &#x2727; &nbsp; &#x2736;</div>
-  </div>
-</div>
+    <!-- ── SECTION 4: FORMATIVE GROUND ── -->
+    <div class="dive-wrap formative-wrap" data-section="4">
 
-<!-- DEPTH -->
-<div class="subpanel sp-reading" id="sp-depth">
-  <svg class="geo-bg" viewBox="0 0 375 812" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <polygon points="188,50 340,140 375,340 305,560 188,610 71,560 0,340 35,140" fill="none" stroke="rgba(201,168,76,0.065)" stroke-width="0.55"/>
-    <circle cx="188" cy="300" r="3.0" fill="none" stroke="rgba(62,143,192,0.12)" stroke-width="0.6"/>
-    <circle cx="188" cy="300" r="1.8" fill="rgba(62,143,192,0.16)"/>
-    <circle cx="188" cy="50" r="1.8" fill="rgba(201,168,76,0.32)"/>
-  </svg>
-
-  <div class="reading-inner accent-cerulean">
-    <div class="panel-heading">
-      <div class="panel-eyebrow-sm">inner life</div>
-      <div class="panel-title-lg">The Interior Fields</div>
-    </div>
-
-    <div class="sec-card">
-      <div class="sec-head">
-        <div class="sec-sign-glyph">&#x2652;</div>
-        <div class="sec-meta">
-          <div class="sec-eyebrow">VENUS &middot; URANUS &middot; NEPTUNE &middot; AQUARIUS &middot; 11TH HOUSE</div>
-          <div class="sec-title">The Aquarian Field</div>
-          <div class="sec-tagline">where the unconventional nature lives</div>
+      <!-- Chiron · Sagittarius · 9th House -->
+      <div class="dive-section accent-plum">
+        <div class="dive-head plum-head">
+          <svg class="dive-head-stars" viewBox="0 0 900 130" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="815" cy="32" r="0.9" fill="#4a9fd4" opacity="0.38"/>
+            <circle cx="70"  cy="58" r="0.8" fill="#f0e4cc" opacity="0.28"/>
+            <text x="835" y="76" font-size="9" fill="#4a9fd4" opacity="0.38" text-anchor="middle" font-family="serif">✦</text>
+          </svg>
+          <div class="dive-icon">&#x26B7;&#xFE0E;</div>
+          <div class="dive-head-text">
+            <div class="dive-eyebrow">Chiron · Sagittarius 21°23′ · 9th House · Wound in the Seeking</div>
+            <div class="dive-title">Chiron in Sagittarius</div>
+            <div class="dive-subtitle">the question about truth is also the wound — and the gift</div>
+            <div class="dive-tags">
+              <span class="dtag">Chiron</span>
+              <span class="dtag">Sagittarius</span>
+              <span class="dtag">9th House</span>
+              <span class="dtag">Belief</span>
+            </div>
+          </div>
+        </div>
+        <div class="dive-body">
+          <p>Chiron in Sagittarius in the 9th house places the wound inside the same stellium that houses the Sun. The seeking is both the identity and the hurt. Not a question of whether the beliefs are real — they are. The ache is more specific: the gap between what Dasha knows to be true and what can be proven, shared, or received by others.</p>
+          <p>In the 9th house, this wound touches philosophy, teaching, and meaning-making. Some early signal that what she understood was not yet legible to the people around her. The healing is not to stop trusting the knowing. It is to trust that the knowing is worth teaching even when the room is not yet ready for it.</p>
+          <div class="pull plum-pull">The wound and the gift are the same instrument. The question is how much you trust the knowing.</div>
         </div>
       </div>
-      <div class="kw-row">
-        <span class="kw">AQUARIUS</span><span class="kw">11TH HOUSE</span><span class="kw">COLLECTIVE</span><span class="kw">VISION</span><span class="kw">DISRUPTION</span>
-      </div>
-      <div class="sec-body">
-        <p>Three planets in Aquarius in the 11th house. The 11th is community, networks, collective belonging, and the future. This is where Dasha is most unconventional.</p>
-        <p>Venus at 14&deg; Aquarius: relational values are progressive. The friendships that matter are built on shared vision, not social convention. Uranus at 18&deg; Venus conjunct within 3.86&deg;: the disruptive and the relational are close. The way Dasha forms bonds has a quality of the unexpected. Neptune at 4&deg; Aquarius: the idealism attaches to the collective. What Dasha hopes for is not personal abundance. It is a different world than the one she entered.</p>
-        <p>These three in Aquarius: the belonging is real. The terms are Dasha&rsquo;s.</p>
-      </div>
-    </div>
 
-    <div class="sep"><span class="sep-inner">Mars &middot; 7th House</span></div>
-
-    <div class="sec-card">
-      <div class="sec-head">
-        <div class="sec-sign-glyph">&#x264E;</div>
-        <div class="sec-meta">
-          <div class="sec-eyebrow">MARS &middot; LIBRA 28&deg;16&prime; &middot; 7TH HOUSE &middot; APPROACHING ANARETIC</div>
-          <div class="sec-title">Mars in the Partnership House</div>
-          <div class="sec-tagline">the drive moves through relationship before it moves alone</div>
+      <!-- 4th House / IC -->
+      <div class="dive-section accent-gold">
+        <div class="dive-head gold-head">
+          <svg class="dive-head-stars" viewBox="0 0 900 130" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="818" cy="30" r="1.0" fill="#d0a840" opacity="0.46"/>
+            <circle cx="72"  cy="52" r="0.8" fill="#f0e4cc" opacity="0.28"/>
+            <text x="838" y="72" font-size="9" fill="#d0a840" opacity="0.42" text-anchor="middle" font-family="serif">✦</text>
+          </svg>
+          <div class="dive-icon">&#x264B;&#xFE0E;</div>
+          <div class="dive-head-text">
+            <div class="dive-eyebrow">IC · 4th House · North Node Cancer 15°37′ Rx · The Foundation</div>
+            <div class="dive-title">The 4th House &amp; IC</div>
+            <div class="dive-subtitle">the home that holds you, not the one that proves you arrived</div>
+            <div class="dive-tags">
+              <span class="dtag">4th House</span>
+              <span class="dtag">Cancer</span>
+              <span class="dtag">North Node</span>
+              <span class="dtag">Rootedness</span>
+            </div>
+          </div>
+        </div>
+        <div class="dive-body">
+          <p>The North Node in Cancer in the 4th house points toward the work of this life in its quietest form: emotional rootedness, the ability to be held, to belong, to have a home that is felt rather than achieved. The 4th house rules the interior, the private life, the place where no one is watching.</p>
+          <p>With the Sagittarius stellium pulling hard toward visibility and the Midheaven, the 4th house development asks for the counterweight: tending what is already here. Not more reaching. More receiving. The home that doesn't require performance. This instruction does not announce itself. It accumulates.</p>
         </div>
       </div>
-      <div class="kw-row">
-        <span class="kw">MARS</span><span class="kw">LIBRA</span><span class="kw">7TH HOUSE</span><span class="kw">COLLABORATION</span><span class="kw">28&deg;</span>
-      </div>
-      <div class="sec-body">
-        <p>Mars in Libra in the 7th house. Drive and desire move through partnership before they move alone. Dasha operates most powerfully in collaboration or with a clear counterpart. Acting solo is harder not from lack of capacity but from how this Mars gets fuel: the quality of the connection, the alignment of the mission.</p>
-        <p>At 28&deg; Libra, Mars approaches the anaretic degree. The relational drive is concentrated. The urgency around finding the right collaborator is not noise. It is this Mars doing its job.</p>
-      </div>
-    </div>
 
-    <div class="sep-stars">&#x2736; &nbsp; &#x2727; &nbsp; &#x2736;</div>
-  </div>
-</div>
-
-<!-- ROOTS -->
-<div class="subpanel sp-reading" id="sp-roots">
-  <svg class="geo-bg" viewBox="0 0 375 812" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <polygon points="188,40 310,120 345,300 290,510 188,555 86,510 30,300 65,120" fill="none" stroke="rgba(201,168,76,0.065)" stroke-width="0.55"/>
-    <line x1="188" y1="300" x2="130" y2="460" stroke="rgba(80,142,68,0.09)" stroke-width="0.4"/>
-    <line x1="188" y1="300" x2="246" y2="460" stroke="rgba(80,142,68,0.09)" stroke-width="0.4"/>
-    <circle cx="188" cy="300" r="2.0" fill="rgba(80,142,68,0.20)"/>
-    <circle cx="188" cy="40" r="1.8" fill="rgba(201,168,76,0.32)"/>
-  </svg>
-
-  <div class="reading-inner accent-teal">
-    <div class="panel-heading">
-      <div class="panel-eyebrow-sm">foundation</div>
-      <div class="panel-title-lg">The Foundation Work</div>
-    </div>
-
-    <div class="sec-card">
-      <div class="sec-head">
-        <div class="sec-sign-glyph">&#x264B;</div>
-        <div class="sec-meta">
-          <div class="sec-eyebrow">NORTH NODE &middot; CANCER 15&deg;37&prime; Rx &middot; 4TH HOUSE &middot; SOUL PATH</div>
-          <div class="sec-title">The Direction of Growth</div>
-          <div class="sec-tagline">not the home that proves something &mdash; the one that holds you</div>
+      <!-- Saturn Retrograde · Taurus · 2nd House -->
+      <div class="dive-section accent-teal">
+        <div class="dive-head teal-head">
+          <svg class="dive-head-stars" viewBox="0 0 900 130" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="818" cy="30" r="0.9" fill="#7ecfc2" opacity="0.38"/>
+            <circle cx="68"  cy="54" r="0.8" fill="#f0e4cc" opacity="0.26"/>
+            <text x="836" y="73" font-size="9" fill="#7ecfc2" opacity="0.38" text-anchor="middle" font-family="serif">✦</text>
+          </svg>
+          <div class="dive-icon">&#x2644;&#xFE0E;</div>
+          <div class="dive-head-text">
+            <div class="dive-eyebrow">Saturn Rx · Taurus 25°10′ · 2nd House · Material Foundation</div>
+            <div class="dive-title">Saturn Retrograde in Taurus</div>
+            <div class="dive-subtitle">the lessons around worth and resources come from within first</div>
+            <div class="dive-tags">
+              <span class="dtag">Saturn Rx</span>
+              <span class="dtag">Taurus</span>
+              <span class="dtag">2nd House</span>
+              <span class="dtag">Self-Worth</span>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="kw-row">
-        <span class="kw">NORTH NODE</span><span class="kw">CANCER</span><span class="kw">4TH HOUSE</span><span class="kw">HOME</span><span class="kw">BELONGING</span>
-      </div>
-      <div class="sec-body">
-        <p>The North Node in Cancer in the 4th house. The soul path is toward emotional rootedness: the ability to be held, to belong, to have a home that is felt rather than achieved. The South Node in Capricorn in the 10th is the old pattern: building for approval, structuring the self to earn legitimacy.</p>
-        <p>The growth direction is the opposite. Not more achievement. More home.</p>
-        <p>This development is quiet and private. It produces no visible outputs. It runs below the Sagittarius stellium&rsquo;s public orientation, below the reaching toward meaning. It is the work of tending what is already here.</p>
-      </div>
-    </div>
-
-    <div class="div-wrap" style="margin-bottom:12px">
-    </div>
-
-    <div class="dive-wrap">
-      <button class="dive-toggle" aria-expanded="false" onclick="toggleDive(this)">
-        <div class="dive-hd">
-          <div class="dive-lbl"><span class="dive-lbl-glyph">&#x2644;</span>Saturn &middot; Taurus 25&deg;10&prime; Rx &middot; 2nd House &middot; The Material Foundation</div>
-          <span class="dive-arrow">&#x25BE;</span>
-        </div>
-      </button>
-      <div class="dive-body">
-        <div class="dive-content">
+        <div class="dive-body">
           <p>Saturn retrograde in the 2nd house of resources, self-worth, and material stability. In Taurus. The work of building stable ground is inward first. The lessons around worth and resources accumulate through self-examination, not through structures imposed from outside.</p>
-          <p>The retrograde quality means development comes from revisiting. What Saturn in Taurus in the 2nd eventually produces is real and lasting. It takes longer than the exterior suggests.</p>
+          <p>The retrograde quality means development comes from revisiting. What Saturn in Taurus in the 2nd eventually produces is real and lasting. It takes longer than the exterior suggests. The relationship between inner sense of value and outward material ground is the life's work here, not the end state.</p>
+        </div>
+      </div>
+
+    </div><!-- end .dive-wrap formative-wrap -->
+
+    <!-- Divider: Formative Ground → Shadow & Mirror -->
+    <div class="cel-divider" data-section="4" style="margin-top:36px">
+      <div class="cel-rule left"></div>
+      <div class="cel-mark">&#x2727;</div>
+      <div class="cel-rule right"></div>
+    </div>
+
+    <!-- ── SECTION 5: SHADOW & MIRROR ── -->
+    <div class="dive-wrap shadow-wrap" data-section="5">
+
+      <!-- 7th House / Descendant · Mars in Libra -->
+      <div class="dive-section accent-rose">
+        <div class="dive-head rose-head">
+          <svg class="dive-head-stars" viewBox="0 0 900 130" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="818" cy="30" r="0.9" fill="#d4a0b5" opacity="0.42"/>
+            <circle cx="68"  cy="55" r="0.8" fill="#f0e4cc" opacity="0.30"/>
+            <text x="838" y="74" font-size="9" fill="#d4a0b5" opacity="0.40" text-anchor="middle" font-family="serif">✦</text>
+          </svg>
+          <div class="dive-icon">&#x264E;&#xFE0E;</div>
+          <div class="dive-head-text">
+            <div class="dive-eyebrow">Descendant · 7th House · Mars · Libra 28°16′ · What You Seek in Others</div>
+            <div class="dive-title">Mars in the Partnership House</div>
+            <div class="dive-subtitle">the drive moves through relationship before it moves alone</div>
+            <div class="dive-tags">
+              <span class="dtag">Mars</span>
+              <span class="dtag">Libra</span>
+              <span class="dtag">7th House</span>
+              <span class="dtag">Collaboration</span>
+            </div>
+          </div>
+        </div>
+        <div class="dive-body">
+          <p>Mars in Libra in the 7th house. Drive and desire move through partnership before they move alone. Dasha operates most powerfully in collaboration or with a clear counterpart. Acting solo is harder not from lack of capacity but from how this Mars gets fuel: the quality of the connection, the alignment of the mission.</p>
+          <p>At 28° Libra, Mars approaches the anaretic degree. The relational drive is concentrated. The urgency around finding the right collaborator is not noise. It is this Mars doing its job.</p>
+          <p>The 7th house also describes the shadow — what the self projects outward. The Libra Descendant says that what Dasha is quietly looking for in others is the quality she is still learning to extend toward herself: measured, fair, willing to weigh all sides before moving.</p>
+          <div class="pull rose-pull">Collaboration is not compromise — it is how this chart reaches full power.</div>
+        </div>
+      </div>
+
+      <!-- South Node in Capricorn · 10th House -->
+      <div class="dive-section accent-rose">
+        <div class="dive-head rose-head">
+          <svg class="dive-head-stars" viewBox="0 0 900 130" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="820" cy="28" r="0.9" fill="#d4a0b5" opacity="0.40"/>
+            <circle cx="68"  cy="55" r="0.8" fill="#f0e4cc" opacity="0.28"/>
+            <text x="840" y="72" font-size="9" fill="#d4a0b5" opacity="0.38" text-anchor="middle" font-family="serif">✦</text>
+          </svg>
+          <div class="dive-icon">&#x262B;&#xFE0E;</div>
+          <div class="dive-head-text">
+            <div class="dive-eyebrow">South Node · Capricorn 15°37′ Rx · 10th House · Past Pattern</div>
+            <div class="dive-title">South Node in Capricorn</div>
+            <div class="dive-subtitle">the old pattern is building for approval — structuring the self to earn legitimacy</div>
+            <div class="dive-tags">
+              <span class="dtag">South Node</span>
+              <span class="dtag">Capricorn</span>
+              <span class="dtag">10th House</span>
+              <span class="dtag">Release</span>
+            </div>
+          </div>
+        </div>
+        <div class="dive-body">
+          <p>South Node in Capricorn in the 10th house: the past mastery is around achievement, structure, and earning visibility through demonstrable results. The Capricorn South Node knows how to build things that look correct from the outside. It knows how to be taken seriously. That facility is real — and it is also the default pattern when security feels uncertain.</p>
+          <p>The Saturn-ruled 10th in Capricorn on the South Node means the old strategy was: make yourself legible through what you produce. In this life, that strategy works well enough that it keeps getting used, even when it is no longer the growth direction. The North Node in Cancer asks for something that does not produce visible outputs at all: tending what is already home.</p>
+          <p>The Moon-Neptune square (2.88° orb) adds a note here: the porous register is also the tension between Dasha's emotional knowing and the idealized version of belonging. The feeling that the space between the inner life and the exterior world is not always coherent. The resolution is not more Capricorn precision. It is more Cancer presence.</p>
+        </div>
+      </div>
+
+      <!-- Moon-Neptune Square · opposition pattern -->
+      <div class="dive-section accent-plum">
+        <div class="dive-head plum-head">
+          <svg class="dive-head-stars" viewBox="0 0 900 130" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="815" cy="32" r="0.9" fill="#4a9fd4" opacity="0.38"/>
+            <circle cx="70"  cy="58" r="0.8" fill="#f0e4cc" opacity="0.28"/>
+            <text x="835" y="76" font-size="9" fill="#4a9fd4" opacity="0.38" text-anchor="middle" font-family="serif">✦</text>
+          </svg>
+          <div class="dive-icon">&#x264F;&#xFE0E;</div>
+          <div class="dive-head-text">
+            <div class="dive-eyebrow">Moon Scorpio 2°03′ · Square · Neptune Aquarius 4°56′ · 2.88° orb</div>
+            <div class="dive-title">The Permeable Register</div>
+            <div class="dive-subtitle">the boundary between self and field is not always where it looks</div>
+            <div class="dive-tags">
+              <span class="dtag">Moon-Neptune</span>
+              <span class="dtag">Square</span>
+              <span class="dtag">Empathy</span>
+              <span class="dtag">Intuition</span>
+            </div>
+          </div>
+        </div>
+        <div class="dive-body">
+          <p>Moon in Scorpio square Neptune in Aquarius at 2.88°. The emotional body and the idealistic field are in direct tension. Neptune can dissolve the Moon's containment. The emotional register may not always have a clear line between Dasha's feeling and the room's feeling.</p>
+          <p>The dissolution is also the gift. The porous register is how the intuitive attunement works. The Moon-Neptune square produces a quality of empathic listening that is not deliberate. It is how the nervous system is constructed. The mirror of the square: the task is not to eliminate the porousness but to know when it is yours and when it is the room's.</p>
+        </div>
+      </div>
+
+    </div><!-- end .dive-wrap shadow-wrap -->
+
+    <!-- Divider C — before The Arc -->
+    <div style="display:flex;align-items:center;justify-content:center;margin:52px 44px 0" aria-hidden="true">
+      <svg width="280" height="40" viewBox="0 0 280 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 10 30 Q 140 2 270 30" stroke="rgba(208,168,64,0.28)" stroke-width="0.9" fill="none"/>
+        <text x="10"  y="32" font-size="11" fill="rgba(208,168,64,0.45)" text-anchor="middle" font-family="serif">✦</text>
+        <text x="270" y="32" font-size="11" fill="rgba(208,168,64,0.45)" text-anchor="middle" font-family="serif">✦</text>
+      </svg>
+    </div>
+
+    <!-- ── SECTION 6: THE ARC ── -->
+    <div class="arc-wrap" data-section="6">
+      <div class="arc-header">
+        <div class="arc-eyebrow">Section VI · Soul Direction</div>
+        <div class="arc-title">The Arc</div>
+      </div>
+      <div class="arc-panels">
+        <div class="arc-panel past">
+          <div class="arc-panel-eyebrow">Past mastery · South Node</div>
+          <div class="arc-panel-placement">&#x2651; Capricorn · 10th House</div>
+          <div class="arc-panel-rule"></div>
+          <p>You came in already knowing how to be the one who earns legitimacy through what you produce. The Capricorn South Node in the 10th is fluent in structure, achievement, and the kind of visibility that is built and maintained through work. That mastery is genuine and it is also the default pattern when you are afraid. More building. More demonstrating. Making yourself indispensable in the way the world can read.</p>
+          <p>The Sagittarius stellium near the MC amplifies this: the public orientation is strong, native, and real. The question is whether the seeking is chosen or compulsive — whether the career is also the ground, or whether the ground is somewhere quieter.</p>
+        </div>
+        <div class="arc-arrow" aria-hidden="true">&#x2192;</div>
+        <div class="arc-panel future">
+          <div class="arc-panel-eyebrow">Direction · North Node</div>
+          <div class="arc-panel-placement">&#x264B; Cancer · 4th House</div>
+          <div class="arc-panel-rule"></div>
+          <p>The North Node in Cancer in the 4th house asks for the thing the South Node never required: being received without having earned it first. The soul direction is toward belonging that does not ask you to perform. The home that exists before you have made yourself legible. Emotional rootedness as the ground, not as a reward for achievement.</p>
+          <p>This development produces no visible outputs. It runs below the stellium's public orientation. It is the chart's quietest instruction and its most private. The work of this arc is tending what is already here, and trusting that the ground holds even when you have not proven it should.</p>
         </div>
       </div>
     </div>
 
-    <div class="sep"><span class="sep-inner">Moon &middot; Neptune</span></div>
+    <!-- Divider A — The Arc → Synastry -->
+    <div style="text-align:center;margin:52px 44px 0;font-family:'Cormorant Garamond',serif;font-size:1rem;letter-spacing:0.30em;color:rgba(201,168,76,0.40)" aria-hidden="true">&#x2727; &nbsp; &middot; &nbsp; &middot; &nbsp; &middot; &nbsp; &#x2736; &nbsp; &middot; &nbsp; &middot; &nbsp; &middot; &nbsp; &#x2727;</div>
 
-    <div class="sec-card">
-      <div class="sec-head">
-        <div class="sec-sign-glyph">&#x264F;</div>
-        <div class="sec-meta">
-          <div class="sec-eyebrow">MOON &middot; SCORPIO 2&deg;03&prime; &middot; SQUARE &middot; NEPTUNE &middot; AQUARIUS 4&deg;56&prime; &middot; 2.88&deg; ORB</div>
-          <div class="sec-title">The Permeable Register</div>
-          <div class="sec-tagline">the boundary between self and field is not always where it looks</div>
+    <!-- Synastry — preserved as-is -->
+    <div class="dive-wrap" data-section="synastry" style="padding-top:44px">
+      <div class="dive-section accent-teal">
+        <div class="dive-head teal-head">
+          <svg class="dive-head-stars" viewBox="0 0 900 130" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="818" cy="30" r="0.9" fill="#7ecfc2" opacity="0.38"/>
+            <circle cx="68"  cy="54" r="0.8" fill="#f0e4cc" opacity="0.26"/>
+            <circle cx="542" cy="18" r="0.8" fill="#7ecfc2" opacity="0.26"/>
+            <text x="836" y="73" font-size="9" fill="#7ecfc2" opacity="0.38" text-anchor="middle" font-family="serif">✦</text>
+            <circle cx="858" cy="42" r="42" fill="#5bb8a8" opacity="0.07"/>
+          </svg>
+          <div class="dive-icon">&#x2736;</div>
+          <div class="dive-head-text">
+            <div class="dive-eyebrow">Synastry · Dasha + Jordan</div>
+            <div class="dive-title">Where Our Charts Meet</div>
+            <div class="dive-subtitle">four contacts · multiple 0° exact · written for you to read</div>
+            <div class="dive-tags">
+              <span class="dtag">Synastry</span>
+              <span class="dtag">4 Contacts</span>
+              <span class="dtag">Mutual</span>
+            </div>
+          </div>
+        </div>
+        <div class="dive-body">
+          <p>Four contacts, several at near-zero orb. The recognition between you and Jordan isn't only personality fit. The charts were already oriented toward each other before either of you had words for it.</p>
+
+          <div class="synastry-contact">
+            <div class="syn-label">Contact 1 · The Nodes and Jupiter</div>
+            <div class="syn-aspect">Jordan's North Node opposes your Jupiter · Jordan's South Node conjoins it</div>
+            <div class="syn-body">Her entire karmic axis runs through your planet of abundance. It describes a friendship that extends both people further than they'd reach alone. Her evolutionary pull and your expansive thinking are the same mechanism, running in both directions at once.</div>
+          </div>
+
+          <div class="synastry-contact">
+            <div class="syn-label">Contact 2 · Moon and Neptune · less than 0.10°</div>
+            <div class="syn-aspect">Jordan's Aries Moon forms an exact sextile to your Neptune</div>
+            <div class="syn-body">Her instincts and your imagination are directly wired. The ideas that felt like they arrived from somewhere outside the two of you: this is what's generating them. You make her more intuitive. She makes your visions more actionable.</div>
+          </div>
+
+          <div class="synastry-contact">
+            <div class="syn-label">Contact 3 · Jupiter on the Moon · within 1°</div>
+            <div class="syn-aspect">Jordan's Jupiter in Scorpio conjoins your Scorpio Moon</div>
+            <div class="syn-body">Her sense of abundance lands directly on your emotional core. When Jordan is thinking expansively, you feel it. When you're emotionally steady, her thinking gets larger. This is one of the reasons the collaboration doesn't feel like work.</div>
+          </div>
+
+          <div class="synastry-contact">
+            <div class="syn-label">Contact 4 · Pluto opposite Saturn · 0.5°</div>
+            <div class="syn-aspect">Jordan's Pluto opposes your Saturn</div>
+            <div class="syn-body">Pluto pressure on a Saturn structure doesn't destroy; it asks what was actually load-bearing. The things you've built together have been tested. What held, held because it was real.</div>
+          </div>
+
+          <div class="pull teal-pull">The charts were already oriented toward each other.</div>
         </div>
       </div>
-      <div class="kw-row">
-        <span class="kw">MOON-NEPTUNE</span><span class="kw">SQUARE</span><span class="kw">EMPATHY</span><span class="kw">INTUITION</span><span class="kw">DISSOLUTION</span>
-      </div>
-      <div class="sec-body">
-        <p>Moon in Scorpio square Neptune in Aquarius at 2.88&deg;. The emotional body and the idealistic field are in direct tension. Neptune can dissolve the Moon&rsquo;s containment. The emotional register may not always have a clear line between Dasha&rsquo;s feeling and the room&rsquo;s feeling.</p>
-        <p>The dissolution is also the gift. The porous register is how the intuitive attunement works. The Moon-Neptune square produces a quality of empathic listening that is not deliberate. It is how the nervous system is constructed.</p>
-      </div>
+    </div><!-- end synastry dive-wrap -->
+
+    <!-- Divider C — before Archetype Card -->
+    <div style="display:flex;align-items:center;justify-content:center;margin:52px 44px 0" aria-hidden="true">
+      <svg width="280" height="40" viewBox="0 0 280 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 10 30 Q 140 2 270 30" stroke="rgba(208,168,64,0.28)" stroke-width="0.9" fill="none"/>
+        <text x="10"  y="32" font-size="11" fill="rgba(208,168,64,0.45)" text-anchor="middle" font-family="serif">✦</text>
+        <text x="270" y="32" font-size="11" fill="rgba(208,168,64,0.45)" text-anchor="middle" font-family="serif">✦</text>
+      </svg>
     </div>
 
-    <div class="sep-stars">&#x2736; &nbsp; &#x2727; &nbsp; &#x2736;</div>
-  </div>
-</div>
-
-<!-- SOUL -->
-<div class="subpanel sp-reading" id="sp-soul">
-  <svg class="geo-bg" viewBox="0 0 375 812" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <polygon points="188,28 332,108 370,290 310,500 188,548 66,500 5,290 44,108" fill="none" stroke="rgba(201,168,76,0.08)" stroke-width="0.6"/>
-    <polygon points="188,90 295,162 325,290 278,410 188,440 98,410 51,290 81,162" fill="none" stroke="rgba(201,168,76,0.055)" stroke-width="0.45"/>
-    <circle cx="188" cy="290" r="3.5" fill="none" stroke="rgba(201,168,76,0.15)" stroke-width="0.6"/>
-    <circle cx="188" cy="290" r="1.5" fill="rgba(201,168,76,0.25)"/>
-    <circle cx="188" cy="28" r="2.0" fill="rgba(201,168,76,0.38)"/>
-  </svg>
-
-  <div class="reading-inner accent-rose">
-    <div class="panel-heading">
-      <div class="panel-eyebrow-sm">synthesis</div>
-      <div class="panel-title-lg">The Through-Line</div>
-    </div>
-
-    <div class="throughline">
-      <p>The Sagittarius stellium near the Midheaven says the public life is oriented toward meaning before utility. What is the teaching? What is the truth? What is worth seeking? These are not strategic questions. They are the chart&rsquo;s native orientation.</p>
-      <p>Below the seeking, the Scorpio Moon in the 8th house holds what the public orientation cannot hold: the deep private knowledge, the things accumulated before they&rsquo;re ready to be said. The depth is what makes the seeking real. A Sagittarius that doesn&rsquo;t go deep is just enthusiastic. This one goes down first.</p>
-      <p>The North Node in Cancer in the 4th says the development of this life is not toward more achievement. It is toward being received. The home that holds you. The belonging that doesn&rsquo;t require performance. This is the chart&rsquo;s quietest instruction and its most private.</p>
-      <span class="pull">The seeking is genuine because the depth is real.</span>
-    </div>
-
+    <!-- ── SECTION 7: ARCHETYPE CARD ── -->
     <div class="sep"><span class="sep-inner">Archetype</span></div>
 
     <div class="tarot-outer">
@@ -436,6 +656,7 @@
       </div>
     </div>
 
+    <!-- ── SECTION 8: POEM ── -->
     <div class="sep"><span class="sep-inner">A Reading in Verse</span></div>
 
     <div class="poem-outer">
@@ -468,12 +689,13 @@
       </div>
     </div>
 
-    <div style="height:16px"></div>
-  </div>
-</div>
+    <div style="height:32px"></div>
 
-  </div>
-</div>
+  </div><!-- end .reading-inner -->
+</div><!-- end #sp-reading -->
+
+  </div><!-- end .natal-body -->
+</div><!-- end #panel-natal -->
 
 <!-- TRANSITS PANEL -->
 <div class="panel" id="panel-transits" style="overflow:hidden">
@@ -658,6 +880,15 @@ const CHART={
     {p1:'jupiter',p2:'neptune',type:'trine',      orb:1.66},
   ],
 };
+
+// Subnav: two tabs — Chart and Reading
+function switchSub(id, btn) {
+  document.querySelectorAll('.subnav-tab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.subpanel').forEach(p => { p.style.display = 'none'; });
+  const panel = document.getElementById('sp-' + id);
+  if (panel) panel.style.display = '';
+}
 </script>
 <script src="/pathfinder-core.js"></script>
 </body>
