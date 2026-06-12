@@ -39,7 +39,6 @@ tags:
 | Sky at Work weekly content cadence | 🟡 Ongoing | Update dates + planet data + voice canon rewrite each week — full template now solid |
 | Voice canon drafts | 🟢 7 of 9 done | ✅ Carina, Kate, Mimi, Hazel, Iza, Su, Yvonne — `.md` drafts in `charts/`. ⏳ Cat (birth data on file, reading not written) |
 | Reddit vocabulary research | 🟢 Low urgency | r/astrology, r/AskAstrologers, r/astrologyreadings → voice-canon.md |
-| Routine live update | 🔴 Jordan action | Paste updated ROUTINE-UPDATE-INSTRUCTIONS.md into claude.ai/code/routines — **includes new health-log write step (step 12)** + em dash ban + June 12 additions. Go to claude.ai/code/routines → find `trig_01Rtm1xSST2GbdCZh896F2vP` → replace prompt. |
 
 ---
 
@@ -62,7 +61,7 @@ See `app/beta-users.md` for full detail.
 > [!abstract] Waiting On
 > - **Krista Kellogg** — birth date, time, city still needed → DM or ask at next sync
 > - **Kristen Bell** — birth info promised after lunch June 12 → check Slack/messages
-> - **Routine live update** — Jordan action: paste updated ROUTINE-UPDATE-INSTRUCTIONS.md into live routine at `claude.ai/code/routines` → routine ID `trig_01Rtm1xSST2GbdCZh896F2vP`. Includes health-log write step — **routine won't log runs until this is done.**
+> - ~~Routine live update~~ ✅ Done June 12 — steps 2–13 live in `trig_01Rtm1xSST2GbdCZh896F2vP`; health-log will auto-write starting tomorrow's 4am run
 
 > [!note] Keep in View
 > - **Natal reading structure decision** — open in `product-decisions.md`; 9-tab is implemented but the deeper Liz Greene therapeutic arc sequence (Portrait → Signature → Constitution → Formative → Shadow → Arc → Archetype → Poem) is the next structural evolution. Not urgent — current builds are clean.
