@@ -1,6 +1,6 @@
 # CLAUDE.md — Jordan's Personal Astrologer Workspace
 *Core file. Always loaded. Read this first, then load the files listed in Session Start Protocol.*
-*Last updated: June 8, 2026*
+*Last updated: June 12, 2026*
 
 ---
 
@@ -21,9 +21,10 @@ Jordan is a 32-year-old lesbian woman in Chicago. Associate Director of Content 
 **Every session:**
 0. **Pull latest from GitHub** — run this before loading any files:
    ```
-   git -C "/Users/jordanashleybarney/Library/Mobile Documents/iCloud~md~obsidian/Documents/the stars" pull
+   git -C "/Users/jordanashleybarney/Library/Mobile Documents/iCloud~md~obsidian/Documents/pathfinder" pull
    ```
    This ensures the routine's overnight outputs (today.json, daily reading, transit patches) are present before the session starts.
+0a. **Check `routine/health-log.md`** — glance at the top row. If it's not today's date, the overnight routine may have missed. Flag it to Jordan before starting so she knows the daily reading and today.json may be stale.
 1. **This file (CLAUDE.md)** — auto-loaded
 2. **`NATAL.md`** — natal chart, orb table, calculation rules, key people, fluency level
 3. **`transit library/INDEX.md`** — active transit status + links
@@ -38,13 +39,34 @@ Jordan is a 32-year-old lesbian woman in Chicago. Associate Director of Content 
 → also load **`CLAUDE-WORKPLACE-HTML.md`** — full HTML design spec, signal board rules, Slack format
 
 **For build/business sessions** (app, architecture, product, intake):
+→ also load **`build-digest.md`** — current build state, beta pipeline, open loops (load this first for cold-start context)
 → also load **`CLAUDE-BUILD.md`** — build SOPs, intake protocol, business context
 → also load **`the build/CLAUDE-APP-DESIGN.md`** — design system, tokens, UX principles, propagation architecture
+→ also load **`the build/beta-users.md`** — full beta user tracker (load when doing chart work or beta pipeline tasks)
+→ also load **`the build/product-decisions.md`** — open + resolved decisions (load when making architecture or structure choices)
 
 **For natal chart builds** (new friend chart or rebuilding Jordan's):
 → also load **`CLAUDE-NATAL-BUILD.md`** — v3 template spec, archetype card SOP, poem SOP
 
 **Never load speculatively.** Load only what the session actually needs.
+
+---
+
+## Session End Protocol
+
+**After any build session — run before closing:**
+1. **Update `build-digest.md`** — mark what shipped in the What's Live table, refresh the In Progress table, update Open Loops (Waiting On + Keep in View). This is what keeps cold-start accurate.
+2. **Update `the build/build-log.md`** — add entry for what was built (newest at top). Commit + push to GitHub.
+3. **Update `the build/beta-users.md`** — if any beta interaction happened: birth data received, chart built, reaction logged, next action changed.
+4. **Update `the build/product-decisions.md`** — if any open decision was resolved, or a new one surfaced.
+5. **Capture loose ideas** — anything worth keeping that didn't land in a specific file → `_inbox/capture.md`.
+
+**After any reading session:**
+1. The 4am routine files readings automatically. If it was a manual session, save the reading to `daily readings/YYYY-MM/YYYY-MM-DD.md`.
+2. If a correlation or pattern emerged worth keeping → add to `KNOWLEDGE.md`.
+3. No other end-of-session steps required for reading-only sessions.
+
+**The rule:** `build-digest.md` is only useful if it was updated at the end of the last session. Treat it like a commit message — write it before you close.
 
 ---
 
@@ -148,6 +170,8 @@ Claude pulls live positions from the web at the start of every reading.
 
 | Topic | Location |
 |-------|----------|
+| **Current build state + open loops** | **`build-digest.md`** |
+| **Beta user pipeline** | **`the build/beta-users.md`** |
 | App vision + phase roadmap | `the build/app-vision.md` |
 | Product decisions | `the build/product-decisions.md` |
 | Market strategy | `the build/market-strategy-2026-06-05.md` |
@@ -175,7 +199,7 @@ Manage at `claude.ai/code/routines`. Check there first if the routine fails.
 
 **After any update to core workspace files, push to GitHub:**
 ```
-cd "/Users/jordanashleybarney/Library/Mobile Documents/iCloud~md~obsidian/Documents/the stars"
+cd "/Users/jordanashleybarney/Library/Mobile Documents/iCloud~md~obsidian/Documents/pathfinder"
 git add CLAUDE.md NATAL.md KNOWLEDGE.md && git commit -m "update workspace files" && git push origin main
 ```
 
@@ -205,20 +229,31 @@ Active transits as of 2026-06-12: Jupiter 26.29° Cancer:0.07° separating incon
 ## File Structure
 
 ```
-the stars/
+pathfinder/
 ├── CLAUDE.md                   ← Core (this file) — always loaded
 ├── NATAL.md                    ← Natal chart, orb table, calc rules — always loaded
+├── build-digest.md             ← Cold-start build state + open loops — load for build sessions
 ├── READING-FORMAT.md           ← All reading SOPs + formats — loaded for reading sessions
 ├── CLAUDE-WORKPLACE-HTML.md    ← Workplace HTML spec — loaded for HTML builds only
 ├── CLAUDE-BUILD.md             ← Build/business SOPs — loaded for build sessions only
 ├── CLAUDE-NATAL-BUILD.md       ← Natal chart build spec — loaded for natal builds only
-├── KNOWLEDGE.md                ← Accumulated correlations + patterns — always loaded
+├── KNOWLEDGE.md                ← Accumulated correlations + patterns — archived, load on request
 ├── live-links.md               ← Quick links
 │
 ├── transit library/            ← Long-term transit deep dives
 │   ├── INDEX.md                ← Active transit status (lightweight — always loaded)
 │   ├── _template.md            ← Template for new breakdown files
 │   └── [transit-name].md       ← One file per long-term transit (loaded on demand)
+│
+├── the build/                  ← Business OS
+│   ├── beta-users.md           ← Beta user pipeline tracker
+│   ├── product-decisions.md    ← Open + resolved product decisions
+│   ├── CLAUDE-APP-DESIGN.md    ← Design system + UX principles
+│   ├── build-log.md            ← Running build history (newest first)
+│   ├── voice-canon.md          ← Reading quality + vocabulary standards
+│   ├── app-vision.md           ← Product vision + phase roadmap
+│   ├── testimonials.md         ← Early reactions + social proof
+│   └── [other build files]
 │
 ├── charts/                     ← Friends' natal birth data
 ├── natal readings/             ← Friend + Jordan natal chart HTMLs
@@ -228,8 +263,9 @@ the stars/
 ├── synastry readings/          ← Relational chart comparisons
 ├── rituals/                    ← Moon rituals + ceremonial work
 ├── tarot readings/             ← Tarot pulls + master log
-├── the build/                  ← Business OS (app-vision, voice-canon, architecture, etc.)
 ├── routine/                    ← Daily 4am automation infrastructure
+│   ├── health-log.md           ← Routine run log — check at session start (newest first)
+│   └── ROUTINE-UPDATE-INSTRUCTIONS.md ← Full routine prompt (paste into claude.ai/code/routines)
 ├── _inbox/                     ← iPhone captures (process at session start)
 └── _archive/                   ← Legacy files
 ```
