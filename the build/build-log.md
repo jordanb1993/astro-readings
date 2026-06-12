@@ -44,7 +44,9 @@ Full copy rewrite across all three charts:
 
 3. **Reddit astrology vocabulary research** — structured pass to expand voice-canon.md Vocabulary Library. Target: r/astrology, r/AskAstrologers, r/astrologyreadings. One planet or aspect type per session. Route findings to voice-canon.md + relevant transit library files.
 
-4. **Routine live update** — Jordan to paste updated ROUTINE-UPDATE-INSTRUCTIONS.md into the live routine at claude.ai/code/routines (em dash ban + June 12 additions).
+4. **Sky at Work — scope + plan the rewrite/restructure** — read the current `sky-at-work.html` and `CLAUDE-WORKPLACE-HTML.md`, identify what needs to change to bring it up to the current Pathfinder design standard and voice canon, and produce a scoped design document for the full rewrite. What's the right architecture, what sections need rebuilding, what copy needs voice canon treatment. Output: a `the build/sky-at-work-rewrite-scope.md` ready to execute in a future session.
+
+5. **Routine live update** — Jordan to paste updated ROUTINE-UPDATE-INSTRUCTIONS.md into the live routine at claude.ai/code/routines (em dash ban + June 12 additions).
 
 ---
 
