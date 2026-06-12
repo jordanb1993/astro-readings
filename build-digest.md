@@ -7,7 +7,7 @@ tags:
 
 # Build Digest — Pathfinder App
 *Cold-start synthesis. Load at the start of any build or business session. Updated at session end.*
-*Last updated: 2026-06-12 (Session 16)*
+*Last updated: 2026-06-12 (Session 16 continued)*
 
 ---
 
@@ -22,6 +22,12 @@ tags:
 | Transit library | ✅ Live | Applying / separating / returning states, accordion detail, first/second pass timing |
 | Wheel of the year | ✅ Live | Lunar cycles + pagan calendar, natal-personalized mini-reads |
 | Sky at Work | ✅ Live | June 15–21 shipped June 12 — full voice canon rewrite, week thesis line, Your Sign tab, updated planet strip + signal board |
+| New Moon in Gemini ritual — Jordan | ✅ Live | "The Threshold Crossing" — gold ritual card, natal anchor pills (ASC 29° Gem, S.Node H12, Sun opp Sag), 3 practice steps + closing question |
+| New Moon in Gemini ritual — Marina | ✅ Live | "The Speaking True" — gold ritual card, Venus 25° Gem H9 + Venus-Chiron exact sextile axis, 3 practice steps + closing question |
+| Sky at Work — Dasha + Marina | ✅ Live | Home card + Wheel tab added to both apps — all 3 charts now have full Sky at Work integration |
+| PWA rebrand | ✅ Live | manifest.json → "Pathfinder" name/short_name, compass rose icon.svg redrawn (brighter, gold cardinal points), apple-touch-icon.png regenerated |
+| Nav icons + alignment | ✅ Live | ⊙ (Constant) · ☽︎ (Variable) · ⊕ (Wheel) — semantic icons, VS15 on Variable; 22px flex container fixes baseline alignment across all 3 apps |
+| Design system library | ✅ Live | `app/design-system.md` (Obsidian token + code reference) + `natal readings/design-system.html` (live browser preview of all components) |
 
 ---
 
@@ -31,7 +37,7 @@ tags:
 |------|----------|-------|
 | Supabase intake form for readings | 🟢 Low urgency | Jordan wants it; Vercel + Supabase + GitHub is target infra stack |
 | Sky at Work weekly content cadence | 🟡 Ongoing | Update dates + planet data + voice canon rewrite each week — full template now solid |
-| Voice canon drafts | 🟢 6 of 8 done | ✅ Carina, Kate, Mimi, Hazel, Iza, Su — `.md` drafts in `charts/`. ⏳ Yvonne (no chart file — need birth data), Cat (birth data only) |
+| Voice canon drafts | 🟢 7 of 9 done | ✅ Carina, Kate, Mimi, Hazel, Iza, Su, Yvonne — `.md` drafts in `charts/`. ⏳ Cat (birth data on file, reading not written) |
 | Reddit vocabulary research | 🟢 Low urgency | r/astrology, r/AskAstrologers, r/astrologyreadings → voice-canon.md |
 | Routine live update | 🔴 Jordan action | Paste updated ROUTINE-UPDATE-INSTRUCTIONS.md into claude.ai/code/routines — **includes new health-log write step (step 12)** + em dash ban + June 12 additions. Go to claude.ai/code/routines → find `trig_01Rtm1xSST2GbdCZh896F2vP` → replace prompt. |
 
@@ -67,6 +73,7 @@ See `app/beta-users.md` for full detail.
 ---
 
 ## Recent Wins
+- Session 16 continued (June 12): New Moon rituals written + shipped for Jordan and Marina (natal-personalized, gold card format); all 3 apps now have ⊙/☽/⊕ nav icons + compass rose PWA icon; design system library launched (md + HTML)
 - Session 15 (June 12): Full voice canon rewrite across all 3 charts, 9-tab restructure, transit UI polish — all in one session
 - First overnight automation run June 12 — app generated Jordan's daily read while she slept
 - Dasha, Krista, and Kristen Bell all reacted to the app in real time on June 12 calls — strong beta pull → see `app/testimonials.md`

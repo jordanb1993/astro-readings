@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pathfinder · Design System</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/pathfinder-core.css">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#0a0614;color:rgba(240,228,200,0.94);font-family:'Inter',sans-serif;padding:32px 20px 80px;max-width:680px;margin:0 auto}
+  .ds-section{margin-bottom:56px}
+  .ds-section-title{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:300;color:rgba(240,228,200,0.94);margin-bottom:20px;padding-bottom:10px;border-bottom:1px solid rgba(201,168,76,0.15)}
+  .ds-label{font-size:0.42rem;letter-spacing:0.18em;text-transform:uppercase;font-family:'Inter',sans-serif;color:rgba(201,168,76,0.50);margin-bottom:8px}
+  .ds-item{margin-bottom:28px}
+  .ds-preview{margin-bottom:10px;padding:20px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.05);border-radius:10px}
+  .ds-code{font-family:monospace;font-size:0.68rem;color:rgba(201,168,76,0.60);background:rgba(0,0,0,0.30);border:1px solid rgba(201,168,76,0.10);border-radius:6px;padding:10px 12px;white-space:pre-wrap;word-break:break-all;line-height:1.6}
+
+  /* Color swatches */
+  .swatch-grid{display:flex;flex-wrap:wrap;gap:10px}
+  .swatch{width:80px;text-align:center}
+  .swatch-dot{width:52px;height:52px;border-radius:12px;margin:0 auto 6px;border:1px solid rgba(255,255,255,0.08)}
+  .swatch-name{font-size:0.40rem;letter-spacing:0.08em;text-transform:uppercase;font-family:'Inter',sans-serif;color:rgba(240,228,200,0.50)}
+
+  /* Nav icon preview */
+  .nav-preview{display:flex;gap:0;background:rgba(6,10,26,0.97);border-top:1px solid rgba(201,168,76,0.14);border-radius:10px;overflow:hidden}
+  .nav-preview-tab{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;padding:12px 6px;color:rgba(240,228,200,0.30)}
+  .nav-preview-tab.active{color:rgba(201,168,76,0.92)}
+
+  /* Zodiac glyph grid */
+  .glyph-grid{display:flex;flex-wrap:wrap;gap:8px}
+  .glyph-item{background:rgba(255,255,255,0.03);border:1px solid rgba(201,168,76,0.12);border-radius:8px;padding:10px 14px;text-align:center;min-width:60px}
+  .glyph-char{font-family:'Apple Symbols','Segoe UI Symbol','Noto Sans Symbols',serif;font-size:20px;display:block;margin-bottom:4px;font-variant-emoji:text}
+  .glyph-code{font-family:monospace;font-size:0.52rem;color:rgba(201,168,76,0.55)}
+
+  /* Header */
+  .ds-header{margin-bottom:48px;padding-bottom:24px;border-bottom:1px solid rgba(201,168,76,0.12)}
+  .ds-header-eyebrow{font-size:0.44rem;letter-spacing:0.22em;text-transform:uppercase;font-family:'Inter',sans-serif;color:rgba(201,168,76,0.55);margin-bottom:8px}
+  .ds-header-title{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:300;line-height:1.1;margin-bottom:6px}
+  .ds-header-sub{font-size:0.80rem;color:rgba(240,228,200,0.45);line-height:1.6}
+</style>
+</head>
+<body>
+
+<div class="ds-header">
+  <div class="ds-header-eyebrow">Component Library</div>
+  <div class="ds-header-title">Pathfinder Design System</div>
+  <div class="ds-header-sub">Visual reference for all reusable elements. Markdown index at <code>app/design-system.md</code>.</div>
+</div>
+
+<!-- ── COLORS ── -->
+<div class="ds-section">
+  <div class="ds-section-title">Colors</div>
+  <div class="swatch-grid">
+    <div class="swatch">
+      <div class="swatch-dot" style="background:#0a0614"></div>
+      <div class="swatch-name">Background<br>#0a0614</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-dot" style="background:#c9a84c"></div>
+      <div class="swatch-name">Gold<br>#c9a84c</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-dot" style="background:rgba(90,184,168,1)"></div>
+      <div class="swatch-name">Teal<br>rgb(90,184,168)</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-dot" style="background:rgba(212,160,181,1)"></div>
+      <div class="swatch-name">Rose<br>rgb(212,160,181)</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-dot" style="background:rgba(74,184,232,1)"></div>
+      <div class="swatch-name">Cerulean<br>rgb(74,184,232)</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-dot" style="background:#b482d2"></div>
+      <div class="swatch-name">Plum-bright<br>#b482d2</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-dot" style="background:rgba(240,228,200,0.94)"></div>
+      <div class="swatch-name">Text<br>rgba(…,0.94)</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-dot" style="background:rgba(240,228,200,0.40)"></div>
+      <div class="swatch-name">Muted-2<br>rgba(…,0.40)</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── TYPOGRAPHY ── -->
+<div class="ds-section">
+  <div class="ds-section-title">Typography</div>
+
+  <div class="ds-item">
+    <div class="ds-label">Panel Header — Cormorant 1.9rem / 300</div>
+    <div class="ds-preview">
+      <div style="font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:300;color:rgba(240,228,200,0.94);line-height:1.15">Lunar · Seasonal · The Sky</div>
+    </div>
+  </div>
+
+  <div class="ds-item">
+    <div class="ds-label">Card Title — Cormorant 1.5rem / 300</div>
+    <div class="ds-preview">
+      <div style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:300;color:rgba(240,228,200,0.94);line-height:1.15">The Threshold Crossing</div>
+    </div>
+  </div>
+
+  <div class="ds-item">
+    <div class="ds-label">Closing Question — Cormorant 1.1rem / 300 italic</div>
+    <div class="ds-preview">
+      <p style="font-family:'Cormorant Garamond',serif;font-size:1.10rem;font-weight:300;color:rgba(240,228,200,0.90);line-height:1.65;font-style:italic">Where does the Gemini self take over to avoid the moment the Sagittarius self would have to commit?</p>
+    </div>
+  </div>
+
+  <div class="ds-item">
+    <div class="ds-label">Body Prose — Inter 0.83rem</div>
+    <div class="ds-preview">
+      <p style="font-size:0.83rem;color:rgba(240,228,200,0.58);line-height:1.72">This new moon falls within 2° of your Ascendant. The Ascendant is not a house. It is not a planet. It is the door you walk through when you enter a room, every room, for your entire life.</p>
+    </div>
+  </div>
+
+  <div class="ds-item">
+    <div class="ds-label">Section Eyebrow — Inter 0.48rem / tracked 0.20em</div>
+    <div class="ds-preview" style="display:flex;flex-direction:column;gap:10px">
+      <div style="font-size:0.48rem;letter-spacing:0.20em;text-transform:uppercase;font-family:'Inter',sans-serif;color:rgba(90,184,168,0.55)">☽ Moon — teal variant</div>
+      <div style="font-size:0.48rem;letter-spacing:0.20em;text-transform:uppercase;font-family:'Inter',sans-serif;color:rgba(201,168,76,0.65)">☽ Personal Ritual — gold variant</div>
+    </div>
+  </div>
+
+  <div class="ds-item">
+    <div class="ds-label">Section Label — Inter 0.41rem / tracked 0.16em</div>
+    <div class="ds-preview">
+      <div style="font-size:0.41rem;letter-spacing:0.16em;text-transform:uppercase;font-family:'Inter',sans-serif;color:rgba(201,168,76,0.40)">The Placement</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── CARDS ── -->
+<div class="ds-section">
+  <div class="ds-section-title">Cards</div>
+
+  <div class="ds-item">
+    <div class="ds-label">Teal Card — Moon / Seasons / Sky sections</div>
+    <div class="ds-preview" style="padding:0">
+      <div style="background:rgba(90,184,168,0.06);border:1px solid rgba(90,184,168,0.18);border-radius:14px;padding:20px 18px">
+        <div style="font-size:0.48rem;letter-spacing:0.18em;text-transform:uppercase;font-family:'Inter',sans-serif;color:rgba(90,184,168,0.55);margin-bottom:6px">Current Moon</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:300;color:rgba(240,228,200,0.94);line-height:1.2">Waning Crescent · Taurus</div>
+        <div style="margin-top:12px;font-size:0.82rem;color:rgba(240,228,200,0.58);line-height:1.7">Card body content here.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ds-item">
+    <div class="ds-label">Teal Card (highlighted) — Next Sabbat spotlight</div>
+    <div class="ds-preview" style="padding:0">
+      <div style="background:rgba(90,184,168,0.08);border:1px solid rgba(90,184,168,0.25);border-radius:14px;padding:20px 18px">
+        <div style="font-size:0.48rem;letter-spacing:0.18em;text-transform:uppercase;font-family:'Inter',sans-serif;color:rgba(90,184,168,0.65);margin-bottom:6px">Next</div>
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:8px">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:300;color:rgba(240,228,200,0.94)">Litha</div>
+          <div style="font-size:0.72rem;color:rgba(90,184,168,0.75);font-family:'Inter',sans-serif">in 9 days</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ds-item">
+    <div class="ds-label">Gold Ritual Card — full structure</div>
+    <div class="ds-preview" style="padding:0">
+      <div style="background:linear-gradient(155deg,rgba(201,168,76,0.05) 0%,rgba(10,6,20,0) 55%);border:1px solid rgba(201,168,76,0.22);border-radius:16px;overflow:hidden">
+        <div style="padding:22px 20px 18px;border-bottom:1px solid rgba(201,168,76,0.09)">
+          <div style="display:flex;align-items:flex-start;gap:14px;margin-bottom:16px">
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" style="flex-shrink:0;margin-top:2px" aria-hidden="true">
+              <circle cx="18" cy="18" r="15" fill="#0a0614" stroke="rgba(201,168,76,0.45)" stroke-width="1"/>
+              <circle cx="18" cy="18" r="9"  fill="rgba(201,168,76,0.04)" stroke="rgba(201,168,76,0.15)" stroke-width="0.5"/>
+              <circle cx="18" cy="18" r="4"  fill="rgba(201,168,76,0.06)"/>
+            </svg>
+            <div>
+              <div style="font-size:0.44rem;letter-spacing:0.18em;text-transform:uppercase;font-family:'Inter',sans-serif;color:rgba(201,168,76,0.50);margin-bottom:4px">New Moon in Gemini · June 2026</div>
+              <div style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:300;color:rgba(240,228,200,0.94);line-height:1.15">The Threshold Crossing</div>
+            </div>
+          </div>
+          <div style="display:flex;gap:6px;flex-wrap:wrap">
+            <span style="font-size:0.41rem;letter-spacing:0.10em;text-transform:uppercase;font-family:'Inter',sans-serif;color:rgba(201,168,76,0.65);background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.18);border-radius:4px;padding:3px 8px">ASC 29° ♊︎</span>
+            <span style="font-size:0.41rem;letter-spacing:0.10em;text-transform:uppercase;font-family:'Inter',sans-serif;color:rgba(201,168,76,0.65);background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.18);border-radius:4px;padding:3px 8px">S.Node H12 ♊︎</span>
+            <span style="font-size:0.41rem;letter-spacing:0.10em;text-transform:uppercase;font-family:'Inter',sans-serif;color:rgba(201,168,76,0.65);background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.18);border-radius:4px;padding:3px 8px">Sun opp ♐︎</span>
+          </div>
+        </div>
+        <div style="padding:18px 20px 16px">
+          <div style="font-size:0.41rem;letter-spacing:0.16em;text-transform:uppercase;font-family:'Inter',sans-serif;color:rgba(201,168,76,0.40);margin-bottom:10px">The Placement</div>
+          <p style="font-size:0.83rem;color:rgba(240,228,200,0.58);line-height:1.72;margin:0">Body text describing natal context. Short paragraphs, declarative, no em dashes.</p>
+        </div>
+        <div style="margin:0 20px;height:1px;background:rgba(201,168,76,0.08)"></div>
+        <div style="padding:18px 20px 16px">
+          <div style="font-size:0.41rem;letter-spacing:0.16em;text-transform:uppercase;font-family:'Inter',sans-serif;color:rgba(201,168,76,0.40);margin-bottom:10px">The Practice</div>
+          <div style="padding-left:14px;border-left:1px solid rgba(201,168,76,0.30)">
+            <div style="font-size:0.43rem;letter-spacing:0.14em;text-transform:uppercase;font-family:'Inter',sans-serif;color:rgba(201,168,76,0.55);margin-bottom:6px">i · Step Name</div>
+            <p style="font-size:0.81rem;color:rgba(240,228,200,0.58);line-height:1.70;margin:0">Step body text. Concrete instruction. Present tense.</p>
+          </div>
+        </div>
+        <div style="margin:0 20px;height:1px;background:rgba(201,168,76,0.08)"></div>
+        <div style="padding:18px 20px 24px">
+          <div style="font-size:0.41rem;letter-spacing:0.16em;text-transform:uppercase;font-family:'Inter',sans-serif;color:rgba(201,168,76,0.40);margin-bottom:12px">The Question to Hold</div>
+          <p style="font-family:'Cormorant Garamond',serif;font-size:1.10rem;font-weight:300;color:rgba(240,228,200,0.90);line-height:1.65;margin:0;font-style:italic">The closing question, always open-ended.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── PILLS & LABELS ── -->
+<div class="ds-section">
+  <div class="ds-section-title">Pills &amp; Labels</div>
+
+  <div class="ds-item">
+    <div class="ds-label">Natal Anchor Pills — gold, used in ritual card headers</div>
+    <div class="ds-preview">
+      <div style="display:flex;gap:6px;flex-wrap:wrap">
+        <span style="font-size:0.41rem;letter-spacing:0.10em;text-transform:uppercase;font-family:'Inter',sans-serif;color:rgba(201,168,76,0.65);background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.18);border-radius:4px;padding:3px 8px">ASC 29° ♊︎</span>
+        <span style="font-size:0.41rem;letter-spacing:0.10em;text-transform:uppercase;font-family:'Inter',sans-serif;color:rgba(201,168,76,0.65);background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.18);border-radius:4px;padding:3px 8px">Venus 25° ♊︎ H9</span>
+        <span style="font-size:0.41rem;letter-spacing:0.10em;text-transform:uppercase;font-family:'Inter',sans-serif;color:rgba(201,168,76,0.65);background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.18);border-radius:4px;padding:3px 8px">Sun opp ♐︎</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="ds-item">
+    <div class="ds-label">Section Divider — thin 1px gold line</div>
+    <div class="ds-preview">
+      <div style="height:1px;background:rgba(201,168,76,0.08)"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ── SVG ICONS ── -->
+<div class="ds-section">
+  <div class="ds-section-title">SVG Icons</div>
+
+  <div class="ds-item">
+    <div class="ds-label">New Moon — ritual card header (36×36)</div>
+    <div class="ds-preview">
+      <svg width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+        <circle cx="18" cy="18" r="15" fill="#0a0614" stroke="rgba(201,168,76,0.45)" stroke-width="1"/>
+        <circle cx="18" cy="18" r="9"  fill="rgba(201,168,76,0.04)" stroke="rgba(201,168,76,0.15)" stroke-width="0.5"/>
+        <circle cx="18" cy="18" r="4"  fill="rgba(201,168,76,0.06)"/>
+      </svg>
+    </div>
+  </div>
+
+  <div class="ds-item">
+    <div class="ds-label">Compass Rose — PWA icon / decorative (96×96)</div>
+    <div class="ds-preview">
+      <svg width="96" height="96" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+        <rect width="512" height="512" rx="114" fill="#0a0614"/>
+        <circle cx="256" cy="256" r="210" fill="none" stroke="#c9a84c" stroke-width="1.5" opacity="0.35"/>
+        <circle cx="256" cy="256" r="158" fill="none" stroke="#c9a84c" stroke-width="1"   opacity="0.20"/>
+        <g transform="translate(256,256)" fill="#c9a84c">
+          <polygon points="0,-148  11,-28  0,-6  -11,-28"/>
+          <polygon points="0,148   11,28   0,6   -11,28"/>
+          <polygon points="148,0   28,11   6,0   28,-11"/>
+          <polygon points="-148,0 -28,11  -6,0  -28,-11"/>
+        </g>
+        <g transform="translate(256,256)" fill="#d4a0b5">
+          <polygon points="0,-92 7,-18 0,0 -7,-18" opacity="0.85" transform="rotate(45)"/>
+          <polygon points="0,-92 7,-18 0,0 -7,-18" opacity="0.85" transform="rotate(135)"/>
+          <polygon points="0,-92 7,-18 0,0 -7,-18" opacity="0.85" transform="rotate(225)"/>
+          <polygon points="0,-92 7,-18 0,0 -7,-18" opacity="0.85" transform="rotate(315)"/>
+        </g>
+        <circle cx="256" cy="256" r="14" fill="#c9a84c"/>
+        <circle cx="256" cy="256" r="7"  fill="#0a0614"/>
+      </svg>
+    </div>
+  </div>
+
+  <div class="ds-item">
+    <div class="ds-label">Wheel Art — home card SVG (52×52)</div>
+    <div class="ds-preview">
+      <svg viewBox="0 0 52 52" width="52" height="52" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="26" cy="26" r="22" fill="none" stroke="rgba(90,184,168,0.35)" stroke-width="0.7"/>
+        <circle cx="26" cy="26" r="14" fill="none" stroke="rgba(90,184,168,0.18)" stroke-width="0.5"/>
+        <line x1="26" y1="4"  x2="26" y2="48" stroke="rgba(90,184,168,0.14)" stroke-width="0.4"/>
+        <line x1="4"  y1="26" x2="48" y2="26" stroke="rgba(90,184,168,0.14)" stroke-width="0.4"/>
+        <circle cx="26" cy="4"  r="2" fill="rgba(90,184,168,0.55)"/>
+        <circle cx="26" cy="26" r="3" fill="none" stroke="rgba(90,184,168,0.40)" stroke-width="0.7"/>
+      </svg>
+    </div>
+  </div>
+
+  <div class="ds-item">
+    <div class="ds-label">Constellation — Sky at Work home card (52×52)</div>
+    <div class="ds-preview">
+      <svg viewBox="0 0 52 52" width="52" height="52" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="26" cy="26" r="22" fill="none" stroke="rgba(90,184,168,0.22)" stroke-width="0.7"/>
+        <circle cx="11" cy="15" r="1.5" fill="rgba(90,184,168,0.60)"/>
+        <circle cx="38" cy="11" r="1"   fill="rgba(90,184,168,0.42)"/>
+        <circle cx="43" cy="32" r="1.5" fill="rgba(90,184,168,0.55)"/>
+        <circle cx="18" cy="41" r="1"   fill="rgba(90,184,168,0.38)"/>
+        <circle cx="34" cy="37" r="2"   fill="rgba(90,184,168,0.62)"/>
+        <circle cx="26" cy="19" r="1.2" fill="rgba(90,184,168,0.48)"/>
+        <line x1="11" y1="15" x2="26" y2="19" stroke="rgba(90,184,168,0.16)" stroke-width="0.4"/>
+        <line x1="26" y1="19" x2="38" y2="11" stroke="rgba(90,184,168,0.16)" stroke-width="0.4"/>
+        <line x1="26" y1="19" x2="34" y2="37" stroke="rgba(90,184,168,0.16)" stroke-width="0.4"/>
+        <line x1="11" y1="15" x2="43" y2="32" stroke="rgba(90,184,168,0.10)" stroke-width="0.3"/>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<!-- ── NAV ICONS ── -->
+<div class="ds-section">
+  <div class="ds-section-title">Nav Icons</div>
+
+  <div class="ds-item">
+    <div class="ds-label">Bottom Nav — rendered</div>
+    <div class="ds-preview" style="padding:0">
+      <div class="nav-preview">
+        <div class="nav-preview-tab active">
+          <span class="nav-icon-t" style="width:22px;height:22px;display:flex;align-items:center;justify-content:center">✦</span>
+          <span class="nav-label">Home</span>
+        </div>
+        <div class="nav-preview-tab">
+          <span class="nav-icon" style="width:22px;height:22px;display:flex;align-items:center;justify-content:center">⊙</span>
+          <span class="nav-label">The Constant</span>
+        </div>
+        <div class="nav-preview-tab">
+          <span class="nav-icon" style="width:22px;height:22px;display:flex;align-items:center;justify-content:center">☽︎</span>
+          <span class="nav-label">The Variable</span>
+        </div>
+        <div class="nav-preview-tab">
+          <span class="nav-icon" style="width:22px;height:22px;display:flex;align-items:center;justify-content:center">⊕</span>
+          <span class="nav-label">The Wheel</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── ZODIAC GLYPHS ── -->
+<div class="ds-section">
+  <div class="ds-section-title">Zodiac Glyphs with VS15</div>
+  <p style="font-size:0.78rem;color:rgba(240,228,200,0.45);margin-bottom:18px;line-height:1.6">Always append <code style="color:rgba(201,168,76,0.70)">&#x26;&amp;#xFE0E;</code> after each glyph to prevent iOS emoji rendering. Use <code style="color:rgba(201,168,76,0.70)">font-variant-emoji:text</code> on the element.</p>
+  <div class="glyph-grid">
+    <div class="glyph-item"><span class="glyph-char">♈︎</span><span class="glyph-code">2648</span></div>
+    <div class="glyph-item"><span class="glyph-char">♉︎</span><span class="glyph-code">2649</span></div>
+    <div class="glyph-item"><span class="glyph-char">♊︎</span><span class="glyph-code">264A</span></div>
+    <div class="glyph-item"><span class="glyph-char">♋︎</span><span class="glyph-code">264B</span></div>
+    <div class="glyph-item"><span class="glyph-char">♌︎</span><span class="glyph-code">264C</span></div>
+    <div class="glyph-item"><span class="glyph-char">♍︎</span><span class="glyph-code">264D</span></div>
+    <div class="glyph-item"><span class="glyph-char">♎︎</span><span class="glyph-code">264E</span></div>
+    <div class="glyph-item"><span class="glyph-char">♏︎</span><span class="glyph-code">264F</span></div>
+    <div class="glyph-item"><span class="glyph-char">♐︎</span><span class="glyph-code">2650</span></div>
+    <div class="glyph-item"><span class="glyph-char">♑︎</span><span class="glyph-code">2651</span></div>
+    <div class="glyph-item"><span class="glyph-char">♒︎</span><span class="glyph-code">2652</span></div>
+    <div class="glyph-item"><span class="glyph-char">♓︎</span><span class="glyph-code">2653</span></div>
+  </div>
+</div>
+
+</body>
+</html>

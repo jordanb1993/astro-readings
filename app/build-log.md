@@ -4,6 +4,39 @@
 
 ---
 
+## 2026-06-12 — Session 16 (continued): Rituals · Nav polish · PWA rebrand · Design system
+
+**Theme:** Ritual cards, interface refinements, and the first Pathfinder component library
+
+### New Moon in Gemini Rituals
+- **Jordan — "The Threshold Crossing":** Gold ritual card added to Wheel panel. Natal anchors: ASC 29° Gem (new moon conjunct within 2°), S.Node H12 Gem, Sun opp Sag. Three practice steps (The Ledger · The Breath · The Fold). Closing question: "Where does the Gemini self take over to avoid the moment the Sagittarius self would have to commit?"
+- **Marina — "The Speaking True":** Gold ritual card added to Wheel panel. Natal anchors: Venus 25° Gem H9 (new moon ~2° orb), Venus ✶ Chiron 0.05° exact, N.Node Sag H3. Three practice steps (The Knowing · The Claiming · The Offer). Closing question on saving for the right moment.
+
+### Sky at Work — Dasha + Marina
+- Home card (constellation SVG) added to both apps
+- Full Wheel tab section (teal card, week table, rising-sign picker) added to both apps
+- All 3 apps now fully parity on Sky at Work integration
+
+### Nav Icons + Alignment
+- All 3 apps: ◯/✧ → ⊙ (The Constant, natal symbol), ☽︎ (The Variable, crescent + VS15), ⊕ (The Wheel, Earth/wheel symbol)
+- CSS: `.nav-icon` + `.nav-icon-t` get `width:22px;height:22px;display:flex;align-items:center;justify-content:center` — fixes baseline misalignment between SVG and text glyphs
+- `.b3-sign` wrapping fix: `white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%` — Dasha "Pisces · noon chart" → "Pisces · noon", Marina "Libra · Jupiter 2°16' away" → "Libra · ♃ conj."
+
+### PWA Rebrand
+- `manifest.json`: name + short_name → "Pathfinder", description updated, background/theme → `#0a0614`
+- `icon.svg`: full compass rose redraw — gold cardinal points at full opacity, rose diagonal points, brighter center ring, removed noisy constellation dots
+- `apple-touch-icon.png`: regenerated at 512×512 via `qlmanage` Quick Look render
+
+### Em Dash Pass
+- `today.json`: 4 em dashes removed from prose + today bullets; colon/semicolon/new sentence substitutions
+- `2026-06-12.md`: table notes cleaned of em dashes
+
+### Design System Library
+- `app/design-system.md` — Obsidian token reference (colors, typography, CSS vars, all UI components, chart elements, nav icons, zodiac glyphs with VS15)
+- `natal readings/design-system.html` — browser preview page with live rendered examples of every component; linked to pathfinder-core.css
+
+---
+
 ## 2026-06-12 — Session 16 (continued): Voice canon drafts — 6 charts
 
 **Theme:** Plain text natal reading drafts for all friends with complete birth data

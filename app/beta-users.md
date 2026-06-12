@@ -96,7 +96,7 @@ Voice canon copy drafts to be written first (`.md` in `charts/`), then converted
 | Iza | ✅ | ✅ | ✅ `charts/iza-reading.md` (The Interior Architect) | ⏳ Pending |
 | Kate | ✅ | ✅ | ✅ `charts/kate-reading.md` (The Keeper of the Veil) | ⏳ Pending |
 | Su | ✅ | ✅ | ✅ `charts/su-reading.md` (The Interior Press) | ⏳ Pending |
-| Yvonne | ❓ | ❌ No chart file found — need birth data | ⏳ Pending | ⏳ Pending |
+| Yvonne | ✅ `charts/yvonne.md` | ✅ On file | ✅ `charts/yvonne-reading.md` | ⏳ Pending |
 | Cat | ❌ | ✅ (birth data only) | ⏳ Pending | ⏳ Pending |
 | Kristen Yim Bell | ✅ `charts/kristen-bell.md` | ✅ Sep 19 1990 · 12:12 PM · Fontana CA | ⏳ Pending (coworker scope) | ⏳ Pending |
 
