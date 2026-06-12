@@ -481,7 +481,7 @@ Adding "may" or "might" after making a clear statement, out of social courtesy.
 5. Identify any new anti-patterns surfaced
 6. Log in the refinement log
 
-**Output:** New entries in the vocabulary library + refinement log entry. Research notes go in `the build/research/` (create folder when first research session produces a standalone file).
+**Output:** New entries in the vocabulary library + refinement log entry. Research notes go in `app/research/` (create folder when first research session produces a standalone file).
 
 ---
 

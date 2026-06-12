@@ -71,7 +71,7 @@ The current sequence (planet strip → deep dive cards → Archetype Card → po
 
 **Ruling: Neither pole. The reading is a contemplative artifact.**
 
-Competitive research across all six major players (full findings in `the build/competitor-research-2026-06-05.md`) revealed that Pole A vs. Pole B is a false binary for this product. Every competitor picks one:
+Competitive research across all six major players (full findings in `app/competitor-research-2026-06-05.md`) revealed that Pole A vs. Pole B is a false binary for this product. Every competitor picks one:
 
 - Co-Star, Time Passages, Astro.com: Pole B (data-first, cold)
 - CHANI, The Pattern, Sanctuary: Pole A (therapeutic, chatty, personality-quiz adjacent)
@@ -256,7 +256,7 @@ Time Passages is not beautiful but it is *complete and navigable*. Every aspects
 ### Reading Voice: Trained on Jordan's Writing, Psychologically Precise
 **Status: RESOLVED**
 **Decided:** Ongoing, codified May-June 2026
-**Details:** Voice DNA in CLAUDE.md Writing Style Guide. Warm-precise (not warm-vague). Implication before description. Economy — say it then stop. Specific beats archetype. No performing "astrologer." See `the build/voice-canon.md` for full quality standards and refinement log.
+**Details:** Voice DNA in CLAUDE.md Writing Style Guide. Warm-precise (not warm-vague). Implication before description. Economy — say it then stop. Specific beats archetype. No performing "astrologer." See `app/voice-canon.md` for full quality standards and refinement log.
 
 ---
 
@@ -270,7 +270,7 @@ Time Passages is not beautiful but it is *complete and navigable*. Every aspects
 ### Architecture Principle: Non-Linear, Modular Agentic Workflows
 **Status: RESOLVED**
 **Decided:** June 5, 2026
-**Details:** The app uses a routing agent that reads input and determines which agent to activate — not a fixed sequential pipeline. Each agent (Transit Fetcher, Chart Synthesizer, Conversational Counselor) is a separate composable module. See `the build/agent-architecture.md` for full spec.
+**Details:** The app uses a routing agent that reads input and determines which agent to activate — not a fixed sequential pipeline. Each agent (Transit Fetcher, Chart Synthesizer, Conversational Counselor) is a separate composable module. See `app/agent-architecture.md` for full spec.
 
 ---
 

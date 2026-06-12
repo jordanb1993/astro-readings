@@ -112,7 +112,7 @@ The four major active transits each perform a specific function in the developme
 ```
 
 These four transits are not in conflict. They're four departments running simultaneously.
-Full technical spec: `the build/agent-architecture.md`
+Full technical spec: `app/agent-architecture.md`
 
 ---
 
@@ -130,7 +130,7 @@ All calculation complexity (ephemeris math, aspect logic, context synthesis, dat
 
 The architecture of CLAUDE.md + INSTRUCTIONS.md + KNOWLEDGE.md creating genuine continuity across sessions — that's essentially what the app needs to do for every customer at scale. The reading pipeline here is the prototype.
 
-**Reading quality standards live in `the build/voice-canon.md`.** That document is the product brief for the reading voice: what makes it differentiated, the accumulated quality standards with the reasoning behind each one, a technical accuracy log, and a dated refinement log. Update it whenever the reading system improves. It's the thing that separates "AI astrology app" from "this specific product built over two years of deliberate iteration."
+**Reading quality standards live in `app/voice-canon.md`.** That document is the product brief for the reading voice: what makes it differentiated, the accumulated quality standards with the reasoning behind each one, a technical accuracy log, and a dated refinement log. Update it whenever the reading system improves. It's the thing that separates "AI astrology app" from "this specific product built over two years of deliberate iteration."
 
 ---
 
@@ -326,7 +326,7 @@ The chart wheel and sky-at-work.html are halfway there already. A manifest and i
 ## Competitive Intelligence — Research Queue
 **Source:** Dasha's June 4 tip (via intake June 5)
 
-**The approach:** Use Playwright MCP (browser automation agent) to visit competitor apps, screenshot key screens, and scrape help desk/FAQ content. Full spec in `the build/agent-architecture.md` (Agent 4).
+**The approach:** Use Playwright MCP (browser automation agent) to visit competitor apps, screenshot key screens, and scrape help desk/FAQ content. Full spec in `app/agent-architecture.md` (Agent 4).
 
 **Competitor targets:** Co-Star, The Pattern, CHANI, Sanctuary, Time Passages, Astro.com
 
@@ -402,7 +402,7 @@ The HTML fetches this on load, renders the Transits and Daily tabs with live dat
 - Phase 2: Add Daily tab reads from that same JSON
 - Phase 3: People switcher, multi-chart support, login
 
-**Shell build brief:** `the build/natal-shell-v2-brief.md`
+**Shell build brief:** `app/natal-shell-v2-brief.md`
 
 ---
 
@@ -523,7 +523,7 @@ Jordan wants to build a structured research pipeline to expand interpretive voca
 ---
 
 ## Session log
-*Migrated to `the build/build-log.md` as of June 8, 2026. Add new entries there. Entries below kept for reference.*
+*Migrated to `app/build-log.md` as of June 8, 2026. Add new entries there. Entries below kept for reference.*
 
 - **May 18, 2026** — Phase 1 scoped in full. Full operational plan written in the bones/Money/. App vision reframed as the destination, not a separate dream.
 - **May 19, 2026** — app-vision.md expanded with full Phase 1 details. Cross-workspace links established.

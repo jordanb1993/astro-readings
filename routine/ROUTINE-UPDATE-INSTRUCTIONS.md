@@ -37,7 +37,7 @@ Go to `claude.ai/code/routines` → find routine `trig_01Rtm1xSST2GbdCZh896F2vP`
    - transit library/INDEX.md → the active long-term transit list with breakdown file slugs.
      Use wikilinks in the transit board for any transit that has a breakdown file:
      format: → [[transit-file-slug]]  (e.g. → [[neptune-conjunct-moon]])
-   - "the build/voice-canon.md" → Jordan's accumulated reading quality standards and voice rules.
+   - "app/voice-canon.md" → Jordan's accumulated reading quality standards and voice rules.
      Read this before writing every reading. It contains the Voice DNA, sentence rhythm rules,
      earned metaphor standards, and all refinements logged from previous readings.
      The reading quality standard is set here — match it.
@@ -404,6 +404,6 @@ All folder names with spaces must be quoted in shell commands:
 - `"workplace readings/"`
 - `"synastry readings/"`
 - `"tarot readings/"`
-- `"the build/"`
+- `"app/"`
 
 The `git add -A` command handles all files regardless of spaces — no per-file quoting needed for the commit step.

@@ -67,7 +67,7 @@ Business model choices, feature scope, platform decisions, pricing, launch seque
 - What are the options being weighed?
 - What new constraints or considerations does this introduce?
 
-**File:** `the build/product-decisions.md`
+**File:** `app/product-decisions.md`
 
 ---
 
@@ -91,14 +91,14 @@ How the AI agents should be prompted, calibrated, or fine-tuned: tone, register,
 - How should the agent handle distress vs. curiosity vs. data requests?
 - What existing workspace training (voice-canon.md, KNOWLEDGE.md patterns) does this extend?
 
-**File:** `app/agent-architecture.md` (training section) · `the build/voice-canon.md`
+**File:** `app/agent-architecture.md` (training section) · `app/voice-canon.md`
 
 ---
 
 ### 6. Voice / Reading Quality
 Standards for the reading voice: prose quality, what makes a reading land, tone calibration, anti-patterns to cut, Jordan's voice DNA.
 
-**File:** `the build/voice-canon.md`
+**File:** `app/voice-canon.md`
 
 ---
 

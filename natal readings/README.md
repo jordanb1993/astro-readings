@@ -470,7 +470,7 @@ Accent classes: `accent-gold`, `accent-rose`, `accent-plum`, `accent-teal`
 Head classes: `gold-head`, `rose-head`, `plum-head`, `teal-head`
 Pull quote variants: `.pull` (gold), `.rose-pull`, `.plum-pull`, `.teal-pull`
 
-Writing rules: see `CLAUDE.md → Writing Style Guide` and `the build/voice-canon.md → Voice DNA`.
+Writing rules: see `CLAUDE.md → Writing Style Guide` and `app/voice-canon.md → Voice DNA`.
 Short paragraphs. Vary length. Implication first. No em dashes. Warm-precise.
 
 **Step 9 — Write the synastry section** (always last, teal)

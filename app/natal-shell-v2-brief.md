@@ -178,7 +178,7 @@ When this shell is ready to port to mimi, carina, and eventually subscribers:
 | `natal readings/mimi.html` | Will be rebuilt on this shell when ready |
 | `natal readings/carina.html` | Same |
 | `natal readings/[friend].html` | Future builds all inherit this |
-| `the build/app-vision.md` | Hub architecture section references this |
+| `app/app-vision.md` | Hub architecture section references this |
 
 ---
 
