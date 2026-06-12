@@ -19,6 +19,11 @@ Jordan is a 32-year-old lesbian woman in Chicago. Associate Director of Content 
 ## Session Start Protocol — Load These In Order
 
 **Every session:**
+0. **Pull latest from GitHub** — run this before loading any files:
+   ```
+   git -C "/Users/jordanashleybarney/Library/Mobile Documents/iCloud~md~obsidian/Documents/the stars" pull
+   ```
+   This ensures the routine's overnight outputs (today.json, daily reading, transit patches) are present before the session starts.
 1. **This file (CLAUDE.md)** — auto-loaded
 2. **`NATAL.md`** — natal chart, orb table, calculation rules, key people, fluency level
 3. **`transit library/INDEX.md`** — active transit status + links
