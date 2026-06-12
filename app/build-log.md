@@ -4,6 +4,31 @@
 
 ---
 
+## 2026-06-12 — Session 16 (continued): Voice canon drafts — 6 charts
+
+**Theme:** Plain text natal reading drafts for all friends with complete birth data
+
+All 6 readings written simultaneously via parallel agents, following the 8-section Pathfinder format established by carina-reading.md:
+Portrait → Chart Signature → Core Constitution → Formative Ground → Shadow & Mirror → The Arc → Archetype Card → Poem → Synastry with Jordan
+
+| File | Archetype | Key Aspect |
+|---|---|---|
+| `charts/carina-reading.md` | The Cartographer | NNode sq MC 0.25° / Sag NNode 1st vs Gemini Sun 7th |
+| `charts/kate-reading.md` | The Keeper of the Veil | Moon □ Mars 0.31° / Libra surface, Scorpio core |
+| `charts/mimi-reading.md` | The Deep Channel | Fire Grand Trine Mercury/Mars/Jupiter 0.20–0.57° |
+| `charts/hazel-reading.md` | The Signal Reader | Two 29° placements (Sun + ASC) / triple 1st house outer planets |
+| `charts/iza-reading.md` | The Interior Architect | Sun sq Pluto 0.64° / Pisces 2nd weight vs Libra NNode 10th |
+| `charts/su-reading.md` | The Interior Press | Jupiter sq Sun 0.83° / 12th house cluster (Moon/Jupiter/Saturn) hidden |
+
+Also calculated and filed natal charts for:
+- **Iza** (`charts/iza.md`): Sagittarius Rising, Pisces Sun, Aries Moon — Moshier ephemeris
+- **Su** (`charts/su.md`): Taurus Rising, Gemini Sun, Aries Moon — Moshier ephemeris
+- **Kristen Yim Bell** (`charts/kristen-bell.md`): Sagittarius Rising, Virgo Sun 10th, Libra Moon 10th — new person added to chart library
+
+Chiron approximate for Iza and Su (seas_18.se1 ephemeris file not present) — flag for Time Passages verification before HTML builds.
+
+---
+
 ## 2026-06-12 — Session 16 (continued): Archetype flip card redesign
 
 **Theme:** Full archetype card visual system — flip mechanic + unique sigil art per person

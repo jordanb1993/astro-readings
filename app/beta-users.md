@@ -90,14 +90,15 @@ Voice canon copy drafts to be written first (`.md` in `charts/`), then converted
 
 | Person | Old Chart | Birth Data | Voice Canon Draft | Pathfinder Build |
 |--------|-----------|-----------|-------------------|-----------------|
-| Mimi | ✅ `mimi.html` (canonical template) | ✅ | ⏳ Pending | ⏳ Pending |
-| Carina | ✅ | ✅ | ⏳ Pending | ⏳ Pending |
-| Hazel | ✅ | ✅ | ⏳ Pending | ⏳ Pending |
-| Iza | ✅ | ✅ | ⏳ Pending | ⏳ Pending |
-| Kate | ✅ | ✅ | ⏳ Pending | ⏳ Pending |
-| Su | ✅ | ✅ | ⏳ Pending | ⏳ Pending |
-| Yvonne | ✅ | ✅ | ⏳ Pending | ⏳ Pending |
+| Mimi | ✅ `mimi.html` (canonical template) | ✅ | ✅ `charts/mimi-reading.md` (The Deep Channel) | ⏳ Pending |
+| Carina | ✅ | ✅ | ✅ `charts/carina-reading.md` (The Cartographer) | ⏳ Pending |
+| Hazel | ✅ | ✅ | ✅ `charts/hazel-reading.md` (The Signal Reader) | ⏳ Pending |
+| Iza | ✅ | ✅ | ✅ `charts/iza-reading.md` (The Interior Architect) | ⏳ Pending |
+| Kate | ✅ | ✅ | ✅ `charts/kate-reading.md` (The Keeper of the Veil) | ⏳ Pending |
+| Su | ✅ | ✅ | ✅ `charts/su-reading.md` (The Interior Press) | ⏳ Pending |
+| Yvonne | ❓ | ❌ No chart file found — need birth data | ⏳ Pending | ⏳ Pending |
 | Cat | ❌ | ✅ (birth data only) | ⏳ Pending | ⏳ Pending |
+| Kristen Yim Bell | ✅ `charts/kristen-bell.md` | ✅ Sep 19 1990 · 12:12 PM · Fontana CA | ⏳ Pending (coworker scope) | ⏳ Pending |
 
 ---
 

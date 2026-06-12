@@ -31,7 +31,7 @@ tags:
 |------|----------|-------|
 | Supabase intake form for readings | 🟢 Low urgency | Jordan wants it; Vercel + Supabase + GitHub is target infra stack |
 | Sky at Work weekly content cadence | 🟡 Ongoing | Update dates + planet data + voice canon rewrite each week — full template now solid |
-| Voice canon drafts — 8 remaining charts | 🟡 Ongoing | Carina, Mimi, Hazel, Iza, Kate, Su, Yvonne + Cat — `.md` draft files in `charts/` |
+| Voice canon drafts | 🟢 6 of 8 done | ✅ Carina, Kate, Mimi, Hazel, Iza, Su — `.md` drafts in `charts/`. ⏳ Yvonne (no chart file — need birth data), Cat (birth data only) |
 | Reddit vocabulary research | 🟢 Low urgency | r/astrology, r/AskAstrologers, r/astrologyreadings → voice-canon.md |
 | Routine live update | 🔴 Jordan action | Paste updated ROUTINE-UPDATE-INSTRUCTIONS.md into claude.ai/code/routines — **includes new health-log write step (step 12)** + em dash ban + June 12 additions. Go to claude.ai/code/routines → find `trig_01Rtm1xSST2GbdCZh896F2vP` → replace prompt. |
 
@@ -47,7 +47,7 @@ See `app/beta-users.md` for full detail.
 | Marina | ✅ Built | ✅ On file | Natal chart (scrolling HTML format, pre-Pathfinder) |
 | Dasha | ✅ Built | ✅ On file | Natal, daily reads, transit library, Sky at Work |
 | Krista Kellogg | ⏳ Waiting | ❌ Needed | #astroflow-weekly, full app demo June 12 |
-| Kristen Bell | ⏳ Waiting | ⏳ Sending | Full app demo June 12 (~noon birth time, checking certificate) |
+| Kristen Yim Bell | ✅ Chart filed | ✅ On file | Full app demo June 12 — chart at `charts/kristen-bell.md` |
 
 ---
 
