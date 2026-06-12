@@ -19,13 +19,13 @@ tags:
 # [Transiting Planet] [aspect] Natal [Planet/Point]
 *[date range] · [sign(s)] · [house] house · [n]-pass transit*
 
-[Signal — 1 sentence. The essential meaning of this transit in Jordan's chart, at the highest level of truth.]
+[Signal: 1 sentence. The essential meaning of this transit in Jordan's chart, at the highest level of truth.]
 
 ---
 
 ## What This Is
 
-[The full architectural interpretation. Not generic transit meaning — what this aspect means given Jordan's specific natal placement, house context, aspects to other natal planets, and life themes. Written once. Holds for the entire transit arc. 3-5 paragraphs.]
+[The full architectural interpretation. Not generic transit meaning; what this aspect means given Jordan's specific natal placement, house context, aspects to other natal planets, and life themes. Written once. Holds for the entire transit arc. 3-5 paragraphs.]
 
 ---
 
@@ -37,7 +37,7 @@ tags:
 |-------|------------------|-------------|
 | enters orb | | |
 | first exact | | |
-| [retrograde — if applicable] | | |
+| [retrograde, if applicable] | | |
 | second exact | | |
 | leaves orb | | |
 
@@ -54,7 +54,7 @@ tags:
 
 ## Working With It
 
-[Specific, practical, grounded in Jordan's actual life and chart. What helps. What to watch for. What to use deliberately. What the transit asks of her and what it offers if she shows up for it. Not generic guidance — written for her.]
+[Specific, practical, grounded in Jordan's actual life and chart. What helps. What to watch for. What to use deliberately. What the transit asks of her and what it offers if she shows up for it. Not generic guidance: written for her.]
 
 ---
 

@@ -86,7 +86,7 @@ Plan accordingly: maximum creative and intuitive capacity, use it deliberately. 
 
 ---
 
-## The Pluto-Neptune Double Hit — Late June/July 2026
+## The Pluto-Neptune Double Hit: Late June/July 2026
 
 Both Pluto (sextile) and Neptune (conjunction) reach exact with natal Moon within days of each other in late June/early July 2026. The most significant concentrated activation of the 10th house Moon in Jordan's recent chart history.
 

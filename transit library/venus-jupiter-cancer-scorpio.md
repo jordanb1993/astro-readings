@@ -5,11 +5,11 @@ natal-planet: Pluto · Venus · Jupiter · Mercury (Scorpio stellium, 5th house)
 natal-house: 5th
 natal-sign: Scorpio
 aspect-type: trine (conjunction through Cancer to Scorpio stellium)
-orb-at-entry: varies by natal planet — Jupiter at stellium earliest, Pluto last
+orb-at-entry: varies by natal planet; Jupiter at stellium earliest, Pluto last
 date-entered-orb: May 2026 (began trining natal Jupiter in Scorpio)
 dates-exact: Jupiter △ natal Pluto exact ~June 7–8 · Venus △ natal Pluto exact ~June 10–11 · Venus ☌ Jupiter exact June 9
 date-leaves-orb: mid-July 2026
-passes: 1 (Venus and Jupiter direct only — no retrograde return to this orb)
+passes: 1 (Venus and Jupiter direct only; no retrograde return to this orb)
 cssclasses:
   - stars-reading
 tags:

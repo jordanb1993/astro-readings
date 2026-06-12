@@ -56,7 +56,7 @@ Saturn may make a third exact conjunction at the direct station (December 2026) 
 
 ---
 
-## In Real Time — First Pass (March–April 2026)
+## In Real Time: First Pass (March–April 2026)
 
 | date | what happened | connection |
 |------|---------------|------------|
