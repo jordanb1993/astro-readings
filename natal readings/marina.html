@@ -106,17 +106,8 @@
     <button class="subnav-tab active" data-sub="chart" onclick="switchSub('chart',this)">
       <span class="sn-icon">✦</span> Chart
     </button>
-    <button class="subnav-tab" data-sub="identity" onclick="switchSub('identity',this)">
-      <span class="sn-icon">☉</span> Identity
-    </button>
-    <button class="subnav-tab" data-sub="depth" onclick="switchSub('depth',this)">
-      <span class="sn-icon">♑</span> Depth
-    </button>
-    <button class="subnav-tab" data-sub="roots" onclick="switchSub('roots',this)">
-      <span class="sn-icon">⚷</span> Roots
-    </button>
-    <button class="subnav-tab" data-sub="soul" onclick="switchSub('soul',this)">
-      <span class="sn-icon">♐</span> Soul
+    <button class="subnav-tab" data-sub="reading" onclick="switchSub('reading',this)">
+      <span class="sn-icon">☽</span> Reading
     </button>
   </nav>
 
@@ -159,8 +150,8 @@
   </div>
 </div>
 
-<!-- IDENTITY -->
-<div class="subpanel sp-reading" id="sp-identity">
+<!-- ══ READING SUBPANEL — 8-section scrollable natal reading ══ -->
+<div class="subpanel sp-reading" id="sp-reading">
   <svg class="geo-bg" viewBox="0 0 375 812" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
     <polygon points="188,30 320,110 362,310 295,540 188,590 81,540 13,310 56,110" fill="none" stroke="rgba(201,168,76,0.07)" stroke-width="0.6"/>
     <circle cx="188" cy="30" r="2.0" fill="rgba(201,168,76,0.35)"/>
@@ -170,9 +161,11 @@
   </svg>
 
   <div class="reading-inner accent-gold">
-    <div class="panel-heading">
-      <div class="panel-eyebrow-sm">natal reading</div>
-      <div class="panel-title-lg">The Essential Signature</div>
+
+    <!-- ══ SECTION 1: ENTRY — BIG THREE PORTRAIT ══ -->
+    <div class="entry-section">
+      <div class="entry-eyebrow">Section I · Big Three Portrait</div>
+      <div class="entry-title">The Essential Signature</div>
     </div>
 
     <div class="sec-card">
@@ -193,48 +186,129 @@
       </div>
     </div>
 
-    <div class="sep"><span class="sep-inner">Ascendant · Jupiter</span></div>
-
-    <div class="sec-card">
-      <div class="sec-head">
-        <div class="sec-sign-glyph">♎</div>
-        <div class="sec-meta">
-          <div class="sec-eyebrow">ASCENDANT · LIBRA 7°01' · JUPITER · LIBRA 9°16' · 2.26° CONJUNCTION</div>
-          <div class="sec-title">Jupiter at the Door</div>
-          <div class="sec-tagline">the amplifier is structural, not cultivated</div>
-        </div>
-      </div>
-      <div class="kw-row">
-        <span class="kw">PRESENCE</span><span class="kw">AMPLIFIED</span><span class="kw">LIBRA GRACE</span><span class="kw">JUPITER</span><span class="kw">1ST HOUSE</span>
-      </div>
-      <div class="sec-body">
-        <p>Jupiter conjunct the Ascendant means other people feel better in Marina's company before she has done anything. Not because she is performing warmth. Because it is wired in. Libra provides the diplomatic register: the fairness instinct, the graciousness, the reading of the room. Jupiter expands this until it has presence.</p>
-        <p>The gift is structural. The work is learning when to turn it toward what actually needs to be served, and when to let the room hold her instead.</p>
-        <span class="pull">The gift arrives before the person. That is Jupiter's architecture.</span>
-      </div>
+    <div class="cel-divider" aria-hidden="true">
+      <div class="cel-rule left"></div>
+      <div class="cel-mark">✦</div>
+      <div class="cel-rule right"></div>
     </div>
-
-    <div class="sep"><span class="sep-inner">Sun · Mercury · 10th House</span></div>
 
     <div class="sec-card">
       <div class="sec-head">
         <div class="sec-sign-glyph">♌</div>
         <div class="sec-meta">
-          <div class="sec-eyebrow">SUN · LEO 5°35' · 10TH HOUSE · MERCURY · CANCER 18°32' · 10TH HOUSE</div>
+          <div class="sec-eyebrow">SUN · LEO 5°35' · 10TH HOUSE</div>
           <div class="sec-title">The Leo Sun in the Tenth</div>
           <div class="sec-tagline">what is built publicly is also what shines</div>
         </div>
       </div>
       <div class="kw-row">
-        <span class="kw">LEO</span><span class="kw">10TH HOUSE</span><span class="kw">VISIBILITY</span><span class="kw">CRAFT</span><span class="kw">CANCER MERCURY</span>
+        <span class="kw">LEO</span><span class="kw">10TH HOUSE</span><span class="kw">VISIBILITY</span><span class="kw">CRAFT</span><span class="kw">IDENTITY</span>
       </div>
       <div class="sec-body">
         <p>The Leo Sun in the 10th house: identity and public work are on the same track. What Marina builds and what Marina is are not separate accounts. When the work matters, the energy is clear. When the work loses meaning or the visibility is absent, the Sun dims.</p>
-        <p>Mercury in Cancer in the 10th: the professional mind runs through feeling. What communicates well is what is emotionally true first. The analytical arrives second, or through the emotional. What Marina says that lands tends to be what she actually felt before she said it.</p>
+        <p>Mercury in Cancer in the 10th runs alongside it: the professional mind works through feeling. What communicates well is what is emotionally true first. The analytical arrives second. What Marina says that lands tends to be what she actually felt before she said it.</p>
       </div>
     </div>
 
+    <div class="cel-divider" aria-hidden="true">
+      <div class="cel-rule left"></div>
+      <div class="cel-mark">✦</div>
+      <div class="cel-rule right"></div>
+    </div>
+
+    <div class="sec-card">
+      <div class="sec-head">
+        <div class="sec-sign-glyph">♐</div>
+        <div class="sec-meta">
+          <div class="sec-eyebrow">MOON · SAGITTARIUS 7°46' · 3RD HOUSE</div>
+          <div class="sec-title">The Sagittarius Moon</div>
+          <div class="sec-tagline">where she feels most herself is also where she grows</div>
+        </div>
+      </div>
+      <div class="kw-row">
+        <span class="kw">SAG MOON</span><span class="kw">3RD HOUSE</span><span class="kw">NORTH NODE</span><span class="kw">IDEAS</span><span class="kw">SPEECH</span>
+      </div>
+      <div class="sec-body">
+        <p>Moon and North Node both in Sagittarius in the 3rd house. Where Marina grows and where she feels most herself are the same compass bearing: learning, communicating, building a philosophy that is actually hers. The 3rd house is where ideas become speech, where the mind runs in real time. Marina's emotional comfort is in the room where something is being figured out.</p>
+      </div>
+    </div>
+
+    <div class="sep-stars">✦ &nbsp; ✧ &nbsp; ✦</div>
+
+    <!-- ══ SECTION 2: CHART SIGNATURE ══ -->
+    <div class="sig-wrap">
+      <div class="sig-header">
+        <div class="sig-eyebrow">Section II · Chart Signature</div>
+        <div class="sig-title">The Chart Ruler &amp; Dominant Weight</div>
+      </div>
+      <div class="sig-panel">
+        <ul class="sig-list">
+          <li class="sig-item">
+            <span class="sig-glyph">♎</span>
+            <span class="sig-text"><strong>Chart ruler: Venus (Libra Ascendant).</strong> Venus in Gemini in the 9th house. The chart's ruling planet is in the house of philosophy, long-distance travel, and higher learning. Marina's aesthetic intelligence runs through ideas and connection, not through comfort or possession. Beauty is intellectual first.</span>
+          </li>
+          <li class="sig-item">
+            <span class="sig-glyph">♃</span>
+            <span class="sig-text"><strong>Jupiter conjunct Ascendant at 2°16'.</strong> The dominant amplifying force in the chart sits at the threshold. Jupiter expands whatever it touches. On the Ascendant, it expands the first impression, the warmth in the room, the sense of possibility Marina carries in. This is structural, not cultivated.</span>
+          </li>
+          <li class="sig-item">
+            <span class="sig-glyph">♌</span>
+            <span class="sig-text"><strong>Dominant emphasis: Leo/10th and Libra/1st.</strong> The chart's weight is concentrated in public identity and relational presentation. Marina is built for the intersection of visibility and grace. Both signs prize being received well, but Leo wants to matter, and Libra wants to connect. The chart holds both without contradiction.</span>
+          </li>
+          <li class="sig-item">
+            <span class="sig-glyph">♑</span>
+            <span class="sig-text"><strong>4th house stellium (Uranus + Neptune, both retrograde, 0.25° conjunction).</strong> Below the visible signature, the interior is generationally complex. The private foundation runs deeper than the entrance announces.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="cel-divider" aria-hidden="true">
+      <div class="cel-rule left"></div>
+      <div class="cel-mark">✦</div>
+      <div class="cel-rule right"></div>
+    </div>
+
+    <!-- ══ SECTION 3: CORE CONSTITUTION ══ -->
     <div class="dive-wrap">
+      <div class="panel-heading" style="margin-bottom:20px">
+        <div class="panel-eyebrow-sm">Section III · Core Constitution</div>
+        <div class="panel-title-lg">Primary Identity</div>
+      </div>
+
+      <div class="sec-card">
+        <div class="sec-head">
+          <div class="sec-sign-glyph">♎</div>
+          <div class="sec-meta">
+            <div class="sec-eyebrow">ASCENDANT · LIBRA 7°01' · JUPITER · LIBRA 9°16' · 2.26° CONJUNCTION</div>
+            <div class="sec-title">Jupiter at the Door</div>
+            <div class="sec-tagline">the amplifier is structural, not cultivated</div>
+          </div>
+        </div>
+        <div class="kw-row">
+          <span class="kw">PRESENCE</span><span class="kw">AMPLIFIED</span><span class="kw">LIBRA GRACE</span><span class="kw">JUPITER</span><span class="kw">1ST HOUSE</span>
+        </div>
+        <div class="sec-body">
+          <p>Jupiter conjunct the Ascendant means other people feel better in Marina's company before she has done anything. Not because she is performing warmth. Because it is wired in. Libra provides the diplomatic register: the fairness instinct, the graciousness, the reading of the room. Jupiter expands this until it has presence.</p>
+          <p>The gift is structural. The work is learning when to turn it toward what actually needs to be served, and when to let the room hold her instead.</p>
+          <span class="pull">The gift arrives before the person. That is Jupiter's architecture.</span>
+        </div>
+      </div>
+
+      <div class="sep"><span class="sep-inner">Sun · Mercury · 10th House</span></div>
+
+      <button class="dive-toggle" aria-expanded="false" onclick="toggleDive(this)">
+        <div class="dive-hd">
+          <div class="dive-lbl"><span class="dive-lbl-glyph">♌</span>Sun · Leo 5°35' · 10th House · Cancer MC</div>
+          <span class="dive-arrow">▾</span>
+        </div>
+      </button>
+      <div class="dive-body">
+        <div class="dive-content">
+          <p>The Leo Sun in the 10th runs toward a Cancer Midheaven. The career peak has personal stakes. The legacy ambition is not separable from the emotional register. What Marina makes visible publicly is not neutral. It matters in the Cancer way: the belonging, the care, the continuation of something from the past. The work that lands is the work with roots in it.</p>
+        </div>
+      </div>
+
       <button class="dive-toggle" aria-expanded="false" onclick="toggleDive(this)">
         <div class="dive-hd">
           <div class="dive-lbl"><span class="dive-lbl-glyph">♐</span>Moon · Sagittarius 7°46' · 3rd House · North Node 10°53' · 3rd House</div>
@@ -243,172 +317,155 @@
       </button>
       <div class="dive-body">
         <div class="dive-content">
-          <p>Moon and North Node both in Sagittarius in the 3rd house. Where Marina grows and where she feels most herself are the same compass bearing: learning, communicating, building a philosophy that is actually hers.</p>
-          <p>The 3rd house is where ideas become speech, where the mind runs in real time, where the world is processed through conversation. Marina's emotional comfort is in the room where something is being figured out. The soul direction and where she feels most herself are the same compass bearing.</p>
+          <p>Moon and North Node both in Sagittarius in the 3rd house. Where Marina grows and where she feels most herself are the same compass bearing: learning, communicating, building a philosophy that is actually hers. The 3rd house is where ideas become speech, where the mind runs in real time. Marina's emotional comfort is in the room where something is being figured out. The soul direction and where she feels most herself are the same compass bearing.</p>
         </div>
       </div>
     </div>
 
-    <div class="sep-stars">✦ &nbsp; ✧ &nbsp; ✦</div>
-  </div>
-</div>
-
-<!-- DEPTH -->
-<div class="subpanel sp-reading" id="sp-depth">
-  <svg class="geo-bg" viewBox="0 0 375 812" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <polygon points="188,50 340,140 375,340 305,560 188,610 71,560 0,340 35,140" fill="none" stroke="rgba(201,168,76,0.065)" stroke-width="0.55"/>
-    <circle cx="188" cy="300" r="3.0" fill="none" stroke="rgba(62,143,192,0.12)" stroke-width="0.6"/>
-    <circle cx="188" cy="300" r="1.8" fill="rgba(62,143,192,0.16)"/>
-    <circle cx="188" cy="50" r="1.8" fill="rgba(201,168,76,0.32)"/>
-  </svg>
-
-  <div class="reading-inner accent-cerulean">
-    <div class="panel-heading">
-      <div class="panel-eyebrow-sm">inner life</div>
-      <div class="panel-title-lg">The Interior Architecture</div>
+    <div class="cel-divider" aria-hidden="true">
+      <div class="cel-rule left"></div>
+      <div class="cel-mark">✦</div>
+      <div class="cel-rule right"></div>
     </div>
 
-    <div class="sec-card">
-      <div class="sec-head">
-        <div class="sec-sign-glyph">♑</div>
-        <div class="sec-meta">
-          <div class="sec-eyebrow">URANUS · NEPTUNE · CAPRICORN · 4TH HOUSE · 0.25° CONJUNCTION · RETROGRADE</div>
-          <div class="sec-title">The Capricorn Interior</div>
-          <div class="sec-tagline">more tectonic below the surface than the entrance suggests</div>
+    <!-- ══ SECTION 4: FORMATIVE GROUND ══ -->
+    <div class="formative-wrap dive-wrap">
+      <div class="panel-heading" style="margin-bottom:20px">
+        <div class="panel-eyebrow-sm">Section IV · Formative Ground</div>
+        <div class="panel-title-lg">Foundation, Wound &amp; Structure</div>
+      </div>
+
+      <div class="sec-card">
+        <div class="sec-head">
+          <div class="sec-sign-glyph">⚷</div>
+          <div class="sec-meta">
+            <div class="sec-eyebrow">VENUS · GEMINI 25°08' · CHIRON · LEO 25°05' · SEXTILE · 0.05° ORB</div>
+            <div class="sec-title">The Most Exact Aspect</div>
+            <div class="sec-tagline">0.05°: the gift and the tenderness share an address</div>
+          </div>
+        </div>
+        <div class="kw-row">
+          <span class="kw">EXACT SEXTILE</span><span class="kw">VENUS</span><span class="kw">CHIRON</span><span class="kw">LEO 11TH</span><span class="kw">GEMINI 9TH</span>
+        </div>
+        <div class="sec-body">
+          <p>The most precise aspect in Marina's chart: Venus sextile Chiron at 0.05°. A hundredth of a degree from exact. Venus in Gemini in the 9th house: beauty, connection, and relationship expressed through ideas and communication. Chiron in Leo in the 11th: the wound is around recognition within community. About being seen for who you actually are by the people you're holding.</p>
+          <p>A sextile at 0.05° means these two are nearly the same thing. What Marina does with beauty and connection is also where she is most tender. The creative gift is not separate from the Chiron vulnerability. They are not sequential: first wound, then healing. They are simultaneous.</p>
+          <span class="pull">The gift and the wound are touching. That is not an accident in this chart.</span>
         </div>
       </div>
-      <div class="kw-row">
-        <span class="kw">CAPRICORN</span><span class="kw">4TH HOUSE</span><span class="kw">OUTER PLANETS Rx</span><span class="kw">ORIGIN</span><span class="kw">DEPTH</span>
-      </div>
-      <div class="sec-body">
-        <p>Two outer planets in the 4th house, both retrograde, within 0.25° of each other. Uranus at 19°34' and Neptune at 19°20'. The 4th house is origin: the private self, what was inherited from the earliest conditions, what lives below visibility.</p>
-        <p>Uranus in the 4th means the origin story has disruption in it. Neptune means something in the roots is idealized or dissolved. Both retrograde: the processing is inward, accumulated slowly rather than resolved in events. Marina's inner life has a complexity that the Libra-Jupiter entrance does not announce.</p>
-        <p>The generational Uranus-Neptune conjunction was exact for this birth year. In Marina's chart it is personal by placement. The world-scale disruption runs through the private foundation.</p>
-        <span class="pull">The gracious exterior is real. So is what lies below it.</span>
-      </div>
-    </div>
 
-    <div class="dive-wrap">
+      <div class="sep"><span class="sep-inner">4th House · Capricorn Interior</span></div>
+
       <button class="dive-toggle" aria-expanded="false" onclick="toggleDive(this)">
         <div class="dive-hd">
-          <div class="dive-lbl"><span class="dive-lbl-glyph">♇</span>Pluto · Scorpio 22°44' · 2nd House · The Worth Question</div>
+          <div class="dive-lbl"><span class="dive-lbl-glyph">♑</span>Uranus · Neptune · Capricorn 4th House · 0.25° Conjunction Rx</div>
           <span class="dive-arrow">▾</span>
         </div>
       </button>
       <div class="dive-body">
         <div class="dive-content">
-          <p>Pluto in the 2nd house of self-worth and resources, in Scorpio. Deep, slow transformation of how Marina understands her own value. The relationship to resources and stability has a regenerative quality: what is shed makes room for something more real.</p>
-          <p>The question of what Marina is actually worth doesn't surface easily. It keeps going deeper. This is not a problem to fix. It is how the 2nd house operates with Pluto in it.</p>
+          <p>Two outer planets in the 4th house, both retrograde, within 0.25° of each other. Uranus at 19°34' and Neptune at 19°20'. The 4th house is origin: the private self, what was inherited from the earliest conditions, what lives below visibility. Uranus in the 4th means the origin story has disruption in it. Neptune means something in the roots is idealized or dissolved. Both retrograde: the processing is inward, accumulated slowly rather than resolved in events. Marina's inner life has a complexity that the Libra-Jupiter entrance does not announce.</p>
+          <p>The generational Uranus-Neptune conjunction was exact for this birth year. In Marina's chart it is personal by placement. The world-scale disruption runs through the private foundation.</p>
+          <span class="pull">The gracious exterior is real. So is what lies below it.</span>
+        </div>
+      </div>
+
+      <button class="dive-toggle" aria-expanded="false" onclick="toggleDive(this)">
+        <div class="dive-hd">
+          <div class="dive-lbl"><span class="dive-lbl-glyph">♄</span>Saturn · Aquarius 28°57' · 5th House · Retrograde</div>
+          <span class="dive-arrow">▾</span>
+        </div>
+      </button>
+      <div class="dive-body">
+        <div class="dive-content">
+          <p>Saturn retrograde in Aquarius in the 5th house of creativity, expression, and pleasure. Saturn retrograde brings the structuring principle inward: the inner critic on creative work, the discipline that was internalized before it was chosen. In Aquarius, the constraint touches the unconventional, the original, the part of Marina that wants to operate outside the expected frame. In the 5th, this is where the play impulse meets the internal gatekeeper. The task is learning to create before the Saturn approval arrives, not after.</p>
         </div>
       </div>
     </div>
 
-    <div class="sep"><span class="sep-inner">Sun · Mercury · Cancer MC</span></div>
+    <div class="cel-divider" aria-hidden="true">
+      <div class="cel-rule left"></div>
+      <div class="cel-mark">✦</div>
+      <div class="cel-rule right"></div>
+    </div>
 
-    <div class="sec-card">
-      <div class="sec-head">
-        <div class="sec-sign-glyph">♋</div>
-        <div class="sec-meta">
-          <div class="sec-eyebrow">MIDHEAVEN · CANCER 8°12' · PUBLIC IDENTITY · PERSONAL STAKES</div>
-          <div class="sec-title">The Career Is Personal</div>
-          <div class="sec-tagline">what goes public also has private roots</div>
+    <!-- ══ SECTION 5: SHADOW & MIRROR ══ -->
+    <div class="shadow-wrap dive-wrap">
+      <div class="panel-heading" style="margin-bottom:20px">
+        <div class="panel-eyebrow-sm">Section V · Shadow &amp; Mirror</div>
+        <div class="panel-title-lg">Projection, Polarity &amp; What Gets Reflected Back</div>
+      </div>
+
+      <button class="dive-toggle" aria-expanded="false" onclick="toggleDive(this)">
+        <div class="dive-hd">
+          <div class="dive-lbl"><span class="dive-lbl-glyph">♈</span>Descendant · Aries · 7th House · What Gets Projected</div>
+          <span class="dive-arrow">▾</span>
+        </div>
+      </button>
+      <div class="dive-body">
+        <div class="dive-content">
+          <p>The Aries Descendant sits opposite the Libra Ascendant. Marina leads with grace, attunement, and diplomacy. The Aries 7th house names what gets drawn in through relationship: directness, assertion, the quality of someone who acts without reading the room first. This is the complementary energy that partnerships tend to carry, whether Marina consciously chose it or not. The work is integrating the Aries directness into the self rather than looking for it exclusively in others.</p>
         </div>
       </div>
-      <div class="kw-row">
-        <span class="kw">CANCER MC</span><span class="kw">PUBLIC WORK</span><span class="kw">LEGACY</span><span class="kw">EMOTIONAL STAKES</span>
+
+      <button class="dive-toggle" aria-expanded="false" onclick="toggleDive(this)">
+        <div class="dive-hd">
+          <div class="dive-lbl"><span class="dive-lbl-glyph">♊</span>South Node · Gemini 10°53' · 9th House · Past Mastery</div>
+          <span class="dive-arrow">▾</span>
+        </div>
+      </button>
+      <div class="dive-body">
+        <div class="dive-content">
+          <p>The South Node in Gemini in the 9th house: past mastery is in information-gathering, curiosity as identity, the restless movement between ideas and philosophies. Marina came in already knowing how to be interested in everything, how to hold multiple frameworks lightly, how to stay perpetually open. In this life, the 9th house South Node can become a way of endlessly exploring without landing. The direction is across the axis: Sagittarius in the 3rd, committing to what is actually hers, putting something specific into speech.</p>
+        </div>
       </div>
-      <div class="sec-body">
-        <p>The Leo Sun in the 10th runs toward a Cancer Midheaven. The career peak has personal stakes. The legacy ambition is not separable from the emotional register.</p>
-        <p>What Marina makes visible publicly is not neutral. It matters in the Cancer way: the belonging, the care, the continuation of something from the past. The work that lands is the work with roots in it.</p>
+
+      <button class="dive-toggle" aria-expanded="false" onclick="toggleDive(this)">
+        <div class="dive-hd">
+          <div class="dive-lbl"><span class="dive-lbl-glyph">♋</span>Mercury · Cancer · Opposition · Neptune · Uranus · Capricorn · The Poetic Mind</div>
+          <span class="dive-arrow">▾</span>
+        </div>
+      </button>
+      <div class="dive-body">
+        <div class="dive-content">
+          <p>Mercury in Cancer thinks through emotional resonance. What is true is also what is felt to be true. The opposition to Neptune and Uranus in Capricorn runs through the home axis: the 10th-house professional mind in direct tension with the 4th-house complex interior. Neptune in the opposition: the thinking dissolves expectations, makes connections that aren't always linear or explainable before they arrive. Uranus in the opposition: the thinking disrupts and surprises, including Marina herself. The writing, when it comes, is unexpected. That is the opposition doing what oppositions do: generating energy from the tension between two real things.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cel-divider" aria-hidden="true">
+      <div class="cel-rule left"></div>
+      <div class="cel-mark">✦</div>
+      <div class="cel-rule right"></div>
+    </div>
+
+    <!-- ══ SECTION 6: THE ARC ══ -->
+    <div class="arc-wrap">
+      <div class="arc-header">
+        <div class="arc-eyebrow">Section VI · Soul Direction</div>
+        <div class="arc-title">The Arc</div>
+      </div>
+      <div class="arc-panels">
+        <div class="arc-panel past">
+          <div class="arc-panel-eyebrow">Past mastery · South Node</div>
+          <div class="arc-panel-placement">♊ Gemini · 9th House</div>
+          <div class="arc-panel-rule"></div>
+          <p>The South Node in Gemini in the 9th: the past mastery is curiosity as identity. Marina came in already knowing how to be interested in everything, how to hold philosophies lightly, how to stay perpetually open. It still activates as a default: gathering more, exploring more, staying in the question longer than the question requires. The invitation is to notice when this becomes movement instead of landing.</p>
+        </div>
+        <div class="arc-arrow" aria-hidden="true">→</div>
+        <div class="arc-panel future">
+          <div class="arc-panel-eyebrow">Direction · North Node</div>
+          <div class="arc-panel-placement">♐ Sagittarius · 3rd House</div>
+          <div class="arc-panel-rule"></div>
+          <p>The North Node in Sagittarius in the 3rd house asks for something the South Node did not require: committing to a philosophy that is actually Marina's, putting it into specific speech, staying in the conversation instead of moving on to the next question. The 3rd house is where the mind becomes voice. The Moon is already here. The direction is to bring what she believes into what she says, consistently and without apology.</p>
+          <p>Where the Gemini South Node collects, the Sagittarius North Node distills. The soul direction is toward meaning that is earned through expression, not through accumulation.</p>
+        </div>
       </div>
     </div>
 
     <div class="sep-stars">✦ &nbsp; ✧ &nbsp; ✦</div>
-  </div>
-</div>
 
-<!-- ROOTS -->
-<div class="subpanel sp-reading" id="sp-roots">
-  <svg class="geo-bg" viewBox="0 0 375 812" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <polygon points="188,40 310,120 345,300 290,510 188,555 86,510 30,300 65,120" fill="none" stroke="rgba(201,168,76,0.065)" stroke-width="0.55"/>
-    <line x1="188" y1="300" x2="130" y2="460" stroke="rgba(80,142,68,0.09)" stroke-width="0.4"/>
-    <line x1="188" y1="300" x2="246" y2="460" stroke="rgba(80,142,68,0.09)" stroke-width="0.4"/>
-    <circle cx="188" cy="300" r="2.0" fill="rgba(80,142,68,0.20)"/>
-    <circle cx="188" cy="40" r="1.8" fill="rgba(201,168,76,0.32)"/>
-  </svg>
-
-  <div class="reading-inner accent-teal">
-    <div class="panel-heading">
-      <div class="panel-eyebrow-sm">foundation</div>
-      <div class="panel-title-lg">The Wound and the Gift</div>
-    </div>
-
-    <div class="sec-card">
-      <div class="sec-head">
-        <div class="sec-sign-glyph">⚷</div>
-        <div class="sec-meta">
-          <div class="sec-eyebrow">VENUS · GEMINI 25°08' · CHIRON · LEO 25°05' · SEXTILE · 0.05° ORB</div>
-          <div class="sec-title">The Most Exact Aspect</div>
-          <div class="sec-tagline">0.05°: the gift and the tenderness share an address</div>
-        </div>
-      </div>
-      <div class="kw-row">
-        <span class="kw">EXACT SEXTILE</span><span class="kw">VENUS</span><span class="kw">CHIRON</span><span class="kw">LEO 11TH</span><span class="kw">GEMINI 9TH</span>
-      </div>
-      <div class="sec-body">
-        <p>The most precise aspect in Marina's chart: Venus sextile Chiron at 0.05°. A hundredth of a degree from exact. Venus in Gemini in the 9th house: beauty, connection, and relationship expressed through ideas and communication. Chiron in Leo in the 11th: the wound is around recognition within community. About being seen for who you actually are by the people you're holding.</p>
-        <p>A sextile at 0.05° means these two are nearly the same thing. What Marina does with beauty and connection is also where she is most tender. The creative gift is not separate from the Chiron vulnerability. They are not sequential: first wound, then healing. They are simultaneous.</p>
-        <span class="pull">The gift and the wound are touching. That is not an accident in this chart.</span>
-      </div>
-    </div>
-
-    <div class="sep"><span class="sep-inner">Mercury · Neptune · Uranus</span></div>
-
-    <div class="sec-card">
-      <div class="sec-head">
-        <div class="sec-sign-glyph">♋</div>
-        <div class="sec-meta">
-          <div class="sec-eyebrow">MERCURY · CANCER 18°32' · OPPOSED · NEPTUNE 19°20' · URANUS 19°34' · CAPRICORN</div>
-          <div class="sec-title">The Poetic Mind</div>
-          <div class="sec-tagline">the mind runs through feeling, and encounters what dissolves and disrupts</div>
-        </div>
-      </div>
-      <div class="kw-row">
-        <span class="kw">MERCURY-NEPTUNE</span><span class="kw">OPPOSITION</span><span class="kw">POETIC</span><span class="kw">UNEXPECTED</span><span class="kw">CANCER MIND</span>
-      </div>
-      <div class="sec-body">
-        <p>Mercury in Cancer thinks through emotional resonance. What is true is also what is felt to be true. The opposition to Neptune and Uranus in Capricorn runs through the home axis: the 10th-house professional mind in direct tension with the 4th-house complex interior.</p>
-        <p>Neptune in the opposition: the thinking dissolves expectations. The connections made are not always linear, not always explainable before they arrive. Uranus in the opposition: the thinking disrupts and surprises, including Marina herself. The writing, when it comes, is unexpected. That is not a liability. It is the opposition doing what oppositions do: generating energy from the tension between two real things.</p>
-      </div>
-    </div>
-
-    <div class="sep-stars">✦ &nbsp; ✧ &nbsp; ✦</div>
-  </div>
-</div>
-
-<!-- SOUL -->
-<div class="subpanel sp-reading" id="sp-soul">
-  <svg class="geo-bg" viewBox="0 0 375 812" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <polygon points="188,28 332,108 370,290 310,500 188,548 66,500 5,290 44,108" fill="none" stroke="rgba(201,168,76,0.08)" stroke-width="0.6"/>
-    <polygon points="188,90 295,162 325,290 278,410 188,440 98,410 51,290 81,162" fill="none" stroke="rgba(201,168,76,0.055)" stroke-width="0.45"/>
-    <circle cx="188" cy="290" r="3.5" fill="none" stroke="rgba(201,168,76,0.15)" stroke-width="0.6"/>
-    <circle cx="188" cy="290" r="1.5" fill="rgba(201,168,76,0.25)"/>
-    <circle cx="188" cy="28" r="2.0" fill="rgba(201,168,76,0.38)"/>
-  </svg>
-
-  <div class="reading-inner accent-rose">
-    <div class="panel-heading">
-      <div class="panel-eyebrow-sm">synthesis</div>
-      <div class="panel-title-lg">The Through-Line</div>
-    </div>
-
-    <div class="throughline">
-      <p>The Leo-Libra-Sagittarius pattern runs outward from Marina's chart: the Leo Sun in the 10th illuminates through work. The Libra Ascendant, with Jupiter 2°16' away, makes the doorway an amplification. The Sagittarius Moon and North Node in the 3rd say where she grows and where she feels most at home are the same direction: keep speaking, keep learning, find the philosophy that is actually yours.</p>
-      <p>Below this warmth, the 4th house holds what the entrance does not announce. Uranus and Neptune retrograde in Capricorn: the private foundation is more complex, more generationally weighted than the gracious surface reveals. The interior is tectonic. It is still becoming.</p>
-      <p>Venus sextile Chiron at 0.05° is the chart's most concentrated statement. The gift runs through exactly the tender place. What Marina makes beautiful is where the healing is. This is not a wound to move past. It is the instrument.</p>
-      <span class="pull">The chart is asking Marina to let herself be held by the people she is always holding.</span>
-    </div>
-
+    <!-- ══ SECTION 7: ARCHETYPE CARD ══ -->
     <div class="sep"><span class="sep-inner">Archetype</span></div>
 
     <div class="tarot-outer">
@@ -441,6 +498,7 @@
       </div>
     </div>
 
+    <!-- ══ SECTION 8: POEM ══ -->
     <div class="sep"><span class="sep-inner">A Reading in Verse</span></div>
 
     <div class="poem-outer">
@@ -639,19 +697,19 @@ const CHART={
   asc:187.0051,mc:98.2004,
   cusps:[187.0051,213.4169,244.2091,278.2004,311.8462,341.8063,7.0051,33.4169,64.2091,98.2004,131.8462,161.8063],
   planets:[
-    {id:'sun',    gl:'\u2609'+T,deg:125.58, retro:false,grp:'luminary',si:4,sd:5},
-    {id:'moon',   gl:'\u263D'+T,deg:247.76, retro:false,grp:'luminary',si:8,sd:7},
-    {id:'mercury',gl:'\u263F'+T,deg:108.54, retro:false,grp:'personal',si:3,sd:18},
-    {id:'venus',  gl:'\u2640'+T,deg:85.13,  retro:false,grp:'personal',si:2,sd:25},
-    {id:'mars',   gl:'\u2642'+T,deg:171.06, retro:false,grp:'personal',si:5,sd:21},
-    {id:'jupiter',gl:'\u2643'+T,deg:189.27, retro:false,grp:'social',  si:6,sd:9},
-    {id:'saturn', gl:'\u2644'+T,deg:328.57, retro:true, grp:'social',  si:10,sd:28},
-    {id:'uranus', gl:'\u2645'+T,deg:289.57, retro:true, grp:'outer',   si:9,sd:19},
-    {id:'neptune',gl:'\u2646'+T,deg:289.33, retro:true, grp:'outer',   si:9,sd:19},
-    {id:'pluto',  gl:'\u2647'+T,deg:232.73, retro:true, grp:'outer',   si:7,sd:22},
-    {id:'chiron', gl:'\u26B7'+T,deg:145.08, retro:false,grp:'point',   si:4,sd:25},
-    {id:'nnode',  gl:'\u260A'+T,deg:250.88, retro:true, grp:'point',   si:8,sd:10},
-    {id:'snode',  gl:'\u260B'+T,deg:70.88,  retro:true, grp:'point',   si:2,sd:10},
+    {id:'sun',    gl:'☉'+T,deg:125.58, retro:false,grp:'luminary',si:4,sd:5},
+    {id:'moon',   gl:'☽'+T,deg:247.76, retro:false,grp:'luminary',si:8,sd:7},
+    {id:'mercury',gl:'☿'+T,deg:108.54, retro:false,grp:'personal',si:3,sd:18},
+    {id:'venus',  gl:'♀'+T,deg:85.13,  retro:false,grp:'personal',si:2,sd:25},
+    {id:'mars',   gl:'♂'+T,deg:171.06, retro:false,grp:'personal',si:5,sd:21},
+    {id:'jupiter',gl:'♃'+T,deg:189.27, retro:false,grp:'social',  si:6,sd:9},
+    {id:'saturn', gl:'♄'+T,deg:328.57, retro:true, grp:'social',  si:10,sd:28},
+    {id:'uranus', gl:'♅'+T,deg:289.57, retro:true, grp:'outer',   si:9,sd:19},
+    {id:'neptune',gl:'♆'+T,deg:289.33, retro:true, grp:'outer',   si:9,sd:19},
+    {id:'pluto',  gl:'♇'+T,deg:232.73, retro:true, grp:'outer',   si:7,sd:22},
+    {id:'chiron', gl:'⚷'+T,deg:145.08, retro:false,grp:'point',   si:4,sd:25},
+    {id:'nnode',  gl:'☊'+T,deg:250.88, retro:true, grp:'point',   si:8,sd:10},
+    {id:'snode',  gl:'☋'+T,deg:70.88,  retro:true, grp:'point',   si:2,sd:10},
   ],
   aspects:[
     {p1:'venus',  p2:'chiron',  type:'sextile',     orb:0.05},
@@ -662,6 +720,15 @@ const CHART={
     {p1:'sun',    p2:'moon',    type:'trine',       orb:2.18},
   ],
 };
+
+// Subnav for natal panel — 2-tab: Chart + Reading
+function switchSub(sub, btn) {
+  document.querySelectorAll('#panel-natal .subnav-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('#panel-natal .subpanel').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  const el = document.getElementById('sp-' + sub);
+  if (el) el.classList.add('active');
+}
 </script>
 <script src="/pathfinder-core.js"></script>
 </body>
