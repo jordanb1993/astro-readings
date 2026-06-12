@@ -4,6 +4,38 @@
 
 ---
 
+## 2026-06-12 — Session 15: Transit UI polish + Natal chart restructure + Voice canon copy rewrite
+
+**Theme:** Transit UI refinements, 9-tab natal restructure, full voice canon copy rewrite across all three charts
+
+### Transit UI (pathfinder-core.js / pathfinder-core.css)
+Seven items from `transit-ui-design-scope-2026-06-12.md`:
+1. Transit detail prose → Cormorant Garamond 1.0rem, weight 300
+2. Summary pull-quote reordered above keywords in transit detail panel
+3. "Pull the thread" fold added to transit detail (`td-prose-fold`, amber variant)
+4. Season pills → amber accent class (`d-t-pill-season`)
+5. Section label opacity bump + border separator between pill tiers
+6. Biwheel label font size bump on selection (`bw-has-sel`)
+7. Applying row left-border accent (cerulean 38%)
+
+### Natal chart restructure (jordan.html, marina.html, dasha.html)
+All three charts restructured from 4 sub-tabs (Identity/Depth/Roots/Soul) → 9 tabs: Chart | Portrait | Signature | Constitution | Formative | Shadow | Arc | Archetype | Poem. Architecture preserved: sec-card/dive-wrap components throughout, subnav scroll on mobile.
+
+### Voice canon copy rewrite
+Full copy rewrite across all three charts:
+- **Voice**: name throughout (Jordan/Marina/Dasha, never "you"), plain-language-first, em dash near-zero
+- **Arc**: rebuilt as two sec-cards (South Node/past mastery + North Node/direction) in all three charts
+- **Poems**: tightened to 10 lines, present tense, open question closing
+- **Archetype names**: Jordan = "The Cartographer at the Seam" (kept), Marina = "The Generous Light" (kept), Dasha = renamed to "The Threshold Keeper"
+- **Marina Shadow**: full rebuild — Aries DSC projection + Gemini SN pattern (was wrong material previously)
+- **Dasha synastry section**: preserved exactly
+
+### Build planning items flagged
+- Archetype flip card redesign: front (name + compass visual) / back (body description) — HTML comment in all three archetype sections
+- Any placements identified during copy work that could support additional dive cards: noted inline
+
+---
+
 ## 2026-06-11 — Session 14 Overview
 
 **Theme:** Synastry infrastructure + friend build polish
