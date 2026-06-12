@@ -106,8 +106,17 @@
     <button class="subnav-tab active" data-sub="chart" onclick="switchSub('chart',this)">
       <span class="sn-icon">✦</span> Chart
     </button>
-    <button class="subnav-tab" data-sub="reading" onclick="switchSub('reading',this)">
-      <span class="sn-icon">☽</span> Reading
+    <button class="subnav-tab" data-sub="portrait" onclick="switchSub('portrait',this)">
+      <span class="sn-icon">◐</span> Portrait
+    </button>
+    <button class="subnav-tab" data-sub="constitution" onclick="switchSub('constitution',this)">
+      <span class="sn-icon">♄</span> Constitution
+    </button>
+    <button class="subnav-tab" data-sub="shadow" onclick="switchSub('shadow',this)">
+      <span class="sn-icon">☽</span> Shadow
+    </button>
+    <button class="subnav-tab" data-sub="archetype" onclick="switchSub('archetype',this)">
+      <span class="sn-icon">✧</span> Archetype
     </button>
   </nav>
 
@@ -150,8 +159,8 @@
   </div>
 </div>
 
-<!-- ══ READING SUBPANEL — 8-section scrollable natal reading ══ -->
-<div class="subpanel sp-reading" id="sp-reading">
+<!-- ══ PORTRAIT SUBPANEL — Sections 1 & 2 ══ -->
+<div class="subpanel" id="sp-portrait">
   <svg class="geo-bg" viewBox="0 0 375 812" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
     <polygon points="188,30 320,110 362,310 295,540 188,590 81,540 13,310 56,110" fill="none" stroke="rgba(201,168,76,0.07)" stroke-width="0.6"/>
     <circle cx="188" cy="30" r="2.0" fill="rgba(201,168,76,0.35)"/>
@@ -263,11 +272,19 @@
       </div>
     </div>
 
-    <div class="cel-divider" aria-hidden="true">
-      <div class="cel-rule left"></div>
-      <div class="cel-mark">✦</div>
-      <div class="cel-rule right"></div>
-    </div>
+    <div style="height:16px"></div>
+  </div>
+</div>
+
+<!-- ══ CONSTITUTION SUBPANEL — Sections 3 & 4 ══ -->
+<div class="subpanel" id="sp-constitution">
+  <svg class="geo-bg" viewBox="0 0 375 812" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <polygon points="188,30 320,110 362,310 295,540 188,590 81,540 13,310 56,110" fill="none" stroke="rgba(201,168,76,0.07)" stroke-width="0.6"/>
+    <circle cx="188" cy="30" r="2.0" fill="rgba(201,168,76,0.35)"/>
+    <circle cx="188" cy="590" r="1.8" fill="rgba(201,168,76,0.28)"/>
+  </svg>
+
+  <div class="reading-inner accent-gold">
 
     <!-- ══ SECTION 3: CORE CONSTITUTION ══ -->
     <div class="dive-wrap">
@@ -383,11 +400,19 @@
       </div>
     </div>
 
-    <div class="cel-divider" aria-hidden="true">
-      <div class="cel-rule left"></div>
-      <div class="cel-mark">✦</div>
-      <div class="cel-rule right"></div>
-    </div>
+    <div style="height:16px"></div>
+  </div>
+</div>
+
+<!-- ══ SHADOW SUBPANEL — Sections 5 & 6 ══ -->
+<div class="subpanel" id="sp-shadow">
+  <svg class="geo-bg" viewBox="0 0 375 812" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <polygon points="188,30 320,110 362,310 295,540 188,590 81,540 13,310 56,110" fill="none" stroke="rgba(201,168,76,0.07)" stroke-width="0.6"/>
+    <circle cx="188" cy="30" r="2.0" fill="rgba(201,168,76,0.35)"/>
+    <circle cx="188" cy="590" r="1.8" fill="rgba(201,168,76,0.28)"/>
+  </svg>
+
+  <div class="reading-inner accent-gold">
 
     <!-- ══ SECTION 5: SHADOW & MIRROR ══ -->
     <div class="shadow-wrap dive-wrap">
@@ -463,7 +488,19 @@
       </div>
     </div>
 
-    <div class="sep-stars">✦ &nbsp; ✧ &nbsp; ✦</div>
+    <div style="height:16px"></div>
+  </div>
+</div>
+
+<!-- ══ ARCHETYPE SUBPANEL — Sections 7 & 8 + Synastry ══ -->
+<div class="subpanel" id="sp-archetype">
+  <svg class="geo-bg" viewBox="0 0 375 812" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <polygon points="188,30 320,110 362,310 295,540 188,590 81,540 13,310 56,110" fill="none" stroke="rgba(201,168,76,0.07)" stroke-width="0.6"/>
+    <circle cx="188" cy="30" r="2.0" fill="rgba(201,168,76,0.35)"/>
+    <circle cx="188" cy="590" r="1.8" fill="rgba(201,168,76,0.28)"/>
+  </svg>
+
+  <div class="reading-inner accent-gold">
 
     <!-- ══ SECTION 7: ARCHETYPE CARD ══ -->
     <div class="sep"><span class="sep-inner">Archetype</span></div>
@@ -721,7 +758,7 @@ const CHART={
   ],
 };
 
-// Subnav for natal panel — 2-tab: Chart + Reading
+// Subnav for natal panel — 5-tab: Chart | Portrait | Constitution | Shadow | Archetype
 function switchSub(sub, btn) {
   document.querySelectorAll('#panel-natal .subnav-tab').forEach(t => t.classList.remove('active'));
   document.querySelectorAll('#panel-natal .subpanel').forEach(p => p.classList.remove('active'));
