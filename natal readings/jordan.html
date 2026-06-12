@@ -810,17 +810,8 @@ end shared styles -->
     <button class="subnav-tab active" data-sub="chart" onclick="switchSub('chart',this)">
       <span class="sn-icon">✦</span> Chart
     </button>
-    <button class="subnav-tab" data-sub="identity" onclick="switchSub('identity',this)">
-      <span class="sn-icon">☉</span> Identity
-    </button>
-    <button class="subnav-tab" data-sub="depth" onclick="switchSub('depth',this)">
-      <span class="sn-icon">♏</span> Depth
-    </button>
-    <button class="subnav-tab" data-sub="roots" onclick="switchSub('roots',this)">
-      <span class="sn-icon">⚷</span> Roots
-    </button>
-    <button class="subnav-tab" data-sub="soul" onclick="switchSub('soul',this)">
-      <span class="sn-icon">☊</span> Soul
+    <button class="subnav-tab" data-sub="reading" onclick="switchSub('reading',this)">
+      <span class="sn-icon">☽</span> Reading
     </button>
   </nav>
 
@@ -881,8 +872,8 @@ end shared styles -->
 
 </div><!-- /sp-chart -->
 
-<!-- ══ IDENTITY ══════════════════════════════════════════════════════════════ -->
-<div class="subpanel sp-reading" id="sp-identity">
+<!-- ══ READING — single scrollable 8-section natal reading ═══════════════════ -->
+<div class="subpanel sp-reading" id="sp-reading">
 
   <svg class="geo-bg" viewBox="0 0 375 812" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
     <polygon points="188,30 320,110 362,310 295,540 188,590 81,540 13,310 56,110" fill="none" stroke="rgba(201,168,76,0.07)" stroke-width="0.6"/>
@@ -905,28 +896,165 @@ end shared styles -->
     <line x1="13" y1="310" x2="362" y2="310" stroke="rgba(201,168,76,0.04)" stroke-width="0.3"/>
   </svg>
 
-  <div class="reading-inner accent-gold">
+  <!-- ══════════════════════════════════════════════════════════════════════════
+       SECTION 1 · ENTRY — BIG THREE PORTRAIT
+       ══════════════════════════════════════════════════════════════════════════ -->
 
-    <div class="panel-heading">
-      <div class="panel-eyebrow-sm">natal reading</div>
-      <div class="panel-title-lg">The Essential Signature</div>
+  <div class="entry-section">
+    <div class="entry-eyebrow">Your Natal Chart</div>
+    <div class="entry-title">Who You Are, in Plain Language</div>
+  </div>
+
+  <div class="reading-inner accent-gold" style="padding-top:0;padding-bottom:0">
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding:0 0 8px">
+
+      <div class="trio-card sun" style="background:radial-gradient(ellipse at 50% 0%,rgba(12,22,52,0.85) 0%,rgba(13,28,56,1) 60%);border:1px solid rgba(var(--border),0.16);border-radius:10px;padding:22px 14px 18px;text-align:center;position:relative;overflow:hidden">
+        <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--rose),transparent)"></div>
+        <span style="display:block;font-family:'Apple Symbols','Segoe UI Symbol','Noto Sans Symbols',serif;font-variant-emoji:text;font-size:1.8rem;color:var(--rose);margin-bottom:8px;animation:floatUp 4s ease-in-out infinite">☉</span>
+        <div style="font-size:0.52rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--muted-3);margin-bottom:8px">Sun</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:400;color:var(--rose);line-height:1.15;margin-bottom:5px">1° Sagittarius</div>
+        <div style="font-size:0.56rem;color:var(--muted-2);letter-spacing:0.06em;margin-bottom:14px">6th House</div>
+        <div style="width:30px;height:1px;background:var(--rose-mid);margin:0 auto 14px"></div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:0.88rem;font-style:italic;color:var(--muted);line-height:1.55">The soul purpose is in the daily practice, not somewhere ahead.</div>
+      </div>
+
+      <div class="trio-card moon" style="background:radial-gradient(ellipse at 50% 0%,rgba(12,22,52,0.85) 0%,rgba(13,28,56,1) 60%);border:1px solid rgba(var(--border),0.16);border-radius:10px;padding:22px 14px 18px;text-align:center;position:relative;overflow:hidden">
+        <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--cerulean),transparent)"></div>
+        <span style="display:block;font-family:'Apple Symbols','Segoe UI Symbol','Noto Sans Symbols',serif;font-variant-emoji:text;font-size:1.8rem;color:var(--cerulean);margin-bottom:8px;animation:floatUp 4s ease-in-out 1.3s infinite">☽</span>
+        <div style="font-size:0.52rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--muted-3);margin-bottom:8px">Moon</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:400;color:var(--cerulean);line-height:1.15;margin-bottom:5px">5° Aries</div>
+        <div style="font-size:0.56rem;color:var(--muted-2);letter-spacing:0.06em;margin-bottom:14px">10th House</div>
+        <div style="width:30px;height:1px;background:var(--cerulean-mid);margin:0 auto 14px"></div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:0.88rem;font-style:italic;color:var(--muted);line-height:1.55">Feeling and professional life run on the same circuit. Work that moves settles the Moon.</div>
+      </div>
+
+      <div class="trio-card asc" style="background:radial-gradient(ellipse at 50% 0%,rgba(12,22,52,0.85) 0%,rgba(13,28,56,1) 60%);border:1px solid rgba(var(--border),0.16);border-radius:10px;padding:22px 14px 18px;text-align:center;position:relative;overflow:hidden">
+        <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent)"></div>
+        <span style="display:block;font-family:'Apple Symbols','Segoe UI Symbol','Noto Sans Symbols',serif;font-variant-emoji:text;font-size:1.8rem;color:var(--gold);margin-bottom:8px;animation:floatUp 4s ease-in-out 2.6s infinite">♊</span>
+        <div style="font-size:0.52rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--muted-3);margin-bottom:8px">Rising</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:400;color:var(--gold);line-height:1.15;margin-bottom:5px">29° Gemini</div>
+        <div style="font-size:0.56rem;color:var(--muted-2);letter-spacing:0.06em;margin-bottom:14px">Anaretic Degree</div>
+        <div style="width:30px;height:1px;background:var(--gold-mid);margin:0 auto 14px"></div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:0.88rem;font-style:italic;color:var(--muted);line-height:1.55">The threshold position. 29° is not a flaw in the design. It is the design.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Divider B -->
+  <div class="cel-divider">
+    <div class="cel-rule left"></div>
+    <div class="cel-mark">✦</div>
+    <div class="cel-rule right"></div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════════════════
+       SECTION 2 · CHART SIGNATURE
+       ══════════════════════════════════════════════════════════════════════════ -->
+
+  <div class="sig-wrap">
+    <div class="sig-header">
+      <div class="sig-eyebrow">Key Patterns</div>
+      <div class="sig-title">Chart Signature</div>
+    </div>
+    <div class="sig-panel">
+      <ul class="sig-list">
+        <li class="sig-item">
+          <span class="sig-glyph">♏</span>
+          <span class="sig-text"><strong>Scorpio stellium in the 5th house: Mercury, Venus, Jupiter.</strong> The chart ruler (Mercury, ruling Gemini Rising) is here in Scorpio. The lens the entire chart reads through is fixed-water compression: total presence, nothing casual, joy that is private and complete.</span>
+        </li>
+        <li class="sig-item">
+          <span class="sig-glyph">♇</span>
+          <span class="sig-text"><strong>Pluto in Scorpio 25°41', 6th house.</strong> The most transformative force in the chart has crossed the cusp into daily work and craft. The writing, the systems, the building: transformation made operational. Not professional outputs. The work itself is Pluto's domain.</span>
+        </li>
+        <li class="sig-item">
+          <span class="sig-glyph">♐</span>
+          <span class="sig-text"><strong>Sun conjunct North Node in Sagittarius, 6th house, 1.2° orb.</strong> Core identity and soul direction are the same instrument. No separate purpose to locate. The fire is in the routine.</span>
+        </li>
+        <li class="sig-item">
+          <span class="sig-glyph">♊</span>
+          <span class="sig-text"><strong>29° Gemini Ascendant (anaretic) with South Node in Gemini 12th.</strong> The full concentrated weight of Gemini's question arrives at the door of every room. The mirroring pattern runs below conscious awareness. The corrective is the Sagittarius North Node Sun: let the original voice show up at the threshold.</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Divider A -->
+  <div class="cel-divider" style="margin:28px 0 20px">
+    <div class="cel-rule left"></div>
+    <div class="cel-mark">· · ·</div>
+    <div class="cel-rule right"></div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════════════════
+       SECTION 3 · CORE CONSTITUTION
+       ══════════════════════════════════════════════════════════════════════════ -->
+
+  <div class="reading-inner accent-gold" style="padding-top:0;padding-bottom:0">
+
+    <div class="panel-heading" style="margin-bottom:18px">
+      <div class="panel-eyebrow-sm">Section III</div>
+      <div class="panel-title-lg">Core Constitution</div>
     </div>
 
     <div class="sec-card">
       <div class="sec-head">
-        <div class="sec-sign-glyph">✦</div>
+        <div class="sec-sign-glyph">♏</div>
         <div class="sec-meta">
-          <div class="sec-eyebrow">NATAL OVERVIEW · GEMINI ASC · SAGITTARIUS SUN · PISCES MC</div>
-          <div class="sec-title">Before the planets</div>
-          <div class="sec-tagline">a chart built at the edge of forms</div>
+          <div class="sec-eyebrow">MERCURY · VENUS · JUPITER · SCORPIO · 5TH HOUSE · STELLIUM</div>
+          <div class="sec-title">The Scorpio Inner Life</div>
+          <div class="sec-tagline">nothing in the 5th house is casual</div>
         </div>
       </div>
       <div class="kw-row">
-        <span class="kw">THRESHOLD</span><span class="kw">ANARETIC ASC</span><span class="kw">SAG SUN</span><span class="kw">PISCES MC</span>
+        <span class="kw">STELLIUM</span><span class="kw">5TH HOUSE</span><span class="kw">COMPRESSION</span><span class="kw">TOTAL LOVE</span><span class="kw">PRIVATE JOY</span>
       </div>
       <div class="sec-body">
-        <p>Before the planets and before the houses, there is a tone. Jordan's chart is built at the edge of forms. The Gemini Ascendant at 29°22' is the anaretic degree, the last breath of a sign before it transforms. The Sagittarius Sun is at 1°50', among the first degrees of its sign. The Pisces Midheaven dissolves the public identity before it can calcify. Chiron sits 0.2° past the IC, literally at the root. Nothing here is fixed. Nothing is supposed to be.</p>
-        <p>This is a specific kind of precision: the kind that sees the seam between things, that lives in the transitional space because that is where the real work is. Not instability. The threshold is the position.</p>
+        <p>Three planets in Scorpio in the 5th house: creativity, romance, joy, the things done purely because they matter. The 5th house is where Jordan's most privately held life is. The work that is genuinely hers. The love that is fully meant. The passion projects with no performance layer.</p>
+        <p>Mercury in Scorpio reads beneath what is said, finds the thing being withheld, holds information the way Scorpio holds everything: completely, and for a long time. Venus in Scorpio loves with full presence or not at all. Jupiter in Scorpio expands by going deeper rather than wider, into the places most people avoid.</p>
+        <p>The 5th house in Libra cusp moving into Scorpio creates a specific tension: the door to this house looks diplomatic, balanced, social. What lives inside is Scorpio. Joy here is not light. It is compressed, total, and real.</p>
+        <span class="pull">The door looks diplomatic. What lives inside is Scorpio.</span>
+      </div>
+    </div>
+
+    <div class="sep"><span class="sep-inner">Sun · North Node · Mars</span></div>
+
+    <div class="sec-card">
+      <div class="sec-head">
+        <div class="sec-sign-glyph">♐</div>
+        <div class="sec-meta">
+          <div class="sec-eyebrow">SUN · SAGITTARIUS 1°50' · 6TH HOUSE · CONJUNCT NORTH NODE 1.2°</div>
+          <div class="sec-title">The Sagittarius Soul</div>
+          <div class="sec-tagline">soul path and identity are the same instrument</div>
+        </div>
+      </div>
+      <div class="kw-row">
+        <span class="kw">SOUL PATH</span><span class="kw">6TH HOUSE</span><span class="kw">DAILY WORK</span><span class="kw">NORTH NODE</span><span class="kw">FIRE</span>
+      </div>
+      <div class="sec-body">
+        <p>The Sun and North Node are 1.2° apart. The core identity and the soul's direction are the same instrument. There is no separate purpose to locate.</p>
+        <p>The Sun is in the 6th house. Not the 1st house of performance, not the 9th house of philosophy, not the 10th house of visibility. The 6th house of daily work, craft, health, and the body in motion. The Sagittarius 6th says: the teaching is the practice, the knowing is the doing, the fire is in the routine. The soul purpose is not somewhere ahead. It is in the thing Jordan shows up and does.</p>
+        <span class="pull">The soul purpose is not somewhere ahead. It is in the thing Jordan shows up and does.</span>
+      </div>
+    </div>
+
+    <div class="sep"><span class="sep-inner">Moon · 10th House</span></div>
+
+    <div class="sec-card">
+      <div class="sec-head">
+        <div class="sec-sign-glyph">♈</div>
+        <div class="sec-meta">
+          <div class="sec-eyebrow">MOON · ARIES 4°59' · 10TH HOUSE · CAREER CIRCUIT</div>
+          <div class="sec-title">The 10th House as One Organ</div>
+          <div class="sec-tagline">feeling and work run on the same circuit</div>
+        </div>
+      </div>
+      <div class="kw-row">
+        <span class="kw">ARIES MOON</span><span class="kw">10TH HOUSE</span><span class="kw">CAREER-FEELING</span><span class="kw">RECOGNITION</span>
+      </div>
+      <div class="sec-body">
+        <p>The Moon in Aries in the 10th house means Jordan's emotional life and professional life are not two separate systems. They run on the same circuit. What happens at work lands in the body. What is unresolved in the emotional field shows up in the quality of the work.</p>
+        <p>Recognition matters. Visibility matters. Being seen as capable and in motion is not vanity; it is a genuine emotional need written into the chart's architecture. When work is stalled, the emotional field goes grey and tight. When it moves — the walking pad, the writing, the strategy — the Moon settles. The Aries recovery is faster than it appears from outside.</p>
       </div>
     </div>
 
@@ -952,27 +1080,6 @@ end shared styles -->
       </div>
     </div>
 
-    <div class="sep"><span class="sep-inner">Sun · North Node · Mars</span></div>
-
-    <div class="sec-card">
-      <div class="sec-head">
-        <div class="sec-sign-glyph">♐</div>
-        <div class="sec-meta">
-          <div class="sec-eyebrow">SUN · SAGITTARIUS 1°50' · 6TH HOUSE · CONJUNCT NORTH NODE 1.2°</div>
-          <div class="sec-title">The Sagittarius Soul</div>
-          <div class="sec-tagline">soul path and identity are the same instrument</div>
-        </div>
-      </div>
-      <div class="kw-row">
-        <span class="kw">SOUL PATH</span><span class="kw">6TH HOUSE</span><span class="kw">DAILY WORK</span><span class="kw">NORTH NODE</span><span class="kw">FIRE</span>
-      </div>
-      <div class="sec-body">
-        <p>The Sun and North Node are 1.2° apart. The core identity and the soul's direction are the same instrument. There is no separate purpose to locate.</p>
-        <p>The Sun is in the 6th house. Not the 1st house of performance, not the 9th house of philosophy, not the 10th house of visibility. The 6th house of daily work, craft, health, and the body in motion. The Sagittarius 6th says: the teaching is the practice, the knowing is the doing, the fire is in the routine. The soul purpose is not somewhere ahead. It is in the thing Jordan shows up and does.</p>
-        <span class="pull">The soul purpose is not somewhere ahead. It is in the thing Jordan shows up and does.</span>
-      </div>
-    </div>
-
     <div class="dive-wrap">
       <button class="dive-toggle" aria-expanded="false" onclick="toggleDive(this)">
         <div class="dive-hd">
@@ -984,98 +1091,6 @@ end shared styles -->
         <div class="dive-content">
           <p>Mars is in the same house, wider: 8.9° from the Sun, 7.7° from the North Node. The drive and the soul path are allies, not the same organ. Mars in Sagittarius in the 6th needs forward motion and meaning. It channels into craft, into physical output, into the work itself. When the work is meaningful, Mars runs clean. When the work loses meaning, the body signals first.</p>
         </div>
-      </div>
-    </div>
-
-    <div class="sep"><span class="sep-inner">Moon · Lilith · 10th House</span></div>
-
-    <div class="sec-card">
-      <div class="sec-head">
-        <div class="sec-sign-glyph">♈</div>
-        <div class="sec-meta">
-          <div class="sec-eyebrow">MOON · ARIES 4°59' · 10TH HOUSE · CAREER CIRCUIT</div>
-          <div class="sec-title">The 10th House as One Organ</div>
-          <div class="sec-tagline">feeling and work run on the same circuit</div>
-        </div>
-      </div>
-      <div class="kw-row">
-        <span class="kw">ARIES MOON</span><span class="kw">10TH HOUSE</span><span class="kw">CAREER-FEELING</span><span class="kw">RECOGNITION</span>
-      </div>
-      <div class="sec-body">
-        <p>The Moon in Aries in the 10th house means Jordan's emotional life and professional life are not two separate systems. They run on the same circuit. What happens at work lands in the body. What is unresolved in the emotional field shows up in the quality of the work.</p>
-        <p>Recognition matters. Visibility matters. Being seen as capable and in motion is not vanity; it is a genuine emotional need written into the chart's architecture. When work is stalled, the emotional field goes grey and tight. When it moves — the walking pad, the writing, the strategy — the Moon settles. The Aries recovery is faster than it appears from outside.</p>
-      </div>
-    </div>
-
-    <div class="dive-wrap">
-      <button class="dive-toggle" aria-expanded="false" onclick="toggleDive(this)">
-        <div class="dive-hd">
-          <div class="dive-lbl"><span class="dive-lbl-glyph">♈</span>Black Moon Lilith · Aries · H10 + H11</div>
-          <span class="dive-arrow">▾</span>
-        </div>
-      </button>
-      <div class="dive-body">
-        <div class="dive-content">
-          <p>Lilith in Aries in the 11th house (Mean, 15°07') is the undomesticated nature in the domain of community, networks, technology, and collective belonging. Jordan does not soften herself into groups. The #astroflow-weekly channel, the app build, the transit library: all 11th house, all Lilith. The refusal to perform palatability for community acceptance is not a wound or a defense. It is this placement, doing its job.</p>
-          <p>True Lilith at 9°49' Aries is in the 10th, 4°50' from the Moon. The raw, unedited self is not separate from the professional-emotional circuit. It shows up in the room.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="sep-stars">✦ &nbsp; ✧ &nbsp; ✦</div>
-
-  </div>
-</div><!-- /sp-identity -->
-
-<!-- ══ DEPTH ═════════════════════════════════════════════════════════════════ -->
-<div class="subpanel sp-reading" id="sp-depth">
-
-  <svg class="geo-bg" viewBox="0 0 375 812" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <polygon points="188,50 340,140 375,340 305,560 188,610 71,560 0,340 35,140" fill="none" stroke="rgba(201,168,76,0.065)" stroke-width="0.55"/>
-    <line x1="35" y1="140" x2="305" y2="560" stroke="rgba(201,168,76,0.04)" stroke-width="0.35"/>
-    <line x1="340" y1="140" x2="71" y2="560" stroke="rgba(201,168,76,0.04)" stroke-width="0.35"/>
-    <!-- Scorpio cluster dots — echoes 5th house stellium -->
-    <circle cx="188" cy="300" r="3.0" fill="none" stroke="rgba(62,143,192,0.12)" stroke-width="0.6"/>
-    <circle cx="188" cy="300" r="1.8" fill="rgba(62,143,192,0.16)"/>
-    <circle cx="210" cy="285" r="1.2" fill="rgba(62,143,192,0.12)"/>
-    <circle cx="168" cy="285" r="1.2" fill="rgba(62,143,192,0.12)"/>
-    <circle cx="220" cy="310" r="0.9" fill="rgba(62,143,192,0.10)"/>
-    <line x1="188" y1="300" x2="210" y2="285" stroke="rgba(62,143,192,0.10)" stroke-width="0.5"/>
-    <line x1="188" y1="300" x2="168" y2="285" stroke="rgba(62,143,192,0.10)" stroke-width="0.5"/>
-    <line x1="188" y1="300" x2="220" y2="310" stroke="rgba(62,143,192,0.08)" stroke-width="0.4"/>
-    <circle cx="188" cy="50" r="1.8" fill="rgba(201,168,76,0.32)"/>
-    <circle cx="340" cy="140" r="1.3" fill="rgba(201,168,76,0.22)"/>
-    <circle cx="375" cy="340" r="1.1" fill="rgba(201,168,76,0.18)"/>
-    <circle cx="305" cy="560" r="1.3" fill="rgba(201,168,76,0.22)"/>
-    <circle cx="71" cy="560" r="1.3" fill="rgba(201,168,76,0.22)"/>
-    <circle cx="0" cy="340" r="1.1" fill="rgba(201,168,76,0.18)"/>
-    <circle cx="35" cy="140" r="1.3" fill="rgba(201,168,76,0.22)"/>
-  </svg>
-
-  <div class="reading-inner accent-cerulean">
-
-    <div class="panel-heading">
-      <div class="panel-eyebrow-sm">inner life</div>
-      <div class="panel-title-lg">The Scorpio Field</div>
-    </div>
-
-    <div class="sec-card">
-      <div class="sec-head">
-        <div class="sec-sign-glyph">♏</div>
-        <div class="sec-meta">
-          <div class="sec-eyebrow">MERCURY · VENUS · JUPITER · SCORPIO · 5TH HOUSE · STELLIUM</div>
-          <div class="sec-title">The Scorpio Inner Life</div>
-          <div class="sec-tagline">nothing in the 5th house is casual</div>
-        </div>
-      </div>
-      <div class="kw-row">
-        <span class="kw">STELLIUM</span><span class="kw">5TH HOUSE</span><span class="kw">COMPRESSION</span><span class="kw">TOTAL LOVE</span><span class="kw">PRIVATE JOY</span>
-      </div>
-      <div class="sec-body">
-        <p>Three planets in Scorpio in the 5th house: creativity, romance, joy, the things done purely because they matter. The 5th house is where Jordan's most privately held life is. The work that is genuinely hers. The love that is fully meant. The passion projects with no performance layer.</p>
-        <p>Mercury in Scorpio reads beneath what is said, finds the thing being withheld, holds information the way Scorpio holds everything: completely, and for a long time. Venus in Scorpio loves with full presence or not at all. Jupiter in Scorpio expands by going deeper rather than wider, into the places most people avoid.</p>
-        <p>The 5th house in Libra cusp moving into Scorpio creates a specific tension: the door to this house looks diplomatic, balanced, social. What lives inside is Scorpio. Joy here is not light. It is compressed, total, and real.</p>
-        <span class="pull">The door looks diplomatic. What lives inside is Scorpio.</span>
       </div>
     </div>
 
@@ -1094,182 +1109,185 @@ end shared styles -->
       </div>
     </div>
 
-    <div class="sep"><span class="sep-inner">7th House Architecture</span></div>
+  </div><!-- /reading-inner core constitution -->
 
-    <div class="sec-card">
-      <div class="sec-head">
-        <div class="sec-sign-glyph">♑</div>
-        <div class="sec-meta">
-          <div class="sec-eyebrow">URANUS · NEPTUNE · CAPRICORN · 7TH HOUSE · 0.4° CONJUNCTION</div>
-          <div class="sec-title">The Partnership Field</div>
-          <div class="sec-tagline">disruption and dissolution are natal architecture</div>
-        </div>
-      </div>
-      <div class="kw-row">
-        <span class="kw">URANUS ♅</span><span class="kw">NEPTUNE ♆</span><span class="kw">0.4° APART</span><span class="kw">7TH HOUSE</span><span class="kw">FATED</span>
-      </div>
-      <div class="sec-body">
-        <p>Uranus and Neptune are 0.4° apart, a near-exact generational conjunction. Both are in Jordan's 7th house of partnership, collaboration, and one-on-one relationship. This is natal architecture: disruption and dissolution are not things that happen to Jordan's relationships. They are built into how the relational field is wired.</p>
-        <p>The idealization risk is Neptune. The sudden-disconnection pattern is Uranus. They are not problems to solve; they are the texture of the 7th house as Jordan experiences it. Partnerships feel fated. They can also end with an abruptness Uranus has no apology for.</p>
-        <p>The Capricorn placement grounds this somewhat: the 7th house disruption runs through the register of structure, achievement, and long-term investment. The relationships that pull hardest are ones with Capricornian stakes: career adjacency, shared ambition, the sense that something real is being built together.</p>
-      </div>
-    </div>
-
-    <div class="dive-wrap">
-      <button class="dive-toggle" aria-expanded="false" onclick="toggleDive(this)">
-        <div class="dive-hd">
-          <div class="dive-lbl"><span class="dive-lbl-glyph">♐</span>Sagittarius DSC 29°22' · the partnership threshold</div>
-          <span class="dive-arrow">▾</span>
-        </div>
-      </button>
-      <div class="dive-body">
-        <div class="dive-content">
-          <p>The South Node mirroring pattern (Gemini, 12th house) feeds directly into the 7th house. The unconscious adaptation shapes who arrives at the Descendant before the question of compatibility is asked. The North Node Sun in the 6th is the corrective: the daily-life self, operating without the mirror, draws different people.</p>
-          <p>The Sagittarius DSC at 29°22' mirrors the anaretic Ascendant exactly. The partnership threshold carries the same concentrated urgency as the identity threshold. Both are at the last degree, both pressing toward something not yet fully crossed.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="sep-stars">✦ &nbsp; ✧ &nbsp; ✦</div>
-
+  <!-- Divider A -->
+  <div class="cel-divider" style="margin:28px 0 20px">
+    <div class="cel-rule left"></div>
+    <div class="cel-mark">· · ·</div>
+    <div class="cel-rule right"></div>
   </div>
-</div><!-- /sp-depth -->
 
-<!-- ══ ROOTS ═════════════════════════════════════════════════════════════════ -->
-<div class="subpanel sp-reading" id="sp-roots">
+  <!-- ══════════════════════════════════════════════════════════════════════════
+       SECTION 4 · FORMATIVE GROUND
+       ══════════════════════════════════════════════════════════════════════════ -->
 
-  <svg class="geo-bg" viewBox="0 0 375 812" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <polygon points="188,40 310,120 345,300 290,510 188,555 86,510 30,300 65,120" fill="none" stroke="rgba(201,168,76,0.065)" stroke-width="0.55"/>
-    <!-- IC/root motif — lines converging downward -->
-    <line x1="188" y1="40" x2="188" y2="555" stroke="rgba(201,168,76,0.04)" stroke-width="0.35"/>
-    <line x1="188" y1="300" x2="130" y2="460" stroke="rgba(80,142,68,0.09)" stroke-width="0.4"/>
-    <line x1="188" y1="300" x2="246" y2="460" stroke="rgba(80,142,68,0.09)" stroke-width="0.4"/>
-    <line x1="130" y1="460" x2="246" y2="460" stroke="rgba(80,142,68,0.07)" stroke-width="0.35"/>
-    <circle cx="188" cy="300" r="2.0" fill="rgba(80,142,68,0.20)"/>
-    <circle cx="130" cy="460" r="1.4" fill="rgba(80,142,68,0.16)"/>
-    <circle cx="246" cy="460" r="1.4" fill="rgba(80,142,68,0.16)"/>
-    <circle cx="188" cy="40" r="1.8" fill="rgba(201,168,76,0.32)"/>
-    <circle cx="310" cy="120" r="1.3" fill="rgba(201,168,76,0.22)"/>
-    <circle cx="345" cy="300" r="1.1" fill="rgba(201,168,76,0.18)"/>
-    <circle cx="290" cy="510" r="1.3" fill="rgba(201,168,76,0.20)"/>
-    <circle cx="86" cy="510" r="1.3" fill="rgba(201,168,76,0.20)"/>
-    <circle cx="30" cy="300" r="1.1" fill="rgba(201,168,76,0.18)"/>
-    <circle cx="65" cy="120" r="1.3" fill="rgba(201,168,76,0.22)"/>
-  </svg>
+  <div class="reading-inner accent-teal" style="padding-top:0;padding-bottom:0">
 
-  <div class="reading-inner accent-teal">
-
-    <div class="panel-heading">
-      <div class="panel-eyebrow-sm">foundation</div>
-      <div class="panel-title-lg">The Root System</div>
+    <div class="panel-heading" style="margin-bottom:18px">
+      <div class="panel-eyebrow-sm">Section IV · Deeper Layers</div>
+      <div class="panel-title-lg">Formative Ground</div>
     </div>
 
-    <div class="sec-card">
-      <div class="sec-head">
-        <div class="sec-sign-glyph">♍</div>
-        <div class="sec-meta">
-          <div class="sec-eyebrow">CHIRON · VIRGO 8°29' · 4TH HOUSE · 0.2° PAST IC</div>
-          <div class="sec-title">The Wound and the Foundation</div>
-          <div class="sec-tagline">the wound does not announce itself — it lives in the body first</div>
+    <div class="dive-wrap formative-wrap">
+
+      <div class="sec-card">
+        <div class="sec-head">
+          <div class="sec-sign-glyph">♍</div>
+          <div class="sec-meta">
+            <div class="sec-eyebrow">CHIRON · VIRGO 8°29' · 4TH HOUSE · 0.2° PAST IC</div>
+            <div class="sec-title">The Wound and the Foundation</div>
+            <div class="sec-tagline">the wound does not announce itself — it lives in the body first</div>
+          </div>
+        </div>
+        <div class="kw-row">
+          <span class="kw">IC CONJUNCTION</span><span class="kw">THE WOUND</span><span class="kw">PERFECTIONISM</span><span class="kw">ENOUGH-NESS</span><span class="kw">VIRGO</span>
+        </div>
+        <div class="sec-body">
+          <p>Chiron is 0.2° past the IC. The wound is at the literal root of the chart: the 4th house of home, body, private self, and what was inherited from the earliest conditions of life.</p>
+          <p>Virgo Chiron: the wound is perfectionism. The question of enough-ness. The body as the site of judgment. <em>Am I doing this correctly. Is this good enough. Would a person without this wound have done better.</em> This question is not always triggered by an event. Sometimes it is just the private weather, running at low volume below everything else.</p>
+          <p>The IC/MC axis is Virgo-Pisces. The wound at the IC, held in precision and self-critique, becomes the Pisces public identity at the MC: the one that dissolves the fixed form, sees beneath the surface, offers something harder to categorize than to recognize when you're inside it. The wound and the vocation are on the same axis. They were always the same thing.</p>
+          <span class="pull">The wound and the vocation are on the same axis. They were always the same thing.</span>
         </div>
       </div>
-      <div class="kw-row">
-        <span class="kw">IC CONJUNCTION</span><span class="kw">THE WOUND</span><span class="kw">PERFECTIONISM</span><span class="kw">ENOUGH-NESS</span><span class="kw">VIRGO</span>
-      </div>
-      <div class="sec-body">
-        <p>Chiron is 0.2° past the IC. The wound is at the literal root of the chart: the 4th house of home, body, private self, and what was inherited from the earliest conditions of life.</p>
-        <p>Virgo Chiron: the wound is perfectionism. The question of enough-ness. The body as the site of judgment. <em>Am I doing this correctly. Is this good enough. Would a person without this wound have done better.</em> This question is not always triggered by an event. Sometimes it is just the private weather, running at low volume below everything else.</p>
-        <p>The IC/MC axis is Virgo-Pisces. The wound at the IC, held in precision and self-critique, becomes the Pisces public identity at the MC: the one that dissolves the fixed form, sees beneath the surface, offers something harder to categorize than to recognize when you're inside it. The wound and the vocation are on the same axis. They were always the same thing.</p>
-        <span class="pull">The wound and the vocation are on the same axis. They were always the same thing.</span>
-      </div>
-    </div>
 
-    <div class="sep"><span class="sep-inner">Saturn · Lot of Fortune · 9th House</span></div>
+      <div class="sep"><span class="sep-inner">Saturn · Structure · Delay</span></div>
 
-    <div class="sec-card">
-      <div class="sec-head">
-        <div class="sec-sign-glyph">♒</div>
-        <div class="sec-meta">
-          <div class="sec-eyebrow">SATURN · AQUARIUS 24°15' · 9TH HOUSE · FORTUNE CONJUNCT 1°58'</div>
-          <div class="sec-title">Structure and Fortune</div>
-          <div class="sec-tagline">fortune and discipline are conjunct — abundance lives in the long build</div>
+      <div class="sec-card">
+        <div class="sec-head">
+          <div class="sec-sign-glyph">♒</div>
+          <div class="sec-meta">
+            <div class="sec-eyebrow">SATURN · AQUARIUS 24°15' · 9TH HOUSE · FORTUNE CONJUNCT 1°58'</div>
+            <div class="sec-title">Structure and Fortune</div>
+            <div class="sec-tagline">fortune and discipline are conjunct — abundance lives in the long build</div>
+          </div>
+        </div>
+        <div class="kw-row">
+          <span class="kw">LONG BUILD</span><span class="kw">9TH HOUSE</span><span class="kw">PHILOSOPHY</span><span class="kw">FORTUNE CONJUNCT</span><span class="kw">AQUARIUS</span>
+        </div>
+        <div class="sec-body">
+          <p>The Lot of Fortune is 1°58' from natal Saturn. Fortune and discipline are conjunct.</p>
+          <p>The 9th house is belief systems, worldview, long-form learning, teaching, and the vision of life that makes sustained effort feel worth it. Saturn in the 9th means structure that requires philosophical grounding to function. Arbitrary constraint produces freeze. Rules disconnected from meaning produce resistance. But when Jordan understands why something matters — its place in the larger architecture she is building — Saturn does its best work.</p>
+          <p>The Lot of Fortune living here says: the abundance comes through the thing built over time, the thing with philosophical stakes, the thing that has meaning before it has money. What Jordan builds for more than herself — the astrology system, the subscription app, the work that teaches — is where the Fortune point operates.</p>
         </div>
       </div>
-      <div class="kw-row">
-        <span class="kw">LONG BUILD</span><span class="kw">9TH HOUSE</span><span class="kw">PHILOSOPHY</span><span class="kw">FORTUNE CONJUNCT</span><span class="kw">AQUARIUS</span>
-      </div>
-      <div class="sec-body">
-        <p>The Lot of Fortune is 1°58' from natal Saturn. Fortune and discipline are conjunct.</p>
-        <p>The 9th house is belief systems, worldview, long-form learning, teaching, and the vision of life that makes sustained effort feel worth it. Saturn in the 9th means structure that requires philosophical grounding to function. Arbitrary constraint produces freeze. Rules disconnected from meaning produce resistance. But when Jordan understands why something matters — its place in the larger architecture she is building — Saturn does its best work.</p>
-        <p>The Lot of Fortune living here says: the abundance comes through the thing built over time, the thing with philosophical stakes, the thing that has meaning before it has money. What Jordan builds for more than herself — the astrology system, the subscription app, the work that teaches — is where the Fortune point operates.</p>
-      </div>
-    </div>
 
-    <div class="sep"><span class="sep-inner">Midheaven · 10th House</span></div>
+    </div><!-- /formative-wrap -->
 
-    <div class="sec-card">
-      <div class="sec-head">
-        <div class="sec-sign-glyph">♓</div>
-        <div class="sec-meta">
-          <div class="sec-eyebrow">MIDHEAVEN · PISCES 8°17' · PUBLIC IDENTITY · EVOLVING FORM</div>
-          <div class="sec-title">The Public Identity</div>
-          <div class="sec-tagline">the career container keeps changing shape — that is its nature</div>
-        </div>
-      </div>
-      <div class="kw-row">
-        <span class="kw">PISCES MC</span><span class="kw">DISSOLUTION</span><span class="kw">EVOLVING FORM</span><span class="kw">ARIES MOON</span>
-      </div>
-      <div class="sec-body">
-        <p>The Pisces MC means the public identity will not stay fixed. What Jordan is known for keeps evolving. The career container keeps changing shape. This is the Pisces MC's natural mode, not a problem with focus.</p>
-        <p>The 10th house at Pisces holds the Moon and the Midheaven both — career, emotional life, and public identity all operating in Pisces' register: porous, spiritually attuned, resistant to a single form. What people receive from Jordan is harder to categorize than to recognize when they encounter it. That is by design.</p>
-        <p>The wound at the IC (Virgo, precision, enough-ness) arrives at the MC as Pisces: as the willingness to dissolve the form, as the vocation that knows what lives beneath the surface, as the career that keeps refusing to be just one thing.</p>
-      </div>
-    </div>
+  </div><!-- /reading-inner formative -->
 
-    <div class="sep-stars">✦ &nbsp; ✧ &nbsp; ✦</div>
-
+  <!-- Divider A -->
+  <div class="cel-divider" style="margin:28px 0 20px">
+    <div class="cel-rule left"></div>
+    <div class="cel-mark">· · ·</div>
+    <div class="cel-rule right"></div>
   </div>
-</div><!-- /sp-roots -->
 
-<!-- ══ SOUL ═══════════════════════════════════════════════════════════════════ -->
-<div class="subpanel sp-reading" id="sp-soul">
+  <!-- ══════════════════════════════════════════════════════════════════════════
+       SECTION 5 · SHADOW & MIRROR
+       ══════════════════════════════════════════════════════════════════════════ -->
 
-  <svg class="geo-bg" viewBox="0 0 375 812" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <!-- More elaborate geometry for the closing panel -->
-    <polygon points="188,28 332,108 370,290 310,500 188,548 66,500 5,290 44,108" fill="none" stroke="rgba(201,168,76,0.08)" stroke-width="0.6"/>
-    <polygon points="188,90 295,162 325,290 278,410 188,440 98,410 51,290 81,162" fill="none" stroke="rgba(201,168,76,0.055)" stroke-width="0.45"/>
-    <polygon points="188,160 258,210 278,290 248,365 188,385 128,365 98,290 118,210" fill="none" stroke="rgba(201,168,76,0.04)" stroke-width="0.35"/>
-    <line x1="188" y1="28" x2="188" y2="548" stroke="rgba(201,168,76,0.04)" stroke-width="0.3"/>
-    <line x1="5" y1="290" x2="370" y2="290" stroke="rgba(201,168,76,0.04)" stroke-width="0.3"/>
-    <line x1="44" y1="108" x2="310" y2="500" stroke="rgba(201,168,76,0.035)" stroke-width="0.28"/>
-    <line x1="332" y1="108" x2="66" y2="500" stroke="rgba(201,168,76,0.035)" stroke-width="0.28"/>
-    <!-- Center point -->
-    <circle cx="188" cy="290" r="3.5" fill="none" stroke="rgba(201,168,76,0.15)" stroke-width="0.6"/>
-    <circle cx="188" cy="290" r="1.5" fill="rgba(201,168,76,0.25)"/>
-    <circle cx="188" cy="28" r="2.0" fill="rgba(201,168,76,0.38)"/>
-    <circle cx="332" cy="108" r="1.4" fill="rgba(201,168,76,0.25)"/>
-    <circle cx="370" cy="290" r="1.2" fill="rgba(201,168,76,0.20)"/>
-    <circle cx="310" cy="500" r="1.4" fill="rgba(201,168,76,0.25)"/>
-    <circle cx="188" cy="548" r="2.0" fill="rgba(201,168,76,0.32)"/>
-    <circle cx="66" cy="500" r="1.4" fill="rgba(201,168,76,0.25)"/>
-    <circle cx="5" cy="290" r="1.2" fill="rgba(201,168,76,0.20)"/>
-    <circle cx="44" cy="108" r="1.4" fill="rgba(201,168,76,0.25)"/>
-  </svg>
+  <div class="reading-inner accent-rose" style="padding-top:0;padding-bottom:0">
 
-  <div class="reading-inner accent-rose">
-
-    <div class="panel-heading">
-      <div class="panel-eyebrow-sm">synthesis</div>
-      <div class="panel-title-lg">The Through-Line</div>
+    <div class="panel-heading" style="margin-bottom:18px">
+      <div class="panel-eyebrow-sm">Section V · The Other Side</div>
+      <div class="panel-title-lg">Shadow &amp; Mirror</div>
     </div>
 
-    <div class="throughline">
-      <p>The Gemini-Sagittarius line runs through everything: from the unconscious mirroring habit (South Node, 12th house) through the concentrated identity threshold (Ascendant, 29° Gemini) to the soul purpose fused with daily work (Sun conjunct North Node, 6th house Sagittarius).</p>
-      <p>The 5th house Scorpio depth is the fuel. The 6th house is where it operates. The Pisces MC is what it looks like from the outside: not a fixed shape, but a recognizable presence.</p>
-      <p>Chiron at the IC says the wound is the instrument. Pluto in the 6th says the transformation is in the work. Saturn conjunct Fortune in the 9th says the abundance is in the long, philosophically grounded build.</p>
-      <p>The chart is not asking Jordan to become something she is not. It never was.</p>
-      <span class="pull">The chart is not asking Jordan to become something she is not. It never was.</span>
+    <div class="dive-wrap shadow-wrap">
+
+      <div class="sec-card">
+        <div class="sec-head">
+          <div class="sec-sign-glyph">♐</div>
+          <div class="sec-meta">
+            <div class="sec-eyebrow">DESCENDANT · SAGITTARIUS 29°22' · WHAT THE SCORPIO SEEKS</div>
+            <div class="sec-title">The 7th House Threshold</div>
+            <div class="sec-tagline">what the Scorpio intensity is quietly looking for in others</div>
+          </div>
+        </div>
+        <div class="kw-row">
+          <span class="kw">SAG DSC</span><span class="kw">7TH HOUSE</span><span class="kw">PARTNERSHIP</span><span class="kw">FREEDOM</span><span class="kw">EXPANSION</span>
+        </div>
+        <div class="sec-body">
+          <p>The Descendant at 29°22' Sagittarius mirrors the Ascendant exactly. The partnership threshold carries the same concentrated urgency as the identity threshold. Both are at the last degree, both pressing toward something not yet fully crossed.</p>
+          <p>Sagittarius on the 7th describes what the Scorpio depth is seeking in others: freedom, expansion, the capacity for meaning, a philosophical register. Uranus and Neptune — 0.4° apart in Capricorn — are in this house. Disruption and dissolution are not things that happen to Jordan's relationships. They are built into how the relational field is wired.</p>
+          <p>The idealization risk is Neptune. The sudden-disconnection pattern is Uranus. They are not problems to solve; they are the texture of the 7th house as Jordan experiences it. Partnerships feel fated. They can also end with an abruptness Uranus has no apology for.</p>
+          <span class="pull">The door to the 7th is Sagittarius. What arrives inside is always Capricorn-heavy, always carrying stakes.</span>
+        </div>
+      </div>
+
+      <div class="sep"><span class="sep-inner">South Node · The Pattern</span></div>
+
+      <div class="sec-card">
+        <div class="sec-head">
+          <div class="sec-sign-glyph">♊</div>
+          <div class="sec-meta">
+            <div class="sec-eyebrow">SOUTH NODE · GEMINI 3°03' · 12TH HOUSE · COMFORT PATTERN</div>
+            <div class="sec-title">The Mirroring Pattern</div>
+            <div class="sec-tagline">the comfort route — diffusion, surface movement, speaking in others' registers</div>
+          </div>
+        </div>
+        <div class="kw-row">
+          <span class="kw">SOUTH NODE</span><span class="kw">GEMINI</span><span class="kw">12TH HOUSE</span><span class="kw">MIRRORING</span><span class="kw">DIFFUSION</span>
+        </div>
+        <div class="sec-body">
+          <p>The South Node in Gemini in the 12th house is the comfort pattern: mirroring, diffusion, adapting to whoever is in the room. It runs below awareness. It was learned before it could be examined. The 12th house is the house of what operates without conscious permission.</p>
+          <p>The adaptation is skilled. This is the past mastery: social fluency, the ability to speak in anyone's register, the ease of surface movement. The cost is the question that Gemini's 29° Ascendant asks in concentrated form: <em>which voice is the original one?</em></p>
+          <p>The South Node mirroring pattern feeds directly into the 7th house — shapes who arrives at the Descendant before the question of compatibility is asked. The North Node Sun in the 6th is the corrective: the daily-life self, operating without the mirror, draws different people.</p>
+        </div>
+      </div>
+
+    </div><!-- /shadow-wrap -->
+
+  </div><!-- /reading-inner shadow -->
+
+  <!-- Divider C -->
+  <div class="cel-divider" style="margin:32px 0 24px">
+    <div class="cel-rule left"></div>
+    <div class="cel-mark">✦</div>
+    <div class="cel-rule right"></div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════════════════
+       SECTION 6 · THE ARC
+       ══════════════════════════════════════════════════════════════════════════ -->
+
+  <div class="arc-wrap">
+    <div class="arc-header">
+      <div class="arc-eyebrow">Section VI · Soul Direction</div>
+      <div class="arc-title">The Arc</div>
     </div>
+    <div class="arc-panels">
+      <div class="arc-panel past">
+        <div class="arc-panel-eyebrow">Past mastery · South Node</div>
+        <div class="arc-panel-placement">♊ Gemini · 12th House</div>
+        <div class="arc-panel-rule"></div>
+        <p>You came in already knowing how to mirror, adapt, and speak in any register. The social fluency is real and total. Gemini in the 12th means the adaptation runs below conscious awareness — it was learned before it could be examined. The past mastery is adaptation without self-erasure being questioned. It works. That is exactly why it is the default.</p>
+        <p>The comfort pattern activates when anxious: diffusion, surface movement, becoming the version of yourself the room seems to need. It always worked. The question is whether it is chosen or compulsive.</p>
+      </div>
+      <div class="arc-arrow" aria-hidden="true">→</div>
+      <div class="arc-panel future">
+        <div class="arc-panel-eyebrow">Direction · North Node</div>
+        <div class="arc-panel-placement">♐ Sagittarius · 6th House</div>
+        <div class="arc-panel-rule"></div>
+        <p>The North Node conjunct Sun in Sagittarius in the 6th house: the soul direction is the daily practice. Not vision statements or grand declarations. The showing up. The consistent work. The fire in the routine.</p>
+        <p>What makes this unusual: the Sun and North Node are the same thing here. There is no gap between who Jordan is and where her soul is pointing. The work is to trust the original voice enough to let it be the one that shows up — at work, in the room, in partnership, at the threshold.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Divider C -->
+  <div class="cel-divider" style="margin:32px 0 24px">
+    <div class="cel-rule left"></div>
+    <div class="cel-mark">✦</div>
+    <div class="cel-rule right"></div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════════════════
+       SECTION 7 · ARCHETYPE CARD
+       ══════════════════════════════════════════════════════════════════════════ -->
+
+  <div class="reading-inner accent-gold" style="padding-top:0;padding-bottom:0">
 
     <div class="sep"><span class="sep-inner">Archetype</span></div>
 
@@ -1278,20 +1296,14 @@ end shared styles -->
       <div class="tarot-card">
         <!-- Gothic arch SVG overlay -->
         <svg class="tarot-arch-svg" viewBox="0 0 260 360" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- Outer gothic arch -->
           <path d="M18,356 L18,140 Q18,18 130,18 Q242,18 242,140 L242,356" fill="none" stroke="rgba(201,168,76,0.45)" stroke-width="1.2" stroke-linecap="round"/>
-          <!-- Inner arch -->
           <path d="M32,356 L32,145 Q32,35 130,35 Q228,35 228,145 L228,356" fill="none" stroke="rgba(201,168,76,0.18)" stroke-width="0.6"/>
-          <!-- Keystone ornament at arch apex -->
           <circle cx="130" cy="18" r="4" fill="rgba(201,168,76,0.50)"/>
           <circle cx="130" cy="18" r="7" fill="none" stroke="rgba(201,168,76,0.25)" stroke-width="0.8"/>
-          <!-- Corner ornaments -->
           <circle cx="18" cy="356" r="3" fill="rgba(201,168,76,0.35)"/>
           <circle cx="242" cy="356" r="3" fill="rgba(201,168,76,0.35)"/>
-          <!-- Horizontal rule near bottom -->
           <line x1="35" y1="310" x2="225" y2="310" stroke="rgba(201,168,76,0.22)" stroke-width="0.6"/>
           <line x1="35" y1="314" x2="225" y2="314" stroke="rgba(201,168,76,0.10)" stroke-width="0.4"/>
-          <!-- Side column lines -->
           <line x1="18" y1="200" x2="32" y2="200" stroke="rgba(201,168,76,0.20)" stroke-width="0.5"/>
           <line x1="228" y1="200" x2="242" y2="200" stroke="rgba(201,168,76,0.20)" stroke-width="0.5"/>
         </svg>
@@ -1299,23 +1311,18 @@ end shared styles -->
         <div class="tarot-content">
           <div class="tarot-ornament">✦ ✧ ✦</div>
 
-          <!-- Compass Rose SVG -->
           <svg class="compass-svg" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
-            <!-- 8-point compass / star -->
             <circle cx="40" cy="40" r="30" fill="none" stroke="rgba(201,168,76,0.18)" stroke-width="0.6"/>
             <circle cx="40" cy="40" r="20" fill="none" stroke="rgba(201,168,76,0.12)" stroke-width="0.5"/>
             <circle cx="40" cy="40" r="4" fill="rgba(201,168,76,0.30)"/>
-            <!-- 8 points: N,NE,E,SE,S,SW,W,NW -->
             <polygon points="40,10 43,37 40,40 37,37" fill="rgba(201,168,76,0.65)"/>
             <polygon points="40,70 43,43 40,40 37,43" fill="rgba(201,168,76,0.40)"/>
             <polygon points="10,40 37,37 40,40 37,43" fill="rgba(201,168,76,0.40)"/>
             <polygon points="70,40 43,37 40,40 43,43" fill="rgba(201,168,76,0.55)"/>
-            <!-- Diagonal points (smaller) -->
             <polygon points="61,19 43,38 40,40 42,43" fill="rgba(201,168,76,0.22)"/>
             <polygon points="19,19 38,38 40,40 37,42" fill="rgba(201,168,76,0.22)"/>
             <polygon points="19,61 38,42 40,40 37,38" fill="rgba(201,168,76,0.22)"/>
             <polygon points="61,61 42,42 40,40 43,38" fill="rgba(201,168,76,0.22)"/>
-            <!-- Tick marks on outer ring -->
             <line x1="40" y1="10" x2="40" y2="14" stroke="rgba(201,168,76,0.35)" stroke-width="0.8"/>
             <line x1="40" y1="66" x2="40" y2="70" stroke="rgba(201,168,76,0.25)" stroke-width="0.8"/>
             <line x1="10" y1="40" x2="14" y2="40" stroke="rgba(201,168,76,0.25)" stroke-width="0.8"/>
@@ -1330,9 +1337,12 @@ end shared styles -->
       </div>
     </div>
 
+    <!-- ══════════════════════════════════════════════════════════════════════════
+         SECTION 8 · POEM
+         ══════════════════════════════════════════════════════════════════════════ -->
+
     <div class="sep"><span class="sep-inner">A Reading in Verse</span></div>
 
-    <!-- POEM -->
     <div class="poem-outer">
       <div class="poem-byline">A Reading in Verse &nbsp;·&nbsp; Jordan</div>
       <div class="poem-wrap">
@@ -1361,8 +1371,10 @@ end shared styles -->
     </div>
 
     <div style="height:16px"></div>
-  </div>
-</div><!-- /sp-soul -->
+
+  </div><!-- /reading-inner poem+archetype -->
+
+</div><!-- /sp-reading -->
 
   </div><!-- /natal-body -->
 </div><!-- /panel-natal -->
@@ -1587,5 +1599,21 @@ const CHART={
 
 </script>
 <script src="/pathfinder-core.js"></script>
+<script>
+// ── Override subpanels for this build: Chart + Reading only ──────────────────
+// pathfinder-core.js initialises subpanels with the old 4-tab keys; patch it
+// after the script loads so switchSub() finds the correct DOM elements.
+(function(){
+  if(typeof subpanels !== 'undefined'){
+    // Remove stale keys that no longer exist in the DOM
+    delete subpanels.identity;
+    delete subpanels.depth;
+    delete subpanels.roots;
+    delete subpanels.soul;
+    // Register the new reading panel
+    subpanels.reading = document.getElementById('sp-reading');
+  }
+})();
+</script>
 </body>
 </html>
