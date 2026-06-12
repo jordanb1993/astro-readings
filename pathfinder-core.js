@@ -466,7 +466,25 @@ function switchSub(id,btn){
   const showKey=id==='chart';
   document.getElementById('keyBtn').classList.toggle('hidden',!showKey);
   if(!showKey)closeKey();
-  if(subpanels[id].scrollTop!==undefined)subpanels[id].scrollTop=0;
+  if(id==='archetype'){
+    // Scroll so the card label clears the fixed bottom nav
+    requestAnimationFrame(()=>{
+      const panel=subpanels[id];
+      const label=panel.querySelector('.card-label');
+      if(!label){panel.scrollTop=0;return;}
+      const panelRect=panel.getBoundingClientRect();
+      const labelRect=label.getBoundingClientRect();
+      const navH=60;
+      const clearance=panelRect.bottom-navH;
+      if(labelRect.bottom>clearance){
+        panel.scrollTop=Math.max(0,panel.scrollTop+(labelRect.bottom-clearance)+12);
+      } else {
+        panel.scrollTop=0;
+      }
+    });
+  } else if(subpanels[id].scrollTop!==undefined){
+    subpanels[id].scrollTop=0;
+  }
 }
 
 // ─── SCROLL FADE-IN ───────────────────────────────────────────────────────────

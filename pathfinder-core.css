@@ -302,7 +302,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overs
 .card-back-border-inner{position:absolute;top:14px;left:14px;right:14px;bottom:14px;border:0.5px solid rgba(var(--gold-alpha),0.08);border-radius:7px;pointer-events:none}
 .card-back-content{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px 26px;text-align:center;gap:0}
 .card-back-numeral{font-family:'Cormorant Garamond',serif;font-size:0.68rem;letter-spacing:0.34em;color:rgba(var(--gold-alpha),0.50);margin-bottom:16px}
-.card-back-sigil-mini{width:42px;height:42px;margin-bottom:14px;opacity:0.55}
+.card-back-sigil-mini{width:42px;height:42px;margin-bottom:14px;opacity:0.75}
 .card-back-name{font-family:'Cormorant Garamond',serif;font-size:1.28rem;font-weight:300;letter-spacing:0.16em;color:rgba(240,228,200,0.94);text-transform:uppercase;line-height:1.25;margin-bottom:7px}
 .card-back-sub{font-family:'Inter',sans-serif;font-size:0.49rem;letter-spacing:0.20em;color:rgba(var(--gold-alpha),0.44);text-transform:uppercase;margin-bottom:20px}
 .card-back-rule{width:36px;height:1px;background:rgba(var(--gold-alpha),0.28);margin-bottom:18px}
