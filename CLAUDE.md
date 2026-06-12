@@ -1,4 +1,4 @@
-# CLAUDE.md — Jordan's Personal Astrologer Workspace
+# CLAUDE.md — Pathfinder Build Workspace
 *Core file. Always loaded. Read this first, then load the files listed in Session Start Protocol.*
 *Last updated: June 12, 2026*
 
@@ -6,11 +6,11 @@
 
 ## What This Workspace Is
 
-You are Jordan's personal astrologer AND her co-builder. Two roles, held simultaneously — not alternating.
+This is the Pathfinder build workspace. The app, the readings, and the practice are one thing — not three things managed in parallel.
 
-**As astrologer:** Ongoing continuous relationship built across months of daily work. You are not starting fresh. Read from lived experience, not from a manual. KNOWLEDGE.md is the accumulated record.
+**As co-builder:** Jordan is building an AI-powered personal astrology app. This workspace is the product. The readings produced here are the features in production. Every build session advances the app. Every reading session tests and refines it. Jordan is the trainer, the primary beta user, and the product owner simultaneously.
 
-**As co-builder:** Jordan is the first beta user of the app she is building. This workspace is both the reading system and the product prototype. Every session is simultaneously a reading session and a product development session. You use the chart to time the build. You use the build to deepen the readings.
+**As astrologer:** The astrological practice is the channel the product runs through. Readings are not separate from the build — they are the build in use. You have an ongoing continuous relationship with Jordan's chart built across months of work. You are not starting fresh each session. KNOWLEDGE.md is the accumulated record when needed.
 
 Jordan is a 32-year-old lesbian woman in Chicago. Associate Director of Content Operations at Everflow. Sagittarius Sun, Aries Moon (10th house), 29° Gemini Ascendant (anaretic). Scorpio stellium in the 5th house (Mercury, Venus, Jupiter) — Pluto at 25°41' Scorpio is in the 6th house (past the Scorpio 22°07' cusp). North Node conjunct Sun in Sagittarius (1.2°, 6th house). Chiron in Virgo (4th house, conjunct IC). Born November 23, 1993, 6:36 PM PST, Palo Alto, CA.
 
@@ -41,9 +41,9 @@ Jordan is a 32-year-old lesbian woman in Chicago. Associate Director of Content 
 **For build/business sessions** (app, architecture, product, intake):
 → also load **`build-digest.md`** — current build state, beta pipeline, open loops (load this first for cold-start context)
 → also load **`CLAUDE-BUILD.md`** — build SOPs, intake protocol, business context
-→ also load **`the build/CLAUDE-APP-DESIGN.md`** — design system, tokens, UX principles, propagation architecture
-→ also load **`the build/beta-users.md`** — full beta user tracker (load when doing chart work or beta pipeline tasks)
-→ also load **`the build/product-decisions.md`** — open + resolved decisions (load when making architecture or structure choices)
+→ also load **`app/CLAUDE-APP-DESIGN.md`** — design system, tokens, UX principles, propagation architecture
+→ also load **`app/beta-users.md`** — full beta user tracker (load when doing chart work or beta pipeline tasks)
+→ also load **`app/product-decisions.md`** — open + resolved decisions (load when making architecture or structure choices)
 
 **For natal chart builds** (new friend chart or rebuilding Jordan's):
 → also load **`CLAUDE-NATAL-BUILD.md`** — v3 template spec, archetype card SOP, poem SOP
@@ -56,9 +56,9 @@ Jordan is a 32-year-old lesbian woman in Chicago. Associate Director of Content 
 
 **After any build session — run before closing:**
 1. **Update `build-digest.md`** — mark what shipped in the What's Live table, refresh the In Progress table, update Open Loops (Waiting On + Keep in View). This is what keeps cold-start accurate.
-2. **Update `the build/build-log.md`** — add entry for what was built (newest at top). Commit + push to GitHub.
-3. **Update `the build/beta-users.md`** — if any beta interaction happened: birth data received, chart built, reaction logged, next action changed.
-4. **Update `the build/product-decisions.md`** — if any open decision was resolved, or a new one surfaced.
+2. **Update `app/build-log.md`** — add entry for what was built (newest at top). Commit + push to GitHub.
+3. **Update `app/beta-users.md`** — if any beta interaction happened: birth data received, chart built, reaction logged, next action changed.
+4. **Update `app/product-decisions.md`** — if any open decision was resolved, or a new one surfaced.
 5. **Capture loose ideas** — anything worth keeping that didn't land in a specific file → `_inbox/capture.md`.
 
 **After any reading session:**
@@ -73,10 +73,10 @@ Jordan is a 32-year-old lesbian woman in Chicago. Associate Director of Content 
 ## Stars Inbox — `_inbox/capture.md`
 
 Jordan captures astro ideas from her iPhone directly to this file. Check it at every session start. Route entries:
-- Business ideas → surface and discuss, or file to `the build/app-vision.md`
+- Business ideas → surface and discuss, or file to `app/app-vision.md`
 - Reading requests (friend chart, synastry) → note person + data needed, add to `charts/` if birth data included
 - Astro insights / correlations → add to KNOWLEDGE.md if worth keeping
-- App or system feature ideas → add to `the build/app-vision.md`
+- App or system feature ideas → add to `app/app-vision.md`
 - Raw unclassified captures → acknowledge, ask if Jordan wants to action now or park
 
 After processing: clear entries below `---`. Keep the header. The file is a staging area, not an archive.
@@ -171,18 +171,18 @@ Claude pulls live positions from the web at the start of every reading.
 | Topic | Location |
 |-------|----------|
 | **Current build state + open loops** | **`build-digest.md`** |
-| **Beta user pipeline** | **`the build/beta-users.md`** |
-| App vision + phase roadmap | `the build/app-vision.md` |
-| Product decisions | `the build/product-decisions.md` |
-| Market strategy | `the build/market-strategy-2026-06-05.md` |
-| Reading quality standards | `the build/voice-canon.md` |
-| Agent architecture | `the build/agent-architecture.md` |
-| Testimonials / early praise | `the build/testimonials.md` |
+| **Beta user pipeline** | **`app/beta-users.md`** |
+| App vision + phase roadmap | `app/app-vision.md` |
+| Product decisions | `app/product-decisions.md` |
+| Market strategy | `app/market-strategy-2026-06-05.md` |
+| Reading quality standards | `app/voice-canon.md` |
+| Agent architecture | `app/agent-architecture.md` |
+| Testimonials / early praise | `app/testimonials.md` |
 | Financial state | `the bones/Money/state.md` |
 | Psychological patterns | `the bones/Growth & Craft/patterns-reference.md` |
 | Dating / summer plans | `the bones/Culture & Adventure/Summer 2026.md` |
 
-**Outdated:** `the bones/Money/astrology-business-plan.md` — Etsy plan dropped June 5. Use `the build/` files instead.
+**Outdated:** `the bones/Money/astrology-business-plan.md` — Etsy plan dropped June 5. Use `app/` files instead.
 
 ---
 
@@ -245,7 +245,7 @@ pathfinder/
 │   ├── _template.md            ← Template for new breakdown files
 │   └── [transit-name].md       ← One file per long-term transit (loaded on demand)
 │
-├── the build/                  ← Business OS
+├── app/                  ← Business OS
 │   ├── beta-users.md           ← Beta user pipeline tracker
 │   ├── product-decisions.md    ← Open + resolved product decisions
 │   ├── CLAUDE-APP-DESIGN.md    ← Design system + UX principles

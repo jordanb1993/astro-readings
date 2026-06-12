@@ -44,27 +44,27 @@ Jordan is building an AI-powered personal astrology app. She is the first beta u
 ## Build Session SOP
 
 **At session start:**
-1. Check `the build/app-vision.md` — current product roadmap + feature queue
-2. Check `the build/product-decisions.md` — prior architecture decisions (don't revisit settled questions)
+1. Check `app/app-vision.md` — current product roadmap + feature queue
+2. Check `app/product-decisions.md` — prior architecture decisions (don't revisit settled questions)
 3. Note any items in `_inbox/capture.md` that are business-relevant
 4. Scan `transit library/INDEX.md` for any timing context that affects the build
 
 **During session:**
-- If a decision is made, log it in `the build/product-decisions.md` immediately
-- If a feature idea emerges, add it to `the build/app-vision.md` — don't lose it
-- If a market/positioning insight surfaces, add it to `the build/market-strategy-2026-06-05.md`
-- If a reading quality improvement emerges during a build session, apply it to `the build/voice-canon.md`
+- If a decision is made, log it in `app/product-decisions.md` immediately
+- If a feature idea emerges, add it to `app/app-vision.md` — don't lose it
+- If a market/positioning insight surfaces, add it to `app/market-strategy-2026-06-05.md`
+- If a reading quality improvement emerges during a build session, apply it to `app/voice-canon.md`
 
 **File routing during build sessions:**
 
 | Topic | File |
 |-------|------|
-| App phases, roadmap, feature queue | `the build/app-vision.md` |
-| Architecture decisions (keep/not revisit) | `the build/product-decisions.md` |
-| Market positioning, ICP, competitive | `the build/market-strategy-2026-06-05.md` |
-| Reading quality standards | `the build/voice-canon.md` |
-| Agent architecture + prompt engineering | `the build/agent-architecture.md` |
-| Early user feedback, testimonials | `the build/testimonials.md` |
+| App phases, roadmap, feature queue | `app/app-vision.md` |
+| Architecture decisions (keep/not revisit) | `app/product-decisions.md` |
+| Market positioning, ICP, competitive | `app/market-strategy-2026-06-05.md` |
+| Reading quality standards | `app/voice-canon.md` |
+| Agent architecture + prompt engineering | `app/agent-architecture.md` |
+| Early user feedback, testimonials | `app/testimonials.md` |
 | Transit data infrastructure | `routine/` folder |
 
 ---
@@ -118,7 +118,7 @@ The long-term vision is a multi-agent system where:
 
 Current state: Jordan is running the data layer manually (astrolibrary.org fetch) and Claude is the interpretation agent. The routine automates the daily writing via the 4am CDT Claude.ai routine.
 
-Full architecture spec: `the build/agent-architecture.md`
+Full architecture spec: `app/agent-architecture.md`
 
 ---
 

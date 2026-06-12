@@ -295,7 +295,23 @@ Go to `claude.ai/code/routines` → find routine `trig_01Rtm1xSST2GbdCZh896F2vP`
 
    If any item fails: fix it before proceeding to the commit.
 
-12. Commit and push — Vercel deploys automatically:
+12. Write a health log entry to "routine/health-log.md":
+
+   This file is how Jordan knows the routine ran. She checks it at session start.
+   Insert a new row at the TOP of the log table (immediately below the header row).
+   Do NOT append to the bottom — newest entries must be first.
+
+   On success:
+   | YYYY-MM-DD | ✅ Success | reading + today.json + transits.json committed |
+
+   If any step failed or was skipped:
+   | YYYY-MM-DD | ⚠️ Partial | [brief note: what succeeded, what failed or was skipped] |
+
+   To insert at top: read the current file, find the header row (the | Date | Status | Notes | line),
+   insert the new data row immediately after it, write the full updated file back.
+   The commit in step 13 will include this file automatically via git add -A.
+
+13. Commit and push — Vercel deploys automatically:
 
    git add -A && git commit -m "reading + today.json + transits.json + patches YYYY-MM-DD" && git push origin main
 

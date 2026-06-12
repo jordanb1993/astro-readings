@@ -40,7 +40,7 @@ tags:
 
 ## Beta Pipeline
 
-See `the build/beta-users.md` for full detail.
+See `app/beta-users.md` for full detail.
 
 | Person | Chart | Birth Data | Features Seen |
 |--------|-------|-----------|---------------|
@@ -70,7 +70,7 @@ See `the build/beta-users.md` for full detail.
 ## Recent Wins
 - Session 15 (June 12): Full voice canon rewrite across all 3 charts, 9-tab restructure, transit UI polish — all in one session
 - First overnight automation run June 12 — app generated Jordan's daily read while she slept
-- Dasha, Krista, and Kristen Bell all reacted to the app in real time on June 12 calls — strong beta pull → see `the build/testimonials.md`
+- Dasha, Krista, and Kristen Bell all reacted to the app in real time on June 12 calls — strong beta pull → see `app/testimonials.md`
 - Sky at Work beginner pivot confirmed: cards interface + "What's driving this?" reveal is the right architecture
 
 ---

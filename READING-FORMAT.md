@@ -326,7 +326,7 @@ Pathfinder's goal is **recognition, not validation.**
 
 Accepted is something someone else gives you. Acceptable is something you give yourself. A reading that makes someone feel seen doesn't say "you're wonderful" — it gives the reader the framework to look at their own chart and think: *this is why I am the way I am, and it makes complete sense.* That's the goal.
 
-Full articulation + canonical prose specimen in `the build/voice-canon.md`.
+Full articulation + canonical prose specimen in `app/voice-canon.md`.
 
 ---
 
@@ -356,7 +356,7 @@ The Big Three portrait comes before any transit reading. A user who doesn't know
 
 **Voice:** Plain language throughout. No technical terms requiring explanation at this layer. See voice rules below.
 
-**Full specimen (Jordan's Sag Sun + Aries Moon + 29° Gemini Rising) is in `the build/voice-canon.md`** under "Canonical Specimen."
+**Full specimen (Jordan's Sag Sun + Aries Moon + 29° Gemini Rising) is in `app/voice-canon.md`** under "Canonical Specimen."
 
 **Big Three portrait architecture — deeper layers available beneath the onboarding:**
 - Natal Aspects
@@ -404,7 +404,7 @@ Floating nouns. Paradox structures that feel wise but point at nothing. If you c
 
 **Vocabulary to avoid:** soul path, the void, the container, the infinite, the well, cosmic unfolding, sacred space, divine timing (unless attached to an actual transit and date), energetic field, vibrational alignment.
 
-**Named failure modes (full analysis in `the build/voice-canon.md` → Expanded Anti-Patterns):**
+**Named failure modes (full analysis in `app/voice-canon.md` → Expanded Anti-Patterns):**
 - The reframe construction: "it's not X, it's Y" — AI-ism, says nothing
 - Life-coach speak: "use this energy," "harness this transit," "step into your power"
 - Floating-subject constructions: "this energy is asking you to..." — energies don't ask; name the planet and house
