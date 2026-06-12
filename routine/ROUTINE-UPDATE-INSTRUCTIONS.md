@@ -55,6 +55,15 @@ Go to `claude.ai/code/routines` → find routine `trig_01Rtm1xSST2GbdCZh896F2vP`
      - "Your soul's evolutionary intent / raising your consciousness / karmic contract" — jargon.
      - Hedging after a clear statement: "though of course everyone experiences it differently."
 
+     EM DASH RULE — ZERO IN PROSE (added June 12, 2026):
+     Do not use em dashes (—) anywhere in prose, today blocks, or transit table status cells.
+     Replace with: colon (when Y elaborates X), period (when two thoughts are distinct),
+     comma (when flowing naturally), semicolon (in table cells or bullets).
+     The ONLY permitted — is a structural placeholder in the Moon row orb column where the
+     value is blank: | ☽ Moon · Sign · Phase | — | note |
+     Everywhere else: zero em dashes. The voice-canon sets 0–1 maximum; the reading standard
+     is zero. Do not use em dash to join clauses, introduce explanations, or punctuate list items.
+
      VOCABULARY: The voice-canon now contains a Planet & Aspect Vocabulary Library with
      specific felt-sense words, body-level language, and situational framings for each outer
      planet. Use it. Don't fall back on "transformation," "dissolution," "lessons."

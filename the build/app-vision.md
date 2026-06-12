@@ -499,6 +499,22 @@ The HTML fetches this on load, renders the Transits and Daily tabs with live dat
 
 ---
 
+## Research Sessions — Astrology Vocabulary Expansion
+
+*Captured June 12, 2026*
+
+Jordan wants to build a structured research pipeline to expand interpretive vocabulary and reading quality. The idea: research how astrologers actually write and speak about aspects and placements on Reddit (r/astrology, r/AskAstrologers, r/astrologyreadings, r/VedicAstrology for cross-referencing) and other community sources. The goal is language expansion — new framings, culturally resonant interpretations, how real people describe their felt experience of transits and placements. This feeds voice-canon.md and the reading quality system.
+
+**Structure for future research sessions:**
+- Target subreddits: r/astrology, r/AskAstrologers, r/astrologyreadings — search by transit/aspect/placement
+- Document: language that works (plain, resonant, specific), language to avoid (generic, jargon-heavy)
+- Route findings to: voice-canon.md Vocabulary Library section + relevant transit library files
+- Batch by planet or aspect type — one planet per research session
+
+*Status: idea captured, structure pending, first session TBD*
+
+---
+
 ## Inspirations / References
 
 - Revenue Hero Tales of Ops format as a model for resource libraries

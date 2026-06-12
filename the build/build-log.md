@@ -36,6 +36,18 @@ Full copy rewrite across all three charts:
 
 ---
 
+## 2026-06-12 (session 15, cont.) — Em dash pass + routine update
+
+**Em dash pass: transit library + daily readings June 5–12**
+- Transit library: zero em dashes across all 17 files (section headers, frontmatter, INDEX table cells all cleaned)
+- Daily readings June 5–12: full pass (agent running at session close); prose, table status cells, and today blocks all cleaned; Moon placeholder `| — |` rows preserved as structural
+- Routine prompt: explicit EM DASH RULE added to BANNED CONSTRUCTIONS section in ROUTINE-UPDATE-INSTRUCTIONS.md — zero em dashes in prose, table cells, or today blocks; Moon placeholder row is the only permitted exception
+
+**Inbox processed:**
+- Reddit astrology vocabulary research idea → filed to app-vision.md as "Research Sessions — Astrology Vocabulary Expansion" with session structure; inbox cleared
+
+---
+
 ## 2026-06-11 — Session 14 Overview
 
 **Theme:** Synastry infrastructure + friend build polish
