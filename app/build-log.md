@@ -32,6 +32,14 @@
 - Planet strip updated to June 15 estimates
 - Signal board: 5 rows rewritten for current transits
 
+**Visual system (session continued):**
+- Collective wheel: 5 hardcoded transit-to-transit aspect lines at `R.zodIn` radius using ASP_STYLE colors (Uranus sq NNode rose dashed, Mercury sxt Mars cerulean, Venus cnj Jupiter gold, Venus tri Neptune teal, Uranus tri Pluto teal dim)
+- 12 custom SVG path sign icons in the Your Sign tab — replaced iOS emoji glyphs with hand-drawn vector art
+- Element arc rim: 12 arcs at radius 113 between zodiac outer edge and wheel boundary, fire/earth/air/water colored
+- Atmospheric blooms: 4 blurred radial circles at cardinal positions inside center fill (blur filter in SVG defs)
+- Sacred geometry: `geo-bg` SVG panels added to all three tabs — This Week gets nested octagons + cross-axis lines (cerulean, natal-chart opacity), The Sky gets two interlocked hexagons (Star of David) + three concentric rings centered on the collective wheel, Your Sign gets minimal concentric rings + 3 spokes
+- Request a Reading modal: bottom sheet slides up on button tap, drag handle, cerulean top accent line, 3-item birth data checklist (date / time + note / city), "DM Jordan on Slack" CTA. Backdrop or ✕ closes. Placeholder until Supabase intake is built.
+
 ---
 
 ## 2026-06-12 — Session 15: Transit UI polish + Natal chart restructure + Voice canon copy rewrite
