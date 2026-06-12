@@ -20,21 +20,21 @@ tags:
 # Neptune trine natal North Node
 *Spring–Summer 2026 · Aries → Sagittarius 6th house · separating*
 
-The path doesn't have to look like effort to count. This transit dissolved the story that soul growth in the 6th house requires grinding — and opened a window where the inspired version of the work is the on-path version.
+The path doesn't have to look like effort to count. This transit dissolved the story that 6th house growth requires grinding, and opened a window where the inspired version of the work and the on-path version were the same thing.
 
 ---
 
 ## What This Is
 
-Your natal North Node sits at 3°02' Sagittarius in the 6th house. The North Node is the soul's evolutionary direction in this lifetime — the growth axis, less instinctive than the South Node, requiring intentional movement toward it. In Sagittarius, the growth direction involves philosophical depth, teaching, the seeking of meaning that goes beyond the immediate pragmatic. In the 6th house, this growth happens through daily practice: not abstract Sagittarian seeking but Sagittarian seeking made real through craft, through showing up to the work every day, through the body and the daily schedule as arenas of soul development. The 6th house NNode says: the path is the practice. Not the destination, not the grand vision — the daily doing of the thing that matters.
+Your natal North Node sits at 3°02' Sagittarius in the 6th house. Sagittarius points toward meaning-making, teaching, philosophical depth, the expansion that comes from genuine inquiry rather than surface coverage. In the 6th house, that growth direction happens through daily practice: not abstract seeking, but the daily doing of the thing that matters. The 6th house North Node says the path is the practice. Not the destination. The practice itself.
 
-Neptune in Aries is currently at approximately 4° Aries. The trine to the NNode at 3°02' Sagittarius is measuring the shorter arc between Aries and Sagittarius — both fire signs, separated by 240° of zodiac, but the trine measures the 120° angle between them by the shorter route. Neptune in Aries at 4° is forming a trine to a point at 4° Sagittarius, and your NNode at 3°02' Sagittarius was within orb through this spring and has been separating since approximately May 2026.
+Neptune in Aries at approximately 4° forms a trine to the NNode at 3°02' Sagittarius. Both fire signs, the 120° angle of ease and natural current. Neptune brings dissolved rigidity, inspiration that arrives rather than being constructed, permeability between the imaginal and the real, the capacity to receive direction without forcing it into a pre-existing framework. A trine carries these qualities as support. The soul direction was being infused with inspiration rather than tested by structure.
 
-Neptune trine the NNode is one of the more quietly significant transit signatures. Neptune brings: dissolution of rigid structures, inspiration, permeability, the capacity to receive vision rather than construct it, an easier relationship between the imaginal and the real. A trine carries these qualities as support — not pressure, not challenge, but open access. Neptune trining the NNode opened a period where the soul path was infused with inspiration and vision rather than structure and effort. The 6th house work doesn't have to look like discipline to be on-path. What feels genuinely inspired, what arrives as clear creative direction without the grinding labor, is not escaping the path — it is the path, the Neptunian layer of the Sagittarian NNode.
+What this looked like in practice: the intuitive leaps that felt both inspired and deeply correct. The work that arrived rather than being forced. The sense that the right direction was becoming clear not through planning but through a kind of recognition: the thing appears and you know it before you can justify knowing it. Neptune trine NNode is the soul direction clarified through vision rather than through effort.
 
-What this looks like in practice: the intuitive leaps that feel inspired but also deeply correct. The work that arrives rather than being forced. The sense that the direction is becoming clear not through planning but through a kind of resonance — the right thing appears and you know it's right without requiring extensive justification. This is Neptune supporting the NNode: the soul direction is being clarified through vision rather than effort.
+Neptune in Aries adds a specific quality to that infusion. Aries is initiation, the beginning of things, the courage that moves before the full picture is visible. Neptune dissolving forward in Aries means the inspiration isn't still or contemplative. It's active and forward-launching. The inspired version of the work is the version that starts, that ships, that goes public.
 
-Neptune in Aries adds a specific quality: Aries is initiation, the beginning of things, the courage that moves forward before knowing the whole path. Neptune dissolving forward in Aries means the inspiration is not meditative and still (that would be Neptune in Pisces) but active and launched. The vision that's infusing the 6th house NNode has a forward-moving, action-initiating quality. The inspired version of the work is the version that starts, that launches, that ships.
+For the 6th house NNode, that quality matters. The 6th house can default to grinding, to believing that only difficult, disciplined effort counts as real progress on the path. Neptune trine the NNode is the correction to that story: the work that arrives easily because it's genuinely right is still the path. Sometimes more so.
 
 ---
 
@@ -49,7 +49,7 @@ Neptune in Aries adds a specific quality: Aries is initiation, the beginning of 
 | **Possible 2nd exact (retrograde)** | **~late 2026** | **If station is above 3° Aries** |
 | Leaves 2° orb | ~August 2026 (or later if retrograde pass) | |
 
-The first pass is already separating at 1.19°. Neptune moves slowly enough that this will remain within loose orb for several more weeks. The retrograde station in July may or may not bring Neptune back within orb — the exact station degree will determine whether a second pass occurs.
+The first pass is already separating at 1.19°. The retrograde station in July may or may not bring Neptune back within orb. The exact station degree determines whether a second pass occurs.
 
 ---
 
@@ -57,30 +57,30 @@ The first pass is already separating at 1.19°. Neptune moves slowly enough that
 
 | date | what happened | connection |
 |------|---------------|------------|
-| Late April–May 2026 | Etsy plan dropped — business reframed as full product, not craft sales | Neptune trine NNode peak: the vision of what the work actually is clarifying |
+| Late April–May 2026 | Etsy plan dropped, business reframed as full product, not craft sales | Neptune trine NNode peak: the vision of what the work actually is clarifying |
 | May 21, 2026 | #astroflow-weekly launched; Krista endorses in 24 minutes | The on-path work recognizable in real time as on-path |
 | June 9–10, 2026 | App fully data-driven with 4am routine; live product | Neptune separating but the infrastructure it inspired is operational |
 
-The most significant real-time correlation is the business reframe in late April/May. Dropping the Etsy plan wasn't a pragmatic decision — it was a recognition that the soul direction requires a full product, not a craft side-business. That recognition arrived as vision, as a felt clarity, rather than as a logical argument. That's Neptune trine NNode doing exactly what it does: infusing the soul direction with inspired clarity.
+The most significant real-time correlation is the business reframe in late April/May. Dropping the Etsy plan wasn't a pragmatic decision. It was a recognition that the soul direction requires a full product, not a craft side-business. That recognition arrived as felt clarity, not as a logical argument. That's Neptune trine NNode working exactly as described: the soul direction clarified through vision.
 
-The #astroflow-weekly launch and Krista's immediate validation are also characteristic of this transit's energy: the inspired version of the NNode work arriving and being recognized quickly, without the grinding effort the 6th house NNode can sometimes demand.
+The #astroflow-weekly launch and Krista's immediate validation are also characteristic of this transit's quality: the inspired version of the NNode work arriving and being recognized quickly, without the grinding effort the 6th house NNode can sometimes demand of itself.
 
 ---
 
 ## Working With It
 
-**The primary gift of this transit is already active in the work.** The pivot to full product, the app infrastructure, the workplace channel — these were all activated under Neptune trine NNode. You don't need to do anything special to receive this transit; you already have. The work that happened in spring/early summer 2026 is the transit made concrete.
+**The primary gift of this transit is already in the work.** The pivot to full product, the app infrastructure, the workplace channel: these activated under Neptune trine NNode. The transit's window is passing into separation, but what it opened is now operational. The work that happened in spring/early summer 2026 is the transit made concrete.
 
-**Don't pathologize the inspired version of the work.** Neptune trine NNode means that what felt visionary and expansive was also on-path. The business decision that seemed like it was choosing the harder, less practical road (full product vs. Etsy) was Neptune clarifying the NNode direction. The soul path looks like the inspired version, not the cautious one.
+**The inspired version of the work was the on-path version.** Neptune trine NNode means the visionary, expansive choice (full product over Etsy, app over static readings, public offering over private practice) was the soul direction clarifying itself. The trine was not permission. It was recognition.
 
-**Carry the window's clarity forward.** Neptune is separating. The period of maximal inspired clarity for the NNode path is passing into a more ordinary operating mode. What the transit opened — the product vision, the astrological business as real, the #astroflow channel as proof of concept — can be maintained through practice now rather than continued inspiration. This is the 6th house NNode's natural mode: daily practice carries the vision after the Neptunian window closes.
+**Carry the window's clarity forward as practice.** Neptune is separating. The period of maximal inspired clarity is passing into a more ordinary operating mode. What the transit opened gets maintained now through daily practice rather than continued inspiration. That's exactly what the 6th house NNode requires: the vision, then the consistent work.
 
-**If a retrograde pass arrives:** a second Neptune trine NNode means another infusion of inspiration and vision into the soul direction. Use it the same way — let it clarify rather than complicate. Any new inspired direction that arrives in the retrograde window is legitimate.
+**If a retrograde pass arrives:** another infusion of inspiration and clarity into the soul direction. Same instruction: let it clarify rather than complicate. Any new inspired direction that arrives in the retrograde window is legitimate.
 
 ---
 
 ## Current Status
 
-June 10, 2026: Neptune at approximately 4.22° Aries — 1.19° separating trine to natal NNode at 3°02' Sagittarius (6th house). First pass is complete; the transit is in its waning phase at approximately 0.014°/day separation. The work this transit inspired — the full product reframe, the data-driven app architecture, the astroflow-weekly channel — is now operational and can be carried forward through daily practice as Neptune moves out of orb.
+June 10, 2026: Neptune at approximately 4.22° Aries, 1.19° separating trine to natal NNode at 3°02' Sagittarius (6th house). First pass complete; the transit is in its waning phase at approximately 0.014°/day separation. The work this transit inspired is now operational and carries forward through daily practice as Neptune moves out of orb.
 
 *Last updated: June 10, 2026*
