@@ -247,11 +247,15 @@ const panels={
   wheel:   document.getElementById('panel-wheel'),
 };
 const subpanels={
-  chart:   document.getElementById('sp-chart'),
-  identity:document.getElementById('sp-identity'),
-  depth:   document.getElementById('sp-depth'),
-  roots:   document.getElementById('sp-roots'),
-  soul:    document.getElementById('sp-soul'),
+  chart:        document.getElementById('sp-chart'),
+  portrait:     document.getElementById('sp-portrait'),
+  signature:    document.getElementById('sp-signature'),
+  constitution: document.getElementById('sp-constitution'),
+  formative:    document.getElementById('sp-formative'),
+  shadow:       document.getElementById('sp-shadow'),
+  arc:          document.getElementById('sp-arc'),
+  archetype:    document.getElementById('sp-archetype'),
+  poem:         document.getElementById('sp-poem'),
 };
 let activePanel='home';
 let activeSub='chart';

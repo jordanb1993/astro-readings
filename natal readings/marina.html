@@ -103,21 +103,15 @@
 <div id="panel-natal">
 
   <nav class="natal-subnav" aria-label="Natal sections">
-    <button class="subnav-tab active" data-sub="chart" onclick="switchSub('chart',this)">
-      <span class="sn-icon">✦</span> Chart
-    </button>
-    <button class="subnav-tab" data-sub="identity" onclick="switchSub('identity',this)">
-      <span class="sn-icon">☉</span> Identity
-    </button>
-    <button class="subnav-tab" data-sub="depth" onclick="switchSub('depth',this)">
-      <span class="sn-icon">♑</span> Depth
-    </button>
-    <button class="subnav-tab" data-sub="roots" onclick="switchSub('roots',this)">
-      <span class="sn-icon">⚷</span> Roots
-    </button>
-    <button class="subnav-tab" data-sub="soul" onclick="switchSub('soul',this)">
-      <span class="sn-icon">♐</span> Soul
-    </button>
+    <button class="subnav-tab active" data-sub="chart" onclick="switchSub('chart',this)"><span class="sn-icon">◯</span> Chart</button>
+    <button class="subnav-tab" data-sub="portrait" onclick="switchSub('portrait',this)"><span class="sn-icon">✦</span> Portrait</button>
+    <button class="subnav-tab" data-sub="signature" onclick="switchSub('signature',this)"><span class="sn-icon">♌</span> Signature</button>
+    <button class="subnav-tab" data-sub="constitution" onclick="switchSub('constitution',this)"><span class="sn-icon">◐</span> Constitution</button>
+    <button class="subnav-tab" data-sub="formative" onclick="switchSub('formative',this)"><span class="sn-icon">♄</span> Formative</button>
+    <button class="subnav-tab" data-sub="shadow" onclick="switchSub('shadow',this)"><span class="sn-icon">☽</span> Shadow</button>
+    <button class="subnav-tab" data-sub="arc" onclick="switchSub('arc',this)"><span class="sn-icon">☊</span> Arc</button>
+    <button class="subnav-tab" data-sub="archetype" onclick="switchSub('archetype',this)"><span class="sn-icon">✧</span> Archetype</button>
+    <button class="subnav-tab" data-sub="poem" onclick="switchSub('poem',this)"><span class="sn-icon">∿</span> Poem</button>
   </nav>
 
   <div class="natal-body">
@@ -159,8 +153,8 @@
   </div>
 </div>
 
-<!-- IDENTITY -->
-<div class="subpanel sp-reading" id="sp-identity">
+<!-- PORTRAIT -->
+<div class="subpanel sp-reading" id="sp-portrait">
   <svg class="geo-bg" viewBox="0 0 375 812" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
     <polygon points="188,30 320,110 362,310 295,540 188,590 81,540 13,310 56,110" fill="none" stroke="rgba(201,168,76,0.07)" stroke-width="0.6"/>
     <circle cx="188" cy="30" r="2.0" fill="rgba(201,168,76,0.35)"/>
@@ -214,7 +208,25 @@
       </div>
     </div>
 
-    <div class="sep"><span class="sep-inner">Sun · Mercury · 10th House</span></div>
+    <div class="sep-stars">✦ &nbsp; ✧ &nbsp; ✦</div>
+  </div>
+</div>
+
+<!-- SIGNATURE -->
+<div class="subpanel sp-reading" id="sp-signature">
+  <svg class="geo-bg" viewBox="0 0 375 812" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <polygon points="188,30 320,110 362,310 295,540 188,590 81,540 13,310 56,110" fill="none" stroke="rgba(201,168,76,0.07)" stroke-width="0.6"/>
+    <circle cx="188" cy="30" r="2.0" fill="rgba(201,168,76,0.35)"/>
+    <circle cx="188" cy="590" r="1.8" fill="rgba(201,168,76,0.28)"/>
+    <line x1="56" y1="110" x2="295" y2="540" stroke="rgba(201,168,76,0.04)" stroke-width="0.35"/>
+    <line x1="320" y1="110" x2="81" y2="540" stroke="rgba(201,168,76,0.04)" stroke-width="0.35"/>
+  </svg>
+
+  <div class="reading-inner accent-gold">
+    <div class="panel-heading">
+      <div class="panel-eyebrow-sm">dominant pattern</div>
+      <div class="panel-title-lg">The Inner Lens</div>
+    </div>
 
     <div class="sec-card">
       <div class="sec-head">
@@ -253,8 +265,8 @@
   </div>
 </div>
 
-<!-- DEPTH -->
-<div class="subpanel sp-reading" id="sp-depth">
+<!-- CONSTITUTION -->
+<div class="subpanel sp-reading" id="sp-constitution">
   <svg class="geo-bg" viewBox="0 0 375 812" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
     <polygon points="188,50 340,140 375,340 305,560 188,610 71,560 0,340 35,140" fill="none" stroke="rgba(201,168,76,0.065)" stroke-width="0.55"/>
     <circle cx="188" cy="300" r="3.0" fill="none" stroke="rgba(62,143,192,0.12)" stroke-width="0.6"/>
@@ -327,8 +339,8 @@
   </div>
 </div>
 
-<!-- ROOTS -->
-<div class="subpanel sp-reading" id="sp-roots">
+<!-- FORMATIVE -->
+<div class="subpanel sp-reading" id="sp-formative">
   <svg class="geo-bg" viewBox="0 0 375 812" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
     <polygon points="188,40 310,120 345,300 290,510 188,555 86,510 30,300 65,120" fill="none" stroke="rgba(201,168,76,0.065)" stroke-width="0.55"/>
     <line x1="188" y1="300" x2="130" y2="460" stroke="rgba(80,142,68,0.09)" stroke-width="0.4"/>
@@ -362,7 +374,25 @@
       </div>
     </div>
 
-    <div class="sep"><span class="sep-inner">Mercury · Neptune · Uranus</span></div>
+    <div class="sep-stars">✦ &nbsp; ✧ &nbsp; ✦</div>
+  </div>
+</div>
+
+<!-- SHADOW -->
+<div class="subpanel sp-reading" id="sp-shadow">
+  <svg class="geo-bg" viewBox="0 0 375 812" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <polygon points="188,40 310,120 345,300 290,510 188,555 86,510 30,300 65,120" fill="none" stroke="rgba(201,168,76,0.065)" stroke-width="0.55"/>
+    <line x1="188" y1="300" x2="130" y2="460" stroke="rgba(80,142,68,0.09)" stroke-width="0.4"/>
+    <line x1="188" y1="300" x2="246" y2="460" stroke="rgba(80,142,68,0.09)" stroke-width="0.4"/>
+    <circle cx="188" cy="300" r="2.0" fill="rgba(80,142,68,0.20)"/>
+    <circle cx="188" cy="40" r="1.8" fill="rgba(201,168,76,0.32)"/>
+  </svg>
+
+  <div class="reading-inner accent-teal">
+    <div class="panel-heading">
+      <div class="panel-eyebrow-sm">projection patterns</div>
+      <div class="panel-title-lg">The Poetic Mind</div>
+    </div>
 
     <div class="sec-card">
       <div class="sec-head">
@@ -386,8 +416,8 @@
   </div>
 </div>
 
-<!-- SOUL -->
-<div class="subpanel sp-reading" id="sp-soul">
+<!-- ARC -->
+<div class="subpanel sp-reading" id="sp-arc">
   <svg class="geo-bg" viewBox="0 0 375 812" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
     <polygon points="188,28 332,108 370,290 310,500 188,548 66,500 5,290 44,108" fill="none" stroke="rgba(201,168,76,0.08)" stroke-width="0.6"/>
     <polygon points="188,90 295,162 325,290 278,410 188,440 98,410 51,290 81,162" fill="none" stroke="rgba(201,168,76,0.055)" stroke-width="0.45"/>
@@ -409,7 +439,25 @@
       <span class="pull">The chart is asking Marina to let herself be held by the people she is always holding.</span>
     </div>
 
-    <div class="sep"><span class="sep-inner">Archetype</span></div>
+    <div style="height:16px"></div>
+  </div>
+</div>
+
+<!-- ARCHETYPE -->
+<div class="subpanel sp-reading" id="sp-archetype">
+  <svg class="geo-bg" viewBox="0 0 375 812" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <polygon points="188,28 332,108 370,290 310,500 188,548 66,500 5,290 44,108" fill="none" stroke="rgba(201,168,76,0.08)" stroke-width="0.6"/>
+    <polygon points="188,90 295,162 325,290 278,410 188,440 98,410 51,290 81,162" fill="none" stroke="rgba(201,168,76,0.055)" stroke-width="0.45"/>
+    <circle cx="188" cy="290" r="3.5" fill="none" stroke="rgba(201,168,76,0.15)" stroke-width="0.6"/>
+    <circle cx="188" cy="290" r="1.5" fill="rgba(201,168,76,0.25)"/>
+    <circle cx="188" cy="28" r="2.0" fill="rgba(201,168,76,0.38)"/>
+  </svg>
+
+  <div class="reading-inner accent-rose">
+    <div class="panel-heading">
+      <div class="panel-eyebrow-sm">archetype</div>
+      <div class="panel-title-lg">The Generous Light</div>
+    </div>
 
     <div class="tarot-outer">
       <div class="tarot-card">
@@ -441,7 +489,25 @@
       </div>
     </div>
 
-    <div class="sep"><span class="sep-inner">A Reading in Verse</span></div>
+    <div style="height:16px"></div>
+  </div>
+</div>
+
+<!-- POEM -->
+<div class="subpanel sp-reading" id="sp-poem">
+  <svg class="geo-bg" viewBox="0 0 375 812" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <polygon points="188,28 332,108 370,290 310,500 188,548 66,500 5,290 44,108" fill="none" stroke="rgba(201,168,76,0.08)" stroke-width="0.6"/>
+    <polygon points="188,90 295,162 325,290 278,410 188,440 98,410 51,290 81,162" fill="none" stroke="rgba(201,168,76,0.055)" stroke-width="0.45"/>
+    <circle cx="188" cy="290" r="3.5" fill="none" stroke="rgba(201,168,76,0.15)" stroke-width="0.6"/>
+    <circle cx="188" cy="290" r="1.5" fill="rgba(201,168,76,0.25)"/>
+    <circle cx="188" cy="28" r="2.0" fill="rgba(201,168,76,0.38)"/>
+  </svg>
+
+  <div class="reading-inner accent-rose">
+    <div class="panel-heading">
+      <div class="panel-eyebrow-sm">a reading in verse</div>
+      <div class="panel-title-lg">Marina</div>
+    </div>
 
     <div class="poem-outer">
       <div class="poem-byline">A Reading in Verse &nbsp;·&nbsp; Marina</div>
