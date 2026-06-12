@@ -167,9 +167,9 @@ Go to `claude.ai/code/routines` → find routine `trig_01Rtm1xSST2GbdCZh896F2vP`
      ],
      "pull": "[the blockquote text if present, stripped of the > marker and surrounding whitespace. Omit this field if no blockquote in the reading]",
      "today": {
-       "business": "[the Business line from the today block, stripped of the '- Business:' prefix]",
-       "creative": "[the Creative line, stripped of prefix]",
-       "body": "[the Body line, stripped of prefix]"
+       "business": "[the Work line from the today block — work/career guidance for the day, stripped of prefix]",
+       "connection": "[the Connection line — relational/interpersonal guidance: who you're in contact with, what the sky says about relationships, collaboration, or people today, stripped of prefix]",
+       "body": "[the Body line — physical, nervous system, energy, movement guidance, stripped of prefix]"
      },
      "active_transits": [
        // Include ALL transit-to-natal aspects from positions-today.json where orb_degrees ≤ 1.5
@@ -266,7 +266,9 @@ Go to `claude.ai/code/routines` → find routine `trig_01Rtm1xSST2GbdCZh896F2vP`
    □ Transit board is a markdown table with columns: transit | orb | [essence/link].
    □ Long-term transits in the board have a wikilink → [[breakdown-slug]], not a full description.
    □ Prose body has no section headers — flowing paragraphs only.
-   □ Today block has ≤3 items, each is one line, each has a category label.
+   □ Today block has ≤3 items, each is one line. Category labels are: Work / Connection / Body.
+     (Work = career/professional action; Connection = relationships/people/collaboration; Body = physical/nervous system)
+     Do NOT use the old labels Business or Creative — those are retired as of June 12, 2026.
    □ Pull quote (if present) is a > blockquote and is genuinely earned — not routine.
 
    VOICE:
