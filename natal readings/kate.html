@@ -1,833 +1,835 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kate Penkethman — Natal Chart Reading</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    :root {
-      --bg: #0a0614; --surface: #150a25; --surface-2: #1e1038;
-      --gold: #c9a84c; --gold-dim: rgba(201,168,76,0.11); --gold-mid: rgba(201,168,76,0.28);
-      --rose: #d4a0b5; --rose-dim: rgba(212,160,181,0.11); --rose-mid: rgba(212,160,181,0.28);
-      --plum: #7b4fa6; --plum-dim: rgba(123,79,166,0.20); --plum-mid: rgba(123,79,166,0.35); --plum-bright: #b482d2;
-      --teal: #5bb8a8; --teal-dim: rgba(91,184,168,0.12); --teal-mid: rgba(91,184,168,0.28); --teal-bright: #7ecfc2;
-      --text: #fdf6e8; --muted: rgba(253,246,232,0.58); --muted-2: rgba(253,246,232,0.30);
-      --muted-3: rgba(253,246,232,0.12); --border: rgba(180,130,210,0.18);
-    }
-    html { background: var(--bg); color: var(--text); scroll-behavior: smooth; }
-    body { background: var(--bg); font-family: 'Inter', sans-serif; line-height: 1.6;
-           max-width: 900px; margin: 0 auto; padding: 0; }
-    p { color: var(--muted); font-size: 0.93rem; line-height: 1.82; margin: 0 0 10px; }
-    p:last-child { margin-bottom: 0; }
-    strong { color: var(--rose); font-weight: 600; }
-    em { color: rgba(253,246,232,0.82); font-style: italic; }
-
-    /* ── Hero ── */
-    .hero {
-      position: relative; width: 100%; padding: 96px 70px 88px; text-align: center;
-      overflow: hidden;
-      background: radial-gradient(ellipse at 38% 28%, #2a1245 0%, #150a25 42%, #0a0614 100%);
-    }
-    .hero-stars { position: absolute; inset: 0; pointer-events: none; }
-    .hero-border-outer { position: absolute; top: 22px; left: 22px; right: 22px; bottom: 22px;
-                         border: 1px solid rgba(180,130,210,0.30); pointer-events: none; }
-    .hero-border-inner { position: absolute; top: 32px; left: 32px; right: 32px; bottom: 32px;
-                         border: 1px solid rgba(180,130,210,0.13); pointer-events: none; }
-    .corner { position: absolute; font-family: 'Cormorant Garamond', serif; font-size: 17px;
-              color: var(--gold); opacity: 0.78; }
-    .corner.tl { top: 12px; left: 12px; } .corner.tr { top: 12px; right: 12px; }
-    .corner.bl { bottom: 12px; left: 12px; } .corner.br { bottom: 12px; right: 12px; }
-    .hero-col { position: absolute; top: 50%; transform: translateY(-50%); pointer-events: none; }
-    .hero-col.left { left: 44px; } .hero-col.right { right: 44px; }
-    .hero-label { font-family: 'Inter', sans-serif; font-size: 0.68rem; font-weight: 600;
-                  letter-spacing: 0.34em; text-transform: uppercase; color: var(--rose);
-                  opacity: 0.72; margin-bottom: 28px; position: relative; }
-    .hero-name { font-family: 'Cormorant Garamond', serif; font-size: clamp(48px,8vw,96px);
-                 font-weight: 300; line-height: 0.96; color: var(--text); letter-spacing: 0.05em;
-                 margin-bottom: 22px; position: relative; }
-    .hero-ornament { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem;
-                     letter-spacing: 0.55em; color: var(--gold); opacity: 0.55;
-                     margin-bottom: 36px; position: relative; padding-left: 0.55em; }
-    .hero-data { display: flex; justify-content: center; gap: 36px; flex-wrap: wrap; position: relative; }
-    .hero-datum-label { font-family: 'Inter', sans-serif; font-size: 0.60rem; letter-spacing: 0.22em;
-                        text-transform: uppercase; color: var(--muted-2); margin-bottom: 5px; }
-    .hero-datum-value { font-family: 'Cormorant Garamond', serif; font-size: 1.08rem;
-                        color: var(--gold); letter-spacing: 0.06em; }
-
-    /* ── Dividers ── */
-    .cel-divider { display: flex; align-items: center; gap: 14px; margin: 52px 44px 0; }
-    .cel-rule { flex: 1; height: 1px; }
-    .cel-rule.left  { background: linear-gradient(90deg, transparent, var(--gold-mid)); }
-    .cel-rule.right { background: linear-gradient(90deg, var(--gold-mid), transparent); }
-    .cel-mark { font-family: 'Cormorant Garamond', serif; font-size: 0.85rem; letter-spacing: 0.55em;
-                color: var(--gold); opacity: 0.50; padding-left: 0.55em; }
-    .teal-divider { display: flex; align-items: center; gap: 14px; margin: 52px 44px 0; }
-    .teal-rule { flex: 1; height: 1px; }
-    .teal-rule.left  { background: linear-gradient(90deg, transparent, var(--teal-mid)); }
-    .teal-rule.right { background: linear-gradient(90deg, var(--teal-mid), transparent); }
-    .teal-mark { font-family: 'Cormorant Garamond', serif; font-size: 0.85rem; letter-spacing: 0.55em;
-                 color: var(--teal-bright); opacity: 0.52; padding-left: 0.55em; }
-
-    /* ── Section wrapper ── */
-    .section-wrap { padding: 44px 44px 0; }
-    .section-eyebrow { font-family: 'Inter', sans-serif; font-size: 0.62rem; font-weight: 600;
-                       letter-spacing: 0.28em; text-transform: uppercase; color: var(--plum-bright);
-                       margin-bottom: 8px; }
-    .section-title { font-family: 'Cormorant Garamond', serif; font-size: 1.65rem; font-weight: 400;
-                     color: var(--gold); letter-spacing: 0.04em; margin-bottom: 22px; }
-
-    /* ── Identity Trio ── */
-    .trio { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
-    .trio-card {
-      background: radial-gradient(ellipse at 50% 0%, rgba(42,18,69,0.85) 0%, var(--surface) 60%);
-      border: 1px solid var(--border); border-radius: 10px;
-      padding: 30px 22px 26px; text-align: center; position: relative; overflow: hidden;
-    }
-    .trio-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; }
-    .trio-card.sun::before  { background: linear-gradient(90deg, transparent, var(--gold), transparent); }
-    .trio-card.moon::before { background: linear-gradient(90deg, transparent, var(--plum-bright), transparent); }
-    .trio-card.asc::before  { background: linear-gradient(90deg, transparent, var(--rose), transparent); }
-    .trio-card::after {
-      content: ''; position: absolute; top: 0; left: 50%;
-      transform: translateX(-50%); width: 60%; height: 60px;
-      border-radius: 50%; opacity: 0.12; filter: blur(20px);
-    }
-    .trio-card.sun::after  { background: var(--gold); }
-    .trio-card.moon::after { background: var(--plum-bright); }
-    .trio-card.asc::after  { background: var(--rose); }
-    .trio-glyph { display: block; font-size: 2.1rem; margin-bottom: 10px; position: relative; }
-    .trio-card.sun .trio-glyph { color: var(--gold); }
-    .trio-card.moon .trio-glyph { color: var(--plum-bright); }
-    .trio-card.asc .trio-glyph { color: var(--rose); }
-    .trio-label { font-family: 'Inter', sans-serif; font-size: 0.60rem; font-weight: 600;
-                  letter-spacing: 0.26em; text-transform: uppercase; color: var(--muted-2);
-                  margin-bottom: 10px; position: relative; }
-    .trio-placement { font-family: 'Cormorant Garamond', serif; font-size: 1.55rem; font-weight: 400;
-                      line-height: 1.15; margin-bottom: 6px; position: relative; letter-spacing: 0.02em; }
-    .trio-card.sun  .trio-placement { color: var(--gold); }
-    .trio-card.moon .trio-placement { color: var(--plum-bright); }
-    .trio-card.asc  .trio-placement { color: var(--rose); }
-    .trio-house { font-size: 0.68rem; color: var(--muted-2); margin-bottom: 18px;
-                  letter-spacing: 0.06em; position: relative; }
-    .trio-rule { width: 36px; height: 1px; margin: 0 auto 16px; position: relative; }
-    .trio-card.sun  .trio-rule { background: var(--gold-mid); }
-    .trio-card.moon .trio-rule { background: var(--plum-mid); }
-    .trio-card.asc  .trio-rule { background: var(--rose-mid); }
-    .trio-tagline { font-family: 'Cormorant Garamond', serif; font-size: 0.96rem; font-style: italic;
-                    color: var(--muted); line-height: 1.55; position: relative; }
-
-    /* ── Chart Signature ── */
-    .sig-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-    .sig-item { background: radial-gradient(ellipse at 0% 50%, rgba(123,79,166,0.14) 0%, rgba(21,10,37,0.80) 60%);
-                border: 1px solid rgba(123,79,166,0.18); border-radius: 8px; padding: 16px 18px; }
-    .sig-label { font-family: 'Inter', sans-serif; font-size: 0.55rem; font-weight: 600;
-                 letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted-2);
-                 margin-bottom: 4px; }
-    .sig-value { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; color: var(--gold);
-                 letter-spacing: 0.02em; margin-bottom: 4px; }
-    .sig-note { font-size: 0.78rem; color: var(--muted); line-height: 1.65; }
-
-    /* ── Planets Strip ── */
-    .planets-wrap {
-      background: radial-gradient(ellipse at 50% 0%, rgba(42,18,69,0.55) 0%, rgba(21,10,37,0.70) 100%);
-      border: 1px solid var(--border); border-radius: 10px; overflow: hidden;
-    }
-    .planets-table { width: 100%; border-collapse: collapse; font-size: 0.84rem; }
-    .planets-table th { font-family: 'Inter', sans-serif; font-size: 0.55rem; font-weight: 600;
-                        letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted-2);
-                        padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--border); }
-    .planets-table td { padding: 9px 14px; border-bottom: 1px solid rgba(180,130,210,0.07);
-                        color: var(--muted); vertical-align: middle; }
-    .planets-table tr:last-child td { border-bottom: none; }
-    .planets-table tbody tr:nth-child(even) td { background: rgba(253,246,232,0.025); }
-    .planet-glyph { color: var(--gold); font-size: 0.95rem; opacity: 0.80; }
-    .planet-name { color: var(--text); font-weight: 500; font-size: 0.82rem; }
-    .house-badge { display: inline-block; background: var(--surface-2); border: 1px solid var(--border);
-                   border-radius: 4px; padding: 1px 7px; font-size: 0.70rem; color: var(--muted-2);
-                   font-family: 'Inter', sans-serif; letter-spacing: 0.06em; }
-    .retro-badge { display: inline-block; background: rgba(212,160,181,0.12); border: 1px solid rgba(212,160,181,0.22);
-                   border-radius: 4px; padding: 1px 6px; font-size: 0.68rem; color: var(--rose);
-                   font-family: 'Inter', sans-serif; margin-left: 4px; }
-
-    /* ── Aspects Strip ── */
-    .aspect-row { display: flex; align-items: center; gap: 12px; padding: 9px 14px;
-                  background: var(--surface); border-radius: 7px; margin-bottom: 6px;
-                  border-left: 2px solid; }
-    .aspect-row.flow  { border-color: var(--gold); }
-    .aspect-row.conj  { border-color: var(--plum-bright); }
-    .aspect-row.tension { border-color: var(--rose); }
-    .aspect-row.minor { border-color: var(--muted-3); }
-    .asp-planets { font-family: 'Inter', sans-serif; font-size: 0.78rem; color: var(--text);
-                   font-weight: 500; min-width: 200px; }
-    .asp-type { font-size: 0.72rem; color: var(--muted); min-width: 90px; }
-    .asp-orb-wrap { flex: 1; display: flex; align-items: center; gap: 8px; }
-    .asp-orb-bar-bg { flex: 1; height: 4px; background: var(--muted-3); border-radius: 2px; }
-    .asp-orb-bar { height: 4px; border-radius: 2px; }
-    .flow .asp-orb-bar { background: var(--gold); }
-    .conj .asp-orb-bar { background: var(--plum-bright); }
-    .tension .asp-orb-bar { background: var(--rose); }
-    .minor .asp-orb-bar { background: var(--muted-2); }
-    .asp-orb-label { font-family: 'Inter', sans-serif; font-size: 0.68rem; color: var(--muted-2);
-                     min-width: 34px; text-align: right; }
-
-    /* ── Deep Dive Sections ── */
-    .dive { margin-bottom: 14px; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
-    .dive::before { content: ''; display: block; height: 2px; width: 100%; }
-    .dive.gold::before  { background: linear-gradient(90deg, transparent 0%, var(--gold) 40%, var(--gold) 60%, transparent 100%); }
-    .dive.rose::before  { background: linear-gradient(90deg, transparent 0%, var(--rose) 40%, var(--rose) 60%, transparent 100%); }
-    .dive.plum::before  { background: linear-gradient(90deg, transparent 0%, var(--plum-bright) 40%, var(--plum-bright) 60%, transparent 100%); }
-    .dive.teal::before  { background: linear-gradient(90deg, transparent 0%, var(--teal-bright) 40%, var(--teal-bright) 60%, transparent 100%); }
-    .dive.muted::before { background: linear-gradient(90deg, transparent 0%, var(--muted-2) 40%, var(--muted-2) 60%, transparent 100%); }
-
-    .dive-head { padding: 28px 32px 22px; display: flex; align-items: flex-start; gap: 20px;
-                 border-bottom: 1px solid; }
-    .dive.gold  .dive-head { background: radial-gradient(ellipse at 20% 50%, rgba(201,168,76,0.22) 0%, rgba(42,18,69,0.80) 55%, #0a0614 100%);
-                               border-color: rgba(201,168,76,0.18); }
-    .dive.rose  .dive-head { background: radial-gradient(ellipse at 20% 50%, rgba(212,160,181,0.20) 0%, rgba(42,18,69,0.80) 55%, #0a0614 100%);
-                               border-color: rgba(212,160,181,0.18); }
-    .dive.plum  .dive-head { background: radial-gradient(ellipse at 20% 50%, rgba(123,79,166,0.28) 0%, rgba(42,18,69,0.80) 55%, #0a0614 100%);
-                               border-color: rgba(123,79,166,0.22); }
-    .dive.teal  .dive-head { background: radial-gradient(ellipse at 20% 50%, rgba(91,184,168,0.20) 0%, rgba(42,18,69,0.80) 55%, #0a0614 100%);
-                               border-color: rgba(91,184,168,0.18); }
-    .dive.muted .dive-head { background: radial-gradient(ellipse at 20% 50%, rgba(180,130,210,0.12) 0%, rgba(21,10,37,0.85) 55%, #0a0614 100%);
-                               border-color: rgba(180,130,210,0.10); }
-
-    .dive-icon { font-family: 'Cormorant Garamond', serif; font-size: 2.4rem; flex-shrink: 0;
-                 line-height: 1; margin-top: 2px; }
-    .dive.gold  .dive-icon { color: var(--gold); }
-    .dive.rose  .dive-icon { color: var(--rose); }
-    .dive.plum  .dive-icon { color: var(--plum-bright); }
-    .dive.teal  .dive-icon { color: var(--teal-bright); }
-    .dive.muted .dive-icon { color: var(--muted-2); }
-
-    .dive-eyebrow { font-family: 'Inter', sans-serif; font-size: 0.60rem; font-weight: 600;
-                    letter-spacing: 0.28em; text-transform: uppercase; margin-bottom: 8px; opacity: 0.65; }
-    .dive.gold  .dive-eyebrow { color: var(--gold); }
-    .dive.rose  .dive-eyebrow { color: var(--rose); }
-    .dive.plum  .dive-eyebrow { color: var(--plum-bright); }
-    .dive.teal  .dive-eyebrow { color: var(--teal-bright); }
-    .dive.muted .dive-eyebrow { color: var(--muted-2); }
-
-    .dive-title { font-family: 'Cormorant Garamond', serif; font-size: 1.75rem; font-weight: 400;
-                  line-height: 1.15; letter-spacing: 0.03em; margin-bottom: 10px; }
-    .dive.gold  .dive-title { color: var(--gold); }
-    .dive.rose  .dive-title { color: var(--rose); }
-    .dive.plum  .dive-title { color: var(--plum-bright); }
-    .dive.teal  .dive-title { color: var(--teal-bright); }
-    .dive.muted .dive-title { color: var(--text); }
-
-    .theme-tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 12px; }
-    .theme-tag { font-family: 'Inter', sans-serif; font-size: 0.62rem; font-weight: 600;
-                 letter-spacing: 0.13em; text-transform: uppercase; padding: 4px 11px;
-                 border-radius: 20px; border: 1px solid; }
-    .dive.gold  .theme-tag { background: rgba(201,168,76,0.08);  color: var(--gold);      border-color: rgba(201,168,76,0.30); }
-    .dive.rose  .theme-tag { background: rgba(212,160,181,0.07); color: var(--rose);      border-color: rgba(212,160,181,0.28); }
-    .dive.plum  .theme-tag { background: rgba(123,79,166,0.09);  color: var(--plum-bright); border-color: rgba(123,79,166,0.32); }
-    .dive.teal  .theme-tag { background: rgba(91,184,168,0.08);  color: var(--teal-bright); border-color: rgba(91,184,168,0.28); }
-    .dive.muted .theme-tag { background: rgba(180,130,210,0.06); color: var(--muted-2);   border-color: var(--muted-3); }
-
-    .dive-body { padding: 28px 32px 24px; background: rgba(10,6,20,0.55);
-                 display: flex; flex-direction: column; gap: 18px; }
-
-    .pullquote { font-family: 'Cormorant Garamond', serif; font-style: italic;
-                 font-size: 1.13rem; line-height: 1.65; padding: 11px 22px;
-                 border-left: 2px solid; border-radius: 0 5px 5px 0; }
-    .dive.gold  .pullquote { border-color: var(--gold);        background: var(--gold-dim);  color: var(--gold); }
-    .dive.rose  .pullquote { border-color: var(--rose);        background: var(--rose-dim);  color: var(--rose); }
-    .dive.plum  .pullquote { border-color: var(--plum-bright); background: var(--plum-dim);  color: var(--plum-bright); }
-    .dive.teal  .pullquote { border-color: var(--teal-bright); background: var(--teal-dim);  color: var(--teal-bright); }
-    .dive.muted .pullquote { border-color: var(--muted-2); background: rgba(180,130,210,0.05); color: var(--muted); }
-
-    /* ── Synastry section ── */
-    .synastry-contact { background: rgba(91,184,168,0.06); border: 1px solid rgba(91,184,168,0.16);
-                        border-radius: 8px; padding: 16px 20px; margin-bottom: 10px; }
-    .syn-planets { font-family: 'Cormorant Garamond', serif; font-size: 1.12rem;
-                   color: var(--teal-bright); margin-bottom: 6px; letter-spacing: 0.02em; }
-    .syn-orb { font-family: 'Inter', sans-serif; font-size: 0.62rem; color: rgba(91,184,168,0.55);
-               letter-spacing: 0.12em; margin-bottom: 10px; }
-    .syn-text { font-size: 0.88rem; color: var(--muted); line-height: 1.78; }
-
-    /* ── PDF save button ── */
-    .save-btn {
-      position: fixed; bottom: 32px; right: 32px; z-index: 999;
-      display: flex; align-items: center; gap: 10px; padding: 12px 22px;
-      background: radial-gradient(ellipse at 30% 50%, #2a1245 0%, #150a25 100%);
-      border: 1px solid rgba(201,168,76,0.45); border-radius: 40px; cursor: pointer;
-      font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 500;
-      letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold);
-      box-shadow: 0 4px 24px rgba(0,0,0,0.5), 0 0 0 1px rgba(201,168,76,0.10);
-      transition: border-color 0.2s, box-shadow 0.2s;
-    }
-    .save-btn:hover {
-      border-color: rgba(201,168,76,0.75);
-      box-shadow: 0 4px 32px rgba(0,0,0,0.6), 0 0 20px rgba(201,168,76,0.12);
-    }
-    .save-btn-icon { font-size: 1rem; opacity: 0.85; }
-
-    /* ── Footer ── */
-    .page-footer { text-align: center; padding: 48px 44px 64px;
-                   font-family: 'Inter', sans-serif; font-size: 0.68rem; color: var(--muted-2);
-                   letter-spacing: 0.10em; line-height: 1.9; }
-
-    /* ── Responsive ── */
-    @media (max-width: 680px) {
-      .hero { padding: 58px 22px 50px; }
-      .hero-col { display: none; }
-      .hero-border-outer { top: 14px; left: 14px; right: 14px; bottom: 14px; }
-      .hero-border-inner { top: 22px; left: 22px; right: 22px; bottom: 22px; }
-      .hero-name { font-size: clamp(36px,10vw,54px); }
-      .hero-data { gap: 18px; }
-      .cel-divider, .teal-divider { margin: 36px 18px 0; }
-      .section-wrap { padding: 28px 18px 0; }
-      .trio { grid-template-columns: 1fr; gap: 12px; }
-      .trio-card { padding: 22px 18px 18px; }
-      .sig-grid { grid-template-columns: 1fr; }
-      .dive-head { padding: 20px 20px 16px; gap: 12px; }
-      .dive-title { font-size: 1.45rem; }
-      .dive-body { padding: 20px 20px 16px; }
-      .save-btn { bottom: 18px; right: 18px; padding: 10px 16px; font-size: 0.68rem; }
-      .page-footer { padding: 32px 18px 44px; }
-    }
-
-    @media print {
-      html, body { background: var(--bg) !important; }
-      * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
-      .save-btn { display: none !important; }
-      @page { margin: 0; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Pathfinder · Kate</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/pathfinder-core.css">
+<style>
+/* ARCHETYPE CARD — Kate palette: rose + deep teal */
+.card-wc{background:
+  radial-gradient(ellipse at 18% 20%, rgba(192,112,144,0.65) 0%, transparent 44%),
+  radial-gradient(ellipse at 80% 18%, rgba(26,112,144,0.58) 0%, transparent 42%),
+  radial-gradient(ellipse at 85% 80%, rgba(20,100,130,0.52) 0%, transparent 45%),
+  radial-gradient(ellipse at 18% 82%, rgba(180,100,128,0.55) 0%, transparent 46%),
+  radial-gradient(ellipse at 52% 50%, rgba(80,60,100,0.30) 0%, transparent 40%),
+  radial-gradient(ellipse at 62% 90%, rgba(160,90,120,0.32) 0%, transparent 38%)}
+.card-back-wc{background:
+  radial-gradient(ellipse at 22% 72%, rgba(180,100,128,0.30) 0%, transparent 50%),
+  radial-gradient(ellipse at 78% 24%, rgba(26,112,144,0.24) 0%, transparent 46%),
+  radial-gradient(ellipse at 50% 50%, rgba(192,112,144,0.14) 0%, transparent 55%)}
+</style>
 </head>
 <body>
+<div class="app">
 
-<!-- ═══════════════════════════════════════════════════ HERO ══ -->
-<div class="hero">
-  <svg class="hero-stars" viewBox="0 0 900 560" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="62"  cy="78"  r="1.2" fill="#fff8ee" opacity="0.50"/>
-    <circle cx="198" cy="44"  r="0.9" fill="#fff8ee" opacity="0.38"/>
-    <circle cx="355" cy="66"  r="1.4" fill="#fff8ee" opacity="0.44"/>
-    <circle cx="510" cy="28"  r="0.8" fill="#c9a84c" opacity="0.58"/>
-    <circle cx="668" cy="54"  r="1.1" fill="#fff8ee" opacity="0.40"/>
-    <circle cx="808" cy="90"  r="1.3" fill="#fff8ee" opacity="0.48"/>
-    <circle cx="872" cy="38"  r="0.9" fill="#d4a0b5" opacity="0.42"/>
-    <circle cx="28"  cy="310" r="0.9" fill="#c9a84c" opacity="0.36"/>
-    <circle cx="878" cy="290" r="0.8" fill="#fff8ee" opacity="0.38"/>
-    <circle cx="44"  cy="462" r="1.1" fill="#fff8ee" opacity="0.30"/>
-    <circle cx="858" cy="440" r="0.9" fill="#c9a84c" opacity="0.38"/>
-    <circle cx="435" cy="516" r="0.8" fill="#d4a0b5" opacity="0.34"/>
-    <circle cx="122" cy="188" r="0.8" fill="#fff8ee" opacity="0.28"/>
-    <circle cx="762" cy="168" r="0.9" fill="#c9a84c" opacity="0.32"/>
-    <text x="128" y="136" font-size="12" fill="#c9a84c" opacity="0.60" text-anchor="middle" font-family="serif">✦</text>
-    <text x="758" y="156" font-size="8"  fill="#fff8ee" opacity="0.42" text-anchor="middle" font-family="serif">✧</text>
-    <text x="456" y="22"  font-size="7"  fill="#c9a84c" opacity="0.52" text-anchor="middle" font-family="serif">✦</text>
-    <text x="66"  y="390" font-size="8"  fill="#d4a0b5" opacity="0.38" text-anchor="middle" font-family="serif">✦</text>
-    <text x="836" y="376" font-size="7"  fill="#c9a84c" opacity="0.44" text-anchor="middle" font-family="serif">✧</text>
-    <text x="450" y="542" font-size="8"  fill="#d4a0b5" opacity="0.34" text-anchor="middle" font-family="serif">✦</text>
-    <circle cx="800" cy="118" r="80" fill="#c9a84c" opacity="0.04"/>
-    <circle cx="800" cy="118" r="42" fill="#c9a84c" opacity="0.05"/>
-    <circle cx="88"  cy="430" r="90" fill="#9b59b6" opacity="0.06"/>
-    <circle cx="100" cy="90"  r="60" fill="#d4a0b5" opacity="0.04"/>
-  </svg>
-  <div class="hero-border-outer"></div>
-  <div class="hero-border-inner"></div>
-  <div class="corner tl">✦</div>
-  <div class="corner tr">✦</div>
-  <div class="corner bl">✦</div>
-  <div class="corner br">✦</div>
-  <svg class="hero-col left" width="26" height="460" viewBox="0 0 26 460" xmlns="http://www.w3.org/2000/svg">
-    <line x1="13" y1="0" x2="13" y2="460" stroke="#b482d2" stroke-width="0.8" opacity="0.22"/>
-    <text x="13" y="52"  text-anchor="middle" font-size="15" fill="#c9a84c" opacity="0.68" font-family="serif">☽</text>
-    <text x="13" y="108" text-anchor="middle" font-size="10" fill="#fff8ee" opacity="0.46" font-family="serif">✦</text>
-    <text x="13" y="164" text-anchor="middle" font-size="14" fill="#c9a84c" opacity="0.56" font-family="serif">☉</text>
-    <circle cx="13" cy="206" r="1.5" fill="#d4a0b5" opacity="0.44"/>
-    <text x="13" y="254" text-anchor="middle" font-size="10" fill="#d4a0b5" opacity="0.52" font-family="serif">✧</text>
-    <text x="13" y="308" text-anchor="middle" font-size="15" fill="#fff8ee" opacity="0.30" font-family="serif">☾</text>
-    <text x="13" y="364" text-anchor="middle" font-size="10" fill="#c9a84c" opacity="0.46" font-family="serif">✦</text>
-    <circle cx="13" cy="402" r="1.2" fill="#fff8ee" opacity="0.36"/>
-    <text x="13" y="448" text-anchor="middle" font-size="11" fill="#c9a84c" opacity="0.42" font-family="serif">☉</text>
-  </svg>
-  <svg class="hero-col right" width="26" height="460" viewBox="0 0 26 460" xmlns="http://www.w3.org/2000/svg">
-    <line x1="13" y1="0" x2="13" y2="460" stroke="#b482d2" stroke-width="0.8" opacity="0.22"/>
-    <text x="13" y="52"  text-anchor="middle" font-size="10" fill="#fff8ee" opacity="0.46" font-family="serif">✦</text>
-    <text x="13" y="108" text-anchor="middle" font-size="15" fill="#c9a84c" opacity="0.62" font-family="serif">☾</text>
-    <text x="13" y="164" text-anchor="middle" font-size="10" fill="#d4a0b5" opacity="0.52" font-family="serif">✧</text>
-    <circle cx="13" cy="206" r="1.5" fill="#c9a84c" opacity="0.40"/>
-    <text x="13" y="254" text-anchor="middle" font-size="14" fill="#c9a84c" opacity="0.56" font-family="serif">☉</text>
-    <text x="13" y="308" text-anchor="middle" font-size="15" fill="#fff8ee" opacity="0.28" font-family="serif">☽</text>
-    <circle cx="13" cy="350" r="1.2" fill="#d4a0b5" opacity="0.42"/>
-    <text x="13" y="400" text-anchor="middle" font-size="10" fill="#c9a84c" opacity="0.52" font-family="serif">✦</text>
-    <text x="13" y="448" text-anchor="middle" font-size="11" fill="#fff8ee" opacity="0.38" font-family="serif">☉</text>
-  </svg>
-  <div class="hero-label">Natal Chart Reading</div>
-  <h1 class="hero-name">Kate Penkethman</h1>
-  <div class="hero-ornament">☽ ✦ ☉ ✦ ☾</div>
-  <div class="hero-data">
-    <div><div class="hero-datum-label">Born</div><div class="hero-datum-value">October 6, 1994</div></div>
-    <div><div class="hero-datum-label">Time</div><div class="hero-datum-value">7:30 AM EDT</div></div>
-    <div><div class="hero-datum-label">Place</div><div class="hero-datum-value">Long Branch, NJ</div></div>
-    <div><div class="hero-datum-label">Rising</div><div class="hero-datum-value">19° Libra</div></div>
+<header class="app-header">
+  <div class="header-left">
+    <div class="header-eyebrow">pathfinder &middot; kate</div>
   </div>
-</div>
+  <button class="key-btn" id="keyBtn" title="Open Chart Key">&#x2736;</button>
+</header>
 
-<!-- ══════════════════════════════════════ IDENTITY TRIO ══ -->
-<div class="cel-divider"><div class="cel-rule left"></div><div class="cel-mark">✦ ✦ ✦</div><div class="cel-rule right"></div></div>
-<div class="section-wrap">
-  <div class="section-eyebrow">The Three Pillars</div>
-  <div class="section-title">Identity at a Glance</div>
-  <div class="trio">
-    <div class="trio-card sun">
-      <span class="trio-glyph">☉</span>
-      <div class="trio-label">Sun</div>
-      <div class="trio-placement">13° Libra</div>
-      <div class="trio-house">12th House</div>
-      <div class="trio-rule"></div>
-      <div class="trio-tagline">The soul behind the veil. Beauty, balance, and connection as core drives, running from the inside out.</div>
+<div class="app-body">
+
+<!-- HOME -->
+<div id="panel-home">
+  <div class="home-inner">
+    <div class="home-sky-strip">
+      <span id="home-date"></span>
+      <span class="home-sky-dot"></span>
+      <span id="home-moon"></span>
     </div>
-    <div class="trio-card moon">
-      <span class="trio-glyph">☽</span>
-      <div class="trio-label">Moon</div>
-      <div class="trio-placement">1° Scorpio</div>
-      <div class="trio-house">1st House</div>
-      <div class="trio-rule"></div>
-      <div class="trio-tagline">Emotional world on the surface, visible in your presence, impossible to fully hide. All the way down, or not at all.</div>
+    <div class="home-greeting">
+      <div class="home-greeting-name">Kate</div>
+      <div class="home-greeting-sub">the whole ocean</div>
     </div>
-    <div class="trio-card asc">
-      <span class="trio-glyph">↑</span>
-      <div class="trio-label">Ascendant</div>
-      <div class="trio-placement">19° Libra</div>
-      <div class="trio-house">The Face You Lead With</div>
-      <div class="trio-rule"></div>
-      <div class="trio-tagline">Graceful, diplomatic, attuned to beauty. Behind that ease: the full weight of a Scorpio inner world most people don't anticipate.</div>
+    <div class="home-cards">
+
+      <button class="home-card home-card-hero hc-natal" onclick="goNatal()">
+        <div class="hc-top">
+          <div>
+            <div class="hc-label">The Constant</div>
+            <div class="hc-title">Natal chart</div>
+          </div>
+          <svg class="hc-hero-art" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="26" cy="26" r="23" fill="none" stroke="rgba(208,168,64,0.35)" stroke-width="0.7"/>
+            <circle cx="26" cy="26" r="16" fill="none" stroke="rgba(208,168,64,0.18)" stroke-width="0.5"/>
+            <circle cx="26" cy="26" r="3.5" fill="rgba(208,168,64,0.40)"/>
+            <polygon points="26,3 27.8,23.2 26,26 24.2,23.2" fill="rgba(208,168,64,0.80)"/>
+            <polygon points="26,49 24.2,28.8 26,26 27.8,28.8" fill="rgba(208,168,64,0.50)"/>
+            <polygon points="3,26 23.2,24.2 26,26 23.2,27.8" fill="rgba(208,168,64,0.50)"/>
+            <polygon points="49,26 28.8,27.8 26,26 28.8,24.2" fill="rgba(208,168,64,0.70)"/>
+          </svg>
+        </div>
+        <div class="hc-desc">Oct 6 1994 &middot; Long Branch, NJ &middot; Placidus</div>
+      </button>
+
+      <button class="home-card home-card-hero hc-daily" onclick="switchToPanel('daily',document.querySelector('[data-target=daily]'))">
+        <div class="hc-top">
+          <div>
+            <div class="hc-label">The Variable</div>
+            <div class="hc-title">Synastry with Jordan</div>
+          </div>
+          <svg class="hc-hero-art" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="26" cy="26" r="22" fill="none" stroke="rgba(74,159,212,0.18)" stroke-width="0.6"/>
+            <path d="M26 4A22 22 0 0 1 26 48A13 22 0 0 0 26 4Z" fill="rgba(74,159,212,0.22)"/>
+            <circle cx="26" cy="4" r="1.8" fill="rgba(74,159,212,0.30)"/>
+          </svg>
+        </div>
+        <div class="hc-desc">natal charts &middot; exact contacts</div>
+      </button>
+
+      <button class="home-card hc-wheel" onclick="switchToPanel('wheel',document.querySelector('[data-target=wheel]'))" style="min-height:90px">
+        <div class="hc-top">
+          <div>
+            <div class="hc-label">The Wheel</div>
+            <div class="hc-title">Lunar &middot; Seasonal &middot; The Sky</div>
+          </div>
+          <svg class="hc-hero-art" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="26" cy="26" r="22" fill="none" stroke="rgba(90,184,168,0.35)" stroke-width="0.7"/>
+            <circle cx="26" cy="26" r="14" fill="none" stroke="rgba(90,184,168,0.18)" stroke-width="0.5"/>
+            <line x1="26" y1="4" x2="26" y2="48" stroke="rgba(90,184,168,0.14)" stroke-width="0.4"/>
+            <line x1="4" y1="26" x2="48" y2="26" stroke="rgba(90,184,168,0.14)" stroke-width="0.4"/>
+            <circle cx="26" cy="4" r="2" fill="rgba(90,184,168,0.55)"/>
+            <circle cx="26" cy="26" r="3" fill="none" stroke="rgba(90,184,168,0.40)" stroke-width="0.7"/>
+          </svg>
+        </div>
+        <div class="hc-desc">wheel of the year &middot; lunar &middot; collective sky</div>
+      </button>
+
+      <button class="home-card hc-wheel" onclick="window.open('/workplace%20readings/sky-at-work.html','_blank')" style="min-height:90px">
+        <div class="hc-top">
+          <div>
+            <div class="hc-label">The Sky</div>
+            <div class="hc-title">Sky at Work</div>
+          </div>
+          <svg class="hc-hero-art" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="26" cy="26" r="22" fill="none" stroke="rgba(90,184,168,0.22)" stroke-width="0.7"/>
+            <circle cx="11" cy="15" r="1.5" fill="rgba(90,184,168,0.60)"/>
+            <circle cx="38" cy="11" r="1" fill="rgba(90,184,168,0.42)"/>
+            <circle cx="43" cy="32" r="1.5" fill="rgba(90,184,168,0.55)"/>
+            <circle cx="18" cy="41" r="1" fill="rgba(90,184,168,0.38)"/>
+            <circle cx="34" cy="37" r="2" fill="rgba(90,184,168,0.62)"/>
+            <circle cx="26" cy="19" r="1.2" fill="rgba(90,184,168,0.48)"/>
+          </svg>
+        </div>
+        <div class="hc-desc">collective transit reading &middot; weekly</div>
+      </button>
+
     </div>
   </div>
 </div>
 
-<!-- ════════════════════════════════════ CHART SIGNATURE ══ -->
-<div class="cel-divider"><div class="cel-rule left"></div><div class="cel-mark">✦ ✦ ✦</div><div class="cel-rule right"></div></div>
-<div class="section-wrap">
-  <div class="section-eyebrow">The Architecture</div>
-  <div class="section-title">Chart Signature</div>
-  <div class="sig-grid">
-    <div class="sig-item">
-      <div class="sig-label">Chart Ruler</div>
-      <div class="sig-value">Venus in Scorpio, 2nd House</div>
-      <div class="sig-note">Libra Ascendant is ruled by Venus, which lives in Scorpio in your 2nd house of values and self-worth. Your entire chart is steered by deep love and the pursuit of what genuinely matters.</div>
+<!-- NATAL -->
+<div id="panel-natal">
+  <nav class="natal-subnav" aria-label="Natal sections">
+    <button class="subnav-tab active" data-sub="chart" onclick="switchSub('chart',this)"><span class="sn-icon">&#x25EF;</span> Chart</button>
+    <button class="subnav-tab" data-sub="portrait" onclick="switchSub('portrait',this)"><span class="sn-icon">&#x2736;</span> Portrait</button>
+    <button class="subnav-tab" data-sub="signature" onclick="switchSub('signature',this)"><span class="sn-icon">&#x264E;&#xFE0E;</span> Signature</button>
+    <button class="subnav-tab" data-sub="constitution" onclick="switchSub('constitution',this)"><span class="sn-icon">&#x25D0;</span> Constitution</button>
+    <button class="subnav-tab" data-sub="formative" onclick="switchSub('formative',this)"><span class="sn-icon">&#x2644;</span> Formative</button>
+    <button class="subnav-tab" data-sub="shadow" onclick="switchSub('shadow',this)"><span class="sn-icon">&#x263D;</span> Shadow</button>
+    <button class="subnav-tab" data-sub="arc" onclick="switchSub('arc',this)"><span class="sn-icon">&#x260A;</span> Arc</button>
+    <button class="subnav-tab" data-sub="archetype" onclick="switchSub('archetype',this)"><span class="sn-icon">&#x2727;</span> Archetype</button>
+    <button class="subnav-tab" data-sub="poem" onclick="switchSub('poem',this)"><span class="sn-icon">&#x223F;</span> Poem</button>
+  </nav>
+
+  <div class="natal-body">
+
+<!-- CHART -->
+<div class="subpanel" id="sp-chart">
+  <div class="chart-wrap">
+    <svg id="chart-svg" viewBox="-22 -22 764 764" xmlns="http://www.w3.org/2000/svg" style="overflow:visible"></svg>
+    <div class="zoom-badge" id="zoom-badge">1&#xD7;</div>
+  </div>
+  <div class="big-three">
+    <div class="big-three-card">
+      <div class="b3-role">Sun</div>
+      <div class="b3-glyph">&#x2609;&#xFE0E;</div>
+      <div class="b3-deg">13&#xB0;00&#x27;</div>
+      <div class="b3-sign">Libra &middot; H12</div>
     </div>
-    <div class="sig-item">
-      <div class="sig-label">Dominant Stellium</div>
-      <div class="sig-value">Six Planets in Scorpio</div>
-      <div class="sig-note">Moon · Mercury · North Node · Venus · Jupiter · Pluto. Your inner architecture, emotional, mental, directional, values-based, expansive, and transformative, is entirely Scorpio.</div>
+    <div class="big-three-card">
+      <div class="b3-role">Moon</div>
+      <div class="b3-glyph">&#x263D;&#xFE0E;</div>
+      <div class="b3-deg">1&#xB0;20&#x27;</div>
+      <div class="b3-sign">Scorpio &middot; H1</div>
     </div>
-    <div class="sig-item">
-      <div class="sig-label">7th House Ruler</div>
-      <div class="sig-value">Mars in Leo, 10th House</div>
-      <div class="sig-note">The house of relationships is Aries-ruled, and Mars lives in Leo in the career house. Who you love and who you become professionally are not separate questions.</div>
-    </div>
-    <div class="sig-item">
-      <div class="sig-label">Soul Direction</div>
-      <div class="sig-value">North Node Scorpio (1st) · South Node Taurus (7th)</div>
-      <div class="sig-note">Moving toward depth, authentic power, and transformation. Moving away from comfort-seeking through relationships and staying in the known because it's safe.</div>
+    <div class="big-three-card">
+      <div class="b3-role">Rising</div>
+      <div class="b3-glyph">&#x264E;&#xFE0E;</div>
+      <div class="b3-deg">18&#xB0;37&#x27;</div>
+      <div class="b3-sign">Libra</div>
     </div>
   </div>
 </div>
 
-<!-- ═══════════════════════════════════ PLANETS STRIP ══ -->
-<div class="cel-divider"><div class="cel-rule left"></div><div class="cel-mark">✦ ✦ ✦</div><div class="cel-rule right"></div></div>
-<div class="section-wrap">
-  <div class="section-eyebrow">All Placements</div>
-  <div class="section-title">Natal Planets</div>
-  <div class="planets-wrap">
-    <table class="planets-table">
-      <thead>
-        <tr>
-          <th></th>
-          <th>Planet</th>
-          <th>Sign &amp; Degree</th>
-          <th>House</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td class="planet-glyph">☉</td><td class="planet-name">Sun</td><td>13° Libra</td><td><span class="house-badge">12th</span></td></tr>
-        <tr><td class="planet-glyph">☽</td><td class="planet-name">Moon</td><td>1° Scorpio</td><td><span class="house-badge">1st</span></td></tr>
-        <tr><td class="planet-glyph">☿</td><td class="planet-name">Mercury</td><td>6° Scorpio</td><td><span class="house-badge">1st</span></td></tr>
-        <tr><td class="planet-glyph">♀</td><td class="planet-name">Venus</td><td>17° Scorpio</td><td><span class="house-badge">2nd</span></td></tr>
-        <tr><td class="planet-glyph">♂</td><td class="planet-name">Mars</td><td>1° Leo</td><td><span class="house-badge">10th</span></td></tr>
-        <tr><td class="planet-glyph">♃</td><td class="planet-name">Jupiter</td><td>16° Scorpio</td><td><span class="house-badge">2nd</span></td></tr>
-        <tr><td class="planet-glyph">♄</td><td class="planet-name">Saturn</td><td>7° Pisces <span class="retro-badge">Rx</span></td><td><span class="house-badge">5th</span></td></tr>
-        <tr><td class="planet-glyph">♅</td><td class="planet-name">Uranus</td><td>22° Capricorn</td><td><span class="house-badge">4th</span></td></tr>
-        <tr><td class="planet-glyph">♆</td><td class="planet-name">Neptune</td><td>21° Capricorn</td><td><span class="house-badge">3rd</span></td></tr>
-        <tr><td class="planet-glyph">♇</td><td class="planet-name">Pluto</td><td>26° Scorpio</td><td><span class="house-badge">2nd</span></td></tr>
-        <tr><td class="planet-glyph">⚷</td><td class="planet-name">Chiron</td><td>19° Virgo</td><td><span class="house-badge">11th</span></td></tr>
-        <tr><td class="planet-glyph">☊</td><td class="planet-name">North Node</td><td>15° Scorpio</td><td><span class="house-badge">1st</span></td></tr>
-        <tr><td class="planet-glyph">☋</td><td class="planet-name">South Node</td><td>15° Taurus</td><td><span class="house-badge">7th</span></td></tr>
-        <tr><td class="planet-glyph">↑</td><td class="planet-name">Ascendant</td><td>19° Libra</td><td>—</td></tr>
-        <tr><td class="planet-glyph">☀</td><td class="planet-name">Midheaven</td><td>22° Cancer</td><td>—</td></tr>
-      </tbody>
-    </table>
-  </div>
-</div>
+<!-- PORTRAIT -->
+<div class="subpanel sp-reading" id="sp-portrait">
+  <div class="reading-inner accent-gold">
+    <div class="panel-heading">
+      <div class="panel-eyebrow-sm">natal reading</div>
+      <div class="panel-title-lg">Portrait</div>
+    </div>
 
-<!-- ════════════════════════════════════ ASPECTS STRIP ══ -->
-<div class="cel-divider"><div class="cel-rule left"></div><div class="cel-mark">✦ ✦ ✦</div><div class="cel-rule right"></div></div>
-<div class="section-wrap">
-  <div class="section-eyebrow">Tightest Natal Aspects · Sorted by Exactness</div>
-  <div class="section-title">Key Aspects</div>
+    <div class="sec-card">
+      <div class="sec-head">
+        <div class="sec-sign-glyph">&#x2736;</div>
+        <div class="sec-meta">
+          <div class="sec-eyebrow">NATAL OVERVIEW &middot; LIBRA RISING &middot; LIBRA SUN 12TH &middot; SCORPIO MOON 1ST &middot; 6 SCORPIO PLACEMENTS</div>
+          <div class="sec-title">The whole ocean</div>
+          <div class="sec-tagline">Libra on the surface; Scorpio running the depths</div>
+        </div>
+      </div>
+      <div class="kw-row">
+        <span class="kw">LIBRA RISING</span><span class="kw">LIBRA SUN 12TH</span><span class="kw">SCORPIO MOON 1ST</span><span class="kw">SCORPIO STELLIUM</span><span class="kw">WATER DEPTH</span>
+      </div>
+      <div class="sec-body">
+        <p>Kate arrives with Libra. The Libra Ascendant is designed to make rooms easier: graceful, attuned, careful with tone. The Sun in Libra in the 12th house adds an invisible dimension: the self is not fully present in the public register. It is offshore. Felt but not quite named.</p>
+        <p>What is immediately present is the Scorpio Moon in the 1st. People meet Kate and they are in Scorpio, even if they don&rsquo;t have language for it. The emotional intelligence, the permeability, the capacity for depth: these arrive before anything is said. The Libra surface is real. But what holds it up is water.</p>
+      </div>
+    </div>
 
-  <div class="aspect-row conj">
-    <div class="asp-planets">☉ Sun Q ♂ Mars</div>
-    <div class="asp-type">Quintile · exact</div>
-    <div class="asp-orb-wrap"><div class="asp-orb-bar-bg"><div class="asp-orb-bar" style="width:99%"></div></div><div class="asp-orb-label">0.04°</div></div>
-  </div>
-  <div class="aspect-row tension">
-    <div class="asp-planets">☽ Moon □ ♂ Mars</div>
-    <div class="asp-type">Square · exact</div>
-    <div class="asp-orb-wrap"><div class="asp-orb-bar-bg"><div class="asp-orb-bar" style="width:96%"></div></div><div class="asp-orb-label">0.31°</div></div>
-  </div>
-  <div class="aspect-row flow">
-    <div class="asp-planets">☿ Mercury △ ♄ Saturn</div>
-    <div class="asp-type">Trine</div>
-    <div class="asp-orb-wrap"><div class="asp-orb-bar-bg"><div class="asp-orb-bar" style="width:93%"></div></div><div class="asp-orb-label">0.59°</div></div>
-  </div>
-  <div class="aspect-row conj">
-    <div class="asp-planets">♀ Venus ☌ ♃ Jupiter</div>
-    <div class="asp-type">Conjunction</div>
-    <div class="asp-orb-wrap"><div class="asp-orb-bar-bg"><div class="asp-orb-bar" style="width:88%"></div></div><div class="asp-orb-label">0.99°</div></div>
-  </div>
-  <div class="aspect-row conj">
-    <div class="asp-planets">♃ Jupiter ☌ ☊ North Node</div>
-    <div class="asp-type">Conjunction</div>
-    <div class="asp-orb-wrap"><div class="asp-orb-bar-bg"><div class="asp-orb-bar" style="width:86%"></div></div><div class="asp-orb-label">1.10°</div></div>
-  </div>
-  <div class="aspect-row flow">
-    <div class="asp-planets">♀ Venus ✶ ⚷ Chiron</div>
-    <div class="asp-type">Sextile</div>
-    <div class="asp-orb-wrap"><div class="asp-orb-bar-bg"><div class="asp-orb-bar" style="width:80%"></div></div><div class="asp-orb-label">1.59°</div></div>
-  </div>
-  <div class="aspect-row conj">
-    <div class="asp-planets">♀ Venus ☌ ☊ North Node</div>
-    <div class="asp-type">Conjunction</div>
-    <div class="asp-orb-wrap"><div class="asp-orb-bar-bg"><div class="asp-orb-bar" style="width:74%"></div></div><div class="asp-orb-label">2.10°</div></div>
-  </div>
-  <div class="aspect-row flow">
-    <div class="asp-planets">♆ Neptune △ ⚷ Chiron</div>
-    <div class="asp-type">Trine</div>
-    <div class="asp-orb-wrap"><div class="asp-orb-bar-bg"><div class="asp-orb-bar" style="width:77%"></div></div><div class="asp-orb-label">1.84°</div></div>
-  </div>
-  <div class="aspect-row flow">
-    <div class="asp-planets">♂ Mars △ ♇ Pluto</div>
-    <div class="asp-type">Trine</div>
-    <div class="asp-orb-wrap"><div class="asp-orb-bar-bg"><div class="asp-orb-bar" style="width:41%"></div></div><div class="asp-orb-label">4.72°</div></div>
-  </div>
-  <div class="aspect-row flow">
-    <div class="asp-planets">☽ Moon △ ♄ Saturn</div>
-    <div class="asp-type">Trine</div>
-    <div class="asp-orb-wrap"><div class="asp-orb-bar-bg"><div class="asp-orb-bar" style="width:34%"></div></div><div class="asp-orb-label">5.30°</div></div>
-  </div>
-</div>
+    <div class="sep"><span class="sep-inner">Libra Sun &middot; 12th House</span></div>
 
-<!-- ═══════════════════════════════════ SECTION 1: IDENTITY ══ -->
-<div class="cel-divider"><div class="cel-rule left"></div><div class="cel-mark">✦ ✦ ✦</div><div class="cel-rule right"></div></div>
-<div class="section-wrap">
-  <div class="dive gold">
-    <div class="dive-head">
-      <div class="dive-icon">☉</div>
-      <div>
-        <div class="dive-eyebrow">Sun in Libra · 12th House</div>
-        <div class="dive-title">The Hidden Sun</div>
-        <div class="theme-tags">
-          <span class="theme-tag">private core</span>
-          <span class="theme-tag">soul behind the veil</span>
-          <span class="theme-tag">beauty from the inside</span>
+    <div class="sec-card">
+      <div class="sec-head">
+        <div class="sec-sign-glyph">&#x264E;</div>
+        <div class="sec-meta">
+          <div class="sec-eyebrow">SUN &middot; LIBRA 13&deg;00&prime; &middot; 12TH HOUSE</div>
+          <div class="sec-title">The Self That Waits</div>
+          <div class="sec-tagline">not shy; held in reserve by design</div>
+        </div>
+      </div>
+      <div class="kw-row">
+        <span class="kw">LIBRA</span><span class="kw">12TH HOUSE</span><span class="kw">INVISIBLE</span><span class="kw">RESERVES</span><span class="kw">DISSOLUTION</span>
+      </div>
+      <div class="sec-body">
+        <p>The Sun in the 12th is the self held in reserve. Not hidden out of fear: held, in the way a tide holds before it arrives. The Libra quality adds harmony seeking, the instinct to read what the space needs and calibrate accordingly. The 12th house means this reading is partly subconscious: Kate does it before she means to, before she has decided whether to.</p>
+        <p>The 12th house Sun also means that where Kate is most herself tends to be outside ordinary social registers: in dreams, in private creative work, in one-on-one intimacy, in service. The self that is visible in groups is not the whole one.</p>
+      </div>
+    </div>
+
+    <div class="dive-wrap">
+      <button class="dive-toggle" aria-expanded="false" onclick="toggleDive(this)">
+        <div class="dive-hd">
+          <div class="dive-lbl"><span class="dive-lbl-glyph">&#x264F;</span>Moon &middot; Scorpio 1&deg;20&prime; &middot; 1st House</div>
+          <span class="dive-arrow">&#x25BE;</span>
+        </div>
+      </button>
+      <div class="dive-body">
+        <div class="dive-content">
+          <p>The Scorpio Moon at 1&deg;20&prime; in the 1st is the emotional body at the threshold of the chart. It is the first thing the world encounters: the depth, the intensity, the quality of full presence that characterizes Scorpio Moon. Kate feels at the surface of her, even when she would prefer not to. The feeling does not stay internal. It is the first fact of her presence.</p>
+          <p>Scorpio Moon in the 1st makes Kate someone people feel they can bring their own depth to. The implicit permission is: you don&rsquo;t have to be shallow here. I&rsquo;m not going to need you to be. This is a profound gift and also a demand on the nervous system. Not every encounter needs to go this deep. But Scorpio Moon in the 1st doesn&rsquo;t always give her the choice.</p>
         </div>
       </div>
     </div>
-    <div class="dive-body">
-      <p>The 12th house is the house behind the veil: the realm of retreat, the unconscious, the hidden life of the self. Most people never guess this is where your Sun lives. You present as Libra, graceful, warm, diplomatically attuned to beauty and harmony. And that's real. But your Sun, the core light of who you are, operates privately, from behind the curtain, in a way that most people only catch glimpses of.</p>
-      <p>This placement has a specific quality: <strong>you are more than you appear.</strong> People who know you for years often feel like they're still discovering new rooms. That's not performance or withholding. It's the nature of a 12th house Sun. The self is genuinely interior, and it releases its depths slowly, on its own timing, only when it feels safe to be seen.</p>
-      <p>In Libra, the Sun's drive toward beauty, connection, and fairness is real, but it runs from an inward source rather than a visible one. You don't need to announce that you care about beauty; you simply bring it into the spaces you inhabit. The 12th house Sun is often quietly spiritual, drawn to the unseen and the felt rather than the stated and the literal. It can also carry an inherited confusion about identity, often around a parent figure who was in some way unavailable or whose presence felt more like a mystery than a given.</p>
-      <div class="pullquote">The more you allow your actual interior world to be seen, the more people get to know the person who was always there.</div>
-    </div>
-  </div>
 
-  <div class="dive rose">
-    <div class="dive-head">
-      <div class="dive-icon">↑</div>
-      <div>
-        <div class="dive-eyebrow">Ascendant in Libra · Scorpio Stellium in 1st</div>
-        <div class="dive-title">The Libra Face, the Scorpio Heart</div>
-        <div class="theme-tags">
-          <span class="theme-tag">the dissonance</span>
-          <span class="theme-tag">soft exterior, depth interior</span>
-          <span class="theme-tag">the surprise</span>
+    <div class="sep-stars">&#x2736; &nbsp; &#x2727; &nbsp; &#x2736;</div>
+  </div>
+</div>
+
+<!-- SIGNATURE -->
+<div class="subpanel sp-reading" id="sp-signature">
+  <div class="reading-inner accent-gold">
+    <div class="panel-heading">
+      <div class="panel-eyebrow-sm">chart signature &middot; dominant pattern</div>
+      <div class="panel-title-lg">Signature</div>
+    </div>
+
+    <div class="sec-card">
+      <div class="sec-head">
+        <div class="sec-sign-glyph">&#x264F;</div>
+        <div class="sec-meta">
+          <div class="sec-eyebrow">MOON &middot; MERCURY &middot; VENUS &middot; JUPITER &middot; NNODE &middot; PLUTO &middot; SIX PLACEMENTS IN SCORPIO/LIBRA 1ST</div>
+          <div class="sec-title">The Veil and What&rsquo;s Behind It</div>
+          <div class="sec-tagline">the chart is built for holding what others cannot yet see</div>
+        </div>
+      </div>
+      <div class="kw-row">
+        <span class="kw">SCORPIO STELLIUM</span><span class="kw">LIBRA STELLIUM</span><span class="kw">1ST HOUSE</span><span class="kw">DEPTH</span><span class="kw">KEEPER</span>
+      </div>
+      <div class="sec-body">
+        <p>Six placements in Libra and Scorpio, concentrated in the 1st house. Moon at 1&deg;20&prime; Scorpio. Mercury at 6&deg;02&prime; Scorpio. Venus at 17&deg;09&prime; Scorpio (conjunct Jupiter at 16&deg;09&prime; Scorpio). NNode at 15&deg;03&prime; Scorpio. Pluto at 26&deg;18&prime; Scorpio. All running through the 1st house. This is not a 1st house that asks what to say. It is a 1st house that is asking what to hold.</p>
+        <p>The dominant signature of this chart: Kate is built for depth work. Not by intention, by constitution. The things that other people keep below the surface are in Kate&rsquo;s 1st house. When someone looks at her, they are seeing the parts of themselves they tend to hide. This creates enormous intimacy and equally enormous responsibility. The Keeper of the Veil holds the threshold between what is visible and what is real.</p>
+        <p>Venus conjunct Jupiter in Scorpio in the 1st is the warmth inside the depth: the love function and the expansion function are together, and they are generous. The Scorpio register does not make Kate cold; it makes her the person whose love is serious, whose joy is real, whose generosity has been earned and therefore given fully.</p>
+      </div>
+    </div>
+
+    <div class="sep-stars">&#x2736; &nbsp; &#x2727; &nbsp; &#x2736;</div>
+  </div>
+</div>
+
+<!-- CONSTITUTION -->
+<div class="subpanel sp-reading" id="sp-constitution">
+  <div class="reading-inner accent-cerulean">
+    <div class="panel-heading">
+      <div class="panel-eyebrow-sm">core drives</div>
+      <div class="panel-title-lg">Constitution</div>
+    </div>
+
+    <div class="sec-card">
+      <div class="sec-head">
+        <div class="sec-sign-glyph">&#x2643;</div>
+        <div class="sec-meta">
+          <div class="sec-eyebrow">VENUS &middot; SCORPIO 17&deg;09&prime; &middot; 1ST HOUSE &middot; JUPITER &middot; SCORPIO 16&deg;09&prime; &middot; 1ST HOUSE CONJUNCT</div>
+          <div class="sec-title">Love That Has Scope</div>
+          <div class="sec-tagline">the expansion function in the same sign as the love function: generosity runs deep</div>
+        </div>
+      </div>
+      <div class="kw-row">
+        <span class="kw">VENUS-JUPITER</span><span class="kw">SCORPIO</span><span class="kw">CONJUNCTION</span><span class="kw">1ST HOUSE</span><span class="kw">MAGNANIMOUS</span>
+      </div>
+      <div class="sec-body">
+        <p>Venus at 17&deg;09&prime; conjunct Jupiter at 16&deg;09&prime; in Scorpio in the 1st. Venus-Jupiter in conjunction is naturally warm, generous, and open. In Scorpio, this generosity is not light-touch: it goes all the way in. When Kate loves something, the Jupiter in the same sign and degree amplifies the love into something that includes everyone around it. The generosity is real and the scale of it is larger than ordinary.</p>
+        <p>The 1st house placement means this is not private: the love and the warmth and the scale of Kate&rsquo;s care for people is present in her manner, in her warmth at the threshold. She does not have to intend to include people. She includes them by arriving.</p>
+      </div>
+    </div>
+
+    <div class="sep"><span class="sep-inner">Mars &middot; Gemini &middot; 9th House</span></div>
+
+    <div class="sec-card">
+      <div class="sec-head">
+        <div class="sec-sign-glyph">&#x264A;</div>
+        <div class="sec-meta">
+          <div class="sec-eyebrow">MARS &middot; GEMINI 1&deg;01&prime; &middot; 9TH HOUSE &middot; SATURN Rx &middot; PISCES 6&deg;38&prime; &middot; 5TH HOUSE</div>
+          <div class="sec-title">The Restless Drive</div>
+          <div class="sec-tagline">the mind needs range; the drive follows ideas to their horizon</div>
+        </div>
+      </div>
+      <div class="kw-row">
+        <span class="kw">MARS GEMINI</span><span class="kw">9TH HOUSE</span><span class="kw">RANGE</span><span class="kw">IDEAS</span><span class="kw">HORIZON</span>
+      </div>
+      <div class="sec-body">
+        <p>Mars in Gemini in the 9th: the drive is in ideas and language and range. Kate moves when she is intellectually activated. The 9th house adds the philosophical dimension: not just ideas, but ideas that go somewhere, that have implications, that connect into larger frameworks. Mars here is restless in a productive way, it doesn&rsquo;t need to settle before it can move.</p>
+        <p>Saturn retrograde in Pisces in the 5th is the creative discipline that was built in private. The 5th house is creative expression and pleasure; Saturn here means the creative life has required rigor and structure, has not been purely spontaneous. The retrograde internalized this rigor: Kate may not discuss how much discipline is in the creative work, but it is there.</p>
+      </div>
+    </div>
+
+    <div class="sep-stars">&#x2736; &nbsp; &#x2727; &nbsp; &#x2736;</div>
+  </div>
+</div>
+
+<!-- FORMATIVE -->
+<div class="subpanel sp-reading" id="sp-formative">
+  <div class="reading-inner accent-teal">
+    <div class="panel-heading">
+      <div class="panel-eyebrow-sm">chiron &middot; saturn &middot; early formation</div>
+      <div class="panel-title-lg">Formative</div>
+    </div>
+
+    <div class="sec-card">
+      <div class="sec-head">
+        <div class="sec-sign-glyph">&#x26B7;</div>
+        <div class="sec-meta">
+          <div class="sec-eyebrow">CHIRON &middot; VIRGO 18&deg;44&prime; &middot; 11TH HOUSE</div>
+          <div class="sec-title">The Community That Cost</div>
+          <div class="sec-tagline">where belonging was conditional on being useful</div>
+        </div>
+      </div>
+      <div class="kw-row">
+        <span class="kw">CHIRON VIRGO</span><span class="kw">11TH HOUSE</span><span class="kw">BELONGING</span><span class="kw">SERVICE</span><span class="kw">PRECISION</span>
+      </div>
+      <div class="sec-body">
+        <p>Chiron in Virgo in the 11th is a wound around belonging in communities. The Virgo quality here is precise: it is not just a wound about fitting in. It is a wound about whether Kate&rsquo;s particular kind of correctness, her precision, her standards, her instinct to do things right, was welcome in group contexts. Whether she was too much or not enough. Whether the community could hold her actual standards or required her to manage them down.</p>
+        <p>Chiron in the 11th can also show up as the person who heals others in community but doesn&rsquo;t quite feel the community is hers. The one who facilitates belonging without always experiencing it. The wound and the gift are the same function: Kate has particular access to what other people need to feel included, because she has lived the experience of not quite being.</p>
+      </div>
+    </div>
+
+    <div class="sep"><span class="sep-inner">Moon Square Mars</span></div>
+
+    <div class="sec-card">
+      <div class="sec-head">
+        <div class="sec-sign-glyph">&#x2642;</div>
+        <div class="sec-meta">
+          <div class="sec-eyebrow">MOON &middot; SCORPIO 1&deg;20&prime; 1ST SQUARE MARS &middot; GEMINI 1&deg;01&prime; 9TH &middot; 0.31&deg; ORB</div>
+          <div class="sec-title">Feeling and Drive at Exact Cross-Purpose</div>
+          <div class="sec-tagline">the emotional depth and the intellectual momentum are in friction</div>
+        </div>
+      </div>
+      <div class="kw-row">
+        <span class="kw">MOON-MARS SQUARE</span><span class="kw">0.31&deg;</span><span class="kw">SCORPIO</span><span class="kw">GEMINI</span><span class="kw">TENSION</span>
+      </div>
+      <div class="sec-body">
+        <p>Moon in Scorpio 1st square Mars in Gemini 9th at 0.31&deg. The feeling function (deep, total, Scorpionic in its intensity) is in near-exact square with the drive function (fast, curious, idea-following, restless). When Kate is activated emotionally, the Mars instinct is to follow a thought somewhere. When the Mars is in motion, the Moon pulls back toward the deep thing that isn&rsquo;t finished yet.</p>
+        <p>The formative experience of this aspect: feeling things deeply and having the drive want to move on before the depth has been honored. Or: following ideas with the Mars drive and the Scorpio Moon pulling the emotional bill at the end. The integration is learning to let the drive be slower on the things that matter, and let the feeling move when the mind has already arrived somewhere new.</p>
+      </div>
+    </div>
+
+    <div class="sep-stars">&#x2736; &nbsp; &#x2727; &nbsp; &#x2736;</div>
+  </div>
+</div>
+
+<!-- SHADOW -->
+<div class="subpanel sp-reading" id="sp-shadow">
+  <div class="reading-inner accent-cerulean">
+    <div class="panel-heading">
+      <div class="panel-eyebrow-sm">projection &middot; default patterns</div>
+      <div class="panel-title-lg">Shadow</div>
+    </div>
+
+    <div class="sec-card">
+      <div class="sec-head">
+        <div class="sec-sign-glyph">&#x2626;</div>
+        <div class="sec-meta">
+          <div class="sec-eyebrow">SUN LIBRA 12TH &middot; 12TH HOUSE INVISIBILITY &middot; VENUS-JUPITER SCORPIO 1ST</div>
+          <div class="sec-title">The Generous Invisible</div>
+          <div class="sec-tagline">when giving from the 1st house covers for the 12th house self</div>
+        </div>
+      </div>
+      <div class="kw-row">
+        <span class="kw">12TH HOUSE SUN</span><span class="kw">VENUS-JUPITER 1ST</span><span class="kw">INVISIBILITY</span><span class="kw">OVEREXTENSION</span>
+      </div>
+      <div class="sec-body">
+        <p>The shadow of Venus-Jupiter Scorpio in the 1st: the warmth and generosity that arrives so naturally at the threshold can become a way of keeping the 12th house Sun out of circulation. If Kate is always giving from the love-and-expansion 1st house, the 12th house self, the one that is not fully visible, the one that has its own desires and its own shape, can go unreceived for a long time without anyone noticing.</p>
+        <p>The Libra Sun in the 12th also carries a harmony-keeping function that can run to self-erasure. The instinct to make things easier for others is in a house that does not put its own needs on the table. The shadow is not that Kate is passive: it is that she may be generous in ways that don&rsquo;t get returned, and the 12th house Sun doesn&rsquo;t always know how to ask.</p>
+      </div>
+    </div>
+
+    <div class="sep"><span class="sep-inner">Mercury &middot; Trine Saturn</span></div>
+
+    <div class="sec-card">
+      <div class="sec-head">
+        <div class="sec-sign-glyph">&#x263F;</div>
+        <div class="sec-meta">
+          <div class="sec-eyebrow">MERCURY SCORPIO 6&deg;02&prime; TRINE SATURN Rx PISCES 6&deg;38&prime; &middot; 0.59&deg; ORB</div>
+          <div class="sec-title">The Inner Counsel</div>
+          <div class="sec-tagline">the mind and the discipline are already talking</div>
+        </div>
+      </div>
+      <div class="kw-row">
+        <span class="kw">MERCURY-SATURN TRINE</span><span class="kw">SCORPIO-PISCES</span><span class="kw">WATER</span><span class="kw">INTERNAL AUTHORITY</span>
+      </div>
+      <div class="sec-body">
+        <p>Mercury in Scorpio trine Saturn in Pisces at 0.59&deg. The mind (Scorpio: deep, investigative, interested in what is underneath) is in easy communication with the discipline (Saturn Rx Pisces: structure built through private creative effort). The shadow of this trine is the one that lives in gifts: Kate has a powerful internal counsel that already knows. The risk is that this internal authority is so complete that it doesn&rsquo;t always open to external input. The trine moves without friction; friction is sometimes informative.</p>
+      </div>
+    </div>
+
+    <div class="sep-stars">&#x2736; &nbsp; &#x2727; &nbsp; &#x2736;</div>
+  </div>
+</div>
+
+<!-- ARC -->
+<div class="subpanel sp-reading" id="sp-arc">
+  <div class="reading-inner accent-teal">
+    <div class="panel-heading">
+      <div class="panel-eyebrow-sm">north node &middot; through-line</div>
+      <div class="panel-title-lg">Arc</div>
+    </div>
+
+    <div class="sec-card">
+      <div class="sec-head">
+        <div class="sec-sign-glyph">&#x260A;</div>
+        <div class="sec-meta">
+          <div class="sec-eyebrow">NNODE &middot; SCORPIO 15&deg;03&prime; Rx &middot; 1ST HOUSE &middot; VENUS CONJUNCT JUPITER CONJUNCT NNODE</div>
+          <div class="sec-title">The Love and the Soul Direction Are One</div>
+          <div class="sec-tagline">the arc is already in the 1st house: the question is inhabiting it</div>
+        </div>
+      </div>
+      <div class="kw-row">
+        <span class="kw">NNODE SCORPIO 1ST</span><span class="kw">VENUS CONJUNCT</span><span class="kw">JUPITER CONJUNCT</span><span class="kw">ALIGNMENT</span>
+      </div>
+      <div class="sec-body">
+        <p>The North Node in Scorpio 1st is in the same degree cluster as Venus and Jupiter. The soul direction is not toward something far away. It is toward inhabiting the love and the generosity and the depth that are already in the 1st house more fully. More consistently. As the full self, not the self that gives from the threshold while the Sun waits in the 12th.</p>
+        <p>This is the chart that is already living its arc. The through-line is not a new direction; it is a more complete occupation of what is already present. Bringing the 12th house Sun into the same room as the 1st house Venus-Jupiter-NNode. Letting the self that waits be seen as much as the self that gives.</p>
+      </div>
+    </div>
+
+    <div class="sep"><span class="sep-inner">Through-Line</span></div>
+
+    <div class="throughline">
+      <p>Kate&rsquo;s chart asks one question across every house and every aspect: what does it mean to be as present as you already are?</p>
+      <p>The Scorpio Moon in the 1st is present. The Venus-Jupiter in the 1st is present. The North Node is in the 1st. The arc is not toward finding some new quality to develop. It is toward letting the Sun, which is currently offshore in the 12th, come in from the water and be seen in the same room as everything else.</p>
+      <p>The Keeper of the Veil holds the threshold between what is visible and what is real. The through-line is learning that the threshold can be crossed in both directions. The hidden self is not less real for being hidden. It is more.</p>
+      <span class="pull">The whole ocean. Not just the part above the line.</span>
+    </div>
+
+    <div class="sep"><span class="sep-inner">Synastry with Jordan</span></div>
+
+    <div id="arc-synastry-inject"></div>
+
+    <div class="sep-stars">&#x2736; &nbsp; &#x2727; &nbsp; &#x2736;</div>
+  </div>
+</div>
+
+<!-- ARCHETYPE -->
+<div class="subpanel sp-reading" id="sp-archetype">
+  <div class="reading-inner accent-rose">
+    <div class="panel-heading">
+      <div class="panel-eyebrow-sm">archetype</div>
+      <div class="panel-title-lg">The Keeper of the Veil</div>
+    </div>
+
+    <div class="tarot-outer">
+      <div class="tarot-card" onclick="this.classList.toggle('flipped')">
+        <div class="card-inner">
+
+          <div class="card-front">
+            <div class="card-bg"></div>
+            <div class="card-wc"></div>
+            <div class="card-grain"></div>
+            <div class="card-vignette"></div>
+            <div class="card-border-outer"></div>
+            <div class="card-border-inner"></div>
+            <div class="card-numeral">XVIII</div>
+
+            <div class="card-sigil-wrap">
+              <svg viewBox="0 0 210 220" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
+                <defs>
+                  <filter id="kVeilGlow" x="-40%" y="-40%" width="180%" height="180%">
+                    <feGaussianBlur stdDeviation="4"/>
+                  </filter>
+                  <filter id="kMoonGlow" x="-60%" y="-60%" width="220%" height="220%">
+                    <feGaussianBlur stdDeviation="3"/>
+                  </filter>
+                  <linearGradient id="kVeilLeft" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0%" stop-color="rgba(192,112,144,0.00)"/>
+                    <stop offset="100%" stop-color="rgba(192,112,144,0.55)"/>
+                  </linearGradient>
+                  <linearGradient id="kVeilRight" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0%" stop-color="rgba(26,112,144,0.55)"/>
+                    <stop offset="100%" stop-color="rgba(26,112,144,0.00)"/>
+                  </linearGradient>
+                </defs>
+                <!-- outer ring -->
+                <circle cx="105" cy="110" r="82" stroke="rgba(192,112,144,0.14)" stroke-width="0.6" fill="none"/>
+                <!-- veil panels -->
+                <rect x="20" y="90" width="82" height="70" fill="url(#kVeilLeft)" opacity="0.80"/>
+                <rect x="108" y="90" width="82" height="70" fill="url(#kVeilRight)" opacity="0.80"/>
+                <!-- veil horizon line -->
+                <line x1="20" y1="125" x2="190" y2="125" stroke="rgba(248,220,150,0.65)" stroke-width="1.2" filter="url(#kVeilGlow)"/>
+                <line x1="20" y1="125" x2="190" y2="125" stroke="rgba(248,220,150,0.85)" stroke-width="0.8"/>
+                <!-- threshold line -->
+                <line x1="38" y1="125" x2="172" y2="125" stroke="rgba(248,220,150,0.15)" stroke-width="0.4"/>
+                <!-- above veil (lighter, visible) -->
+                <rect x="20" y="55" width="170" height="68" fill="rgba(248,240,255,0.04)" stroke="none"/>
+                <!-- below veil (darker, depth) -->
+                <rect x="20" y="125" width="170" height="80" fill="rgba(15,15,40,0.18)" stroke="none"/>
+                <!-- veil drape lines (rose side) -->
+                <path d="M 20,90 Q 50,112 38,140 Q 30,158 20,160" stroke="rgba(192,112,144,0.35)" stroke-width="0.7" fill="none"/>
+                <path d="M 36,90 Q 62,115 52,142 Q 46,158 38,162" stroke="rgba(192,112,144,0.25)" stroke-width="0.5" fill="none"/>
+                <path d="M 52,90 Q 74,118 66,144 Q 60,160 54,164" stroke="rgba(192,112,144,0.18)" stroke-width="0.5" fill="none"/>
+                <!-- veil drape lines (teal side) -->
+                <path d="M 190,90 Q 160,112 172,140 Q 180,158 190,160" stroke="rgba(26,112,144,0.35)" stroke-width="0.7" fill="none"/>
+                <path d="M 174,90 Q 148,115 158,142 Q 164,158 172,162" stroke="rgba(26,112,144,0.25)" stroke-width="0.5" fill="none"/>
+                <path d="M 158,90 Q 136,118 144,144 Q 150,160 156,164" stroke="rgba(26,112,144,0.18)" stroke-width="0.5" fill="none"/>
+                <!-- veil center gap (threshold passage) -->
+                <line x1="102" y1="90" x2="102" y2="170" stroke="rgba(248,220,150,0.28)" stroke-width="0.5" stroke-dasharray="2 5"/>
+                <line x1="108" y1="90" x2="108" y2="170" stroke="rgba(248,220,150,0.28)" stroke-width="0.5" stroke-dasharray="2 5"/>
+                <!-- crescent moon above threshold -->
+                <circle cx="105" cy="62" r="18" fill="none" stroke="rgba(248,220,150,0.55)" stroke-width="1.0" filter="url(#kMoonGlow)"/>
+                <circle cx="105" cy="62" r="18" fill="none" stroke="rgba(248,220,150,0.60)" stroke-width="0.8"/>
+                <circle cx="115" cy="62" r="15" fill="rgba(15,10,30,0.95)"/>
+                <!-- moon surface -->
+                <circle cx="98" cy="57" r="2.5" fill="rgba(248,220,150,0.20)"/>
+                <circle cx="104" cy="68" r="1.8" fill="rgba(248,220,150,0.14)"/>
+                <circle cx="92" cy="64" r="1.2" fill="rgba(248,220,150,0.10)"/>
+                <!-- depth below veil: water ripples -->
+                <path d="M 38,140 Q 60,136 82,140 Q 104,144 126,140 Q 148,136 172,140" stroke="rgba(26,112,144,0.25)" stroke-width="0.6" fill="none"/>
+                <path d="M 48,152 Q 70,148 92,152 Q 114,156 136,152 Q 158,148 172,152" stroke="rgba(26,112,144,0.18)" stroke-width="0.5" fill="none"/>
+                <path d="M 55,163 Q 78,159 101,163 Q 124,167 147,163 Q 160,160 165,163" stroke="rgba(192,112,144,0.15)" stroke-width="0.5" fill="none"/>
+                <!-- threshold diamond center -->
+                <g transform="translate(105,125)">
+                  <rect x="-5" y="-5" width="10" height="10" transform="rotate(45)" stroke="rgba(248,220,150,0.70)" stroke-width="0.8" fill="rgba(248,220,150,0.08)"/>
+                  <circle r="1.5" fill="rgba(248,220,150,0.82)"/>
+                </g>
+                <!-- side accent stars -->
+                <circle cx="30"  cy="125" r="1.8" fill="rgba(192,112,144,0.55)"/>
+                <circle cx="180" cy="125" r="1.8" fill="rgba(26,112,144,0.55)"/>
+                <!-- corner stars -->
+                <g fill="rgba(208,168,64,0.28)">
+                  <path d="M16,16 L17.3,14 L18.6,16 L20.6,17.3 L18.6,18.6 L17.3,20.6 L16,18.6 L14,17.3Z"/>
+                  <path d="M190,16 L191.3,14 L192.6,16 L194.6,17.3 L192.6,18.6 L191.3,20.6 L190,18.6 L188,17.3Z"/>
+                  <path d="M16,202 L17.3,200 L18.6,202 L20.6,203.3 L18.6,204.6 L17.3,206.6 L16,204.6 L14,203.3Z"/>
+                  <path d="M190,202 L191.3,200 L192.6,202 L194.6,203.3 L192.6,204.6 L191.3,206.6 L190,204.6 L188,203.3Z"/>
+                </g>
+              </svg>
+            </div>
+
+            <div class="card-label">
+              <div class="card-name-front">The Keeper<br>of the Veil</div>
+              <div class="card-sub-front">Libra &middot; Scorpio &middot; Moon 1st</div>
+              <div class="card-hint"><span class="card-hint-pill">tap to reveal &#x21BB;</span></div>
+            </div>
+          </div>
+
+          <div class="card-back">
+            <div class="card-back-bg"></div>
+            <div class="card-back-wc"></div>
+            <div class="card-back-grain"></div>
+            <div class="card-back-border-outer"></div>
+            <div class="card-back-border-inner"></div>
+            <div class="card-back-content">
+              <div class="card-back-numeral">XVIII</div>
+              <svg class="card-back-sigil-mini" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="22" cy="22" r="18" stroke="rgba(208,168,64,0.30)" stroke-width="0.8" fill="none"/>
+                <circle cx="22" cy="15" r="7" fill="none" stroke="rgba(248,220,150,0.55)" stroke-width="0.8"/>
+                <circle cx="26" cy="15" r="5.5" fill="rgba(15,10,30,0.95)"/>
+                <line x1="4"  y1="25" x2="40" y2="25" stroke="rgba(248,220,150,0.65)" stroke-width="0.8"/>
+                <path d="M 8,32 Q 18,28 30,32 Q 36,35 40,32" stroke="rgba(26,112,144,0.50)" stroke-width="0.6" fill="none"/>
+                <circle cx="22" cy="25" r="1.5" fill="rgba(248,220,150,0.80)"/>
+              </svg>
+              <div class="card-back-name">The Keeper<br>of the Veil</div>
+              <div class="card-back-sub">Scorpio Stellium &middot; Libra Sun 12th &middot; Moon 1st</div>
+              <div class="card-back-rule"></div>
+              <div class="card-back-body">
+                <p>She holds the threshold between what is visible and what is real. This is not a position she chose. It is what she is built for.</p>
+                <p>The love is generous. The generosity is real. The depth runs further down than the love can currently carry. The arc is not toward finding some new capacity. It is toward letting the self that waits in the 12th be as present as the self that gives at the door.</p>
+                <p>The whole ocean. Not just the part above the line.</p>
+              </div>
+              <div class="card-back-tap">tap to close &#x21BA;</div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
-    <div class="dive-body">
-      <p>Your Ascendant is Libra: the face you naturally put forward is refined, harmonizing, and attuned to how things look and feel in a room. People often describe you as easy to be around. But your Moon and Mercury are both in Scorpio in the 1st house, which means <strong>the emotional and intellectual reality running underneath that Libra grace is pure Scorpio: intense, perceptive, loyal to the truth, and not interested in surface conversations.</strong></p>
-      <p>This creates a fascinating dynamic. You walk in and read the entire emotional undercurrent of a room before anyone has said a word. You know when something is being left unsaid. You notice the thing no one is naming. But you do this quietly, from behind the Libra exterior, which means people often don't realize how much you're perceiving until you say something unexpectedly precise.</p>
-      <p>The invitation in this placement is to let the Scorpio truth surface more readily rather than keeping it tucked behind Libra's diplomatic softness. Not every truth needs to be delivered harshly. Scorpio doesn't require that. But the people who know you best are the ones who've gotten to meet the Scorpio underneath, and they tend to be fiercely loyal once they do.</p>
+
+    <div style="height:16px"></div>
+  </div>
+</div>
+
+<!-- POEM -->
+<div class="subpanel sp-reading" id="sp-poem">
+  <div class="reading-inner accent-rose">
+    <div class="panel-heading">
+      <div class="panel-eyebrow-sm">a reading in verse</div>
+      <div class="panel-title-lg">Poem</div>
+    </div>
+
+    <div class="poem-outer">
+      <div class="poem-byline">A Reading in Verse &nbsp;&middot;&nbsp; Kate</div>
+      <div class="poem-wrap">
+        <p>You hold the threshold<br>
+        and people feel it: the permission<br>
+        to bring the heaviest thing.<br>
+        You take it. You have always taken it.<br>
+        That is the love. It is also the cost.</p>
+
+        <p>Somewhere in the 12th house<br>
+        the self that is yours, not theirs,<br>
+        waits for the room to be empty enough<br>
+        to come in from the water.</p>
+
+        <p>The whole ocean.<br>
+        Not just the part above the line.</p>
+      </div>
+    </div>
+
+    <div style="height:16px"></div>
+  </div>
+</div>
+
+  </div>
+</div>
+
+<!-- TRANSITS PANEL -->
+<div class="panel" id="panel-transits" style="overflow:hidden">
+  <div id="t-list" style="position:absolute;inset:0;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;transition:transform 0.28s cubic-bezier(0.4,0,0.2,1),opacity 0.22s ease">
+    <div class="reading-inner accent-amber" style="padding-top:24px">
+      <button onclick="backToToday()" style="display:flex;align-items:center;gap:8px;background:none;border:none;cursor:pointer;-webkit-tap-highlight-color:transparent;margin-bottom:20px;padding:0">
+        <span style="font-size:1rem;color:rgba(var(--cerulean-alpha),0.70)">&#x2190;</span>
+        <span style="font-size:0.52rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(var(--cerulean-alpha),0.60);font-family:'Inter',sans-serif;font-weight:500">Today</span>
+      </button>
+      <div class="panel-heading" style="margin-bottom:20px">
+        <div class="panel-eyebrow-sm" id="t-eyebrow">The Variable</div>
+        <div class="panel-title-lg">Transit Library</div>
+      </div>
+      <div class="t-biwheel-wrap">
+        <svg viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg" id="t-biwheel-svg"></svg>
+        <div class="t-biwheel-label" id="t-biwheel-lbl">natal &middot; live sky</div>
+      </div>
+      <div id="bw-detail"></div>
+      <div class="t-tabs">
+        <button class="t-tab active" data-ttab="now" onclick="switchTransitTab('now',this)">Now</button>
+        <button class="t-tab" data-ttab="returning" onclick="switchTransitTab('returning',this)">Returning</button>
+        <button class="t-tab" data-ttab="archive" onclick="switchTransitTab('archive',this)">Archive</button>
+      </div>
+      <div id="t-list-body" style="display:flex;flex-direction:column;gap:2px"></div>
+    </div>
+  </div>
+  <div id="t-detail" style="position:absolute;inset:0;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;transform:translateX(100%);transition:transform 0.28s cubic-bezier(0.4,0,0.2,1);background:var(--bg);z-index:2">
+    <div class="reading-inner accent-amber" style="padding-top:16px">
+      <button id="t-back" onclick="closeTransitDetail()" style="display:flex;align-items:center;gap:8px;background:none;border:none;cursor:pointer;-webkit-tap-highlight-color:transparent;margin-bottom:20px;padding:0">
+        <span style="font-size:1rem;color:rgba(var(--gold-alpha),0.70)">&#x2190;</span>
+        <span style="font-size:0.52rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(var(--gold-alpha),0.60);font-family:'Inter',sans-serif;font-weight:500">All Transits</span>
+      </button>
+      <div id="t-detail-body"></div>
     </div>
   </div>
 </div>
 
-<!-- ════════════════════════════════════ SECTION 2: MOON ══ -->
-<div class="cel-divider"><div class="cel-rule left"></div><div class="cel-mark">✦ ✦ ✦</div><div class="cel-rule right"></div></div>
-<div class="section-wrap">
-  <div class="dive plum">
-    <div class="dive-head">
-      <div class="dive-icon">☽</div>
-      <div>
-        <div class="dive-eyebrow">Moon in Scorpio · 1st House · Square Mars · Trine Saturn</div>
-        <div class="dive-title">The Deep Feeler</div>
-        <div class="theme-tags">
-          <span class="theme-tag">emotional depth</span>
-          <span class="theme-tag">psychic sensitivity</span>
-          <span class="theme-tag">visible feeling</span>
-          <span class="theme-tag">the undertow</span>
+<!-- DAILY PANEL -->
+<div class="panel reading-panel" id="panel-daily">
+  <div class="reading-inner accent-cerulean" id="daily-body"></div>
+</div>
+
+<!-- WHEEL PANEL -->
+<div class="panel" id="panel-wheel" style="overflow-y:auto;-webkit-overflow-scrolling:touch">
+  <div class="reading-inner" style="padding-top:28px;padding-bottom:calc(60px + env(safe-area-inset-bottom,0px) + 24px)">
+    <div style="margin-bottom:28px">
+      <div style="font-size:0.52rem;letter-spacing:0.22em;text-transform:uppercase;font-family:'Inter',sans-serif;color:rgba(90,184,168,0.65);margin-bottom:8px">The Wheel</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:300;color:var(--text);line-height:1.15">Lunar &middot; Seasonal &middot; The Sky</div>
+    </div>
+    <div style="margin-bottom:32px">
+      <div style="font-size:0.48rem;letter-spacing:0.20em;text-transform:uppercase;font-family:'Inter',sans-serif;color:rgba(90,184,168,0.55);margin-bottom:12px">&#x263D; Moon</div>
+      <div id="wheel-moon-card" style="background:rgba(90,184,168,0.06);border:1px solid rgba(90,184,168,0.18);border-radius:14px;padding:20px 18px">
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px">
+          <div>
+            <div style="font-size:0.48rem;letter-spacing:0.18em;text-transform:uppercase;font-family:'Inter',sans-serif;color:rgba(90,184,168,0.55);margin-bottom:6px" id="wheel-moon-phase-label">loading&hellip;</div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:300;color:var(--text);line-height:1.2" id="wheel-moon-sign-label"></div>
+          </div>
+          <div style="flex-shrink:0;opacity:0.70;width:36px;height:36px" id="wheel-moon-glyph"></div>
         </div>
+        <div style="margin-top:14px;font-size:0.82rem;color:var(--muted);line-height:1.7" id="wheel-moon-desc"></div>
       </div>
     </div>
-    <div class="dive-body">
-      <p>Moon in Scorpio in the 1st house is one of the most intensely felt Moon placements in the zodiac. Your emotional life is not tucked away somewhere private, it's on the surface of who you are (1st house), and it runs to extraordinary depths (Scorpio). You cannot easily hide how you feel, even when you try. The feeling shows up in your eyes, in your presence, in the quality of your attention. People who meet you briefly often leave with the sense that they encountered someone <em>real</em>.</p>
-      <p>Scorpio Moon doesn't do shallow emotion. When you feel something, it's not a ripple — it's the whole current. You likely know the difference between feelings you can name and the ones that live underneath, the ones you're still excavating weeks later. Scorpio Moon processes by going all the way down, and it takes as long as it takes. This is not a weakness. This is how you arrive at genuine insight instead of surface conclusions.</p>
-      <p><strong>Moon square Mars (0.31°, exact):</strong> your emotional world and your drive are in perpetual productive tension. At its best this creates tremendous vitality and a restlessness that powers real action. At its most activated it can feel like your feelings and your impulses are arguing, emotion pulling one way, the urge to do something pulling another. Learning to let the emotion exist without immediately needing to act on it is the ongoing work here.</p>
-      <p><strong>Moon trine Saturn (5°):</strong> the structural anchor for all that depth. Saturn in Pisces gives your emotional intensity a container. You don't just feel deeply; you can eventually build something from what you feel. Under pressure, you can hold steadiness in ways that surprise people who assumed the Scorpio depth meant instability.</p>
-      <div class="pullquote">You don't feel on the surface. You feel the whole thing, all the way down, and you come back up knowing more than when you went in.</div>
+    <div style="margin-bottom:32px">
+      <div style="font-size:0.48rem;letter-spacing:0.20em;text-transform:uppercase;font-family:'Inter',sans-serif;color:rgba(90,184,168,0.55);margin-bottom:12px">&#x1F33F; Seasons</div>
+      <div id="wheel-next-sabbat" style="background:rgba(90,184,168,0.08);border:1px solid rgba(90,184,168,0.25);border-radius:14px;padding:20px 18px;margin-bottom:14px">
+        <div style="font-size:0.48rem;letter-spacing:0.18em;text-transform:uppercase;font-family:'Inter',sans-serif;color:rgba(90,184,168,0.65);margin-bottom:6px">Next</div>
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:8px;margin-bottom:8px">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:300;color:var(--text)" id="next-sabbat-name"></div>
+          <div style="font-size:0.72rem;color:rgba(90,184,168,0.75);font-family:'Inter',sans-serif;flex-shrink:0" id="next-sabbat-days"></div>
+        </div>
+        <div style="font-size:0.80rem;color:var(--muted);margin-bottom:4px" id="next-sabbat-date"></div>
+        <div style="font-size:0.82rem;color:var(--muted);line-height:1.65;margin-top:8px" id="next-sabbat-theme"></div>
+      </div>
+      <div id="wheel-sabbat-list" style="display:flex;flex-direction:column;gap:6px"></div>
+    </div>
+    <div style="margin-bottom:16px">
+      <div style="font-size:0.48rem;letter-spacing:0.20em;text-transform:uppercase;font-family:'Inter',sans-serif;color:rgba(90,184,168,0.55);margin-bottom:12px">&#x2736; The Sky</div>
+      <button onclick="window.open('/workplace%20readings/sky-at-work.html','_blank')" style="width:100%;text-align:left;background:rgba(90,184,168,0.06);border:1px solid rgba(90,184,168,0.18);border-radius:14px;padding:20px 18px;cursor:pointer;-webkit-tap-highlight-color:transparent">
+        <div style="font-size:0.48rem;letter-spacing:0.18em;text-transform:uppercase;font-family:'Inter',sans-serif;color:rgba(90,184,168,0.65);margin-bottom:6px">Collective Transit Reading</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:300;color:var(--text);line-height:1.3;margin-bottom:8px">Sky at Work</div>
+        <div style="font-size:0.82rem;color:var(--muted);line-height:1.65;margin-bottom:12px">Transit-to-transit reading &mdash; the collective weather of the week. What everyone is moving through.</div>
+        <div style="font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;font-family:'Inter',sans-serif;color:rgba(90,184,168,0.60)">Open &#x2192; sky-at-work</div>
+      </button>
     </div>
   </div>
 </div>
 
-<!-- ═══════════════════════════════ SECTION 3: STELLIUM ══ -->
-<div class="cel-divider"><div class="cel-rule left"></div><div class="cel-mark">✦ ✦ ✦</div><div class="cel-rule right"></div></div>
-<div class="section-wrap">
-  <div class="dive gold">
-    <div class="dive-head">
-      <div class="dive-icon">♏</div>
-      <div>
-        <div class="dive-eyebrow">Moon · Mercury · North Node · Venus · Jupiter · Pluto in Scorpio</div>
-        <div class="dive-title">Your Entire Inner Architecture, One Sign</div>
-        <div class="theme-tags">
-          <span class="theme-tag">depth over surface</span>
-          <span class="theme-tag">transformation</span>
-          <span class="theme-tag">authentic power</span>
-          <span class="theme-tag">the long game</span>
-        </div>
-      </div>
-    </div>
-    <div class="dive-body">
-      <p>Six placements in Scorpio is extraordinary. Your emotional life (Moon), your mind (Mercury), your values and love (Venus), your expansion and wisdom (Jupiter), your soul direction (North Node), and your transformative depth (Pluto) all run through the same sign. <strong>Scorpio is not your sun sign or your moon sign alone. It is the entire operating system of your inner world.</strong></p>
-      <p><strong>Mercury in Scorpio (1st house):</strong> you think by going deep. Your mind is not built for survey-level analysis. It wants to excavate. You often know the truth of a situation before you can articulate why, and the process of trying to explain your knowing can be frustrating because the knowing arrived through feeling and depth, not logic. Scorpio Mercury takes longer than other Mercury placements to arrive at its conclusions. Those conclusions are more accurate for it.</p>
-      <p><strong>Venus conjunct Jupiter in Scorpio (1°, 2nd house):</strong> this is one of the most genuinely generous and abundant natal aspects possible. Venus and Jupiter are naturally complementary planets: love and expansion, beauty and wisdom, the personal and the universal. Their conjunction means these energies work together seamlessly in your chart. Your capacity to love is both deep and abundant. You don't love casually, but when you do love, you love with everything. <strong>Jupiter sitting on your Venus also means that love tends to find you, to expand what's around you, to bring genuine blessings in the areas of relationship and values.</strong></p>
-      <p><strong>Venus and Jupiter conjunct North Node (both within 2°):</strong> your soul's path in this lifetime, what you're moving toward, is literally defined by love and the things you value most. The North Node being conjunct both Venus and Jupiter means fulfilling your destiny has a deeply relational, Venusian quality. You become who you're meant to become through loving well, being loved well, and honoring what matters to you at the deepest level.</p>
-      <div class="pullquote">You are not an intense person trying to be chill. You are a Scorpio trying to be seen — and the more you let the depth show, the more you become who you actually are.</div>
-    </div>
+</div>
+
+<!-- BOTTOM NAV -->
+<nav class="app-nav" role="navigation" aria-label="App sections">
+  <button class="nav-tab active" data-target="home" onclick="switchPanel('home',this)">
+    <span class="nav-icon-t">&#x2736;</span>
+    <span class="nav-label">Home</span>
+  </button>
+  <button class="nav-tab" data-target="natal" onclick="switchPanel('natal',this)">
+    <span class="nav-icon">&#x2299;</span>
+    <span class="nav-label">The Constant</span>
+  </button>
+  <button class="nav-tab" data-target="daily" onclick="switchPanel('daily',this)">
+    <span class="nav-icon">&#x263D;&#xFE0E;</span>
+    <span class="nav-label">The Variable</span>
+  </button>
+  <button class="nav-tab" data-target="wheel" onclick="switchPanel('wheel',this)">
+    <span class="nav-icon">&#x2295;</span>
+    <span class="nav-label">The Wheel</span>
+  </button>
+</nav>
+
+</div>
+<div class="safe-btm" aria-hidden="true"></div>
+
+<!-- KEY DRAWER -->
+<div class="key-dimmer" id="keyDimmer"></div>
+<div class="key-overlay" id="keyOverlay" role="complementary" aria-label="Chart Key">
+  <div class="key-header">
+    <div class="key-title">Chart Key</div>
+    <button class="key-close" id="keyClose" aria-label="Close key">&#x2190;</button>
+  </div>
+  <div class="key-content">
+    <div class="key-section"><div class="key-sh">Zodiac Signs</div><div class="key-grid g6" id="kS"></div></div>
+    <div class="key-section"><div class="key-sh">Planets &amp; Points</div><div class="key-grid g6" id="kP"></div></div>
+    <div class="key-section"><div class="key-sh">Aspect Lines</div><div class="key-grid g3" id="kA"></div></div>
+    <div class="key-section"><div class="key-sh">Elements</div><div class="key-grid g4" id="kE"></div></div>
   </div>
 </div>
 
-<!-- ═════════════════════════════ SECTION 4: NORTH NODE ══ -->
-<div class="cel-divider"><div class="cel-rule left"></div><div class="cel-mark">✦ ✦ ✦</div><div class="cel-rule right"></div></div>
-<div class="section-wrap">
-  <div class="dive rose">
-    <div class="dive-head">
-      <div class="dive-icon">☊</div>
-      <div>
-        <div class="dive-eyebrow">North Node 1st House · South Node 7th House</div>
-        <div class="dive-title">From Safety to Depth</div>
-        <div class="theme-tags">
-          <span class="theme-tag">soul direction</span>
-          <span class="theme-tag">depth over comfort</span>
-          <span class="theme-tag">the real thing</span>
-        </div>
-      </div>
-    </div>
-    <div class="dive-body">
-      <p>The South Node in Taurus in the 7th house is the default gravity you're working against. The old pattern, the one that feels safe and familiar, is seeking stability and comfort through relationships. Staying in what's known. Not disrupting the peace even when the peace is actually a form of stagnation. Prioritizing security over truth because security feels like love.</p>
-      <p>The North Node in Scorpio in the 1st house is where you're being asked to go: authentic depth. <strong>Your soul's work is becoming more fully, honestly yourself,</strong> not through external achievement but through the internal willingness to see clearly, feel fully, and choose the real thing over the comfortable one. Scorpio North Node asks you to trust transformation. To let things end when they're over rather than holding them in amber. To risk vulnerability because depth requires it.</p>
-      <p>North Node in the 1st house is particularly personal: this isn't about achieving something external, it's about the ongoing act of becoming. Every time you say the true thing instead of the diplomatically comfortable thing, every time you choose depth over safety in a relationship, every time you let the Scorpio underneath the Libra exterior speak, that's your North Node activating. The growth is in the presence you bring, not in a destination you reach.</p>
-      <div class="pullquote">The most important relationship in your life is the one between who you actually are and who you let people see.</div>
-    </div>
+<!-- SYNASTRY SOURCE -->
+<div id="synastry-reading-src" style="display:none">
+  <div class="syn-reading-section">
+    <div class="syn-reading-title">Mars trine Sun &middot; 0.03&deg;</div>
+    <p>Kate&rsquo;s Mars in Gemini 9th is in near-perfect trine with Jordan&rsquo;s Sun in Sagittarius 6th at 0.03&deg.: the closest aspect in this synastry set. Kate&rsquo;s drive activates Jordan&rsquo;s identity. When Kate is in motion, following ideas, intellectually alive, Jordan&rsquo;s Sun feels recognized. Reciprocally: Jordan&rsquo;s Sagittarian Sun is the philosophical horizon that Kate&rsquo;s Gemini Mars keeps reaching toward. The trine is easy energy: the fire sign/air sign combination moves without friction. These two get each other moving without having to try.</p>
   </div>
-</div>
-
-<!-- ═══════════════════════════════════ SECTION 5: MARS ══ -->
-<div class="cel-divider"><div class="cel-rule left"></div><div class="cel-mark">✦ ✦ ✦</div><div class="cel-rule right"></div></div>
-<div class="section-wrap">
-  <div class="dive gold">
-    <div class="dive-head">
-      <div class="dive-icon">♂</div>
-      <div>
-        <div class="dive-eyebrow">Mars in Leo · 10th House · Trine Pluto · Quintile Sun</div>
-        <div class="dive-title">The Work Needs to Be Worth It</div>
-        <div class="theme-tags">
-          <span class="theme-tag">career ambition</span>
-          <span class="theme-tag">creative fire</span>
-          <span class="theme-tag">need for pride</span>
-          <span class="theme-tag">the public stage</span>
-        </div>
-      </div>
-    </div>
-    <div class="dive-body">
-      <p>Mars is the drive planet, and in Leo it needs to do work it can be proud of. Not proud in the ego-driven, look-at-me sense. Proud in the sense that the work has dignity, that it expresses something real, that you'd stand behind it in any room. The 10th house placement puts this drive in the public career arena: <strong>you are not built for behind-the-scenes competence without recognition.</strong> This doesn't mean you're attention-hungry; it means Leo energy withers when its efforts are invisible or unacknowledged.</p>
-      <p>Mars in Leo in the 10th also brings a creative quality to how you work. The drive isn't just toward productivity: it's toward expression, toward making something that carries your signature. When the work allows for that creative dimension, your energy is extraordinary. When it doesn't, something in you goes quiet.</p>
-      <p><strong>Mars trine Pluto (4.7°):</strong> your drive has deep strategic power behind it. When you put Mars and Pluto together you get ambition with staying power, not just burst-of-fire energy but the capacity to stay with something difficult until it transforms. This trine means your Leo pride in work has the intensity of Scorpio behind it. You can go very far in whatever direction you choose to go.</p>
-      <p><strong>Sun quintile Mars (0.04°, essentially exact):</strong> a quintile is a rare creative aspect that indicates an unusual, highly specific way of bringing two energies together. Your Sun (soul, identity) and Mars (drive, action) have a nearly perfect quintile relationship. This gives you a distinctive way of expressing yourself through action that doesn't follow conventional templates. The work you do best is the work nobody else would do quite the way you do it.</p>
-    </div>
+  <div class="syn-reading-section">
+    <div class="syn-reading-title">Chiron trine Uranus &amp; Neptune &middot; 0.26&deg;</div>
+    <p>Kate&rsquo;s Chiron in Virgo 11th trines Jordan&rsquo;s Uranus and Neptune in Capricorn at 0.26&deg. The wound (community belonging, precision that doesn&rsquo;t always fit) is in natural trine with Jordan&rsquo;s Uranus (disruption, original thought) and Neptune (idealism, dissolution of boundaries). Kate&rsquo;s wound resonates with the part of Jordan that runs outside the structure. The trine means this isn&rsquo;t friction: Chiron and Uranus/Neptune can talk. This is likely a friendship where Jordan&rsquo;s unconventionality gives Kate&rsquo;s wound room to breathe.</p>
   </div>
-</div>
-
-<!-- ══════════════════════════════════ SECTION 6: CHIRON ══ -->
-<div class="cel-divider"><div class="cel-rule left"></div><div class="cel-mark">✦ ✦ ✦</div><div class="cel-rule right"></div></div>
-<div class="section-wrap">
-  <div class="dive muted">
-    <div class="dive-head">
-      <div class="dive-icon">⚷</div>
-      <div>
-        <div class="dive-eyebrow">Chiron in Virgo · 11th House · Sextile Venus · Sextile North Node</div>
-        <div class="dive-title">Belonging Was Never Guaranteed</div>
-        <div class="theme-tags">
-          <span class="theme-tag">the belonging wound</span>
-          <span class="theme-tag">community worthiness</span>
-          <span class="theme-tag">healing through love</span>
-          <span class="theme-tag">wound as path</span>
-        </div>
-      </div>
-    </div>
-    <div class="dive-body">
-      <p>Chiron in the 11th house places the wound in community, friendship, and collective belonging. In Virgo, it takes a specific form: a wound around <em>being useful or correct enough</em> to belong. There may be an early felt sense that your place in groups was conditional, that you belonged when you contributed the right thing, knew the right things, showed up in the right way. The underlying fear: if you stopped being competent or helpful, would you still be wanted?</p>
-      <p>This wound often creates one of two responses: over-giving in community settings in order to earn belonging, or withdrawing from groups entirely because the standard feels impossible to meet. Virgo Chiron is particularly hard on itself. The inner critic here is relentlessly specific, noticing every way the self didn't measure up.</p>
-      <p><strong>Venus sextile Chiron (1.59°):</strong> your capacity for love and beauty provides direct medicine for this wound. Love, both given and received, softens the place in you that believes belonging must be earned. The sextile is a cooperative aspect: this isn't a fight, it's a flow. Your Venus actively helps your Chiron heal.</p>
-      <p><strong>Chiron sextile North Node (3.7°):</strong> the wound is on your path, not in the way of it. The healing of the belonging wound, learning to receive love and community freely without needing to justify your place, is part of how you fulfill your North Node in Scorpio. The wound itself becomes the territory you know most deeply, and eventually the territory you offer to others who need a guide.</p>
-      <div class="pullquote">You belong before you've done anything to deserve it. The wound knows this is true. The healing is believing it.</div>
-    </div>
+  <div class="syn-reading-section">
+    <div class="syn-reading-title">Moon conjunct Jupiter &middot; 0.67&deg;</div>
+    <p>Kate&rsquo;s Scorpio Moon in the 1st conjuncts Jordan&rsquo;s Jupiter in Scorpio 5th at 0.67&deg. The emotional depth that Kate carries at the threshold is in conjunction with Jordan&rsquo;s expansion function in the same sign. Jordan&rsquo;s Jupiter in Scorpio wants to go deeper, to find more, to expand into the territory that is usually sealed off. Kate&rsquo;s Moon is already there. For Jordan, Kate&rsquo;s emotional depth is not uncomfortable: it is genuinely expansive. This is a friendship where going deeper feels like getting bigger, not heavier.</p>
   </div>
-</div>
-
-<!-- ══════════════════════════════════ SECTION 7: SATURN ══ -->
-<div class="cel-divider"><div class="cel-rule left"></div><div class="cel-mark">✦ ✦ ✦</div><div class="cel-rule right"></div></div>
-<div class="section-wrap">
-  <div class="dive muted">
-    <div class="dive-head">
-      <div class="dive-icon">♄</div>
-      <div>
-        <div class="dive-eyebrow">Saturn Retrograde · Pisces · 5th House · Trine Mercury</div>
-        <div class="dive-title">The Inner Critic Around Joy</div>
-        <div class="theme-tags">
-          <span class="theme-tag">creativity needs permission</span>
-          <span class="theme-tag">internalized structure</span>
-          <span class="theme-tag">serious about play</span>
-        </div>
-      </div>
-    </div>
-    <div class="dive-body">
-      <p>Saturn retrograde in the 5th house means the Saturnian critic lives inside rather than in the external world. Most people with this placement don't feel blocked by outside forces from creative expression. The resistance is internal: their own inner voice asking <em>is this serious enough? Does this have a purpose? Am I doing this correctly?</em> The 5th house is the house of pure creative joy, play, romance, and self-expression. Saturn here can make all of that feel heavy, like something that needs to be justified before it can be enjoyed.</p>
-      <p>In Pisces, the creative impulse wants to transcend, to imagine, to move toward the spiritual and the beautiful. There's genuine creative depth here. But Saturn makes it hard to simply play, to make something without knowing where it's going, or to fall in love without calculating the risk first.</p>
-      <p><strong>Mercury trine Saturn (0.59°, the tightest trine in the chart):</strong> this is the chart's significant saving grace for this placement. Your mind and your structure work beautifully together. When you write or communicate, the discipline is an asset, not a cage. The analytical rigor of Mercury-Saturn trine gives your thinking and expression genuine precision. The creative work that comes through the mind (writing, conversation, conceptual work) is where this Saturn placement performs at its best rather than its most limiting.</p>
-    </div>
+  <div class="syn-reading-section">
+    <div class="syn-reading-title">Chiron sextile Venus &middot; 0.74&deg;</div>
+    <p>Kate&rsquo;s Chiron sextile Jordan&rsquo;s Venus at 0.74&deg. The wound and the love function are in easy conversation. This is the contact that makes Kate someone Jordan feels she can be honest about love with. The wound (11th house community belonging) and Jordan&rsquo;s Venus (Virgo 4th, the private love standard) are not threatening to each other. The sextile allows this contact to be generative rather than activating.</p>
   </div>
-</div>
-
-<!-- ════════════════════════════════════ SECTION 8: 4TH ══ -->
-<div class="cel-divider"><div class="cel-rule left"></div><div class="cel-mark">✦ ✦ ✦</div><div class="cel-rule right"></div></div>
-<div class="section-wrap">
-  <div class="dive plum">
-    <div class="dive-head">
-      <div class="dive-icon">♅</div>
-      <div>
-        <div class="dive-eyebrow">Uranus conjunct Neptune · 4th House · Capricorn</div>
-        <div class="dive-title">Home as a Portal</div>
-        <div class="theme-tags">
-          <span class="theme-tag">unusual origins</span>
-          <span class="theme-tag">home as intention</span>
-          <span class="theme-tag">building your own foundation</span>
-        </div>
-      </div>
-    </div>
-    <div class="dive-body">
-      <p>The generational Uranus-Neptune conjunction in Capricorn falls for you in the 4th house: the house of home, family of origin, roots, and foundation. This makes the generational themes personal. The dissolving of old structures (Neptune) and the disruption of what was assumed to be stable (Uranus) hit you most directly in the territory of home and early life.</p>
-      <p>This can manifest as an unusual or shifting family background, an early environment that defied the conventional idea of home and security, or a sense that the foundation you were given was made of something more porous than you needed it to be. For many people with this placement, <strong>home is something they have to consciously build rather than something they inherited.</strong> Your relationship to home is animated by both disruption and vision. It can feel unstable, but it also means you approach the question of home with a kind of spiritual intentionality that people with more conventional 4th houses often don't have.</p>
-      <p>Neptune trine Chiron (1.84°) creates a flow between your sense of spiritual imagination and the healing of your wound. The more you allow the Piscean, Neptunian quality of your imagination to inform your sense of home and belonging, the more the wound heals.</p>
-    </div>
+  <div class="syn-reading-section">
+    <div class="syn-reading-title">Venus conjunct Venus &middot; 0.85&deg;</div>
+    <p>Kate&rsquo;s Venus in Scorpio 1st conjuncts Jordan&rsquo;s Venus in Scorpio 5th at 0.85&deg. Both love functions are in the same sign at virtually the same degree. This is the contact that creates that specific quality of friendship where the other person&rsquo;s aesthetic and emotional standards feel like your own. They are moved by similar things. They find similar things beautiful. They have a shared register for what counts as love, and it is Scorpio: serious, total, not performative. Venus-Venus is the reason some people feel immediately familiar. This is one of those.</p>
   </div>
-</div>
-
-<!-- ═══════════════════════════════════ SYNASTRY ══ -->
-<div class="teal-divider"><div class="teal-rule left"></div><div class="teal-mark">✦ ✦ ✦</div><div class="teal-rule right"></div></div>
-<div class="section-wrap">
-  <div class="dive teal">
-    <div class="dive-head">
-      <div class="dive-icon">✦</div>
-      <div>
-        <div class="dive-eyebrow">Synastry · Five Tightest Contacts · Written for you</div>
-        <div class="dive-title">What the Charts Say About This Friendship</div>
-        <div class="theme-tags">
-          <span class="theme-tag">exact fire trine</span>
-          <span class="theme-tag">matching love language</span>
-          <span class="theme-tag">soul recognition</span>
-        </div>
-      </div>
-    </div>
-    <div class="dive-body">
-      <p style="color: var(--teal-bright); font-size: 0.84rem;">These are the five most exact contacts between your natal chart and Jordan's: what the sky says about why this friendship has the quality it does.</p>
-    </div>
+  <div class="syn-reading-section">
+    <div class="syn-reading-title">Mars square Jupiter &middot; 0.97&deg;</div>
+    <p>Kate&rsquo;s Mars in Gemini squares Jordan&rsquo;s Jupiter in Scorpio at 0.97&deg. The drive (Gemini, ideas, range) is in square with the expansion function (Scorpio, depth, intensity). This is productive friction: Kate&rsquo;s intellectual range sometimes runs ahead of the depth Jordan&rsquo;s Jupiter wants to go, and Jordan&rsquo;s Jupiter sometimes wants more time underground than Kate&rsquo;s Mars is prepared to stay. The square is not destructive. It is the tension that makes both of them better: range and depth pulling each other honest.</p>
   </div>
-
-  <div class="synastry-contact">
-    <div class="syn-planets">Your Mars (1° Leo) △ Her Sun (1° Sagittarius)</div>
-    <div class="syn-orb">TRINE · 0.03° orb — essentially exact</div>
-    <div class="syn-text">This is the tightest aspect in the entire synastry, a fire trine so exact it's nearly theoretical. Your Leo drive and her Sagittarian identity are in perfect resonance. When you act, move, or bring your energy into a room, it activates something essential in her, not just something she enjoys but something she fundamentally <em>is</em>. This is why being with you feels energizing to her in a way that doesn't require explanation. Your fire is calibrated to her frequency exactly.</div>
+  <div class="syn-reading-section">
+    <div class="syn-reading-title">Saturn opposition Chiron &middot; 1.37&deg;</div>
+    <p>Kate&rsquo;s Saturn in Pisces 5th opposes Jordan&rsquo;s Chiron in Virgo 4th at 1.37&deg. Kate&rsquo;s creative discipline and private rigor (Saturn Rx Pisces 5th) are in direct line with Jordan&rsquo;s wound (Chiron Virgo 4th). This means Kate&rsquo;s particular kind of seriousness about the creative life applies a kind of pressure to Jordan&rsquo;s wound. Not cruelly. Kate probably doesn&rsquo;t feel this as pressure. But Jordan may feel, in Kate&rsquo;s presence, a particular kind of accountability to the craft.</p>
   </div>
-
-  <div class="synastry-contact">
-    <div class="syn-planets">Your Moon (1° Scorpio) ☌ Her Jupiter (2° Scorpio)</div>
-    <div class="syn-orb">CONJUNCTION · 0.67° orb</div>
-    <div class="syn-text">Her Jupiter sits directly on your emotional Moon. Jupiter is the planet of expansion, abundance, and generosity. It's landing right on the center of your feeling world. This is why being around Jordan makes you feel more seen, more held, more like there's room for your full emotional range rather than just the parts of it that are easy to receive. Her presence expands what's possible for you emotionally. This contact is a deep nourishment contact.</div>
+  <div class="syn-reading-section">
+    <div class="syn-reading-title">NNode conjunct Venus &middot; 2.95&deg;</div>
+    <p>Kate&rsquo;s North Node in Scorpio 1st conjuncts Jordan&rsquo;s Venus in Scorpio 5th at 2.95&deg. Kate&rsquo;s soul direction is conjunct Jordan&rsquo;s love function. The direction Kate is growing toward is something Jordan embodies. Jordan&rsquo;s Venus, the private love standard, the Scorpio depth of what Jordan considers real in relationship, is aligned with where Kate&rsquo;s chart is trying to go. This is a friendship that can feel meaningful in a karmic register: Kate&rsquo;s arc is pointed somewhere Jordan already is, and Jordan can feel it.</p>
   </div>
-
-  <div class="synastry-contact">
-    <div class="syn-planets">Your Venus (17° Scorpio) ☌ Her Venus (18° Scorpio)</div>
-    <div class="syn-orb">CONJUNCTION · 0.85° orb</div>
-    <div class="syn-text">Venus conjunct Venus in synastry is rare and beautiful. You share the same fundamental love language: the same things feel like love to both of you, you find beauty in the same places, and at the most basic level you want the same things from love and friendship. This contact is why the friendship has always felt like a natural fit rather than an effortful construction. Your Venuses are speaking the same dialect.</div>
-  </div>
-
-  <div class="synastry-contact">
-    <div class="syn-planets">Your Chiron (19° Virgo) ✶ Her Venus (18° Scorpio)</div>
-    <div class="syn-orb">SEXTILE · 0.74° orb</div>
-    <div class="syn-text">Your Virgo wound (11th house, belonging and community worthiness) sextiles Jordan's Venus in Scorpio. A sextile is a cooperative aspect; these two energies work together naturally. Her Venus, her way of loving and valuing you, is actively meeting your wound in the place it most needs meeting. She doesn't just love you. The specific way she loves you is medicine for the wound that says you have to earn belonging. You don't earn anything with her. You simply receive.</div>
-  </div>
-
-  <div class="synastry-contact">
-    <div class="syn-planets">Your Saturn (7° Pisces) ☍ Her Chiron (8° Virgo)</div>
-    <div class="syn-orb">OPPOSITION · 1.37° orb</div>
-    <div class="syn-text">This one is worth knowing about honestly. Your Saturn in Pisces sits in opposition to her Chiron in Virgo, the wound of not-enoughness at the center of her healing work. This doesn't mean the friendship causes harm; it means there's a particular dynamic where your Saturn energy (structure, expectation, reality-testing) can, without either of you intending it, press on the place in her that asks <em>am I doing enough?</em> The inverse also matters: you can be one of the people who, by just being real and present, helps her wound understand that structure and discipline can coexist with warmth. This contact asks for mutual awareness, not avoidance.</div>
-  </div>
-</div>
-
-<!-- ═══════════════════════════════════════ SAVE BTN ══ -->
-<button class="save-btn" onclick="savePDF()">
-  <span class="save-btn-icon">✦</span>
-  Save as PDF
-</button>
-
-<!-- ═══════════════════════════════════════ FOOTER ══ -->
-<div class="page-footer">
-  Natal Chart Reading for Kate Penkethman<br>
-  October 6, 1994 · 7:30 AM EDT · Long Branch, New Jersey<br>
-  Placidus House System · Swiss Ephemeris · Generated May 2026<br>
-  ✦ &nbsp;&nbsp; Prepared with care by Jordan
 </div>
 
 <script>
-  function savePDF() {
-    const h = document.body.scrollHeight;
-    const style = document.createElement('style');
-    style.id = 'pdf-page-size';
-    style.textContent = `@media print { @page { size: 900px ${h}px; margin: 0; } html, body { height: ${h}px !important; } }`;
-    document.head.appendChild(style);
-    window.print();
-    setTimeout(() => { const s = document.getElementById('pdf-page-size'); if (s) s.remove(); }, 2000);
-  }
+const IS_FRIEND_BUILD=true;
+const PERSON_NAME='Kate';
+const CHART={
+  asc:198.6107,mc:111.6544,
+  cusps:[198.6107,226.0729,257.5036,291.6544,324.9425,354.2239,18.6107,46.0729,77.5036,111.6544,144.9425,174.2239],
+  planets:[
+    {id:'sun',    gl:'&#x2609;&#xFE0E;',deg:192.9853,retro:false,grp:'luminary',si:6, sd:13.0},
+    {id:'moon',   gl:'&#x263D;&#xFE0E;',deg:211.3330,retro:false,grp:'luminary',si:7, sd:1.3},
+    {id:'mercury',gl:'&#x263F;&#xFE0E;',deg:216.0374,retro:false,grp:'personal',si:7, sd:6.0},
+    {id:'venus',  gl:'&#x2640;&#xFE0E;',deg:227.1505,retro:false,grp:'personal',si:7, sd:17.2},
+    {id:'mars',   gl:'&#x2642;&#xFE0E;',deg:121.0254,retro:false,grp:'personal',si:4, sd:1.0},
+    {id:'jupiter',gl:'&#x2643;&#xFE0E;',deg:226.1557,retro:false,grp:'social',  si:7, sd:16.2},
+    {id:'saturn', gl:'&#x2644;&#xFE0E;',deg:336.6300,retro:true, grp:'social',  si:11,sd:6.6},
+    {id:'uranus', gl:'&#x2645;&#xFE0E;',deg:292.3963,retro:false,grp:'outer',   si:9, sd:22.4},
+    {id:'neptune',gl:'&#x2646;&#xFE0E;',deg:290.5777,retro:false,grp:'outer',   si:9, sd:20.6},
+    {id:'pluto',  gl:'&#x2647;&#xFE0E;',deg:236.3041,retro:false,grp:'outer',   si:7, sd:26.3},
+    {id:'chiron', gl:'&#x26B7;&#xFE0E;',deg:168.7413,retro:false,grp:'point',   si:5, sd:18.7},
+    {id:'nnode',  gl:'&#x260A;&#xFE0E;',deg:225.0543,retro:true, grp:'point',   si:7, sd:15.1},
+    {id:'snode',  gl:'&#x260B;&#xFE0E;',deg:45.0543, retro:true, grp:'point',   si:1, sd:15.1},
+  ],
+  aspects:[
+    {p1:'moon',   p2:'mars',   type:'square',      orb:0.31},
+    {p1:'mercury',p2:'saturn', type:'trine',       orb:0.59},
+    {p1:'venus',  p2:'jupiter',type:'conjunction', orb:0.99},
+    {p1:'jupiter',p2:'nnode',  type:'conjunction', orb:1.10},
+    {p1:'venus',  p2:'chiron', type:'sextile',     orb:1.59},
+    {p1:'uranus', p2:'neptune',type:'conjunction', orb:1.82},
+    {p1:'neptune',p2:'chiron', type:'trine',       orb:1.84},
+  ],
+};
 </script>
-
+<script src="/pathfinder-core.js"></script>
+<script>
+(function(){
+  var src=document.getElementById('synastry-reading-src');
+  var dest=document.getElementById('arc-synastry-inject');
+  if(src&&dest)dest.innerHTML=src.innerHTML;
+})();
+</script>
 </body>
 </html>
