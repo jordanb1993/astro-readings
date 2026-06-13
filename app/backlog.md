@@ -84,6 +84,15 @@ tags:
 
 ## ✅ Shipped — Last 3 Sessions
 
+### Session 20 — June 13, 2026
+- Workspace infrastructure overhaul: created `app/backlog.md` as single source of truth; cleaned 6 planning files (build-digest, CLAUDE-APP-DESIGN, app-vision, CLAUDE.md, CLAUDE-BUILD, product-decisions)
+- Full workspace + bones idea crawl: 56+ new items triaged into Radar and Ideas
+- Created `app/copy-vault.md` — marketing hooks, positioning lines, testimonials, user pain points
+- Resolved: business model → deep subscription, no freemium ($25-35/mo)
+- Resolved: Sky at Work → separate standalone product, freemium, B2B partnerships (AI founder community as priority category), Everflow Slack as live beta group
+- Competitor research review: confirmed "strange and beautiful" as competitive moat; "You've outgrown the daily horoscope" locked as primary hook
+- Closed 4 stale OPEN decisions in product-decisions.md (natal structure, reading UX, business model, Sky at Work brand)
+
 ### Session 19 — June 13, 2026
 - Quality audit: 4 parallel agents on hazel, iza, su, yvonne — all passed 23-item checklist clean
 - Archetype card copy trimmed to Kate's shape across 7 builds: 3 short paras, P3 = one-liner kicker, CSS scroll rejected

@@ -4,6 +4,57 @@
 
 ---
 
+## Session 20 — June 13, 2026
+**Type:** Infrastructure + Strategy
+**Duration:** Single session
+
+### Workspace Infrastructure Overhaul
+The planning layer had diverged badly from reality — three files tracked "what's next" with different answers, and the previous session audit got several things wrong because of it. Root cause: no single source of truth. Fix: full overhaul.
+
+**New file:**
+- `app/backlog.md` — single source of truth for all build priorities. Structure: Now (active sprint) / Next (decided & queued) / Radar (solid ideas, decision pending) / Ideas (raw captures) / Shipped (last 3 sessions). Pre-populated with everything previously scattered across 5 locations. Items flow one direction only.
+
+**Six files cleaned:**
+- `build-digest.md` — removed "In Progress / Next Up" table, replaced with backlog pointer; fixed Open Loops (Cat birth data note corrected, stale items removed, Mimi/Carina/Kate delivery flagged)
+- `app/CLAUDE-APP-DESIGN.md` — removed "Open Build Tasks" section (was stale), replaced with backlog pointer; corrected propagation architecture note (shared layer = DONE since Session 13)
+- `app/app-vision.md` — removed "Feature Captures" section, replaced with backlog pointer; captures moved to backlog Ideas
+- `pathfinder/CLAUDE.md` — added backlog.md to build session load list; updated session end step 1; updated Stars Inbox routing; updated file structure
+- `CLAUDE-BUILD.md` — updated session start checklist; feature idea routing now goes to backlog; name TBD fixed (Pathfinder)
+- `app/product-decisions.md` — closed 4 stale OPEN decisions: Natal Reading Structure (RESOLVED, 9-tab, Sessions 15-17), Reading UX plain-language first (RESOLVED, Option C, June 12), Business Model (RESOLVED, deep subscription), Sky at Work brand (RESOLVED, separate product)
+
+### Full Workspace + Bones Idea Crawl
+Deployed 2 parallel Explore agents (Pathfinder workspace + the bones). Found 56+ ideas not yet in backlog across app-vision.md Visual Polish Queue, agent-architecture.md open questions, competitor-research open decisions, Growth & Craft seeds.
+
+**Key additions to backlog:**
+- Visual Polish Queue (12 chart/reading refinements) as a batched Ideas entry
+- Architecture decisions blocking Phase 2: ephemeris reliability, routing agent spec, intake form design, service worker
+- Seeds from the bones: business casual whimsigoth aesthetic, macro narratives in workplace readings, Dasha business synastry, corporate pricing template
+- Open decisions moved to Radar: freemium/subscription, corporate brand, Phase 2 start criteria
+
+### Competitor Research Review + Decisions Unlocked
+Read `competitor-research-2026-06-05.md` together. Key findings applied:
+
+**Decisions resolved:**
+- Business model → **deep subscription, no freemium** (Option B). Retention mechanic is depth and beauty, not habit loop — that's a subscription product.
+- Sky at Work brand → **separate standalone product** (Option B + integration model). Freemium model with B2B partnerships (AI founder community as priority category, then wellness/women-in-leadership/HR tools). Pathfinder subscribers get Sky at Work as a benefit. Zero ads on Pathfinder, ever.
+- Sky at Work build scope → **full product sprint** (own domain, landing page, onboarding, standalone PWA). Beta group: Everflow Slack (#astroflow-weekly + Krista, Kristen Bell, Dasha, Darrion, Yvonne).
+
+**"Strange and beautiful" confirmed as competitive moat** — no competitor is working in the visual language of the actual tradition (sacred geometry, alchemical illustration, celestial maps). Visual Polish Queue items are strategic, not cosmetic.
+
+### New File: copy-vault.md
+Created `app/copy-vault.md` — permanent home for marketing hooks, positioning lines, and product language worth keeping.
+
+**First gems banked:**
+- "You've outgrown the daily horoscope." — primary hook, confirmed by competitor research
+- "Your AI astrologer who lives with your chart."
+- "A contemplative artifact. You read it slowly. You come back to it."
+- Pathfinder mission statement (from voice-canon.md)
+- Founder voice pitch (from app-vision.md)
+- All four demo reactions (Marina, Krista, Kristen Bell, Dasha)
+- User pain points mapped to Pathfinder's answers (6 confirmed gaps from comp research)
+
+---
+
 ## 2026-06-13 — Session 19: Audits · patch script · card copy · OG preview · geo-bg fix
 
 **Theme:** Quality pass across all builds + tooling infrastructure
