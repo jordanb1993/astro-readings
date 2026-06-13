@@ -29,8 +29,8 @@ Jordan is building an AI-powered personal astrology app. She is the first beta u
 
 | Phase | Status | Notes |
 |-------|--------|-------|
-| Phase 1: Build + Internal Beta | **Active now** | Jordan + 3–5 close friends |
-| Phase 2: Closed Subscriber Cohort | Approaching Q4 2026 | ~20 subscribers, $20–35/mo |
+| Phase 1: Build + Internal Beta | **✅ Complete — June 13, 2026** | 10 charts live, daily automation running, beta group active |
+| Phase 2: Closed Subscriber Cohort | **Active next** | ~20 subscribers, $20–35/mo, deep subscription model |
 | Phase 3: Public App | 2027 | Full subscription model |
 
 **Etsy plan:** Dropped June 5. The pivot was right — this is a full product, not a marketplace listing.

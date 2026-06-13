@@ -85,19 +85,20 @@ tags:
 ---
 
 ## Friends — Pathfinder Build Status
+*Phase 1 complete as of June 13, 2026. 10 charts built and live. Delivery handled by Jordan.*
 
-| Person | Birth Data | Voice Canon Draft | Pathfinder Build | Delivered |
-|--------|-----------|-------------------|-----------------|-----------|
-| Marina | ✅ | ✅ The Generous Light | ✅ Session 15 | ⏳ Not yet |
-| Mimi | ✅ | ✅ The Deep Channel | ✅ Session 17 | ⏳ Not yet |
-| Carina | ✅ | ✅ The Cartographer | ✅ Session 17 | ⏳ Not yet |
-| Kate | ✅ | ✅ The Keeper of the Veil | ✅ Session 17 | ⏳ Not yet |
-| Hazel | ✅ | ✅ The Signal Reader | ✅ Session 18 | ⏳ Not yet |
-| Iza | ✅ | ✅ The Interior Architect | ✅ Session 18 | ⏳ Not yet |
-| Su | ✅ | ✅ The Interior Press | ✅ Session 18 | ⏳ Not yet |
-| Yvonne | ✅ | ✅ The Interior Witness | ✅ Session 18 | ⏳ Not yet |
-| Kristen Yim Bell | ✅ Sep 19 1990 · 12:12 PM · Fontana CA | ⏳ Pending (coworker scope) | ⏳ Pending | — |
-| Cat | ❌ No birth data on file — `charts/cat.md` is empty | ❌ | ❌ | — |
+| Person | Birth Data | Voice Canon Draft | Pathfinder Build |
+|--------|-----------|-------------------|-----------------|
+| Marina | ✅ | ✅ The Generous Light | ✅ Session 15 |
+| Mimi | ✅ | ✅ The Deep Channel | ✅ Session 17 |
+| Carina | ✅ | ✅ The Cartographer | ✅ Session 17 |
+| Kate | ✅ | ✅ The Keeper of the Veil | ✅ Session 17 |
+| Hazel | ✅ | ✅ The Signal Reader | ✅ Session 18 |
+| Iza | ✅ | ✅ The Interior Architect | ✅ Session 18 |
+| Su | ✅ | ✅ The Interior Press | ✅ Session 18 |
+| Yvonne | ✅ | ✅ The Interior Witness | ✅ Session 18 |
+| Kristen Yim Bell | ✅ Sep 19 1990 · 12:12 PM · Fontana CA | ⏳ Pending (coworker scope) | ⏳ Pending |
+| Cat | ❌ No birth data — `charts/cat.md` is empty | ❌ | ❌ |
 
 ---
 
