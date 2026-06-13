@@ -1,0 +1,24 @@
+{
+  "name": "Sky at Work",
+  "short_name": "Sky at Work",
+  "description": "Collective celestial intelligence for your work week \u2014 by Pathfinder.",
+  "start_url": "./sky-at-work.html",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#050e1a",
+  "theme_color": "#09102a",
+  "icons": [
+    {
+      "src": "sky-at-work-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "sky-at-work-icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
