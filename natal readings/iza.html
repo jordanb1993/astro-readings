@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta property="og:type"        content="website">
 <meta property="og:title"       content="Iza · Pathfinder">
 <meta property="og:description" content="The Interior Architect — Pisces Sun · Sagittarius Rising · Pathfinder by Jordan">
@@ -14,1185 +14,891 @@
 <meta name="twitter:image"      content="https://pathfinderastro.vercel.app/natal%20readings/og-preview.png">
 <link rel="manifest" href="manifest-iza.json">
 <link rel="apple-touch-icon" sizes="512x512" href="apple-touch-icon.png">
-  <title>Iza — Natal Chart Reading</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <style>
-
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-    :root {
-      --bg:            #0a0614;
-      --surface:       #150a25;
-      --surface-2:     #1e1038;
-      --gold:          #c9a84c;
-      --gold-dim:      rgba(201, 168, 76, 0.11);
-      --gold-mid:      rgba(201, 168, 76, 0.28);
-      --gold-bright:   rgba(201, 168, 76, 0.65);
-      --rose:          #d4a0b5;
-      --rose-dim:      rgba(212, 160, 181, 0.11);
-      --rose-mid:      rgba(212, 160, 181, 0.28);
-      --plum:          #7b4fa6;
-      --plum-dim:      rgba(123, 79, 166, 0.20);
-      --plum-mid:      rgba(123, 79, 166, 0.35);
-      --plum-bright:   #b482d2;
-      --teal:          #5bb8a8;
-      --teal-dim:      rgba(91, 184, 168, 0.11);
-      --teal-mid:      rgba(91, 184, 168, 0.28);
-      --teal-bright:   #7ecfc2;
-      --text:          #fdf6e8;
-      --muted:         rgba(253, 246, 232, 0.58);
-      --muted-2:       rgba(253, 246, 232, 0.30);
-      --border:        rgba(180, 130, 210, 0.18);
-    }
-
-    html { background: var(--bg); color: var(--text); }
-
-    body {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 0;
-      background: var(--bg);
-      font-family: 'Inter', sans-serif;
-    }
-
-    h1, h2, h3, h4 {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 400;
-      letter-spacing: 0.03em;
-    }
-
-    p { line-height: 1.82; color: var(--muted); font-size: 0.94rem; }
-
-    strong { color: var(--rose); font-weight: 600; }
-    em { color: rgba(253, 246, 232, 0.82); font-style: italic; }
-
-    .hero {
-      position: relative;
-      width: 100%;
-      padding: 96px 70px 88px;
-      text-align: center;
-      overflow: hidden;
-      background: radial-gradient(ellipse at 62% 28%, #1a0f38 0%, #150a25 42%, #0a0614 100%);
-    }
-
-    .hero-stars { position: absolute; inset: 0; pointer-events: none; }
-
-    .hero-border-outer {
-      position: absolute;
-      top: 22px; left: 22px; right: 22px; bottom: 22px;
-      border: 1px solid rgba(180, 130, 210, 0.30);
-      pointer-events: none;
-    }
-
-    .hero-border-inner {
-      position: absolute;
-      top: 32px; left: 32px; right: 32px; bottom: 32px;
-      border: 1px solid rgba(180, 130, 210, 0.13);
-      pointer-events: none;
-    }
-
-    .corner { position: absolute; font-family: 'Cormorant Garamond', serif; font-size: 17px; color: var(--gold); opacity: 0.78; }
-    .corner.tl { top: 12px; left: 12px; }
-    .corner.tr { top: 12px; right: 12px; }
-    .corner.bl { bottom: 12px; left: 12px; }
-    .corner.br { bottom: 12px; right: 12px; }
-
-    .hero-col { position: absolute; top: 50%; transform: translateY(-50%); pointer-events: none; }
-    .hero-col.left  { left: 44px; }
-    .hero-col.right { right: 44px; }
-
-    .hero-label {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.68rem;
-      font-weight: 600;
-      letter-spacing: 0.34em;
-      text-transform: uppercase;
-      color: var(--rose);
-      opacity: 0.72;
-      margin-bottom: 28px;
-      position: relative;
-    }
-
-    .hero-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(58px, 9vw, 104px);
-      font-weight: 300;
-      line-height: 0.96;
-      color: var(--text);
-      letter-spacing: 0.05em;
-      margin-bottom: 22px;
-      position: relative;
-    }
-
-    .hero-ornament {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.5rem;
-      letter-spacing: 0.55em;
-      color: var(--gold);
-      opacity: 0.55;
-      margin-bottom: 36px;
-      position: relative;
-      padding-left: 0.55em;
-    }
-
-    .hero-data {
-      display: flex;
-      justify-content: center;
-      gap: 36px;
-      flex-wrap: wrap;
-      position: relative;
-    }
-
-    .hero-datum-label {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.60rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--muted-2);
-      margin-bottom: 5px;
-    }
-
-    .hero-datum-value {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.08rem;
-      color: var(--gold);
-      letter-spacing: 0.06em;
-    }
-
-    .trio-wrap { padding: 52px 44px 0; }
-    .trio { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
-
-    .trio-card {
-      background: radial-gradient(ellipse at 50% 0%, rgba(42, 18, 69, 0.85) 0%, var(--surface) 60%);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 30px 22px 26px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .trio-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; }
-    .trio-card.sun::before  { background: linear-gradient(90deg, transparent, var(--gold), transparent); }
-    .trio-card.moon::before { background: linear-gradient(90deg, transparent, var(--rose), transparent); }
-    .trio-card.asc::before  { background: linear-gradient(90deg, transparent, var(--plum-bright), transparent); }
-
-    .trio-card::after {
-      content: '';
-      position: absolute;
-      top: 0; left: 50%;
-      transform: translateX(-50%);
-      width: 60%; height: 60px;
-      border-radius: 50%;
-      opacity: 0.12;
-      filter: blur(20px);
-    }
-    .trio-card.sun::after  { background: var(--gold); }
-    .trio-card.moon::after { background: var(--rose); }
-    .trio-card.asc::after  { background: var(--plum-bright); }
-
-    .trio-glyph { display: block; font-size: 2.1rem; margin-bottom: 10px; position: relative; }
-    .trio-card.sun  .trio-glyph { color: var(--gold); }
-    .trio-card.moon .trio-glyph { color: var(--rose); }
-    .trio-card.asc  .trio-glyph { color: var(--plum-bright); }
-
-    .trio-label {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.60rem;
-      font-weight: 600;
-      letter-spacing: 0.26em;
-      text-transform: uppercase;
-      color: var(--muted-2);
-      margin-bottom: 10px;
-      position: relative;
-    }
-
-    .trio-placement {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.55rem;
-      font-weight: 400;
-      line-height: 1.15;
-      margin-bottom: 6px;
-      position: relative;
-    }
-    .trio-card.sun  .trio-placement { color: var(--gold); }
-    .trio-card.moon .trio-placement { color: var(--rose); }
-    .trio-card.asc  .trio-placement { color: var(--plum-bright); }
-
-    .trio-house { font-size: 0.68rem; color: var(--muted-2); margin-bottom: 18px; letter-spacing: 0.06em; position: relative; }
-
-    .trio-rule { width: 36px; height: 1px; margin: 0 auto 16px; position: relative; }
-    .trio-card.sun  .trio-rule { background: var(--gold-mid); }
-    .trio-card.moon .trio-rule { background: var(--rose-mid); }
-    .trio-card.asc  .trio-rule { background: var(--plum-mid); }
-
-    .trio-tagline {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 0.96rem;
-      font-style: italic;
-      color: var(--muted);
-      line-height: 1.55;
-      position: relative;
-    }
-
-    .cel-divider { display: flex; align-items: center; gap: 14px; margin: 52px 44px 0; }
-    .cel-rule { flex: 1; height: 1px; }
-    .cel-rule.left  { background: linear-gradient(90deg, transparent, var(--gold-mid)); }
-    .cel-rule.right { background: linear-gradient(90deg, var(--gold-mid), transparent); }
-    .cel-mark {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 0.85rem;
-      letter-spacing: 0.55em;
-      color: var(--gold);
-      opacity: 0.50;
-      padding-left: 0.55em;
-    }
-
-    .sig-wrap { padding: 44px 44px 0; }
-    .sig-header { margin-bottom: 22px; }
-
-    .sig-eyebrow {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.62rem;
-      font-weight: 600;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: var(--plum-bright);
-      margin-bottom: 8px;
-    }
-
-    .sig-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.65rem;
-      font-weight: 400;
-      color: var(--gold);
-      letter-spacing: 0.04em;
-    }
-
-    .sig-panel {
-      background: radial-gradient(ellipse at 0% 50%, rgba(123, 79, 166, 0.18) 0%, rgba(21, 10, 37, 0.85) 60%);
-      border: 1px solid rgba(123, 79, 166, 0.22);
-      border-radius: 10px;
-      padding: 30px 32px;
-    }
-
-    .sig-list { list-style: none; display: flex; flex-direction: column; gap: 16px; }
-    .sig-item { display: flex; align-items: flex-start; gap: 16px; }
-    .sig-glyph { font-size: 1.05rem; color: var(--gold); flex-shrink: 0; margin-top: 2px; width: 22px; text-align: center; }
-    .sig-text { font-size: 0.91rem; color: var(--muted); line-height: 1.65; }
-    .sig-text strong { color: var(--text); font-weight: 500; }
-
-    .data-wrap {
-      padding: 44px 44px 0;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-      align-items: start;
-    }
-
-    .data-section-title {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.60rem;
-      font-weight: 600;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 14px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid var(--gold-mid);
-    }
-
-    .planet-list {
-      background: radial-gradient(ellipse at 50% 0%, rgba(42, 18, 69, 0.55) 0%, rgba(21, 10, 37, 0.70) 100%);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      overflow: hidden;
-    }
-
-    .planet-row {
-      display: grid;
-      grid-template-columns: 30px 1fr auto 48px;
-      align-items: center;
-      padding: 9px 16px;
-      gap: 8px;
-      border-bottom: 1px solid rgba(253, 246, 232, 0.04);
-    }
-    .planet-row:last-child { border-bottom: none; }
-    .planet-row:nth-child(even) { background: rgba(253, 246, 232, 0.025); }
-
-    .pl-glyph { font-size: 1.05rem; color: var(--gold); opacity: 0.80; text-align: center; }
-    .pl-name { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: var(--text); }
-    .pl-sign { font-size: 0.80rem; color: var(--rose); }
-    .pl-house { font-size: 0.68rem; color: var(--muted-2); text-align: right; letter-spacing: 0.04em; }
-
-    .aspect-list {
-      background: radial-gradient(ellipse at 50% 0%, rgba(42, 18, 69, 0.55) 0%, rgba(21, 10, 37, 0.70) 100%);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      overflow: hidden;
-    }
-
-    .aspect-row {
-      display: grid;
-      grid-template-columns: 22px 1fr 36px;
-      align-items: center;
-      padding: 9px 16px;
-      gap: 10px;
-      border-bottom: 1px solid rgba(253, 246, 232, 0.04);
-      font-size: 0.82rem;
-    }
-    .aspect-row:last-child { border-bottom: none; }
-    .aspect-row:nth-child(even) { background: rgba(253, 246, 232, 0.025); }
-
-    .asp-sym { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; text-align: center; }
-    .asp-sym.conj  { color: var(--gold); }
-    .asp-sym.trine { color: #6bc5a8; }
-    .asp-sym.sext  { color: #85b5e0; }
-    .asp-sym.sq    { color: var(--rose); }
-    .asp-sym.opp   { color: #c08888; }
-
-    .asp-desc { color: var(--muted); line-height: 1.4; }
-    .asp-orb { font-size: 0.68rem; color: var(--muted-2); text-align: right; font-family: 'Inter', sans-serif; letter-spacing: 0.04em; }
-
-    .dive-wrap { padding: 44px 44px 0; }
-
-    .dive-section {
-      margin-bottom: 40px;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      overflow: hidden;
-    }
-
-    .dive-head {
-      position: relative;
-      padding: 32px 36px 28px;
-      overflow: hidden;
-      display: flex;
-      align-items: flex-start;
-      gap: 20px;
-    }
-
-    .dive-head.gold-head {
-      background: radial-gradient(ellipse at 20% 50%, rgba(201, 168, 76, 0.22) 0%, rgba(42, 18, 69, 0.80) 55%, #0a0614 100%);
-      border-bottom: 1px solid rgba(201, 168, 76, 0.18);
-    }
-    .dive-head.rose-head {
-      background: radial-gradient(ellipse at 20% 50%, rgba(212, 160, 181, 0.20) 0%, rgba(42, 18, 69, 0.80) 55%, #0a0614 100%);
-      border-bottom: 1px solid rgba(212, 160, 181, 0.18);
-    }
-    .dive-head.plum-head {
-      background: radial-gradient(ellipse at 20% 50%, rgba(123, 79, 166, 0.28) 0%, rgba(42, 18, 69, 0.80) 55%, #0a0614 100%);
-      border-bottom: 1px solid rgba(123, 79, 166, 0.22);
-    }
-    .dive-head.teal-head {
-      background: radial-gradient(ellipse at 20% 50%, rgba(91, 184, 168, 0.22) 0%, rgba(42, 18, 69, 0.80) 55%, #0a0614 100%);
-      border-bottom: 1px solid rgba(91, 184, 168, 0.18);
-    }
-
-    .dive-head-stars { position: absolute; inset: 0; pointer-events: none; }
-
-    .dive-section::before { content: ''; display: block; height: 2px; width: 100%; }
-    .dive-section.accent-gold::before  { background: linear-gradient(90deg, transparent 0%, var(--gold) 40%, var(--gold) 60%, transparent 100%); }
-    .dive-section.accent-rose::before  { background: linear-gradient(90deg, transparent 0%, var(--rose) 40%, var(--rose) 60%, transparent 100%); }
-    .dive-section.accent-plum::before  { background: linear-gradient(90deg, transparent 0%, var(--plum-bright) 40%, var(--plum-bright) 60%, transparent 100%); }
-    .dive-section.accent-teal::before  { background: linear-gradient(90deg, transparent 0%, var(--teal-bright) 40%, var(--teal-bright) 60%, transparent 100%); }
-
-    .dive-icon { font-family: 'Cormorant Garamond', serif; font-size: 2.4rem; flex-shrink: 0; margin-top: 2px; position: relative; line-height: 1; }
-    .accent-gold .dive-icon  { color: var(--gold); }
-    .accent-rose .dive-icon  { color: var(--rose); }
-    .accent-plum .dive-icon  { color: var(--plum-bright); }
-    .accent-teal .dive-icon  { color: var(--teal-bright); }
-
-    .dive-head-text { flex: 1; position: relative; }
-
-    .dive-eyebrow {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.60rem;
-      font-weight: 600;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      margin-bottom: 8px;
-    }
-    .accent-gold .dive-eyebrow  { color: rgba(201, 168, 76, 0.65); }
-    .accent-rose .dive-eyebrow  { color: rgba(212, 160, 181, 0.65); }
-    .accent-plum .dive-eyebrow  { color: rgba(180, 130, 210, 0.65); }
-    .accent-teal .dive-eyebrow  { color: rgba(91, 184, 168, 0.65); }
-
-    .dive-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.75rem;
-      font-weight: 400;
-      line-height: 1.15;
-      letter-spacing: 0.03em;
-      margin-bottom: 10px;
-    }
-    .accent-gold .dive-title  { color: var(--gold); }
-    .accent-rose .dive-title  { color: var(--rose); }
-    .accent-plum .dive-title  { color: var(--plum-bright); }
-    .accent-teal .dive-title  { color: var(--teal-bright); }
-
-    .dive-subtitle {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.02rem;
-      font-style: italic;
-      color: var(--muted);
-      line-height: 1.5;
-    }
-
-    .dive-tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 14px; }
-
-    .dtag {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.62rem;
-      letter-spacing: 0.13em;
-      text-transform: uppercase;
-      padding: 4px 11px;
-      border-radius: 20px;
-      border: 1px solid;
-    }
-    .accent-gold .dtag { color: var(--gold); border-color: rgba(201, 168, 76, 0.30); background: rgba(201, 168, 76, 0.08); }
-    .accent-rose .dtag { color: var(--rose); border-color: rgba(212, 160, 181, 0.28); background: rgba(212, 160, 181, 0.07); }
-    .accent-plum .dtag { color: var(--plum-bright); border-color: rgba(123, 79, 166, 0.32); background: rgba(123, 79, 166, 0.09); }
-    .accent-teal .dtag { color: var(--teal-bright); border-color: rgba(91, 184, 168, 0.30); background: rgba(91, 184, 168, 0.08); }
-
-    .dive-body {
-      padding: 30px 36px 28px;
-      background: rgba(10, 6, 20, 0.55);
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-    }
-
-    .dive-body p { font-size: 0.93rem; line-height: 1.85; color: var(--muted); }
-
-    .pull {
-      border-left: 2px solid var(--gold);
-      padding: 11px 22px;
-      background: var(--gold-dim);
-      border-radius: 0 5px 5px 0;
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-size: 1.13rem;
-      color: var(--gold);
-      line-height: 1.65;
-    }
-    .pull.rose-pull  { border-color: var(--rose);        background: var(--rose-dim);  color: var(--rose); }
-    .pull.plum-pull  { border-color: var(--plum-bright); background: var(--plum-dim);  color: var(--plum-bright); }
-    .pull.teal-pull  { border-color: var(--teal-bright); background: var(--teal-dim);  color: var(--teal-bright); }
-
-    .synastry-contact {
-      padding: 18px 0;
-      border-bottom: 1px solid rgba(91, 184, 168, 0.10);
-    }
-    .synastry-contact:last-of-type { border-bottom: none; padding-bottom: 0; }
-
-    .syn-label {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.62rem;
-      font-weight: 600;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--teal-bright);
-      opacity: 0.75;
-      margin-bottom: 6px;
-    }
-
-    .syn-aspect {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.12rem;
-      color: var(--teal-bright);
-      margin-bottom: 10px;
-      letter-spacing: 0.02em;
-    }
-
-    .syn-body { font-size: 0.91rem; color: var(--muted); line-height: 1.75; }
-
-    .thread-wrap { padding: 44px 44px 0; }
-
-    .thread {
-      position: relative;
-      overflow: hidden;
-      border: 1px solid rgba(180, 130, 210, 0.22);
-      border-radius: 12px;
-      padding: 52px 52px 48px;
-      text-align: center;
-      background: radial-gradient(ellipse at 50% 10%, #2a1245 0%, #150a25 45%, #0a0614 100%);
-    }
-
-    .thread-stars { position: absolute; inset: 0; pointer-events: none; }
-
-    .thread-border {
-      position: absolute;
-      top: 16px; left: 16px; right: 16px; bottom: 16px;
-      border: 1px solid rgba(180, 130, 210, 0.10);
-      pointer-events: none;
-    }
-
-    .thread-ornament {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.4rem;
-      letter-spacing: 0.55em;
-      color: var(--gold);
-      opacity: 0.52;
-      display: block;
-      margin-bottom: 28px;
-      padding-left: 0.55em;
-      position: relative;
-    }
-
-    .thread-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2rem;
-      font-weight: 300;
-      color: var(--text);
-      letter-spacing: 0.04em;
-      margin-bottom: 28px;
-      position: relative;
-    }
-
-    .thread p {
-      max-width: 620px;
-      margin: 0 auto 18px;
-      font-size: 0.94rem;
-      line-height: 1.85;
-      color: var(--muted);
-      position: relative;
-    }
-
-    .thread-close {
-      margin-top: 36px;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.62rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--muted-2);
-      position: relative;
-    }
-
-    .footer {
-      text-align: center;
-      padding: 48px 44px 60px;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.68rem;
-      color: var(--muted-2);
-      letter-spacing: 0.10em;
-      line-height: 1.9;
-    }
-
-    .save-btn {
-      position: fixed;
-      bottom: 32px; right: 32px;
-      z-index: 999;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 12px 22px;
-      background: radial-gradient(ellipse at 30% 50%, #2a1245 0%, #150a25 100%);
-      border: 1px solid rgba(201, 168, 76, 0.45);
-      border-radius: 40px;
-      cursor: pointer;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.72rem;
-      font-weight: 500;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--gold);
-      box-shadow: 0 4px 24px rgba(0,0,0,0.5), 0 0 0 1px rgba(201,168,76,0.10);
-      transition: border-color 0.2s, box-shadow 0.2s;
-    }
-    .save-btn:hover {
-      border-color: rgba(201, 168, 76, 0.75);
-      box-shadow: 0 4px 32px rgba(0,0,0,0.6), 0 0 20px rgba(201,168,76,0.12);
-    }
-    .save-btn-icon { font-size: 1rem; opacity: 0.85; }
-
-    @media print {
-      html, body { background: var(--bg) !important; }
-      * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
-      .save-btn { display: none !important; }
-      @page { margin: 0; size: 900px var(--doc-height, 9999px); }
-    }
-
-    @media (max-width: 680px) {
-      body { font-size: 16px; }
-      p { font-size: 1rem; line-height: 1.78; }
-      .hero { padding: 58px 22px 50px; }
-      .hero-col { display: none; }
-      .hero-border-outer { top: 14px; left: 14px; right: 14px; bottom: 14px; }
-      .hero-border-inner { top: 22px; left: 22px; right: 22px; bottom: 22px; }
-      .hero-name { font-size: clamp(38px, 10.5vw, 56px); }
-      .hero-data { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 20px; max-width: 260px; margin-left: auto; margin-right: auto; }
-      .trio-wrap { padding: 36px 18px 0; }
-      .trio { grid-template-columns: 1fr; gap: 12px; }
-      .trio-card { padding: 22px 18px 18px; }
-      .cel-divider { margin: 36px 18px 0; }
-      .sig-wrap { padding: 32px 18px 0; }
-      .sig-panel { padding: 22px 20px; }
-      .sig-text { font-size: 0.95rem; }
-      .data-wrap { padding: 32px 18px 0; grid-template-columns: 1fr; gap: 20px; }
-      .dive-wrap { padding: 32px 18px 0; }
-      .dive-head { padding: 22px 18px 20px; gap: 12px; }
-      .dive-title { font-size: 1.45rem; }
-      .dive-body { padding: 20px 18px 18px; gap: 16px; }
-      .dive-body p { font-size: 1rem; }
-      .pull { font-size: 1rem; padding: 10px 18px; }
-      .thread-wrap { padding: 32px 18px 0; }
-      .thread { padding: 36px 22px 32px; }
-      .thread-title { font-size: 1.65rem; }
-      .thread p { font-size: 1rem; }
-      .footer { padding: 32px 18px 44px; font-size: 0.72rem; }
-      .save-btn { bottom: 18px; right: 18px; padding: 10px 16px; font-size: 0.68rem; }
-    }
-
-  </style>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Pathfinder · Iza</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/pathfinder-core.css">
+<!-- shared app styles loaded from pathfinder-core.css -->
+<style>
+/* ── ARCHETYPE CARD — IZA palette: forest green + gold + muted rose ── */
+.card-wc{background:
+  radial-gradient(ellipse at 15% 25%, rgba(40,120,80,0.65) 0%, transparent 42%),
+  radial-gradient(ellipse at 80% 20%, rgba(200,160,60,0.58) 0%, transparent 38%),
+  radial-gradient(ellipse at 55% 75%, rgba(180,100,120,0.42) 0%, transparent 45%),
+  radial-gradient(ellipse at 10% 80%, rgba(30,100,70,0.35) 0%, transparent 35%),
+  linear-gradient(135deg, #050f08 0%, #0a1a0d 40%, #080c0a 100%);}
+.card-back-wc{background:
+  radial-gradient(ellipse at 30% 65%, rgba(40,110,70,0.28) 0%, transparent 50%),
+  radial-gradient(ellipse at 65% 25%, rgba(190,150,50,0.18) 0%, transparent 45%),
+  linear-gradient(160deg, #050f08 0%, #0d160a 100%);}
+</style>
 </head>
 <body>
+<div class="app">
 
-<!-- HERO -->
-<div class="hero">
-  <svg class="hero-stars" viewBox="0 0 900 560" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="74"   cy="88"   r="1.2" fill="#fff8ee" opacity="0.48"/>
-    <circle cx="210"  cy="52"   r="0.9" fill="#c9a84c" opacity="0.42"/>
-    <circle cx="368"  cy="74"   r="1.4" fill="#fff8ee" opacity="0.40"/>
-    <circle cx="522"  cy="32"   r="0.8" fill="#d4a0b5" opacity="0.50"/>
-    <circle cx="676"  cy="60"   r="1.1" fill="#fff8ee" opacity="0.38"/>
-    <circle cx="820"  cy="96"   r="1.3" fill="#c9a84c" opacity="0.44"/>
-    <circle cx="866"  cy="44"   r="0.9" fill="#fff8ee" opacity="0.36"/>
-    <circle cx="32"   cy="320"  r="0.9" fill="#c9a84c" opacity="0.34"/>
-    <circle cx="874"  cy="298"  r="0.8" fill="#fff8ee" opacity="0.36"/>
-    <circle cx="48"   cy="470"  r="1.1" fill="#d4a0b5" opacity="0.30"/>
-    <circle cx="862"  cy="448"  r="0.9" fill="#c9a84c" opacity="0.36"/>
-    <circle cx="442"  cy="522"  r="0.8" fill="#fff8ee" opacity="0.32"/>
-    <circle cx="130"  cy="194"  r="0.8" fill="#fff8ee" opacity="0.26"/>
-    <circle cx="768"  cy="172"  r="0.9" fill="#c9a84c" opacity="0.30"/>
-    <text x="134"  y="142" font-size="12" fill="#c9a84c" opacity="0.58" text-anchor="middle" font-family="serif">✦</text>
-    <text x="762"  y="162" font-size="8"  fill="#fff8ee" opacity="0.40" text-anchor="middle" font-family="serif">✧</text>
-    <text x="460"  y="24"  font-size="7"  fill="#d4a0b5" opacity="0.50" text-anchor="middle" font-family="serif">✦</text>
-    <text x="70"   y="396" font-size="8"  fill="#d4a0b5" opacity="0.36" text-anchor="middle" font-family="serif">✦</text>
-    <text x="840"  y="382" font-size="7"  fill="#c9a84c" opacity="0.42" text-anchor="middle" font-family="serif">✧</text>
-    <text x="454"  y="546" font-size="8"  fill="#fff8ee" opacity="0.32" text-anchor="middle" font-family="serif">✦</text>
-    <circle cx="790" cy="122" r="80" fill="#d4a0b5" opacity="0.04"/>
-    <circle cx="790" cy="122" r="42" fill="#d4a0b5" opacity="0.05"/>
-    <circle cx="92"  cy="420" r="90" fill="#9b59b6" opacity="0.05"/>
-    <circle cx="104" cy="96"  r="60" fill="#c9a84c" opacity="0.04"/>
+<header class="app-header">
+  <div class="header-left">
+    <div class="header-eyebrow">pathfinder · iza</div>
+  </div>
+  <button class="key-btn" id="keyBtn" title="Open Chart Key">✦</button>
+</header>
+
+<div class="app-body">
+
+<!-- HOME -->
+<div id="panel-home">
+  <div class="home-inner">
+    <div class="home-sky-strip">
+      <span id="home-date"></span>
+      <span class="home-sky-dot"></span>
+      <span id="home-moon"></span>
+    </div>
+    <div class="home-greeting">
+      <div class="home-greeting-name">Iza</div>
+      <div class="home-greeting-sub">Sun in the interior world</div>
+    </div>
+    <div class="home-cards">
+
+      <button class="home-card home-card-hero hc-natal" onclick="goNatal()">
+        <div class="hc-top">
+          <div>
+            <div class="hc-label">The Constant</div>
+            <div class="hc-title">Natal chart</div>
+          </div>
+          <svg class="hc-hero-art" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="26" cy="26" r="23" fill="none" stroke="rgba(208,168,64,0.35)" stroke-width="0.7"/>
+            <circle cx="26" cy="26" r="16" fill="none" stroke="rgba(208,168,64,0.18)" stroke-width="0.5"/>
+            <circle cx="26" cy="26" r="3.5" fill="rgba(208,168,64,0.40)"/>
+            <polygon points="26,3 27.8,23.2 26,26 24.2,23.2" fill="rgba(208,168,64,0.80)"/>
+            <polygon points="26,49 24.2,28.8 26,26 27.8,28.8" fill="rgba(208,168,64,0.50)"/>
+            <polygon points="3,26 23.2,24.2 26,26 23.2,27.8" fill="rgba(208,168,64,0.50)"/>
+            <polygon points="49,26 28.8,27.8 26,26 28.8,24.2" fill="rgba(208,168,64,0.70)"/>
+          </svg>
+        </div>
+        <div class="hc-desc">Feb 23 1996 · Opoczno, Poland · Placidus</div>
+      </button>
+
+      <button class="home-card home-card-hero hc-daily" onclick="switchToPanel('daily',document.querySelector('[data-target=daily]'))">
+        <div class="hc-top">
+          <div>
+            <div class="hc-label">The Variable</div>
+            <div class="hc-title" id="home-daily-title">Synastry with Jordan</div>
+          </div>
+          <svg class="hc-hero-art" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="26" cy="26" r="22" fill="none" stroke="rgba(74,159,212,0.18)" stroke-width="0.6"/>
+            <path d="M26 4A22 22 0 0 1 26 48A13 22 0 0 0 26 4Z" fill="rgba(74,159,212,0.22)"/>
+            <circle cx="26" cy="4" r="1.8" fill="rgba(74,159,212,0.30)"/>
+          </svg>
+        </div>
+        <div class="hc-preview" id="home-daily-transit" style="display:none"></div>
+        <div class="hc-desc">natal charts · exact contacts</div>
+      </button>
+
+      <button class="home-card hc-wheel" onclick="switchToPanel('wheel',document.querySelector('[data-target=wheel]'))" style="min-height:90px">
+        <div class="hc-top">
+          <div>
+            <div class="hc-label">The Wheel</div>
+            <div class="hc-title">Lunar · Seasonal · The Sky</div>
+          </div>
+          <svg class="hc-hero-art" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="26" cy="26" r="22" fill="none" stroke="rgba(90,184,168,0.35)" stroke-width="0.7"/>
+            <circle cx="26" cy="26" r="14" fill="none" stroke="rgba(90,184,168,0.18)" stroke-width="0.5"/>
+            <line x1="26" y1="4" x2="26" y2="48" stroke="rgba(90,184,168,0.14)" stroke-width="0.4"/>
+            <line x1="4" y1="26" x2="48" y2="26" stroke="rgba(90,184,168,0.14)" stroke-width="0.4"/>
+            <circle cx="26" cy="4" r="2" fill="rgba(90,184,168,0.55)"/>
+            <circle cx="26" cy="26" r="3" fill="none" stroke="rgba(90,184,168,0.40)" stroke-width="0.7"/>
+          </svg>
+        </div>
+        <div class="hc-desc">wheel of the year · lunar · collective sky</div>
+      </button>
+
+      <button class="home-card hc-wheel" onclick="window.open('/workplace%20readings/sky-at-work.html','_blank')" style="min-height:90px">
+        <div class="hc-top">
+          <div>
+            <div class="hc-label">The Sky</div>
+            <div class="hc-title">Sky at Work</div>
+          </div>
+          <svg class="hc-hero-art" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="26" cy="26" r="22" fill="none" stroke="rgba(90,184,168,0.22)" stroke-width="0.7"/>
+            <circle cx="11" cy="15" r="1.5" fill="rgba(90,184,168,0.60)"/>
+            <circle cx="38" cy="11" r="1" fill="rgba(90,184,168,0.42)"/>
+            <circle cx="43" cy="32" r="1.5" fill="rgba(90,184,168,0.55)"/>
+            <circle cx="18" cy="41" r="1" fill="rgba(90,184,168,0.38)"/>
+            <circle cx="34" cy="37" r="2" fill="rgba(90,184,168,0.62)"/>
+            <circle cx="26" cy="19" r="1.2" fill="rgba(90,184,168,0.48)"/>
+            <line x1="11" y1="15" x2="26" y2="19" stroke="rgba(90,184,168,0.16)" stroke-width="0.4"/>
+            <line x1="26" y1="19" x2="38" y2="11" stroke="rgba(90,184,168,0.16)" stroke-width="0.4"/>
+            <line x1="26" y1="19" x2="34" y2="37" stroke="rgba(90,184,168,0.16)" stroke-width="0.4"/>
+            <line x1="11" y1="15" x2="43" y2="32" stroke="rgba(90,184,168,0.10)" stroke-width="0.3"/>
+          </svg>
+        </div>
+        <div class="hc-desc">collective transit reading · weekly</div>
+      </button>
+
+    </div>
+  </div>
+</div>
+
+<!-- NATAL -->
+<div id="panel-natal">
+  <nav class="natal-subnav" aria-label="Natal sections">
+    <button class="subnav-tab active" data-sub="chart" onclick="switchSub('chart',this)"><span class="sn-icon">◯</span> Chart</button>
+    <button class="subnav-tab" data-sub="portrait" onclick="switchSub('portrait',this)"><span class="sn-icon">✦</span> Portrait</button>
+    <button class="subnav-tab" data-sub="signature" onclick="switchSub('signature',this)"><span class="sn-icon">♐︎</span> Signature</button>
+    <button class="subnav-tab" data-sub="constitution" onclick="switchSub('constitution',this)"><span class="sn-icon">◐</span> Constitution</button>
+    <button class="subnav-tab" data-sub="formative" onclick="switchSub('formative',this)"><span class="sn-icon">♄</span> Formative</button>
+    <button class="subnav-tab" data-sub="shadow" onclick="switchSub('shadow',this)"><span class="sn-icon">☽</span> Shadow</button>
+    <button class="subnav-tab" data-sub="arc" onclick="switchSub('arc',this)"><span class="sn-icon">☊</span> Arc</button>
+    <button class="subnav-tab" data-sub="archetype" onclick="switchSub('archetype',this)"><span class="sn-icon">✧</span> Archetype</button>
+    <button class="subnav-tab" data-sub="poem" onclick="switchSub('poem',this)"><span class="sn-icon">∿</span> Poem</button>
+  </nav>
+
+  <div class="natal-body">
+
+<!-- CHART -->
+<div class="subpanel" id="sp-chart">
+  <svg class="geo-bg" viewBox="0 0 375 700" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <polygon points="188,18 318,80 355,230 300,400 188,450 76,400 20,230 57,80" fill="none" stroke="rgba(201,168,76,0.09)" stroke-width="0.7"/>
+    <line x1="188" y1="18" x2="188" y2="450" stroke="rgba(201,168,76,0.05)" stroke-width="0.4"/>
+    <line x1="20" y1="230" x2="355" y2="230" stroke="rgba(201,168,76,0.05)" stroke-width="0.4"/>
+    <circle cx="188" cy="18" r="2.2" fill="rgba(201,168,76,0.40)"/>
+    <circle cx="188" cy="450" r="2.0" fill="rgba(201,168,76,0.32)"/>
+  </svg>
+  <div class="chart-wrap">
+    <svg id="chart-svg" viewBox="-22 -22 764 764" xmlns="http://www.w3.org/2000/svg" style="overflow:visible"></svg>
+    <div class="zoom-badge" id="zoom-badge">1&#xD7;</div>
+  </div>
+  <div class="big-three">
+    <div class="big-three-card">
+      <div class="b3-role">Sun</div>
+      <div class="b3-glyph">&#x2609;&#xFE0E;</div>
+      <div class="b3-deg">3&#xB0;43&#x27;</div>
+      <div class="b3-sign">Pisces · H2</div>
+    </div>
+    <div class="big-three-card">
+      <div class="b3-role">Moon</div>
+      <div class="b3-glyph">&#x263D;&#xFE0E;</div>
+      <div class="b3-deg">26&#xB0;50&#x27;</div>
+      <div class="b3-sign">Aries · H4</div>
+    </div>
+    <div class="big-three-card">
+      <div class="b3-role">Rising</div>
+      <div class="b3-glyph">&#x2650;&#xFE0E;</div>
+      <div class="b3-deg">12&#xB0;58&#x27;</div>
+      <div class="b3-sign">Sagittarius · noon</div>
+    </div>
+  </div>
+</div>
+
+<!-- PORTRAIT -->
+<div class="subpanel sp-reading" id="sp-portrait">
+  <svg class="geo-bg" viewBox="0 0 375 812" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <polygon points="188,30 320,110 362,310 295,540 188,590 81,540 13,310 56,110" fill="none" stroke="rgba(201,168,76,0.07)" stroke-width="0.6"/>
+    <circle cx="188" cy="30" r="2.0" fill="rgba(201,168,76,0.35)"/>
+    <circle cx="188" cy="590" r="1.8" fill="rgba(201,168,76,0.28)"/>
+    <line x1="56" y1="110" x2="295" y2="540" stroke="rgba(201,168,76,0.04)" stroke-width="0.35"/>
+    <line x1="320" y1="110" x2="81" y2="540" stroke="rgba(201,168,76,0.04)" stroke-width="0.35"/>
   </svg>
 
-  <div class="hero-border-outer"></div>
-  <div class="hero-border-inner"></div>
-  <div class="corner tl">✦</div>
-  <div class="corner tr">✦</div>
-  <div class="corner bl">✦</div>
-  <div class="corner br">✦</div>
+  <div class="reading-inner accent-gold">
+    <div class="panel-heading">
+      <div class="panel-eyebrow-sm">natal reading</div>
+      <div class="panel-title-lg">Portrait</div>
+    </div>
 
-  <svg class="hero-col left" width="26" height="460" viewBox="0 0 26 460" xmlns="http://www.w3.org/2000/svg">
-    <line x1="13" y1="0" x2="13" y2="460" stroke="#b482d2" stroke-width="0.8" opacity="0.22"/>
-    <text x="13" y="52"  text-anchor="middle" font-size="15" fill="#c9a84c" opacity="0.68" font-family="serif">☽</text>
-    <text x="13" y="108" text-anchor="middle" font-size="10" fill="#fff8ee" opacity="0.44" font-family="serif">✦</text>
-    <text x="13" y="164" text-anchor="middle" font-size="14" fill="#d4a0b5" opacity="0.58" font-family="serif">☉</text>
-    <circle cx="13" cy="206" r="1.5" fill="#c9a84c" opacity="0.44"/>
-    <text x="13" y="254" text-anchor="middle" font-size="10" fill="#d4a0b5" opacity="0.50" font-family="serif">✧</text>
-    <text x="13" y="308" text-anchor="middle" font-size="15" fill="#fff8ee" opacity="0.30" font-family="serif">☾</text>
-    <text x="13" y="364" text-anchor="middle" font-size="10" fill="#c9a84c" opacity="0.44" font-family="serif">✦</text>
-    <circle cx="13" cy="402" r="1.2" fill="#fff8ee" opacity="0.34"/>
-    <text x="13" y="448" text-anchor="middle" font-size="11" fill="#c9a84c" opacity="0.40" font-family="serif">☉</text>
+    <div class="sec-card">
+      <div class="sec-head">
+        <div class="sec-sign-glyph">&#x2736;</div>
+        <div class="sec-meta">
+          <div class="sec-eyebrow">NATAL OVERVIEW &middot; SAG ASC &middot; PISCES SUN &middot; ARIES MOON</div>
+          <div class="sec-title">Before the planets</div>
+          <div class="sec-tagline">weight below the horizon, soul direction above it</div>
+        </div>
+      </div>
+      <div class="kw-row">
+        <span class="kw">SAG RISING</span><span class="kw">PISCES SUN</span><span class="kw">ARIES MOON</span><span class="kw">INTERIOR</span><span class="kw">DEPTH</span>
+      </div>
+      <div class="sec-body">
+        <p>Your Sagittarius Ascendant arrives before you do. Not loudly &mdash; philosophically. There is a quality of someone who is already thinking, already moving toward something, already oriented. People encounter you as someone looking for the next true thing.</p>
+        <p>This is real. It is also a shape people can mistake for the whole picture.</p>
+      </div>
+    </div>
+
+    <div class="sep"><span class="sep-inner">Sun</span></div>
+
+    <div class="sec-card">
+      <div class="sec-head">
+        <div class="sec-sign-glyph">&#x2653;</div>
+        <div class="sec-meta">
+          <div class="sec-eyebrow">SUN &middot; PISCES 3&deg;43&prime; &middot; 2ND HOUSE &middot; INTERIOR SELF</div>
+          <div class="sec-title">The Interior World</div>
+          <div class="sec-tagline">knowing through the felt sense of things</div>
+        </div>
+      </div>
+      <div class="kw-row">
+        <span class="kw">PISCES</span><span class="kw">2ND HOUSE</span><span class="kw">VALUES</span><span class="kw">FELT SENSE</span><span class="kw">PRECISION</span>
+      </div>
+      <div class="sec-body">
+        <p>Your Pisces Sun sits in the 2nd house. The core of who you are is not easily visible &mdash; it lives in what you value, what you&rsquo;re willing to give, what you feel drawn toward before you&rsquo;ve reasoned about it. You know yourself most clearly through the inner world. Through what moves you.</p>
+        <p>This is not vagueness. It is a different kind of precision.</p>
+      </div>
+    </div>
+
+    <div class="sep"><span class="sep-inner">Moon</span></div>
+
+    <div class="sec-card">
+      <div class="sec-head">
+        <div class="sec-sign-glyph">&#x2648;</div>
+        <div class="sec-meta">
+          <div class="sec-eyebrow">MOON &middot; ARIES 26&deg;50&prime; &middot; 4TH HOUSE &middot; PRIVATE FIRE</div>
+          <div class="sec-title">Fire in the Foundation</div>
+          <div class="sec-tagline">emotional life runs hot and private</div>
+        </div>
+      </div>
+      <div class="kw-row">
+        <span class="kw">ARIES</span><span class="kw">4TH HOUSE</span><span class="kw">PRIVATE</span><span class="kw">DIRECT</span><span class="kw">INTERIOR FIRE</span>
+      </div>
+      <div class="sec-body">
+        <p>Your Aries Moon is in the 4th house. The emotional life is fast and private. Feeling arrives in the body, in the home, in the sphere that only a few people see. You process in the interior &mdash; urgently, directly, alone. The fire of Aries is real; it just runs below the surface most of the time.</p>
+        <p>The public-facing Sagittarius and the private Aries Moon are not at odds. But they rarely run at the same temperature.</p>
+      </div>
+    </div>
+
+    <div class="sep-stars">&#x2736; &nbsp; &#x2727; &nbsp; &#x2736;</div>
+  </div>
+</div>
+
+<!-- SIGNATURE -->
+<div class="subpanel sp-reading" id="sp-signature">
+  <svg class="geo-bg" viewBox="0 0 375 812" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <polygon points="188,30 320,110 362,310 295,540 188,590 81,540 13,310 56,110" fill="none" stroke="rgba(201,168,76,0.07)" stroke-width="0.6"/>
+    <circle cx="188" cy="30" r="2.0" fill="rgba(201,168,76,0.35)"/>
+    <circle cx="188" cy="590" r="1.8" fill="rgba(201,168,76,0.28)"/>
   </svg>
 
-  <svg class="hero-col right" width="26" height="460" viewBox="0 0 26 460" xmlns="http://www.w3.org/2000/svg">
-    <line x1="13" y1="0" x2="13" y2="460" stroke="#b482d2" stroke-width="0.8" opacity="0.22"/>
-    <text x="13" y="52"  text-anchor="middle" font-size="10" fill="#fff8ee" opacity="0.44" font-family="serif">✦</text>
-    <text x="13" y="108" text-anchor="middle" font-size="15" fill="#c9a84c" opacity="0.60" font-family="serif">☾</text>
-    <text x="13" y="164" text-anchor="middle" font-size="10" fill="#d4a0b5" opacity="0.50" font-family="serif">✧</text>
-    <circle cx="13" cy="206" r="1.5" fill="#c9a84c" opacity="0.38"/>
-    <text x="13" y="254" text-anchor="middle" font-size="14" fill="#c9a84c" opacity="0.54" font-family="serif">☉</text>
-    <text x="13" y="308" text-anchor="middle" font-size="15" fill="#fff8ee" opacity="0.28" font-family="serif">☽</text>
-    <circle cx="13" cy="350" r="1.2" fill="#d4a0b5" opacity="0.42"/>
-    <text x="13" y="400" text-anchor="middle" font-size="10" fill="#c9a84c" opacity="0.50" font-family="serif">✦</text>
-    <text x="13" y="448" text-anchor="middle" font-size="11" fill="#fff8ee" opacity="0.36" font-family="serif">☉</text>
+  <div class="reading-inner accent-gold">
+    <div class="panel-heading">
+      <div class="panel-eyebrow-sm">chart ruler &middot; dominant theme</div>
+      <div class="panel-title-lg">Signature</div>
+    </div>
+
+    <div class="sec-card">
+      <div class="sec-head">
+        <div class="sec-sign-glyph">&#x2649;</div>
+        <div class="sec-meta">
+          <div class="sec-eyebrow">CHART WEIGHT &middot; 2ND, 3RD, 4TH HOUSES &middot; BELOW THE HORIZON</div>
+          <div class="sec-title">The Interior Center of Gravity</div>
+          <div class="sec-tagline">most of the planets inside, the soul direction pointing out</div>
+        </div>
+      </div>
+      <div class="kw-row">
+        <span class="kw">BELOW HORIZON</span><span class="kw">INTERIOR</span><span class="kw">VALUES</span><span class="kw">COMMUNICATION</span><span class="kw">HOME</span>
+      </div>
+      <div class="sec-body">
+        <p>The weight of this chart is interior. Most of the planets sit in the 2nd, 3rd, and 4th houses: values, communication, private life. The center of gravity is below the horizon &mdash; inside, at home, in the domain of what you feel and what you quietly know.</p>
+        <p>The soul direction points somewhere else. North Node in Libra, 10th house. Conjunct the MC. The chart is asking for something more visible and relational &mdash; partnership, public balance, being known in the outer sphere.</p>
+        <p>This is not a small gap. The familiar mode is interior. The called-toward mode is exterior and collaborative. The distance between them is the main terrain of this chart.</p>
+      </div>
+    </div>
+
+    <div class="dive-wrap">
+      <button class="dive-toggle" aria-expanded="false" onclick="toggleDive(this)">
+        <div class="dive-hd">
+          <div class="dive-lbl"><span class="dive-lbl-glyph">&#x2648;</span>Moon &middot; Aries 26&deg;50&prime; &middot; 4th House &middot; South Node conjunct Venus</div>
+          <span class="dive-arrow">&#x25BE;</span>
+        </div>
+      </button>
+      <div class="dive-body">
+        <div class="dive-content">
+          <p>The Moon at 26.83&deg; Aries and Venus at 16.33&deg; Aries in the 4th house anchor the chart&rsquo;s emotional foundation in fire. The South Node at 17.94&deg; Aries sits between them &mdash; so the familiar groove is precisely this: independence, directness, emotional self-sufficiency. You have always known how to meet yourself.</p>
+          <p>Moon trine Neptune (0.22&deg; orb) adds a visionary layer: the emotional body has genuine access to beauty, to what a room hasn&rsquo;t said yet. The fire and the music run simultaneously.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="sep-stars">&#x2736; &nbsp; &#x2727; &nbsp; &#x2736;</div>
+  </div>
+</div>
+
+<!-- CONSTITUTION -->
+<div class="subpanel sp-reading" id="sp-constitution">
+  <svg class="geo-bg" viewBox="0 0 375 812" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <polygon points="188,50 340,140 375,340 305,560 188,610 71,560 0,340 35,140" fill="none" stroke="rgba(201,168,76,0.065)" stroke-width="0.55"/>
+    <circle cx="188" cy="300" r="3.0" fill="none" stroke="rgba(62,143,192,0.12)" stroke-width="0.6"/>
+    <circle cx="188" cy="300" r="1.8" fill="rgba(62,143,192,0.16)"/>
+    <circle cx="188" cy="50" r="1.8" fill="rgba(201,168,76,0.32)"/>
   </svg>
 
-  <div class="hero-label">Natal Chart Reading</div>
-  <h1 class="hero-name">Iza</h1>
-  <div class="hero-ornament">☽ ✦ ☉ ✦ ☾</div>
-  <div class="hero-data">
-    <div>
-      <div class="hero-datum-label">Date</div>
-      <div class="hero-datum-value">February 23, 1996</div>
+  <div class="reading-inner accent-cerulean">
+    <div class="panel-heading">
+      <div class="panel-eyebrow-sm">core drives</div>
+      <div class="panel-title-lg">Constitution</div>
     </div>
-    <div>
-      <div class="hero-datum-label">Time</div>
-      <div class="hero-datum-value">2:20 AM</div>
+
+    <div class="sec-card">
+      <div class="sec-head">
+        <div class="sec-sign-glyph">&#x2653;</div>
+        <div class="sec-meta">
+          <div class="sec-eyebrow">PISCES SUN &middot; SUN CONJUNCT MARS &middot; 2ND HOUSE &middot; CORE IDENTITY</div>
+          <div class="sec-title">Pisces Sun, 2nd House</div>
+          <div class="sec-tagline">identity lives in the felt sense of things</div>
+        </div>
+      </div>
+      <div class="kw-row">
+        <span class="kw">PISCES</span><span class="kw">2ND HOUSE</span><span class="kw">FELT SENSE</span><span class="kw">VALUES</span><span class="kw">INNER RESOURCE</span>
+      </div>
+      <div class="sec-body">
+        <p>Identity lives in the felt sense of things. What you value, what you&rsquo;re willing to give, what you would defend without being able to fully explain &mdash; that is where you are most yourself. You know yourself through the quality of your attention, not through external markers.</p>
+        <p>The 2nd house ground means the inner world is your most real resource. This is not escapism. It&rsquo;s precision of a different kind.</p>
+      </div>
     </div>
-    <div>
-      <div class="hero-datum-label">Place</div>
-      <div class="hero-datum-value">Opoczno, Poland</div>
+
+    <div class="sep"><span class="sep-inner">Jupiter</span></div>
+
+    <div class="sec-card">
+      <div class="sec-head">
+        <div class="sec-sign-glyph">&#x2651;</div>
+        <div class="sec-meta">
+          <div class="sec-eyebrow">JUPITER &middot; CAPRICORN 10&deg;32&prime; &middot; 1ST HOUSE &middot; GROUNDED EXPANSION</div>
+          <div class="sec-title">Jupiter in Capricorn, 1st House</div>
+          <div class="sec-tagline">growth happens through structure, through what you actually complete</div>
+        </div>
+      </div>
+      <div class="kw-row">
+        <span class="kw">JUPITER</span><span class="kw">CAPRICORN</span><span class="kw">1ST HOUSE</span><span class="kw">ACCUMULATION</span><span class="kw">STRUCTURE</span>
+      </div>
+      <div class="sec-body">
+        <p>The presence is expansive but it arrives grounded. Jupiter in Capricorn doesn&rsquo;t perform ambition &mdash; it carries it in the body. People around you feel that something is building, even when you haven&rsquo;t said what.</p>
+        <p>This placement means growth happens through structure. Through what you actually complete, not just what you reach toward. Jupiter here rewards the long accumulation.</p>
+      </div>
     </div>
-    <div>
-      <div class="hero-datum-label">System</div>
-      <div class="hero-datum-value">Placidus · Tropical</div>
+
+    <div class="sep"><span class="sep-inner">Saturn</span></div>
+
+    <div class="sec-card">
+      <div class="sec-head">
+        <div class="sec-sign-glyph">&#x2653;</div>
+        <div class="sec-meta">
+          <div class="sec-eyebrow">SATURN &middot; PISCES 24&deg;37&prime; &middot; 3RD HOUSE &middot; INTERNAL PRECISION</div>
+          <div class="sec-title">Saturn in Pisces, 3rd House</div>
+          <div class="sec-tagline">rigor is happening internally; the articulation is the last step</div>
+        </div>
+      </div>
+      <div class="kw-row">
+        <span class="kw">SATURN</span><span class="kw">PISCES</span><span class="kw">3RD HOUSE</span><span class="kw">PRECISION</span><span class="kw">LANGUAGE</span>
+      </div>
+      <div class="sec-body">
+        <p>The internal demand for precision in communication is real, even when the process looks fluid to others. You edit privately, before the words arrive. What you finally say is already refined.</p>
+        <p>There is likely a history of being told your thinking was too feeling-based. Saturn in Pisces 3rd suggests the rigor was always happening internally. The articulation is the last step, not the first.</p>
+      </div>
     </div>
+
+    <div class="sep-stars">&#x2736; &nbsp; &#x2727; &nbsp; &#x2736;</div>
   </div>
 </div>
 
-<!-- IDENTITY TRIO -->
-<div class="trio-wrap">
-  <div class="trio">
+<!-- FORMATIVE -->
+<div class="subpanel sp-reading" id="sp-formative">
+  <svg class="geo-bg" viewBox="0 0 375 812" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <polygon points="188,40 310,120 345,300 290,510 188,555 86,510 30,300 65,120" fill="none" stroke="rgba(201,168,76,0.065)" stroke-width="0.55"/>
+    <line x1="188" y1="300" x2="130" y2="460" stroke="rgba(80,142,68,0.09)" stroke-width="0.4"/>
+    <line x1="188" y1="300" x2="246" y2="460" stroke="rgba(80,142,68,0.09)" stroke-width="0.4"/>
+    <circle cx="188" cy="300" r="2.0" fill="rgba(80,142,68,0.20)"/>
+    <circle cx="188" cy="40" r="1.8" fill="rgba(201,168,76,0.32)"/>
+  </svg>
 
-    <div class="trio-card sun">
-      <span class="trio-glyph">☉</span>
-      <div class="trio-label">Sun</div>
-      <div class="trio-placement">3° Pisces</div>
-      <div class="trio-house">3rd House · conjunct Mars · dissolved into language</div>
-      <div class="trio-rule"></div>
-      <div class="trio-tagline">Feeling as knowing. The inner life translates into words before it translates into action.</div>
+  <div class="reading-inner accent-teal">
+    <div class="panel-heading">
+      <div class="panel-eyebrow-sm">chiron &middot; saturn &middot; early formation</div>
+      <div class="panel-title-lg">Formative</div>
     </div>
 
-    <div class="trio-card moon">
-      <span class="trio-glyph">☽</span>
-      <div class="trio-label">Moon</div>
-      <div class="trio-placement">26° Aries</div>
-      <div class="trio-house">4th House · trine Neptune · fire in the foundation</div>
-      <div class="trio-rule"></div>
-      <div class="trio-tagline">The emotional world runs hot and honest. The private self is fiercer than the outer one suggests.</div>
+    <div class="sec-card">
+      <div class="sec-head">
+        <div class="sec-sign-glyph">&#x2609;</div>
+        <div class="sec-meta">
+          <div class="sec-eyebrow">SUN SQUARE PLUTO &middot; 0.64&deg; ORB &middot; PISCES 2ND &middot; SAG 12TH</div>
+          <div class="sec-title">Sun Square Pluto &mdash; 0.64&deg;</div>
+          <div class="sec-tagline">something below the surface presses on who you are</div>
+        </div>
+      </div>
+      <div class="kw-row">
+        <span class="kw">SUN-PLUTO</span><span class="kw">SQUARE</span><span class="kw">12TH HOUSE</span><span class="kw">UNDERGROUND</span><span class="kw">PERSISTENT</span>
+      </div>
+      <div class="sec-body">
+        <p>The tightest aspect in this chart is Sun square Pluto at 0.64&deg;. Sun in Pisces 2nd square Pluto in Sagittarius 12th.</p>
+        <p>Pluto in the 12th runs underground &mdash; in the hidden life, in what operates below conscious access. Squaring the Sun means this hidden transformation function is in ongoing friction with the identity and the life force. Not catastrophically. Persistently.</p>
+        <p>What this feels like: there is something below the surface that presses on who you are. A sense that you&rsquo;re always working something out that can&rsquo;t quite be named. The self is never entirely static. The 12th house Pluto keeps introducing pressure from below, and the Pisces Sun has to integrate it &mdash; quietly, continuously, without a clean resolution.</p>
+      </div>
     </div>
 
-    <div class="trio-card asc">
-      <span class="trio-glyph">↑</span>
-      <div class="trio-label">Rising</div>
-      <div class="trio-placement">12° Sagittarius</div>
-      <div class="trio-house">Pluto in 12th · expansive, seeking, depth beneath the openness</div>
-      <div class="trio-rule"></div>
-      <div class="trio-tagline">Wide-open presence. Restless for meaning. What runs beneath the surface is larger than what shows.</div>
+    <div class="sep"><span class="sep-inner">Mars &middot; Pluto &middot; Venus</span></div>
+
+    <div class="sec-card">
+      <div class="sec-head">
+        <div class="sec-sign-glyph">&#x2648;</div>
+        <div class="sec-meta">
+          <div class="sec-eyebrow">MARS SQUARE PLUTO &middot; 2.90&deg; &middot; VENUS CONJUNCT SOUTH NODE &middot; 1.61&deg;</div>
+          <div class="sec-title">Drive, Underground Friction, and the Love Pattern</div>
+          <div class="sec-tagline">the momentum is real and so is the resistance</div>
+        </div>
+      </div>
+      <div class="kw-row">
+        <span class="kw">MARS-PLUTO</span><span class="kw">VENUS-SNODE</span><span class="kw">FRICTION</span><span class="kw">SELF-DIRECTED</span><span class="kw">INTERIOR</span>
+      </div>
+      <div class="sec-body">
+        <p>Mars square Pluto sits at 2.90&deg;. The same Pluto presses on the drive. When you move toward something that matters, the underground resistance activates. The momentum is real and so is the friction. These don&rsquo;t cancel each other &mdash; they are the texture of how you act.</p>
+        <p>Venus conjunct South Node in Aries 4th at 1.61&deg; is the other formative contact. The love nature is intimately familiar with the private, self-directed home. Giving love in the interior sphere, on your own terms, independently &mdash; this is the comfort zone the chart was built around. It works. The question the North Node is holding is: what opens when love becomes visible in a different domain?</p>
+      </div>
     </div>
 
+    <div class="sep-stars">&#x2736; &nbsp; &#x2727; &nbsp; &#x2736;</div>
   </div>
 </div>
 
-<div class="cel-divider">
-  <div class="cel-rule left"></div>
-  <div class="cel-mark">✦ ✦ ✦</div>
-  <div class="cel-rule right"></div>
-</div>
+<!-- SHADOW -->
+<div class="subpanel sp-reading" id="sp-shadow">
+  <svg class="geo-bg" viewBox="0 0 375 812" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <polygon points="188,50 340,140 375,340 305,560 188,610 71,560 0,340 35,140" fill="none" stroke="rgba(201,168,76,0.065)" stroke-width="0.55"/>
+    <circle cx="188" cy="300" r="3.0" fill="none" stroke="rgba(62,143,192,0.12)" stroke-width="0.6"/>
+    <circle cx="188" cy="300" r="1.8" fill="rgba(62,143,192,0.16)"/>
+    <circle cx="188" cy="50" r="1.8" fill="rgba(201,168,76,0.32)"/>
+  </svg>
 
-<!-- CHART SIGNATURE -->
-<div class="sig-wrap">
-  <div class="sig-header">
-    <div class="sig-eyebrow">Key Patterns</div>
-    <div class="sig-title">Chart Signature</div>
-  </div>
-  <div class="sig-panel">
-    <ul class="sig-list">
-      <li class="sig-item">
-        <span class="sig-glyph">♓</span>
-        <span class="sig-text"><strong>Pisces stellium in the 3rd house.</strong> Sun 3°, Mars 5°, Saturn 24° — three planets in Pisces in the house of mind and communication. Thinking, speaking, and writing all run through a Pisces frequency: porous, sensitive, and picking up what language doesn't fully reach.</span>
-      </li>
-      <li class="sig-item">
-        <span class="sig-glyph">♈</span>
-        <span class="sig-text"><strong>Moon, Venus, and South Node in Aries, 4th house.</strong> The emotional home base is fiery and direct. The familiar groove — the Aries South Node — is self-sufficiency, leading from instinct. The deepest sense of home lives inside independence.</span>
-      </li>
-      <li class="sig-item">
-        <span class="sig-glyph">⚷</span>
-        <span class="sig-text"><strong>Chiron exact on the Midheaven (0.1° orb).</strong> The wound and the vocation share the same degree. The most public, visible thing about her calling is where the healing lives. The work and the wound are not separate domains.</span>
-      </li>
-      <li class="sig-item">
-        <span class="sig-glyph">☊</span>
-        <span class="sig-text"><strong>North Node in Libra, 10th house, conjunct MC.</strong> Soul direction and vocation are the same address: balance, beauty, relational artistry. The soul path runs directly through professional life, not alongside it.</span>
-      </li>
-      <li class="sig-item">
-        <span class="sig-glyph">♐</span>
-        <span class="sig-text"><strong>Sagittarius Rising with Pluto in the 12th.</strong> The outer face is expansive and open, genuinely wide in its welcome. Pluto at 3° Sagittarius in the 12th house runs beneath it — a private depth and transformative charge that doesn't announce itself first.</span>
-      </li>
-    </ul>
-  </div>
-</div>
+  <div class="reading-inner accent-cerulean">
+    <div class="panel-heading">
+      <div class="panel-eyebrow-sm">south node &middot; aries 4th &middot; projection</div>
+      <div class="panel-title-lg">Shadow</div>
+    </div>
 
-<!-- PLANETS + ASPECTS -->
-<div class="data-wrap">
-
-  <div>
-    <div class="data-section-title">Natal Planets + Points</div>
-    <div class="planet-list">
-      <div class="planet-row">
-        <span class="pl-glyph">☉</span>
-        <span class="pl-name">Sun</span>
-        <span class="pl-sign">3° Pisces</span>
-        <span class="pl-house">3rd H</span>
+    <div class="sec-card">
+      <div class="sec-head">
+        <div class="sec-sign-glyph">&#x261B;</div>
+        <div class="sec-meta">
+          <div class="sec-eyebrow">SOUTH NODE &middot; ARIES 17&deg;56&prime; &middot; 4TH HOUSE &middot; PAST MASTERY</div>
+          <div class="sec-title">The Aries Default</div>
+          <div class="sec-tagline">self-sufficiency as the primary resource</div>
+        </div>
       </div>
-      <div class="planet-row">
-        <span class="pl-glyph">☽</span>
-        <span class="pl-name">Moon</span>
-        <span class="pl-sign">26° Aries</span>
-        <span class="pl-house">4th H</span>
+      <div class="kw-row">
+        <span class="kw">SOUTH NODE</span><span class="kw">ARIES</span><span class="kw">4TH HOUSE</span><span class="kw">INDEPENDENCE</span><span class="kw">SELF-DIRECTION</span>
       </div>
-      <div class="planet-row">
-        <span class="pl-glyph">↑</span>
-        <span class="pl-name">Ascendant</span>
-        <span class="pl-sign">12° Sagittarius</span>
-        <span class="pl-house">—</span>
-      </div>
-      <div class="planet-row">
-        <span class="pl-glyph">☿</span>
-        <span class="pl-name">Mercury</span>
-        <span class="pl-sign">9° Aquarius</span>
-        <span class="pl-house">2nd H</span>
-      </div>
-      <div class="planet-row">
-        <span class="pl-glyph">♀</span>
-        <span class="pl-name">Venus</span>
-        <span class="pl-sign">16° Aries</span>
-        <span class="pl-house">4th H</span>
-      </div>
-      <div class="planet-row">
-        <span class="pl-glyph">♂</span>
-        <span class="pl-name">Mars</span>
-        <span class="pl-sign">5° Pisces</span>
-        <span class="pl-house">3rd H</span>
-      </div>
-      <div class="planet-row">
-        <span class="pl-glyph">♃</span>
-        <span class="pl-name">Jupiter</span>
-        <span class="pl-sign">10° Capricorn</span>
-        <span class="pl-house">2nd H</span>
-      </div>
-      <div class="planet-row">
-        <span class="pl-glyph">♄</span>
-        <span class="pl-name">Saturn</span>
-        <span class="pl-sign">24° Pisces</span>
-        <span class="pl-house">3rd H</span>
-      </div>
-      <div class="planet-row">
-        <span class="pl-glyph">♅</span>
-        <span class="pl-name">Uranus</span>
-        <span class="pl-sign">2° Aquarius</span>
-        <span class="pl-house">2nd H</span>
-      </div>
-      <div class="planet-row">
-        <span class="pl-glyph">♆</span>
-        <span class="pl-name">Neptune</span>
-        <span class="pl-sign">26° Capricorn</span>
-        <span class="pl-house">2nd H</span>
-      </div>
-      <div class="planet-row">
-        <span class="pl-glyph">♇</span>
-        <span class="pl-name">Pluto</span>
-        <span class="pl-sign">3° Sagittarius Rx</span>
-        <span class="pl-house">12th H</span>
-      </div>
-      <div class="planet-row">
-        <span class="pl-glyph">⚷</span>
-        <span class="pl-name">Chiron</span>
-        <span class="pl-sign">13° Libra Rx</span>
-        <span class="pl-house">10th H</span>
-      </div>
-      <div class="planet-row">
-        <span class="pl-glyph">☊</span>
-        <span class="pl-name">North Node</span>
-        <span class="pl-sign">17° Libra</span>
-        <span class="pl-house">10th H</span>
-      </div>
-      <div class="planet-row">
-        <span class="pl-glyph">☋</span>
-        <span class="pl-name">South Node</span>
-        <span class="pl-sign">17° Aries</span>
-        <span class="pl-house">4th H</span>
-      </div>
-      <div class="planet-row">
-        <span class="pl-glyph">MC</span>
-        <span class="pl-name">Midheaven</span>
-        <span class="pl-sign">13° Libra</span>
-        <span class="pl-house">10th H</span>
+      <div class="sec-body">
+        <p>The South Node in Aries, 4th house, with Venus sitting 1.61&deg; from it: the magnetic pull is toward the private emotional life. Toward self-sufficiency as the primary resource. Toward intensity experienced alone, in the home, in the body. This mode is fast, reliable, and known.</p>
+        <p>The North Node in Libra, 10th house, is asking for the opposite in almost every dimension. Public. Collaborative. Relational. The work visible in the world rather than conducted in private. Partnership as the primary axis rather than self-direction.</p>
+        <p>The resistance to this is real and not a flaw. The Aries 4th is where you know how to be. The Libra 10th is where you are being asked to become. They are genuinely in different registers.</p>
       </div>
     </div>
-  </div>
 
-  <div>
-    <div class="data-section-title">Key Natal Aspects · by exactness</div>
-    <div class="aspect-list">
-      <div class="aspect-row">
-        <span class="asp-sym conj">☌</span>
-        <span class="asp-desc">Chiron conjunct MC (Libra 10th)</span>
-        <span class="asp-orb">0.1°</span>
+    <div class="sep"><span class="sep-inner">Venus &middot; South Node</span></div>
+
+    <div class="sec-card">
+      <div class="sec-head">
+        <div class="sec-sign-glyph">&#x2648;</div>
+        <div class="sec-meta">
+          <div class="sec-eyebrow">VENUS &middot; ARIES 16&deg;33&prime; &middot; CONJUNCT SOUTH NODE &middot; 1.61&deg; ORB</div>
+          <div class="sec-title">Love Woven Into the Familiar</div>
+          <div class="sec-tagline">moving toward the North Node requires bringing the relational self into a new sphere</div>
+        </div>
       </div>
-      <div class="aspect-row">
-        <span class="asp-sym trine">△</span>
-        <span class="asp-desc">Moon trine Neptune (Aries / Capricorn)</span>
-        <span class="asp-orb">0.2°</span>
+      <div class="kw-row">
+        <span class="kw">VENUS</span><span class="kw">SOUTH NODE</span><span class="kw">ARIES</span><span class="kw">PRIVATE</span><span class="kw">SELF-TERMS</span>
       </div>
-      <div class="aspect-row">
-        <span class="asp-sym sq">□</span>
-        <span class="asp-desc">Sun square Pluto (Pisces / Sagittarius)</span>
-        <span class="asp-orb">0.6°</span>
-      </div>
-      <div class="aspect-row">
-        <span class="asp-sym conj">☌</span>
-        <span class="asp-desc">Venus conjunct South Node (Aries 4th)</span>
-        <span class="asp-orb">1.6°</span>
-      </div>
-      <div class="aspect-row">
-        <span class="asp-sym conj">☌</span>
-        <span class="asp-desc">Sun conjunct Mars (Pisces 3rd)</span>
-        <span class="asp-orb">2.3°</span>
-      </div>
-      <div class="aspect-row">
-        <span class="asp-sym opp">☍</span>
-        <span class="asp-desc">Venus opposite Chiron (Aries / Libra)</span>
-        <span class="asp-orb">2.6°</span>
-      </div>
-      <div class="aspect-row">
-        <span class="asp-sym trine">△</span>
-        <span class="asp-desc">Venus trine Ascendant (Aries / Sagittarius)</span>
-        <span class="asp-orb">3.4°</span>
+      <div class="sec-body">
+        <p>The particular challenge of South Node with Venus: the love nature is woven into the familiar mode. Moving toward the North Node isn&rsquo;t just a behavioral shift &mdash; it requires bringing the relational self into a sphere that has felt, until now, like it belongs to the exterior world. Not to you.</p>
+        <p>The Aries 4th is genuinely capable. It can love intensely and well, in the private sphere, on its own terms. The invitation is not to abandon that. It is to learn what happens when that same love is offered in more visible territory.</p>
       </div>
     </div>
+
+    <div class="sep-stars">&#x2736; &nbsp; &#x2727; &nbsp; &#x2736;</div>
   </div>
-
 </div>
 
-<div class="cel-divider">
-  <div class="cel-rule left"></div>
-  <div class="cel-mark">✦ ✦ ✦</div>
-  <div class="cel-rule right"></div>
+<!-- ARC -->
+<div class="subpanel sp-reading" id="sp-arc">
+  <svg class="geo-bg" viewBox="0 0 375 812" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <polygon points="188,28 332,108 370,290 310,500 188,548 66,500 5,290 44,108" fill="none" stroke="rgba(201,168,76,0.08)" stroke-width="0.6"/>
+    <polygon points="188,90 295,162 325,290 278,410 188,440 98,410 51,290 81,162" fill="none" stroke="rgba(201,168,76,0.055)" stroke-width="0.45"/>
+    <circle cx="188" cy="290" r="3.5" fill="none" stroke="rgba(201,168,76,0.15)" stroke-width="0.6"/>
+    <circle cx="188" cy="290" r="1.5" fill="rgba(201,168,76,0.25)"/>
+    <circle cx="188" cy="28" r="2.0" fill="rgba(201,168,76,0.38)"/>
+  </svg>
+
+  <div class="reading-inner accent-teal">
+    <div class="panel-heading">
+      <div class="panel-eyebrow-sm">north node &middot; through-line</div>
+      <div class="panel-title-lg">Arc</div>
+    </div>
+
+    <div class="sec-card">
+      <div class="sec-head">
+        <div class="sec-sign-glyph">&#x261A;</div>
+        <div class="sec-meta">
+          <div class="sec-eyebrow">NORTH NODE &middot; LIBRA 17&deg;56&prime; &middot; 10TH HOUSE &middot; CONJUNCT MC</div>
+          <div class="sec-title">Soul Direction and Career Axis &mdash; One Address</div>
+          <div class="sec-tagline">being known publicly through partnership and balance</div>
+        </div>
+      </div>
+      <div class="kw-row">
+        <span class="kw">NORTH NODE</span><span class="kw">LIBRA</span><span class="kw">10TH HOUSE</span><span class="kw">MC</span><span class="kw">VISIBLE</span>
+      </div>
+      <div class="sec-body">
+        <p>The North Node in Libra, 10th house, is conjunct the MC at 4.34&deg;. In this chart, soul direction and career axis are pointing at the same thing: being known publicly through partnership and balance. This is not two paths. It is one.</p>
+        <p>The Sagittarius Rising is the vehicle. It moves toward things naturally, openly, philosophically. It trusts forward motion. The person who arrives in a room already looking for meaning is also the person capable of becoming visible in the public sphere &mdash; because visibility for Sagittarius is just the outer register of what it&rsquo;s already doing internally.</p>
+        <p>The work is not transforming the interior self. The work is letting that self be seen. Moving from the weight of the 2nd and 4th into the exposed, relational territory of the 10th. Not as performance. As the natural next stage of a chart that has been doing its interior work for a long time.</p>
+      </div>
+    </div>
+
+    <div class="sep"><span class="sep-inner">Through-Line</span></div>
+
+    <div class="throughline">
+      <p>The Pluto 12th, the Saturn 3rd, the Sun-Mars fusion in Pisces: this is a chart that has been preparing something. The interior life has been precise and active for a long time, even when it didn&rsquo;t look that way from the outside. The MC-NNode conjunction says the preparation is complete enough. The next move is outward.</p>
+      <p>The Sagittarius Rising is not ornament. It is the mechanism. Forward motion, philosophical orientation, the instinct toward meaning &mdash; this is the same quality that will carry the interior self into the visible world. The reaching forward that feels natural is the same energy that serves the North Node.</p>
+      <p>What she has built inside is already finished. The invitation is to let it stand where others can see it.</p>
+      <span class="pull">The Interior Architect&rsquo;s gift, when it moves outward, is that it is already done.</span>
+    </div>
+    <div class="sep-stars">&#x2736; &nbsp; &#x2727; &nbsp; &#x2736;</div>
+  </div>
 </div>
 
-<!-- DEEP DIVES -->
-<div class="dive-wrap">
+<!-- ARCHETYPE -->
+<div class="subpanel sp-reading" id="sp-archetype">
+  <svg class="geo-bg" viewBox="0 0 375 812" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <polygon points="188,28 332,108 370,290 310,500 188,548 66,500 5,290 44,108" fill="none" stroke="rgba(201,168,76,0.08)" stroke-width="0.6"/>
+    <polygon points="188,90 295,162 325,290 278,410 188,440 98,410 51,290 81,162" fill="none" stroke="rgba(201,168,76,0.055)" stroke-width="0.45"/>
+    <circle cx="188" cy="290" r="3.5" fill="none" stroke="rgba(201,168,76,0.15)" stroke-width="0.6"/>
+    <circle cx="188" cy="290" r="1.5" fill="rgba(201,168,76,0.25)"/>
+    <circle cx="188" cy="28" r="2.0" fill="rgba(201,168,76,0.38)"/>
+  </svg>
 
-  <!-- 1. SUN + MARS IN PISCES -->
-  <div class="dive-section accent-gold">
-    <div class="dive-head gold-head">
-      <svg class="dive-head-stars" viewBox="0 0 900 130" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="820" cy="28" r="1.0" fill="#c9a84c" opacity="0.48"/>
-        <circle cx="72"  cy="52" r="0.8" fill="#fff8ee" opacity="0.34"/>
-        <circle cx="540" cy="18" r="0.9" fill="#fff8ee" opacity="0.28"/>
-        <circle cx="280" cy="98" r="0.7" fill="#c9a84c" opacity="0.28"/>
-        <text x="840" y="72" font-size="9" fill="#c9a84c" opacity="0.44" text-anchor="middle" font-family="serif">✦</text>
-        <circle cx="860" cy="42" r="40" fill="#c9a84c" opacity="0.05"/>
-      </svg>
-      <div class="dive-icon">♓</div>
-      <div class="dive-head-text">
-        <div class="dive-eyebrow">Sun · Mars · Saturn · 3rd House · Pisces</div>
-        <div class="dive-title">Sun + Mars in Pisces — The Dreaming Engine</div>
-        <div class="dive-subtitle">3° Pisces · 5° Pisces · 3rd house · where thinking and feeling move as one</div>
-        <div class="dive-tags">
-          <span class="dtag">Pisces</span>
-          <span class="dtag">3rd House</span>
-          <span class="dtag">Mind + Drive</span>
-          <span class="dtag">Sensitivity</span>
+  <div class="reading-inner accent-rose">
+    <div class="panel-heading">
+      <div class="panel-eyebrow-sm">archetype</div>
+      <div class="panel-title-lg">The Interior Architect</div>
+    </div>
+
+    <!-- ARCHETYPE FLIP CARD -->
+    <div class="tarot-outer">
+      <div class="tarot-card" onclick="this.classList.toggle('flipped')">
+        <div class="card-inner">
+
+          <!-- ── FRONT ── -->
+          <div class="card-front">
+            <div class="card-bg"></div>
+            <div class="card-wc"></div>
+            <div class="card-grain"></div>
+            <div class="card-vignette"></div>
+            <div class="card-border-outer"></div>
+            <div class="card-border-inner"></div>
+            <div class="card-numeral">XI</div>
+
+            <div class="card-sigil-wrap">
+              <svg viewBox="0 0 120 180" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
+                <defs>
+                  <filter id="iGreenGlow" x="-40%" y="-40%" width="180%" height="180%">
+                    <feGaussianBlur stdDeviation="3"/>
+                  </filter>
+                  <filter id="iSoftg" x="-40%" y="-40%" width="180%" height="180%">
+                    <feGaussianBlur stdDeviation="2" result="b"/>
+                    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+                  </filter>
+                </defs>
+                <circle cx="60" cy="90" r="72" stroke="rgba(120,176,160,0.08)" stroke-width="0.5"/>
+                <line x1="60" y1="55" x2="36" y2="132" stroke="#c9a84c" stroke-width="1.5"/>
+                <line x1="60" y1="55" x2="84" y2="132" stroke="#c9a84c" stroke-width="1.5"/>
+                <circle cx="60" cy="55" r="3.5" fill="#c9a84c"/>
+                <path d="M36,132 Q60,120 84,132" fill="none" stroke="#c9a84c" stroke-width="1.2"/>
+                <circle cx="60" cy="98" r="14" fill="none" stroke="#78b0a0" stroke-width="1" stroke-dasharray="2,3"/>
+                <circle cx="60" cy="98" r="3" fill="#78b0a0" opacity="0.6"/>
+                <circle cx="60" cy="90" r="42" fill="none" stroke="rgba(201,168,76,0.08)" stroke-width="0.5"/>
+                <circle cx="60" cy="90" r="58" fill="none" stroke="rgba(120,176,160,0.06)" stroke-width="0.4" stroke-dasharray="1,4"/>
+                <g fill="rgba(201,168,76,0.30)">
+                  <path d="M8,8 L9,6.2 L10,8 L11.8,9 L10,10 L9,11.8 L8,10 L6.2,9Z"/>
+                  <path d="M112,8 L113,6.2 L114,8 L115.8,9 L114,10 L113,11.8 L112,10 L110.2,9Z"/>
+                  <path d="M8,170 L9,168.2 L10,170 L11.8,171 L10,172 L9,173.8 L8,172 L6.2,171Z"/>
+                  <path d="M112,170 L113,168.2 L114,170 L115.8,171 L114,172 L113,173.8 L112,172 L110.2,171Z"/>
+                </g>
+                <circle cx="60" cy="55" r="8" fill="rgba(201,168,76,0.12)" filter="url(#iGreenGlow)"/>
+              </svg>
+            </div>
+
+            <div class="card-label">
+              <div class="card-name-front">The Interior<br>Architect</div>
+              <div class="card-sub-front">Pisces &middot; Sagittarius &middot; Aries</div>
+              <div class="card-hint"><span class="card-hint-pill">tap to reveal &#x21BB;</span></div>
+            </div>
+          </div>
+
+          <!-- ── BACK ── -->
+          <div class="card-back">
+            <div class="card-back-bg"></div>
+            <div class="card-back-wc"></div>
+            <div class="card-back-grain"></div>
+            <div class="card-back-border-outer"></div>
+            <div class="card-back-border-inner"></div>
+            <div class="card-back-content">
+              <div class="card-back-numeral">XI</div>
+              <svg class="card-back-sigil-mini" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="22" cy="22" r="18" stroke="rgba(201,168,76,0.30)" stroke-width="0.8" fill="none"/>
+                <line x1="22" y1="14" x2="12" y2="36" stroke="#c9a84c" stroke-width="1.4"/>
+                <line x1="22" y1="14" x2="32" y2="36" stroke="#c9a84c" stroke-width="1.4"/>
+                <circle cx="22" cy="14" r="2.5" fill="#c9a84c"/>
+                <circle cx="22" cy="26" r="5" fill="none" stroke="#78b0a0" stroke-width="0.8" stroke-dasharray="1.5,2.5"/>
+              </svg>
+              <div class="card-back-name">The Interior<br>Architect</div>
+              <div class="card-back-sub">Pisces Sun &middot; Sagittarius Rising &middot; Aries Moon</div>
+              <div class="card-back-rule"></div>
+              <div class="card-back-body"><p>She builds from the inside out. Her most precise thinking happens below the surface &mdash; in private, before language, in the felt sense of what is true. By the time it arrives in the world, it is already finished.</p><p>The Sagittarius Ascendant gives her presence a quality of forward momentum. People read her as someone on her way toward something. They are right. They just can&rsquo;t see where the movement is being organized from.</p><p>The invitation is to trust that. To let what has been built in the 2nd and 4th stand in the light of the 10th.</p></div>
+              <div class="card-back-tap">tap to close &#x21BA;</div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
-    <div class="dive-body">
-      <p>The Sun at 3.71° Pisces and Mars at 5.98° Pisces in the 3rd house form a conjunction within 2.3°: identity and drive woven together in the most sensitive of signs, in the house of mind, communication, and how the world gets processed into language. A Pisces Sun is porous by nature: the self absorbs context, picks up tone, senses what's unspoken. In the 3rd house, that porousness lives directly in the thinking space. Iza's reasoning isn't purely analytical. It feels its way forward, registering undercurrents before they surface, understanding atmosphere as information.</p>
-      <div class="pull">The thinking is not separate from the feeling. The feeling is the thinking's most reliable compass.</div>
-      <p>Mars in Pisces is a gentler drive than Mars usually runs, but it isn't passive; the motivation moves below the surface and surfaces with unexpected depth toward what genuinely matters. Saturn at 24° Pisces in the same house adds endurance: the capacity to work at something slowly, across time, without needing immediate return. Three planets in Pisces in the 3rd house build a mind that is simultaneously visionary and patient, imaginative and persistent. The inner life doesn't stay private: it reaches outward through language, through attention, through the quality of presence that can make another person feel truly seen.</p>
-    </div>
+
+    <div style="height:16px"></div>
   </div>
-
-  <!-- 2. MOON + VENUS IN ARIES -->
-  <div class="dive-section accent-rose">
-    <div class="dive-head rose-head">
-      <svg class="dive-head-stars" viewBox="0 0 900 130" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="818" cy="30" r="0.9" fill="#d4a0b5" opacity="0.42"/>
-        <circle cx="68"  cy="55" r="0.8" fill="#fff8ee" opacity="0.30"/>
-        <circle cx="545" cy="16" r="0.9" fill="#fff8ee" opacity="0.26"/>
-        <circle cx="275" cy="96" r="0.7" fill="#d4a0b5" opacity="0.28"/>
-        <text x="838" y="74" font-size="9" fill="#d4a0b5" opacity="0.40" text-anchor="middle" font-family="serif">✦</text>
-        <circle cx="860" cy="44" r="44" fill="#d4a0b5" opacity="0.05"/>
-      </svg>
-      <div class="dive-icon">♈</div>
-      <div class="dive-head-text">
-        <div class="dive-eyebrow">Moon · Venus · South Node · 4th House · Aries</div>
-        <div class="dive-title">Moon + Venus in Aries — Fire in the Foundation</div>
-        <div class="dive-subtitle">26° Aries · 16° Aries · 4th house · the emotional home base runs hot and direct</div>
-        <div class="dive-tags">
-          <span class="dtag">Aries Moon</span>
-          <span class="dtag">4th House</span>
-          <span class="dtag">Emotional Fire</span>
-          <span class="dtag">South Node</span>
-        </div>
-      </div>
-    </div>
-    <div class="dive-body">
-      <p>The Moon at 26.83° Aries and Venus at 16.33° Aries sit in the 4th house, the most interior domain of the chart. The 4th house is home: the emotional foundation, the private interior from which everything else grows. In Aries, that foundation is direct, independent, and alive. The emotional world doesn't linger or negotiate: when Iza feels something, she feels it immediately and at full strength. Moon trine Neptune (0.2° orb) adds a visionary layer: the emotional body has genuine access to beauty and imagination, can sense what a room hasn't said yet, holds both the fire and the music simultaneously.</p>
-      <div class="pull rose-pull">The fire isn't against the ground. It's in it. The independence is where she feels most at home.</div>
-      <p>The South Node at 17.94° Aries sits between Moon and Venus in the same house, reinforcing the deep familiarity of the Aries pattern: self-sufficiency, leading from instinct, meeting the world first. This is the emotional comfort zone, genuinely capable and reliable. The North Node in Libra is the invitation to complement that strength with something more: the relational artistry of holding space, of creating beauty that includes and holds another. The Aries fire doesn't disappear in that direction. It learns to warm a room rather than lead it.</p>
-    </div>
-  </div>
-
-  <!-- 3. CHIRON ON MC -->
-  <div class="dive-section accent-plum">
-    <div class="dive-head plum-head">
-      <svg class="dive-head-stars" viewBox="0 0 900 130" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="815" cy="32" r="0.9" fill="#b482d2" opacity="0.44"/>
-        <circle cx="70"  cy="58" r="0.8" fill="#fff8ee" opacity="0.28"/>
-        <circle cx="542" cy="18" r="0.8" fill="#b482d2" opacity="0.28"/>
-        <circle cx="278" cy="95" r="0.7" fill="#fff8ee" opacity="0.24"/>
-        <text x="835" y="76" font-size="9" fill="#b482d2" opacity="0.42" text-anchor="middle" font-family="serif">✦</text>
-        <circle cx="860" cy="46" r="44" fill="#7b4fa6" opacity="0.08"/>
-      </svg>
-      <div class="dive-icon">⚷</div>
-      <div class="dive-head-text">
-        <div class="dive-eyebrow">Chiron · Midheaven · Libra · 10th House · Vocation</div>
-        <div class="dive-title">Chiron Exact on the Midheaven — The Wound Becomes the Work</div>
-        <div class="dive-subtitle">13° Libra Rx · 0.1° from MC · North Node 17° Libra · calling and healing share a degree</div>
-        <div class="dive-tags">
-          <span class="dtag">Chiron</span>
-          <span class="dtag">MC Exact</span>
-          <span class="dtag">Libra</span>
-          <span class="dtag">Vocation</span>
-        </div>
-      </div>
-    </div>
-    <div class="dive-body">
-      <p>Chiron at 13.73° Libra sits within 0.13° of the Midheaven — so exact that this conjunction is a defining fact of the chart. The Midheaven is the point of public life, vocation, and the role one takes in the world. Chiron is the wound that never fully resolves, and the healer who guides others through precisely because of that intimacy with the pain. In Libra, the wound lives in the domain of balance, beauty, fairness, and relational harmony: the experience of these things being absent, disrupted, or unequal, and the deep knowledge of what their loss costs.</p>
-      <div class="pull plum-pull">The most visible thing about her public life is the place where she learned what healing means.</div>
-      <p>The North Node at 17° Libra conjuncts both Chiron and the MC — soul direction, wound, and calling all at the same address in the sky. This doesn't mean the path is painless. It means that for Iza, the most meaningful professional direction runs directly through the Libran questions: what is fair, what is beautiful, what has been broken and how might it be restored. The wound is the credential. Not because suffering ennobles, but because the person who has truly inhabited the question is the one who can genuinely hold it for someone else.</p>
-    </div>
-  </div>
-
-  <!-- 4. NORTH NODE LIBRA -->
-  <div class="dive-section accent-gold">
-    <div class="dive-head gold-head">
-      <svg class="dive-head-stars" viewBox="0 0 900 130" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="818" cy="30" r="1.0" fill="#c9a84c" opacity="0.46"/>
-        <circle cx="72"  cy="52" r="0.8" fill="#fff8ee" opacity="0.28"/>
-        <circle cx="540" cy="18" r="0.9" fill="#fff8ee" opacity="0.26"/>
-        <circle cx="280" cy="97" r="0.7" fill="#c9a84c" opacity="0.28"/>
-        <text x="838" y="72" font-size="9" fill="#c9a84c" opacity="0.42" text-anchor="middle" font-family="serif">✦</text>
-        <circle cx="858" cy="42" r="40" fill="#c9a84c" opacity="0.05"/>
-      </svg>
-      <div class="dive-icon">☊</div>
-      <div class="dive-head-text">
-        <div class="dive-eyebrow">North Node · Libra · 10th House · Soul Direction</div>
-        <div class="dive-title">North Node Libra — Toward Balance and Relational Art</div>
-        <div class="dive-subtitle">17° Libra · 10th house · South Node Aries · from self-sufficiency to the art of true partnership</div>
-        <div class="dive-tags">
-          <span class="dtag">North Node</span>
-          <span class="dtag">Libra</span>
-          <span class="dtag">10th House</span>
-          <span class="dtag">Soul Path</span>
-        </div>
-      </div>
-    </div>
-    <div class="dive-body">
-      <p>The South Node in Aries in the 4th house is the groove that runs deepest: independence, self-reliance, leading from instinct, meeting the world on her own terms before being met. The Aries South Node is genuinely capable and has real gifts: fast response time, the ability to trust herself, directness without apology. But as a default pattern, it keeps the door of genuine partnership slightly closed: if I can do it alone, why wait for another? The North Node in Libra in the 10th house asks a different question: not how to be strong alone, but how to be strong in relation.</p>
-      <div class="pull">The soul path isn't away from independence. It's toward the artistry of showing up in full alongside someone else.</div>
-      <p>With Chiron conjunct the North Node and MC within 5°, this isn't abstract soul work: it runs through the vocational path and through the wound simultaneously. The direction that requires the most growth is also the direction most likely to produce the most meaningful work. Libra at its highest is not compromise for the sake of peace. It is the capacity to hold genuine complexity with grace, to build beauty that requires more than one person, to mediate not from distance but from having been on both sides of the imbalance. That's what the North Node is pointing toward.</p>
-    </div>
-  </div>
-
-  <!-- 5. SYNASTRY WITH JORDAN -->
-  <div class="dive-section accent-teal">
-    <div class="dive-head teal-head">
-      <svg class="dive-head-stars" viewBox="0 0 900 130" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="818" cy="30" r="0.9" fill="#7ecfc2" opacity="0.38"/>
-        <circle cx="68"  cy="54" r="0.8" fill="#fff8ee" opacity="0.26"/>
-        <circle cx="542" cy="18" r="0.8" fill="#7ecfc2" opacity="0.26"/>
-        <circle cx="280" cy="96" r="0.7" fill="#fff8ee" opacity="0.24"/>
-        <text x="836" y="73" font-size="9" fill="#7ecfc2" opacity="0.38" text-anchor="middle" font-family="serif">✦</text>
-        <circle cx="858" cy="42" r="42" fill="#5bb8a8" opacity="0.07"/>
-      </svg>
-      <div class="dive-icon">✦</div>
-      <div class="dive-head-text">
-        <div class="dive-eyebrow">Synastry · Iza + Jordan</div>
-        <div class="dive-title">Where Our Charts Meet</div>
-        <div class="dive-subtitle">four exact contacts · the astrological texture of this particular recognition</div>
-        <div class="dive-tags">
-          <span class="dtag">Synastry</span>
-          <span class="dtag">4 Exact Contacts</span>
-          <span class="dtag">Recognition</span>
-        </div>
-      </div>
-    </div>
-    <div class="dive-body">
-      <p>Four contacts at near-exact orb. Not incidental. The recognition that happens between these two charts has an astrological structure to it: the planets were already oriented toward each other before the words existed for it.</p>
-
-      <div class="synastry-contact">
-        <div class="syn-label">Contact 1 · 0° orb · exact conjunction</div>
-        <div class="syn-aspect">Your Pluto (3° Sagittarius) conjunct Jordan's North Node (3° Sagittarius)</div>
-        <div class="syn-body">Your Pluto sits exactly on her North Node — the axis of her soul direction and growth edge. Pluto conjunct another's North Node is one of the most potent evolutionary contacts in synastry: your depth, intensity, and transformative force aligns with the direction she is genuinely meant to grow toward. You don't just support that direction. You are, in some structural sense, part of what calls it forward.</div>
-      </div>
-
-      <div class="synastry-contact">
-        <div class="syn-label">Contact 2 · 1.5° orb · near-exact conjunction</div>
-        <div class="syn-aspect">Your Pluto (3° Sagittarius) conjunct Jordan's Sun (1.57° Sagittarius)</div>
-        <div class="syn-body">Pluto conjunct another's Sun is a transformative contact: your depth meets her core identity and doesn't leave it unchanged. Sun-Pluto connections carry genuine weight. They can feel intense in ways that are hard to explain — not because something is wrong, but because this kind of contact operates at the level of what actually matters. The connection has gravity because the charts are oriented toward each other at a foundational level.</div>
-      </div>
-
-      <div class="synastry-contact">
-        <div class="syn-label">Contact 3 · 2° orb · near-exact conjunction</div>
-        <div class="syn-aspect">Your Ascendant (12° Sagittarius) conjunct Jordan's Mars</div>
-        <div class="syn-body">Your Rising point — the axis of your presence, how you enter a room — brushes directly against her Mars, the planet of drive and activation. Your presence moves something in her. There's an aliveness that comes through in how you interact: she feels energized by who you are, not just by what you say. This is the contact that makes engagement feel generative rather than draining.</div>
-      </div>
-
-      <div class="synastry-contact">
-        <div class="syn-label">Contact 4 · 3° orb · near-exact conjunction</div>
-        <div class="syn-aspect">Your Mars (5° Pisces) conjunct Jordan's Midheaven</div>
-        <div class="syn-body">Your Mars sits near her Midheaven — the point of her vocation and public calling. Your drive and motivation touches her professional self directly. This is the contact that makes the work between you feel meaningful rather than transactional: your energy isn't just adjacent to what she's building. It lands in the place where she's building it.</div>
-      </div>
-
-      <div class="pull teal-pull">Four contacts. The charts were already oriented toward each other.</div>
-    </div>
-  </div>
-
 </div>
 
-<!-- THE THROUGH-LINE -->
-<div class="thread-wrap">
-  <div class="thread">
+<!-- POEM -->
+<div class="subpanel sp-reading" id="sp-poem">
+  <svg class="geo-bg" viewBox="0 0 375 812" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <polygon points="188,28 332,108 370,290 310,500 188,548 66,500 5,290 44,108" fill="none" stroke="rgba(201,168,76,0.08)" stroke-width="0.6"/>
+    <circle cx="188" cy="28" r="2.0" fill="rgba(201,168,76,0.38)"/>
+  </svg>
 
-    <svg class="thread-stars" viewBox="0 0 900 340" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="58"  cy="68"  r="1.1" fill="#fff8ee" opacity="0.40"/>
-      <circle cx="198" cy="38"  r="0.8" fill="#c9a84c" opacity="0.42"/>
-      <circle cx="355" cy="58"  r="1.3" fill="#fff8ee" opacity="0.34"/>
-      <circle cx="512" cy="24"  r="0.7" fill="#d4a0b5" opacity="0.40"/>
-      <circle cx="664" cy="50"  r="1.0" fill="#fff8ee" opacity="0.34"/>
-      <circle cx="814" cy="74"  r="1.1" fill="#c9a84c" opacity="0.38"/>
-      <circle cx="870" cy="36"  r="0.8" fill="#fff8ee" opacity="0.36"/>
-      <circle cx="28"  cy="252" r="0.9" fill="#c9a84c" opacity="0.28"/>
-      <circle cx="872" cy="234" r="0.8" fill="#fff8ee" opacity="0.30"/>
-      <circle cx="450" cy="308" r="0.7" fill="#d4a0b5" opacity="0.26"/>
-      <text x="128" y="118" font-size="11" fill="#c9a84c" opacity="0.50" text-anchor="middle" font-family="serif">✦</text>
-      <text x="766" y="136" font-size="8"  fill="#fff8ee" opacity="0.34" text-anchor="middle" font-family="serif">✧</text>
-      <text x="455" y="18"  font-size="7"  fill="#c9a84c" opacity="0.44" text-anchor="middle" font-family="serif">✦</text>
-      <circle cx="800" cy="110" r="80" fill="#c9a84c" opacity="0.04"/>
-      <circle cx="800" cy="110" r="40" fill="#c9a84c" opacity="0.05"/>
-      <circle cx="88"  cy="240" r="70" fill="#9b59b6" opacity="0.05"/>
-    </svg>
+  <div class="reading-inner accent-rose">
+    <div class="panel-heading">
+      <div class="panel-eyebrow-sm">a reading in verse</div>
+      <div class="panel-title-lg">Poem</div>
+    </div>
 
-    <div class="thread-border"></div>
+    <div class="poem-outer">
+      <div class="poem-byline">A Reading in Verse &nbsp;&middot;&nbsp; Iza</div>
+      <div class="poem-wrap">
+        <p>She knows before she can say.<br>
+        The feeling arrives whole, like a room she walks into<br>
+        that was already arranged.</p>
 
-    <span class="thread-ornament">✦ ✦ ✦</span>
-    <h2 class="thread-title">The Through-Line</h2>
-    <p>One chart, read across its layers, tells a single story. The Pisces stellium in the 3rd house says: she was built to translate the invisible into language, the mind that feels its way forward, the attention that catches what others miss. The Aries Moon in the 4th says: the interior is fiercer than it looks, the emotional foundation runs hot and independent, the private self is more alive than the surface announces.</p>
-    <p>Chiron exact on the Midheaven says: the wound is in the calling, and the calling is in the wound: they are not separate addresses. The North Node in Libra at the same degree says: the soul direction, the vocation, and the healing all point the same way, toward balance and beauty and the relational art that requires more than one person to create.</p>
-    <p>The chart doesn't predict what happens. It describes the terrain and the conditions. What gets built there belongs entirely to the person walking it.</p>
-    <div class="thread-close">✦ &nbsp; Reading prepared May 2026 · Placidus · Tropical · Iza</div>
+        <p>The fire is private.<br>
+        The philosophy faces outward.<br>
+        Somewhere between them the work is happening.</p>
+
+        <p>She carries more than she shows.<br>
+        This is not withholding.<br>
+        It is the way the architecture holds.</p>
+
+        <p>What would you build<br>
+        if the interior and the exterior<br>
+        were finally the same house?</p>
+      </div>
+    </div>
+
+    <div style="height:16px"></div>
+  </div>
+</div>
 
   </div>
 </div>
 
-<!-- FOOTER -->
-<div class="footer">
-  Iza · February 23, 1996 · 2:20 AM · Opoczno, Poland<br>
-  Pisces Sun · Aries Moon · Sagittarius Rising · Placidus House System
+<!-- TRANSITS PANEL -->
+<div class="panel" id="panel-transits" style="overflow:hidden">
+  <svg class="geo-bg" viewBox="0 0 380 720" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <circle cx="190" cy="360" r="180" stroke="rgba(212,128,64,0.06)" stroke-width="0.5"/>
+    <circle cx="190" cy="360" r="120" stroke="rgba(212,128,64,0.04)" stroke-width="0.5"/>
+    <line x1="10" y1="360" x2="370" y2="360" stroke="rgba(212,128,64,0.04)" stroke-width="0.4"/>
+    <line x1="190" y1="60" x2="190" y2="660" stroke="rgba(212,128,64,0.04)" stroke-width="0.4"/>
+  </svg>
+  <div id="t-list" style="position:absolute;inset:0;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;transition:transform 0.28s cubic-bezier(0.4,0,0.2,1),opacity 0.22s ease">
+    <div class="reading-inner accent-amber" style="padding-top:24px">
+      <button onclick="backToToday()" style="display:flex;align-items:center;gap:8px;background:none;border:none;cursor:pointer;-webkit-tap-highlight-color:transparent;margin-bottom:20px;padding:0">
+        <span style="font-size:1rem;color:rgba(var(--cerulean-alpha),0.70)">&#x2190;</span>
+        <span style="font-size:0.52rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(var(--cerulean-alpha),0.60);font-family:'Inter',sans-serif;font-weight:500">Today</span>
+      </button>
+      <div class="panel-heading" style="margin-bottom:20px">
+        <div class="panel-eyebrow-sm" id="t-eyebrow">The Variable</div>
+        <div class="panel-title-lg">Transit Library</div>
+      </div>
+      <div class="t-biwheel-wrap">
+        <svg viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg" id="t-biwheel-svg"></svg>
+        <div class="t-biwheel-label" id="t-biwheel-lbl">natal &middot; live sky</div>
+      </div>
+      <div id="bw-detail"></div>
+      <div class="t-tabs">
+        <button class="t-tab active" data-ttab="now" onclick="switchTransitTab('now',this)">Now</button>
+        <button class="t-tab" data-ttab="returning" onclick="switchTransitTab('returning',this)">Returning</button>
+        <button class="t-tab" data-ttab="archive" onclick="switchTransitTab('archive',this)">Archive</button>
+      </div>
+      <div id="t-list-body" style="display:flex;flex-direction:column;gap:2px"></div>
+    </div>
+  </div>
+  <div id="t-detail" style="position:absolute;inset:0;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;transform:translateX(100%);transition:transform 0.28s cubic-bezier(0.4,0,0.2,1);background:var(--bg);z-index:2">
+    <div class="reading-inner accent-amber" style="padding-top:16px">
+      <button id="t-back" onclick="closeTransitDetail()" style="display:flex;align-items:center;gap:8px;background:none;border:none;cursor:pointer;-webkit-tap-highlight-color:transparent;margin-bottom:20px;padding:0">
+        <span style="font-size:1rem;color:rgba(var(--gold-alpha),0.70)">&#x2190;</span>
+        <span style="font-size:0.52rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(var(--gold-alpha),0.60);font-family:'Inter',sans-serif;font-weight:500">All Transits</span>
+      </button>
+      <div id="t-detail-body"></div>
+    </div>
+  </div>
 </div>
 
-<button class="save-btn" onclick="savePDF()">
-  <span class="save-btn-icon">✦</span>
-  Save as PDF
-</button>
+<!-- DAILY PANEL -->
+<div class="panel reading-panel" id="panel-daily">
+  <svg class="geo-bg" viewBox="0 0 380 720" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <circle cx="190" cy="360" r="200" stroke="rgba(74,159,212,0.05)" stroke-width="0.5"/>
+    <circle cx="190" cy="360" r="100" stroke="rgba(74,159,212,0.04)" stroke-width="0.5"/>
+  </svg>
+  <div class="reading-inner accent-cerulean" id="daily-body"></div>
+</div>
+<!-- SYNASTRY READING COPY — injected into arc panel by script -->
+<div id="synastry-reading-src" style="display:none">
+  <div class="syn-reading-section">
+    <div class="syn-reading-title">Pluto on the North Node &mdash; 0.02&deg;</div>
+    <p>This is the most exact contact in the synastry. Near-exact. Iza&rsquo;s Pluto lands directly on Jordan&rsquo;s soul direction. Their connection carries something irreversible about it &mdash; a transformation that moves in one direction. Iza is not just compatible with where Jordan is going. She is, in some structural sense, implicated in it.</p>
+  </div>
+  <div class="syn-reading-section">
+    <div class="syn-reading-title">Pluto on the Sun &mdash; 1.24&deg;</div>
+    <p>The same Pluto that sits on Jordan&rsquo;s North Node also sits on her Sun. Iza&rsquo;s hidden transformation function touches Jordan&rsquo;s core identity and life force. Recognition between them is usually immediate and a little intense, even when neither can explain why. Iza sees something in Jordan that Jordan is in the process of becoming.</p>
+  </div>
+  <div class="syn-reading-section">
+    <div class="syn-reading-title">Ascendant on Jordan Mars &mdash; 2.21&deg;</div>
+    <p>The way Iza moves through the world activates Jordan&rsquo;s drive to act. There&rsquo;s an energizing quality to the connection &mdash; being around Iza tends to make Jordan want to do something. Her presence is activating in a specific way: not socially, but directionally.</p>
+  </div>
+</div>
+
+<!-- WHEEL PANEL -->
+<div class="panel" id="panel-wheel" style="overflow-y:auto;-webkit-overflow-scrolling:touch">
+  <svg class="geo-bg" viewBox="0 0 380 720" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <circle cx="190" cy="360" r="180" stroke="rgba(90,184,168,0.05)" stroke-width="0.5"/>
+    <circle cx="190" cy="360" r="60" stroke="rgba(90,184,168,0.06)" stroke-width="0.5"/>
+    <line x1="10" y1="360" x2="370" y2="360" stroke="rgba(90,184,168,0.03)" stroke-width="0.4"/>
+    <line x1="190" y1="60" x2="190" y2="660" stroke="rgba(90,184,168,0.03)" stroke-width="0.4"/>
+  </svg>
+  <div class="reading-inner" style="padding-top:28px;padding-bottom:calc(60px + env(safe-area-inset-bottom,0px) + 24px)">
+    <div style="margin-bottom:28px">
+      <div style="font-size:0.52rem;letter-spacing:0.22em;text-transform:uppercase;font-family:'Inter',sans-serif;color:rgba(90,184,168,0.65);margin-bottom:8px">The Wheel</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:300;color:var(--text);line-height:1.15" id="wheel-title">Lunar &middot; Seasonal &middot; The Sky</div>
+    </div>
+    <div style="margin-bottom:32px">
+      <div style="font-size:0.48rem;letter-spacing:0.20em;text-transform:uppercase;font-family:'Inter',sans-serif;color:rgba(90,184,168,0.55);margin-bottom:12px">&#x263D; Moon</div>
+      <div id="wheel-moon-card" style="background:rgba(90,184,168,0.06);border:1px solid rgba(90,184,168,0.18);border-radius:14px;padding:20px 18px">
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px">
+          <div>
+            <div style="font-size:0.48rem;letter-spacing:0.18em;text-transform:uppercase;font-family:'Inter',sans-serif;color:rgba(90,184,168,0.55);margin-bottom:6px" id="wheel-moon-phase-label">loading&hellip;</div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:300;color:var(--text);line-height:1.2" id="wheel-moon-sign-label"></div>
+          </div>
+          <div style="flex-shrink:0;opacity:0.70;width:36px;height:36px" id="wheel-moon-glyph"></div>
+        </div>
+        <div style="margin-top:14px;font-size:0.82rem;color:var(--muted);line-height:1.7" id="wheel-moon-desc"></div>
+      </div>
+    </div>
+    <div style="margin-bottom:32px">
+      <div style="font-size:0.48rem;letter-spacing:0.20em;text-transform:uppercase;font-family:'Inter',sans-serif;color:rgba(90,184,168,0.55);margin-bottom:12px">&#x1F33F; Seasons</div>
+      <div id="wheel-next-sabbat" style="background:rgba(90,184,168,0.08);border:1px solid rgba(90,184,168,0.25);border-radius:14px;padding:20px 18px;margin-bottom:14px">
+        <div style="font-size:0.48rem;letter-spacing:0.18em;text-transform:uppercase;font-family:'Inter',sans-serif;color:rgba(90,184,168,0.65);margin-bottom:6px">Next</div>
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:8px;margin-bottom:8px">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:300;color:var(--text)" id="next-sabbat-name"></div>
+          <div style="font-size:0.72rem;color:rgba(90,184,168,0.75);font-family:'Inter',sans-serif;flex-shrink:0" id="next-sabbat-days"></div>
+        </div>
+        <div style="font-size:0.80rem;color:var(--muted);margin-bottom:4px" id="next-sabbat-date"></div>
+        <div style="font-size:0.82rem;color:var(--muted);line-height:1.65;margin-top:8px" id="next-sabbat-theme"></div>
+      </div>
+      <div id="wheel-sabbat-list" style="display:flex;flex-direction:column;gap:6px"></div>
+    </div>
+
+    <!-- ── THE SKY SECTION ── -->
+    <div style="margin-bottom:16px">
+      <div style="font-size:0.48rem;letter-spacing:0.20em;text-transform:uppercase;font-family:'Inter',sans-serif;color:rgba(90,184,168,0.55);margin-bottom:12px">&#x2736; The Sky</div>
+      <button onclick="window.open('/workplace%20readings/sky-at-work.html','_blank')" style="width:100%;text-align:left;background:rgba(90,184,168,0.06);border:1px solid rgba(90,184,168,0.18);border-radius:14px;padding:20px 18px;cursor:pointer;-webkit-tap-highlight-color:transparent">
+        <div style="font-size:0.48rem;letter-spacing:0.18em;text-transform:uppercase;font-family:'Inter',sans-serif;color:rgba(90,184,168,0.65);margin-bottom:6px">Collective Transit Reading</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:300;color:var(--text);line-height:1.3;margin-bottom:8px">Sky at Work</div>
+        <div style="font-size:0.82rem;color:var(--muted);line-height:1.65;margin-bottom:12px">Transit-to-transit reading &mdash; the collective weather of the week, not natal-specific. What everyone is moving through.</div>
+        <div style="font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;font-family:'Inter',sans-serif;color:rgba(90,184,168,0.60)">Open &#x2192; sky-at-work</div>
+      </button>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<!-- BOTTOM NAV -->
+<nav class="app-nav" role="navigation" aria-label="App sections">
+  <button class="nav-tab active" data-target="home" onclick="switchPanel('home',this)">
+    <span class="nav-icon-t">&#x2736;</span>
+    <span class="nav-label">Home</span>
+  </button>
+  <button class="nav-tab" data-target="natal" onclick="switchPanel('natal',this)">
+    <span class="nav-icon">&#x2299;</span>
+    <span class="nav-label">The Constant</span>
+  </button>
+  <button class="nav-tab" data-target="daily" onclick="switchPanel('daily',this)">
+    <span class="nav-icon">&#x263D;&#xFE0E;</span>
+    <span class="nav-label">The Variable</span>
+  </button>
+  <button class="nav-tab" data-target="wheel" onclick="switchPanel('wheel',this)">
+    <span class="nav-icon">&#x2295;</span>
+    <span class="nav-label">The Wheel</span>
+  </button>
+</nav>
+
+</div>
+<div class="safe-btm" aria-hidden="true"></div>
+
+<!-- KEY DRAWER -->
+<div class="key-dimmer" id="keyDimmer"></div>
+<div class="key-overlay" id="keyOverlay" role="complementary" aria-label="Chart Key">
+  <div class="key-header">
+    <div class="key-title">Chart Key</div>
+    <button class="key-close" id="keyClose" aria-label="Close key">&#x2190;</button>
+  </div>
+  <div class="key-content">
+    <div class="key-section"><div class="key-sh">Zodiac Signs</div><div class="key-grid g6" id="kS"></div></div>
+    <div class="key-section"><div class="key-sh">Planets &amp; Points</div><div class="key-grid g6" id="kP"></div></div>
+    <div class="key-section"><div class="key-sh">Aspect Lines</div><div class="key-grid g3" id="kA"></div></div>
+    <div class="key-section"><div class="key-sh">Elements</div><div class="key-grid g4" id="kE"></div></div>
+  </div>
+</div>
 
 <script>
-  function savePDF() {
-    const h = document.body.scrollHeight;
-    const style = document.createElement('style');
-    style.id = 'pdf-page-size';
-    style.textContent = `@media print { @page { size: 900px ${h}px; margin: 0; } html, body { height: ${h}px !important; } }`;
-    document.head.appendChild(style);
-    window.print();
-    setTimeout(() => { const s = document.getElementById('pdf-page-size'); if (s) s.remove(); }, 2000);
-  }
+const T='︎';
+const IS_FRIEND_BUILD=true;
+const PERSON_NAME='Iza';
+const CHART={
+  asc:252.9747,mc:193.5974,
+  cusps:[252.9747,290.7644,337.0082,13.5974,38.6536,57.2219,72.9747,110.7644,157.0082,193.5974,218.6536,237.2219],
+  planets:[
+    {id:'sun',gl:'☉︎',deg:333.7101,retro:false,grp:'luminary',si:11,sd:3.7},
+    {id:'moon',gl:'☽︎',deg:26.8316,retro:false,grp:'luminary',si:0,sd:26.8},
+    {id:'mercury',gl:'☿︎',deg:309.9689,retro:false,grp:'personal',si:10,sd:10.0},
+    {id:'venus',gl:'♀︎',deg:16.3285,retro:false,grp:'personal',si:0,sd:16.3},
+    {id:'mars',gl:'♂︎',deg:335.9793,retro:false,grp:'personal',si:11,sd:6.0},
+    {id:'jupiter',gl:'♃︎',deg:280.5393,retro:false,grp:'social',si:9,sd:10.5},
+    {id:'saturn',gl:'♄︎',deg:354.5690,retro:false,grp:'social',si:11,sd:24.6},
+    {id:'uranus',gl:'♅︎',deg:302.3861,retro:false,grp:'outer',si:10,sd:2.4},
+    {id:'neptune',gl:'♆︎',deg:296.6095,retro:false,grp:'outer',si:9,sd:26.6},
+    {id:'pluto',gl:'♇︎',deg:243.0746,retro:false,grp:'outer',si:8,sd:3.1},
+    {id:'chiron',gl:'⚷︎',deg:193.7342,retro:true,grp:'point',si:6,sd:13.7},
+    {id:'nnode',gl:'☊︎',deg:197.9393,retro:false,grp:'point',si:6,sd:17.9},
+    {id:'snode',gl:'☋︎',deg:17.9393,retro:true,grp:'point',si:0,sd:17.9},
+  ],
+  aspects:[
+    {p1:'moon',p2:'neptune',type:'square',orb:0.22},
+    {p1:'sun',p2:'pluto',type:'square',orb:0.64},
+    {p1:'uranus',p2:'pluto',type:'sextile',orb:0.69},
+    {p1:'venus',p2:'snode',type:'conjunction',orb:1.61},
+    {p1:'venus',p2:'nnode',type:'opposition',orb:1.61},
+    {p1:'sun',p2:'mars',type:'conjunction',orb:2.27},
+    {p1:'venus',p2:'chiron',type:'opposition',orb:2.59},
+    {p1:'mars',p2:'pluto',type:'square',orb:2.90},
+    {p1:'jupiter',p2:'chiron',type:'square',orb:3.19},
+  ],
+};
 </script>
-
+<script src="/pathfinder-core.js"></script>
 </body>
 </html>
