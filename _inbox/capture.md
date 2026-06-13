@@ -38,3 +38,8 @@ PROCESSED June 11, 2026:
 - LinkedIn / external visibility strategy → held for June 11 build strategy session
 %%
 
+
+%%
+PROCESSED June 13, 2026:
+- Persistent glossary key idea → filed to app/app-vision.md under "Feature Captures (Unimplemented)"
+%%
