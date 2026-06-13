@@ -1,4 +1,4 @@
-# CLAUDE-FABLE.md — Fable 5 Strategy for Pathfinder
+also # CLAUDE-FABLE.md — Fable 5 Strategy for Pathfinder
 *Load this file at the start of any Fable session. It defines what Fable is for, what it isn't for, and exactly how to deploy it.*
 *Last updated: June 12, 2026*
 

@@ -40,6 +40,7 @@ Jordan is a 32-year-old lesbian woman in Chicago. Associate Director of Content 
 
 **For build/business sessions** (app, architecture, product, intake):
 → also load **`build-digest.md`** — current build state, beta pipeline, open loops (load this first for cold-start context)
+→ also load **`app/backlog.md`** — priority queue (Now/Next/Radar), ideas, and recent Shipped log
 → also load **`CLAUDE-BUILD.md`** — build SOPs, intake protocol, business context
 → also load **`app/CLAUDE-APP-DESIGN.md`** — design system, tokens, UX principles, propagation architecture
 → also load **`app/beta-users.md`** — full beta user tracker (load when doing chart work or beta pipeline tasks)
@@ -58,11 +59,11 @@ Jordan is a 32-year-old lesbian woman in Chicago. Associate Director of Content 
 ## Session End Protocol
 
 **After any build session — run before closing:**
-1. **Update `build-digest.md`** — mark what shipped in the What's Live table, refresh the In Progress table, update Open Loops (Waiting On + Keep in View). This is what keeps cold-start accurate.
+1. **Update `app/backlog.md`** — move completed items to Shipped, reprioritize Next, add new ideas. Then update `build-digest.md` What's Live table and Open Loops. backlog.md is the priority source; build-digest.md is the cold-start context.
 2. **Update `app/build-log.md`** — add entry for what was built (newest at top). Commit + push to GitHub.
 3. **Update `app/beta-users.md`** — if any beta interaction happened: birth data received, chart built, reaction logged, next action changed.
 4. **Update `app/product-decisions.md`** — if any open decision was resolved, or a new one surfaced.
-5. **Capture loose ideas** — anything worth keeping that didn't land in a specific file → `_inbox/capture.md`.
+5. **Capture loose ideas** — anything worth keeping → `app/backlog.md` Ideas section (or `_inbox/capture.md` from phone).
 
 **After any reading session:**
 1. The 4am routine files readings automatically. If it was a manual session, save the reading to `daily readings/YYYY-MM/YYYY-MM-DD.md`.
@@ -79,7 +80,7 @@ Jordan captures astro ideas from her iPhone directly to this file. Check it at e
 - Business ideas → surface and discuss, or file to `app/app-vision.md`
 - Reading requests (friend chart, synastry) → note person + data needed, add to `charts/` if birth data included
 - Astro insights / correlations → add to KNOWLEDGE.md if worth keeping
-- App or system feature ideas → add to `app/app-vision.md`
+- App or system feature ideas → add to `app/backlog.md` Ideas section
 - Raw unclassified captures → acknowledge, ask if Jordan wants to action now or park
 
 After processing: clear entries below `---`. Keep the header. The file is a staging area, not an archive.
@@ -174,6 +175,7 @@ Claude pulls live positions from the web at the start of every reading.
 | Topic | Location |
 |-------|----------|
 | **Current build state + open loops** | **`build-digest.md`** |
+| **Priority queue, ideas, shipped log** | **`app/backlog.md`** |
 | **Beta user pipeline** | **`app/beta-users.md`** |
 | App vision + phase roadmap | `app/app-vision.md` |
 | Product decisions | `app/product-decisions.md` |
@@ -249,10 +251,11 @@ pathfinder/
 │   └── [transit-name].md       ← One file per long-term transit (loaded on demand)
 │
 ├── app/                  ← Business OS
+│   ├── backlog.md              ← Priority queue, ideas, recent completions — SOURCE OF TRUTH for build priorities
 │   ├── beta-users.md           ← Beta user pipeline tracker
 │   ├── product-decisions.md    ← Open + resolved product decisions
 │   ├── CLAUDE-APP-DESIGN.md    ← Design system + UX principles
-│   ├── build-log.md            ← Running build history (newest first)
+│   ├── build-log.md            ← Running build history, newest first (past record only)
 │   ├── voice-canon.md          ← Reading quality + vocabulary standards
 │   ├── app-vision.md           ← Product vision + phase roadmap
 │   ├── testimonials.md         ← Early reactions + social proof

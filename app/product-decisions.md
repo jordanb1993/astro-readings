@@ -22,45 +22,28 @@ Do not re-open resolved decisions without flagging it explicitly. Do not assume 
 
 ---
 
-### Natal Reading Structure: Current vs. Revised Arc
-**Status: OPEN**
+### Natal Reading Structure: 9-Tab Therapeutic Arc
+**Status: RESOLVED**
 **Raised:** June 12, 2026 (voice refinement + structure research session)
+**Decided:** June 13, 2026 — implemented in Sessions 15–17, deployed across all 10 builds
 
-**The problem with current structure:**
-The current sequence (planet strip → deep dive cards → Archetype Card → poem) is beautiful as an artifact but doesn't tell a coherent story. Cards feel like individual essays rather than chapters. A first-time reader has no path through the chart, and no way to understand how the pieces relate to each other.
-
-**Specific gaps identified:**
-- No entry-level Big Three portrait (planned but not standard in existing HTML builds)
-- Chart ruler not featured — for Gemini Rising, Mercury in Scorpio 5th is the chart's organizing lens and is treated as one card among many
-- No explicit shadow/mirror section — the 7th house / Descendant as projection gateway, South Node as comfort zone pattern, are woven into cards but not named
-- No formative ground section — Chiron is in cards but childhood/inherited patterns aren't their own layer
-- No narrative arc — the Nodes as a story (South Node mastery → North Node direction → the productive friction between them) is underused
-- The Liz Greene therapeutic sequence (self → inner dynamics → formative past → relational patterns → integration arc) is the most complete approach and is not reflected in the current structure
-
-**Proposed revised structure:**
+**The implemented structure (all 10 builds as of June 13, 2026):**
 ```
-1. Entry — Big Three Portrait (recognition layer, plain language, no jargon)
-2. Chart Signature — chart ruler + dominant weight (the lens everything else reads through)
-3. Core Constitution — major placement deep dive cards (current format, works well)
-4. Formative Ground — Chiron, 4th house, Saturn (what was inherited; what was wounded)
-5. Shadow & Mirror — 7th house/Descendant, South Node, main oppositions (what gets projected)
-6. The Arc — Nodes as narrative (full South→North story; the direction the chart is building toward)
+1. Portrait — Big Three (recognition layer, plain language)
+2. Signature — chart ruler + dominant weight
+3. Constitution — major placement deep dive cards
+4. Formative — Chiron, 4th house, Saturn
+5. Shadow — 7th house/Descendant, South Node, oppositions
+6. Arc — Nodes as narrative (South→North story)
 7. Archetype Card
 8. Poem
 ```
 
-**Why this is better:**
-- First-time readers have a path through — each section prepares the reader for the next
-- Advanced readers can navigate non-linearly to any section
-- The therapeutic arc (self → depths → past → shadow → direction) mirrors how good clinical astrology actually works
-- No competitor structures a natal reading this way — white space confirmed
-- The Archetype Card and poem land harder when the reader has traveled the full arc first
+**This IS the Liz Greene therapeutic arc.** The structure proposed on June 12 was implemented in full across all 10 builds (Jordan, Marina, Dasha, Mimi, Carina, Kate, Hazel, Iza, Su, Yvonne) in Sessions 15–17 on June 13, 2026. All 10 charts are live on Vercel in this format. There is no open decision here — the 9-tab format is the standard for all current and future natal builds.
 
-**Research sources:** Liz Greene's Psychological Horoscope Analysis structure, Steven Forrest's The Inner Sky, Alice Bell's 7-step interpretation framework, CHANI app architecture review (June 12, 2026)
+**Research sources that informed the structure:** Liz Greene's Psychological Horoscope Analysis, Steven Forrest's The Inner Sky, Alice Bell's 7-step framework, CHANI app architecture review (June 12, 2026)
 
-**What's blocking:** Requires rebuilding all existing natal HTML files. Natural timing: next natal build session applies the new structure; existing files updated in that same session.
-
-**Poem decision:** Keeping the poem. It's the strongest differentiator in the product — no competitor closes with free verse written to the specific chart. The MFA credential is doing real work here. Length guideline tightened to 8–10 lines (was 12–18). Fewer lines forces stronger choices — cut until every line earns its place.
+**Poem decision (RESOLVED June 12):** Keeping the poem — no competitor closes with free verse written to the specific chart. Length: write what the chart needs, not a fixed line count. (The earlier 8–10 line guideline was revised: chart determines length.)
 
 ---
 
@@ -152,24 +135,19 @@ The corporate women's career astrology angle (sky-at-work, timing professional m
 
 ---
 
-### Reading UX: Plain-Language First vs. Technical-First
-**Status: OPEN — new product directive**
+### Reading UX: Plain-Language First — Three-Layer Sequence
+**Status: RESOLVED — Option C**
 **Raised:** June 11, 2026 (inbox capture)
+**Decided:** June 12, 2026 — formalized in voice-canon.md + READING-FORMAT.md
 
-**The insight (Jordan's words):**
-"We need meaning first and practical precise language of what the energy feels like and is doing, then take it technical. I want others to use it as a learning tool but they can't do that if we speak in only technical language. We need to shift to plain language of meaning and affect built from the technical — and then the technical information if the user wants to learn. That way our app can be appealing to beginner, intermediate, and advanced astrology people all at the same time."
+**The decision:** Option C — both formats simultaneously.
+- Daily reading leads with Surface layer (felt sense, 1–2 sentences) → Middle layer (psychological, 2–3 paragraphs) → Technical layer (always present, never leading)
+- Natal reading Portrait tab is the plain-language entry layer at the top of The Constant — the recognition layer before depth begins
+- Protocol documented in `app/voice-canon.md` (three-layer sequence) and `READING-FORMAT.md`
 
-**The precedent:** `sky-at-work.html` already implements this exactly — plain-language insight cards on the surface, "What's driving this?" disclosure tap reveals the transit mechanism. The architecture works. The question is how to apply it to daily readings and natal charts.
+**Architecture proven:** sky-at-work.html implements this exactly — plain insight card on surface, "What's driving this?" reveals the mechanism. This pattern is now the standard across all reading types.
 
-**Option A — Layered daily reading:** Plain-language meaning in the prose body (what the energy FEELS like), with transit details available in a collapsible / secondary layer. Current readings reverse this — they lead technical and translate into meaning. The inversion makes the product beginner-accessible without dumbing it down for advanced users.
-
-**Option B — Natal chart tiering:** The natal reading scroll stays as-is (a contemplative artifact for intermediate-advanced users), but add a companion "plain language summary" layer at the top — 3–5 sentences about what this chart means in a life, before the technical depth begins.
-
-**Option C — Both:** Daily reading prose leads with meaning/felt sense, technical data lives in the transit board (already there). Natal reading adds a plain-language entry layer.
-
-**What's blocking:** Format spec update. Applies to voice-canon.md and READING-FORMAT.md once decided.
-
-**Design principle already proven:** The `sky-at-work.html` inversion confirms this works. Plain language first is NOT dumbing down — it is meeting people where they are so the technical layer lands as depth rather than barrier.
+**Jordan's original framing:** "We need meaning first and practical precise language of what the energy feels like and is doing, then take it technical. That way our app can be appealing to beginner, intermediate, and advanced astrology people all at the same time."
 
 ---
 
@@ -313,6 +291,8 @@ Time Passages is not beautiful but it is *complete and navigable*. Every aspects
 | June 5, 2026 | Development stage: stealth mode | RESOLVED |
 | June 5, 2026 | UX philosophy: contemplative artifact (neither pole) | RESOLVED |
 | June 5, 2026 | Business model: freemium vs. subscription | OPEN |
-| Ongoing | Business name: Thin Place / The 29th / Solas | OPEN |
+| June 11, 2026 | Business name: Pathfinder | RESOLVED |
 | Ongoing | Corporate product: same brand or separate | OPEN |
 | June 11, 2026 | Structural principle: every data element is a door | RESOLVED |
+| June 12, 2026 | Reading UX: plain-language first, three-layer sequence (Option C) | RESOLVED |
+| June 13, 2026 | Natal reading structure: 9-tab therapeutic arc, all 10 builds | RESOLVED |

@@ -42,15 +42,9 @@ tags:
 
 ---
 
-## In Progress / Next Up
+## Priorities + Queue
 
-| Item | Priority | Notes |
-|------|----------|-------|
-| Supabase intake form for readings | 🟢 Low urgency | Jordan wants it; Vercel + Supabase + GitHub is target infra stack |
-| Sky at Work weekly content cadence | 🟡 Ongoing | Update dates + planet data + voice canon rewrite each week — full template now solid |
-| Voice canon drafts | 🟢 7 of 9 done | ✅ Carina, Kate, Mimi, Hazel, Iza, Su, Yvonne — `.md` drafts in `charts/`. ⏳ Cat (birth data on file, reading not written) |
-| Mimi/Carina/Kate Pathfinder builds | ✅ Done | Migrated from old scrolling HTML to 9-tab app format; old mimi.html archived to `_archive/mimi-scrolling-v3.html` |
-| Reddit vocabulary research | 🟢 Low urgency | r/astrology, r/AskAstrologers, r/astrologyreadings → voice-canon.md |
+→ See [`app/backlog.md`](app/backlog.md) — Now sprint, Next queue, Radar, Ideas, and recent Shipped log.
 
 ---
 
@@ -76,13 +70,13 @@ See `app/beta-users.md` for full detail.
 > [!abstract] Waiting On
 > - **Krista Kellogg** — birth date, time, city still needed → DM or ask at next sync
 > - **Kristen Bell** — birth info promised after lunch June 12 → check Slack/messages
-> - ~~Routine live update~~ ✅ Done June 12 — steps 2–13 live in `trig_01Rtm1xSST2GbdCZh896F2vP`; health-log will auto-write starting tomorrow's 4am run
+> - **Cat** — birth data never collected; `charts/cat.md` is a blank template. Jordan needs to ask Cat directly.
 
 > [!note] Keep in View
-> - **Natal reading structure decision** — open in `product-decisions.md`; 9-tab is implemented but the deeper Liz Greene therapeutic arc sequence (Portrait → Signature → Constitution → Formative → Shadow → Arc → Archetype → Poem) is the next structural evolution. Not urgent — current builds are clean.
 > - **All future natal builds = Pathfinder app format only** — no more standalone scrolling HTML chart builds (decided June 12)
-> - **Phase 2 planning** — closed subscriber cohort ~20 people at $20–35/mo; not yet started; Phase 1 (build + internal beta) still in progress
-> - **Marina chart** — currently scrolling HTML format (pre-Pathfinder); will need Pathfinder rebuild eventually
+> - **Phase 2 approaching** — closed subscriber cohort ~20 people at $20–35/mo; Phase 1 (build + internal beta) still in progress; delivering to Mimi/Carina/Kate is next milestone
+> - **Marina chart** — currently scrolling HTML format (pre-Pathfinder); rebuild queued in `app/backlog.md`
+> - **Mimi, Carina, Kate** — charts built and live on Vercel; not yet delivered to them
 
 ---
 

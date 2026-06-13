@@ -35,7 +35,7 @@ Jordan is building an AI-powered personal astrology app. She is the first beta u
 
 **Etsy plan:** Dropped June 5. The pivot was right — this is a full product, not a marketplace listing.
 
-**Name TBD:** Thin Place / The 29th / Solas (decide before Phase 2 launch)
+**App name: Pathfinder** (decided June 11, 2026 — Star Trek Voyager reference)
 
 **Key architectural decision (June 2026):** The transit library is the app backend seed. Every breakdown file is a future database row. The frontmatter schema is already nearly a database schema. Build with this architecture in mind.
 
@@ -44,14 +44,14 @@ Jordan is building an AI-powered personal astrology app. She is the first beta u
 ## Build Session SOP
 
 **At session start:**
-1. Check `app/app-vision.md` — current product roadmap + feature queue
+1. Check `app/backlog.md` — current Now sprint, Next queue, and Ideas (single source of truth for priorities)
 2. Check `app/product-decisions.md` — prior architecture decisions (don't revisit settled questions)
 3. Note any items in `_inbox/capture.md` that are business-relevant
 4. Scan `transit library/INDEX.md` for any timing context that affects the build
 
 **During session:**
 - If a decision is made, log it in `app/product-decisions.md` immediately
-- If a feature idea emerges, add it to `app/app-vision.md` — don't lose it
+- If a feature idea emerges, add it to `app/backlog.md` Ideas section — don't lose it
 - If a market/positioning insight surfaces, add it to `app/market-strategy-2026-06-05.md`
 - If a reading quality improvement emerges during a build session, apply it to `app/voice-canon.md`
 
@@ -59,7 +59,8 @@ Jordan is building an AI-powered personal astrology app. She is the first beta u
 
 | Topic | File |
 |-------|------|
-| App phases, roadmap, feature queue | `app/app-vision.md` |
+| Current sprint + priority queue + ideas | `app/backlog.md` |
+| App phases, vision, business context | `app/app-vision.md` |
 | Architecture decisions (keep/not revisit) | `app/product-decisions.md` |
 | Market positioning, ICP, competitive | `app/market-strategy-2026-06-05.md` |
 | Reading quality standards | `app/voice-canon.md` |

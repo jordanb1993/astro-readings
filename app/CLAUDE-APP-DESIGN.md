@@ -53,17 +53,8 @@ Split every build into two layers:
 
 When `pathfinder-core.css` or `pathfinder-core.js` is updated, every live build on Vercel updates automatically. No manual syncing.
 
-### Current State (June 11, 2026)
-The shared layer does NOT exist yet as separate files. `jordan.html` is still monolithic. This is the next infrastructure task before friend builds go live.
-
-**Migration plan:**
-1. Extract CSS (design tokens + all component styles) into `pathfinder-core.css`
-2. Extract JS utilities into `pathfinder-core.js`
-3. Update `jordan.html` to link to both files and remove the inline versions
-4. Verify Jordan's build is identical after migration
-5. Use this as the template for every new friend build from that point on
-
-**Do this migration BEFORE building the first friend build.** Once friend builds exist as monolithic files, the propagation problem is back.
+### Current State (Updated June 13, 2026)
+**Shared layer migration: COMPLETE (Session 13, June 13, 2026).** `pathfinder-core.css` and `pathfinder-core.js` exist and are linked by all 10 active builds. Changes to either file propagate automatically to all builds on the next Vercel deploy. The migration is done — this section stays as historical context.
 
 ### What Lives In Each File After Migration
 
@@ -378,18 +369,9 @@ Panel `panel-chart` and `panel-natal` share the same nav tab — the chart wheel
 
 ---
 
-## Open Build Tasks (as of June 11, 2026)
+## Build Tasks
 
-| Priority | Task |
-|---|---|
-| 🔴 Next | Tappable natal planets in The Constant → interpretation slide-in panel |
-| 🔴 Next | Migrate jordan.html to shared `pathfinder-core.css` + `pathfinder-core.js` before first friend build |
-| 🟡 Soon | Tappable wheel elements in The Wheel |
-| 🟡 Soon | Sky-at-work: apply "every element is a door" — signal rows → full breakdown |
-| 🟢 Later | Historical transit archive (past transits don't disappear) |
-| 🟢 Later | Routine update: write `today.json` in Pathfinder three-layer format (eliminate `fetchPositions()` bridge) |
-| 🟢 Later | Big Three Portrait section in The Constant |
-| 🟢 Later | Plain-language entry layer at top of natal reading |
+→ See [`app/backlog.md`](app/backlog.md) — priority queue (Now/Next/Radar) with current sprint and queued items.
 
 ---
 

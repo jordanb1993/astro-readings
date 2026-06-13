@@ -515,14 +515,9 @@ Jordan wants to build a structured research pipeline to expand interpretive voca
 
 ---
 
-## Feature Captures (Unimplemented)
+## Feature Captures + Priority Queue
 
-### Persistent Glossary Key — Global Overlay
-*Captured June 13, 2026 via _inbox*
-
-The Chart Key (currently accessible via the ✦ button) slides out and becomes a persistent mini-index of plain-language definitions for all astrology terms. It stays anchored in the top-right corner of the app regardless of which panel or subpanel you're in, so you can always check a term without losing your place. The current Key drawer already has the right content; the upgrade is persistence — it stays visible and accessible across the whole navigation.
-
-Implementation note: could be a floating card (z-index above panels, anchored top-right) that toggles on/off independently of panel navigation. The Key button already exists in the app-header; the drawer just needs to survive panel switches.
+→ See [`app/backlog.md`](app/backlog.md) — all feature ideas, Now/Next/Radar queue, and recent completions live there.
 
 ---
 
