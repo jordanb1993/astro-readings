@@ -40,11 +40,11 @@ tags:
 ---
 
 ### Marina
-**Status:** Chart built ✅ (pre-Pathfinder scrolling HTML format — will need Pathfinder rebuild eventually)
+**Status:** Chart built ✅ — 9-tab Pathfinder format
 **Birth data:** On file ✅
-**Chart:** `natal readings/marina.html` — scrolling HTML, old format; voice canon rewritten June 12 but not yet deployed to her
+**Chart:** `natal readings/marina.html` — 9-tab Pathfinder, voice canon complete (rewritten June 12, migrated Session 15)
 **Archetype:** The Generous Light
-**Features seen:** Original scrolling HTML natal chart (PDF delivered)
+**Features seen:** Original scrolling HTML natal chart (PDF delivered); new Pathfinder build live but not yet delivered to her
 **Reactions:**
 > *"I don't think my mind can actually comprehend that you made this, like what! This is so beautiful and makes so much sense. You are a witch of all sorts and I am truly amazed 🤩 thank you angel for making this for me. Reading it felt very affirming 🥹"*
 **What she wants:** Nothing outstanding — reaction was complete and unprompted
@@ -84,21 +84,20 @@ tags:
 
 ---
 
-## Friends with Old Scrolling HTML Charts (Pathfinder Rebuilds Pending)
+## Friends — Pathfinder Build Status
 
-Voice canon copy drafts to be written first (`.md` in `charts/`), then converted to Pathfinder app format when Jordan decides to build each one.
-
-| Person | Old Chart | Birth Data | Voice Canon Draft | Pathfinder Build |
-|--------|-----------|-----------|-------------------|-----------------|
-| Mimi | ✅ | ✅ | ✅ `charts/mimi-reading.md` (The Deep Channel) | ✅ Built June 13 |
-| Carina | ✅ | ✅ | ✅ `charts/carina-reading.md` (The Cartographer) | ✅ Built June 13 |
-| Hazel | ✅ | ✅ | ✅ `charts/hazel-reading.md` (The Signal Reader) | ✅ Built June 13 |
-| Iza | ✅ | ✅ | ✅ `charts/iza-reading.md` (The Interior Architect) | ✅ Built June 13 |
-| Kate | ✅ | ✅ | ✅ `charts/kate-reading.md` (The Keeper of the Veil) | ✅ Built June 13 |
-| Su | ✅ | ✅ | ✅ `charts/su-reading.md` (The Interior Press) | ✅ Built June 13 |
-| Yvonne | ✅ `charts/yvonne.md` | ✅ On file | ✅ `charts/yvonne-reading.md` | ✅ Built June 13 |
-| Cat | ❌ | ✅ (birth data only) | ⏳ Pending | ⏳ Pending |
-| Kristen Yim Bell | ✅ `charts/kristen-bell.md` | ✅ Sep 19 1990 · 12:12 PM · Fontana CA | ⏳ Pending (coworker scope) | ⏳ Pending |
+| Person | Birth Data | Voice Canon Draft | Pathfinder Build | Delivered |
+|--------|-----------|-------------------|-----------------|-----------|
+| Marina | ✅ | ✅ The Generous Light | ✅ Session 15 | ⏳ Not yet |
+| Mimi | ✅ | ✅ The Deep Channel | ✅ Session 17 | ⏳ Not yet |
+| Carina | ✅ | ✅ The Cartographer | ✅ Session 17 | ⏳ Not yet |
+| Kate | ✅ | ✅ The Keeper of the Veil | ✅ Session 17 | ⏳ Not yet |
+| Hazel | ✅ | ✅ The Signal Reader | ✅ Session 18 | ⏳ Not yet |
+| Iza | ✅ | ✅ The Interior Architect | ✅ Session 18 | ⏳ Not yet |
+| Su | ✅ | ✅ The Interior Press | ✅ Session 18 | ⏳ Not yet |
+| Yvonne | ✅ | ✅ The Interior Witness | ✅ Session 18 | ⏳ Not yet |
+| Kristen Yim Bell | ✅ Sep 19 1990 · 12:12 PM · Fontana CA | ⏳ Pending (coworker scope) | ⏳ Pending | — |
+| Cat | ❌ No birth data on file — `charts/cat.md` is empty | ❌ | ❌ | — |
 
 ---
 

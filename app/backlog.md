@@ -43,7 +43,6 @@ tags:
 - **Historical transit archive (personal autobiography)** — past transits don't disappear; they become an autobiography in transit form. Data structure exists; needs decision on where it lives at scale.
 - **Routine → three-layer today.json format** — write the full three-layer reading structure directly into today.json; eliminate the `fetchPositions()` bridge. Blocking question: does this break any current JS field parsing?
 - **Reddit vocabulary research sessions** — monthly, one planet per session, per voice-canon.md protocol (already written). Needs scheduling cadence.
-- **Marina Pathfinder rebuild** — currently scrolling HTML (pre-Pathfinder format). Will need 9-tab migration. No urgency; voice canon draft exists.
 - **Phase 2 start criteria — write the explicit threshold** — when exactly does Phase 2 begin? Specific conditions needed: all reading types templated, N friend charts delivered, Jordan confident handing to paying strangers. Freemium + corporate brand both RESOLVED June 13 — two fewer blockers. Blocking question: what is the actual bar?
 - **Ephemeris: astrolibrary.org → direct pyswisseph in app** — current routine uses pyswisseph but live app data fetches from astrolibrary.org (fragile scrape). Blocking question: when does production reliability require a self-hosted ephemeris endpoint?
 
