@@ -4,6 +4,40 @@
 
 ---
 
+## 2026-06-13 — Session 17: Friend chart migrations — Mimi · Carina · Kate
+
+**Theme:** Migrate three close friends from old scrolling HTML format to full 9-tab Pathfinder app
+
+### Mimi — `natal readings/mimi.html`
+- Full 9-tab Pathfinder build: Portrait → Signature → Constitution → Formative → Shadow → Arc → Archetype → Poem
+- Chart wheel with exact CHART constant (pyswisseph, Jupiter retro corrected)
+- Archetype: **"The Deep Channel"** — numeral II, two-pillar sigil (crimson fire right / midnight blue depth left, fire grand trine triangle above), crimson + midnight palette
+- Big Three: ☉ 19°48' Aries H5 · ☽ 11°26' Leo H9 · ♏ 23°08' Rising
+- 5 synastry contacts with Jordan in Arc panel (Saturn-Neptune 0.01°, Moon-Mars 0.68°, Pluto-Sun 1.60°, MC-Chiron 1.97°, ASC-Pluto 2.53°)
+- Old 3095-line scrolling template archived to `_archive/mimi-scrolling-v3.html`
+
+### Carina — `natal readings/carina.html`
+- Full 9-tab Pathfinder build, complete voice canon
+- Archetype: **"The Cartographer"** — numeral IX, compass rose sigil with Sag NNode as primary N needle, parchment gold + ink midnight blue palette
+- Big Three: ☉ 20°04' Gemini H7 · ☽ 6°17' Pisces H3 · ♏ 26°52' Rising
+- 6 synastry contacts with Jordan in Arc panel (Jupiter opp Moon 0.07°, Saturn trine ASC 0.95°, NNode conj Mars 1.13°, ASC conj Pluto 1.20°, Chiron sq Venus 0.92°, Saturn sq Sun 1.50°)
+- Note: Mars-Chiron orb in old draft was wrong (0.44° was Mars sq Pluto); actual Mars conj Chiron orb = 3.2° — corrected in HTML
+
+### Kate — `natal readings/kate.html`
+- Full 9-tab Pathfinder build, complete voice canon
+- Archetype: **"The Keeper of the Veil"** — numeral XVIII, rose/teal divided veil + crescent moon sigil, rose + deep teal palette
+- Big Three: ☉ 13°00' Libra H12 · ☽ 1°20' Scorpio H1 · ♎ 18°37' Rising
+- 8 synastry contacts with Jordan in Arc panel (Mars trine Sun 0.03°, Chiron trine Uranus/Neptune 0.26°, Moon conj Jupiter 0.67°, Chiron sext Venus 0.74°, Venus conj Venus 0.85°, Mars sq Jupiter 0.97°, Saturn opp Chiron 1.37°, NNode conj Venus 2.95°)
+
+### Deployment
+- Committed + pushed to GitHub — Vercel auto-deploy triggered
+- URLs:
+  - pathfinderastro.vercel.app/natal%20readings/mimi.html
+  - pathfinderastro.vercel.app/natal%20readings/carina.html
+  - pathfinderastro.vercel.app/natal%20readings/kate.html
+
+---
+
 ## 2026-06-12 — Session 16 (continued): Rituals · Nav polish · PWA rebrand · Design system
 
 **Theme:** Ritual cards, interface refinements, and the first Pathfinder component library

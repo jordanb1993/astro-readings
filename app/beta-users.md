@@ -90,11 +90,11 @@ Voice canon copy drafts to be written first (`.md` in `charts/`), then converted
 
 | Person | Old Chart | Birth Data | Voice Canon Draft | Pathfinder Build |
 |--------|-----------|-----------|-------------------|-----------------|
-| Mimi | ✅ `mimi.html` (canonical template) | ✅ | ✅ `charts/mimi-reading.md` (The Deep Channel) | ⏳ Pending |
-| Carina | ✅ | ✅ | ✅ `charts/carina-reading.md` (The Cartographer) | ⏳ Pending |
+| Mimi | ✅ | ✅ | ✅ `charts/mimi-reading.md` (The Deep Channel) | ✅ Built June 13 |
+| Carina | ✅ | ✅ | ✅ `charts/carina-reading.md` (The Cartographer) | ✅ Built June 13 |
 | Hazel | ✅ | ✅ | ✅ `charts/hazel-reading.md` (The Signal Reader) | ⏳ Pending |
 | Iza | ✅ | ✅ | ✅ `charts/iza-reading.md` (The Interior Architect) | ⏳ Pending |
-| Kate | ✅ | ✅ | ✅ `charts/kate-reading.md` (The Keeper of the Veil) | ⏳ Pending |
+| Kate | ✅ | ✅ | ✅ `charts/kate-reading.md` (The Keeper of the Veil) | ✅ Built June 13 |
 | Su | ✅ | ✅ | ✅ `charts/su-reading.md` (The Interior Press) | ⏳ Pending |
 | Yvonne | ✅ `charts/yvonne.md` | ✅ On file | ✅ `charts/yvonne-reading.md` | ⏳ Pending |
 | Cat | ❌ | ✅ (birth data only) | ⏳ Pending | ⏳ Pending |

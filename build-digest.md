@@ -7,7 +7,7 @@ tags:
 
 # Build Digest — Pathfinder App
 *Cold-start synthesis. Load at the start of any build or business session. Updated at session end.*
-*Last updated: 2026-06-12 (Session 16 continued)*
+*Last updated: 2026-06-13 (Session 17)*
 
 ---
 
@@ -18,6 +18,9 @@ tags:
 | Jordan natal chart (jordan.html) | ✅ Live | 9-tab, voice canon complete, Archetype: "The Cartographer at the Seam" — flip card + compass rose sigil |
 | Marina natal chart (marina.html) | ✅ Live | 9-tab, voice canon complete, Archetype: "The Generous Light" — flip card + radiant sun sigil |
 | Dasha natal chart (dasha.html) | ✅ Live | 9-tab, voice canon complete, Archetype: "The Threshold Keeper" — flip card + threshold sigil |
+| Mimi natal chart (mimi.html) | ✅ Live | 9-tab Pathfinder, voice canon complete, Archetype: "The Deep Channel" — crimson/midnight two-pillar sigil, numeral II, 5 synastry contacts |
+| Carina natal chart (carina.html) | ✅ Live | 9-tab Pathfinder, voice canon complete, Archetype: "The Cartographer" — parchment gold/ink blue compass rose sigil, numeral IX, 6 synastry contacts |
+| Kate natal chart (kate.html) | ✅ Live | 9-tab Pathfinder, voice canon complete, Archetype: "The Keeper of the Veil" — rose/teal veil + crescent sigil, numeral XVIII, 8 synastry contacts |
 | Daily reads | ✅ Live | Overnight automation running ✓ — first run June 12 |
 | Transit library | ✅ Live | Applying / separating / returning states, accordion detail, first/second pass timing |
 | Wheel of the year | ✅ Live | Lunar cycles + pagan calendar, natal-personalized mini-reads |
@@ -38,6 +41,7 @@ tags:
 | Supabase intake form for readings | 🟢 Low urgency | Jordan wants it; Vercel + Supabase + GitHub is target infra stack |
 | Sky at Work weekly content cadence | 🟡 Ongoing | Update dates + planet data + voice canon rewrite each week — full template now solid |
 | Voice canon drafts | 🟢 7 of 9 done | ✅ Carina, Kate, Mimi, Hazel, Iza, Su, Yvonne — `.md` drafts in `charts/`. ⏳ Cat (birth data on file, reading not written) |
+| Mimi/Carina/Kate Pathfinder builds | ✅ Done | Migrated from old scrolling HTML to 9-tab app format; old mimi.html archived to `_archive/mimi-scrolling-v3.html` |
 | Reddit vocabulary research | 🟢 Low urgency | r/astrology, r/AskAstrologers, r/astrologyreadings → voice-canon.md |
 
 ---
@@ -51,6 +55,9 @@ See `app/beta-users.md` for full detail.
 | Jordan | ✅ Built | ✅ On file | Everything |
 | Marina | ✅ Built | ✅ On file | Natal chart (scrolling HTML format, pre-Pathfinder) |
 | Dasha | ✅ Built | ✅ On file | Natal, daily reads, transit library, Sky at Work |
+| Mimi | ✅ Built | ✅ On file | New Pathfinder app — pending delivery |
+| Carina | ✅ Built | ✅ On file | New Pathfinder app — pending delivery |
+| Kate | ✅ Built | ✅ On file | New Pathfinder app — pending delivery |
 | Krista Kellogg | ⏳ Waiting | ❌ Needed | #astroflow-weekly, full app demo June 12 |
 | Kristen Yim Bell | ✅ Chart filed | ✅ On file | Full app demo June 12 — chart at `charts/kristen-bell.md` |
 
@@ -72,6 +79,7 @@ See `app/beta-users.md` for full detail.
 ---
 
 ## Recent Wins
+- Session 17 (June 13): Mimi, Carina, Kate all migrated to 9-tab Pathfinder app format — full voice canon, unique archetype flip cards with personal sigils + palettes, synastry-with-Jordan in Arc panel. Deployed to Vercel. Old scrolling mimi.html archived.
 - Session 16 continued (June 12): New Moon rituals written + shipped for Jordan and Marina (natal-personalized, gold card format); all 3 apps now have ⊙/☽/⊕ nav icons + compass rose PWA icon; design system library launched (md + HTML)
 - Session 15 (June 12): Full voice canon rewrite across all 3 charts, 9-tab restructure, transit UI polish — all in one session
 - First overnight automation run June 12 — app generated Jordan's daily read while she slept
