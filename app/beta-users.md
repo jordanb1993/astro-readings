@@ -92,11 +92,11 @@ Voice canon copy drafts to be written first (`.md` in `charts/`), then converted
 |--------|-----------|-----------|-------------------|-----------------|
 | Mimi | ✅ | ✅ | ✅ `charts/mimi-reading.md` (The Deep Channel) | ✅ Built June 13 |
 | Carina | ✅ | ✅ | ✅ `charts/carina-reading.md` (The Cartographer) | ✅ Built June 13 |
-| Hazel | ✅ | ✅ | ✅ `charts/hazel-reading.md` (The Signal Reader) | ⏳ Pending |
-| Iza | ✅ | ✅ | ✅ `charts/iza-reading.md` (The Interior Architect) | ⏳ Pending |
+| Hazel | ✅ | ✅ | ✅ `charts/hazel-reading.md` (The Signal Reader) | ✅ Built June 13 |
+| Iza | ✅ | ✅ | ✅ `charts/iza-reading.md` (The Interior Architect) | ✅ Built June 13 |
 | Kate | ✅ | ✅ | ✅ `charts/kate-reading.md` (The Keeper of the Veil) | ✅ Built June 13 |
-| Su | ✅ | ✅ | ✅ `charts/su-reading.md` (The Interior Press) | ⏳ Pending |
-| Yvonne | ✅ `charts/yvonne.md` | ✅ On file | ✅ `charts/yvonne-reading.md` | ⏳ Pending |
+| Su | ✅ | ✅ | ✅ `charts/su-reading.md` (The Interior Press) | ✅ Built June 13 |
+| Yvonne | ✅ `charts/yvonne.md` | ✅ On file | ✅ `charts/yvonne-reading.md` | ✅ Built June 13 |
 | Cat | ❌ | ✅ (birth data only) | ⏳ Pending | ⏳ Pending |
 | Kristen Yim Bell | ✅ `charts/kristen-bell.md` | ✅ Sep 19 1990 · 12:12 PM · Fontana CA | ⏳ Pending (coworker scope) | ⏳ Pending |
 

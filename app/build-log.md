@@ -4,6 +4,54 @@
 
 ---
 
+## 2026-06-13 — Session 18: Friend chart migrations — Hazel · Iza · Su · Yvonne + icon + PWA
+
+**Theme:** Migrate remaining friends with birth data to 9-tab Pathfinder app; rose-gold icon redesign; PWA + social preview system across all builds
+
+### Hazel — `natal readings/hazel.html`
+- Full 9-tab Pathfinder build, Jordan's niece (born May 20 2013, Elmhurst IL)
+- Chart: Aquarius Rising 28.92° (anaretic) + Taurus Sun 29.42° (also anaretic — two threshold degrees), Virgo Moon H7, 3rd house stellium, triple 1st house outer planets
+- Archetype: **"The Signal Reader"** — numeral XVII, antenna receiving cosmic signal, electric sky blue + gold + violet palette
+- Synastry: 3 contacts, niece scope (warm, brief, relational)
+
+### Iza — `natal readings/iza.html`
+- Full 9-tab Pathfinder build, online friend (born Feb 23 1996, Opoczno Poland)
+- Chart: Sagittarius Rising 12.97°, Pisces Sun H2, Aries Moon H4, NNode Libra 10th, Sun sq Pluto 0.64° (tightest)
+- Archetype: **"The Interior Architect"** — numeral XI, compass dividers sigil, forest green + gold + muted rose
+
+### Su — `natal readings/su.html`
+- Full 9-tab Pathfinder build, online friend (born Jun 19 1998, Erfurt Germany)
+- Chart: Taurus Rising 10.98°, Gemini Sun H2, Aries Moon H12, 12th house cluster (Moon+Jupiter+Saturn), Venus conj ASC, Sun sq Jupiter 0.83°
+- Archetype: **"The Interior Press"** — numeral I, quill + ink drop sigil, terra cotta + lavender + cream
+
+### Yvonne — `natal readings/yvonne.html`
+- Full 9-tab Pathfinder build, close friend (born Jul 14 1994, Fremont CA)
+- Chart: Sagittarius Rising 3.80°, Cancer Sun H8, Libra Moon H10, Sun opp Neptune 0.34° (tightest), NNode Scorpio H12
+- Archetype: **"The Interior Witness"** — numeral XX, witnessing eye sigil, deep teal + amber + midnight navy
+- Synastry: 8 contacts, full close-friend treatment (ASC conj Jordan NNode 0.75° = most significant contact)
+
+### Synastry duplicate fix — all friend builds
+- Removed `#arc-synastry-inject` div + injection script from dasha, kate, mimi, carina, hazel, yvonne, iza, su
+- Synastry now lives only in Variable panel (IS_FRIEND_BUILD daily view), not duplicated in Arc tab
+- `#synastry-reading-src` hidden div retained so pathfinder-core.js can still use the content
+
+### Icon redesign
+- `natal readings/icon.svg`: Rose-gold compass rose — rich plum gradient bg with rose/gold tonal washes (radial + linear gradient layers), bright outer ring with 24 tick marks, glow filters on compass points + rings, cardinal north tip extra bright (#fce870)
+- `natal readings/apple-touch-icon.png`: Regenerated from new SVG
+- `natal readings/og-preview.png`: 1200x630 branded link preview card (mini compass rose left + PATHFINDER wordmark right, same rose-gold palette)
+- Jordan named rose gold as a Pathfinder brand direction
+
+### Sky at Work icon
+- `workplace readings/sky-at-work-icon.svg/png`: Distinct icon — night city skyline at dawn, crescent moon + stars above, golden sun arc rising, teal-lit office windows. Navy-teal background (contrasts with Pathfinder's plum)
+- `workplace readings/manifest-sky-at-work.json`: Standalone Sky at Work PWA manifest
+
+### PWA + social preview — all active builds
+- Per-person `manifest-[name].json` files in `natal readings/` (correct start_url per chart)
+- OG + Twitter card meta injected into all 10 charts + jordan.html + sky-at-work.html
+- Shared `og-preview.png` as social image for natal charts
+
+---
+
 ## 2026-06-13 — Session 17: Friend chart migrations — Mimi · Carina · Kate
 
 **Theme:** Migrate three close friends from old scrolling HTML format to full 9-tab Pathfinder app
