@@ -7,7 +7,7 @@ tags:
 
 # Build Digest — Pathfinder App
 *Cold-start synthesis. Load at the start of any build or business session. Updated at session end.*
-*Last updated: 2026-06-13 (Session 19)*
+*Last updated: 2026-06-13 (Session 20)*
 
 ---
 
@@ -93,11 +93,11 @@ See `app/beta-users.md` for full detail.
 ---
 
 ## Business Context (quick ref)
-- **Phase 1:** Build + internal beta (Jordan + close friends) — current
-- **Phase 2:** Closed subscriber cohort ~20 people at $20–35/mo
+- **Phase 1:** ✅ Complete — June 13, 2026
+- **Phase 2:** Next — closed subscriber cohort ~20 people at $20–35/mo
 - **Phase 3:** Public app
 - **Product name:** Pathfinder (Voyager/Barclay ref)
 - **Natal reading name:** The Constant
 - **Transit/daily reading name:** The Variable
 - **Deploy:** Vercel (`pathfinderastro.vercel.app`) · always deploy from `pathfinder/` root
-- **Sky at Work:** Sub-product of Pathfinder — workplace collective transit channel, hosted within the same app
+- **Sky at Work:** Separate standalone product (freemium, B2B partnerships); Pathfinder subscribers get access as benefit; Everflow Slack = beta group

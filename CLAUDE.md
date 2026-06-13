@@ -215,13 +215,13 @@ git add CLAUDE.md NATAL.md KNOWLEDGE.md && git commit -m "update workspace files
 
 ---
 
-## Current Situation Snapshot — June 10, 2026
+## Current Situation Snapshot — June 13, 2026
 
 **Career:** Associate Director of Content Operations at Everflow (effective April 1, 2026). Tony dynamic documented and monitored. Active projects: EverForce X website audit, AI Use Case Repository (co-owned with Dasha), Masterclasses series, weekly newsletter. Jordan is building sophisticated AI systems — Claude Code is central to how she works.
 
 **Finances:** Savings: $3,209 ✅. CC balance: ~$6,000 (falling). Student loan rehab form ready for mail. Regular paycheck ~$2,314.75 (~$4,629/month). First real budgeted months underway.
 
-**Astrology business:** App fully data-driven + visually polished as of June 10. Daily tab: live reading from `today.json`, two-tier transit pills (top 5 tightest orbs + "+N more → Transits" CTA), TODAY tagged action items. Transits tab: three-tab layout (Now/Returning/Archive) with sticky tab nav, **live biwheel SVG renderer** (natal inner ring + transiting outer ring + aspect lines, deployed session 8), list→detail slide navigation. 4am routine autonomous. Mobile-first, all panels verified. App name: **Pathfinder** (decided June 11, 2026). Hosted at `pathfinderastro.vercel.app` (migrated from Netlify June 11). **Biwheel complete as of session 9.** Tap any transiting planet → aspect lines activate (others dim), gold ring appears, detail panel slides in (degree + aspect rows color-coded by type). All `active_transits` drawn at ambient opacity. **Next:** natal planet tap (interpretation snippets), biwheel for friends' charts, or print/share.
+**Astrology business — Phase 1 COMPLETE (June 13, 2026):** 10 natal charts live on Vercel. 4am routine autonomous. Two products decided: **Pathfinder** (deep subscription $25–35/mo, no ads, no freemium) + **Sky at Work** (separate standalone product, freemium, B2B partnerships, Everflow Slack beta group). Phase 2 is next — closed subscriber cohort ~20 people. Primary marketing hook: *"You've outgrown the daily horoscope."* Build priorities live in `app/backlog.md`. Marketing copy in `app/copy-vault.md`.
 
 **Body:** Walking pad 6+ week streak ✅. Psychiatrist (Dr. Ashley George) June 10. PCP unassigned — calling Anthem (855-383-7248). BP monitor in hand.
 
