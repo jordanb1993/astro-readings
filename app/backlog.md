@@ -8,7 +8,7 @@ tags:
 # Pathfinder Backlog
 *Single source of truth for build priorities, queue, and ideas.*
 *Updated at the end of every build session. Loaded alongside build-digest.md at build session start.*
-*Last updated: 2026-06-13 (Session 19)*
+*Last updated: 2026-06-13 (Session 20)*
 
 ---
 
@@ -44,9 +44,8 @@ tags:
 - **Routine → three-layer today.json format** — write the full three-layer reading structure directly into today.json; eliminate the `fetchPositions()` bridge. Blocking question: does this break any current JS field parsing?
 - **Reddit vocabulary research sessions** — monthly, one planet per session, per voice-canon.md protocol (already written). Needs scheduling cadence.
 - **Marina Pathfinder rebuild** — currently scrolling HTML (pre-Pathfinder format). Will need 9-tab migration. No urgency; voice canon draft exists.
-- **Phase 2 start criteria — write the explicit threshold** — when exactly does Phase 2 begin? *(freemium + corporate brand both RESOLVED June 13 — two fewer blockers)*
+- **Phase 2 start criteria — write the explicit threshold** — when exactly does Phase 2 begin? Specific conditions needed: all reading types templated, N friend charts delivered, Jordan confident handing to paying strangers. Freemium + corporate brand both RESOLVED June 13 — two fewer blockers. Blocking question: what is the actual bar?
 - **Ephemeris: astrolibrary.org → direct pyswisseph in app** — current routine uses pyswisseph but live app data fetches from astrolibrary.org (fragile scrape). Blocking question: when does production reliability require a self-hosted ephemeris endpoint?
-- **Phase 2 start criteria — write the explicit threshold** — when exactly does Phase 2 begin? Specific conditions needed: all reading types templated, N friend charts delivered, Jordan confident handing to strangers. Blocking question: what is the actual bar?
 
 ---
 
@@ -61,7 +60,7 @@ tags:
 - **Interface skins / theming** — user-selectable visual skins: Whimsigoth (default), Y2K hot pink, earth tones, clean minimal, seasonal auto-shift. Phase 3 endgame. Architecture already supports it (CSS vars in place).
 - **Transit-to-transit library: societal layer** — what Venus conjunct Jupiter means collectively, for culture and zeitgeist. Extends the workplace transit-to-transit work. Phase 3 content + SEO fodder.
 - **SEO / AEO content structure** — transit library + natal interpretation pages as passive acquisition channel. `llms.txt` at root (same pattern Dasha built for AI Playbook). Phase 2-3.
-- **Competitive intelligence session** — Playwright MCP to visit Co-Star, CHANI, The Pattern, Sanctuary, Time Passages, Astro.com. Screenshot key screens, scrape help desk/FAQ. Not yet run. Spec exists in `app/agent-architecture.md`.
+- **Competitive intelligence: second pass** — initial Playwright crawl done June 5 (`competitor-research-2026-06-05.md`). A second pass (deeper scrape of onboarding flows, help desk content, pricing pages) is worth doing before Phase 2 launch. Not urgent.
 - **Voice training corpus** — TCD MFA creative writing, workspace readings archive, short written interviews ("How do I talk about Chiron?"), voice notes for rhythm. Phase 2-3 formalization.
 - **Resend email delivery** — Phase 2 subscriber email infrastructure. Free tier. API-accessible. Dasha uses it. Pairs with Supabase for the full Phase 2 delivery stack.
 - **People switcher / multi-chart support** — switch between saved charts within the app. Phase 3 architecture change.
