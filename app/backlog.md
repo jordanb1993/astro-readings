@@ -42,6 +42,10 @@ tags:
 - **Routine → three-layer today.json format** — write the full three-layer reading structure directly into today.json; eliminate the `fetchPositions()` bridge. Blocking question: does this break any current JS field parsing?
 - **Reddit vocabulary research sessions** — monthly, one planet per session, per voice-canon.md protocol (already written). Needs scheduling cadence.
 - **Marina Pathfinder rebuild** — currently scrolling HTML (pre-Pathfinder format). Will need 9-tab migration. No urgency; voice canon draft exists.
+- **Freemium vs. subscription model** — three options documented in product-decisions.md (freemium interactive / deep subscription / hybrid). Blocking question: what does Phase 2 data tell us about what users actually want?
+- **Corporate product: one brand or two** — Sky at Work as Pathfinder sub-product vs. its own brand/domain for Phase 2-3. Blocking question: does Sky at Work get a separate website when it goes outward-facing?
+- **Ephemeris: astrolibrary.org → direct pyswisseph in app** — current routine uses pyswisseph but live app data fetches from astrolibrary.org (fragile scrape). Blocking question: when does production reliability require a self-hosted ephemeris endpoint?
+- **Phase 2 start criteria — write the explicit threshold** — when exactly does Phase 2 begin? Specific conditions needed: all reading types templated, N friend charts delivered, Jordan confident handing to strangers. Blocking question: what is the actual bar?
 
 ---
 
@@ -61,6 +65,18 @@ tags:
 - **Resend email delivery** — Phase 2 subscriber email infrastructure. Free tier. API-accessible. Dasha uses it. Pairs with Supabase for the full Phase 2 delivery stack.
 - **People switcher / multi-chart support** — switch between saved charts within the app. Phase 3 architecture change.
 - **New moon / full moon ritual template formalized** — Jordan + Marina rituals exist and are the template. Write the generation spec so future rituals aren't rebuilt from scratch.
+- **Visual Polish Queue** (app-vision.md) — 12+ queued chart wheel + reading refinements not yet built: hover tooltips on chart wheel planet glyphs (name/sign/degree/house/1-line meaning), aspect lines animate in on page load, degree tick marks in zodiac band, scroll-based color shift through natal reading (IntersectionObserver), section header mini-dividers (`· ✦ ·`), glassmorphism iridescent shimmer on scroll, responsive hero name sizing, hover-expand aspect rows, through-line SVG constellation behind text, chart wheel `?embed=1` param for iframe use. Full queue in `app/app-vision.md`.
+- **Corporate product pricing template** (app-vision.md) — career transit reading ($85–125), negotiation/timing consult ($55 add-on), team Sky at Work package ($200–400/mo). Pricing architecture to lock before first corporate customer.
+- **"Business casual whimsigoth" aesthetic for Sky at Work** (the bones, seeded May 20) — distinct visual register for the corporate product line: cleaner, more professional, same design DNA as Pathfinder but adapted for Slack and workplace contexts.
+- **Macro narratives in workplace readings** (the bones, seeded May 20) — weave big-picture transit themes (AI disruption era, tech cycles, market shifts) alongside personal transits in Sky at Work content. Makes it culturally resonant, not just personal scheduling intelligence.
+- **Dasha business/money synastry** (the bones, seeded May 20) — run Jordan + Dasha chart comparison for business partnership indicators. She's asked for it directly; also a test case for the workplace synastry feature.
+- **Intake form design specification** (agent-architecture.md) — Phase 2 needs real intake beyond birth data: focus area (love/career/body), current life chapter, emotional context. What questions does Jordan actually need to generate a great reading? Write the spec before building the form.
+- **Service worker / offline PWA support** (app-vision.md) — makes natal chart builds work without a network connection; especially valuable for The Constant (all static content). Optional Phase 1, high value Phase 3.
+- **Routing agent emotional register detection** (agent-architecture.md) — Phase 2 multi-reading architecture: which reading type to generate, and how; rule-based keyword detection vs. LLM-based intent detection. Needs spec before Phase 2 automation.
+- **Written interview corpus** (app-vision.md) — short pieces answering "How do I talk about Chiron?", "What do I notice first in a chart?", "What's my take on Neptune?" — foundational voice training material for Phase 3 voice layer.
+- **Audio voice notes for rhythm training** (app-vision.md) — Jordan recording herself reading passages naturally; lets AI absorb her speech rhythm and register for Phase 3. The TCD MFA writing is the written corpus; audio is the spoken one.
+- **Social content strategy** (product-decisions.md) — TikTok, Instagram Reels, or neither until Phase 2. Open decision; revisit when there's product to demonstrate.
+- **Apple App Store trademark check** — verify "Pathfinder" clears before Phase 3 public launch (different class from Pathfinder RPG and Nissan Pathfinder, but worth confirming).
 
 ---
 
