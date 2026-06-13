@@ -133,6 +133,10 @@ The Trek reference is hidden and personal — Jordan knows it, the world sees a 
 
 **Aesthetic direction:** "Business casual whimsigoth" — same design DNA (sacred geometry, celestial motifs) but adapted for corporate credibility. Navy-teal palette (already distinct from Pathfinder plum) is the right foundation.
 
+**Build scope (June 13):** Sky at Work is a full standalone product build, not a Pathfinder feature. Currently lives at `pathfinderastro.vercel.app` inside Pathfinder's URL structure. Needs: own domain/subdomain, own landing page, own onboarding for users who arrive without a Pathfinder account, standalone PWA (manifest already exists ✅, icon already exists ✅). The weekly content cadence (#astroflow-weekly) is already running — the product build catches up to it.
+
+**Beta group:** Everflow Slack — the #astroflow-weekly channel + coworkers who've seen live demos (Krista Kellogg, Kristen Bell, Dasha, Darrion, Yvonne). Live, active, already giving signal. This is the beta cohort for Sky at Work Phase 1.
+
 **Revenue model (June 13, 2026):**
 - Sky at Work = **freemium** — free access drives broad corporate discovery
 - Monetized via **B2B partnerships / sponsorships** (NOT ads touching Pathfinder — ever)

@@ -104,3 +104,25 @@ Voice canon copy drafts to be written first (`.md` in `charts/`), then converted
 
 ## Phase 2 (Not Yet Started)
 Closed subscriber cohort — ~20 people at $20–35/mo. No action until Phase 1 beta is running smoothly.
+
+---
+
+## Sky at Work — Beta Group (Separate Product)
+
+**Beta cohort:** Everflow Slack — the #astroflow-weekly channel + coworkers who've seen live demos.
+**Status:** Live and active. #astroflow-weekly has been running since May 21, 2026. These people are already the beta group — they just don't know it yet formally.
+
+| Person | Exposure | Reaction | Notes |
+|--------|----------|----------|-------|
+| Krista Kellogg | #astroflow-weekly (May+), full app demo June 12 | "Sky at Work is brilliant. I think that is just such a brilliant name." "It's an act of love." | VP-level. Endorsed #astroflow-weekly within 24 min of first post. Ideal early evangelist. |
+| Kristen Bell | Full app demo June 12 | "Oh my god!" (transit library) — spontaneous, enthusiastic | Distro + partnerships. Will share if it's good. |
+| Dasha | Sees builds in progress weekly | Already thinking in product terms — "We want as many fitness testers as possible" | Co-builder adjacent. Most sophisticated user. |
+| Darrion | #astroflow-weekly reader | No recorded reaction yet | Claude Code onboarding done June 10 — tech-literate. |
+| Yvonne | Natal chart built | Chart delivered — Sky at Work exposure TBD | Full Pathfinder user; Sky at Work is a natural next step. |
+| #astroflow-weekly channel | Weekly collective readings | Krista's 24-min endorsement created immediate social proof in the channel | Broader Everflow team — untapped audience for formal product launch. |
+
+**What Sky at Work standalone product needs before going beyond Everflow:**
+- Own domain/subdomain
+- Own landing page (not Pathfinder's)
+- Onboarding for users who arrive without a Pathfinder account
+- B2B partnership structure ready (AI founder community + wellness brands as first targets)

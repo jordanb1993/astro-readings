@@ -25,12 +25,13 @@ tags:
 *Priority ordered. Ready to build when Now clears.*
 
 1. **Deliver chart URLs to Mimi, Carina, Kate** — all three are deployed and live on Vercel. Phase 1 success requires charts in hands, not just built.
-2. **Follow up Kristen Bell birth data** — she committed to sending after lunch June 12. Check Slack. Voice canon draft + chart build pending once received.
-3. **Get Cat's birth data** — `charts/cat.md` is a blank template. No DOB, time, or location on file. Nothing can happen until Jordan asks Cat directly.
-4. **Get Krista Kellogg birth data** — two prior requests unanswered. DM or ask at next sync.
-5. **Friend daily transit JSON** — IS_FRIEND_BUILD flag and architecture are live. Friends currently see synastry in their Variable tab, not today's sky in their chart. Routine needs to write `[name]-live.json` per friend nightly. This is the Phase 2 unlock.
-6. **Tappable Wheel elements** — same "every element is a door" principle applied to The Wheel. Lunar phases, seasonal cards → detail panels.
-7. **Voice audit: older natal prose** — carina + marina natal content predates the plain-language-first protocol and expanded anti-patterns. Targeted spot-check and rewrite pass.
+2. **Sky at Work — standalone product build** — currently lives as a feature inside Pathfinder's URL structure. Needs to become its own product: own domain/subdomain, own landing page, own onboarding for non-Pathfinder users, own standalone PWA. Beta group: Everflow Slack (#astroflow-weekly + coworkers who've seen it). This is a full product sprint, not a content update.
+3. **Follow up Kristen Bell birth data** — she committed to sending after lunch June 12. Check Slack. Voice canon draft + chart build pending once received.
+4. **Get Cat's birth data** — `charts/cat.md` is a blank template. No DOB, time, or location on file. Nothing can happen until Jordan asks Cat directly.
+5. **Get Krista Kellogg birth data** — two prior requests unanswered. DM or ask at next sync.
+6. **Friend daily transit JSON** — IS_FRIEND_BUILD flag and architecture are live. Friends currently see synastry in their Variable tab, not today's sky in their chart. Routine needs to write `[name]-live.json` per friend nightly. This is the Phase 2 unlock.
+7. **Tappable Wheel elements** — same "every element is a door" principle applied to The Wheel. Lunar phases, seasonal cards → detail panels.
+8. **Voice audit: older natal prose** — carina + marina natal content predates the plain-language-first protocol and expanded anti-patterns. Targeted spot-check and rewrite pass.
 
 ---
 
