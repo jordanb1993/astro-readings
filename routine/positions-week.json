@@ -1,136 +1,6 @@
 {
-  "generated": "2026-06-12",
+  "generated": "2026-06-13",
   "upcoming_exact_aspects": [
-    {
-      "date": "2026-06-13",
-      "day": "Saturday",
-      "transit": "Mars",
-      "natal": "Venus",
-      "natal_house": "5th",
-      "aspect": "opposition",
-      "symbol": "\u260d",
-      "orb": 0.03
-    },
-    {
-      "date": "2026-06-13",
-      "day": "Saturday",
-      "transit": "Uranus",
-      "natal": "Jupiter",
-      "natal_house": "5th",
-      "aspect": "inconjunct",
-      "symbol": "\u26bb",
-      "orb": 0.1
-    },
-    {
-      "date": "2026-06-13",
-      "day": "Saturday",
-      "transit": "Mercury",
-      "natal": "Sun",
-      "natal_house": "6th",
-      "aspect": "sesquiquadrate",
-      "symbol": "\u25a1/",
-      "orb": 0.12
-    },
-    {
-      "date": "2026-06-13",
-      "day": "Saturday",
-      "transit": "Pluto",
-      "natal": "Moon",
-      "natal_house": "10th",
-      "aspect": "sextile",
-      "symbol": "\u2736",
-      "orb": 0.23
-    },
-    {
-      "date": "2026-06-13",
-      "day": "Saturday",
-      "transit": "Uranus",
-      "natal": "NorthNode",
-      "natal_house": "6th",
-      "aspect": "opposition",
-      "symbol": "\u260d",
-      "orb": 0.26
-    },
-    {
-      "date": "2026-06-13",
-      "day": "Saturday",
-      "transit": "Uranus",
-      "natal": "SouthNode",
-      "natal_house": "12th",
-      "aspect": "conjunction",
-      "symbol": "\u260c",
-      "orb": 0.26
-    },
-    {
-      "date": "2026-06-13",
-      "day": "Saturday",
-      "transit": "Jupiter",
-      "natal": "LotOfFortune",
-      "natal_house": "9th",
-      "aspect": "inconjunct",
-      "symbol": "\u26bb",
-      "orb": 0.27
-    },
-    {
-      "date": "2026-06-13",
-      "day": "Saturday",
-      "transit": "NNode",
-      "natal": "Jupiter",
-      "natal_house": "5th",
-      "aspect": "trine",
-      "symbol": "\u25b3",
-      "orb": 0.31
-    },
-    {
-      "date": "2026-06-13",
-      "day": "Saturday",
-      "transit": "Mars",
-      "natal": "Neptune",
-      "natal_house": "7th",
-      "aspect": "trine",
-      "symbol": "\u25b3",
-      "orb": 0.32
-    },
-    {
-      "date": "2026-06-13",
-      "day": "Saturday",
-      "transit": "Chiron",
-      "natal": "Ascendant",
-      "natal_house": "1st",
-      "aspect": "sextile",
-      "symbol": "\u2736",
-      "orb": 0.38
-    },
-    {
-      "date": "2026-06-13",
-      "day": "Saturday",
-      "transit": "Neptune",
-      "natal": "Venus",
-      "natal_house": "5th",
-      "aspect": "sesquiquadrate",
-      "symbol": "\u25a1/",
-      "orb": 0.43
-    },
-    {
-      "date": "2026-06-13",
-      "day": "Saturday",
-      "transit": "NNode",
-      "natal": "NorthNode",
-      "natal_house": "6th",
-      "aspect": "square",
-      "symbol": "\u25a1",
-      "orb": 0.47
-    },
-    {
-      "date": "2026-06-13",
-      "day": "Saturday",
-      "transit": "NNode",
-      "natal": "SouthNode",
-      "natal_house": "12th",
-      "aspect": "square",
-      "symbol": "\u25a1",
-      "orb": 0.47
-    },
     {
       "date": "2026-06-14",
       "day": "Sunday",
@@ -199,7 +69,7 @@
       "natal_house": "12th",
       "aspect": "semi-square",
       "symbol": "\u2220",
-      "orb": 0.26
+      "orb": 0.27
     },
     {
       "date": "2026-06-14",
@@ -649,7 +519,7 @@
       "natal_house": "5th",
       "aspect": "square",
       "symbol": "\u25a1",
-      "orb": 0.44
+      "orb": 0.43
     },
     {
       "date": "2026-06-18",
@@ -720,6 +590,116 @@
       "aspect": "sesquiquadrate",
       "symbol": "\u25a1/",
       "orb": 0.5
+    },
+    {
+      "date": "2026-06-20",
+      "day": "Saturday",
+      "transit": "NNode",
+      "natal": "Sun",
+      "natal_house": "6th",
+      "aspect": "square",
+      "symbol": "\u25a1",
+      "orb": 0.09
+    },
+    {
+      "date": "2026-06-20",
+      "day": "Saturday",
+      "transit": "Pluto",
+      "natal": "Moon",
+      "natal_house": "10th",
+      "aspect": "sextile",
+      "symbol": "\u2736",
+      "orb": 0.11
+    },
+    {
+      "date": "2026-06-20",
+      "day": "Saturday",
+      "transit": "Uranus",
+      "natal": "NorthNode",
+      "natal_house": "6th",
+      "aspect": "opposition",
+      "symbol": "\u260d",
+      "orb": 0.12
+    },
+    {
+      "date": "2026-06-20",
+      "day": "Saturday",
+      "transit": "Uranus",
+      "natal": "SouthNode",
+      "natal_house": "12th",
+      "aspect": "conjunction",
+      "symbol": "\u260c",
+      "orb": 0.12
+    },
+    {
+      "date": "2026-06-20",
+      "day": "Saturday",
+      "transit": "Venus",
+      "natal": "Midheaven",
+      "natal_house": "10th",
+      "aspect": "inconjunct",
+      "symbol": "\u26bb",
+      "orb": 0.23
+    },
+    {
+      "date": "2026-06-20",
+      "day": "Saturday",
+      "transit": "Sun",
+      "natal": "Ascendant",
+      "natal_house": "1st",
+      "aspect": "conjunction",
+      "symbol": "\u260c",
+      "orb": 0.29
+    },
+    {
+      "date": "2026-06-20",
+      "day": "Saturday",
+      "transit": "Mercury",
+      "natal": "Midheaven",
+      "natal_house": "10th",
+      "aspect": "sesquiquadrate",
+      "symbol": "\u25a1/",
+      "orb": 0.29
+    },
+    {
+      "date": "2026-06-20",
+      "day": "Saturday",
+      "transit": "Uranus",
+      "natal": "Jupiter",
+      "natal_house": "5th",
+      "aspect": "inconjunct",
+      "symbol": "\u26bb",
+      "orb": 0.29
+    },
+    {
+      "date": "2026-06-20",
+      "day": "Saturday",
+      "transit": "Mars",
+      "natal": "Saturn",
+      "natal_house": "9th",
+      "aspect": "square",
+      "symbol": "\u25a1",
+      "orb": 0.3
+    },
+    {
+      "date": "2026-06-20",
+      "day": "Saturday",
+      "transit": "Moon",
+      "natal": "Mars",
+      "natal_house": "6th",
+      "aspect": "square",
+      "symbol": "\u25a1",
+      "orb": 0.32
+    },
+    {
+      "date": "2026-06-20",
+      "day": "Saturday",
+      "transit": "Venus",
+      "natal": "Chiron",
+      "natal_house": "4th",
+      "aspect": "semi-sextile",
+      "symbol": "\u26ba",
+      "orb": 0.45
     }
   ]
 }
