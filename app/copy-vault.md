@@ -64,6 +64,15 @@ Category: Positioning / investor/press language
 
 **Partnership angle to develop:** The pitch to a wellness brand or women-in-leadership org isn't "buy an ad." It's "your customers are already using cyclical intelligence to navigate their work lives — be part of that context."
 
+**AI founder partnership angle (June 13):** The AI builder community is a natural B2B partner category — and it's hot right now. Other people building AI-powered apps (productivity tools, wellness apps, coaching platforms, vibe-coded products) serve the same demographic as Sky at Work (knowledge workers, professional women, people navigating complex work environments with intelligence tools). These partnerships are founder-to-founder collabs, not cold B2B pitches. Jordan is already inside this community. The pitch: "Your users are already thinking about timing and energy at work — here's a layer that makes that explicit."
+
+**Potential AI partner categories:**
+- AI productivity / focus tools (time-blocking, flow state, deep work)
+- AI coaching / leadership development platforms
+- AI wellness apps built by solo founders
+- Tools specifically for women in tech / women founders
+- The broader vibe-coding / indie AI builder community (newsletter sponsorships, community features)
+
 *(Hooks and positioning language to be developed as Sky at Work brand takes shape)*
 
 ---
