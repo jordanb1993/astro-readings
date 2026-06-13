@@ -75,20 +75,24 @@ The UX register for the natal reading product is **contemplative**: you scroll, 
 
 ---
 
-### Business Model: Freemium Interactive vs. Deep Subscription Specialized Tool
-**Status: OPEN**
+### Business Model: Deep Subscription Specialized Tool
+**Status: RESOLVED — Option B**
 **Raised:** June 5, 2026 (Gemini intake)
+**Decided:** June 13, 2026 (unlocked by competitor research)
 
-**Option A — Freemium Interactive**
-Free tier: limited readings, basic chart. Paid tier: full chart synthesis, ongoing transits, counselor mode. Discovery model — broad top of funnel, convert curious users.
+**The ruling: No free tier. Deep subscription only.**
 
-**Option B — Deep Subscription Specialized Tool**
-No free tier or minimal free preview. Subscribers get full access. Positions as premium, specialized, not for everyone. Aligns with 5th house Jupiter Scorpio design philosophy: depth and intensity over broad casual access.
+Competitor research confirmed why freemium doesn't fit: Co-Star and The Pattern run on freemium because their retention mechanic is shallow push notifications — broad top of funnel, daily habit loop. Pathfinder's retention mechanic is *depth and beauty* — you return to the artifact because it rewards return. That's a subscription product. Freemium attracts casual users who bounce when novelty fades. Subscribers are the ones who already know they want this.
 
-**Option C — Hybrid (Phase 2 / Phase 3 transition)**
-Phase 2 remains transactional (per reading on Etsy). Phase 3 launches as subscription. Use Phase 2 revenue and reviews to validate before deciding freemium vs. paywall.
+**Pricing direction:** $25–35/month (Phase 2 closed beta at $20–35, Phase 3 public at $25–35).
 
-**What's blocking:** Phase 1 doesn't require this decision. Phase 3 does. Could run Phase 2 as data collection on what customers actually want.
+**What comes with the subscription:**
+- The Constant (natal chart, persistent)
+- The Variable (daily transit reading + transit library)
+- The Wheel (lunar cycles, seasonal readings, rituals)
+- Sky at Work access (Pathfinder subscribers get Sky at Work as a benefit)
+
+**Free tier if any:** None, or minimal (one natal chart tab only, no dynamic content). Not a priority decision — Phase 2 is invite-only anyway.
 
 ---
 
@@ -113,16 +117,21 @@ The Trek reference is hidden and personal — Jordan knows it, the world sees a 
 
 ---
 
-### Corporate Product: Same Brand or Separate Vertical
-**Status: OPEN**
+### Sky at Work: Separate Product, Pathfinder Subscriber Benefit
+**Status: RESOLVED — Option B (with integration model)**
 **Raised:** May 2026
+**Decided:** June 13, 2026 (unlocked by competitor research + Jordan's direction)
 
-The corporate women's career astrology angle (sky-at-work, timing professional moves, navigating workplace dynamics) may be a distinct enough market to warrant its own brand and positioning, separate from the personal natal chart reading service.
+**The ruling:** Sky at Work is a separate standalone product with its own brand identity, distinct aesthetic (business casual whimsigoth — cleaner, more strategic register), and potentially its own domain/website. It is NOT a Pathfinder sub-feature.
 
-**Option A:** One brand, two product lines. Corporate product lives under the same name, positioned as "workplace intelligence" vs. "personal reading."
-**Option B:** Separate brand for corporate. The personal reading brand stays mystical/witchy. The corporate brand is clean, strategic, professional.
+**The integration model:** Pathfinder subscribers get Sky at Work access as a benefit of their subscription. This creates a natural funnel: Sky at Work drives discovery in corporate/workplace contexts → converts to Pathfinder personal subscriptions for those who want their own natal chart.
 
-**What's blocking:** Phase 1 is personal readings only. This decision doesn't need to be made until Phase 2-3. Worth noting the live test is running (#astroflow-weekly).
+**Why separate, not merged:**
+- The CHANI model shows the risk of tying a brand to one person's sensibility — it creates a ceiling. Sky at Work needs to feel applicable to corporate women who may not share Jordan's full aesthetic or sensibility.
+- The workplace product has a different buyer, different context, and different value prop. A separate identity lets it be evaluated on its own terms.
+- Sky at Work can grow into a B2B product (team packages, corporate subscriptions) which requires a more neutral, professional brand than Pathfinder.
+
+**Aesthetic direction:** "Business casual whimsigoth" — same design DNA (sacred geometry, celestial motifs) but adapted for corporate credibility. Navy-teal palette (already distinct from Pathfinder plum) is the right foundation.
 
 ---
 
@@ -292,7 +301,8 @@ Time Passages is not beautiful but it is *complete and navigable*. Every aspects
 | June 5, 2026 | UX philosophy: contemplative artifact (neither pole) | RESOLVED |
 | June 5, 2026 | Business model: freemium vs. subscription | OPEN |
 | June 11, 2026 | Business name: Pathfinder | RESOLVED |
-| Ongoing | Corporate product: same brand or separate | OPEN |
+| June 13, 2026 | Corporate product: Sky at Work = separate brand, Pathfinder sub benefit | RESOLVED |
 | June 11, 2026 | Structural principle: every data element is a door | RESOLVED |
 | June 12, 2026 | Reading UX: plain-language first, three-layer sequence (Option C) | RESOLVED |
 | June 13, 2026 | Natal reading structure: 9-tab therapeutic arc, all 10 builds | RESOLVED |
+| June 13, 2026 | Business model: deep subscription, no freemium (Option B) | RESOLVED |

@@ -16,6 +16,7 @@ tags:
 *Max 5 items. What we're building this session or this week.*
 
 - [ ] Tappable natal planets → interpretation slide-in panel (The Constant) — the one remaining gap in "every element is a door"
+- [ ] Daily push notification (return signal) — pull pulse line from today.json, surface as morning notification. The retention mechanic for days 2-3-10.
 - [ ] Sky at Work June 22–28 content update — time-pressured, week starts Monday
 
 ---
@@ -42,8 +43,7 @@ tags:
 - **Routine → three-layer today.json format** — write the full three-layer reading structure directly into today.json; eliminate the `fetchPositions()` bridge. Blocking question: does this break any current JS field parsing?
 - **Reddit vocabulary research sessions** — monthly, one planet per session, per voice-canon.md protocol (already written). Needs scheduling cadence.
 - **Marina Pathfinder rebuild** — currently scrolling HTML (pre-Pathfinder format). Will need 9-tab migration. No urgency; voice canon draft exists.
-- **Freemium vs. subscription model** — three options documented in product-decisions.md (freemium interactive / deep subscription / hybrid). Blocking question: what does Phase 2 data tell us about what users actually want?
-- **Corporate product: one brand or two** — Sky at Work as Pathfinder sub-product vs. its own brand/domain for Phase 2-3. Blocking question: does Sky at Work get a separate website when it goes outward-facing?
+- **Phase 2 start criteria — write the explicit threshold** — when exactly does Phase 2 begin? *(freemium + corporate brand both RESOLVED June 13 — two fewer blockers)*
 - **Ephemeris: astrolibrary.org → direct pyswisseph in app** — current routine uses pyswisseph but live app data fetches from astrolibrary.org (fragile scrape). Blocking question: when does production reliability require a self-hosted ephemeris endpoint?
 - **Phase 2 start criteria — write the explicit threshold** — when exactly does Phase 2 begin? Specific conditions needed: all reading types templated, N friend charts delivered, Jordan confident handing to strangers. Blocking question: what is the actual bar?
 
