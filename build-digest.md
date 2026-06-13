@@ -7,7 +7,7 @@ tags:
 
 # Build Digest — Pathfinder App
 *Cold-start synthesis. Load at the start of any build or business session. Updated at session end.*
-*Last updated: 2026-06-13 (Session 17)*
+*Last updated: 2026-06-13 (Session 19)*
 
 ---
 
@@ -26,7 +26,8 @@ tags:
 | Su natal chart (su.html) | ✅ Live | 9-tab Pathfinder, voice canon complete, Archetype: "The Interior Press" — quill sigil, numeral I, 4 synastry contacts |
 | Yvonne natal chart (yvonne.html) | ✅ Live | 9-tab Pathfinder, voice canon complete, Archetype: "The Interior Witness" — witnessing eye sigil, numeral XX, 8 synastry contacts (close friend) |
 | PWA icon (rose-gold) | ✅ Live | Bright compass rose, 24 tick marks, rose/gold gradient bg, glow filters — all friend builds + jordan.html |
-| Social preview system | ✅ Live | OG + Twitter card meta on all 10 charts; per-person manifests; og-preview.png 1200×630 |
+| Social preview system | ✅ Live | OG + Twitter card meta on all 10 charts; per-person manifests; og-preview.png **600×600 square** (twitter:card=summary) — no edge cropping when shared |
+| Patch script | ✅ Live | `app/patch.py` — decorator registry, --change/--dry-run/--only/--list; 3 starter patches (geo-bg-check, og-title-check, card-back-padding) |
 | Sky at Work icon + PWA | ✅ Live | Night-city-at-dawn cityscape icon, standalone manifest, distinct from Pathfinder compass rose |
 | Daily reads | ✅ Live | Overnight automation running ✓ — first run June 12 |
 | Transit library | ✅ Live | Applying / separating / returning states, accordion detail, first/second pass timing |
@@ -86,6 +87,7 @@ See `app/beta-users.md` for full detail.
 ---
 
 ## Recent Wins
+- Session 19 (June 13): All-builds quality pass — 4 audit agents clean, archetype card copy trimmed to Kate's shape across 7 builds, patch script live, OG preview redesigned as 600×600 square, mimi+carina geo-bg fixed (both now 12/12).
 - Session 18 (June 13): Hazel, Iza, Su, Yvonne all migrated to 9-tab Pathfinder app — all 8 active friend builds now live. Rose-gold icon redesign shipped. Social preview system (OG + per-person PWA manifests) deployed across all charts. Sky at Work gets its own icon + PWA manifest.
 - Session 17 (June 13): Mimi, Carina, Kate all migrated to 9-tab Pathfinder app format — full voice canon, unique archetype flip cards with personal sigils + palettes, synastry-with-Jordan in Arc panel. Deployed to Vercel. Old scrolling mimi.html archived.
 - Session 16 continued (June 12): New Moon rituals written + shipped for Jordan and Marina (natal-personalized, gold card format); all 3 apps now have ⊙/☽/⊕ nav icons + compass rose PWA icon; design system library launched (md + HTML)

@@ -104,16 +104,16 @@
 
   </g>
 
-  <!-- PATHFINDER text glow -->
+  <!-- Pathfinder text glow -->
   <text x="300" y="472" text-anchor="middle"
         font-family="Georgia, 'Times New Roman', serif"
         font-size="52" letter-spacing="11"
-        fill="#f0cc68" opacity="0.32" filter="url(#text-glow)">PATHFINDER</text>
-  <!-- PATHFINDER text -->
+        fill="#f0cc68" opacity="0.32" filter="url(#text-glow)">Pathfinder</text>
+  <!-- Pathfinder text -->
   <text x="300" y="472" text-anchor="middle"
         font-family="Georgia, 'Times New Roman', serif"
         font-size="52" letter-spacing="11"
-        fill="#f0cc68">PATHFINDER</text>
+        fill="#f0cc68">Pathfinder</text>
 
   <!-- Tagline -->
   <text x="300" y="510" text-anchor="middle"

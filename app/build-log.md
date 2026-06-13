@@ -4,6 +4,33 @@
 
 ---
 
+## 2026-06-13 — Session 19: Audits · patch script · card copy · OG preview · geo-bg fix
+
+**Theme:** Quality pass across all builds + tooling infrastructure
+
+### Audits (all 4 new builds)
+- Ran 4 parallel audit agents on hazel, iza, su, yvonne — all passed 23-item checklist clean
+- geo-bg audit via new patch script surfaced REAL gaps in mimi (1/12) + carina (0/12) that Session 17 agents missed — fixed both to 12/12
+
+### Archetype card copy
+- All friend builds had 3-paragraph body text overflowing the 462px fixed card height
+- Trimmed hazel, yvonne, iza, dasha, mimi (P3), carina (P1+P2), su to match Kate's shape: 3 short paras, P3 = one-liner kicker
+- CSS scroll approach was tried and rejected — copy must fit the card, not scroll
+
+### Patch script — `app/patch.py`
+- Built: decorator registry, --change / --dry-run / --only / --list CLI
+- 3 starter patches: `geo-bg-check` (read-only audit), `og-title-check` (read-only audit), `card-back-padding` (structural example)
+- Fixed Python 3.9 type annotation compatibility (3.10+ `list[str] | None` syntax)
+- First real audit run: `geo-bg-check` caught mimi+carina gaps immediately
+
+### OG preview — square redesign
+- Replaced 1200×630 wide landscape with 600×600 square
+- Large centered compass rose (same rose-gold palette), PATHFINDER title centered below, tagline + attribution
+- `twitter:card` changed from `summary_large_image` to `summary` across all 10 builds
+- No more edge cropping when shared via iMessage/text
+
+---
+
 ## 2026-06-13 — Session 18: Friend chart migrations — Hazel · Iza · Su · Yvonne + icon + PWA
 
 **Theme:** Migrate remaining friends with birth data to 9-tab Pathfinder app; rose-gold icon redesign; PWA + social preview system across all builds
