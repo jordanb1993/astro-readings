@@ -75,7 +75,7 @@
         <div class="hc-top">
           <div>
             <div class="hc-label">The Variable</div>
-            <div class="hc-title">Synastry with Jordan</div>
+            <div class="hc-title" id="home-daily-title">Synastry with Jordan</div>
           </div>
           <svg class="hc-hero-art" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg">
             <circle cx="26" cy="26" r="22" fill="none" stroke="rgba(74,159,212,0.18)" stroke-width="0.6"/>
@@ -83,6 +83,7 @@
             <circle cx="26" cy="4" r="1.8" fill="rgba(74,159,212,0.30)"/>
           </svg>
         </div>
+        <div class="hc-preview" id="home-daily-transit" style="display:none"></div>
         <div class="hc-desc">natal charts &middot; exact contacts</div>
       </button>
 
@@ -145,6 +146,13 @@
 
 <!-- CHART -->
 <div class="subpanel" id="sp-chart">
+  <svg class="geo-bg" viewBox="0 0 375 700" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <polygon points="188,18 318,80 355,230 300,400 188,450 76,400 20,230 57,80" fill="none" stroke="rgba(201,168,76,0.09)" stroke-width="0.7"/>
+    <line x1="188" y1="18" x2="188" y2="450" stroke="rgba(201,168,76,0.05)" stroke-width="0.4"/>
+    <line x1="20" y1="230" x2="355" y2="230" stroke="rgba(201,168,76,0.05)" stroke-width="0.4"/>
+    <circle cx="188" cy="18" r="2.2" fill="rgba(201,168,76,0.40)"/>
+    <circle cx="188" cy="450" r="2.0" fill="rgba(201,168,76,0.32)"/>
+  </svg>
   <div class="chart-wrap">
     <svg id="chart-svg" viewBox="-22 -22 764 764" xmlns="http://www.w3.org/2000/svg" style="overflow:visible"></svg>
     <div class="zoom-badge" id="zoom-badge">1&#xD7;</div>
@@ -687,7 +695,7 @@
   <div class="reading-inner" style="padding-top:28px;padding-bottom:calc(60px + env(safe-area-inset-bottom,0px) + 24px)">
     <div style="margin-bottom:28px">
       <div style="font-size:0.52rem;letter-spacing:0.22em;text-transform:uppercase;font-family:'Inter',sans-serif;color:rgba(90,184,168,0.65);margin-bottom:8px">The Wheel</div>
-      <div style="font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:300;color:var(--text);line-height:1.15">Lunar &middot; Seasonal &middot; The Sky</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:300;color:var(--text);line-height:1.15" id="wheel-title">Lunar &middot; Seasonal &middot; The Sky</div>
     </div>
     <div style="margin-bottom:32px">
       <div style="font-size:0.48rem;letter-spacing:0.20em;text-transform:uppercase;font-family:'Inter',sans-serif;color:rgba(90,184,168,0.55);margin-bottom:12px">&#x263D; Moon</div>
@@ -792,25 +800,26 @@
 </div>
 
 <script>
+const T='︎';
 const IS_FRIEND_BUILD=true;
 const PERSON_NAME='Mimi';
 const CHART={
   asc:233.1376,mc:156.5083,
   cusps:[233.1376,263.6887,299.6644,336.5083,7.9632,32.8485,53.1376,83.6887,119.6644,156.5083,187.9632,212.8485],
   planets:[
-    {id:'sun',    gl:'&#x2609;&#xFE0E;',deg:19.7970, retro:false,grp:'luminary',si:0, sd:19.8},
-    {id:'moon',   gl:'&#x263D;&#xFE0E;',deg:131.4381,retro:false,grp:'luminary',si:4, sd:11.4},
-    {id:'mercury',gl:'&#x263F;&#xFE0E;',deg:15.0657, retro:false,grp:'personal',si:0, sd:15.1},
-    {id:'venus',  gl:'&#x2640;&#xFE0E;',deg:345.4982,retro:false,grp:'personal',si:11,sd:15.5},
-    {id:'mars',   gl:'&#x2642;&#xFE0E;',deg:134.6970,retro:false,grp:'personal',si:4, sd:14.7},
-    {id:'jupiter',gl:'&#x2643;&#xFE0E;',deg:255.2671,retro:true, grp:'social',  si:8, sd:15.3},
-    {id:'saturn', gl:'&#x2644;&#xFE0E;',deg:349.1871,retro:false,grp:'social',  si:11,sd:19.2},
-    {id:'uranus', gl:'&#x2645;&#xFE0E;',deg:300.2095,retro:false,grp:'outer',   si:10,sd:0.2},
-    {id:'neptune',gl:'&#x2646;&#xFE0E;',deg:295.4630,retro:false,grp:'outer',   si:9, sd:25.5},
-    {id:'pluto',  gl:'&#x2647;&#xFE0E;',deg:240.2318,retro:true, grp:'outer',   si:8, sd:0.2},
-    {id:'chiron', gl:'&#x26B7;&#xFE0E;',deg:171.2903,retro:true, grp:'point',   si:5, sd:21.3},
-    {id:'nnode',  gl:'&#x260A;&#xFE0E;',deg:215.7042,retro:true, grp:'point',   si:7, sd:5.7},
-    {id:'snode',  gl:'&#x260B;&#xFE0E;',deg:35.7042, retro:true, grp:'point',   si:1, sd:5.7},
+    {id:'sun',    gl:'☉︎',deg:19.7970, retro:false,grp:'luminary',si:0, sd:19.8},
+    {id:'moon',   gl:'☽︎',deg:131.4381,retro:false,grp:'luminary',si:4, sd:11.4},
+    {id:'mercury',gl:'☿︎',deg:15.0657, retro:false,grp:'personal',si:0, sd:15.1},
+    {id:'venus',  gl:'♀︎',deg:345.4982,retro:false,grp:'personal',si:11,sd:15.5},
+    {id:'mars',   gl:'♂︎',deg:134.6970,retro:false,grp:'personal',si:4, sd:14.7},
+    {id:'jupiter',gl:'♃︎',deg:255.2671,retro:true, grp:'social',  si:8, sd:15.3},
+    {id:'saturn', gl:'♄︎',deg:349.1871,retro:false,grp:'social',  si:11,sd:19.2},
+    {id:'uranus', gl:'♅︎',deg:300.2095,retro:false,grp:'outer',   si:10,sd:0.2},
+    {id:'neptune',gl:'♆︎',deg:295.4630,retro:false,grp:'outer',   si:9, sd:25.5},
+    {id:'pluto',  gl:'♇︎',deg:240.2318,retro:true, grp:'outer',   si:8, sd:0.2},
+    {id:'chiron', gl:'⚷︎',deg:171.2903,retro:true, grp:'point',   si:5, sd:21.3},
+    {id:'nnode',  gl:'☊︎',deg:215.7042,retro:true, grp:'point',   si:7, sd:5.7},
+    {id:'snode',  gl:'☋︎',deg:35.7042, retro:true, grp:'point',   si:1, sd:5.7},
   ],
   aspects:[
     {p1:'mercury',p2:'jupiter',type:'trine',     orb:0.20},
