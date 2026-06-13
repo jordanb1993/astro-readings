@@ -60,7 +60,11 @@ Category: Positioning / investor/press language
 
 ## Sky at Work Hooks
 
-*(separate brand — to be developed)*
+**Model (locked June 13):** Freemium with B2B partnerships. No ads on Pathfinder — ever. Sky at Work is the acquisition engine; Pathfinder is the protected premium product.
+
+**Partnership angle to develop:** The pitch to a wellness brand or women-in-leadership org isn't "buy an ad." It's "your customers are already using cyclical intelligence to navigate their work lives — be part of that context."
+
+*(Hooks and positioning language to be developed as Sky at Work brand takes shape)*
 
 ---
 

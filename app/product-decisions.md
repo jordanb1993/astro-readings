@@ -133,6 +133,18 @@ The Trek reference is hidden and personal — Jordan knows it, the world sees a 
 
 **Aesthetic direction:** "Business casual whimsigoth" — same design DNA (sacred geometry, celestial motifs) but adapted for corporate credibility. Navy-teal palette (already distinct from Pathfinder plum) is the right foundation.
 
+**Revenue model (June 13, 2026):**
+- Sky at Work = **freemium** — free access drives broad corporate discovery
+- Monetized via **B2B partnerships / sponsorships** (NOT ads touching Pathfinder — ever)
+- B2B partnership categories: wellness brands, women in leadership orgs, HR/people-ops tools, mindfulness-at-work companies, corporate coaching services
+- Free Sky at Work funnels to Pathfinder personal subscription ($25–35/mo) — that's the conversion event
+- Pathfinder subscribers get Sky at Work included — creating a reason to stay subscribed
+- **Pathfinder itself: zero ads, zero partnerships in the reading experience. Non-negotiable.**
+
+**The two-product P&L:**
+- Sky at Work: B2B partnerships cover acquisition cost, fund the free tier, generate revenue independently
+- Pathfinder: subscription revenue, premium/protected, no ad dependency
+
 ---
 
 ### Social Content Strategy
