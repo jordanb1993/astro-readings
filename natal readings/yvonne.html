@@ -1,883 +1,916 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yvonne — Natal Chart Reading</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <style>
-
-    /* ── Reset ───────────────────────────────────────────────── */
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-    :root {
-      --bg:            #0a0614;
-      --surface:       #150a25;
-      --surface-2:     #1e1038;
-      --gold:          #c9a84c;
-      --gold-dim:      rgba(201, 168, 76, 0.11);
-      --gold-mid:      rgba(201, 168, 76, 0.28);
-      --gold-bright:   rgba(201, 168, 76, 0.65);
-      --rose:          #d4a0b5;
-      --rose-dim:      rgba(212, 160, 181, 0.11);
-      --rose-mid:      rgba(212, 160, 181, 0.28);
-      --plum:          #7b4fa6;
-      --plum-dim:      rgba(123, 79, 166, 0.20);
-      --plum-mid:      rgba(123, 79, 166, 0.35);
-      --plum-bright:   #b482d2;
-      --teal:          #5ab4a0;
-      --teal-dim:      rgba(90, 180, 160, 0.12);
-      --teal-mid:      rgba(90, 180, 160, 0.28);
-      --text:          #fdf6e8;
-      --muted:         rgba(253, 246, 232, 0.58);
-      --muted-2:       rgba(253, 246, 232, 0.30);
-      --border:        rgba(180, 130, 210, 0.18);
-    }
-
-    html { background: var(--bg); color: var(--text); }
-
-    body {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 0;
-      background: var(--bg);
-      font-family: 'Inter', sans-serif;
-    }
-
-    h1, h2, h3, h4 {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 400;
-      letter-spacing: 0.03em;
-    }
-
-    p { line-height: 1.82; color: var(--muted); font-size: 0.94rem; }
-    strong { color: var(--rose); font-weight: 600; }
-    em { color: rgba(253, 246, 232, 0.82); font-style: italic; }
-
-    /* ════════ HERO ════════════════════════════════════════════ */
-    .hero {
-      position: relative;
-      width: 100%;
-      padding: 96px 70px 88px;
-      text-align: center;
-      overflow: hidden;
-      background: radial-gradient(ellipse at 62% 28%, #12204a 0%, #150a25 42%, #0a0614 100%);
-    }
-
-    .hero-stars { position: absolute; inset: 0; pointer-events: none; }
-    .hero-border-outer { position: absolute; top: 22px; left: 22px; right: 22px; bottom: 22px; border: 1px solid rgba(180, 130, 210, 0.30); pointer-events: none; }
-    .hero-border-inner { position: absolute; top: 32px; left: 32px; right: 32px; bottom: 32px; border: 1px solid rgba(180, 130, 210, 0.13); pointer-events: none; }
-
-    .corner { position: absolute; font-family: 'Cormorant Garamond', serif; font-size: 17px; color: var(--gold); opacity: 0.78; }
-    .corner.tl { top: 12px; left: 12px; }
-    .corner.tr { top: 12px; right: 12px; }
-    .corner.bl { bottom: 12px; left: 12px; }
-    .corner.br { bottom: 12px; right: 12px; }
-
-    .hero-col { position: absolute; top: 50%; transform: translateY(-50%); pointer-events: none; }
-    .hero-col.left  { left: 44px; }
-    .hero-col.right { right: 44px; }
-
-    .hero-label {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.68rem;
-      font-weight: 600;
-      letter-spacing: 0.34em;
-      text-transform: uppercase;
-      color: var(--rose);
-      opacity: 0.72;
-      margin-bottom: 28px;
-      position: relative;
-    }
-
-    .hero-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(58px, 9vw, 104px);
-      font-weight: 300;
-      line-height: 0.96;
-      color: var(--text);
-      letter-spacing: 0.05em;
-      margin-bottom: 22px;
-      position: relative;
-    }
-
-    .hero-ornament {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.5rem;
-      letter-spacing: 0.55em;
-      color: var(--gold);
-      opacity: 0.55;
-      margin-bottom: 36px;
-      position: relative;
-      padding-left: 0.55em;
-    }
-
-    .hero-data { display: flex; justify-content: center; gap: 36px; flex-wrap: wrap; position: relative; }
-    .hero-datum-label { font-family: 'Inter', sans-serif; font-size: 0.60rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted-2); margin-bottom: 5px; }
-    .hero-datum-value { font-family: 'Cormorant Garamond', serif; font-size: 1.08rem; color: var(--gold); letter-spacing: 0.06em; }
-
-    /* ════════ IDENTITY TRIO ═══════════════════════════════════ */
-    .trio-wrap { padding: 52px 44px 0; }
-    .trio { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
-
-    .trio-card {
-      background: radial-gradient(ellipse at 50% 0%, rgba(42, 18, 69, 0.85) 0%, var(--surface) 60%);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 30px 22px 26px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .trio-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; }
-    .trio-card.sun::before  { background: linear-gradient(90deg, transparent, var(--gold), transparent); }
-    .trio-card.moon::before { background: linear-gradient(90deg, transparent, var(--rose), transparent); }
-    .trio-card.asc::before  { background: linear-gradient(90deg, transparent, var(--plum-bright), transparent); }
-
-    .trio-card::after { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 60%; height: 60px; border-radius: 50%; opacity: 0.12; filter: blur(20px); }
-    .trio-card.sun::after  { background: var(--gold); }
-    .trio-card.moon::after { background: var(--rose); }
-    .trio-card.asc::after  { background: var(--plum-bright); }
-
-    .trio-glyph { display: block; font-size: 2.1rem; margin-bottom: 10px; position: relative; }
-    .trio-card.sun  .trio-glyph { color: var(--gold); }
-    .trio-card.moon .trio-glyph { color: var(--rose); }
-    .trio-card.asc  .trio-glyph { color: var(--plum-bright); }
-
-    .trio-label { font-family: 'Inter', sans-serif; font-size: 0.60rem; font-weight: 600; letter-spacing: 0.26em; text-transform: uppercase; color: var(--muted-2); margin-bottom: 10px; position: relative; }
-
-    .trio-placement { font-family: 'Cormorant Garamond', serif; font-size: 1.55rem; font-weight: 400; line-height: 1.15; margin-bottom: 6px; position: relative; }
-    .trio-card.sun  .trio-placement { color: var(--gold); }
-    .trio-card.moon .trio-placement { color: var(--rose); }
-    .trio-card.asc  .trio-placement { color: var(--plum-bright); }
-
-    .trio-house { font-size: 0.68rem; color: var(--muted-2); margin-bottom: 18px; letter-spacing: 0.06em; position: relative; }
-
-    .trio-rule { width: 36px; height: 1px; margin: 0 auto 16px; position: relative; }
-    .trio-card.sun  .trio-rule { background: var(--gold-mid); }
-    .trio-card.moon .trio-rule { background: var(--rose-mid); }
-    .trio-card.asc  .trio-rule { background: var(--plum-mid); }
-
-    .trio-tagline { font-family: 'Cormorant Garamond', serif; font-size: 0.96rem; font-style: italic; color: var(--muted); line-height: 1.55; position: relative; }
-
-    /* ════════ CELESTIAL DIVIDER ═══════════════════════════════ */
-    .cel-divider { display: flex; align-items: center; gap: 14px; margin: 52px 44px 0; }
-    .cel-rule { flex: 1; height: 1px; }
-    .cel-rule.left  { background: linear-gradient(90deg, transparent, var(--gold-mid)); }
-    .cel-rule.right { background: linear-gradient(90deg, var(--gold-mid), transparent); }
-    .cel-mark { font-family: 'Cormorant Garamond', serif; font-size: 0.85rem; letter-spacing: 0.55em; color: var(--gold); opacity: 0.50; padding-left: 0.55em; }
-
-    /* ════════ CHART SIGNATURE ═════════════════════════════════ */
-    .sig-wrap { padding: 44px 44px 0; }
-    .sig-header { margin-bottom: 22px; }
-    .sig-eyebrow { font-family: 'Inter', sans-serif; font-size: 0.62rem; font-weight: 600; letter-spacing: 0.28em; text-transform: uppercase; color: var(--plum-bright); margin-bottom: 8px; }
-    .sig-title { font-family: 'Cormorant Garamond', serif; font-size: 1.65rem; font-weight: 400; color: var(--gold); letter-spacing: 0.04em; }
-
-    .sig-panel { background: radial-gradient(ellipse at 0% 50%, rgba(123, 79, 166, 0.18) 0%, rgba(21, 10, 37, 0.85) 60%); border: 1px solid rgba(123, 79, 166, 0.22); border-radius: 10px; padding: 30px 32px; }
-    .sig-list { list-style: none; display: flex; flex-direction: column; gap: 16px; }
-    .sig-item { display: flex; align-items: flex-start; gap: 16px; }
-    .sig-glyph { font-size: 1.05rem; color: var(--gold); flex-shrink: 0; margin-top: 2px; width: 22px; text-align: center; }
-    .sig-text { font-size: 0.91rem; color: var(--muted); line-height: 1.65; }
-    .sig-text strong { color: var(--text); font-weight: 500; }
-
-    /* ════════ PLANETS + ASPECTS ═══════════════════════════════ */
-    .data-wrap { padding: 44px 44px 0; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start; }
-    .data-section-title { font-family: 'Inter', sans-serif; font-size: 0.60rem; font-weight: 600; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid var(--gold-mid); }
-
-    .planet-list { background: radial-gradient(ellipse at 50% 0%, rgba(42, 18, 69, 0.55) 0%, rgba(21, 10, 37, 0.70) 100%); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
-    .planet-row { display: grid; grid-template-columns: 30px 1fr auto 48px; align-items: center; padding: 9px 16px; gap: 8px; border-bottom: 1px solid rgba(242, 236, 255, 0.04); }
-    .planet-row:last-child { border-bottom: none; }
-    .planet-row:nth-child(even) { background: rgba(242, 236, 255, 0.025); }
-    .pl-glyph { font-size: 1.05rem; color: var(--gold); opacity: 0.80; text-align: center; }
-    .pl-name { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: var(--text); }
-    .pl-sign { font-size: 0.80rem; color: var(--rose); }
-    .pl-house { font-size: 0.68rem; color: var(--muted-2); text-align: right; letter-spacing: 0.04em; }
-
-    .aspect-list { background: radial-gradient(ellipse at 50% 0%, rgba(42, 18, 69, 0.55) 0%, rgba(21, 10, 37, 0.70) 100%); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
-    .aspect-row { display: grid; grid-template-columns: 22px 1fr 36px; align-items: center; padding: 9px 16px; gap: 10px; border-bottom: 1px solid rgba(242, 236, 255, 0.04); font-size: 0.82rem; }
-    .aspect-row:last-child { border-bottom: none; }
-    .aspect-row:nth-child(even) { background: rgba(242, 236, 255, 0.025); }
-    .asp-sym { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; text-align: center; }
-    .asp-sym.conj  { color: var(--gold); }
-    .asp-sym.trine { color: #6bc5a8; }
-    .asp-sym.sext  { color: #85b5e0; }
-    .asp-sym.sq    { color: var(--rose); }
-    .asp-sym.opp   { color: #c97a7a; }
-    .asp-desc { color: var(--muted); line-height: 1.4; }
-    .asp-orb { font-size: 0.68rem; color: var(--muted-2); text-align: right; font-family: 'Inter', sans-serif; letter-spacing: 0.04em; }
-
-    /* ════════ DEEP DIVE SECTIONS ══════════════════════════════ */
-    .dive-wrap { padding: 44px 44px 0; }
-
-    .dive-section { margin-bottom: 40px; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
-
-    .dive-section::before { content: ''; display: block; height: 2px; width: 100%; }
-    .dive-section.accent-gold::before  { background: linear-gradient(90deg, transparent 0%, var(--gold) 40%, var(--gold) 60%, transparent 100%); }
-    .dive-section.accent-rose::before  { background: linear-gradient(90deg, transparent 0%, var(--rose) 40%, var(--rose) 60%, transparent 100%); }
-    .dive-section.accent-plum::before  { background: linear-gradient(90deg, transparent 0%, var(--plum-bright) 40%, var(--plum-bright) 60%, transparent 100%); }
-    .dive-section.accent-teal::before  { background: linear-gradient(90deg, transparent 0%, var(--teal) 40%, var(--teal) 60%, transparent 100%); }
-
-    .dive-head { position: relative; padding: 32px 36px 28px; overflow: hidden; display: flex; align-items: flex-start; gap: 20px; }
-
-    .dive-head.gold-head { background: radial-gradient(ellipse at 20% 50%, rgba(201, 168, 76, 0.22) 0%, rgba(42, 18, 69, 0.80) 55%, #0a0614 100%); border-bottom: 1px solid rgba(201, 168, 76, 0.18); }
-    .dive-head.rose-head { background: radial-gradient(ellipse at 20% 50%, rgba(212, 160, 181, 0.20) 0%, rgba(42, 18, 69, 0.80) 55%, #0a0614 100%); border-bottom: 1px solid rgba(212, 160, 181, 0.18); }
-    .dive-head.plum-head { background: radial-gradient(ellipse at 20% 50%, rgba(123, 79, 166, 0.28) 0%, rgba(42, 18, 69, 0.80) 55%, #0a0614 100%); border-bottom: 1px solid rgba(123, 79, 166, 0.22); }
-    .dive-head.teal-head { background: radial-gradient(ellipse at 20% 50%, rgba(90, 180, 160, 0.22) 0%, rgba(42, 18, 69, 0.80) 55%, #0a0614 100%); border-bottom: 1px solid rgba(90, 180, 160, 0.20); }
-
-    .dive-head-stars { position: absolute; inset: 0; pointer-events: none; }
-
-    .dive-icon { font-family: 'Cormorant Garamond', serif; font-size: 2.4rem; flex-shrink: 0; margin-top: 2px; position: relative; line-height: 1; }
-    .accent-gold .dive-icon  { color: var(--gold); }
-    .accent-rose .dive-icon  { color: var(--rose); }
-    .accent-plum .dive-icon  { color: var(--plum-bright); }
-    .accent-teal .dive-icon  { color: var(--teal); }
-
-    .dive-head-text { flex: 1; position: relative; }
-
-    .dive-eyebrow { font-family: 'Inter', sans-serif; font-size: 0.60rem; font-weight: 600; letter-spacing: 0.28em; text-transform: uppercase; margin-bottom: 8px; }
-    .accent-gold .dive-eyebrow  { color: rgba(201, 168, 76, 0.65); }
-    .accent-rose .dive-eyebrow  { color: rgba(212, 160, 181, 0.65); }
-    .accent-plum .dive-eyebrow  { color: rgba(180, 130, 210, 0.65); }
-    .accent-teal .dive-eyebrow  { color: rgba(90, 180, 160, 0.65); }
-
-    .dive-title { font-family: 'Cormorant Garamond', serif; font-size: 1.75rem; font-weight: 400; line-height: 1.15; letter-spacing: 0.03em; margin-bottom: 10px; }
-    .accent-gold .dive-title  { color: var(--gold); }
-    .accent-rose .dive-title  { color: var(--rose); }
-    .accent-plum .dive-title  { color: var(--plum-bright); }
-    .accent-teal .dive-title  { color: var(--teal); }
-
-    .dive-subtitle { font-family: 'Cormorant Garamond', serif; font-size: 1.02rem; font-style: italic; color: var(--muted); line-height: 1.5; }
-
-    .dive-tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 14px; }
-    .dtag { font-family: 'Inter', sans-serif; font-size: 0.62rem; letter-spacing: 0.13em; text-transform: uppercase; padding: 4px 11px; border-radius: 20px; border: 1px solid; }
-    .accent-gold .dtag { color: var(--gold); border-color: rgba(201, 168, 76, 0.30); background: rgba(201, 168, 76, 0.08); }
-    .accent-rose .dtag { color: var(--rose); border-color: rgba(212, 160, 181, 0.28); background: rgba(212, 160, 181, 0.07); }
-    .accent-plum .dtag { color: var(--plum-bright); border-color: rgba(123, 79, 166, 0.32); background: rgba(123, 79, 166, 0.09); }
-    .accent-teal .dtag { color: var(--teal); border-color: rgba(90, 180, 160, 0.28); background: rgba(90, 180, 160, 0.07); }
-
-    .dive-body { padding: 30px 36px 28px; background: rgba(10, 6, 20, 0.55); display: flex; flex-direction: column; gap: 18px; }
-    .dive-body p { font-size: 0.93rem; line-height: 1.85; color: var(--muted); }
-
-    .pull { border-left: 2px solid var(--gold); padding: 11px 22px; background: var(--gold-dim); border-radius: 0 5px 5px 0; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.13rem; color: var(--gold); line-height: 1.65; }
-    .pull.rose-pull { border-color: var(--rose); background: var(--rose-dim); color: var(--rose); }
-    .pull.plum-pull { border-color: var(--plum-bright); background: var(--plum-dim); color: var(--plum-bright); }
-    .pull.teal-pull { border-color: var(--teal); background: var(--teal-dim); color: var(--teal); }
-
-    /* Synastry contact rows */
-    .syn-list { display: flex; flex-direction: column; gap: 20px; margin-top: 6px; }
-    .syn-item { padding: 18px 22px; background: rgba(90, 180, 160, 0.06); border: 1px solid rgba(90, 180, 160, 0.14); border-radius: 8px; }
-    .syn-aspect { font-family: 'Cormorant Garamond', serif; font-size: 1.08rem; color: var(--teal); margin-bottom: 6px; letter-spacing: 0.02em; }
-    .syn-orb { font-family: 'Inter', sans-serif; font-size: 0.62rem; letter-spacing: 0.14em; color: rgba(90,180,160,0.55); text-transform: uppercase; margin-bottom: 10px; }
-    .syn-text { font-size: 0.88rem; color: var(--muted); line-height: 1.72; }
-
-    /* ════════ THREAD / CLOSING ════════════════════════════════ */
-    .thread-wrap { padding: 44px 44px 0; }
-    .thread { position: relative; overflow: hidden; border: 1px solid rgba(180, 130, 210, 0.22); border-radius: 12px; padding: 52px 52px 48px; text-align: center; background: radial-gradient(ellipse at 50% 10%, #2a1245 0%, #150a25 45%, #0a0614 100%); }
-    .thread-stars { position: absolute; inset: 0; pointer-events: none; }
-    .thread-border { position: absolute; top: 16px; left: 16px; right: 16px; bottom: 16px; border: 1px solid rgba(180, 130, 210, 0.10); pointer-events: none; }
-    .thread-ornament { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; letter-spacing: 0.55em; color: var(--gold); opacity: 0.52; display: block; margin-bottom: 28px; padding-left: 0.55em; position: relative; }
-    .thread-title { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 300; color: var(--text); letter-spacing: 0.04em; margin-bottom: 28px; position: relative; }
-    .thread p { max-width: 620px; margin: 0 auto 18px; font-size: 0.94rem; line-height: 1.85; color: var(--muted); position: relative; }
-    .thread-close { margin-top: 36px; font-family: 'Inter', sans-serif; font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted-2); position: relative; }
-
-    /* ════════ FOOTER ══════════════════════════════════════════ */
-    .footer { text-align: center; padding: 48px 44px 60px; font-family: 'Inter', sans-serif; font-size: 0.68rem; color: var(--muted-2); letter-spacing: 0.10em; line-height: 1.9; }
-
-    /* ════════ SAVE BUTTON ═════════════════════════════════════ */
-    .save-btn { position: fixed; bottom: 32px; right: 32px; z-index: 999; display: flex; align-items: center; gap: 10px; padding: 12px 22px; background: radial-gradient(ellipse at 30% 50%, #2a1245 0%, #150a25 100%); border: 1px solid rgba(201, 168, 76, 0.45); border-radius: 40px; cursor: pointer; font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); box-shadow: 0 4px 24px rgba(0,0,0,0.5), 0 0 0 1px rgba(201,168,76,0.10); transition: border-color 0.2s, box-shadow 0.2s; }
-    .save-btn:hover { border-color: rgba(201, 168, 76, 0.75); box-shadow: 0 4px 32px rgba(0,0,0,0.6), 0 0 20px rgba(201,168,76,0.12); }
-    .save-btn-icon { font-size: 1rem; opacity: 0.85; }
-
-    /* ════════ PRINT ═══════════════════════════════════════════ */
-    @media print {
-      html, body { background: var(--bg) !important; }
-      * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
-      .save-btn { display: none !important; }
-      @page { margin: 0; size: 900px var(--doc-height, 9999px); }
-    }
-
-    /* ════════ MOBILE ══════════════════════════════════════════ */
-    @media (max-width: 680px) {
-      body { font-size: 16px; }
-      p { font-size: 1rem; line-height: 1.78; }
-      .hero { padding: 58px 22px 50px; }
-      .hero-col { display: none; }
-      .hero-border-outer { top: 14px; left: 14px; right: 14px; bottom: 14px; }
-      .hero-border-inner { top: 22px; left: 22px; right: 22px; bottom: 22px; }
-      .hero-name { font-size: clamp(38px, 10.5vw, 56px); }
-      .hero-data { gap: 18px; }
-      .trio-wrap { padding: 36px 18px 0; }
-      .trio { grid-template-columns: 1fr; gap: 12px; }
-      .trio-card { padding: 22px 18px 18px; }
-      .cel-divider { margin: 36px 18px 0; }
-      .sig-wrap { padding: 32px 18px 0; }
-      .sig-panel { padding: 22px 20px; }
-      .sig-text { font-size: 0.95rem; }
-      .data-wrap { padding: 32px 18px 0; grid-template-columns: 1fr; }
-      .dive-wrap { padding: 32px 18px 0; }
-      .dive-head { padding: 24px 22px 20px; flex-direction: column; gap: 14px; }
-      .dive-body { padding: 22px 22px 20px; }
-      .thread-wrap { padding: 32px 18px 0; }
-      .thread { padding: 36px 24px 32px; }
-      .footer { padding: 36px 22px 48px; }
-      .save-btn { bottom: 18px; right: 18px; padding: 10px 16px; }
-    }
-
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Pathfinder · Yvonne</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/pathfinder-core.css">
+<!-- shared app styles loaded from pathfinder-core.css -->
+<style>
+/* ── ARCHETYPE CARD — YVONNE palette ── */
+.card-wc{background:
+  radial-gradient(ellipse at 15% 25%, rgba(20,120,130,0.65) 0%, transparent 43%),
+  radial-gradient(ellipse at 80% 18%, rgba(210,150,40,0.58) 0%, transparent 38%),
+  radial-gradient(ellipse at 50% 78%, rgba(15,80,100,0.50) 0%, transparent 45%),
+  radial-gradient(ellipse at 12% 82%, rgba(180,100,30,0.35) 0%, transparent 35%),
+  linear-gradient(135deg, #050e10 0%, #091520 40%, #060b0e 100%);}
+.card-back-wc{background:
+  radial-gradient(ellipse at 25% 65%, rgba(20,110,120,0.28) 0%, transparent 50%),
+  radial-gradient(ellipse at 68% 28%, rgba(200,140,35,0.18) 0%, transparent 45%),
+  linear-gradient(160deg, #050e10 0%, #091825 100%);}
+</style>
 </head>
 <body>
+<div class="app">
 
-<!-- ════════════════════════════════════════════════════════════ -->
-<!-- HERO                                                        -->
-<!-- ════════════════════════════════════════════════════════════ -->
-<div class="hero">
+<header class="app-header">
+  <div class="header-left">
+    <div class="header-eyebrow">pathfinder · yvonne</div>
+  </div>
+  <button class="key-btn" id="keyBtn" title="Open Chart Key">✦</button>
+</header>
 
-  <svg class="hero-stars" viewBox="0 0 900 560" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="74"   cy="82"   r="1.2" fill="#fff8ee" opacity="0.50"/>
-    <circle cx="210"  cy="40"   r="0.9" fill="#fff8ee" opacity="0.38"/>
-    <circle cx="360"  cy="70"   r="1.4" fill="#c9a84c" opacity="0.44"/>
-    <circle cx="520"  cy="30"   r="0.8" fill="#fff8ee" opacity="0.52"/>
-    <circle cx="680"  cy="58"   r="1.1" fill="#c9a84c" opacity="0.40"/>
-    <circle cx="815"  cy="94"   r="1.3" fill="#fff8ee" opacity="0.48"/>
-    <circle cx="874"  cy="40"   r="0.9" fill="#5ab4a0" opacity="0.42"/>
-    <circle cx="30"   cy="318"  r="0.9" fill="#c9a84c" opacity="0.36"/>
-    <circle cx="872"  cy="296"  r="0.8" fill="#fff8ee" opacity="0.38"/>
-    <circle cx="50"   cy="470"  r="1.1" fill="#d4a0b5" opacity="0.30"/>
-    <circle cx="850"  cy="448"  r="0.9" fill="#c9a84c" opacity="0.38"/>
-    <circle cx="440"  cy="520"  r="0.8" fill="#5ab4a0" opacity="0.34"/>
-    <circle cx="130"  cy="192"  r="0.8" fill="#fff8ee" opacity="0.28"/>
-    <circle cx="770"  cy="172"  r="0.9" fill="#c9a84c" opacity="0.32"/>
-    <text x="134"  y="140" font-size="12" fill="#c9a84c" opacity="0.60" text-anchor="middle" font-family="serif">✦</text>
-    <text x="762"  y="160" font-size="8"  fill="#fff8ee" opacity="0.42" text-anchor="middle" font-family="serif">✧</text>
-    <text x="460"  y="24"  font-size="7"  fill="#5ab4a0" opacity="0.52" text-anchor="middle" font-family="serif">✦</text>
-    <text x="70"   y="395" font-size="8"  fill="#d4a0b5" opacity="0.38" text-anchor="middle" font-family="serif">✦</text>
-    <text x="838"  y="380" font-size="7"  fill="#c9a84c" opacity="0.44" text-anchor="middle" font-family="serif">✧</text>
-    <text x="452"  y="546" font-size="8"  fill="#5ab4a0" opacity="0.34" text-anchor="middle" font-family="serif">✦</text>
-    <circle cx="780" cy="110" r="80" fill="#5ab4a0" opacity="0.04"/>
-    <circle cx="780" cy="110" r="42" fill="#c9a84c" opacity="0.04"/>
-    <circle cx="90"  cy="438" r="90" fill="#9b59b6" opacity="0.06"/>
-    <circle cx="110" cy="92"  r="60" fill="#5ab4a0" opacity="0.04"/>
+<div class="app-body">
+
+<!-- HOME -->
+<div id="panel-home">
+  <div class="home-inner">
+    <div class="home-sky-strip">
+      <span id="home-date"></span>
+      <span class="home-sky-dot"></span>
+      <span id="home-moon"></span>
+    </div>
+    <div class="home-greeting">
+      <div class="home-greeting-name">Yvonne</div>
+      <div class="home-greeting-sub">She enters already reading the underneath</div>
+    </div>
+    <div class="home-cards">
+
+      <button class="home-card home-card-hero hc-natal" onclick="goNatal()">
+        <div class="hc-top">
+          <div>
+            <div class="hc-label">The Constant</div>
+            <div class="hc-title">Natal chart</div>
+          </div>
+          <svg class="hc-hero-art" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="26" cy="26" r="23" fill="none" stroke="rgba(208,168,64,0.35)" stroke-width="0.7"/>
+            <circle cx="26" cy="26" r="16" fill="none" stroke="rgba(208,168,64,0.18)" stroke-width="0.5"/>
+            <circle cx="26" cy="26" r="3.5" fill="rgba(208,168,64,0.40)"/>
+            <polygon points="26,3 27.8,23.2 26,26 24.2,23.2" fill="rgba(208,168,64,0.80)"/>
+            <polygon points="26,49 24.2,28.8 26,26 27.8,28.8" fill="rgba(208,168,64,0.50)"/>
+            <polygon points="3,26 23.2,24.2 26,26 23.2,27.8" fill="rgba(208,168,64,0.50)"/>
+            <polygon points="49,26 28.8,27.8 26,26 28.8,24.2" fill="rgba(208,168,64,0.70)"/>
+          </svg>
+        </div>
+        <div class="hc-desc">Jul 14 1994 · Fremont, CA · Placidus</div>
+      </button>
+
+      <button class="home-card home-card-hero hc-daily" onclick="switchToPanel('daily',document.querySelector('[data-target=daily]'))">
+        <div class="hc-top">
+          <div>
+            <div class="hc-label">The Variable</div>
+            <div class="hc-title" id="home-daily-title">Synastry with Jordan</div>
+          </div>
+          <svg class="hc-hero-art" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="26" cy="26" r="22" fill="none" stroke="rgba(74,159,212,0.18)" stroke-width="0.6"/>
+            <path d="M26 4A22 22 0 0 1 26 48A13 22 0 0 0 26 4Z" fill="rgba(74,159,212,0.22)"/>
+            <circle cx="26" cy="4" r="1.8" fill="rgba(74,159,212,0.30)"/>
+          </svg>
+        </div>
+        <div class="hc-preview" id="home-daily-transit" style="display:none"></div>
+        <div class="hc-desc">natal charts · exact contacts</div>
+      </button>
+
+      <button class="home-card hc-wheel" onclick="switchToPanel('wheel',document.querySelector('[data-target=wheel]'))" style="min-height:90px">
+        <div class="hc-top">
+          <div>
+            <div class="hc-label">The Wheel</div>
+            <div class="hc-title">Lunar · Seasonal · The Sky</div>
+          </div>
+          <svg class="hc-hero-art" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="26" cy="26" r="22" fill="none" stroke="rgba(90,184,168,0.35)" stroke-width="0.7"/>
+            <circle cx="26" cy="26" r="14" fill="none" stroke="rgba(90,184,168,0.18)" stroke-width="0.5"/>
+            <line x1="26" y1="4" x2="26" y2="48" stroke="rgba(90,184,168,0.14)" stroke-width="0.4"/>
+            <line x1="4" y1="26" x2="48" y2="26" stroke="rgba(90,184,168,0.14)" stroke-width="0.4"/>
+            <circle cx="26" cy="4" r="2" fill="rgba(90,184,168,0.55)"/>
+            <circle cx="26" cy="26" r="3" fill="none" stroke="rgba(90,184,168,0.40)" stroke-width="0.7"/>
+          </svg>
+        </div>
+        <div class="hc-desc">wheel of the year · lunar · collective sky</div>
+      </button>
+
+      <button class="home-card hc-wheel" onclick="window.open('/workplace%20readings/sky-at-work.html','_blank')" style="min-height:90px">
+        <div class="hc-top">
+          <div>
+            <div class="hc-label">The Sky</div>
+            <div class="hc-title">Sky at Work</div>
+          </div>
+          <svg class="hc-hero-art" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="26" cy="26" r="22" fill="none" stroke="rgba(90,184,168,0.22)" stroke-width="0.7"/>
+            <circle cx="11" cy="15" r="1.5" fill="rgba(90,184,168,0.60)"/>
+            <circle cx="38" cy="11" r="1" fill="rgba(90,184,168,0.42)"/>
+            <circle cx="43" cy="32" r="1.5" fill="rgba(90,184,168,0.55)"/>
+            <circle cx="18" cy="41" r="1" fill="rgba(90,184,168,0.38)"/>
+            <circle cx="34" cy="37" r="2" fill="rgba(90,184,168,0.62)"/>
+            <circle cx="26" cy="19" r="1.2" fill="rgba(90,184,168,0.48)"/>
+            <line x1="11" y1="15" x2="26" y2="19" stroke="rgba(90,184,168,0.16)" stroke-width="0.4"/>
+            <line x1="26" y1="19" x2="38" y2="11" stroke="rgba(90,184,168,0.16)" stroke-width="0.4"/>
+            <line x1="26" y1="19" x2="34" y2="37" stroke="rgba(90,184,168,0.16)" stroke-width="0.4"/>
+            <line x1="11" y1="15" x2="43" y2="32" stroke="rgba(90,184,168,0.10)" stroke-width="0.3"/>
+          </svg>
+        </div>
+        <div class="hc-desc">collective transit reading · weekly</div>
+      </button>
+
+    </div>
+  </div>
+</div>
+
+<!-- NATAL -->
+<div id="panel-natal">
+  <nav class="natal-subnav" aria-label="Natal sections">
+    <button class="subnav-tab active" data-sub="chart" onclick="switchSub('chart',this)"><span class="sn-icon">◯</span> Chart</button>
+    <button class="subnav-tab" data-sub="portrait" onclick="switchSub('portrait',this)"><span class="sn-icon">✦</span> Portrait</button>
+    <button class="subnav-tab" data-sub="signature" onclick="switchSub('signature',this)"><span class="sn-icon">♐︎</span> Signature</button>
+    <button class="subnav-tab" data-sub="constitution" onclick="switchSub('constitution',this)"><span class="sn-icon">◐</span> Constitution</button>
+    <button class="subnav-tab" data-sub="formative" onclick="switchSub('formative',this)"><span class="sn-icon">♄</span> Formative</button>
+    <button class="subnav-tab" data-sub="shadow" onclick="switchSub('shadow',this)"><span class="sn-icon">☽</span> Shadow</button>
+    <button class="subnav-tab" data-sub="arc" onclick="switchSub('arc',this)"><span class="sn-icon">☊</span> Arc</button>
+    <button class="subnav-tab" data-sub="archetype" onclick="switchSub('archetype',this)"><span class="sn-icon">✧</span> Archetype</button>
+    <button class="subnav-tab" data-sub="poem" onclick="switchSub('poem',this)"><span class="sn-icon">∿</span> Poem</button>
+  </nav>
+
+  <div class="natal-body">
+
+<!-- CHART -->
+<div class="subpanel" id="sp-chart">
+  <svg class="geo-bg" viewBox="0 0 375 700" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <polygon points="188,18 318,80 355,230 300,400 188,450 76,400 20,230 57,80" fill="none" stroke="rgba(201,168,76,0.09)" stroke-width="0.7"/>
+    <line x1="188" y1="18" x2="188" y2="450" stroke="rgba(201,168,76,0.05)" stroke-width="0.4"/>
+    <line x1="20" y1="230" x2="355" y2="230" stroke="rgba(201,168,76,0.05)" stroke-width="0.4"/>
+    <circle cx="188" cy="18" r="2.2" fill="rgba(201,168,76,0.40)"/>
+    <circle cx="188" cy="450" r="2.0" fill="rgba(201,168,76,0.32)"/>
+  </svg>
+  <div class="chart-wrap">
+    <svg id="chart-svg" viewBox="-22 -22 764 764" xmlns="http://www.w3.org/2000/svg" style="overflow:visible"></svg>
+    <div class="zoom-badge" id="zoom-badge">1&#xD7;</div>
+  </div>
+  <div class="big-three">
+    <div class="big-three-card">
+      <div class="b3-role">Sun</div>
+      <div class="b3-glyph">&#x2609;&#xFE0E;</div>
+      <div class="b3-deg">22&#xB0;18&#x27;</div>
+      <div class="b3-sign">Cancer · H8</div>
+    </div>
+    <div class="big-three-card">
+      <div class="b3-role">Moon</div>
+      <div class="b3-glyph">&#x263D;&#xFE0E;</div>
+      <div class="b3-deg">8&#xB0;30&#x27;</div>
+      <div class="b3-sign">Libra · H10</div>
+    </div>
+    <div class="big-three-card">
+      <div class="b3-role">Rising</div>
+      <div class="b3-glyph">&#x2650;&#xFE0E;</div>
+      <div class="b3-deg">3&#xB0;48&#x27;</div>
+      <div class="b3-sign">Sagittarius · noon</div>
+    </div>
+  </div>
+</div>
+
+<!-- PORTRAIT -->
+<div class="subpanel sp-reading" id="sp-portrait">
+  <svg class="geo-bg" viewBox="0 0 375 812" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <polygon points="188,30 320,110 362,310 295,540 188,590 81,540 13,310 56,110" fill="none" stroke="rgba(201,168,76,0.07)" stroke-width="0.6"/>
+    <circle cx="188" cy="30" r="2.0" fill="rgba(201,168,76,0.35)"/>
+    <circle cx="188" cy="590" r="1.8" fill="rgba(201,168,76,0.28)"/>
+    <line x1="56" y1="110" x2="295" y2="540" stroke="rgba(201,168,76,0.04)" stroke-width="0.35"/>
+    <line x1="320" y1="110" x2="81" y2="540" stroke="rgba(201,168,76,0.04)" stroke-width="0.35"/>
   </svg>
 
-  <div class="hero-border-outer"></div>
-  <div class="hero-border-inner"></div>
+  <div class="reading-inner accent-gold">
+    <div class="panel-heading">
+      <div class="panel-eyebrow-sm">natal reading</div>
+      <div class="panel-title-lg">Portrait</div>
+    </div>
 
-  <div class="corner tl">✦</div>
-  <div class="corner tr">✦</div>
-  <div class="corner bl">✦</div>
-  <div class="corner br">✦</div>
+    <div class="sec-card">
+      <div class="sec-head">
+        <div class="sec-sign-glyph">&#x2736;</div>
+        <div class="sec-meta">
+          <div class="sec-eyebrow">NATAL OVERVIEW &middot; SAG ASC &middot; CANCER SUN &middot; LIBRA MOON</div>
+          <div class="sec-title">Before the planets</div>
+          <div class="sec-tagline">warmth at the door, ocean underneath</div>
+        </div>
+      </div>
+      <div class="kw-row">
+        <span class="kw">SAG ASC</span><span class="kw">CANCER SUN</span><span class="kw">8TH HOUSE</span><span class="kw">LIBRA MOON</span><span class="kw">DEPTH</span>
+      </div>
+      <div class="sec-body">
+        <p>Your Sagittarius Ascendant arrives ahead of you as warmth and direction. People meet an openness in you, a forward quality, a sense that you are moving toward something and they are welcome to come. The philosophical register is already present &mdash; not as a performance, but as a first language.</p>
+        <p>It is an expansive face. And the interior it belongs to is something else entirely.</p>
+        <p>Your Cancer Sun in the 8th house means you know yourself by going in. Not inward in the anxious sense &mdash; in the depth sense. The self sharpens through what is hidden: other people&rsquo;s interiors, the transformative moments, the places where something irreversible has happened. You are at home in what most people find uncomfortable to name.</p>
+        <p>This is not morbidity. It is a particular form of clarity. You understand the real thing because you&rsquo;ve been willing to stay in the room with it.</p>
+      </div>
+    </div>
 
-  <svg class="hero-col left" width="26" height="460" viewBox="0 0 26 460" xmlns="http://www.w3.org/2000/svg">
-    <line x1="13" y1="0" x2="13" y2="460" stroke="#5ab4a0" stroke-width="0.8" opacity="0.22"/>
-    <text x="13" y="52"  text-anchor="middle" font-size="15" fill="#c9a84c" opacity="0.68" font-family="serif">☽</text>
-    <text x="13" y="108" text-anchor="middle" font-size="10" fill="#fff8ee" opacity="0.46" font-family="serif">✦</text>
-    <text x="13" y="164" text-anchor="middle" font-size="14" fill="#5ab4a0" opacity="0.56" font-family="serif">☉</text>
-    <circle cx="13" cy="206" r="1.5" fill="#d4a0b5" opacity="0.44"/>
-    <text x="13" y="254" text-anchor="middle" font-size="10" fill="#c9a84c" opacity="0.52" font-family="serif">✧</text>
-    <text x="13" y="308" text-anchor="middle" font-size="15" fill="#fff8ee" opacity="0.30" font-family="serif">☾</text>
-    <text x="13" y="364" text-anchor="middle" font-size="10" fill="#5ab4a0" opacity="0.46" font-family="serif">✦</text>
-    <circle cx="13" cy="402" r="1.2" fill="#fff8ee" opacity="0.36"/>
-    <text x="13" y="448" text-anchor="middle" font-size="11" fill="#c9a84c" opacity="0.42" font-family="serif">☉</text>
+    <div class="sep"><span class="sep-inner">Moon</span></div>
+
+    <div class="sec-card">
+      <div class="sec-head">
+        <div class="sec-sign-glyph">&#x264E;</div>
+        <div class="sec-meta">
+          <div class="sec-eyebrow">MOON &middot; LIBRA 8&deg;30&prime; &middot; 10TH HOUSE &middot; CAREER-FACING</div>
+          <div class="sec-title">The Professional Feeling Life</div>
+          <div class="sec-tagline">the scales must be honest</div>
+        </div>
+      </div>
+      <div class="kw-row">
+        <span class="kw">LIBRA</span><span class="kw">10TH HOUSE</span><span class="kw">BALANCE</span><span class="kw">EQUITY</span><span class="kw">DIALOGUE</span>
+      </div>
+      <div class="sec-body">
+        <p>Your Libra Moon in the 10th house means the professional sphere is emotional terrain. The work is not separate from the feeling life &mdash; it is one of the primary places the feeling life runs. Balance matters to you in the room: who has spoken, who hasn&rsquo;t, whether the exchange was fair. When the work is in dialogue and the space is in balance, you are most alive. When it isn&rsquo;t, you feel it in the body.</p>
+        <p>The Libra Moon doesn&rsquo;t want approval. It wants the scales to be honest.</p>
+      </div>
+    </div>
+
+    <div class="sep-stars">&#x2736; &nbsp; &#x2727; &nbsp; &#x2736;</div>
+  </div>
+</div>
+
+<!-- SIGNATURE -->
+<div class="subpanel sp-reading" id="sp-signature">
+  <svg class="geo-bg" viewBox="0 0 375 812" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <polygon points="188,30 320,110 362,310 295,540 188,590 81,540 13,310 56,110" fill="none" stroke="rgba(201,168,76,0.07)" stroke-width="0.6"/>
+    <circle cx="188" cy="30" r="2.0" fill="rgba(201,168,76,0.35)"/>
+    <circle cx="188" cy="590" r="1.8" fill="rgba(201,168,76,0.28)"/>
   </svg>
 
-  <svg class="hero-col right" width="26" height="460" viewBox="0 0 26 460" xmlns="http://www.w3.org/2000/svg">
-    <line x1="13" y1="0" x2="13" y2="460" stroke="#5ab4a0" stroke-width="0.8" opacity="0.22"/>
-    <text x="13" y="52"  text-anchor="middle" font-size="10" fill="#fff8ee" opacity="0.46" font-family="serif">✦</text>
-    <text x="13" y="108" text-anchor="middle" font-size="15" fill="#c9a84c" opacity="0.62" font-family="serif">☾</text>
-    <text x="13" y="164" text-anchor="middle" font-size="10" fill="#d4a0b5" opacity="0.52" font-family="serif">✧</text>
-    <circle cx="13" cy="206" r="1.5" fill="#5ab4a0" opacity="0.40"/>
-    <text x="13" y="254" text-anchor="middle" font-size="14" fill="#c9a84c" opacity="0.56" font-family="serif">☉</text>
-    <text x="13" y="308" text-anchor="middle" font-size="15" fill="#5ab4a0" opacity="0.28" font-family="serif">☽</text>
-    <circle cx="13" cy="350" r="1.2" fill="#d4a0b5" opacity="0.42"/>
-    <text x="13" y="400" text-anchor="middle" font-size="10" fill="#c9a84c" opacity="0.52" font-family="serif">✦</text>
-    <text x="13" y="448" text-anchor="middle" font-size="11" fill="#fff8ee" opacity="0.38" font-family="serif">☉</text>
+  <div class="reading-inner accent-gold">
+    <div class="panel-heading">
+      <div class="panel-eyebrow-sm">chart signature &middot; central tension</div>
+      <div class="panel-title-lg">Signature</div>
+    </div>
+
+    <div class="sec-card">
+      <div class="sec-head">
+        <div class="sec-sign-glyph">&#x264B;</div>
+        <div class="sec-meta">
+          <div class="sec-eyebrow">SUN &middot; CANCER 22&deg;18&prime; &middot; 8TH HOUSE &middot; OPPOSITE NEPTUNE 0.34&deg;</div>
+          <div class="sec-title">What Arrives and What Is Real</div>
+          <div class="sec-tagline">Sagittarius face, Cancer interior, the distance between them</div>
+        </div>
+      </div>
+      <div class="kw-row">
+        <span class="kw">CANCER SUN</span><span class="kw">8TH HOUSE</span><span class="kw">NEPTUNE OPP</span><span class="kw">SAG ASC</span><span class="kw">DEPTH</span>
+      </div>
+      <div class="sec-body">
+        <p>The central tension of this chart is the opposition between what arrives and what is real.</p>
+        <p>Sagittarius Ascendant faces outward &mdash; expansive, seeking, philosophical, warm. Cancer Sun in the 8th house faces inward &mdash; private, depth-oriented, known only in intimacy and transformation. The face that arrives in a room and the self that knows what&rsquo;s actually happening inside it are not the same register. You&rsquo;ve always navigated this distance.</p>
+        <p>The 7th house carries both Mercury in Cancer and Mars in Gemini. Mind and drive live in partnership. This is not a dependency on other people &mdash; it is where the thinking sharpens and where the action gains momentum. You understand people by feeling what they mean. You move fastest when you&rsquo;re moving with someone.</p>
+        <p>But the North Node in Scorpio in the 12th says: the deepest growth happens in private. What cannot be witnessed. What requires no audience at all.</p>
+      </div>
+    </div>
+
+    <div class="dive-wrap">
+      <button class="dive-toggle" aria-expanded="false" onclick="toggleDive(this)">
+        <div class="dive-hd">
+          <div class="dive-lbl"><span class="dive-lbl-glyph">&#x264B;</span>Sun opposite Neptune &middot; Cancer 8th &middot; 0.34&deg; orb</div>
+          <span class="dive-arrow">&#x25BE;</span>
+        </div>
+      </button>
+      <div class="dive-body">
+        <div class="dive-content">
+          <p>This is the aspect that shaped the interior most. Cancer Sun in the 8th house, directly opposed by Capricorn Neptune. The orb is 0.34&deg;. That is as close as aspects get. This is not a subtle coloring &mdash; it&rsquo;s the fundamental structure of her identity.</p>
+          <p>What this means: she is extraordinarily empathic. Not in a vague, soft sense &mdash; in a literally porous way. She picks up the emotional field of a room without meaning to. She can walk into a conversation and know what&rsquo;s really going on beneath the surface long before anyone has said it aloud. The question isn&rsquo;t whether she&rsquo;ll feel things deeply. She always will. The question is whether she trusts that depth as information rather than overwhelm.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="sep-stars">&#x2736; &nbsp; &#x2727; &nbsp; &#x2736;</div>
+  </div>
+</div>
+
+<!-- CONSTITUTION -->
+<div class="subpanel sp-reading" id="sp-constitution">
+  <svg class="geo-bg" viewBox="0 0 375 812" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <polygon points="188,50 340,140 375,340 305,560 188,610 71,560 0,340 35,140" fill="none" stroke="rgba(201,168,76,0.065)" stroke-width="0.55"/>
+    <circle cx="188" cy="300" r="3.0" fill="none" stroke="rgba(62,143,192,0.12)" stroke-width="0.6"/>
+    <circle cx="188" cy="300" r="1.8" fill="rgba(62,143,192,0.16)"/>
+    <circle cx="188" cy="50" r="1.8" fill="rgba(201,168,76,0.32)"/>
   </svg>
 
-  <div class="hero-label">Natal Chart Reading</div>
-  <h1 class="hero-name">Yvonne</h1>
-  <div class="hero-ornament">☽ ✦ ☉ ✦ ☾</div>
-  <div class="hero-data">
-    <div>
-      <div class="hero-datum-label">Date</div>
-      <div class="hero-datum-value">July 14, 1994</div>
-    </div>
-    <div>
-      <div class="hero-datum-label">Time</div>
-      <div class="hero-datum-value">4:53 PM PDT</div>
-    </div>
-    <div>
-      <div class="hero-datum-label">Place</div>
-      <div class="hero-datum-value">Fremont, California</div>
-    </div>
-    <div>
-      <div class="hero-datum-label">System</div>
-      <div class="hero-datum-value">Placidus · Tropical</div>
-    </div>
-  </div>
-
-</div>
-
-<!-- ════════════════════════════════════════════════════════════ -->
-<!-- IDENTITY TRIO                                               -->
-<!-- ════════════════════════════════════════════════════════════ -->
-<div class="trio-wrap">
-  <div class="trio">
-
-    <div class="trio-card sun">
-      <span class="trio-glyph">☉</span>
-      <div class="trio-label">Sun</div>
-      <div class="trio-placement">22° Cancer</div>
-      <div class="trio-house">8th House · opposite Neptune</div>
-      <div class="trio-rule"></div>
-      <div class="trio-tagline">She doesn't just feel the room. She becomes it. The depth isn't performance. It's her actual frequency.</div>
+  <div class="reading-inner accent-cerulean">
+    <div class="panel-heading">
+      <div class="panel-eyebrow-sm">core drives</div>
+      <div class="panel-title-lg">Constitution</div>
     </div>
 
-    <div class="trio-card moon">
-      <span class="trio-glyph">☽</span>
-      <div class="trio-label">Moon</div>
-      <div class="trio-placement">8° Libra</div>
-      <div class="trio-house">10th House · career-facing</div>
-      <div class="trio-rule"></div>
-      <div class="trio-tagline">Her emotional intelligence is a professional asset. She's at her best when she's collaborating. Balance isn't a goal, it's how she thinks.</div>
+    <div class="sec-card">
+      <div class="sec-head">
+        <div class="sec-sign-glyph">&#x264B;</div>
+        <div class="sec-meta">
+          <div class="sec-eyebrow">CANCER SUN &middot; 8TH HOUSE &middot; DEPTH &middot; TRANSFORMATION</div>
+          <div class="sec-title">The Identity Lives in Depth</div>
+          <div class="sec-tagline">she knows herself through what is hidden</div>
+        </div>
+      </div>
+      <div class="kw-row">
+        <span class="kw">CANCER</span><span class="kw">8TH HOUSE</span><span class="kw">INTIMACY</span><span class="kw">TRANSFORMATION</span><span class="kw">DEPTH</span>
+      </div>
+      <div class="sec-body">
+        <p>The identity lives in depth. She knows herself through what is hidden &mdash; in the people she&rsquo;s close to, in the territories that require real courage to enter, in what transforms. Shallowness doesn&rsquo;t satisfy because it doesn&rsquo;t contain enough to be recognizable. She needs the real thing to know where she is.</p>
+        <p>The 8th house gives the Cancer Sun access to other people&rsquo;s buried material. She reads what&rsquo;s not being said. She stays in hard conversations. What most people call uncomfortable, she often calls finally getting somewhere.</p>
+      </div>
     </div>
 
-    <div class="trio-card asc">
-      <span class="trio-glyph">↑</span>
-      <div class="trio-label">Rising</div>
-      <div class="trio-placement">3° Sagittarius</div>
-      <div class="trio-house">Jupiter-ruled · wide-angle lens</div>
-      <div class="trio-rule"></div>
-      <div class="trio-tagline">She shows up curious, expansive, larger than the room. What lives underneath is oceanic, and very few people know it.</div>
+    <div class="sep"><span class="sep-inner">7th House Stellium</span></div>
+
+    <div class="sec-card">
+      <div class="sec-head">
+        <div class="sec-sign-glyph">&#x264A;</div>
+        <div class="sec-meta">
+          <div class="sec-eyebrow">MERCURY CANCER &middot; MARS GEMINI &middot; 7TH HOUSE &middot; PARTNERSHIP ORIENTATION</div>
+          <div class="sec-title">Mind and Drive in Partnership</div>
+          <div class="sec-tagline">the relational channel is the operative mode</div>
+        </div>
+      </div>
+      <div class="kw-row">
+        <span class="kw">MERCURY</span><span class="kw">MARS</span><span class="kw">7TH HOUSE</span><span class="kw">COLLABORATION</span><span class="kw">RELATIONAL</span>
+      </div>
+      <div class="sec-body">
+        <p>Mind and drive are both oriented toward partnership. Mercury in Cancer understands people by feeling what they mean &mdash; this is not vagueness, it&rsquo;s precision in a different register. Mars in Gemini is fast in communication, fast in collaboration, most alive when something is being built alongside someone else.</p>
+        <p>The result: she is not waiting for permission in partnership. She is already in motion with the person in front of her, already several exchanges ahead, already constructing. The relational mode is native, not effortful.</p>
+      </div>
     </div>
 
-  </div>
-</div>
+    <div class="sep"><span class="sep-inner">North Node</span></div>
 
-<!-- DIVIDER -->
-<div class="cel-divider">
-  <div class="cel-rule left"></div>
-  <div class="cel-mark">✦ ✦ ✦</div>
-  <div class="cel-rule right"></div>
-</div>
+    <div class="sec-card">
+      <div class="sec-head">
+        <div class="sec-sign-glyph">&#x264F;</div>
+        <div class="sec-meta">
+          <div class="sec-eyebrow">NORTH NODE SCORPIO &middot; 12TH HOUSE &middot; PLUTO Rx &middot; SOUL DIRECTION</div>
+          <div class="sec-title">The Soul Direction Runs Underground</div>
+          <div class="sec-tagline">growth that has no audience</div>
+        </div>
+      </div>
+      <div class="kw-row">
+        <span class="kw">SCORPIO</span><span class="kw">12TH HOUSE</span><span class="kw">NORTH NODE</span><span class="kw">INTERIOR</span><span class="kw">PRIVATE</span>
+      </div>
+      <div class="sec-body">
+        <p>The soul direction runs underground. The growth that matters most is the kind that has no audience &mdash; the interior transformation that happens in solitude, in what she sits with alone, in the work that never gets named publicly. Pluto in Scorpio is retrograde in the same house. The depth function is private. It operates below the surface of the life that&rsquo;s visible.</p>
+        <p>The North Node here is a call toward the interior work no one else can see. Not instead of the visible life &mdash; alongside it, and deeper.</p>
+      </div>
+    </div>
 
-<!-- ════════════════════════════════════════════════════════════ -->
-<!-- CHART SIGNATURE                                             -->
-<!-- ════════════════════════════════════════════════════════════ -->
-<div class="sig-wrap">
-  <div class="sig-header">
-    <div class="sig-eyebrow">Key Patterns</div>
-    <div class="sig-title">Chart Signature</div>
-  </div>
-  <div class="sig-panel">
-    <ul class="sig-list">
-      <li class="sig-item">
-        <span class="sig-glyph">☉</span>
-        <span class="sig-text"><strong>Sun in Cancer, 8th house, opposite Neptune (0°21' orb — virtually exact).</strong> The most defining aspect in this chart. Her identity operates in the territory of emotional depth, intimacy, and transformation — with Neptune dissolving the edges. She's extraordinarily empathic, possibly psychically attuned, and can find it hard to know where she ends and others begin.</span>
-      </li>
-      <li class="sig-item">
-        <span class="sig-glyph">♐</span>
-        <span class="sig-text"><strong>Sagittarius Rising with a Cancer-heavy interior.</strong> The gap between how she appears (enthusiastic, expansive, philosophical) and what she carries privately (deep Cancer sensitivity in the 8th house) is significant. She is not what she looks like at first glance. The real Yvonne is considerably more interior than the surface suggests.</span>
-      </li>
-      <li class="sig-item">
-        <span class="sig-glyph">♏</span>
-        <span class="sig-text"><strong>12th house Scorpio: Jupiter, Pluto, North Node — all in Scorpio, hidden from view.</strong> Her soul path (North Node), her power (Pluto), and her expansion (Jupiter) all operate below the surface of what anyone can easily see. The growth direction is into depth work, transformation, and the realm of what others leave unexamined.</span>
-      </li>
-      <li class="sig-item">
-        <span class="sig-glyph">☽</span>
-        <span class="sig-text"><strong>Moon in Libra in the 10th house trine Mars in Gemini.</strong> Her emotional intelligence (Libra Moon) is oriented toward career, public life, and collaboration. The trine to Mars means she knows how to move from feeling to action gracefully — especially in group or relational contexts. She makes work feel harmonious.</span>
-      </li>
-      <li class="sig-item">
-        <span class="sig-glyph">♀</span>
-        <span class="sig-text"><strong>Venus in Virgo (9th house) sextile Jupiter in Scorpio — 0°48' orb.</strong> Strikingly exact. She finds abundance through precision, learning, and depth. Venus in Virgo loves to understand things fully before she loves them. The sextile to Scorpio Jupiter means that depth and intimacy are actually where she flourishes, not just where she goes reluctantly.</span>
-      </li>
-      <li class="sig-item">
-        <span class="sig-glyph">♅</span>
-        <span class="sig-text"><strong>Uranus conjunct Neptune in Capricorn (2nd house) — her generation's defining outer planet conjunction.</strong> Born at the exact meeting point of Uranus and Neptune in Capricorn. Her relationship to material life, values, and security is infused with an instinct to dissolve old structures and rebuild them into something more honest. She may have an unconventional relationship to money and what she considers "enough."</span>
-      </li>
-    </ul>
+    <div class="sep-stars">&#x2736; &nbsp; &#x2727; &nbsp; &#x2736;</div>
   </div>
 </div>
 
-<!-- DIVIDER -->
-<div class="cel-divider">
-  <div class="cel-rule left"></div>
-  <div class="cel-mark">✦ ✦ ✦</div>
-  <div class="cel-rule right"></div>
-</div>
+<!-- FORMATIVE -->
+<div class="subpanel sp-reading" id="sp-formative">
+  <svg class="geo-bg" viewBox="0 0 375 812" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <polygon points="188,40 310,120 345,300 290,510 188,555 86,510 30,300 65,120" fill="none" stroke="rgba(201,168,76,0.065)" stroke-width="0.55"/>
+    <line x1="188" y1="300" x2="130" y2="460" stroke="rgba(80,142,68,0.09)" stroke-width="0.4"/>
+    <line x1="188" y1="300" x2="246" y2="460" stroke="rgba(80,142,68,0.09)" stroke-width="0.4"/>
+    <circle cx="188" cy="300" r="2.0" fill="rgba(80,142,68,0.20)"/>
+    <circle cx="188" cy="40" r="1.8" fill="rgba(201,168,76,0.32)"/>
+  </svg>
 
-<!-- ════════════════════════════════════════════════════════════ -->
-<!-- PLANETS + ASPECTS                                           -->
-<!-- ════════════════════════════════════════════════════════════ -->
-<div class="data-wrap">
+  <div class="reading-inner accent-teal">
+    <div class="panel-heading">
+      <div class="panel-eyebrow-sm">chiron &middot; formative aspects &middot; early formation</div>
+      <div class="panel-title-lg">Formative</div>
+    </div>
 
-  <div>
-    <div class="data-section-title">Natal Planets + Points</div>
-    <div class="planet-list">
-      <div class="planet-row">
-        <span class="pl-glyph">☉</span>
-        <span class="pl-name">Sun</span>
-        <span class="pl-sign">22° Cancer</span>
-        <span class="pl-house">8th H</span>
+    <div class="sec-card">
+      <div class="sec-head">
+        <div class="sec-sign-glyph">&#x2646;</div>
+        <div class="sec-meta">
+          <div class="sec-eyebrow">SUN &middot; CANCER 22&deg; &middot; OPPOSITE &middot; NEPTUNE &middot; CAPRICORN 21&deg; &middot; 0.34&deg; ORB</div>
+          <div class="sec-title">What Dissolves the Edges</div>
+          <div class="sec-tagline">the aspect that shaped the interior most</div>
+        </div>
       </div>
-      <div class="planet-row">
-        <span class="pl-glyph">☽</span>
-        <span class="pl-name">Moon</span>
-        <span class="pl-sign">8° Libra</span>
-        <span class="pl-house">10th H</span>
+      <div class="kw-row">
+        <span class="kw">SUN-NEPTUNE</span><span class="kw">OPPOSITION</span><span class="kw">POROUS</span><span class="kw">EMPATHY</span><span class="kw">REAL?</span>
       </div>
-      <div class="planet-row">
-        <span class="pl-glyph">↑</span>
-        <span class="pl-name">Ascendant</span>
-        <span class="pl-sign">3° Sagittarius</span>
-        <span class="pl-house">—</span>
-      </div>
-      <div class="planet-row">
-        <span class="pl-glyph">☿</span>
-        <span class="pl-name">Mercury</span>
-        <span class="pl-sign">2° Cancer</span>
-        <span class="pl-house">7th H</span>
-      </div>
-      <div class="planet-row">
-        <span class="pl-glyph">♀</span>
-        <span class="pl-name">Venus</span>
-        <span class="pl-sign">4° Virgo</span>
-        <span class="pl-house">9th H</span>
-      </div>
-      <div class="planet-row">
-        <span class="pl-glyph">♂</span>
-        <span class="pl-name">Mars</span>
-        <span class="pl-sign">7° Gemini</span>
-        <span class="pl-house">7th H</span>
-      </div>
-      <div class="planet-row">
-        <span class="pl-glyph">♃</span>
-        <span class="pl-name">Jupiter</span>
-        <span class="pl-sign">5° Scorpio Rx</span>
-        <span class="pl-house">11th H</span>
-      </div>
-      <div class="planet-row">
-        <span class="pl-glyph">♄</span>
-        <span class="pl-name">Saturn</span>
-        <span class="pl-sign">12° Pisces Rx</span>
-        <span class="pl-house">3rd H</span>
-      </div>
-      <div class="planet-row">
-        <span class="pl-glyph">♅</span>
-        <span class="pl-name">Uranus</span>
-        <span class="pl-sign">24° Capricorn Rx</span>
-        <span class="pl-house">2nd H</span>
-      </div>
-      <div class="planet-row">
-        <span class="pl-glyph">♆</span>
-        <span class="pl-name">Neptune</span>
-        <span class="pl-sign">21° Capricorn Rx</span>
-        <span class="pl-house">2nd H</span>
-      </div>
-      <div class="planet-row">
-        <span class="pl-glyph">♇</span>
-        <span class="pl-name">Pluto</span>
-        <span class="pl-sign">25° Scorpio Rx</span>
-        <span class="pl-house">12th H</span>
-      </div>
-      <div class="planet-row">
-        <span class="pl-glyph">⚷</span>
-        <span class="pl-name">Chiron</span>
-        <span class="pl-sign">15° Virgo Rx</span>
-        <span class="pl-house">9th H</span>
-      </div>
-      <div class="planet-row">
-        <span class="pl-glyph">☊</span>
-        <span class="pl-name">North Node</span>
-        <span class="pl-sign">21° Scorpio Rx</span>
-        <span class="pl-house">12th H</span>
-      </div>
-      <div class="planet-row">
-        <span class="pl-glyph">☋</span>
-        <span class="pl-name">South Node</span>
-        <span class="pl-sign">21° Taurus</span>
-        <span class="pl-house">6th H</span>
-      </div>
-      <div class="planet-row">
-        <span class="pl-glyph">MC</span>
-        <span class="pl-name">Midheaven</span>
-        <span class="pl-sign">17° Virgo</span>
-        <span class="pl-house">10th H</span>
+      <div class="sec-body">
+        <p>Neptune in opposition to the Sun presses on the question of what is real. The Cancer 8th house self is deeply emotional, genuinely present, attuned to depth and transformation. Neptune in the 2nd opposes from the domain of material form, of value, of what can be counted. The tension between these two: a self that knows itself through feeling and depth, pressed against a function that dissolves the edges of form and value. What is mine? What is real? What is actually happening versus what I&rsquo;m absorbing from the room?</p>
+        <p>Sun opposition Uranus at 2.15&deg; orb runs close behind. The identity doesn&rsquo;t stay fixed because Uranus won&rsquo;t allow it. The disruptions that have redefined who she is were not accidental &mdash; they were structural. The chart was built for them.</p>
       </div>
     </div>
-  </div>
 
-  <div>
-    <div class="data-section-title">Key Natal Aspects · by exactness</div>
-    <div class="aspect-list">
-      <div class="aspect-row">
-        <span class="asp-sym opp">☍</span>
-        <span class="asp-desc">Sun opposite Neptune (Cancer / Capricorn)</span>
-        <span class="asp-orb">0°21'</span>
+    <div class="sep"><span class="sep-inner">Chiron &middot; Moon</span></div>
+
+    <div class="sec-card">
+      <div class="sec-head">
+        <div class="sec-sign-glyph">&#x26B7;</div>
+        <div class="sec-meta">
+          <div class="sec-eyebrow">CHIRON &middot; VIRGO 7&deg;30&prime; &middot; 10TH HOUSE &middot; PUBLIC RECOGNITION</div>
+          <div class="sec-title">The Wound in the Public Eye</div>
+          <div class="sec-tagline">precision and accurate recognition</div>
+        </div>
       </div>
-      <div class="aspect-row">
-        <span class="asp-sym trine">△</span>
-        <span class="asp-desc">Moon trine Mars (Libra / Gemini)</span>
-        <span class="asp-orb">0°42'</span>
+      <div class="kw-row">
+        <span class="kw">CHIRON</span><span class="kw">VIRGO</span><span class="kw">10TH HOUSE</span><span class="kw">RECOGNITION</span><span class="kw">PRECISION</span>
       </div>
-      <div class="aspect-row">
-        <span class="asp-sym sext">✶</span>
-        <span class="asp-desc">Venus sextile Jupiter (Virgo / Scorpio)</span>
-        <span class="asp-orb">0°48'</span>
-      </div>
-      <div class="aspect-row">
-        <span class="asp-sym sext">✶</span>
-        <span class="asp-desc">Uranus sextile Pluto (Capricorn / Scorpio)</span>
-        <span class="asp-orb">0°57'</span>
-      </div>
-      <div class="aspect-row">
-        <span class="asp-sym sext">✶</span>
-        <span class="asp-desc">Mercury sextile Venus (Cancer / Virgo)</span>
-        <span class="asp-orb">1°55'</span>
-      </div>
-      <div class="aspect-row">
-        <span class="asp-sym conj">☌</span>
-        <span class="asp-desc">Uranus conjunct Neptune (Capricorn 2nd)</span>
-        <span class="asp-orb">2°30'</span>
-      </div>
-      <div class="aspect-row">
-        <span class="asp-sym trine">△</span>
-        <span class="asp-desc">Mercury trine Jupiter (Cancer / Scorpio)</span>
-        <span class="asp-orb">2°43'</span>
-      </div>
-      <div class="aspect-row">
-        <span class="asp-sym trine">△</span>
-        <span class="asp-desc">Sun trine Pluto (Cancer / Scorpio)</span>
-        <span class="asp-orb">3°06'</span>
-      </div>
-      <div class="aspect-row">
-        <span class="asp-sym conj">☌</span>
-        <span class="asp-desc">Pluto conjunct North Node (Scorpio 12th)</span>
-        <span class="asp-orb">3°59'</span>
-      </div>
-      <div class="aspect-row">
-        <span class="asp-sym sq">□</span>
-        <span class="asp-desc">Mars square Saturn (Gemini / Pisces)</span>
-        <span class="asp-orb">4°13'</span>
+      <div class="sec-body">
+        <p>Chiron in Virgo in the 10th house: the wound sits in the public domain, around precision and accurate recognition. Whether the work is seen as clearly as it is done. Whether what has been built with care is registered as such.</p>
+        <p>The healing is not in giving up on being seen accurately &mdash; it&rsquo;s in doing the work with the same precision regardless of whether the recognition arrives.</p>
+        <p>Moon trine Mars at 0.71&deg; is the most flowing aspect in the chart. The emotional life and the drive are in natural alignment. When she feels something strongly, she can move on it. The feeling doesn&rsquo;t stall the action, and the action doesn&rsquo;t bypass the feeling.</p>
       </div>
     </div>
+
+    <div class="sep-stars">&#x2736; &nbsp; &#x2727; &nbsp; &#x2736;</div>
   </div>
-
 </div>
 
-<!-- DIVIDER -->
-<div class="cel-divider">
-  <div class="cel-rule left"></div>
-  <div class="cel-mark">✦ ✦ ✦</div>
-  <div class="cel-rule right"></div>
+<!-- SHADOW -->
+<div class="subpanel sp-reading" id="sp-shadow">
+  <svg class="geo-bg" viewBox="0 0 375 812" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <polygon points="188,50 340,140 375,340 305,560 188,610 71,560 0,340 35,140" fill="none" stroke="rgba(201,168,76,0.065)" stroke-width="0.55"/>
+    <circle cx="188" cy="300" r="3.0" fill="none" stroke="rgba(62,143,192,0.12)" stroke-width="0.6"/>
+    <circle cx="188" cy="300" r="1.8" fill="rgba(62,143,192,0.16)"/>
+    <circle cx="188" cy="50" r="1.8" fill="rgba(201,168,76,0.32)"/>
+  </svg>
+
+  <div class="reading-inner accent-cerulean">
+    <div class="panel-heading">
+      <div class="panel-eyebrow-sm">south node &middot; shadow pattern &middot; the familiar mode</div>
+      <div class="panel-title-lg">Shadow</div>
+    </div>
+
+    <div class="sec-card">
+      <div class="sec-head">
+        <div class="sec-sign-glyph">&#x261B;</div>
+        <div class="sec-meta">
+          <div class="sec-eyebrow">SOUTH NODE &middot; TAURUS 21&deg; &middot; 6TH HOUSE &middot; PAST MASTERY</div>
+          <div class="sec-title">The Taurus Default</div>
+          <div class="sec-tagline">sensory, self-sufficient, quietly useful</div>
+        </div>
+      </div>
+      <div class="kw-row">
+        <span class="kw">SOUTH NODE</span><span class="kw">TAURUS</span><span class="kw">6TH HOUSE</span><span class="kw">ROUTINE</span><span class="kw">TANGIBLE</span>
+      </div>
+      <div class="sec-body">
+        <p>The South Node sits in Taurus in the 6th house. The familiar mode is sensory, self-sufficient, quietly useful &mdash; the daily work, the body engaged, the tangible tasks that prove something has been completed. The 6th house Taurus South Node knows how to stay productive, stay in the routine, keep the ground solid.</p>
+        <p>The North Node in Scorpio 12th is asking for the opposite. Not the legible daily output but the unmeasured interior depth. Not the productive body but the receptive inner life. Not the thing that can be pointed to but the transformation that has no evidence yet.</p>
+      </div>
+    </div>
+
+    <div class="sep"><span class="sep-inner">7th House as Avoidance</span></div>
+
+    <div class="sec-card">
+      <div class="sec-head">
+        <div class="sec-sign-glyph">&#x264A;</div>
+        <div class="sec-meta">
+          <div class="sec-eyebrow">MERCURY &middot; MARS &middot; 7TH HOUSE &middot; SHADOW PATTERN</div>
+          <div class="sec-title">Perpetual Dialogue as Avoidance</div>
+          <div class="sec-tagline">what changes when no one is watching?</div>
+        </div>
+      </div>
+      <div class="kw-row">
+        <span class="kw">7TH HOUSE</span><span class="kw">RELATIONAL</span><span class="kw">DIALOGUE</span><span class="kw">SCORPIO 12TH</span><span class="kw">SILENCE</span>
+      </div>
+      <div class="sec-body">
+        <p>The chart&rsquo;s shadow lives in using the 7th house relational intelligence to stay perpetually in dialogue, in visible motion, in the social sphere &mdash; because the North Node asks for something that cannot be performed. The Scorpio 12th grows in silence. The 7th house stellium is brilliant, genuinely functional, and can be used to avoid what the 12th requires.</p>
+        <p>The question this chart keeps asking: what changes in you when no one is watching?</p>
+      </div>
+    </div>
+
+    <div class="sep-stars">&#x2736; &nbsp; &#x2727; &nbsp; &#x2736;</div>
+  </div>
 </div>
 
-<!-- ════════════════════════════════════════════════════════════ -->
-<!-- DEEP DIVES                                                  -->
-<!-- ════════════════════════════════════════════════════════════ -->
-<div class="dive-wrap">
+<!-- ARC -->
+<div class="subpanel sp-reading" id="sp-arc">
+  <svg class="geo-bg" viewBox="0 0 375 812" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <polygon points="188,28 332,108 370,290 310,500 188,548 66,500 5,290 44,108" fill="none" stroke="rgba(201,168,76,0.08)" stroke-width="0.6"/>
+    <polygon points="188,90 295,162 325,290 278,410 188,440 98,410 51,290 81,162" fill="none" stroke="rgba(201,168,76,0.055)" stroke-width="0.45"/>
+    <circle cx="188" cy="290" r="3.5" fill="none" stroke="rgba(201,168,76,0.15)" stroke-width="0.6"/>
+    <circle cx="188" cy="290" r="1.5" fill="rgba(201,168,76,0.25)"/>
+    <circle cx="188" cy="28" r="2.0" fill="rgba(201,168,76,0.38)"/>
+  </svg>
 
-  <!-- 1. SUN OPPOSITE NEPTUNE -->
-  <div class="dive-section accent-gold">
-    <div class="dive-head gold-head">
-      <svg class="dive-head-stars" viewBox="0 0 900 130" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="820" cy="28"  r="1.0" fill="#c9a84c" opacity="0.50"/>
-        <circle cx="72"  cy="52"  r="0.8" fill="#fff8ee" opacity="0.35"/>
-        <circle cx="540" cy="18"  r="0.9" fill="#5ab4a0" opacity="0.30"/>
-        <circle cx="280" cy="98"  r="0.7" fill="#c9a84c" opacity="0.30"/>
-        <text x="840" y="72"  font-size="9" fill="#c9a84c" opacity="0.45" text-anchor="middle" font-family="serif">✦</text>
-        <text x="60"  y="95"  font-size="7" fill="#5ab4a0" opacity="0.40" text-anchor="middle" font-family="serif">✧</text>
-        <circle cx="860" cy="42" r="40" fill="#c9a84c" opacity="0.05"/>
-      </svg>
-      <div class="dive-icon">☉</div>
-      <div class="dive-head-text">
-        <div class="dive-eyebrow">Identity · Depth · Dissolution</div>
-        <div class="dive-title">Sun in Cancer, 8th House, Opposite Neptune</div>
-        <div class="dive-subtitle">0°21' orb · virtually exact · the defining aspect of her chart</div>
-        <div class="dive-tags">
-          <span class="dtag">8th House</span>
-          <span class="dtag">Empathy</span>
-          <span class="dtag">Depth</span>
-          <span class="dtag">Transformation</span>
+  <div class="reading-inner accent-teal">
+    <div class="panel-heading">
+      <div class="panel-eyebrow-sm">north node &middot; through-line</div>
+      <div class="panel-title-lg">Arc</div>
+    </div>
+
+    <div class="sec-card">
+      <div class="sec-head">
+        <div class="sec-sign-glyph">&#x261A;</div>
+        <div class="sec-meta">
+          <div class="sec-eyebrow">SOUTH NODE &middot; TAURUS 21&deg; &middot; 6TH HOUSE &middot; WHERE YVONNE CAME FROM</div>
+          <div class="sec-title">Past Mastery</div>
+          <div class="sec-tagline">groundedness as fluency, not as flaw</div>
+        </div>
+      </div>
+      <div class="kw-row">
+        <span class="kw">SOUTH NODE</span><span class="kw">TAURUS</span><span class="kw">6TH HOUSE</span><span class="kw">ROUTINE</span><span class="kw">RELIABLE</span>
+      </div>
+      <div class="sec-body">
+        <p>The South Node in Taurus in the 6th house: this is genuine past mastery. Yvonne&rsquo;s capacity to do the daily work, stay grounded, build through consistency and care &mdash; this is real competence, not performance.</p>
+        <p>The node names it as a default pattern, not a flaw. The Taurus 6th is fluent and automatic. It runs without being chosen. The pull toward it is strongest when Yvonne needs to feel secure, when the path forward is unclear, or when something needs to be proven.</p>
+      </div>
+    </div>
+
+    <div class="sep"><span class="sep-inner">North Node</span></div>
+
+    <div class="sec-card">
+      <div class="sec-head">
+        <div class="sec-sign-glyph">&#x264F;</div>
+        <div class="sec-meta">
+          <div class="sec-eyebrow">NORTH NODE &middot; SCORPIO 21&deg; Rx &middot; 12TH HOUSE &middot; WHERE YVONNE IS GROWING</div>
+          <div class="sec-title">The Direction of Growth</div>
+          <div class="sec-tagline">the descent informs the direction</div>
+        </div>
+      </div>
+      <div class="kw-row">
+        <span class="kw">NORTH NODE</span><span class="kw">SCORPIO</span><span class="kw">12TH HOUSE</span><span class="kw">INTERIOR</span><span class="kw">TRANSFORMATION</span>
+      </div>
+      <div class="sec-body">
+        <p>The arc of this chart is learning that the descent informs the direction. The Sagittarius face works best when it&rsquo;s grounded in what the Scorpio interior has processed. The forward movement is trustworthy when it&rsquo;s coming from something real. The philosophical register lands when it&rsquo;s been tested in the dark.</p>
+        <p>The Cancer Sun in the 8th has always known this &mdash; depth is where the self lives. What the North Node confirms: the private interior work is the soul&rsquo;s actual instruction. The visible life is not the whole picture. The arc is not about becoming more visible or more expansive. It is about going further into what can only be done alone, and letting that inform everything else.</p>
+        <p>The Libra Moon 10th brings what&rsquo;s been processed inside into the public domain &mdash; as balance, as equity, as a quality of care in the professional life that people recognize without quite being able to name. This is the integration: the interior depth arriving in the room without needing to be explained.</p>
+      </div>
+    </div>
+
+    <div class="sep"><span class="sep-inner">Through-Line</span></div>
+
+    <div class="throughline">
+      <p>Sagittarius Ascendant and North Node in Scorpio 12th are not in contradiction. They are different directions: one faces outward, one goes under.</p>
+      <p>The Cancer Sun in the 8th, exactly opposite Neptune, has been living this tension since birth &mdash; the question of what is real. The dissolving edges. The depth that holds the answer. This Sun doesn&rsquo;t know itself through what it can accomplish or demonstrate. It knows itself through what it has been willing to go into.</p>
+      <p>The 7th house stellium &mdash; Mercury Cancer, Mars Gemini &mdash; has given this interior life a relational channel. She moves fastest when she&rsquo;s moving with someone. She understands by feeling. This is native, not effortful.</p>
+      <span class="pull">What the chart asks: not more visibility, not more expansion. Go further into what can only be done alone, and let that inform the warmth that arrives first.</span>
+    </div>
+    <div class="sep-stars">&#x2736; &nbsp; &#x2727; &nbsp; &#x2736;</div>
+  </div>
+</div>
+
+<!-- ARCHETYPE -->
+<div class="subpanel sp-reading" id="sp-archetype">
+  <svg class="geo-bg" viewBox="0 0 375 812" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <polygon points="188,28 332,108 370,290 310,500 188,548 66,500 5,290 44,108" fill="none" stroke="rgba(201,168,76,0.08)" stroke-width="0.6"/>
+    <polygon points="188,90 295,162 325,290 278,410 188,440 98,410 51,290 81,162" fill="none" stroke="rgba(201,168,76,0.055)" stroke-width="0.45"/>
+    <circle cx="188" cy="290" r="3.5" fill="none" stroke="rgba(201,168,76,0.15)" stroke-width="0.6"/>
+    <circle cx="188" cy="290" r="1.5" fill="rgba(201,168,76,0.25)"/>
+    <circle cx="188" cy="28" r="2.0" fill="rgba(201,168,76,0.38)"/>
+  </svg>
+
+  <div class="reading-inner accent-rose">
+    <div class="panel-heading">
+      <div class="panel-eyebrow-sm">archetype</div>
+      <div class="panel-title-lg">The Interior Witness</div>
+    </div>
+
+    <!-- ARCHETYPE FLIP CARD -->
+    <div class="tarot-outer">
+      <div class="tarot-card" onclick="this.classList.toggle('flipped')">
+        <div class="card-inner">
+
+          <!-- ── FRONT ── -->
+          <div class="card-front">
+            <div class="card-bg"></div>
+            <div class="card-wc"></div>
+            <div class="card-grain"></div>
+            <div class="card-vignette"></div>
+            <div class="card-border-outer"></div>
+            <div class="card-border-inner"></div>
+            <div class="card-numeral">XX</div>
+
+            <div class="card-sigil-wrap">
+              <svg viewBox="0 0 120 180" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
+                <!-- Outer circle ring of the eye -->
+                <path d="M22,100 Q60,66 98,100 Q60,134 22,100Z" fill="none" stroke="#3ab0b8" stroke-width="1.5"/>
+                <!-- Iris outer ring -->
+                <circle cx="60" cy="100" r="15" fill="none" stroke="#3ab0b8" stroke-width="1.2"/>
+                <!-- Iris inner ring -->
+                <circle cx="60" cy="100" r="8" fill="none" stroke="#c9a84c" stroke-width="1"/>
+                <!-- Pupil -->
+                <circle cx="60" cy="100" r="3.5" fill="#c9a84c" opacity="0.85"/>
+                <!-- Upper lash lines -->
+                <line x1="44" y1="78" x2="42" y2="71" stroke="#3ab0b8" stroke-width="0.8" opacity="0.6"/>
+                <line x1="54" y1="73" x2="53" y2="66" stroke="#3ab0b8" stroke-width="0.8" opacity="0.6"/>
+                <line x1="66" y1="73" x2="66" y2="66" stroke="#3ab0b8" stroke-width="0.8" opacity="0.6"/>
+                <line x1="76" y1="78" x2="78" y2="71" stroke="#3ab0b8" stroke-width="0.8" opacity="0.6"/>
+                <!-- Corner stars -->
+                <circle cx="18" cy="28" r="1.2" fill="rgba(201,168,76,0.35)"/>
+                <circle cx="102" cy="28" r="1.2" fill="rgba(201,168,76,0.35)"/>
+                <circle cx="18" cy="162" r="1.2" fill="rgba(201,168,76,0.28)"/>
+                <circle cx="102" cy="162" r="1.2" fill="rgba(201,168,76,0.28)"/>
+                <!-- Decorative radial lines -->
+                <line x1="60" y1="62" x2="60" y2="55" stroke="#3ab0b8" stroke-width="0.6" opacity="0.4"/>
+                <line x1="60" y1="138" x2="60" y2="145" stroke="#3ab0b8" stroke-width="0.6" opacity="0.4"/>
+                <line x1="5" y1="100" x2="12" y2="100" stroke="#c9a84c" stroke-width="0.6" opacity="0.35"/>
+                <line x1="108" y1="100" x2="115" y2="100" stroke="#c9a84c" stroke-width="0.6" opacity="0.35"/>
+              </svg>
+            </div>
+
+            <div class="card-label">
+              <div class="card-name-front">The Interior<br>Witness</div>
+              <div class="card-sub-front">Cancer · Libra · Sagittarius</div>
+              <div class="card-hint"><span class="card-hint-pill">tap to reveal ↻</span></div>
+            </div>
+          </div>
+
+          <!-- ── BACK ── -->
+          <div class="card-back">
+            <div class="card-back-bg"></div>
+            <div class="card-back-wc"></div>
+            <div class="card-back-grain"></div>
+            <div class="card-back-border-outer"></div>
+            <div class="card-back-border-inner"></div>
+            <div class="card-back-content">
+              <div class="card-back-numeral">XX</div>
+              <svg class="card-back-sigil-mini" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="22" cy="22" r="18" stroke="rgba(58,176,184,0.30)" stroke-width="0.8" fill="none"/>
+                <path d="M7,22 Q22,12 37,22 Q22,32 7,22Z" fill="none" stroke="rgba(58,176,184,0.70)" stroke-width="1.0"/>
+                <circle cx="22" cy="22" r="5" fill="none" stroke="rgba(201,168,76,0.65)" stroke-width="0.8"/>
+                <circle cx="22" cy="22" r="2" fill="rgba(201,168,76,0.80)"/>
+              </svg>
+              <div class="card-back-name">The Interior<br>Witness</div>
+              <div class="card-back-sub">Cancer 8th Sun &middot; Sagittarius Rising &middot; Scorpio 12th North Node</div>
+              <div class="card-back-rule"></div>
+              <div class="card-back-body"><p>She reads the room before she speaks, and what she reads is what&rsquo;s underneath. Not threat or opportunity &mdash; the actual feeling state of what&rsquo;s happening. Who is holding back. Where the weight is. What nobody has named yet.</p><p>This is a precision instrument. The Cancer 8th Sun doesn&rsquo;t navigate by surface; it registers depth automatically. When she says she understands, she isn&rsquo;t offering a social courtesy &mdash; she actually does.</p><p>The Sagittarius Ascendant belongs to the same person: warm, seeking, philosophically directed. The Interior Witness who arrives as someone moving toward meaning. The work of this chart is letting those two registers know they belong to each other &mdash; that the depth she carries is the ground the warmth stands on.</p></div>
+              <div class="card-back-tap">tap to close ↺</div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
-    <div class="dive-body">
-      <p>This is the aspect that explains everything. ✨ Yvonne's Sun (22° Cancer) sits in the 8th house — the house of depth, intimacy, shared resources, and what lives beneath the surface — and sits in almost exact opposition to Neptune (21°56' Capricorn). The orb is 0°21'. That is as close as aspects get. This is not a subtle coloring in the chart. It's the fundamental structure of her identity.</p>
-      <p>What this means in practice: she is extraordinarily empathic. 💫 Not in a vague, soft sense — in a literally porous way. She picks up the emotional field of a room without meaning to. She feels other people's states as her own. She can walk into a conversation and know what's really going on beneath the surface long before anyone has said it aloud. This is a gift. It's also disorienting, because it can make it genuinely hard to know which feelings are hers and which belong to the room around her.</p>
-      <div class="pull">The depth isn't performance. It's her actual signal. The question isn't whether she'll feel things deeply. She always will. The question is whether she trusts that depth as information rather than overwhelm.</div>
-      <p>The 8th house Cancer Sun loves in a total, all-in way. She doesn't do emotional halfway. When she cares about something or someone, the care is complete and goes to the root. This can be invisible because it lives under the Sagittarius Rising's expansive, easy-going exterior — but the 8th house is where she actually lives. 🌊 The Neptune opposition also gives her something genuinely rare: an almost psychic attunement, especially in one-on-one spaces. She knows. She often knows before she knows how she knows.</p>
-    </div>
+
+    <div style="height:16px"></div>
   </div>
-
-  <!-- 2. SAGITTARIUS RISING + INTERIOR GAP -->
-  <div class="dive-section accent-plum">
-    <div class="dive-head plum-head">
-      <svg class="dive-head-stars" viewBox="0 0 900 130" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="818" cy="30"  r="0.9" fill="#b482d2" opacity="0.44"/>
-        <circle cx="68"  cy="55"  r="0.8" fill="#fff8ee" opacity="0.30"/>
-        <circle cx="545" cy="16"  r="0.9" fill="#fff8ee" opacity="0.28"/>
-        <circle cx="275" cy="96"  r="0.7" fill="#b482d2" opacity="0.28"/>
-        <text x="838" y="74"  font-size="9" fill="#b482d2" opacity="0.42" text-anchor="middle" font-family="serif">✦</text>
-        <text x="62"  y="94"  font-size="7" fill="#b482d2" opacity="0.36" text-anchor="middle" font-family="serif">✧</text>
-        <circle cx="860" cy="44" r="44" fill="#b482d2" opacity="0.05"/>
-      </svg>
-      <div class="dive-icon">↑</div>
-      <div class="dive-head-text">
-        <div class="dive-eyebrow">Persona · Public Self · The Interior Gap</div>
-        <div class="dive-title">Sagittarius Rising and the Life Beneath</div>
-        <div class="dive-subtitle">3°48' Ascendant · Jupiter-ruled · vast exterior, oceanic interior</div>
-        <div class="dive-tags">
-          <span class="dtag">Rising Sign</span>
-          <span class="dtag">Persona</span>
-          <span class="dtag">Sagittarius</span>
-          <span class="dtag">Hidden Depths</span>
-        </div>
-      </div>
-    </div>
-    <div class="dive-body">
-      <p>The first thing people notice about Yvonne is the Sagittarius. 🏹 She shows up with a wide-angle lens on the world — enthusiastic, curious, usually excited about something. There's an openness to her presence, a sense that the conversation might go anywhere. Sagittarius Rising people make rooms feel bigger. That's a real quality, not a performance, and it genuinely belongs to her.</p>
-      <p>But what's actually running underneath is something else entirely. Mercury and the Sun are both in Cancer, sitting in her 7th and 8th houses — the houses of partnership, shared intimacy, and everything beneath the surface. Her intellectual life (Mercury Cancer 7th) is emotional and relational, not abstract. Her identity (Sun Cancer 8th) lives in depth, not in the open field that Sagittarius Rising suggests. The gap between how she appears and what she carries internally is one of the most significant features of her chart. 🌊</p>
-      <div class="pull plum-pull">The philosophical traveler on the outside, the deep-sea diver on the inside. Both are real. Most people only see one.</div>
-      <p>This is worth knowing, especially in professional contexts. 💼 The Sagittarius Rising makes her seem like someone who is adaptable, easygoing, happy to keep things moving. And she can do that. But the Libra Moon in the 10th house means she actually cares deeply about fairness and balance in her work environment. The Cancer Sun in the 8th means she carries more weight than she lets on. When she feels unseen or unappreciated, it lands hard even if it doesn't show on the surface. The people who know her well — who've been let inside the 8th house — know a completely different person than the one who walks in the door.</p>
-    </div>
-  </div>
-
-  <!-- 3. 12TH HOUSE SCORPIO + NORTH NODE -->
-  <div class="dive-section accent-rose">
-    <div class="dive-head rose-head">
-      <svg class="dive-head-stars" viewBox="0 0 900 130" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="816" cy="32"  r="0.9" fill="#d4a0b5" opacity="0.44"/>
-        <circle cx="70"  cy="54"  r="0.8" fill="#fff8ee" opacity="0.30"/>
-        <circle cx="548" cy="18"  r="0.9" fill="#d4a0b5" opacity="0.28"/>
-        <circle cx="278" cy="94"  r="0.7" fill="#fff8ee" opacity="0.28"/>
-        <text x="836" y="76"  font-size="9" fill="#d4a0b5" opacity="0.42" text-anchor="middle" font-family="serif">✦</text>
-        <text x="64"  y="92"  font-size="7" fill="#d4a0b5" opacity="0.36" text-anchor="middle" font-family="serif">✧</text>
-        <circle cx="858" cy="46" r="44" fill="#d4a0b5" opacity="0.05"/>
-      </svg>
-      <div class="dive-icon">☊</div>
-      <div class="dive-head-text">
-        <div class="dive-eyebrow">Soul Path · Hidden Power · The 12th House</div>
-        <div class="dive-title">North Node, Pluto, and Jupiter in Scorpio</div>
-        <div class="dive-subtitle">12th house · the growth direction lives in the unseen</div>
-        <div class="dive-tags">
-          <span class="dtag">North Node</span>
-          <span class="dtag">12th House</span>
-          <span class="dtag">Scorpio</span>
-          <span class="dtag">Soul Path</span>
-        </div>
-      </div>
-    </div>
-    <div class="dive-body">
-      <p>Three of the most powerful points in Yvonne's chart — her North Node (soul growth direction), Pluto (transformative power), and Jupiter (expansion and abundance) — all live in Scorpio in the 12th house. The 12th house is the hidden realm: the unconscious, what operates below the surface, the spiritual, the things that can't be easily named or seen from the outside. 🌑</p>
-      <p>What this means for her path: the growth direction (North Node Scorpio, 12th house) is not toward more visibility, more performance, or more of what Sagittarius Rising naturally does. It's toward the interior. She grows by going deeper — into her own unconscious, into the hidden layers of situations and relationships, into work that touches what others are afraid to look at. Healing, transformation, depth psychology, the spiritual — these aren't side interests for her. They're where her North Node lives. 🔮</p>
-      <div class="pull rose-pull">Her most important work happens in the spaces others skip past. The hidden room is where she was always meant to go.</div>
-      <p>Pluto conjunct the North Node in the 12th is a power configuration. It says that her path toward growth is also a path toward genuine personal power — but the kind of power that doesn't advertise itself. It doesn't look like a leadership position or a public role. It looks like being the person who understands things at a depth others don't, who can hold space for transformation in others because she's done that work in herself. ✨ Jupiter expanding all of this in the 11th house (by our house calculations) means that this depth is also connected to community, friendship, and collective experience — she's meant to bring this to groups, not just keep it private.</p>
-      <p>The South Node in Taurus (6th house) tells the other half of the story: her familiar, comfortable pattern is slow, steady, material, and measured. The growth edge is to move away from that comfortable groundedness and into the more challenging, volatile, transformative terrain of Scorpio's depths. 🌊 It's a significant ask. It's also exactly where her power is.</p>
-    </div>
-  </div>
-
-  <!-- 4. SYNASTRY WITH JORDAN -->
-  <div class="dive-section accent-teal">
-    <div class="dive-head teal-head">
-      <svg class="dive-head-stars" viewBox="0 0 900 130" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="822" cy="26"  r="0.9" fill="#5ab4a0" opacity="0.44"/>
-        <circle cx="66"  cy="56"  r="0.8" fill="#fff8ee" opacity="0.30"/>
-        <circle cx="542" cy="20"  r="0.9" fill="#5ab4a0" opacity="0.28"/>
-        <circle cx="282" cy="92"  r="0.7" fill="#fff8ee" opacity="0.28"/>
-        <text x="842" y="70"  font-size="9" fill="#5ab4a0" opacity="0.45" text-anchor="middle" font-family="serif">✦</text>
-        <text x="58"  y="96"  font-size="7" fill="#5ab4a0" opacity="0.38" text-anchor="middle" font-family="serif">✧</text>
-        <circle cx="856" cy="48" r="44" fill="#5ab4a0" opacity="0.04"/>
-      </svg>
-      <div class="dive-icon">✦</div>
-      <div class="dive-head-text">
-        <div class="dive-eyebrow">Synastry · Jordan + Yvonne</div>
-        <div class="dive-title">A Taste of Your Connection</div>
-        <div class="dive-subtitle">Selected contacts · written for you to read</div>
-        <div class="dive-tags">
-          <span class="dtag">Synastry</span>
-          <span class="dtag">3 Contacts</span>
-          <span class="dtag">Jordan's Chart</span>
-        </div>
-      </div>
-    </div>
-    <div class="dive-body">
-      <p>A few notable contacts between Jordan's chart and yours. ✨</p>
-      <div class="syn-list">
-
-        <div class="syn-item">
-          <div class="syn-aspect">Jordan's North Node (3° Sag) conjunct your Ascendant (3°48' Sag)</div>
-          <div class="syn-orb">0°48' orb · essentially exact</div>
-          <div class="syn-text">Jordan's soul growth direction lands almost exactly on how you show up in the world. When she's around you, she's practicing her own North Node work. That tends to give the connection a quality of feeling genuinely useful rather than incidental.</div>
-        </div>
-
-        <div class="syn-item">
-          <div class="syn-aspect">Jordan's Sun (1° Sag) conjunct your Ascendant (3°48' Sag)</div>
-          <div class="syn-orb">2°48' orb</div>
-          <div class="syn-text">Her Sun falls right at your Rising. It's one of the warmer contacts in synastry: her core identity naturally illuminates how you present yourself. She sees you clearly, and that recognition tends to feel energizing rather than like being put in a box.</div>
-        </div>
-
-        <div class="syn-item">
-          <div class="syn-aspect">Both Plutos at 25° Scorpio</div>
-          <div class="syn-orb">0°23' orb · virtually identical</div>
-          <div class="syn-text">You were shaped by the same generational current. When it comes to depth, transformation, and what actually matters, you speak the same language at the root level. ✦</div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
 </div>
 
-<!-- ════════════════════════════════════════════════════════════ -->
-<!-- THREAD / CLOSING                                            -->
-<!-- ════════════════════════════════════════════════════════════ -->
-<div class="thread-wrap">
-  <div class="thread">
+<!-- POEM -->
+<div class="subpanel sp-reading" id="sp-poem">
+  <svg class="geo-bg" viewBox="0 0 375 812" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <polygon points="188,28 332,108 370,290 310,500 188,548 66,500 5,290 44,108" fill="none" stroke="rgba(201,168,76,0.08)" stroke-width="0.6"/>
+    <circle cx="188" cy="28" r="2.0" fill="rgba(201,168,76,0.38)"/>
+  </svg>
 
-    <svg class="thread-stars" viewBox="0 0 900 380" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="80"   cy="60"  r="1.1" fill="#c9a84c" opacity="0.38"/>
-      <circle cx="820"  cy="48"  r="0.9" fill="#fff8ee" opacity="0.32"/>
-      <circle cx="450"  cy="20"  r="1.0" fill="#5ab4a0" opacity="0.40"/>
-      <circle cx="180"  cy="320" r="0.8" fill="#d4a0b5" opacity="0.30"/>
-      <circle cx="720"  cy="330" r="0.9" fill="#c9a84c" opacity="0.34"/>
-      <text x="450" y="362" font-size="10" fill="#c9a84c" opacity="0.36" text-anchor="middle" font-family="serif">✦</text>
-      <text x="85"  y="188" font-size="8"  fill="#5ab4a0" opacity="0.32" text-anchor="middle" font-family="serif">✧</text>
-      <text x="815" y="200" font-size="8"  fill="#5ab4a0" opacity="0.32" text-anchor="middle" font-family="serif">✧</text>
-      <circle cx="450" cy="190" r="160" fill="#2a1245" opacity="0.18"/>
-    </svg>
+  <div class="reading-inner accent-rose">
+    <div class="panel-heading">
+      <div class="panel-eyebrow-sm">a reading in verse</div>
+      <div class="panel-title-lg">Poem</div>
+    </div>
 
-    <div class="thread-border"></div>
+    <div class="poem-outer">
+      <div class="poem-byline">A Reading in Verse &nbsp;&middot;&nbsp; Yvonne</div>
+      <div class="poem-wrap">
+        <p>She enters already reading the underneath of things.<br>
+        The room adjusts before it knows why.</p>
 
-    <span class="thread-ornament">✦ ✦ ✦</span>
+        <p>Somewhere behind the warmth is a person going down,<br>
+        not anxiously, but with intention.<br>
+        The self lives in what other people find uncomfortable to name.</p>
 
-    <h2 class="thread-title">The Thread Running Through</h2>
+        <p>She knows you by what you mean,<br>
+        not by what you say.<br>
+        This is a form of love.</p>
 
-    <p>There is one thing this chart keeps saying: <em>there is more here than meets the eye.</em> The Sagittarius Rising is real — the enthusiasm, the wide lens, the love of ideas and travel and philosophy. That belongs to her. But the whole rest of the chart is oriented toward depth, intimacy, and what lives beneath the surface.</p>
+        <p>The descent and the direction<br>
+        are the same movement.<br>
+        What opens when she stops explaining that to anyone?</p>
+      </div>
+    </div>
 
-    <p>The Sun in Cancer in the 8th house, exactly opposite Neptune. Three key points in Scorpio in the 12th. Mercury and Mars both in the 7th house of partnership. The Libra Moon in the 10th attuned to balance and connection. This is a chart that does not skim. It goes all the way in, every time — with people, with ideas, with whatever she chooses to give her attention to.</p>
-
-    <p>The invitation this chart holds for her: trust the depth. Not just accept it, but actively trust it as a source of genuine power. The 12th house Scorpio North Node is pointing directly there. The Sun-Neptune exact opposition is pointing there. The places in her life where she has gone all the way in — where she has let herself be fully moved by something — those are the places where she has been most alive.</p>
-
-    <div class="thread-close">✦ · born July 14, 1994 · Fremont, California · Placidus · Tropical · ✦</div>
+    <div style="height:16px"></div>
+  </div>
+</div>
 
   </div>
 </div>
 
-<!-- ════════════════════════════════════════════════════════════ -->
-<!-- FOOTER                                                      -->
-<!-- ════════════════════════════════════════════════════════════ -->
-<div class="footer">
-  <div>Planetary positions calculated for July 14, 1994 · 4:53 PM PDT · Fremont, CA (37°32'N, 121°59'W)</div>
-  <div style="margin-top:6px">House positions are approximate (Placidus) · Chiron position historical estimate · North Node approximate</div>
-  <div style="margin-top:6px">Prepared with care from the stars workspace · Jordan Barney · 2026</div>
+<!-- TRANSITS PANEL -->
+<div class="panel" id="panel-transits" style="overflow:hidden">
+  <svg class="geo-bg" viewBox="0 0 380 720" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <circle cx="190" cy="360" r="180" stroke="rgba(212,128,64,0.06)" stroke-width="0.5"/>
+    <circle cx="190" cy="360" r="120" stroke="rgba(212,128,64,0.04)" stroke-width="0.5"/>
+    <line x1="10" y1="360" x2="370" y2="360" stroke="rgba(212,128,64,0.04)" stroke-width="0.4"/>
+    <line x1="190" y1="60" x2="190" y2="660" stroke="rgba(212,128,64,0.04)" stroke-width="0.4"/>
+  </svg>
+  <div id="t-list" style="position:absolute;inset:0;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;transition:transform 0.28s cubic-bezier(0.4,0,0.2,1),opacity 0.22s ease">
+    <div class="reading-inner accent-amber" style="padding-top:24px">
+      <button onclick="backToToday()" style="display:flex;align-items:center;gap:8px;background:none;border:none;cursor:pointer;-webkit-tap-highlight-color:transparent;margin-bottom:20px;padding:0">
+        <span style="font-size:1rem;color:rgba(var(--cerulean-alpha),0.70)">&#x2190;</span>
+        <span style="font-size:0.52rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(var(--cerulean-alpha),0.60);font-family:'Inter',sans-serif;font-weight:500">Today</span>
+      </button>
+      <div class="panel-heading" style="margin-bottom:20px">
+        <div class="panel-eyebrow-sm" id="t-eyebrow">The Variable</div>
+        <div class="panel-title-lg">Transit Library</div>
+      </div>
+      <div class="t-biwheel-wrap">
+        <svg viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg" id="t-biwheel-svg"></svg>
+        <div class="t-biwheel-label" id="t-biwheel-lbl">natal &middot; live sky</div>
+      </div>
+      <div id="bw-detail"></div>
+      <div class="t-tabs">
+        <button class="t-tab active" data-ttab="now" onclick="switchTransitTab('now',this)">Now</button>
+        <button class="t-tab" data-ttab="returning" onclick="switchTransitTab('returning',this)">Returning</button>
+        <button class="t-tab" data-ttab="archive" onclick="switchTransitTab('archive',this)">Archive</button>
+      </div>
+      <div id="t-list-body" style="display:flex;flex-direction:column;gap:2px"></div>
+    </div>
+  </div>
+  <div id="t-detail" style="position:absolute;inset:0;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;transform:translateX(100%);transition:transform 0.28s cubic-bezier(0.4,0,0.2,1);background:var(--bg);z-index:2">
+    <div class="reading-inner accent-amber" style="padding-top:16px">
+      <button id="t-back" onclick="closeTransitDetail()" style="display:flex;align-items:center;gap:8px;background:none;border:none;cursor:pointer;-webkit-tap-highlight-color:transparent;margin-bottom:20px;padding:0">
+        <span style="font-size:1rem;color:rgba(var(--gold-alpha),0.70)">&#x2190;</span>
+        <span style="font-size:0.52rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(var(--gold-alpha),0.60);font-family:'Inter',sans-serif;font-weight:500">All Transits</span>
+      </button>
+      <div id="t-detail-body"></div>
+    </div>
+  </div>
 </div>
 
-<!-- SAVE BUTTON -->
-<button class="save-btn" onclick="window.print()">
-  <span class="save-btn-icon">✦</span>
-  <span>Save as PDF</span>
-</button>
+<!-- DAILY PANEL -->
+<div class="panel reading-panel" id="panel-daily">
+  <svg class="geo-bg" viewBox="0 0 380 720" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <circle cx="190" cy="360" r="200" stroke="rgba(74,159,212,0.05)" stroke-width="0.5"/>
+    <circle cx="190" cy="360" r="100" stroke="rgba(74,159,212,0.04)" stroke-width="0.5"/>
+  </svg>
+  <div class="reading-inner accent-cerulean" id="daily-body"></div>
+</div>
 
+<!-- SYNASTRY READING COPY — injected into panel by script -->
+<div id="synastry-reading-src" style="display:none">
+  <div class="syn-reading-section">
+    <div class="syn-reading-title">ASC conjunct Jordan NNode &middot; 0.75&deg;</div>
+    <p>This is the most significant contact in the synastry. Yvonne&rsquo;s Ascendant &mdash; the face she brings into every room, the warmth and forward direction of the Sagittarius arrival &mdash; lands exactly on Jordan&rsquo;s North Node. Her presence IS Jordan&rsquo;s soul direction made visible. A contact like this is rare. Jordan&rsquo;s North Node in Sagittarius is the territory she&rsquo;s being called toward: the embodied philosopher, the one who trusts direct knowing, the person who moves on conviction before the map is complete. Yvonne doesn&rsquo;t represent that possibility abstractly &mdash; she arrives as a living demonstration of it at 0.75&deg; orb. When Jordan is in Yvonne&rsquo;s company, she is inside her own North Node. Not as aspiration. As fact.</p>
+  </div>
+  <div class="syn-reading-section">
+    <div class="syn-reading-title">Jupiter inconjunct Jordan Moon &middot; 0.03&deg;</div>
+    <p>The tightest contact in this synastry by degree. Yvonne&rsquo;s Jupiter in Scorpio makes an exact inconjunct to Jordan&rsquo;s Aries Moon. Inconjuncts don&rsquo;t resolve; they require constant calibration. What expands in Yvonne &mdash; depth, intensity, Scorpionic growth &mdash; sits at a 150&deg; angle to where Jordan lives emotionally (Aries Moon: direct, immediate, impulsive, self-oriented). They don&rsquo;t cancel each other, but they can&rsquo;t quite align either. The two keep finding each other across this gap. That&rsquo;s also part of what makes the friendship alive.</p>
+  </div>
+  <div class="syn-reading-section">
+    <div class="syn-reading-title">Moon inconjunct Jordan MC &middot; 0.22&deg;</div>
+    <p>Near-exact. Yvonne&rsquo;s emotional public life &mdash; the Libra Moon in the 10th that requires balance and equity in the professional domain &mdash; is in ongoing adjustment with Jordan&rsquo;s career axis. Both are professional people with feelings. The two are not in friction, but they&rsquo;re not in agreement either. What Yvonne feels strongly about in her professional life keeps pressing against what Jordan is building in hers. Not interference &mdash; a live contact that neither of them can ignore or simply set down.</p>
+  </div>
+  <div class="syn-reading-section">
+    <div class="syn-reading-title">Saturn trine Jordan Mercury &middot; 0.27&deg;</div>
+    <p>Tight trine. The internal discipline Yvonne carries &mdash; the retrograde Saturn in Pisces that does its structural work privately, below the surface of articulation &mdash; flows naturally with Jordan&rsquo;s investigative Scorpio Mercury. Yvonne&rsquo;s rigor and Jordan&rsquo;s depth-finding mind are structurally compatible. This is the contact that makes thinking together feel easy: Yvonne&rsquo;s interior precision doesn&rsquo;t need explaining to Jordan&rsquo;s Mercury, which reads underneath anyway.</p>
+  </div>
+  <div class="syn-reading-section">
+    <div class="syn-reading-title">Pluto conjunct Jordan Pluto &middot; 0.27&deg;</div>
+    <p>Generational exactness. They carry the same depth function at the same degree. This is not a dynamic contact &mdash; it&rsquo;s a fact of shared terrain. The Scorpionic transformation function that runs in both of them operates at the same pitch. When they&rsquo;re in each other&rsquo;s company, the Pluto function doesn&rsquo;t need translation. They recognize it. This is part of why intimacy with Yvonne doesn&rsquo;t require warming up &mdash; she already knows the deep register.</p>
+  </div>
+  <div class="syn-reading-section">
+    <div class="syn-reading-title">Mars square Jordan MC &middot; 0.49&deg;</div>
+    <p>Yvonne&rsquo;s drive presses on Jordan&rsquo;s public identity. The Mars in Gemini, fast and communicative and built for motion alongside others, sits in a tight square to Jordan&rsquo;s career and reputation axis. This isn&rsquo;t aggression &mdash; it&rsquo;s pressure. The way Yvonne moves, the speed and relational orientation of her drive, touches something live in how Jordan is building her public life. A square doesn&rsquo;t flow; it produces friction that becomes momentum when handled well.</p>
+  </div>
+  <div class="syn-reading-section">
+    <div class="syn-reading-title">Mars square Jordan Chiron &middot; 0.69&deg;</div>
+    <p>The same Mars that presses on Jordan&rsquo;s MC presses on her wound. Yvonne&rsquo;s drive, her forward communicative energy, sits in tight square to Jordan&rsquo;s Chiron in Virgo: the wound around precision and being seen accurately for what she does. This is a tender contact. Yvonne doesn&rsquo;t intend it, and it&rsquo;s not harmful &mdash; but the way she moves can activate, in Jordan, the place where recognition matters most. The gift is that Yvonne takes Jordan&rsquo;s work seriously. The risk is that when Yvonne&rsquo;s Mars is especially activated, Jordan may feel it where she&rsquo;s most vulnerable to being missed.</p>
+  </div>
+  <div class="syn-reading-section">
+    <div class="syn-reading-title">ASC trine Jordan Moon &middot; 1.19&deg;</div>
+    <p>Her presence flows with Jordan&rsquo;s emotional body. The Sagittarius warmth and forward direction land naturally with the Aries Moon &mdash; both fire signs, both built for momentum and direct feeling. This is the quality that makes being in Yvonne&rsquo;s company feel emotionally uncomplicated: the Sagittarius ASC doesn&rsquo;t put weight on Jordan&rsquo;s Moon. It opens. This synastry is built around one central truth: Yvonne&rsquo;s presence is Jordan&rsquo;s North Node in motion. That&rsquo;s the anchor. Everything else &mdash; the inconjuncts that require calibration, the squares that produce friction, the tight generational Pluto conjunction, the Saturn that trines the Mercury &mdash; all of it runs through that fact.</p>
+  </div>
+</div>
+
+<!-- WHEEL PANEL -->
+<div class="panel" id="panel-wheel" style="overflow-y:auto;-webkit-overflow-scrolling:touch">
+  <svg class="geo-bg" viewBox="0 0 380 720" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <circle cx="190" cy="360" r="180" stroke="rgba(90,184,168,0.05)" stroke-width="0.5"/>
+    <circle cx="190" cy="360" r="60" stroke="rgba(90,184,168,0.06)" stroke-width="0.5"/>
+    <line x1="10" y1="360" x2="370" y2="360" stroke="rgba(90,184,168,0.03)" stroke-width="0.4"/>
+    <line x1="190" y1="60" x2="190" y2="660" stroke="rgba(90,184,168,0.03)" stroke-width="0.4"/>
+  </svg>
+  <div class="reading-inner" style="padding-top:28px;padding-bottom:calc(60px + env(safe-area-inset-bottom,0px) + 24px)">
+    <div style="margin-bottom:28px">
+      <div style="font-size:0.52rem;letter-spacing:0.22em;text-transform:uppercase;font-family:'Inter',sans-serif;color:rgba(90,184,168,0.65);margin-bottom:8px">The Wheel</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:300;color:var(--text);line-height:1.15" id="wheel-title">Lunar &middot; Seasonal &middot; The Sky</div>
+    </div>
+    <div style="margin-bottom:32px">
+      <div style="font-size:0.48rem;letter-spacing:0.20em;text-transform:uppercase;font-family:'Inter',sans-serif;color:rgba(90,184,168,0.55);margin-bottom:12px">&#x263D; Moon</div>
+      <div id="wheel-moon-card" style="background:rgba(90,184,168,0.06);border:1px solid rgba(90,184,168,0.18);border-radius:14px;padding:20px 18px">
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px">
+          <div>
+            <div style="font-size:0.48rem;letter-spacing:0.18em;text-transform:uppercase;font-family:'Inter',sans-serif;color:rgba(90,184,168,0.55);margin-bottom:6px" id="wheel-moon-phase-label">loading&hellip;</div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:300;color:var(--text);line-height:1.2" id="wheel-moon-sign-label"></div>
+          </div>
+          <div style="flex-shrink:0;opacity:0.70;width:36px;height:36px" id="wheel-moon-glyph"></div>
+        </div>
+        <div style="margin-top:14px;font-size:0.82rem;color:var(--muted);line-height:1.7" id="wheel-moon-desc"></div>
+      </div>
+    </div>
+    <div style="margin-bottom:32px">
+      <div style="font-size:0.48rem;letter-spacing:0.20em;text-transform:uppercase;font-family:'Inter',sans-serif;color:rgba(90,184,168,0.55);margin-bottom:12px">&#x1F33F; Seasons</div>
+      <div id="wheel-next-sabbat" style="background:rgba(90,184,168,0.08);border:1px solid rgba(90,184,168,0.25);border-radius:14px;padding:20px 18px;margin-bottom:14px">
+        <div style="font-size:0.48rem;letter-spacing:0.18em;text-transform:uppercase;font-family:'Inter',sans-serif;color:rgba(90,184,168,0.65);margin-bottom:6px">Next</div>
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:8px;margin-bottom:8px">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:300;color:var(--text)" id="next-sabbat-name"></div>
+          <div style="font-size:0.72rem;color:rgba(90,184,168,0.75);font-family:'Inter',sans-serif;flex-shrink:0" id="next-sabbat-days"></div>
+        </div>
+        <div style="font-size:0.80rem;color:var(--muted);margin-bottom:4px" id="next-sabbat-date"></div>
+        <div style="font-size:0.82rem;color:var(--muted);line-height:1.65;margin-top:8px" id="next-sabbat-theme"></div>
+      </div>
+      <div id="wheel-sabbat-list" style="display:flex;flex-direction:column;gap:6px"></div>
+    </div>
+
+    <!-- ── THE SKY SECTION ── -->
+    <div style="margin-bottom:16px">
+      <div style="font-size:0.48rem;letter-spacing:0.20em;text-transform:uppercase;font-family:'Inter',sans-serif;color:rgba(90,184,168,0.55);margin-bottom:12px">&#x2736; The Sky</div>
+      <button onclick="window.open('/workplace%20readings/sky-at-work.html','_blank')" style="width:100%;text-align:left;background:rgba(90,184,168,0.06);border:1px solid rgba(90,184,168,0.18);border-radius:14px;padding:20px 18px;cursor:pointer;-webkit-tap-highlight-color:transparent">
+        <div style="font-size:0.48rem;letter-spacing:0.18em;text-transform:uppercase;font-family:'Inter',sans-serif;color:rgba(90,184,168,0.65);margin-bottom:6px">Collective Transit Reading</div>
+        <div style="font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:300;color:var(--text);line-height:1.3;margin-bottom:8px">Sky at Work</div>
+        <div style="font-size:0.82rem;color:var(--muted);line-height:1.65;margin-bottom:12px">Transit-to-transit reading &mdash; the collective weather of the week, not natal-specific. What everyone is moving through.</div>
+        <div style="font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;font-family:'Inter',sans-serif;color:rgba(90,184,168,0.60)">Open &#x2192; sky-at-work</div>
+      </button>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<!-- BOTTOM NAV -->
+<nav class="app-nav" role="navigation" aria-label="App sections">
+  <button class="nav-tab active" data-target="home" onclick="switchPanel('home',this)">
+    <span class="nav-icon-t">&#x2736;</span>
+    <span class="nav-label">Home</span>
+  </button>
+  <button class="nav-tab" data-target="natal" onclick="switchPanel('natal',this)">
+    <span class="nav-icon">&#x2299;</span>
+    <span class="nav-label">The Constant</span>
+  </button>
+  <button class="nav-tab" data-target="daily" onclick="switchPanel('daily',this)">
+    <span class="nav-icon">&#x263D;&#xFE0E;</span>
+    <span class="nav-label">The Variable</span>
+  </button>
+  <button class="nav-tab" data-target="wheel" onclick="switchPanel('wheel',this)">
+    <span class="nav-icon">&#x2295;</span>
+    <span class="nav-label">The Wheel</span>
+  </button>
+</nav>
+
+</div>
+<div class="safe-btm" aria-hidden="true"></div>
+
+<!-- KEY DRAWER -->
+<div class="key-dimmer" id="keyDimmer"></div>
+<div class="key-overlay" id="keyOverlay" role="complementary" aria-label="Chart Key">
+  <div class="key-header">
+    <div class="key-title">Chart Key</div>
+    <button class="key-close" id="keyClose" aria-label="Close key">&#x2190;</button>
+  </div>
+  <div class="key-content">
+    <div class="key-section"><div class="key-sh">Zodiac Signs</div><div class="key-grid g6" id="kS"></div></div>
+    <div class="key-section"><div class="key-sh">Planets &amp; Points</div><div class="key-grid g6" id="kP"></div></div>
+    <div class="key-section"><div class="key-sh">Aspect Lines</div><div class="key-grid g3" id="kA"></div></div>
+    <div class="key-section"><div class="key-sh">Elements</div><div class="key-grid g4" id="kE"></div></div>
+  </div>
+</div>
+
+<script>
+const T='︎';
+const IS_FRIEND_BUILD=true;
+const PERSON_NAME='Yvonne';
+const CHART={
+  asc:243.8021,mc:167.9033,
+  cusps:[243.8021,275.4819,311.8135,347.9033,18.4407,42.9868,63.8021,95.4819,131.8135,167.9033,198.4407,222.9868],
+  planets:[
+    {id:'sun',gl:'☉︎',deg:112.2957,retro:false,grp:'luminary',si:3,sd:22.3},
+    {id:'moon',gl:'☽︎',deg:188.4999,retro:false,grp:'luminary',si:6,sd:8.5},
+    {id:'mercury',gl:'☿︎',deg:92.2846,retro:false,grp:'personal',si:3,sd:2.3},
+    {id:'venus',gl:'♀︎',deg:154.2033,retro:false,grp:'personal',si:5,sd:4.2},
+    {id:'mars',gl:'♂︎',deg:67.7880,retro:false,grp:'personal',si:2,sd:7.8},
+    {id:'jupiter',gl:'♃︎',deg:215.0153,retro:false,grp:'social',si:7,sd:5.0},
+    {id:'saturn',gl:'♄︎',deg:342.0150,retro:true,grp:'social',si:11,sd:12.0},
+    {id:'uranus',gl:'♅︎',deg:294.4501,retro:true,grp:'outer',si:9,sd:24.5},
+    {id:'neptune',gl:'♆︎',deg:291.9539,retro:true,grp:'outer',si:9,sd:22.0},
+    {id:'pluto',gl:'♇︎',deg:235.4064,retro:true,grp:'outer',si:7,sd:25.4},
+    {id:'chiron',gl:'⚷︎',deg:157.5026,retro:false,grp:'point',si:5,sd:7.5},
+    {id:'nnode',gl:'☊︎',deg:231.8165,retro:true,grp:'point',si:7,sd:21.8},
+    {id:'snode',gl:'☋︎',deg:51.8165,retro:true,grp:'point',si:1,sd:21.8},
+  ],
+  aspects:[
+    {p1:'neptune',p2:'nnode',type:'sextile',orb:0.14},
+    {p1:'mars',p2:'chiron',type:'square',orb:0.29},
+    {p1:'sun',p2:'neptune',type:'opposition',orb:0.34},
+    {p1:'sun',p2:'nnode',type:'trine',orb:0.48},
+    {p1:'moon',p2:'mars',type:'trine',orb:0.71},
+    {p1:'venus',p2:'jupiter',type:'sextile',orb:0.81},
+    {p1:'uranus',p2:'pluto',type:'sextile',orb:0.96},
+    {p1:'mercury',p2:'venus',type:'sextile',orb:1.92},
+    {p1:'sun',p2:'uranus',type:'opposition',orb:2.15},
+    {p1:'jupiter',p2:'chiron',type:'sextile',orb:2.49},
+    {p1:'mercury',p2:'jupiter',type:'trine',orb:2.73},
+    {p1:'sun',p2:'pluto',type:'trine',orb:3.11},
+    {p1:'venus',p2:'chiron',type:'conjunction',orb:3.30},
+  ],
+};
+</script>
+<script src="/pathfinder-core.js"></script>
 </body>
 </html>
