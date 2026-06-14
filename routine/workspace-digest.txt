@@ -1,10 +1,10 @@
-# The Stars:Daily Digest | 2026-06-13
+# The Stars:Daily Digest | 2026-06-14
 
-**Moon:** 27.47° Taurus | Waning Crescent
+**Moon:** 12.68° Gemini | Waning Crescent
 
 **Top active transits (tight orb):**
-- Mars ☍ natal Venus (5th):0.03° separating
-- Uranus ⚻ natal Jupiter (5th):0.1° applying
-- Mercury □/ natal Sun (6th):0.12° separating
+- Mars △ natal Uranus (7th):0.03° separating
+- Uranus ⚻ natal Jupiter (5th):0.04° applying
+- Uranus ☍ natal NorthNode (6th):0.21° applying
 
-*Full reading: the stars/daily readings/2026-06/2026-06-13.md*
+*Full reading: the stars/daily readings/2026-06/2026-06-14.md*

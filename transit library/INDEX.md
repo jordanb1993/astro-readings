@@ -1,29 +1,29 @@
 # Transit Library: Active Index
 *Lightweight session-start index. Always loaded. For depth, follow the links.*
-*Last updated: June 13, 2026. Update orbs and status at each session start.*
+*Last updated: June 14, 2026. Update orbs and status at each session start.*
 
 ---
 
 ## Active Long-Term Transits
 
-| Transit | Breakdown File | Orb (June 13) | Status | Peak / Next Contact |
+| Transit | Breakdown File | Orb (June 14) | Status | Peak / Next Contact |
 |---------|---------------|-------------|--------|---------------------|
-| ☊ NNode △ ♃ natal Jupiter (5th) | [[nnode-trine-jupiter]] | 0.31° separating | Peak passed June 11, separating | Single pass; arc continues |
-| ♀ ☌ ♃ Venus-Jupiter △ Scorpio stellium | [[venus-jupiter-cancer-scorpio]] | 0.82° separating (Jup △ Pluto) | Past peak | Venus-Jupiter t-t 3.43°; window closing |
-| ♇ Pluto Rx ✶ ☽ natal Moon (10th) | [[pluto-sextile-moon]] | **0.23° applying** | Exact ~June 28–July 1 | Simultaneous with Neptune exact |
-| ⚷ Chiron ✶ ↑ Ascendant (29°) | [[chiron-sextile-ascendant]] | 0.38° separating | Past exact | Retrograde 2nd pass ~Aug 2026 |
-| ♆ Neptune ☌ ☽ natal Moon (10th) | [[neptune-conjunct-moon]] | **0.71° applying** | Building | First exact late June/early July 2026 |
-| ♅ Uranus ☍ ☉ natal Sun (6th) | [[uranus-opposition-sun]] | 0.95° separating | Past first exact | 2nd exact (retrograde) Oct 2026 |
-| ♅ Uranus ⚻ ♃ natal Jupiter (5th) | [[uranus-inconjunct-jupiter]] | **0.10° applying** | **In exact window; exact June 14–15** | First direct exact |
-| ♅ Uranus ☍ ☊ natal NNode (6th) / ☌ SNode (12th) | [[uranus-opposition-northnode]] | **0.26° applying** | Building | Exact ~June 17–18 |
-| ♆ Neptune □/ ♀ natal Venus (5th) | [[neptune-sesquiquadrate-venus]] | 0.43° separating | Past exact (~May 15) | Separating; retrograde 2nd pass possible |
-| ♄ Saturn ⚻ ☿ natal Mercury (5th) | [[saturn-inconjunct-mercury]] | 0.91° separating | Past exact | Closing; retrograde pass possible |
-| ♆ Neptune △ ☊ natal NNode (6th) | [[neptune-trine-northnode]] | 1.23° separating | Past exact | Separating |
-| ☊ NNode □ ☉ natal Sun (6th) | [[nnode-square-sun]] | **0.74° applying** | Building | Exact ~June 18–19 |
-| ☊ NNode □ natal NNode (6th) | [[nnode-square-northnode]] | 0.47° separating | Past exact; nodal quarter-cycle milestone | Fast-pass; closing |
-| ♅ Uranus □/ ♆ natal Neptune (7th) | [[uranus-sesquiquadrate-neptune]] | 1.41° applying | Building | Exact ~July 2026 |
-| ♅ Uranus □/ ♅ natal Uranus (7th) | [[uranus-sesquiquadrate-uranus]] | 1.80° applying | Building | Exact ~July 2026 |
-| ☊ NNode ∠ ♆ natal Neptune (7th) | [[nnode-semi-square-neptune]] | 1.62° separating | Past exact; fast pass | Closing |
+| ☊ NNode △ ♃ natal Jupiter (5th) | [[nnode-trine-jupiter]] | 0.47° separating | Peak passed June 11, separating | Single pass; arc continues |
+| ♀ ☌ ♃ Venus-Jupiter △ Scorpio stellium | [[venus-jupiter-cancer-scorpio]] | 1.02° separating (Jup △ Pluto) | Past peak; Venus now Leo | Venus-Jupiter t-t ~4.4°; window closed |
+| ♇ Pluto Rx ✶ ☽ natal Moon (10th) | [[pluto-sextile-moon]] | **0.22° applying** | Exact ~June 28–July 1 | Simultaneous with Neptune exact |
+| ⚷ Chiron ✶ ↑ Ascendant (29°) | [[chiron-sextile-ascendant]] | 0.42° separating | Past exact | Retrograde 2nd pass ~Aug 2026 |
+| ♆ Neptune ☌ ☽ natal Moon (10th) | [[neptune-conjunct-moon]] | **0.69° applying** | Building | First exact late June/early July 2026 |
+| ♅ Uranus ☍ ☉ natal Sun (6th) | [[uranus-opposition-sun]] | 1.01° separating | Past first exact | 2nd exact (retrograde) Oct 2026 |
+| ♅ Uranus ⚻ ♃ natal Jupiter (5th) | [[uranus-inconjunct-jupiter]] | **0.04° applying** | **Exact now — June 14–15** | First direct exact |
+| ♅ Uranus ☍ ☊ natal NNode (6th) / ☌ SNode (12th) | [[uranus-opposition-northnode]] | **0.21° applying** | Building; exact June 17–18 | First direct exact |
+| ♆ Neptune □/ ♀ natal Venus (5th) | [[neptune-sesquiquadrate-venus]] | 0.44° separating | Past exact (~May 15) | Separating; retrograde 2nd pass possible |
+| ♄ Saturn ⚻ ☿ natal Mercury (5th) | [[saturn-inconjunct-mercury]] | 0.98° separating | Past exact | Closing; retrograde pass possible |
+| ♆ Neptune △ ☊ natal NNode (6th) | [[neptune-trine-northnode]] | 1.24° separating | Past exact | Separating |
+| ☊ NNode □ ☉ natal Sun (6th) | [[nnode-square-sun]] | **0.58° applying** | Building; exact June 15–17 | Approaching exact |
+| ☊ NNode □ natal NNode (6th) | [[nnode-square-northnode]] | 0.64° separating | Past exact; nodal quarter-cycle milestone | Fast-pass; closing |
+| ♅ Uranus □/ ♆ natal Neptune (7th) | [[uranus-sesquiquadrate-neptune]] | 1.36° applying | Building | Exact ~July 2026 |
+| ♅ Uranus □/ ♅ natal Uranus (7th) | [[uranus-sesquiquadrate-uranus]] | 1.74° applying | Building | Exact ~July 2026 |
+| ☊ NNode ∠ ♆ natal Neptune (7th) | [[nnode-semi-square-neptune]] | 1.79° separating | Past exact; fast pass | Closing |
 
 ---
 
